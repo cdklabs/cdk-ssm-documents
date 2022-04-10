@@ -3,6 +3,7 @@ import { Stack } from 'aws-cdk-lib';
 import {
   HardCodedString,
   MockEnvironment,
+  Platform,
   ResponseCode,
   StringFormat,
   StringVariable,
@@ -21,6 +22,7 @@ describe('RunPowerShellScriptStep', function() {
           new HardCodedString('mkdir asdf'),
           new StringFormat('some %s string', [new StringVariable('MyVar')]),
         ],
+        simulationPlatform: Platform.WINDOWS,
       });
 
       const res = step.invoke({ MyVar: 'amazing' });
@@ -40,6 +42,7 @@ describe('RunPowerShellScriptStep', function() {
           new HardCodedString('mkdir asdf'),
           new StringFormat('some %s string', [new StringVariable('MyVar')]),
         ],
+        simulationPlatform: Platform.WINDOWS,
       });
 
       assert.deepEqual(JSON.parse(JSON.stringify(step.toSsmEntry())), {

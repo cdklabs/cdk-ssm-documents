@@ -3,6 +3,7 @@ import { Stack } from 'aws-cdk-lib';
 import {
   HardCodedString,
   MockEnvironment,
+  Platform,
   ResponseCode,
   StringFormat,
   StringVariable,
@@ -36,6 +37,7 @@ describe('PsModuleStep', function() {
         cd /mnt ; \
         Convertto-Yaml @{"hello"="world"} > output.txt'),
         ],
+        simulationPlatform: Platform.WINDOWS,
       });
       const myVar = '/mnt/powershell-yaml.zip';
       const res = step.invoke({ MyVar: myVar });
@@ -69,6 +71,7 @@ describe('PsModuleStep', function() {
                     cd /mnt ; \
                     Convertto-Yaml @{"hello"="world"} > output.txt'),
         ],
+        simulationPlatform: Platform.WINDOWS,
       });
 
       assert.deepEqual(JSON.parse(JSON.stringify(step.toSsmEntry())), {

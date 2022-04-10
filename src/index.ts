@@ -11,6 +11,8 @@ export * from './domain/output';
 export * from './domain/platform';
 export * from './domain/response-code';
 export * from './domain/simulation-result';
+export * from './domain/operation';
+export * from './domain/precondition';
 
 export * from './construct/step-collector';
 export * from './construct/synth-utils';
