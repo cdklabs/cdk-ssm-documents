@@ -50,6 +50,35 @@ describe('CommandDocument', function() {
                 documentOutputs: []
             });
         });
+        it('Output has platformType', function() {
+
+            // Declare Command Document
+            class MyCommandDoc extends CommandDocument {
+                constructor(scope: Construct, id: string) {
+                    super(scope, id, {
+                            docInputs: [{name: "MyInput", defaultValue: "a", inputType: DataTypeEnum.STRING}]
+                    });
+
+                    // First step
+                    new RunShellScriptStep(this, "MyShellScript1", {
+                        name: "Shell1",
+                        runCommand: [new StringFormat("echo %s", [new StringVariable("MyInput")])]
+                    });
+                }
+            }
+
+            // Synthesize it
+            const stack: Stack = new Stack();
+            const myCommandDoc = new MyCommandDoc(stack, "MyCommandDoc");
+            SynthUtils.synthesize(stack);
+
+            let inputs = {};
+            
+            // Execute simulation
+            myCommandDoc.runSimulation(inputs);
+            
+            assert.equal(true, 'platformType' in inputs);          
+        });
         it('Document outputs only includes those outputs specified as document outputs', function() {
             // Declare Command Document
             class MyCommandDoc extends CommandDocument {

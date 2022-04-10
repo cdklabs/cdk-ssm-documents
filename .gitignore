@@ -124,8 +124,10 @@ n
 # Custom
 .idea/
 
+build/
 build/*
 
 .attach*
 .vscode
 build
+test/__pycache__/

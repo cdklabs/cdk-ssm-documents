@@ -11,6 +11,7 @@ import { Output } from "../../domain/output";
 import { DataType, IAwsInvoker, IObserver, IPauseHook, ISleepHook, StringVariable } from "../..";
 import { Choice } from "../../domain/choice";
 import { HardCodedString, IStringVariable } from "../../interface/variables/string-variable";
+import { OperationEvaluator } from "../../domain/operation";
 const yaml = require('js-yaml');
 
 export interface SimulationProps {
@@ -195,11 +196,11 @@ export class StringStep extends Construct {
 
     private toChoice(declaredChoice: {[name: string]: string;}): Choice {
         const operationEntry = Object.entries(declaredChoice)
-            .filter(entry => Choice.STRING_TO_OPERATION[entry[0]] != undefined)[0];
+            .filter(entry => OperationEvaluator.STRING_TO_OPERATION[entry[0]] != undefined)[0];
         return new Choice({
             jumpToStepName: declaredChoice['NextStep'],
             variable: this.toVariable(declaredChoice['Variable']),
-            operation: Choice.fromOperationName(operationEntry[0]),
+            operation: OperationEvaluator.fromOperationName(operationEntry[0]),
             constant: operationEntry[1]
         })
     }

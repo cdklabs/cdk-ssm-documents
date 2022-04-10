@@ -170,6 +170,29 @@ export class DictFormat implements IStringVariable {
 }
 
 /**
+ * These string variables are being set by SSM agent during execution. For example; platformType.
+ * Variables are printed as using with brackets, e.g, myVariable instead of {{ myVariable }}.
+ * To resolve a variable, you must supply the available inputs and the variable will resolve the value.
+ */
+export class NoBracketsStringVariable extends StringVariable {
+    readonly reference: string;
+ 
+    constructor(reference: string) {
+        super(reference);
+        this.reference = reference;
+    }
+
+    print(): string {
+        return `${this.reference}`
+    }
+ 
+    toJSON(): string {
+        return this.print();
+    }
+
+}
+
+/**
  * Assert that the given value is a NullableString.
  * @param value value to assert
  */

@@ -2,6 +2,8 @@ import {SsmDocumentProps, SsmDocument} from "./ssm-document";
 import {Construct} from "constructs";
 import {SimulationResult} from "../domain/simulation-result";
 import {CommandStep} from "../parent-steps/command-step";
+import {Platforms} from "../domain/platform";
+
 
 export interface CommandDocumentProps extends SsmDocumentProps {
 
@@ -58,6 +60,8 @@ export class CommandDocument extends SsmDocument {
             .replace(/:/g, '.');
         const prefix = Math.floor(Math.random() * 999999).toString().padStart(6 ,"0");
         inputs['automation:EXECUTION_ID'] = prefix + '-1a2b3c-1a2b3c-1a2b3c1a2b3c1a2b3c';
+        const platform = Platforms.fromProcess();
+        inputs['platformType'] = platform;
         return this.createChain(this.collectedSteps()).invoke(inputs);
     }
 

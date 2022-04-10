@@ -2,7 +2,7 @@ import { Construct } from 'constructs';
 import {CommandStep, CommandStepProps} from "../command-step";
 import {Platform} from "../../domain/platform";
 import {IEnvironment, LoggingEnvironment} from "../../interface/environment";
-import { IStringVariable } from '../../interface/variables/string-variable';
+import {IStringVariable} from '../../interface/variables/string-variable';
 
 /**
  * Properties for sleep step.
@@ -46,8 +46,8 @@ export class RunShellScriptStep extends CommandStep {
     readonly timeoutSeconds?: number;
     readonly workingDirectory?: IStringVariable;
     readonly environment: IEnvironment;
-
     readonly platforms = [Platform.MAC_OS, Platform.LINUX];
+
     readonly action = "aws:runShellScript";
 
     constructor(scope: Construct, id: string, props: RunShellScriptStepProps) {
