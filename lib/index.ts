@@ -41,9 +41,9 @@ export * from './parent-steps/automation/copy-image-step';
 export * from './parent-steps/automation/change-instance-state-step';
 
 
-//export * from './parent-steps/command/run-powershell-script-step';
+export * from './parent-steps/command/run-powershell-script-step';
 export * from './parent-steps/command/run-shell-script-step';
-//export * from './parent-steps/command/ps-module-step';
+export * from './parent-steps/command/ps-module-step';
 
 export * from './patterns/automation/reboot-instance-and-wait';
 export * from './patterns/automation/string-step';
