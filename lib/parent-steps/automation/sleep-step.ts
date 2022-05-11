@@ -1,7 +1,7 @@
 import {AutomationStep, AutomationStepProps} from "../automation-step";
 import { Output } from "../../domain/output";
 import { SleepImpl, ISleepHook } from "../../interface/sleep-hook";
-import { Construct } from '@aws-cdk/core';
+import { Construct } from 'constructs';
 
 /**
  * Properties for sleep step.

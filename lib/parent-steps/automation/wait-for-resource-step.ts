@@ -1,7 +1,7 @@
 import { NonRetriableException } from "../../domain/non-retriable-exception";
 import { ISleepHook, SleepImpl } from "../../interface/sleep-hook";
 import { AssertAwsResourceStep, AssertAwsResourceStepProps } from "./assert-aws-resource-step";
-import { Construct } from '@aws-cdk/core';
+import { Construct } from 'constructs';
 
 export interface WaitForResourceStepProps extends AssertAwsResourceStepProps {
     /**

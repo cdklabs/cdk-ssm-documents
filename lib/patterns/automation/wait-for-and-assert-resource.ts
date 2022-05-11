@@ -1,4 +1,4 @@
-import { Construct } from "@aws-cdk/core";
+import { Construct } from "constructs";
 import { WaitForResourceStep } from "../../parent-steps/automation/wait-for-resource-step";
 import { IAwsInvoker } from "../../interface/aws-invoker";
 import { AssertAwsResourceStep, AssertAwsResourceStepProps } from "../../parent-steps/automation/assert-aws-resource-step";

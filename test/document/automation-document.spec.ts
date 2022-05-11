@@ -1,6 +1,8 @@
+import {Construct} from "constructs";
+
 let assert = require('assert');
-import { SynthUtils } from "@aws-cdk/assert";
-import { Construct, Stack } from "@aws-cdk/core";
+import { SynthUtils } from "../../lib";
+import { Stack } from "aws-cdk-lib";
 import { AutomationDocument, AutomationDocumentProps, DataTypeEnum, ExecuteScriptStep, MockPause, PauseStep, ResponseCode, ScriptLanguage } from "../../lib";
 import { assertDeepEqual } from "../test-utils/assert-deep-equal";
 let resolve = require('path').resolve;

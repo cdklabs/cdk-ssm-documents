@@ -5,7 +5,7 @@ import {Step, StepProps} from "./step";
 import { CancellationException } from "../domain/cancellation-exception"
 import { NonRetriableException } from "../domain/non-retriable-exception"
 import { DataType, DataTypeEnum } from "../domain/data-type";
-import {Construct} from "@aws-cdk/core";
+import {Construct} from "constructs";
 import { StringVariable } from "..";
 
 const jp = require('jsonpath');

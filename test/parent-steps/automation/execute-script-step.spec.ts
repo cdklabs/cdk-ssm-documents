@@ -1,6 +1,6 @@
 var assert = require('assert');
 var resolve = require('path').resolve;
-import { Stack } from '@aws-cdk/core';
+import { Stack } from 'aws-cdk-lib';
 
 import { DataTypeEnum, ExecuteScriptStep, ResponseCode, ScriptLanguage } from "../../../lib";
 import { assertDeepEqual } from '../../test-utils/assert-deep-equal';

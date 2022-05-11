@@ -8,7 +8,7 @@ import {
     StringFormat,
     StringVariable
 } from '../../../lib';
-import { Stack } from '@aws-cdk/core';
+import { Stack } from 'aws-cdk-lib';
 
 describe('RunShellScriptStep', function() {
     describe('#invoke()', function() {

@@ -1,7 +1,7 @@
 import { Output } from "../domain/output";
 import { SimulationResult } from "../domain/simulation-result";
 import { IObserver, NoopObserver } from "../interface/observer";
-import { Construct } from '@aws-cdk/core';
+import { Construct } from 'constructs';
 
 export interface StepProps {
     /**

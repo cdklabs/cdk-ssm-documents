@@ -1,4 +1,5 @@
-import { Construct, Stack } from "@aws-cdk/core";
+import { Stack } from "aws-cdk-lib";
+import { Construct } from "constructs";
 import { AutomationStep, AutomationStepProps, AwsApiStep, DataTypeEnum, IAwsInvoker, ReflectiveAwsInvoker, ResponseCode } from "../..";
 import { Output } from "../../domain/output";
 import { IStringMapVariable } from "../../interface/variables/string-map-variable";

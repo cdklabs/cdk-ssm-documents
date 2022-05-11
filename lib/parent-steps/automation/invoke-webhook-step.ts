@@ -1,4 +1,4 @@
-import { Construct } from "@aws-cdk/core";
+import { Construct } from "constructs";
 import { IStringVariable } from "../..";
 import { DataTypeEnum } from "../../domain/data-type";
 import { Output } from "../../domain/output";

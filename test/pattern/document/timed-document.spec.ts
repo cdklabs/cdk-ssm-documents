@@ -1,7 +1,6 @@
-import { SynthUtils } from '@aws-cdk/assert';
-import { Stack } from '@aws-cdk/core';
-import { Construct } from "@aws-cdk/core";
-import { AutomationDocumentProps, MockSleep, SleepStep } from '../../../lib';
+import { Stack } from 'aws-cdk-lib';
+import { Construct } from "constructs";
+import {AutomationDocumentProps, MockSleep, SleepStep, SynthUtils} from '../../../lib';
 import { TimedDocument } from '../../../lib/';
 var assert = require('assert');
 

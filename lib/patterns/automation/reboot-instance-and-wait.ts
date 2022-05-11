@@ -1,4 +1,4 @@
-import { Construct } from "@aws-cdk/core";
+import { Construct } from "constructs";
 import { IStringVariable } from "../../interface/variables/string-variable";
 import { AwsApiStep } from "../../parent-steps/automation/aws-api-step";
 import { WaitForResourceStep } from "../../parent-steps/automation/wait-for-resource-step";

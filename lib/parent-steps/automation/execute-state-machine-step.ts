@@ -1,7 +1,8 @@
 import {AutomationStep, AutomationStepProps} from "../automation-step";
 import {Output} from "../../domain/output";
 import {IAwsInvoker, ReflectiveAwsInvoker} from "../../interface/aws-invoker";
-import {Construct, Stack} from '@aws-cdk/core';
+import { Stack } from "aws-cdk-lib";
+import { Construct } from "constructs";
 import { pruneAndTransformRecord } from "../../utils/prune-and-transform-record";
 import { IStringVariable } from "../../interface/variables/string-variable";
 import { AwsApiStep } from "./aws-api-step";

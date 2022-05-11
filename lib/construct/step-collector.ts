@@ -1,6 +1,7 @@
-import { IAspect, IConstruct } from "@aws-cdk/core";
+import { IAspect } from "aws-cdk-lib";
 import { AutomationStep } from "../parent-steps/automation-step";
 import { CommandStep } from "../parent-steps/command-step";
+import {IConstruct} from "constructs";
 
 /**
  * Collects steps found in the tree using the visitor pattern (IAspect).

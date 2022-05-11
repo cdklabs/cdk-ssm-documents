@@ -1,4 +1,5 @@
-import { Construct, Stack } from '@aws-cdk/core';
+import { Stack } from "aws-cdk-lib";
+import { Construct } from "constructs";
 import { StackStatus } from '../..';
 import { DataTypeEnum } from "../../domain/data-type";
 import { Output } from "../../domain/output";

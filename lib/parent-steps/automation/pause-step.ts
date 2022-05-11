@@ -1,7 +1,7 @@
-import {AutomationStep, AutomationStepProps} from "../../parent-steps/automation-step";
+import {AutomationStep, AutomationStepProps} from "../automation-step";
 import { Output } from "../../domain/output";
 import { IPauseHook, PauseImpl } from "../../interface/pause-hook";
-import { Construct } from '@aws-cdk/core';
+import { Construct } from 'constructs';
 
 /**
  * Properties for PauseStep

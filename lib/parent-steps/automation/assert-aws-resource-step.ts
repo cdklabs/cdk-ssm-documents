@@ -1,6 +1,6 @@
 import { Output } from "../../domain/output";
 import { AwsApiStep, AwsInvocationProps } from "./aws-api-step";
-import { Construct } from '@aws-cdk/core';
+import { Construct } from 'constructs';
 
 const jp = require('jsonpath');
 

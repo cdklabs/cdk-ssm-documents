@@ -1,7 +1,7 @@
 import {AutomationStep, AutomationStepProps} from "../automation-step";
 import { Output } from "../../domain/output";
 import { PythonScriptHandler } from "../../script/python-script-handler";
-import { Construct } from '@aws-cdk/core';
+import { Construct } from 'constructs';
 
 const tmp = require('tmp');
 import * as fs from 'fs';

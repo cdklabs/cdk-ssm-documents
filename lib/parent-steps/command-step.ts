@@ -3,7 +3,7 @@ import {Output} from "../domain/output";
 import {SimulationResult} from "../domain/simulation-result";
 import {ResponseCode} from "../domain/response-code";
 import {NonRetriableException} from "../domain/non-retriable-exception";
-import {Construct} from "@aws-cdk/core";
+import {Construct} from "constructs";
 import {Platform} from "../domain/platform";
 import { StringVariable } from "..";
 

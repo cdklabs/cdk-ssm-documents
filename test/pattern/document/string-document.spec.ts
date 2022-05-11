@@ -1,8 +1,7 @@
 var assert = require('assert');
-import { SynthUtils } from "@aws-cdk/assert";
-import { Stack } from "@aws-cdk/core";
-import { MockAwsInvoker, MockSleep } from "../../../lib";
-import { StringDocument } from "../../../lib/patterns/document/string-document";
+import { Stack } from "aws-cdk-lib";
+import {MockAwsInvoker, MockSleep, SynthUtils} from "../../../lib";
+import { StringDocument } from "../../../lib";
 
 
 describe('StringDocument', function() {

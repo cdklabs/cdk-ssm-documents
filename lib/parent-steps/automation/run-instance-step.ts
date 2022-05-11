@@ -1,4 +1,5 @@
-import { Construct, Stack } from '@aws-cdk/core';
+import { Stack } from "aws-cdk-lib";
+import { Construct } from "constructs";
 import { DataTypeEnum, IBooleanVariable, IMapListVariable, INumberVariable, IStringListVariable, IStringMapVariable, IStringVariable } from "../..";
 import { Output } from "../../domain/output";
 import { ResponseCode } from "../../domain/response-code";

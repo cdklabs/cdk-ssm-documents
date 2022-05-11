@@ -1,5 +1,4 @@
-import { Construct } from '@aws-cdk/core';
-import { DataTypeEnum } from "../..";
+import { Construct } from "constructs";import { DataTypeEnum } from "../..";
 import { Output } from "../../domain/output";
 import { ApiRunCommandHook, DocumentHashType, IRunCommandHook, RunCommandProps } from "../../interface/run-command-hook";
 import { EnumVariable, HardCodedEnum, IEnumVariable } from "../../interface/variables/enum-variable";
@@ -8,7 +7,7 @@ import { INumberVariable } from "../../interface/variables/number-variable";
 import { IStringListVariable } from "../../interface/variables/string-list-variable";
 import { IStringMapVariable } from "../../interface/variables/string-map-variable";
 import { IStringVariable } from "../../interface/variables/string-variable";
-import { AutomationStep, AutomationStepProps } from "../../parent-steps/automation-step";
+import { AutomationStep, AutomationStepProps } from "../automation-step";
 import { pruneAndTransformRecord } from "../../utils/prune-and-transform-record";
 
 /**

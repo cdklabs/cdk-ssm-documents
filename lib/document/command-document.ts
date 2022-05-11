@@ -1,5 +1,5 @@
 import {SsmDocumentProps, SsmDocument} from "./ssm-document";
-import {Construct} from "@aws-cdk/core";
+import {Construct} from "constructs";
 import {SimulationResult} from "../domain/simulation-result";
 import {CommandStep} from "../parent-steps/command-step";
 
