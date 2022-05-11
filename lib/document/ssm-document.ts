@@ -4,9 +4,10 @@ import { Input } from "../domain/input";
 import { DocumentOutput } from "../domain/document-output";
 import { ResponseCode } from "../domain/response-code";
 import { SimulationResult } from "../domain/simulation-result";
-import { Construct, CfnTag, IResolvable, Aspects, Lazy } from "@aws-cdk/core";
+import { CfnTag, IResolvable, Aspects, Lazy } from "aws-cdk-lib";
 import { StepCollector } from "../construct/step-collector";
-import { CfnDocument } from "@aws-cdk/aws-ssm";
+import { Construct } from "constructs";
+import { CfnDocument } from "aws-cdk-lib/aws-ssm";
 
 const yaml = require('js-yaml');
 const {EOL} = require('os');

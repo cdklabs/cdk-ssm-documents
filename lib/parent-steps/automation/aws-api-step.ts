@@ -1,7 +1,7 @@
 import {AutomationStep, AutomationStepProps} from "../automation-step";
 import {Output} from "../../domain/output";
 import {IAwsInvoker, ReflectiveAwsInvoker} from "../../interface/aws-invoker";
-import {Construct} from '@aws-cdk/core';
+import {Construct} from 'constructs';
 import { DictFormat } from "../..";
 
 export interface AwsInvocationProps extends AutomationStepProps {

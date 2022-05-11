@@ -1,4 +1,4 @@
-import { Construct } from '@aws-cdk/core';
+import { Construct } from "constructs";
 import {CommandStep, CommandStepProps} from "../command-step";
 import {Platform} from "../../domain/platform";
 import {IEnvironment, LoggingEnvironment} from "../../interface/environment";

@@ -1,12 +1,12 @@
-import { Construct } from '@aws-cdk/core';
 import { DataTypeEnum } from "../../domain/data-type";
 import { Output } from "../../domain/output";
 import { ApproveImpl, IApproveHook } from "../../interface/approve-hook";
 import { INumberVariable } from "../../interface/variables/number-variable";
 import { IStringListVariable } from "../../interface/variables/string-list-variable";
 import { IStringVariable } from "../../interface/variables/string-variable";
-import { AutomationStep, AutomationStepProps } from "../../parent-steps/automation-step";
+import { AutomationStep, AutomationStepProps } from "../automation-step";
 import { pruneAndTransformRecord } from "../../utils/prune-and-transform-record";
+import {Construct} from "constructs";
 
 /**
  * Properties for ApproveStep

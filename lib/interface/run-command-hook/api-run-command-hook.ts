@@ -1,4 +1,4 @@
-import { Stack } from "@aws-cdk/core";
+import { Stack } from "aws-cdk-lib";
 import { IAwsInvoker, IRunCommandHook, ReflectiveAwsInvoker, RunCommandOutputs, RunCommandProps, SleepStep } from "../..";
 import { DataTypeEnum } from "../../domain/data-type";
 import { ResponseCode } from "../../domain/response-code";

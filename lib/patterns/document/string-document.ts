@@ -1,5 +1,5 @@
 import { AutomationDocument, AutomationDocumentProps } from "../../document/automation-document"
-import { Construct } from "@aws-cdk/core";
+import { Construct } from "constructs";
 import { DataType, DocumentFormat, Input, SimulationProps, StringStep } from "../..";
 import * as fs from 'fs';
 const yaml = require('js-yaml');

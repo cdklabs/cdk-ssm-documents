@@ -1,6 +1,12 @@
-import { SynthUtils } from "@aws-cdk/assert";
-import { Construct, Stack } from "@aws-cdk/core";
-import {AutomationDocument, AutomationDocumentProps, RebootInstanceAndWait, StringVariable} from "../../../lib";
+import { Stack } from "aws-cdk-lib";
+import {
+    AutomationDocument,
+    AutomationDocumentProps,
+    RebootInstanceAndWait,
+    StringVariable,
+    SynthUtils
+} from "../../../lib";
+import {Construct} from "constructs";
 var assert = require('assert');
 
 class MyRebootAutomationDoc extends AutomationDocument {

@@ -7,7 +7,7 @@
   "homepage": "https://github.com/cdklabs/cdk-ssm-document.git",
   "scripts": {
     "build": "jsii -vvv",
-    "clean": "tsc --build --clean",
+    "clean": "cd lib; find . -name \"*.d.ts\" -type f -delete; find . -name \"*.js\" -type f -delete",
     "version": "jsii --version",
     "build:watch": "jsii -w",
     "package": "jsii-pacmak -vvv",
@@ -50,10 +50,9 @@
     "jsii-release": "^0.2.92",
     "ts-mocha": "^10.0.0",
     "mocha": "^10.0.0",
-    "@aws-cdk/core": "1.127.0",
-    "@aws-cdk/aws-ssm": "1.127.0",
-    "@aws-cdk/cx-api": "1.127.0",
-    "constructs": "3.3.69"
+    "aws-cdk-lib": "2.0.0",
+    "constructs": "10.0.0",
+    "typescript": "~3.9.0"
   },
   "dependencies": {
     "synchronized-promise": "0.3.1",
@@ -64,9 +63,8 @@
     "tmp": "^0.2.1",
     "ts-node": "^8.6.1",
     "iso8601-duration": "1.3.0",
-    "@aws-cdk/core": "^1.127.0",
-    "@aws-cdk/aws-ssm": "^1.127.0",
-    "@aws-cdk/assert": "^1.127.0",
+    "aws-cdk-lib": "2.0.0",
+    "constructs": "10.0.0",
     "immutable": "4.0.0"
   },
   "bundledDependencies": [
@@ -78,13 +76,10 @@
     "tmp",
     "ts-node",
     "iso8601-duration",
-    "@aws-cdk/assert",
     "immutable"
   ],
   "peerDependencies": {
-    "@aws-cdk/core": "^1.127.0",
-    "@aws-cdk/aws-ssm": "^1.127.0",
-    "@aws-cdk/cx-api": "^1.127.0",
-    "constructs": "^3.3.69"
+    "aws-cdk-lib": "^2.0.0",
+    "constructs": "^10.0.0"
   }
 }

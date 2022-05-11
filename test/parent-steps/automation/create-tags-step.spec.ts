@@ -1,5 +1,5 @@
 var assert = require('assert');
-import { Stack } from '@aws-cdk/core';
+import { Stack } from 'aws-cdk-lib';
 import { HardCodedMapList, HardCodedStringList, MockAwsInvoker, ResponseCode } from '../../../lib';
 import { CreateTagsStep, HardCodedResourceType, ResourceType, ResourceTypeVariable } from '../../../lib/parent-steps/automation/create-tags-step';
 

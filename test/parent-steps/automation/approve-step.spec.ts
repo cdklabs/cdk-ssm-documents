@@ -1,5 +1,5 @@
 var assert = require('assert');
-import { Stack } from '@aws-cdk/core';
+import { Stack } from 'aws-cdk-lib';
 import { ApproveStep, HardCodedNumber, HardCodedString, HardCodedStringList, MockApprove, ResponseCode } from '../../../lib';
 
 describe('ApproveStep', function() {

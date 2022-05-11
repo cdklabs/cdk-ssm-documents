@@ -1,7 +1,7 @@
 var assert = require('assert');
 import {MockAwsInvoker, ResponseCode} from '../../../lib';
 import { WaitForResourceStep } from '../../../lib';
-import { Stack } from '@aws-cdk/core';
+import { Stack } from 'aws-cdk-lib';
 
 describe('WaitForResourceStep', function() {
     describe('#invoke()', function() {

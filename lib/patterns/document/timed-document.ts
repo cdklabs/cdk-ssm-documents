@@ -1,5 +1,5 @@
 import { AutomationDocument, AutomationDocumentProps } from "../../document/automation-document"
-import { Construct } from "@aws-cdk/core";
+import { Construct } from "constructs";
 import { AutomationStep, DataTypeEnum, ExecuteScriptStep, ScriptLanguage } from "../..";
 
 export class TimedDocument extends AutomationDocument {

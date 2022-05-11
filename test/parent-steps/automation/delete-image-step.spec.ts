@@ -1,5 +1,5 @@
 var assert = require('assert');
-import { Stack } from '@aws-cdk/core';
+import { Stack } from 'aws-cdk-lib';
 import { HardCodedString, MockAwsInvoker, MockSleep, ResponseCode } from '../../../lib';
 import { DeleteImageStep } from '../../../lib/parent-steps/automation/delete-image-step';
 

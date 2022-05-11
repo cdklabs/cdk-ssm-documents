@@ -1,6 +1,6 @@
 var assert = require('assert');
 import { CopyImageStep, HardCodedBoolean, HardCodedString, MockAwsInvoker, ResponseCode } from '../../../lib';
-import { Stack } from '@aws-cdk/core';
+import { Stack } from 'aws-cdk-lib';
 
 describe('CopyImageStep', () => {
     describe('#invoke()', () => {

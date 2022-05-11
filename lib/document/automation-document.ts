@@ -1,7 +1,7 @@
 import { SimulationResult } from "../domain/simulation-result";
 import { AutomationStep } from "../parent-steps/automation-step";
 import { SsmDocumentProps, SsmDocument } from "./ssm-document";
-import { Construct } from "@aws-cdk/core";
+import { Construct } from "constructs";
 
 /**
  * Options for AutomationDocument

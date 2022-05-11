@@ -3,7 +3,7 @@ import { Output } from "../../domain/output";
 import { Choice } from "../../domain/choice";
 import { ResponseCode } from "../../domain/response-code";
 import { SimulationResult } from "../../domain/simulation-result";
-import { Construct } from '@aws-cdk/core';
+import { Construct } from 'constructs';
 
 
 export interface BranchStepProps extends AutomationStepProps {

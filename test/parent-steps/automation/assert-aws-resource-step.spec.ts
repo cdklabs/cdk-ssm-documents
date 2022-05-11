@@ -1,5 +1,5 @@
 import {AssertAwsResourceStep, MockAwsInvoker, ResponseCode, StringVariable} from '../../../lib';
-import { Stack } from '@aws-cdk/core';
+import { Stack } from 'aws-cdk-lib';
 
 var assert = require('assert');
 

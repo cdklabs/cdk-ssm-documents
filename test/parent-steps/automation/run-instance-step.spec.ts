@@ -1,6 +1,6 @@
 var assert = require('assert');
 import { HardCodedBoolean, HardCodedMapList, HardCodedNumber, HardCodedString, HardCodedStringList, HardCodedStringMap, MockAwsInvoker, NumberVariable, ResponseCode, RunInstanceStep, StringVariable } from '../../../lib';
-import { Stack } from '@aws-cdk/core';
+import { Stack } from 'aws-cdk-lib';
 
 describe('RunInstanceStep', function() {
     describe('#invoke()', function() {

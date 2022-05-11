@@ -1,11 +1,11 @@
-import {RunShellScriptStep} from "../../lib/parent-steps/command/run-shell-script-step";
+import {RunShellScriptStep, SynthUtils} from "../../lib";
 
 let assert = require('assert');
-import { SynthUtils } from "@aws-cdk/assert";
-import { Construct, Stack } from "@aws-cdk/core";
+import { Stack } from "aws-cdk-lib";
 import {
     CommandDocument, DataTypeEnum, ResponseCode, StringFormat, StringVariable
 } from "../../lib";
+import {Construct} from "constructs";
 
 describe('CommandDocument', function() {
     describe('#runSimulation()', function() {

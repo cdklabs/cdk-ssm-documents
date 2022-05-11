@@ -1,6 +1,6 @@
 import { AwsApiStep } from '../../../lib';
 import {DataTypeEnum, StringVariable, MockAwsInvoker, ResponseCode} from '../../../lib';
-import { Stack } from '@aws-cdk/core';
+import { Stack } from 'aws-cdk-lib';
 
 var assert = require('assert');
 

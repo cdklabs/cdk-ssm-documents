@@ -1,4 +1,4 @@
-import { Stack } from "@aws-cdk/core";
+import { Stack } from "aws-cdk-lib";
 import { ChangeInstanceStateStep, ChangeInstanceStateStepProps, DesiredStateVariable, HardCodedBoolean, HardCodedString, HardCodedStringList, MockAwsInvoker, ResponseCode } from "../../../lib";
 import assert = require("assert");
 

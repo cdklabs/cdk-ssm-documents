@@ -1,7 +1,7 @@
 var assert = require('assert');
 
 import { BranchStep, Choice, MockPause, Operation, PauseStep, StringVariable } from "../../../lib";
-import { Stack } from '@aws-cdk/core';
+import { Stack } from 'aws-cdk-lib';
 
 describe('BranchStep', function() {
     describe('#invoke()', function() {

@@ -1,9 +1,9 @@
-var assert = require('assert');
-import { SynthUtils } from "@aws-cdk/assert";
-import { Construct, Stack } from "@aws-cdk/core";
-import { AutomationDocument, AutomationDocumentProps, DataTypeEnum } from "../../../lib";
+import {Construct} from "constructs";
+import { Stack } from "aws-cdk-lib";
+import {AutomationDocument, AutomationDocumentProps, DataTypeEnum, SynthUtils} from "../../../lib";
 import { StringStep } from '../../../lib';
 
+const assert = require('assert');
 
 describe('StringStep', function() {
     describe('#invoke()', function() {

@@ -1,6 +1,6 @@
 var assert = require('assert');
 import { MockSleep, SleepStep } from '../../../lib';
-import { Stack } from '@aws-cdk/core';
+import { Stack } from 'aws-cdk-lib';
 
 describe('PauseStep', function() {
     describe('#invoke()', function() {

@@ -1,4 +1,4 @@
-import { Construct } from "@aws-cdk/core";
+import { Construct } from "constructs";
 import { IAwsInvoker } from "../../interface/aws-invoker";
 import { WaitForAndAssertResource } from "./wait-for-and-assert-resource";
 

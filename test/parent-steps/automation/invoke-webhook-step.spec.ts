@@ -1,5 +1,5 @@
 var assert = require('assert');
-import { Stack } from '@aws-cdk/core';
+import { Stack } from 'aws-cdk-lib';
 import { HardCodedString, IWebhook, InvokeWebhookProps, InvokeWebhookResult, InvokeWebhookStep, InvokeWebhookStepProps, ResponseCode } from '../../../lib';
 
 describe('InvokeWebhookStep', () => {

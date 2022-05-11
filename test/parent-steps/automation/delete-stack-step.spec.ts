@@ -1,5 +1,5 @@
 import {StringVariable, MockAwsInvoker, ResponseCode} from '../../../lib';
-import { Stack } from '@aws-cdk/core';
+import { Stack } from 'aws-cdk-lib';
 import {DeleteStackStep} from "../../../lib/parent-steps/automation/delete-stack-step";
 
 var assert = require('assert');

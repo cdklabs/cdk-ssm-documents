@@ -1,6 +1,6 @@
 var assert = require('assert');
 import { HardCodedString, HardCodedStringMap, InvokeLambdaFunctionStep, MockAwsInvoker, ResponseCode } from '../../../lib';
-import { Stack } from '@aws-cdk/core';
+import { Stack } from 'aws-cdk-lib';
 
 describe('InvokeLambdaFunctionStep', () => {
     describe('#invoke()', () => {

@@ -1,4 +1,4 @@
-import { Stack } from "@aws-cdk/core";
+import { Stack } from "aws-cdk-lib";
 import assert = require("assert");
 import { DocumentHashType, HardCodedDocumentHashType, HardCodedNumber, HardCodedString, HardCodedStringList, HardCodedStringMap, IRunCommandHook, ResponseCode, RunCommandOutputs, RunCommandProps, RunCommandStep } from "../../../lib";
 
