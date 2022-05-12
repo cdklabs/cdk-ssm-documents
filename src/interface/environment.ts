@@ -20,16 +20,16 @@ export interface IEnvironment {
 export class DockerEnvironment implements IEnvironment {
 
   /**
-     * Use an existing container against which to run commands using the run function.
-     */
+   * Use an existing container against which to run commands using the run function.
+   */
   public static fromContainer(containerId: string): DockerEnvironment {
     return new DockerEnvironment(containerId);
   }
 
   /**
-     * Create a container from the provided image.
-     * The container created will be used by this instance to run commands using the run function.
-     */
+   * Create a container from the provided image.
+   * The container created will be used by this instance to run commands using the run function.
+   */
   public static fromImage(image: string): DockerEnvironment {
     return new DockerEnvironment(DockerEnvironment.execute(`docker run -di ${image}`));
   }
@@ -49,17 +49,17 @@ export class DockerEnvironment implements IEnvironment {
   }
 
   /**
-     * Runs commands against the docker specified during construction.
-     * This function runs synchronously.
-     * @returns the response from the docker as a string.
-     */
+   * Runs commands against the docker specified during construction.
+   * This function runs synchronously.
+   * @returns the response from the docker as a string.
+   */
   run(command: string): string {
     return DockerEnvironment.execute(`docker exec -i ${this.containerId} ${command}`);
   }
 
   /**
-     * Force removes the container associated with this instance.
-     */
+   * Force removes the container associated with this instance.
+   */
   removeContainer(): void {
     execSync(`docker rm -f ${this.containerId}`);
   }
