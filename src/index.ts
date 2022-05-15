@@ -55,6 +55,7 @@ export * from './parent-steps/command/update-agent-step';
 export * from './parent-steps/command/update-ssm-agent-step';
 export * from './parent-steps/command/configure-package-step';
 export * from './parent-steps/command/configure-docker-step';
+export * from './parent-steps/command/run-document-step';
 
 export * from './patterns/automation/reboot-instance-and-wait';
 export * from './patterns/automation/string-step';
@@ -72,6 +73,7 @@ export * from './interface/run-command-hook';
 export * from './interface/pause-hook';
 export * from './interface/sleep-hook';
 export * from './interface/variables/variable';
+export * from './interface/command-step-document'
 export { IStringListVariable, HardCodedStringList, StringListVariable } from './interface/variables/string-list-variable';
 export { IBooleanVariable, HardCodedBoolean, BooleanVariable } from './interface/variables/boolean-variable';
 export { INumberVariable, HardCodedNumber, NumberVariable } from './interface/variables/number-variable';
