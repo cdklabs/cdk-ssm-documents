@@ -1,5 +1,5 @@
-import { SimulationResult } from "./simulation-result";
+import { SimulationResult } from './simulation-result';
 
 export interface DocumentResult extends SimulationResult {
-    readonly documentOutputs: string[]
+  readonly documentOutputs: string[];
 }

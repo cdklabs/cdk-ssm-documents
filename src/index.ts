@@ -64,4 +64,4 @@ export { INumberVariable, HardCodedNumber, NumberVariable } from './interface/va
 export { IMapListVariable, HardCodedMapList, MapListVariable } from './interface/variables/map-list-variable';
 export { IStringMapVariable, HardCodedStringMap, StringMapVariable } from './interface/variables/string-map-variable';
 export { IStringVariable, HardCodedString, StringVariable, StringFormat, DictFormat } from './interface/variables/string-variable';
-export { IEnumVariable, EnumVariable, HardCodedEnum } from "./interface/variables/enum-variable";
+export { IEnumVariable, EnumVariable, HardCodedEnum } from './interface/variables/enum-variable';

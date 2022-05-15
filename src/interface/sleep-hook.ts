@@ -1,10 +1,10 @@
-import { SynchronousPromise } from "../sync/synchronous-promise";
+import { SynchronousPromise } from '../sync/synchronous-promise';
 
 /**
  * This can be used to provide a hook for sleeping for SleepStep (and other places where sleep is required).
  */
 export interface ISleepHook {
-    sleep(timeMillis: number): void;
+  sleep(timeMillis: number): void;
 }
 
 /**
@@ -12,16 +12,16 @@ export interface ISleepHook {
  */
 export class SleepImpl implements ISleepHook {
 
-    /**
+  /**
      * Synchronously sleeps for duration specified in millis.
      */
-    sleep(timeMillis: number): void {
-        console.log(`Performing a real sleep of ${timeMillis} ms. Be sure to not commit code that performs a real sleep!`);
-        new SynchronousPromise().wait(
-            '../sync/async-sleep',
-            "AsyncSleep",
-            [timeMillis]);
-    }
+  sleep(timeMillis: number): void {
+    console.log(`Performing a real sleep of ${timeMillis} ms. Be sure to not commit code that performs a real sleep!`);
+    new SynchronousPromise().wait(
+      'cdk-ssm-document/lib/sync/async-sleep',
+      'AsyncSleep',
+      [timeMillis]);
+  }
 }
 
 /**
@@ -29,10 +29,10 @@ export class SleepImpl implements ISleepHook {
  */
 export class MockSleep implements ISleepHook {
 
-    readonly sleepMilliInvocations: number[] = [];
+  readonly sleepMilliInvocations: number[] = [];
 
-    sleep(timeMillis: number): void {
-        this.sleepMilliInvocations.push(timeMillis);
-        console.log(`Mocked implementation! Not performing real sleep of ${timeMillis}`);
-    }
+  sleep(timeMillis: number): void {
+    this.sleepMilliInvocations.push(timeMillis);
+    console.log(`Mocked implementation! Not performing real sleep of ${timeMillis}`);
+  }
 }

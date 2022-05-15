@@ -4,8 +4,8 @@
  * @returns UTF-8 representation of the string.
  */
 export function decodeBase64String(encodedString: string): string | null {
-    if (encodedString === null || encodedString === undefined) { return null; }
-    return Buffer.from(encodedString, "base64").toString("utf-8");
+  if (encodedString === null || encodedString === undefined) { return null; }
+  return Buffer.from(encodedString, 'base64').toString('utf-8');
 }
 
 /**
@@ -14,6 +14,6 @@ export function decodeBase64String(encodedString: string): string | null {
  * @returns input without the start or end quote if they existed.
  */
 export function stripBeginAndEndQuotes(input: string): string | null {
-    if (input === null || input === undefined) { return null; }
-    return input.replace(/^\"|\"$/g, "");
+  if (input === null || input === undefined) { return null; }
+  return input.replace(/^\"|\"$/g, '');
 }

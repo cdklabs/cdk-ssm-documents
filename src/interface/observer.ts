@@ -1,10 +1,10 @@
 
 export interface IObserver {
-    accept(value: { [name: string]: any; }): void;
+  accept(value: { [name: string]: any }): void;
 }
 
 export class NoopObserver implements IObserver {
-    accept(_value: { [name: string]: any; }): void {
-        // noop
-    }
+  accept(_value: { [name: string]: any }): void {
+    // noop
+  }
 }

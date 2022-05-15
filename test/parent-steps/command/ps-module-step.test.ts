@@ -1,15 +1,15 @@
-import {PsModuleStep} from "../../../lib/parent-steps/command/ps-module-step";
-
-var assert = require('assert');
-import {
-    HardCodedString,
-    MockEnvironment,
-    ResponseCode,
-    StringFormat,
-    StringVariable
-} from '../../../lib';
+import { strict as assert } from 'assert';
 import { Stack } from 'aws-cdk-lib';
-//import {DockerEnvironment} from "../../../lib/interface/environment"; Uncomment if running against docker container
+import {
+  HardCodedString,
+  MockEnvironment,
+  ResponseCode,
+  StringFormat,
+  StringVariable,
+} from '../../../lib';
+import { PsModuleStep } from '../../../lib/parent-steps/command/ps-module-step';
+
+//import {DockerEnvironment} from "../../lib/interface/environment"; Uncomment if running against docker container
 //Notes for running against a docker image:
 //First, figure out and download the powershell module you wish to use
 //Convert it to a zip and mount it into a docker container that has powershell on it
@@ -23,25 +23,25 @@ import { Stack } from 'aws-cdk-lib';
 //Check that /mnt/output.txt exists and has hello: world in it
 
 describe('PsModuleStep', function() {
-    describe('#invoke()', function() {
-        it('Plays substituted commands against provided env', function() {
-            const mockEnv = new MockEnvironment()
-            //const mockEnv = DockerEnvironment.fromContainer("<ContainerId>") Comment out the line above and uncomment this if running against docker container
-            const step = new PsModuleStep(new Stack(), "psModule", {
-                environment: mockEnv,
-                source: new StringFormat("%s", [new StringVariable("MyVar")]),
-                runCommand: [
-                    new HardCodedString("New-Item -Path /mnt/test -ItemType Directory ; \
+  describe('#invoke()', function() {
+    it('Plays substituted commands against provided env', function() {
+      const mockEnv = new MockEnvironment();
+      //const mockEnv = DockerEnvironment.fromContainer("<ContainerId>") Comment out the line above and uncomment this if running against docker container
+      const step = new PsModuleStep(new Stack(), 'psModule', {
+        environment: mockEnv,
+        source: new StringFormat('%s', [new StringVariable('MyVar')]),
+        runCommand: [
+          new HardCodedString('New-Item -Path /mnt/test -ItemType Directory ; \
         New-Item -Path /mnt/output.txt -ItemType File ; \
         cd /mnt ; \
-        Convertto-Yaml @{\"hello\"=\"world\"} > output.txt")
-                ]
-            });
-            const myVar = "/mnt/powershell-yaml.zip"
-            const res = step.invoke({MyVar: myVar});
-            assert.equal(res.responseCode, ResponseCode.SUCCESS);
-            assert.deepEqual(mockEnv.previousCommands, [
-                `pwsh -c \'Expand-Archive -Path ${myVar} -DestinationPath (Join-Path -Path (Get-Item ${myVar}).DirectoryName -ChildPath (Get-Item ${myVar}).BaseName) -Force ; \
+        Convertto-Yaml @{"hello"="world"} > output.txt'),
+        ],
+      });
+      const myVar = '/mnt/powershell-yaml.zip';
+      const res = step.invoke({ MyVar: myVar });
+      assert.equal(res.responseCode, ResponseCode.SUCCESS);
+      assert.deepEqual(mockEnv.previousCommands, [
+        `pwsh -c \'Expand-Archive -Path ${myVar} -DestinationPath (Join-Path -Path (Get-Item ${myVar}).DirectoryName -ChildPath (Get-Item ${myVar}).BaseName) -Force ; \
         Set-Location -Path (Join-Path -Path (Get-Item ${myVar}).DirectoryName -ChildPath (Get-Item ${myVar}).BaseName) ; \
         Remove-Item -Path package -Recurse -Force ; \
         Remove-Item -Path _rels -Recurse -Force ; \
@@ -53,37 +53,37 @@ describe('PsModuleStep', function() {
         Import-Module (Split-Path -Path ${myVar} -LeafBase) ; New-Item -Path /mnt/test -ItemType Directory ; \
         New-Item -Path /mnt/output.txt -ItemType File ; \
         cd /mnt ; \
-        Convertto-Yaml @{\"hello\"=\"world\"} > output.txt\'`
-            ])
-        });
+        Convertto-Yaml @{\"hello\"=\"world\"} > output.txt\'`,
+      ]);
     });
-    describe('#toSsmEntry()', function() {
-        it('Builds entry as per SSM Document', function() {
-            const mockEnv = new MockEnvironment()
-            const step = new PsModuleStep(new Stack(), "psModule", {
-                environment: mockEnv,
-                source: new StringFormat("%s", [new StringVariable("MyVar")]),
-                runCommand: [
-                    new HardCodedString("New-Item -Path /mnt/test -ItemType Directory ; \
+  });
+  describe('#toSsmEntry()', function() {
+    it('Builds entry as per SSM Document', function() {
+      const mockEnv = new MockEnvironment();
+      const step = new PsModuleStep(new Stack(), 'psModule', {
+        environment: mockEnv,
+        source: new StringFormat('%s', [new StringVariable('MyVar')]),
+        runCommand: [
+          new HardCodedString('New-Item -Path /mnt/test -ItemType Directory ; \
                     New-Item -Path /mnt/output.txt -ItemType File; \
                     cd /mnt ; \
-                    Convertto-Yaml @{\"hello\"=\"world\"} > output.txt")
-                ]
-            });
+                    Convertto-Yaml @{"hello"="world"} > output.txt'),
+        ],
+      });
 
-            assert.deepEqual(JSON.parse(JSON.stringify(step.toSsmEntry())), {
-                action: 'aws:psModule',
-                inputs: {
-                    runCommand: [
-                        "New-Item -Path /mnt/test -ItemType Directory ; \
+      assert.deepEqual(JSON.parse(JSON.stringify(step.toSsmEntry())), {
+        action: 'aws:psModule',
+        inputs: {
+          runCommand: [
+            'New-Item -Path /mnt/test -ItemType Directory ; \
                     New-Item -Path /mnt/output.txt -ItemType File; \
                     cd /mnt ; \
-                    Convertto-Yaml @{\"hello\"=\"world\"} > output.txt"
-                    ],
-                    "source": "{{MyVar}}"
-                },
-                name: 'psModule'
-            });
-        });
+                    Convertto-Yaml @{"hello"="world"} > output.txt',
+          ],
+          source: '{{MyVar}}',
+        },
+        name: 'psModule',
+      });
     });
+  });
 });

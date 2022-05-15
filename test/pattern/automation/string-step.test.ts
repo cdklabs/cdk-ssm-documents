@@ -1,30 +1,29 @@
-import {Construct} from "constructs";
-import { Stack } from "aws-cdk-lib";
-import {AutomationDocument, AutomationDocumentProps, DataTypeEnum, SynthUtils} from "../../../lib";
-import { StringStep } from '../../../lib';
+import * as assert from 'assert';
+import { Stack } from 'aws-cdk-lib';
+import { Construct } from 'constructs';
+import { AutomationDocument, AutomationDocumentProps, DataTypeEnum, StringStep, SynthUtils } from '../../../lib';
 
-const assert = require('assert');
 
 describe('StringStep', function() {
-    describe('#invoke()', function() {
-        it('Strings are converted to their steps', function() {
-            this.timeout(5000);
-            // Declare Automation Document
-            class MyAutomationDoc extends AutomationDocument {
-                constructor(scope: Construct, id: string, props: AutomationDocumentProps) {
-                    super(scope, id, { ...props,
-                        docInputs: [{name: "MyInput", inputType: DataTypeEnum.STRING, defaultValue: "bar"}],
-                        docOutputs: [{name: "myPython.MyOutput", outputType: DataTypeEnum.STRING}]
-                    });
+  describe('#invoke()', function() {
+    it('Strings are converted to their steps', function() {
+      // Declare Automation Document
+      class MyAutomationDoc extends AutomationDocument {
+        constructor(scope: Construct, id: string, props: AutomationDocumentProps) {
+          super(scope, id, {
+            ...props,
+            docInputs: [{ name: 'MyInput', inputType: DataTypeEnum.STRING, defaultValue: 'bar' }],
+            docOutputs: [{ name: 'myPython.MyOutput', outputType: DataTypeEnum.STRING }],
+          });
 
-                    StringStep.fromYaml(this, `
+          StringStep.fromYaml(this, `
                         name: sleep
                         action: aws:sleep
                         inputs:
                           Duration: PT0M
                     `, {});
 
-                    StringStep.fromYaml(this, `
+          StringStep.fromYaml(this, `
                         name: myBranch
                         action: aws:branch
                         inputs:
@@ -34,9 +33,9 @@ describe('StringStep', function() {
                             StringEquals: foo
                           Default:
                             sleep
-                    `, {})
+                    `, {});
 
-                    StringStep.fromYaml(this, `
+          StringStep.fromYaml(this, `
                         name: myPython
                         action: "aws:executeScript"
                         outputs:
@@ -51,23 +50,23 @@ describe('StringStep', function() {
                           Script: >
                             def my_func(args, context):
                               return {"MyReturn": args["MyInput"] + "-suffix"}
-                    `, {})
-                }
-            }
-  
-            // Synthesize it
-            const stack: Stack = new Stack();
-            const myAutomationDoc = new MyAutomationDoc(stack, "MyAutomationDoc", {
-              documentName: "MyDoc"
-            });
-            SynthUtils.synthesize(stack);
-  
-            // Execute simulation
-            const simOutput = myAutomationDoc.runSimulation({MyInput: "foo"});
+                    `, {});
+        }
+      }
 
-            // Assert simulation result
-            assert.equal((simOutput.outputs??{})['myPython.MyOutput'], "foo-suffix");
-            assert.deepEqual(simOutput.executedSteps, ['sleep', 'myBranch', 'myPython']);
-        });
+      // Synthesize it
+      const stack: Stack = new Stack();
+      const myAutomationDoc = new MyAutomationDoc(stack, 'MyAutomationDoc', {
+        documentName: 'MyDoc',
+      });
+      SynthUtils.synthesize(stack);
+
+      // Execute simulation
+      const simOutput = myAutomationDoc.runSimulation({ MyInput: 'foo' });
+
+      // Assert simulation result
+      assert.strictEqual((simOutput.outputs??{})['myPython.MyOutput'], 'foo-suffix');
+      assert.deepStrictEqual(simOutput.executedSteps, ['sleep', 'myBranch', 'myPython']);
     });
+  });
 });

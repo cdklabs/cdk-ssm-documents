@@ -4,7 +4,7 @@
  * A failed/canceled response will contain the stackTrace.
  */
 export enum ResponseCode {
-    SUCCESS,
-    CANCELED,
-    FAILED
+  SUCCESS,
+  CANCELED,
+  FAILED
 }
