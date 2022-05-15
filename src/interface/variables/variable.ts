@@ -6,55 +6,55 @@
  * In the event that a hardcoded value is passed into a step, you can reference the value with a HardCodedValue.
  */
 export interface IGenericVariable {
-    /**
+  /**
      * Given the execution inputs, return the resolved value of this variable.
      * @param inputs are the execution inputs.
      */
-    resolve(inputs: Record<string, any>): any;
+  resolve(inputs: Record<string, any>): any;
 
-    /**
+  /**
      * Prints the variable in a way that SSM understands. This is typically in the form of {{Variable}} or the value.
      * @example {{MyVariable}}
      */
-    print(): string | any;
+  print(): string | any;
 
-    /**
+  /**
      * The inputs that are required for determining the value of this variable.
      * In the case of a single variable string, this will return a single value.
      */
-    requiredInputs(): string[];
+  requiredInputs(): string[];
 
-    /**
+  /**
      * JSON.stringify(variable) will implicitly invoke this variable.
      */
-    toJSON(): any;
+  toJSON(): any;
 }
 
 export abstract class HardCodedValueBase<TValue> implements IGenericVariable {
-    readonly val: TValue;
+  readonly val: TValue;
 
-    constructor(val: TValue) {
-        this.assertType(val);
-        this.val = val;
-    }
+  constructor(val: TValue) {
+    this.assertType(val);
+    this.val = val;
+  }
 
-    resolve(_inputs: Record<string, any>): any {
-        return this.val;
-    }
+  resolve(_inputs: Record<string, any>): any {
+    return this.val;
+  }
 
-    print(): string | any {
-        return this.val;
-    }
+  print(): string | any {
+    return this.val;
+  }
 
-    requiredInputs(): string[] {
-        return [];
-    }
+  requiredInputs(): string[] {
+    return [];
+  }
 
-    toJSON(): any {
-        return this.val;
-    }
+  toJSON(): any {
+    return this.val;
+  }
 
-    protected abstract assertType(value: any): void;
+  protected abstract assertType(value: any): void;
 }
 
 /**
@@ -63,34 +63,34 @@ export abstract class HardCodedValueBase<TValue> implements IGenericVariable {
  * To resolve a variable, you must supply the available inputs and the variable will resolve the value.
  */
 export abstract class GenericVariable implements IGenericVariable {
-    readonly reference: string;
+  readonly reference: string;
 
-    constructor(reference: string) {
-        this.reference = reference;
-    }
+  constructor(reference: string) {
+    this.reference = reference;
+  }
 
-    resolve(inputs: Record<string, any>): any {
-        const result = inputs[this.reference];
-        if (result === undefined) { return result; }
-        this.assertType(result);
-        return result;
-    }
+  resolve(inputs: Record<string, any>): any {
+    const result = inputs[this.reference];
+    if (result === undefined) { return result; }
+    this.assertType(result);
+    return result;
+  }
 
-    print(): string | any {
-        return this.toPlaceholder();
-    }
+  print(): string | any {
+    return this.toPlaceholder();
+  }
 
-    private toPlaceholder(): string {
-        return `{{${this.reference}}}`;
-    }
+  private toPlaceholder(): string {
+    return `{{${this.reference}}}`;
+  }
 
-    requiredInputs(): string[] {
-        return [this.reference];
-    }
+  requiredInputs(): string[] {
+    return [this.reference];
+  }
 
-    toJSON(): any {
-        return this.toPlaceholder();
-    }
+  toJSON(): any {
+    return this.toPlaceholder();
+  }
 
-    protected abstract assertType(value: any): void;
+  protected abstract assertType(value: any): void;
 }

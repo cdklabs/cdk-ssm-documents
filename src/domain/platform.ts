@@ -4,7 +4,7 @@
  * That allows customers to validate their CommandDocument against a given platform prior to execution.
  */
 export enum Platform {
-    LINUX,
-    WINDOWS,
-    MAC_OS
+  LINUX,
+  WINDOWS,
+  MAC_OS
 }

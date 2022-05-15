@@ -1,4 +1,4 @@
-import { AsyncRunner } from "./async-runner";
+import { AsyncRunner } from './async-runner';
 
 /**
  * Performs an async sleep.
@@ -6,13 +6,13 @@ import { AsyncRunner } from "./async-runner";
  */
 export class AsyncSleep implements AsyncRunner {
 
-    /**
+  /**
      * Expects a list with a single value indicating the total time to sleep in millis.
      */
-    runAsync(args: any[]): Promise<any> {
-        return new Promise(function(resolve) {
-            setTimeout(resolve, args[0]);
-        });
-    }
+  runAsync(args: any[]): Promise<any> {
+    return new Promise(function(resolve) {
+      setTimeout(resolve, args[0]);
+    });
+  }
 
 }

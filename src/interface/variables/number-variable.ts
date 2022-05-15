@@ -1,4 +1,4 @@
-import { IGenericVariable, GenericVariable, HardCodedValueBase } from "./variable";
+import { IGenericVariable, GenericVariable, HardCodedValueBase } from './variable';
 
 /**
  * Number type that can be null
@@ -9,11 +9,11 @@ export type NullableNumber = number;
  * A number variable
  */
 export interface INumberVariable extends IGenericVariable {
-    /**
+  /**
      * Given the execution inputs, return the resolved value of this variable.
      * @param inputs are the execution inputs.
      */
-    resolveToNumber(inputs: Record<string, any>): NullableNumber;
+  resolveToNumber(inputs: Record<string, any>): NullableNumber;
 }
 
 /**
@@ -21,13 +21,13 @@ export interface INumberVariable extends IGenericVariable {
  * Used when not dependent on step inputs.
  */
 export class HardCodedNumber extends HardCodedValueBase<number> implements INumberVariable {
-    resolveToNumber(inputs: Record<string, any>): NullableNumber {
-        return this.resolve(inputs);
-    }
+  resolveToNumber(inputs: Record<string, any>): NullableNumber {
+    return this.resolve(inputs);
+  }
 
-    protected assertType(value: any): void {
-        assertNumber(value);
-    }
+  protected assertType(value: any): void {
+    assertNumber(value);
+  }
 }
 
 /**
@@ -35,13 +35,13 @@ export class HardCodedNumber extends HardCodedValueBase<number> implements INumb
  * Used to resolve the value from step inputs.
  */
 export class NumberVariable extends GenericVariable implements INumberVariable {
-    resolveToNumber(inputs: Record<string, any>): NullableNumber {
-        return this.resolve(inputs);
-    }
+  resolveToNumber(inputs: Record<string, any>): NullableNumber {
+    return this.resolve(inputs);
+  }
 
-    protected assertType(value: any): void {
-        assertNumber(value);
-    }
+  protected assertType(value: any): void {
+    assertNumber(value);
+  }
 }
 
 /**
@@ -49,7 +49,7 @@ export class NumberVariable extends GenericVariable implements INumberVariable {
  * @param value value to assert
  */
 export function assertNumber(value: any): asserts value is NullableNumber {
-    if (!isNumber(value)) { throw new Error(`${value} is not a number`); }
+  if (!isNumber(value)) { throw new Error(`${value} is not a number`); }
 }
 
 /**
@@ -58,6 +58,6 @@ export function assertNumber(value: any): asserts value is NullableNumber {
  * @returns true if the value is a NullableNumber, otherwise false
  */
 export function isNumber(value: any): value is NullableNumber {
-    if (value === null) { return true; }
-    return typeof value === "number" || value instanceof Number;
+  if (value === null) { return true; }
+  return typeof value === 'number' || value instanceof Number;
 }

@@ -1,74 +1,74 @@
-import { Output } from "../domain/output";
-import { SimulationResult } from "../domain/simulation-result";
-import { IObserver, NoopObserver } from "../interface/observer";
 import { Construct } from 'constructs';
+import { Output } from '../domain/output';
+import { SimulationResult } from '../domain/simulation-result';
+import { IObserver, NoopObserver } from '../interface/observer';
 
 export interface StepProps {
-    /**
+  /**
      * (Optional) Name of the current step.
      * The name will be prepended onto all of the outputs emitted from this step.
      * This name will also be used to reference this step in logs.
      * Defaults to the id of the CDK node.
      */
-    readonly name?: string;
+  readonly name?: string;
 
-    /**
+  /**
      * (Optional) description of the current step.
      * @default undefined
      */
-    readonly description?: string;
+  readonly description?: string;
 
-     /**
+  /**
      * (Optional) Allows for observing the input to steps as they run.
      * @default NoopObserver
      */
-    readonly inputObserver?: IObserver;
+  readonly inputObserver?: IObserver;
 
-    /**
+  /**
      * (Optional) Allows for observing the output of steps as they run.
      * @default NoopObserver
      */
-    readonly outputObserver?: IObserver;
+  readonly outputObserver?: IObserver;
 }
 
 export abstract class Step extends Construct {
 
-    readonly name: string;
-    readonly description: string | undefined;
-    readonly inputObserver: IObserver;
-    readonly outputObserver: IObserver;
-    readonly abstract action: string;
+  readonly name: string;
+  readonly description: string | undefined;
+  readonly inputObserver: IObserver;
+  readonly outputObserver: IObserver;
+  readonly abstract action: string;
 
-    constructor(scope: Construct, id: string, props: StepProps) {
-        super(scope, id);
-        this.name = props.name ?? id;
-        if (this.name.length < 3 || this.name.length > 128) {
-            throw new Error("Name is not in size range [3:128] rather was " + this.name.length)
-        }
-        this.description = props.description ?? undefined;
-        this.inputObserver = props.inputObserver ?? new NoopObserver();
-        this.outputObserver = props.outputObserver ?? new NoopObserver();
+  constructor(scope: Construct, id: string, props: StepProps) {
+    super(scope, id);
+    this.name = props.name ?? id;
+    if (this.name.length < 3 || this.name.length > 128) {
+      throw new Error('Name is not in size range [3:128] rather was ' + this.name.length);
     }
+    this.description = props.description ?? undefined;
+    this.inputObserver = props.inputObserver ?? new NoopObserver();
+    this.outputObserver = props.outputObserver ?? new NoopObserver();
+  }
 
-    /**
+  /**
      * Lists the outputs that will be returned from this step.
      */
-    public abstract listOutputs(): Output[]
+  public abstract listOutputs(): Output[]
 
-    /**
+  /**
      * Lists the inputs that are required for this step.
      */
-    public abstract listInputs(): string[]
+  public abstract listInputs(): string[]
 
-    /**
+  /**
      * Invokes the entire chain of steps including this step (executeStep()) and all subsequent steps in the chain.
      * @returns SimulationResult containing the response code and result.
      */
-    public abstract invoke(inputs: { [name: string]: any; }): SimulationResult;
+  public abstract invoke(inputs: { [name: string]: any }): SimulationResult;
 
-    /**
+  /**
      * Converts this step into an object to prepare for yaml/json representation of this step.
      */
-    public abstract toSsmEntry(): { [name: string]: any; };
+  public abstract toSsmEntry(): { [name: string]: any };
 
 }

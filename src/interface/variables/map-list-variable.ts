@@ -1,5 +1,5 @@
-import { isStringMap } from "./string-map-variable";
-import { IGenericVariable, GenericVariable, HardCodedValueBase } from "./variable";
+import { isStringMap } from './string-map-variable';
+import { IGenericVariable, GenericVariable, HardCodedValueBase } from './variable';
 
 /**
  * MapList type that can be null
@@ -10,11 +10,11 @@ export type NullableMapList = Record<string, any>[];
  * A map list variable
  */
 export interface IMapListVariable extends IGenericVariable {
-    /**
+  /**
      * Given the execution inputs, return the resolved value of this variable.
      * @param inputs are the execution inputs.
      */
-    resolveToMapList(inputs: Record<string, any>): NullableMapList;
+  resolveToMapList(inputs: Record<string, any>): NullableMapList;
 }
 
 /**
@@ -22,13 +22,13 @@ export interface IMapListVariable extends IGenericVariable {
  * Used when not dependent on step inputs.
  */
 export class HardCodedMapList extends HardCodedValueBase<Record<string, any>[]> implements IMapListVariable {
-    resolveToMapList(inputs: Record<string, any>): NullableMapList {
-        return this.resolve(inputs);
-    }
+  resolveToMapList(inputs: Record<string, any>): NullableMapList {
+    return this.resolve(inputs);
+  }
 
-    protected assertType(value: any): void {
-        assertMapList(value);
-    }
+  protected assertType(value: any): void {
+    assertMapList(value);
+  }
 }
 
 /**
@@ -36,13 +36,13 @@ export class HardCodedMapList extends HardCodedValueBase<Record<string, any>[]> 
  * Used to resolve the value from step inputs.
  */
 export class MapListVariable extends GenericVariable implements IMapListVariable {
-    resolveToMapList(inputs: Record<string, any>): NullableMapList {
-        return this.resolve(inputs);
-    }
+  resolveToMapList(inputs: Record<string, any>): NullableMapList {
+    return this.resolve(inputs);
+  }
 
-    protected assertType(value: any): void {
-        assertMapList(value);
-    }
+  protected assertType(value: any): void {
+    assertMapList(value);
+  }
 }
 
 /**
@@ -50,7 +50,7 @@ export class MapListVariable extends GenericVariable implements IMapListVariable
  * @param value value to assert
  */
 export function assertMapList(value: any): asserts value is NullableMapList {
-    if (!isMapList(value)) { throw new Error(`${value} is not a map list`); }
+  if (!isMapList(value)) { throw new Error(`${value} is not a map list`); }
 }
 
 /**
@@ -59,6 +59,6 @@ export function assertMapList(value: any): asserts value is NullableMapList {
  * @returns true if the value is a NullableMapList, otherwise false
  */
 export function isMapList(value: any): value is NullableMapList {
-    if (value === null) { return true; }
-    return Array.isArray(value) && value.every(x => isStringMap(x));
+  if (value === null) { return true; }
+  return Array.isArray(value) && value.every(x => isStringMap(x));
 }

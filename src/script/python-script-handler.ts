@@ -7,7 +7,7 @@ import { SynchronousPromise } from '../sync/synchronous-promise';
  */
 export class PythonScriptHandler {
 
-    /**
+  /**
      * Runs the python function specified by the input argument.
      * The python result will be nested inside a "Payload" object as is done by SSM.
      * Another json entry is appended to the root object called "status".
@@ -18,13 +18,13 @@ export class PythonScriptHandler {
      * @returns python function response
      * @example {Payload: {"MyOutput": "MyValue"}, "Status": "SUCCESS"}
      */
-    run(path: string, handler: string, params: { [name: string]: any; }): { [name: string]: any; } {
-        const pyResult = new SynchronousPromise().wait("../sync/python-async-runner", "PythonAsyncRunner", [path, handler, params]);
-        // results from python function is wrapped in object containing status and Payload
-        if (pyResult["status"] == "FAILURE") {
-            console.error(`Exception occurred calling python function ${path}.${handler}\n${pyResult["Payload"]}`)
-            throw new Error(pyResult["Payload"])
-        }
-        return pyResult;
+  run(path: string, handler: string, params: { [name: string]: any }): { [name: string]: any } {
+    const pyResult = new SynchronousPromise().wait('cdk-ssm-document/lib/sync/python-async-runner', 'PythonAsyncRunner', [path, handler, params]);
+    // results from python function is wrapped in object containing status and Payload
+    if (pyResult.status == 'FAILURE') {
+      console.error(`Exception occurred calling python function ${path}.${handler}\n${pyResult.Payload}`);
+      throw new Error(pyResult.Payload);
     }
+    return pyResult;
+  }
 }

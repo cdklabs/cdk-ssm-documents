@@ -1,4 +1,4 @@
-import { DataTypeEnum } from "./data-type"
+import { DataTypeEnum } from './data-type';
 
 /**
  * Properties of inputs supported by SSM documents.
@@ -7,49 +7,49 @@ import { DataTypeEnum } from "./data-type"
  */
 export interface Input {
 
-    /**
+  /**
      * (Required) The name of the input by which to be referenced by steps in the document.
      */
-    readonly name: string;
+  readonly name: string;
 
-    /**
+  /**
      * (Required) The DataTypeEnum of the input.
      */
-    readonly inputType: DataTypeEnum;
+  readonly inputType: DataTypeEnum;
 
-    /**
+  /**
      * (Optional) The description of the input.
      * @default name
      */
-    readonly description?: string;
+  readonly description?: string;
 
-    /**
+  /**
      * (Optional) Default value to use for this input if not specified when invoking the document.
      * @default undefined
      */
-    readonly defaultValue?: string;
+  readonly defaultValue?: string;
 
-    /**
+  /**
      * (Optional) List of allowed values that this input may be.
      * @default undefined
      */
-    readonly allowedValues?: string[];
+  readonly allowedValues?: string[];
 
-    /**
+  /**
      * (Optional) Pattern that this input value must match.
      * @default undefined
      */
-    readonly allowedPattern?: string;
+  readonly allowedPattern?: string;
 
-    /**
+  /**
      * (Optional) Minimum number of items that this input value (list) must contain.
      * @default undefined
      */
-    readonly minItems?: number;
+  readonly minItems?: number;
 
-    /**
+  /**
      * (Optional) Maximum number of items that this input value (list) must contain.
      * @default undefined
      */
-    readonly maxItems?: number;
+  readonly maxItems?: number;
 }
