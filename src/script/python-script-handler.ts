@@ -19,7 +19,7 @@ export class PythonScriptHandler {
      * @example {Payload: {"MyOutput": "MyValue"}, "Status": "SUCCESS"}
      */
   run(path: string, handler: string, params: { [name: string]: any }): { [name: string]: any } {
-    const pyResult = new SynchronousPromise().wait('cdk-ssm-document/lib/sync/python-async-runner', 'PythonAsyncRunner', [path, handler, params]);
+    const pyResult = new SynchronousPromise().wait('../../lib/sync/python-async-runner', 'PythonAsyncRunner', [path, handler, params]);
     // results from python function is wrapped in object containing status and Payload
     if (pyResult.status == 'FAILURE') {
       console.error(`Exception occurred calling python function ${path}.${handler}\n${pyResult.Payload}`);

@@ -11,7 +11,7 @@ const project = new awscdk.AwsCdkConstructLibrary({
   minNodeVersion: 'v16.15.0',
   depsUpgrade: false,
   defaultReleaseBranch: 'main',
-  name: 'cdk-ssm-document',
+  name: 'cdk-ssm-documents',
   repositoryUrl: 'https://github.com/cdklabs/cdk-ssm-documents.git',
   bundledDeps: [
     'synchronized-promise',
