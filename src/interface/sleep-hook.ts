@@ -18,7 +18,7 @@ export class SleepImpl implements ISleepHook {
   sleep(timeMillis: number): void {
     console.log(`Performing a real sleep of ${timeMillis} ms. Be sure to not commit code that performs a real sleep!`);
     new SynchronousPromise().wait(
-      'cdk-ssm-document/lib/sync/async-sleep',
+      '../../lib/sync/async-sleep',
       'AsyncSleep',
       [timeMillis]);
   }

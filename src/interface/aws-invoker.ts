@@ -44,7 +44,7 @@ export class ReflectiveAwsInvoker implements IAwsInvoker {
 
   invoke(invocation: Invocation): any {
     const wrappedAwsResponse = new SynchronousPromise().wait(
-      'cdk-ssm-document/lib/sync/aws-async-invoker',
+      '../../lib/sync/aws-async-invoker',
       'AwsAsyncInvoker',
       [invocation.service, invocation.awsApi, invocation.awsParams]);
     if (wrappedAwsResponse.status == 'FAILURE') {
