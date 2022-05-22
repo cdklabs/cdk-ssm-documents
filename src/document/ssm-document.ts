@@ -111,7 +111,12 @@ export abstract class SsmDocument extends Construct {
     new CfnDocument(this, this.node.id + 'CfnDoc', {
       ...this.props,
       ...{
-        content: Lazy.any({ produce: () => this.buildSsmDocument() }),
+        content: Lazy.any({
+          produce: () => {
+            const doc = this.buildSsmDocument();
+            return JSON.parse(JSON.stringify(doc));
+          },
+        }),
         documentFormat: isYaml ? 'YAML' : 'JSON',
         documentType: 'Automation',
         tags: [{ key: 'CdkGenerated', value: 'true' }, ...(this.props.tags || [])],

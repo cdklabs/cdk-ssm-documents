@@ -17,7 +17,7 @@ describe('StringDocument', function() {
 
       // Create document from file
       const stack: Stack = new Stack();
-      const myAutomationDoc = StringDocument.fromFile(stack, 'MyAutomationDoc', 'test/myAutomation.js', {
+      const myAutomationDoc = StringDocument.fromFile(stack, 'MyAutomationDoc', 'test/myAutomation.json', {
         sleepHook: sleeper,
         awsInvoker: awsInvoker,
       });
