@@ -8,7 +8,6 @@ const project = new awscdk.AwsCdkConstructLibrary({
       isolatedModules: true,
     },
   },
-  minNodeVersion: 'v16.15.0',
   depsUpgrade: false,
   defaultReleaseBranch: 'main',
   name: 'cdk-ssm-documents',
@@ -32,6 +31,7 @@ const project = new awscdk.AwsCdkConstructLibrary({
     allowedUsernames: ['cdklabs-automation'],
     secret: 'GITHUB_TOKEN',
   },
+  devDeps: ['mocha'],
   jestOptions: {
     jestConfig: {
       maxWorkers: 4,
@@ -51,11 +51,12 @@ const project = new awscdk.AwsCdkConstructLibrary({
     mavenArtifactId: 'cdk-ssm-document',
     mavenGroupId: 'io.github.cdklabs',
   },
-
   publishToPypi: {
     distName: 'cdk-ssm-documents',
     module: 'cdk-ssm-documents',
   },
 });
+
+project.testTask.reset('mocha -r ts-node/register "test/**/*test.ts"', {name: "mocha"});
 
 project.synth();

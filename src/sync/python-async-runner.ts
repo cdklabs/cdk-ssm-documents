@@ -23,7 +23,8 @@ export class PythonAsyncRunner implements AsyncRunner {
           scriptPath: __dirname + '/../../python/',
           args: [args[0], args[1], JSON.stringify(args[2])],
         };
-
+        // prevent __pycache__ folder from getting generated
+        process.env.PYTHONDONTWRITEBYTECODE = '1';
         // See documentation in python_script_entry.py to see how this execution works.
         PythonShell.run('python_script_entry.py', options, function (err: any, results: any) {
           if (err != undefined) {

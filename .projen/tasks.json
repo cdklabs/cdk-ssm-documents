@@ -224,10 +224,8 @@
       "description": "Run tests",
       "steps": [
         {
-          "exec": "jest --passWithNoTests --all --updateSnapshot --coverageProvider=v8"
-        },
-        {
-          "spawn": "eslint"
+          "exec": "mocha -r ts-node/register \"test/**/*test.ts\"",
+          "name": "mocha"
         }
       ]
     },

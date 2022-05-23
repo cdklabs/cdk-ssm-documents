@@ -50,6 +50,8 @@ export * from './patterns/automation/string-step';
 export * from './patterns/document/timed-document';
 export * from './patterns/document/string-document';
 
+export * from './samples/hello-world';
+
 export * from './interface/aws-invoker';
 export * from './interface/environment';
 export * from './interface/observer';

@@ -6220,6 +6220,228 @@ public readonly DEFAULT_TIMEOUT: number;
 
 ---
 
+### HelloWorld <a name="HelloWorld" id="cdk-ssm-documents.HelloWorld"></a>
+
+#### Initializers <a name="Initializers" id="cdk-ssm-documents.HelloWorld.Initializer"></a>
+
+```typescript
+import { HelloWorld } from 'cdk-ssm-documents'
+
+new HelloWorld(app: Construct, id: string, props: AutomationDocumentProps)
+```
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#cdk-ssm-documents.HelloWorld.Initializer.parameter.app">app</a></code> | <code>constructs.Construct</code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.HelloWorld.Initializer.parameter.id">id</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.HelloWorld.Initializer.parameter.props">props</a></code> | <code><a href="#cdk-ssm-documents.AutomationDocumentProps">AutomationDocumentProps</a></code> | *No description.* |
+
+---
+
+##### `app`<sup>Required</sup> <a name="app" id="cdk-ssm-documents.HelloWorld.Initializer.parameter.app"></a>
+
+- *Type:* constructs.Construct
+
+---
+
+##### `id`<sup>Required</sup> <a name="id" id="cdk-ssm-documents.HelloWorld.Initializer.parameter.id"></a>
+
+- *Type:* string
+
+---
+
+##### `props`<sup>Required</sup> <a name="props" id="cdk-ssm-documents.HelloWorld.Initializer.parameter.props"></a>
+
+- *Type:* <a href="#cdk-ssm-documents.AutomationDocumentProps">AutomationDocumentProps</a>
+
+---
+
+#### Methods <a name="Methods" id="Methods"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#cdk-ssm-documents.HelloWorld.toString">toString</a></code> | Returns a string representation of this construct. |
+| <code><a href="#cdk-ssm-documents.HelloWorld.print">print</a></code> | Synthesize before calling this function! You can use this to Synthesize: cdk.SynthUtils.synthesize(stack); |
+| <code><a href="#cdk-ssm-documents.HelloWorld.runSimulation">runSimulation</a></code> | Synthesize before calling this function! You can use this to Synthesize: cdk.SynthUtils.synthesize(stack); |
+
+---
+
+##### `toString` <a name="toString" id="cdk-ssm-documents.HelloWorld.toString"></a>
+
+```typescript
+public toString(): string
+```
+
+Returns a string representation of this construct.
+
+##### `print` <a name="print" id="cdk-ssm-documents.HelloWorld.print"></a>
+
+```typescript
+public print(): string
+```
+
+Synthesize before calling this function! You can use this to Synthesize: cdk.SynthUtils.synthesize(stack);
+
+Converts the objects define in the SSM Document (including all of the steps) to an SSM document string.
+The format is dependency on the documentFormat property provided to the class.
+The yaml can be used as is and will behave (or at least should behave) as was simulated in the runSimulation().
+
+##### `runSimulation` <a name="runSimulation" id="cdk-ssm-documents.HelloWorld.runSimulation"></a>
+
+```typescript
+public runSimulation(inputs: {[ key: string ]: any}): DocumentResult
+```
+
+Synthesize before calling this function! You can use this to Synthesize: cdk.SynthUtils.synthesize(stack);
+
+Executes the SSM Document in simluation mode.
+This method DOES NOT result in invocation of SSM APIs.
+Rather, all steps are executed locally and mimic the behavior of SSM.
+If any inputs are not provided in this function, the specified defaults for the inputs will be used.
+
+###### `inputs`<sup>Required</sup> <a name="inputs" id="cdk-ssm-documents.HelloWorld.runSimulation.parameter.inputs"></a>
+
+- *Type:* {[ key: string ]: any}
+
+the inputs to feed into the simulated execution.
+
+---
+
+#### Static Functions <a name="Static Functions" id="Static Functions"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#cdk-ssm-documents.HelloWorld.isConstruct">isConstruct</a></code> | Checks if `x` is a construct. |
+
+---
+
+##### ~~`isConstruct`~~ <a name="isConstruct" id="cdk-ssm-documents.HelloWorld.isConstruct"></a>
+
+```typescript
+import { HelloWorld } from 'cdk-ssm-documents'
+
+HelloWorld.isConstruct(x: any)
+```
+
+Checks if `x` is a construct.
+
+###### `x`<sup>Required</sup> <a name="x" id="cdk-ssm-documents.HelloWorld.isConstruct.parameter.x"></a>
+
+- *Type:* any
+
+Any object.
+
+---
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#cdk-ssm-documents.HelloWorld.property.node">node</a></code> | <code>constructs.Node</code> | The tree node. |
+| <code><a href="#cdk-ssm-documents.HelloWorld.property.description">description</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.HelloWorld.property.docInputs">docInputs</a></code> | <code><a href="#cdk-ssm-documents.Input">Input</a>[]</code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.HelloWorld.property.docOutputs">docOutputs</a></code> | <code><a href="#cdk-ssm-documents.DocumentOutput">DocumentOutput</a>[]</code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.HelloWorld.property.documentName">documentName</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.HelloWorld.property.props">props</a></code> | <code><a href="#cdk-ssm-documents.SsmDocumentProps">SsmDocumentProps</a></code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.HelloWorld.property.stepCollector">stepCollector</a></code> | <code><a href="#cdk-ssm-documents.StepCollector">StepCollector</a></code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.HelloWorld.property.assumeRole">assumeRole</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.HelloWorld.property.header">header</a></code> | <code>string</code> | *No description.* |
+
+---
+
+##### `node`<sup>Required</sup> <a name="node" id="cdk-ssm-documents.HelloWorld.property.node"></a>
+
+```typescript
+public readonly node: Node;
+```
+
+- *Type:* constructs.Node
+
+The tree node.
+
+---
+
+##### `description`<sup>Required</sup> <a name="description" id="cdk-ssm-documents.HelloWorld.property.description"></a>
+
+```typescript
+public readonly description: string;
+```
+
+- *Type:* string
+
+---
+
+##### `docInputs`<sup>Required</sup> <a name="docInputs" id="cdk-ssm-documents.HelloWorld.property.docInputs"></a>
+
+```typescript
+public readonly docInputs: Input[];
+```
+
+- *Type:* <a href="#cdk-ssm-documents.Input">Input</a>[]
+
+---
+
+##### `docOutputs`<sup>Required</sup> <a name="docOutputs" id="cdk-ssm-documents.HelloWorld.property.docOutputs"></a>
+
+```typescript
+public readonly docOutputs: DocumentOutput[];
+```
+
+- *Type:* <a href="#cdk-ssm-documents.DocumentOutput">DocumentOutput</a>[]
+
+---
+
+##### `documentName`<sup>Required</sup> <a name="documentName" id="cdk-ssm-documents.HelloWorld.property.documentName"></a>
+
+```typescript
+public readonly documentName: string;
+```
+
+- *Type:* string
+
+---
+
+##### `props`<sup>Required</sup> <a name="props" id="cdk-ssm-documents.HelloWorld.property.props"></a>
+
+```typescript
+public readonly props: SsmDocumentProps;
+```
+
+- *Type:* <a href="#cdk-ssm-documents.SsmDocumentProps">SsmDocumentProps</a>
+
+---
+
+##### `stepCollector`<sup>Required</sup> <a name="stepCollector" id="cdk-ssm-documents.HelloWorld.property.stepCollector"></a>
+
+```typescript
+public readonly stepCollector: StepCollector;
+```
+
+- *Type:* <a href="#cdk-ssm-documents.StepCollector">StepCollector</a>
+
+---
+
+##### `assumeRole`<sup>Optional</sup> <a name="assumeRole" id="cdk-ssm-documents.HelloWorld.property.assumeRole"></a>
+
+```typescript
+public readonly assumeRole: string;
+```
+
+- *Type:* string
+
+---
+
+##### `header`<sup>Optional</sup> <a name="header" id="cdk-ssm-documents.HelloWorld.property.header"></a>
+
+```typescript
+public readonly header: string;
+```
+
+- *Type:* string
+
+---
+
+
 ### InvokeLambdaFunctionStep <a name="InvokeLambdaFunctionStep" id="cdk-ssm-documents.InvokeLambdaFunctionStep"></a>
 
 AutomationStep implemenation for aws:invokeLambdaFunction https://docs.aws.amazon.com/systems-manager/latest/userguide/automation-action-lamb.html.
