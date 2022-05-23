@@ -2,7 +2,7 @@ import * as assert from 'assert';
 import { Stack } from 'aws-cdk-lib';
 import { Construct } from 'constructs';
 import {
-  RunShellScriptStep, SynthUtils, CommandDocument, DataTypeEnum, ResponseCode, StringFormat, StringVariable,
+  RunShellScriptStep, SynthUtils, CommandDocument, DataTypeEnum, ResponseCode, StringFormat, StringVariable, Platform,
 } from '../../lib';
 
 describe('CommandDocument', function() {
@@ -20,12 +20,14 @@ describe('CommandDocument', function() {
           new RunShellScriptStep(this, 'MyShellScript1', {
             name: 'Shell1',
             runCommand: [new StringFormat('echo %s', [new StringVariable('MyInput')])],
+            simulationPlatform: Platform.LINUX,
           });
 
           // First step
           new RunShellScriptStep(this, 'MyShellScript2', {
             name: 'Shell2',
             runCommand: [new StringFormat('echo again %s', [new StringVariable('MyInput')])],
+            simulationPlatform: Platform.LINUX,
           });
         }
       }
@@ -60,12 +62,14 @@ describe('CommandDocument', function() {
           new RunShellScriptStep(this, 'MyShellScript1', {
             name: 'Shell1',
             runCommand: [new StringFormat('echo %s', [new StringVariable('MyInput')])],
+            simulationPlatform: Platform.LINUX,
           });
 
           // First step
           new RunShellScriptStep(this, 'MyShellScript2', {
             name: 'Shell2',
             runCommand: [new StringFormat('echo again %s', [new StringVariable('MyInput')])],
+            simulationPlatform: Platform.LINUX,
           });
         }
       }

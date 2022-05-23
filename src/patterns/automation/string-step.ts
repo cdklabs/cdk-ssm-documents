@@ -2,6 +2,7 @@ import { Construct } from 'constructs';
 import { parse, toSeconds } from 'iso8601-duration';
 import { DataType, IAwsInvoker, IObserver, IPauseHook, ISleepHook, StringVariable } from '../..';
 import { Choice } from '../../domain/choice';
+import { OperationEvaluator } from '../../domain/operation';
 import { Output } from '../../domain/output';
 import { HardCodedString, IStringVariable } from '../../interface/variables/string-variable';
 import { AssertAwsResourceStep } from '../../parent-steps/automation/assert-aws-resource-step';
@@ -196,11 +197,11 @@ export class StringStep extends Construct {
 
   private toChoice(declaredChoice: {[name: string]: string}): Choice {
     const operationEntry = Object.entries(declaredChoice)
-      .filter(entry => Choice.STRING_TO_OPERATION[entry[0]] != undefined)[0];
+      .filter(entry => OperationEvaluator.STRING_TO_OPERATION[entry[0]] != undefined)[0];
     return new Choice({
       jumpToStepName: declaredChoice.NextStep,
       variable: this.toVariable(declaredChoice.Variable),
-      operation: Choice.fromOperationName(operationEntry[0]),
+      operation: OperationEvaluator.fromOperationName(operationEntry[0]),
       constant: operationEntry[1],
     });
   }

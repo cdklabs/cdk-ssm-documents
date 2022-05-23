@@ -2,6 +2,7 @@ import { Construct } from 'constructs';
 import { NonRetriableException } from '../domain/non-retriable-exception';
 import { Output } from '../domain/output';
 import { Platform } from '../domain/platform';
+import { Precondition } from '../domain/precondition';
 import { ResponseCode } from '../domain/response-code';
 import { SimulationResult } from '../domain/simulation-result';
 import { StringVariable } from '../interface/variables/string-variable';
@@ -33,6 +34,17 @@ export interface CommandStepProps extends StepProps {
 
   readonly finallyStep?: boolean;
 
+  /**
+     * (Optional) A precondition to test before execution occurrs.
+     * When the precondition isn't met, the command step isn't executed.
+     * @default undefined
+     */
+  readonly precondition?: Precondition;
+
+  /**
+    * The Platform used in executing the command step.
+    */
+  readonly simulationPlatform: Platform;
 }
 
 export abstract class CommandStep extends Step {
@@ -43,6 +55,8 @@ export abstract class CommandStep extends Step {
   readonly exitOnSuccess: boolean;
   readonly markSuccessAndExitOnFailure: boolean;
   readonly finallyStep: boolean;
+  readonly precondition: Precondition | undefined;
+  readonly simulationPlatform: Platform;
   abstract readonly platforms: Platform[];
 
   protected constructor(scope: Construct, id: string, props: CommandStepProps) {
@@ -51,6 +65,8 @@ export abstract class CommandStep extends Step {
     this.exitOnSuccess = props.exitOnSuccess ?? false;
     this.markSuccessAndExitOnFailure = props.markSuccessAndExitOnFailure ?? false;
     this.finallyStep = props.finallyStep ?? false;
+    this.precondition = props.precondition;
+    this.simulationPlatform = props.simulationPlatform;
   }
 
   protected prepareSsmEntry(inputs: { [name: string]: any }): { [name: string]: any } {
@@ -61,6 +77,9 @@ export abstract class CommandStep extends Step {
     }
     ssmDef.set('name', this.name);
     ssmDef.set('action', this.action);
+    if (this.precondition) {
+      ssmDef.set('precondition', this.precondition.asSsmEntry());
+    }
     ssmDef.set('inputs', inputs);
 
     if (this.exitOnFailure) {
@@ -105,17 +124,27 @@ export abstract class CommandStep extends Step {
      */
   private invokeWithFallback(allInputs: { [name: string]: any }): SimulationResult {
     try {
-      const filteredInputs = this.filterInputs(allInputs);
-      this.inputObserver.accept(filteredInputs);
-      this.tryExecute(filteredInputs);
-      this.outputObserver.accept({});
+      const shouldExecute = this.shouldExecuteStep(allInputs);
+      if (shouldExecute) {
+        const filteredInputs = this.filterInputs(allInputs);
+        this.inputObserver.accept(filteredInputs);
+        this.tryExecute(filteredInputs);
+        this.outputObserver.accept({});
+      } else {
+        console.log(`skipping step execution for ${this.name}`);
+      }
+
+      const chainPrefix = shouldExecute ? [this.name] : [];
       if (this.nextStep && !this.exitOnSuccess) {
         const nextStepRes = this.nextStep.invoke(allInputs);
         return this.formatResult(nextStepRes);
       } else {
         const finallyStep = this.runFinally(allInputs);
         const finallyList = finallyStep ? [finallyStep] : [];
-        return { responseCode: ResponseCode.SUCCESS, executedSteps: [this.name, ...finallyList] };
+        return { 
+          responseCode: ResponseCode.SUCCESS, 
+          executedSteps: [...chainPrefix, ...finallyList] 
+        };
       }
     } catch (error) {
       if (this.exitOnFailure) {
@@ -217,6 +246,21 @@ export abstract class CommandStep extends Step {
   public variables(): { [name: string]: any } {
     return Object.assign({}, ...this.listOutputs()
       .map(out => ({ [out.name]: new StringVariable(`${this.name}.${out.name}`) })));
+  }
+
+  private shouldExecuteStep(inputs: { [name: string]: any }): boolean {
+    const copiedInputs = Object.assign({}, inputs);
+    copiedInputs[Precondition.INJECTED_PLAYFORM_TYPE_KEY] = this.simulationPlatform.toString();
+    if (!this.precondition) {
+      // This mimics the "Using the precondition parameter" section
+      // of https://docs.aws.amazon.com/systems-manager/latest/userguide/document-schemas-features.html
+      // "For documents that use schema version 2.2 or later, if precondition isn't specified, each plugin is either run or skipped based on the plugin’s"
+      // "compatibility with the operating system. Plugin compatibility with the operating system is evaluated before the precondition. For"
+      // "documents that use schema 2.0 or earlier, incompatible plugins throw an error."
+      return this.platforms.some(platform => Precondition.newPlatformPrecondition(platform).evaluate(copiedInputs));
+    }
+
+    return this.precondition.evaluate(copiedInputs);
   }
 
 }

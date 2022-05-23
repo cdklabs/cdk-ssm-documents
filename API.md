@@ -2887,6 +2887,8 @@ Any object.
 | <code><a href="#cdk-ssm-documents.CommandStep.property.finallyStep">finallyStep</a></code> | <code>boolean</code> | *No description.* |
 | <code><a href="#cdk-ssm-documents.CommandStep.property.markSuccessAndExitOnFailure">markSuccessAndExitOnFailure</a></code> | <code>boolean</code> | *No description.* |
 | <code><a href="#cdk-ssm-documents.CommandStep.property.platforms">platforms</a></code> | <code><a href="#cdk-ssm-documents.Platform">Platform</a>[]</code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.CommandStep.property.simulationPlatform">simulationPlatform</a></code> | <code><a href="#cdk-ssm-documents.Platform">Platform</a></code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.CommandStep.property.precondition">precondition</a></code> | <code><a href="#cdk-ssm-documents.Precondition">Precondition</a></code> | *No description.* |
 | <code><a href="#cdk-ssm-documents.CommandStep.property.allStepsInExecution">allStepsInExecution</a></code> | <code><a href="#cdk-ssm-documents.CommandStep">CommandStep</a>[]</code> | *No description.* |
 | <code><a href="#cdk-ssm-documents.CommandStep.property.nextStep">nextStep</a></code> | <code><a href="#cdk-ssm-documents.CommandStep">CommandStep</a></code> | *No description.* |
 
@@ -3001,6 +3003,26 @@ public readonly platforms: Platform[];
 ```
 
 - *Type:* <a href="#cdk-ssm-documents.Platform">Platform</a>[]
+
+---
+
+##### `simulationPlatform`<sup>Required</sup> <a name="simulationPlatform" id="cdk-ssm-documents.CommandStep.property.simulationPlatform"></a>
+
+```typescript
+public readonly simulationPlatform: Platform;
+```
+
+- *Type:* <a href="#cdk-ssm-documents.Platform">Platform</a>
+
+---
+
+##### `precondition`<sup>Optional</sup> <a name="precondition" id="cdk-ssm-documents.CommandStep.property.precondition"></a>
+
+```typescript
+public readonly precondition: Precondition;
+```
+
+- *Type:* <a href="#cdk-ssm-documents.Precondition">Precondition</a>
 
 ---
 
@@ -7705,6 +7727,8 @@ Any object.
 | <code><a href="#cdk-ssm-documents.PsModuleStep.property.finallyStep">finallyStep</a></code> | <code>boolean</code> | *No description.* |
 | <code><a href="#cdk-ssm-documents.PsModuleStep.property.markSuccessAndExitOnFailure">markSuccessAndExitOnFailure</a></code> | <code>boolean</code> | *No description.* |
 | <code><a href="#cdk-ssm-documents.PsModuleStep.property.platforms">platforms</a></code> | <code><a href="#cdk-ssm-documents.Platform">Platform</a>[]</code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.PsModuleStep.property.simulationPlatform">simulationPlatform</a></code> | <code><a href="#cdk-ssm-documents.Platform">Platform</a></code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.PsModuleStep.property.precondition">precondition</a></code> | <code><a href="#cdk-ssm-documents.Precondition">Precondition</a></code> | *No description.* |
 | <code><a href="#cdk-ssm-documents.PsModuleStep.property.allStepsInExecution">allStepsInExecution</a></code> | <code><a href="#cdk-ssm-documents.CommandStep">CommandStep</a>[]</code> | *No description.* |
 | <code><a href="#cdk-ssm-documents.PsModuleStep.property.nextStep">nextStep</a></code> | <code><a href="#cdk-ssm-documents.CommandStep">CommandStep</a></code> | *No description.* |
 | <code><a href="#cdk-ssm-documents.PsModuleStep.property.environment">environment</a></code> | <code><a href="#cdk-ssm-documents.IEnvironment">IEnvironment</a></code> | *No description.* |
@@ -7825,6 +7849,26 @@ public readonly platforms: Platform[];
 ```
 
 - *Type:* <a href="#cdk-ssm-documents.Platform">Platform</a>[]
+
+---
+
+##### `simulationPlatform`<sup>Required</sup> <a name="simulationPlatform" id="cdk-ssm-documents.PsModuleStep.property.simulationPlatform"></a>
+
+```typescript
+public readonly simulationPlatform: Platform;
+```
+
+- *Type:* <a href="#cdk-ssm-documents.Platform">Platform</a>
+
+---
+
+##### `precondition`<sup>Optional</sup> <a name="precondition" id="cdk-ssm-documents.PsModuleStep.property.precondition"></a>
+
+```typescript
+public readonly precondition: Precondition;
+```
+
+- *Type:* <a href="#cdk-ssm-documents.Precondition">Precondition</a>
 
 ---
 
@@ -9263,6 +9307,8 @@ Any object.
 | <code><a href="#cdk-ssm-documents.RunPowerShellScriptStep.property.finallyStep">finallyStep</a></code> | <code>boolean</code> | *No description.* |
 | <code><a href="#cdk-ssm-documents.RunPowerShellScriptStep.property.markSuccessAndExitOnFailure">markSuccessAndExitOnFailure</a></code> | <code>boolean</code> | *No description.* |
 | <code><a href="#cdk-ssm-documents.RunPowerShellScriptStep.property.platforms">platforms</a></code> | <code><a href="#cdk-ssm-documents.Platform">Platform</a>[]</code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.RunPowerShellScriptStep.property.simulationPlatform">simulationPlatform</a></code> | <code><a href="#cdk-ssm-documents.Platform">Platform</a></code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.RunPowerShellScriptStep.property.precondition">precondition</a></code> | <code><a href="#cdk-ssm-documents.Precondition">Precondition</a></code> | *No description.* |
 | <code><a href="#cdk-ssm-documents.RunPowerShellScriptStep.property.allStepsInExecution">allStepsInExecution</a></code> | <code><a href="#cdk-ssm-documents.CommandStep">CommandStep</a>[]</code> | *No description.* |
 | <code><a href="#cdk-ssm-documents.RunPowerShellScriptStep.property.nextStep">nextStep</a></code> | <code><a href="#cdk-ssm-documents.CommandStep">CommandStep</a></code> | *No description.* |
 | <code><a href="#cdk-ssm-documents.RunPowerShellScriptStep.property.environment">environment</a></code> | <code><a href="#cdk-ssm-documents.IEnvironment">IEnvironment</a></code> | *No description.* |
@@ -9381,6 +9427,26 @@ public readonly platforms: Platform[];
 ```
 
 - *Type:* <a href="#cdk-ssm-documents.Platform">Platform</a>[]
+
+---
+
+##### `simulationPlatform`<sup>Required</sup> <a name="simulationPlatform" id="cdk-ssm-documents.RunPowerShellScriptStep.property.simulationPlatform"></a>
+
+```typescript
+public readonly simulationPlatform: Platform;
+```
+
+- *Type:* <a href="#cdk-ssm-documents.Platform">Platform</a>
+
+---
+
+##### `precondition`<sup>Optional</sup> <a name="precondition" id="cdk-ssm-documents.RunPowerShellScriptStep.property.precondition"></a>
+
+```typescript
+public readonly precondition: Precondition;
+```
+
+- *Type:* <a href="#cdk-ssm-documents.Precondition">Precondition</a>
 
 ---
 
@@ -9606,6 +9672,8 @@ Any object.
 | <code><a href="#cdk-ssm-documents.RunShellScriptStep.property.finallyStep">finallyStep</a></code> | <code>boolean</code> | *No description.* |
 | <code><a href="#cdk-ssm-documents.RunShellScriptStep.property.markSuccessAndExitOnFailure">markSuccessAndExitOnFailure</a></code> | <code>boolean</code> | *No description.* |
 | <code><a href="#cdk-ssm-documents.RunShellScriptStep.property.platforms">platforms</a></code> | <code><a href="#cdk-ssm-documents.Platform">Platform</a>[]</code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.RunShellScriptStep.property.simulationPlatform">simulationPlatform</a></code> | <code><a href="#cdk-ssm-documents.Platform">Platform</a></code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.RunShellScriptStep.property.precondition">precondition</a></code> | <code><a href="#cdk-ssm-documents.Precondition">Precondition</a></code> | *No description.* |
 | <code><a href="#cdk-ssm-documents.RunShellScriptStep.property.allStepsInExecution">allStepsInExecution</a></code> | <code><a href="#cdk-ssm-documents.CommandStep">CommandStep</a>[]</code> | *No description.* |
 | <code><a href="#cdk-ssm-documents.RunShellScriptStep.property.nextStep">nextStep</a></code> | <code><a href="#cdk-ssm-documents.CommandStep">CommandStep</a></code> | *No description.* |
 | <code><a href="#cdk-ssm-documents.RunShellScriptStep.property.environment">environment</a></code> | <code><a href="#cdk-ssm-documents.IEnvironment">IEnvironment</a></code> | *No description.* |
@@ -9724,6 +9792,26 @@ public readonly platforms: Platform[];
 ```
 
 - *Type:* <a href="#cdk-ssm-documents.Platform">Platform</a>[]
+
+---
+
+##### `simulationPlatform`<sup>Required</sup> <a name="simulationPlatform" id="cdk-ssm-documents.RunShellScriptStep.property.simulationPlatform"></a>
+
+```typescript
+public readonly simulationPlatform: Platform;
+```
+
+- *Type:* <a href="#cdk-ssm-documents.Platform">Platform</a>
+
+---
+
+##### `precondition`<sup>Optional</sup> <a name="precondition" id="cdk-ssm-documents.RunShellScriptStep.property.precondition"></a>
+
+```typescript
+public readonly precondition: Precondition;
+```
+
+- *Type:* <a href="#cdk-ssm-documents.Precondition">Precondition</a>
 
 ---
 
@@ -13780,11 +13868,13 @@ const commandStepProps: CommandStepProps = { ... }
 | <code><a href="#cdk-ssm-documents.CommandStepProps.property.inputObserver">inputObserver</a></code> | <code><a href="#cdk-ssm-documents.IObserver">IObserver</a></code> | (Optional) Allows for observing the input to steps as they run. |
 | <code><a href="#cdk-ssm-documents.CommandStepProps.property.name">name</a></code> | <code>string</code> | (Optional) Name of the current step. |
 | <code><a href="#cdk-ssm-documents.CommandStepProps.property.outputObserver">outputObserver</a></code> | <code><a href="#cdk-ssm-documents.IObserver">IObserver</a></code> | (Optional) Allows for observing the output of steps as they run. |
+| <code><a href="#cdk-ssm-documents.CommandStepProps.property.simulationPlatform">simulationPlatform</a></code> | <code><a href="#cdk-ssm-documents.Platform">Platform</a></code> | The Platform used in executing the command step. |
 | <code><a href="#cdk-ssm-documents.CommandStepProps.property.exitOnFailure">exitOnFailure</a></code> | <code>boolean</code> | (Optional) Whether to exit the document execution after failed execution of this step. |
 | <code><a href="#cdk-ssm-documents.CommandStepProps.property.exitOnSuccess">exitOnSuccess</a></code> | <code>boolean</code> | (Optional) Whether to exit the document execution after successful execution of this step. |
 | <code><a href="#cdk-ssm-documents.CommandStepProps.property.finallyStep">finallyStep</a></code> | <code>boolean</code> | *No description.* |
 | <code><a href="#cdk-ssm-documents.CommandStepProps.property.markSuccessAndExitOnFailure">markSuccessAndExitOnFailure</a></code> | <code>boolean</code> | *No description.* |
 | <code><a href="#cdk-ssm-documents.CommandStepProps.property.onCancel">onCancel</a></code> | <code><a href="#cdk-ssm-documents.Step">Step</a></code> | (Optional) Step to jump to in the event that this step is cancelled. |
+| <code><a href="#cdk-ssm-documents.CommandStepProps.property.precondition">precondition</a></code> | <code><a href="#cdk-ssm-documents.Precondition">Precondition</a></code> | (Optional) A precondition to test before execution occurrs. |
 
 ---
 
@@ -13840,6 +13930,18 @@ public readonly outputObserver: IObserver;
 - *Default:* NoopObserver
 
 (Optional) Allows for observing the output of steps as they run.
+
+---
+
+##### `simulationPlatform`<sup>Required</sup> <a name="simulationPlatform" id="cdk-ssm-documents.CommandStepProps.property.simulationPlatform"></a>
+
+```typescript
+public readonly simulationPlatform: Platform;
+```
+
+- *Type:* <a href="#cdk-ssm-documents.Platform">Platform</a>
+
+The Platform used in executing the command step.
 
 ---
 
@@ -13903,6 +14005,21 @@ public readonly onCancel: Step;
 - *Default:* undefined
 
 (Optional) Step to jump to in the event that this step is cancelled.
+
+---
+
+##### `precondition`<sup>Optional</sup> <a name="precondition" id="cdk-ssm-documents.CommandStepProps.property.precondition"></a>
+
+```typescript
+public readonly precondition: Precondition;
+```
+
+- *Type:* <a href="#cdk-ssm-documents.Precondition">Precondition</a>
+- *Default:* undefined
+
+(Optional) A precondition to test before execution occurrs.
+
+When the precondition isn't met, the command step isn't executed.
 
 ---
 
@@ -16945,6 +17062,66 @@ To mock this implementation either inject an instance of IPauseHook or use the p
 
 ---
 
+### PreconditionProps <a name="PreconditionProps" id="cdk-ssm-documents.PreconditionProps"></a>
+
+The precondition parameter is used as a comparator of SSM documents inputs to determine whether a command step would be executed or not.
+
+See https://docs.aws.amazon.com/systems-manager/latest/userguide/document-schemas-features.html
+
+#### Initializer <a name="Initializer" id="cdk-ssm-documents.PreconditionProps.Initializer"></a>
+
+```typescript
+import { PreconditionProps } from 'cdk-ssm-documents'
+
+const preconditionProps: PreconditionProps = { ... }
+```
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#cdk-ssm-documents.PreconditionProps.property.operationType">operationType</a></code> | <code><a href="#cdk-ssm-documents.Operation">Operation</a></code> | (Required) the operation used to compare the parameter with the variable. |
+| <code><a href="#cdk-ssm-documents.PreconditionProps.property.variable1">variable1</a></code> | <code><a href="#cdk-ssm-documents.IGenericVariable">IGenericVariable</a></code> | (Required) the variable to compare against the constant. |
+| <code><a href="#cdk-ssm-documents.PreconditionProps.property.variable2">variable2</a></code> | <code><a href="#cdk-ssm-documents.IGenericVariable">IGenericVariable</a></code> | (Required) the being compared against the variable. |
+
+---
+
+##### `operationType`<sup>Required</sup> <a name="operationType" id="cdk-ssm-documents.PreconditionProps.property.operationType"></a>
+
+```typescript
+public readonly operationType: Operation;
+```
+
+- *Type:* <a href="#cdk-ssm-documents.Operation">Operation</a>
+
+(Required) the operation used to compare the parameter with the variable.
+
+---
+
+##### `variable1`<sup>Required</sup> <a name="variable1" id="cdk-ssm-documents.PreconditionProps.property.variable1"></a>
+
+```typescript
+public readonly variable1: IGenericVariable;
+```
+
+- *Type:* <a href="#cdk-ssm-documents.IGenericVariable">IGenericVariable</a>
+
+(Required) the variable to compare against the constant.
+
+---
+
+##### `variable2`<sup>Required</sup> <a name="variable2" id="cdk-ssm-documents.PreconditionProps.property.variable2"></a>
+
+```typescript
+public readonly variable2: IGenericVariable;
+```
+
+- *Type:* <a href="#cdk-ssm-documents.IGenericVariable">IGenericVariable</a>
+
+(Required) the being compared against the variable.
+
+---
+
 ### PsModuleStepProps <a name="PsModuleStepProps" id="cdk-ssm-documents.PsModuleStepProps"></a>
 
 Properties for ps Module step.
@@ -16965,11 +17142,13 @@ const psModuleStepProps: PsModuleStepProps = { ... }
 | <code><a href="#cdk-ssm-documents.PsModuleStepProps.property.inputObserver">inputObserver</a></code> | <code><a href="#cdk-ssm-documents.IObserver">IObserver</a></code> | (Optional) Allows for observing the input to steps as they run. |
 | <code><a href="#cdk-ssm-documents.PsModuleStepProps.property.name">name</a></code> | <code>string</code> | (Optional) Name of the current step. |
 | <code><a href="#cdk-ssm-documents.PsModuleStepProps.property.outputObserver">outputObserver</a></code> | <code><a href="#cdk-ssm-documents.IObserver">IObserver</a></code> | (Optional) Allows for observing the output of steps as they run. |
+| <code><a href="#cdk-ssm-documents.PsModuleStepProps.property.simulationPlatform">simulationPlatform</a></code> | <code><a href="#cdk-ssm-documents.Platform">Platform</a></code> | The Platform used in executing the command step. |
 | <code><a href="#cdk-ssm-documents.PsModuleStepProps.property.exitOnFailure">exitOnFailure</a></code> | <code>boolean</code> | (Optional) Whether to exit the document execution after failed execution of this step. |
 | <code><a href="#cdk-ssm-documents.PsModuleStepProps.property.exitOnSuccess">exitOnSuccess</a></code> | <code>boolean</code> | (Optional) Whether to exit the document execution after successful execution of this step. |
 | <code><a href="#cdk-ssm-documents.PsModuleStepProps.property.finallyStep">finallyStep</a></code> | <code>boolean</code> | *No description.* |
 | <code><a href="#cdk-ssm-documents.PsModuleStepProps.property.markSuccessAndExitOnFailure">markSuccessAndExitOnFailure</a></code> | <code>boolean</code> | *No description.* |
 | <code><a href="#cdk-ssm-documents.PsModuleStepProps.property.onCancel">onCancel</a></code> | <code><a href="#cdk-ssm-documents.Step">Step</a></code> | (Optional) Step to jump to in the event that this step is cancelled. |
+| <code><a href="#cdk-ssm-documents.PsModuleStepProps.property.precondition">precondition</a></code> | <code><a href="#cdk-ssm-documents.Precondition">Precondition</a></code> | (Optional) A precondition to test before execution occurrs. |
 | <code><a href="#cdk-ssm-documents.PsModuleStepProps.property.source">source</a></code> | <code><a href="#cdk-ssm-documents.IStringVariable">IStringVariable</a></code> | The URL or local path on the instance to the application .zip file. The name of the zip file must be the name of the module to be installed. |
 | <code><a href="#cdk-ssm-documents.PsModuleStepProps.property.environment">environment</a></code> | <code><a href="#cdk-ssm-documents.IEnvironment">IEnvironment</a></code> | (Optional) Specify here the environment in which to execute the scripts. |
 | <code><a href="#cdk-ssm-documents.PsModuleStepProps.property.runCommand">runCommand</a></code> | <code><a href="#cdk-ssm-documents.IStringVariable">IStringVariable</a>[]</code> | Specify the commands to run or the path to an existing script on the instance. |
@@ -17034,6 +17213,18 @@ public readonly outputObserver: IObserver;
 
 ---
 
+##### `simulationPlatform`<sup>Required</sup> <a name="simulationPlatform" id="cdk-ssm-documents.PsModuleStepProps.property.simulationPlatform"></a>
+
+```typescript
+public readonly simulationPlatform: Platform;
+```
+
+- *Type:* <a href="#cdk-ssm-documents.Platform">Platform</a>
+
+The Platform used in executing the command step.
+
+---
+
 ##### `exitOnFailure`<sup>Optional</sup> <a name="exitOnFailure" id="cdk-ssm-documents.PsModuleStepProps.property.exitOnFailure"></a>
 
 ```typescript
@@ -17094,6 +17285,21 @@ public readonly onCancel: Step;
 - *Default:* undefined
 
 (Optional) Step to jump to in the event that this step is cancelled.
+
+---
+
+##### `precondition`<sup>Optional</sup> <a name="precondition" id="cdk-ssm-documents.PsModuleStepProps.property.precondition"></a>
+
+```typescript
+public readonly precondition: Precondition;
+```
+
+- *Type:* <a href="#cdk-ssm-documents.Precondition">Precondition</a>
+- *Default:* undefined
+
+(Optional) A precondition to test before execution occurrs.
+
+When the precondition isn't met, the command step isn't executed.
 
 ---
 
@@ -18315,11 +18521,13 @@ const runPowerShellScriptStepProps: RunPowerShellScriptStepProps = { ... }
 | <code><a href="#cdk-ssm-documents.RunPowerShellScriptStepProps.property.inputObserver">inputObserver</a></code> | <code><a href="#cdk-ssm-documents.IObserver">IObserver</a></code> | (Optional) Allows for observing the input to steps as they run. |
 | <code><a href="#cdk-ssm-documents.RunPowerShellScriptStepProps.property.name">name</a></code> | <code>string</code> | (Optional) Name of the current step. |
 | <code><a href="#cdk-ssm-documents.RunPowerShellScriptStepProps.property.outputObserver">outputObserver</a></code> | <code><a href="#cdk-ssm-documents.IObserver">IObserver</a></code> | (Optional) Allows for observing the output of steps as they run. |
+| <code><a href="#cdk-ssm-documents.RunPowerShellScriptStepProps.property.simulationPlatform">simulationPlatform</a></code> | <code><a href="#cdk-ssm-documents.Platform">Platform</a></code> | The Platform used in executing the command step. |
 | <code><a href="#cdk-ssm-documents.RunPowerShellScriptStepProps.property.exitOnFailure">exitOnFailure</a></code> | <code>boolean</code> | (Optional) Whether to exit the document execution after failed execution of this step. |
 | <code><a href="#cdk-ssm-documents.RunPowerShellScriptStepProps.property.exitOnSuccess">exitOnSuccess</a></code> | <code>boolean</code> | (Optional) Whether to exit the document execution after successful execution of this step. |
 | <code><a href="#cdk-ssm-documents.RunPowerShellScriptStepProps.property.finallyStep">finallyStep</a></code> | <code>boolean</code> | *No description.* |
 | <code><a href="#cdk-ssm-documents.RunPowerShellScriptStepProps.property.markSuccessAndExitOnFailure">markSuccessAndExitOnFailure</a></code> | <code>boolean</code> | *No description.* |
 | <code><a href="#cdk-ssm-documents.RunPowerShellScriptStepProps.property.onCancel">onCancel</a></code> | <code><a href="#cdk-ssm-documents.Step">Step</a></code> | (Optional) Step to jump to in the event that this step is cancelled. |
+| <code><a href="#cdk-ssm-documents.RunPowerShellScriptStepProps.property.precondition">precondition</a></code> | <code><a href="#cdk-ssm-documents.Precondition">Precondition</a></code> | (Optional) A precondition to test before execution occurrs. |
 | <code><a href="#cdk-ssm-documents.RunPowerShellScriptStepProps.property.runCommand">runCommand</a></code> | <code><a href="#cdk-ssm-documents.IStringVariable">IStringVariable</a>[]</code> | Specify the commands to run or the path to an existing script on the instance. |
 | <code><a href="#cdk-ssm-documents.RunPowerShellScriptStepProps.property.environment">environment</a></code> | <code><a href="#cdk-ssm-documents.IEnvironment">IEnvironment</a></code> | (Optional) Specify here the environment in which to execute the scripts. |
 | <code><a href="#cdk-ssm-documents.RunPowerShellScriptStepProps.property.timeoutSeconds">timeoutSeconds</a></code> | <code>number</code> | (Optional) The time in seconds for a command to be completed before it's considered to have failed. |
@@ -18379,6 +18587,18 @@ public readonly outputObserver: IObserver;
 - *Default:* NoopObserver
 
 (Optional) Allows for observing the output of steps as they run.
+
+---
+
+##### `simulationPlatform`<sup>Required</sup> <a name="simulationPlatform" id="cdk-ssm-documents.RunPowerShellScriptStepProps.property.simulationPlatform"></a>
+
+```typescript
+public readonly simulationPlatform: Platform;
+```
+
+- *Type:* <a href="#cdk-ssm-documents.Platform">Platform</a>
+
+The Platform used in executing the command step.
 
 ---
 
@@ -18442,6 +18662,21 @@ public readonly onCancel: Step;
 - *Default:* undefined
 
 (Optional) Step to jump to in the event that this step is cancelled.
+
+---
+
+##### `precondition`<sup>Optional</sup> <a name="precondition" id="cdk-ssm-documents.RunPowerShellScriptStepProps.property.precondition"></a>
+
+```typescript
+public readonly precondition: Precondition;
+```
+
+- *Type:* <a href="#cdk-ssm-documents.Precondition">Precondition</a>
+- *Default:* undefined
+
+(Optional) A precondition to test before execution occurrs.
+
+When the precondition isn't met, the command step isn't executed.
 
 ---
 
@@ -18520,11 +18755,13 @@ const runShellScriptStepProps: RunShellScriptStepProps = { ... }
 | <code><a href="#cdk-ssm-documents.RunShellScriptStepProps.property.inputObserver">inputObserver</a></code> | <code><a href="#cdk-ssm-documents.IObserver">IObserver</a></code> | (Optional) Allows for observing the input to steps as they run. |
 | <code><a href="#cdk-ssm-documents.RunShellScriptStepProps.property.name">name</a></code> | <code>string</code> | (Optional) Name of the current step. |
 | <code><a href="#cdk-ssm-documents.RunShellScriptStepProps.property.outputObserver">outputObserver</a></code> | <code><a href="#cdk-ssm-documents.IObserver">IObserver</a></code> | (Optional) Allows for observing the output of steps as they run. |
+| <code><a href="#cdk-ssm-documents.RunShellScriptStepProps.property.simulationPlatform">simulationPlatform</a></code> | <code><a href="#cdk-ssm-documents.Platform">Platform</a></code> | The Platform used in executing the command step. |
 | <code><a href="#cdk-ssm-documents.RunShellScriptStepProps.property.exitOnFailure">exitOnFailure</a></code> | <code>boolean</code> | (Optional) Whether to exit the document execution after failed execution of this step. |
 | <code><a href="#cdk-ssm-documents.RunShellScriptStepProps.property.exitOnSuccess">exitOnSuccess</a></code> | <code>boolean</code> | (Optional) Whether to exit the document execution after successful execution of this step. |
 | <code><a href="#cdk-ssm-documents.RunShellScriptStepProps.property.finallyStep">finallyStep</a></code> | <code>boolean</code> | *No description.* |
 | <code><a href="#cdk-ssm-documents.RunShellScriptStepProps.property.markSuccessAndExitOnFailure">markSuccessAndExitOnFailure</a></code> | <code>boolean</code> | *No description.* |
 | <code><a href="#cdk-ssm-documents.RunShellScriptStepProps.property.onCancel">onCancel</a></code> | <code><a href="#cdk-ssm-documents.Step">Step</a></code> | (Optional) Step to jump to in the event that this step is cancelled. |
+| <code><a href="#cdk-ssm-documents.RunShellScriptStepProps.property.precondition">precondition</a></code> | <code><a href="#cdk-ssm-documents.Precondition">Precondition</a></code> | (Optional) A precondition to test before execution occurrs. |
 | <code><a href="#cdk-ssm-documents.RunShellScriptStepProps.property.runCommand">runCommand</a></code> | <code><a href="#cdk-ssm-documents.IStringVariable">IStringVariable</a>[]</code> | Specify the commands to run or the path to an existing script on the instance. |
 | <code><a href="#cdk-ssm-documents.RunShellScriptStepProps.property.environment">environment</a></code> | <code><a href="#cdk-ssm-documents.IEnvironment">IEnvironment</a></code> | (Optional) Specify here the environment in which to execute the scripts. |
 | <code><a href="#cdk-ssm-documents.RunShellScriptStepProps.property.timeoutSeconds">timeoutSeconds</a></code> | <code>number</code> | (Optional) The time in seconds for a command to be completed before it's considered to have failed. |
@@ -18584,6 +18821,18 @@ public readonly outputObserver: IObserver;
 - *Default:* NoopObserver
 
 (Optional) Allows for observing the output of steps as they run.
+
+---
+
+##### `simulationPlatform`<sup>Required</sup> <a name="simulationPlatform" id="cdk-ssm-documents.RunShellScriptStepProps.property.simulationPlatform"></a>
+
+```typescript
+public readonly simulationPlatform: Platform;
+```
+
+- *Type:* <a href="#cdk-ssm-documents.Platform">Platform</a>
+
+The Platform used in executing the command step.
 
 ---
 
@@ -18647,6 +18896,21 @@ public readonly onCancel: Step;
 - *Default:* undefined
 
 (Optional) Step to jump to in the event that this step is cancelled.
+
+---
+
+##### `precondition`<sup>Optional</sup> <a name="precondition" id="cdk-ssm-documents.RunShellScriptStepProps.property.precondition"></a>
+
+```typescript
+public readonly precondition: Precondition;
+```
+
+- *Type:* <a href="#cdk-ssm-documents.Precondition">Precondition</a>
+- *Default:* undefined
+
+(Optional) A precondition to test before execution occurrs.
+
+When the precondition isn't met, the command step isn't executed.
 
 ---
 
@@ -19921,27 +20185,6 @@ The value keyed on the inputToTest will be tested against the declared constant 
 
 ---
 
-#### Static Functions <a name="Static Functions" id="Static Functions"></a>
-
-| **Name** | **Description** |
-| --- | --- |
-| <code><a href="#cdk-ssm-documents.Choice.fromOperationName">fromOperationName</a></code> | *No description.* |
-
----
-
-##### `fromOperationName` <a name="fromOperationName" id="cdk-ssm-documents.Choice.fromOperationName"></a>
-
-```typescript
-import { Choice } from 'cdk-ssm-documents'
-
-Choice.fromOperationName(operationName: string)
-```
-
-###### `operationName`<sup>Required</sup> <a name="operationName" id="cdk-ssm-documents.Choice.fromOperationName.parameter.operationName"></a>
-
-- *Type:* string
-
----
 
 #### Properties <a name="Properties" id="Properties"></a>
 
@@ -19994,23 +20237,6 @@ public readonly variable: IBooleanVariable | INumberVariable | IStringVariable;
 
 ---
 
-#### Constants <a name="Constants" id="Constants"></a>
-
-| **Name** | **Type** | **Description** |
-| --- | --- | --- |
-| <code><a href="#cdk-ssm-documents.Choice.property.STRING_TO_OPERATION">STRING_TO_OPERATION</a></code> | <code>{[ key: string ]: <a href="#cdk-ssm-documents.Operation">Operation</a>}</code> | *No description.* |
-
----
-
-##### `STRING_TO_OPERATION`<sup>Required</sup> <a name="STRING_TO_OPERATION" id="cdk-ssm-documents.Choice.property.STRING_TO_OPERATION"></a>
-
-```typescript
-public readonly STRING_TO_OPERATION: {[ key: string ]: Operation};
-```
-
-- *Type:* {[ key: string ]: <a href="#cdk-ssm-documents.Operation">Operation</a>}
-
----
 
 ### DataType <a name="DataType" id="cdk-ssm-documents.DataType"></a>
 
@@ -22835,6 +23061,125 @@ public readonly reference: string;
 ---
 
 
+### OperationEvaluator <a name="OperationEvaluator" id="cdk-ssm-documents.OperationEvaluator"></a>
+
+#### Initializers <a name="Initializers" id="cdk-ssm-documents.OperationEvaluator.Initializer"></a>
+
+```typescript
+import { OperationEvaluator } from 'cdk-ssm-documents'
+
+new OperationEvaluator(operation: Operation)
+```
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#cdk-ssm-documents.OperationEvaluator.Initializer.parameter.operation">operation</a></code> | <code><a href="#cdk-ssm-documents.Operation">Operation</a></code> | *No description.* |
+
+---
+
+##### `operation`<sup>Required</sup> <a name="operation" id="cdk-ssm-documents.OperationEvaluator.Initializer.parameter.operation"></a>
+
+- *Type:* <a href="#cdk-ssm-documents.Operation">Operation</a>
+
+---
+
+#### Methods <a name="Methods" id="Methods"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#cdk-ssm-documents.OperationEvaluator.evaluate">evaluate</a></code> | Evaluates this operation against the provided inputs. |
+| <code><a href="#cdk-ssm-documents.OperationEvaluator.toOperationName">toOperationName</a></code> | *No description.* |
+
+---
+
+##### `evaluate` <a name="evaluate" id="cdk-ssm-documents.OperationEvaluator.evaluate"></a>
+
+```typescript
+public evaluate(value1: any, value2: any): boolean
+```
+
+Evaluates this operation against the provided inputs.
+
+###### `value1`<sup>Required</sup> <a name="value1" id="cdk-ssm-documents.OperationEvaluator.evaluate.parameter.value1"></a>
+
+- *Type:* any
+
+---
+
+###### `value2`<sup>Required</sup> <a name="value2" id="cdk-ssm-documents.OperationEvaluator.evaluate.parameter.value2"></a>
+
+- *Type:* any
+
+---
+
+##### `toOperationName` <a name="toOperationName" id="cdk-ssm-documents.OperationEvaluator.toOperationName"></a>
+
+```typescript
+public toOperationName(): string
+```
+
+#### Static Functions <a name="Static Functions" id="Static Functions"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#cdk-ssm-documents.OperationEvaluator.fromOperationName">fromOperationName</a></code> | Converts a string to OperationType. |
+
+---
+
+##### `fromOperationName` <a name="fromOperationName" id="cdk-ssm-documents.OperationEvaluator.fromOperationName"></a>
+
+```typescript
+import { OperationEvaluator } from 'cdk-ssm-documents'
+
+OperationEvaluator.fromOperationName(operationName: string)
+```
+
+Converts a string to OperationType.
+
+###### `operationName`<sup>Required</sup> <a name="operationName" id="cdk-ssm-documents.OperationEvaluator.fromOperationName.parameter.operationName"></a>
+
+- *Type:* string
+
+an operation name to return its OperationType.
+
+---
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#cdk-ssm-documents.OperationEvaluator.property.operation">operation</a></code> | <code><a href="#cdk-ssm-documents.Operation">Operation</a></code> | *No description.* |
+
+---
+
+##### `operation`<sup>Required</sup> <a name="operation" id="cdk-ssm-documents.OperationEvaluator.property.operation"></a>
+
+```typescript
+public readonly operation: Operation;
+```
+
+- *Type:* <a href="#cdk-ssm-documents.Operation">Operation</a>
+
+---
+
+#### Constants <a name="Constants" id="Constants"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#cdk-ssm-documents.OperationEvaluator.property.STRING_TO_OPERATION">STRING_TO_OPERATION</a></code> | <code>{[ key: string ]: <a href="#cdk-ssm-documents.Operation">Operation</a>}</code> | *No description.* |
+
+---
+
+##### `STRING_TO_OPERATION`<sup>Required</sup> <a name="STRING_TO_OPERATION" id="cdk-ssm-documents.OperationEvaluator.property.STRING_TO_OPERATION"></a>
+
+```typescript
+public readonly STRING_TO_OPERATION: {[ key: string ]: Operation};
+```
+
+- *Type:* {[ key: string ]: <a href="#cdk-ssm-documents.Operation">Operation</a>}
+
+---
+
 ### PauseImpl <a name="PauseImpl" id="cdk-ssm-documents.PauseImpl"></a>
 
 - *Implements:* <a href="#cdk-ssm-documents.IPauseHook">IPauseHook</a>
@@ -22873,6 +23218,169 @@ public pause(): void
 
 
 
+
+### Platforms <a name="Platforms" id="cdk-ssm-documents.Platforms"></a>
+
+
+#### Static Functions <a name="Static Functions" id="Static Functions"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#cdk-ssm-documents.Platforms.toPlatform">toPlatform</a></code> | Converts a string to Platform. |
+
+---
+
+##### `toPlatform` <a name="toPlatform" id="cdk-ssm-documents.Platforms.toPlatform"></a>
+
+```typescript
+import { Platforms } from 'cdk-ssm-documents'
+
+Platforms.toPlatform(platformString: string)
+```
+
+Converts a string to Platform.
+
+###### `platformString`<sup>Required</sup> <a name="platformString" id="cdk-ssm-documents.Platforms.toPlatform.parameter.platformString"></a>
+
+- *Type:* string
+
+a platform name to return its Platform type.
+
+---
+
+
+#### Constants <a name="Constants" id="Constants"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#cdk-ssm-documents.Platforms.property.STRING_TO_PLATFORM">STRING_TO_PLATFORM</a></code> | <code>{[ key: string ]: <a href="#cdk-ssm-documents.Platform">Platform</a>}</code> | *No description.* |
+
+---
+
+##### `STRING_TO_PLATFORM`<sup>Required</sup> <a name="STRING_TO_PLATFORM" id="cdk-ssm-documents.Platforms.property.STRING_TO_PLATFORM"></a>
+
+```typescript
+public readonly STRING_TO_PLATFORM: {[ key: string ]: Platform};
+```
+
+- *Type:* {[ key: string ]: <a href="#cdk-ssm-documents.Platform">Platform</a>}
+
+---
+
+### Precondition <a name="Precondition" id="cdk-ssm-documents.Precondition"></a>
+
+#### Methods <a name="Methods" id="Methods"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#cdk-ssm-documents.Precondition.asSsmEntry">asSsmEntry</a></code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.Precondition.evaluate">evaluate</a></code> | Evaluates if the precondition is met, by comparing the variable with the constant using the operator. |
+
+---
+
+##### `asSsmEntry` <a name="asSsmEntry" id="cdk-ssm-documents.Precondition.asSsmEntry"></a>
+
+```typescript
+public asSsmEntry(): {[ key: string ]: any}
+```
+
+##### `evaluate` <a name="evaluate" id="cdk-ssm-documents.Precondition.evaluate"></a>
+
+```typescript
+public evaluate(inputs: {[ key: string ]: any}): boolean
+```
+
+Evaluates if the precondition is met, by comparing the variable with the constant using the operator.
+
+###### `inputs`<sup>Required</sup> <a name="inputs" id="cdk-ssm-documents.Precondition.evaluate.parameter.inputs"></a>
+
+- *Type:* {[ key: string ]: any}
+
+---
+
+#### Static Functions <a name="Static Functions" id="Static Functions"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#cdk-ssm-documents.Precondition.newPlatformPrecondition">newPlatformPrecondition</a></code> | Returns a new Precondition. |
+
+---
+
+##### `newPlatformPrecondition` <a name="newPlatformPrecondition" id="cdk-ssm-documents.Precondition.newPlatformPrecondition"></a>
+
+```typescript
+import { Precondition } from 'cdk-ssm-documents'
+
+Precondition.newPlatformPrecondition(platform: Platform)
+```
+
+Returns a new Precondition.
+
+###### `platform`<sup>Required</sup> <a name="platform" id="cdk-ssm-documents.Precondition.newPlatformPrecondition.parameter.platform"></a>
+
+- *Type:* <a href="#cdk-ssm-documents.Platform">Platform</a>
+
+The platform the preconditions tests against.
+
+---
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#cdk-ssm-documents.Precondition.property.operationType">operationType</a></code> | <code><a href="#cdk-ssm-documents.Operation">Operation</a></code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.Precondition.property.variable1">variable1</a></code> | <code><a href="#cdk-ssm-documents.IGenericVariable">IGenericVariable</a></code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.Precondition.property.variable2">variable2</a></code> | <code><a href="#cdk-ssm-documents.IGenericVariable">IGenericVariable</a></code> | *No description.* |
+
+---
+
+##### `operationType`<sup>Required</sup> <a name="operationType" id="cdk-ssm-documents.Precondition.property.operationType"></a>
+
+```typescript
+public readonly operationType: Operation;
+```
+
+- *Type:* <a href="#cdk-ssm-documents.Operation">Operation</a>
+
+---
+
+##### `variable1`<sup>Required</sup> <a name="variable1" id="cdk-ssm-documents.Precondition.property.variable1"></a>
+
+```typescript
+public readonly variable1: IGenericVariable;
+```
+
+- *Type:* <a href="#cdk-ssm-documents.IGenericVariable">IGenericVariable</a>
+
+---
+
+##### `variable2`<sup>Required</sup> <a name="variable2" id="cdk-ssm-documents.Precondition.property.variable2"></a>
+
+```typescript
+public readonly variable2: IGenericVariable;
+```
+
+- *Type:* <a href="#cdk-ssm-documents.IGenericVariable">IGenericVariable</a>
+
+---
+
+#### Constants <a name="Constants" id="Constants"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#cdk-ssm-documents.Precondition.property.INJECTED_PLAYFORM_TYPE_KEY">INJECTED_PLAYFORM_TYPE_KEY</a></code> | <code>string</code> | *No description.* |
+
+---
+
+##### `INJECTED_PLAYFORM_TYPE_KEY`<sup>Required</sup> <a name="INJECTED_PLAYFORM_TYPE_KEY" id="cdk-ssm-documents.Precondition.property.INJECTED_PLAYFORM_TYPE_KEY"></a>
+
+```typescript
+public readonly INJECTED_PLAYFORM_TYPE_KEY: string;
+```
+
+- *Type:* string
+
+---
 
 ### ReflectiveAwsInvoker <a name="ReflectiveAwsInvoker" id="cdk-ssm-documents.ReflectiveAwsInvoker"></a>
 
@@ -24413,9 +24921,10 @@ Values for CreateStackStep's OnFailure property.
 
 ### Operation <a name="Operation" id="cdk-ssm-documents.Operation"></a>
 
-Operation to use for comparing a Choice's constant with the value provided.
+Operation to use for comparing a Choice's or Preconditions with provided value.
 
 See https://docs.aws.amazon.com/systems-manager/latest/userguide/automation-action-branch.html
+or https://docs.aws.amazon.com/systems-manager/latest/userguide/document-schemas-features.html
 
 #### Members <a name="Members" id="Members"></a>
 
