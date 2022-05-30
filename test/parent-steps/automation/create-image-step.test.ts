@@ -1,6 +1,7 @@
 import { strict as assert } from 'assert';
 import { Stack } from 'aws-cdk-lib';
 import { CreateImageStep, HardCodedBoolean, HardCodedString, HardCodedStringMap, MockAwsInvoker, ResponseCode } from '../../../lib';
+import { AutomationStepSimulation } from '../../../lib/simulation/automation-step-simulation';
 
 describe('CreateImageStep', () => {
   describe('#invoke()', () => {
@@ -31,12 +32,11 @@ describe('CreateImageStep', () => {
       });
 
       const step = new CreateImageStep(new Stack(), 'id2', {
-        awsInvoker: awsInvoker,
         instanceId: new HardCodedString(instanceId),
         imageName: new HardCodedString(imageName),
       });
 
-      const result = step.invoke({});
+      const result = new AutomationStepSimulation(step, { awsInvoker: awsInvoker }).invoke({});
 
       assert.equal(result.responseCode, ResponseCode.SUCCESS);
       assert.deepEqual(result.outputs, {
@@ -80,11 +80,10 @@ describe('CreateImageStep', () => {
         }],
       });
       const step = new CreateImageStep(new Stack(), 'id2', {
-        awsInvoker: awsInvoker,
         ...stepParams,
       });
 
-      const result = step.invoke({});
+      const result = new AutomationStepSimulation(step, { awsInvoker: awsInvoker }).invoke({});
 
       assert.equal(result.responseCode, ResponseCode.SUCCESS);
       assert.deepEqual(awsInvoker.previousInvocations[0], {
@@ -104,9 +103,7 @@ describe('CreateImageStep', () => {
         noReboot: new HardCodedBoolean(false),
         blockDeviceMappings: new HardCodedStringMap({ a: 1 }),
       };
-      const awsInvoker = new MockAwsInvoker();
       const step = new CreateImageStep(new Stack(), 'id2', {
-        awsInvoker: awsInvoker,
         ...stepParams,
       });
 

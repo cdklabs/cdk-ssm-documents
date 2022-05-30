@@ -36,46 +36,18 @@ export interface InvokeWebhookProps {
 }
 
 /**
- * Hook for simulating aws:invokeWebhook
- */
-export interface IWebhook {
-  /**
-     * Invoke the web hook
-     */
-  invoke(props: InvokeWebhookProps): InvokeWebhookResult;
-}
-
-class WebhookImpl implements IWebhook {
-  private static readonly NoContentResponseCode = 204;
-
-  invoke(_props: InvokeWebhookProps): InvokeWebhookResult {
-    console.log('InvokeWebhook: Cannot be simulated. Returning No-Content.');
-
-    return {
-      response: '',
-      responseCode: WebhookImpl.NoContentResponseCode,
-    };
-  }
-}
-
-/**
  * Properties for InvokeWebhookStep
  */
 export interface InvokeWebhookStepProps extends AutomationStepProps {
-  /**
-     * (Optional) Hook for simulating aws:invokeWebhook
-     * @default - Returns 204 with an empty response
-     */
-  readonly webhook?: IWebhook;
 
   /**
-     * The name of the Automation integration. For example, exampleIntegration. The integration you specify must already exist.
-     */
+   * The name of the Automation integration. For example, exampleIntegration. The integration you specify must already exist.
+   */
   readonly integrationName: IStringVariable;
 
   /**
-     * (Optional) The payload you want to send when your webhook integration is invoked.
-     */
+   * (Optional) The payload you want to send when your webhook integration is invoked.
+   */
   readonly body?: IStringVariable;
 }
 
@@ -84,13 +56,11 @@ export interface InvokeWebhookStepProps extends AutomationStepProps {
  */
 export class InvokeWebhookStep extends AutomationStep {
   readonly action = 'aws:invokeWebhook';
-  readonly webhook: IWebhook;
   readonly integrationName: IStringVariable;
   readonly body?: IStringVariable;
 
   constructor(scope: Construct, id: string, props: InvokeWebhookStepProps) {
     super(scope, id, props);
-    this.webhook = props.webhook ?? new WebhookImpl();
     this.integrationName = props.integrationName;
     this.body = props.body;
   }
@@ -114,21 +84,6 @@ export class InvokeWebhookStep extends AutomationStep {
     ];
 
     return inputs.flatMap(i => i?.requiredInputs() ?? []);
-  }
-
-  public executeStep(inputs: Record<string, any>): Record<string, any> {
-    const integrationName = this.integrationName.resolveToString(inputs);
-    const body = this.body?.resolveToString(inputs);
-
-    const result = this.webhook.invoke({
-      integrationName: integrationName,
-      body: body,
-    });
-
-    return {
-      Response: result.response,
-      ResponseCode: result.responseCode,
-    };
   }
 
   public toSsmEntry(): Record<string, any> {

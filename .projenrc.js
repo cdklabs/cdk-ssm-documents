@@ -57,6 +57,6 @@ const project = new awscdk.AwsCdkConstructLibrary({
   },
 });
 
-project.testTask.reset('mocha -r ts-node/register "test/**/*test.ts"', {name: "mocha"});
+project.testTask.reset('mocha -r ts-node/register "test/**/*test.ts"', { name: 'mocha' });
 
 project.synth();

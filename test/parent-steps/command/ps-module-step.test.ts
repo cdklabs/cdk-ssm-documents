@@ -9,6 +9,7 @@ import {
   StringVariable,
 } from '../../../lib';
 import { PsModuleStep } from '../../../lib/parent-steps/command/ps-module-step';
+import { CommandStepSimulation } from '../../../lib/simulation/command-step-simulation';
 
 //import {DockerEnvironment} from "../../lib/interface/environment"; Uncomment if running against docker container
 //Notes for running against a docker image:
@@ -29,7 +30,6 @@ describe('PsModuleStep', function() {
       const mockEnv = new MockEnvironment();
       //const mockEnv = DockerEnvironment.fromContainer("<ContainerId>") Comment out the line above and uncomment this if running against docker container
       const step = new PsModuleStep(new Stack(), 'psModule', {
-        environment: mockEnv,
         source: new StringFormat('%s', [new StringVariable('MyVar')]),
         runCommand: [
           new HardCodedString('New-Item -Path /mnt/test -ItemType Directory ; \
@@ -37,10 +37,9 @@ describe('PsModuleStep', function() {
         cd /mnt ; \
         Convertto-Yaml @{"hello"="world"} > output.txt'),
         ],
-        simulationPlatform: Platform.WINDOWS,
       });
       const myVar = '/mnt/powershell-yaml.zip';
-      const res = step.invoke({ MyVar: myVar });
+      const res = new CommandStepSimulation(step, { simulationPlatform: Platform.WINDOWS, environment: mockEnv }).invoke({ MyVar: myVar });
       assert.equal(res.responseCode, ResponseCode.SUCCESS);
       assert.deepEqual(mockEnv.previousCommands, [
         `pwsh -c \'Expand-Archive -Path ${myVar} -DestinationPath (Join-Path -Path (Get-Item ${myVar}).DirectoryName -ChildPath (Get-Item ${myVar}).BaseName) -Force ; \
@@ -61,9 +60,7 @@ describe('PsModuleStep', function() {
   });
   describe('#toSsmEntry()', function() {
     it('Builds entry as per SSM Document', function() {
-      const mockEnv = new MockEnvironment();
       const step = new PsModuleStep(new Stack(), 'psModule', {
-        environment: mockEnv,
         source: new StringFormat('%s', [new StringVariable('MyVar')]),
         runCommand: [
           new HardCodedString('New-Item -Path /mnt/test -ItemType Directory ; \
@@ -71,7 +68,6 @@ describe('PsModuleStep', function() {
                     cd /mnt ; \
                     Convertto-Yaml @{"hello"="world"} > output.txt'),
         ],
-        simulationPlatform: Platform.WINDOWS,
       });
 
       assert.deepEqual(JSON.parse(JSON.stringify(step.toSsmEntry())), {

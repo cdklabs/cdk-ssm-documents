@@ -1,5 +1,6 @@
 import { strict as assert } from 'assert';
-import { IAwsInvoker, MockAwsInvoker, StackStatus } from '../../../../lib';
+import { IAwsInvoker, MockAwsInvoker } from '../../../../lib';
+import { StackStatus } from '../../../../lib/domain/stack-status';
 import { waitForAndAssertImageAvailable, waitForAndAssertInstanceState, waitForAndAssertInstanceStatus, waitForAndAssertStackStatus } from '../../../../lib/parent-steps/automation/sub-steps/wait-for-and-assert';
 
 function createMockInvokerWithInstanceStateAndStatus(instanceIds: string[], state: string, status: string): IAwsInvoker {
@@ -70,8 +71,7 @@ describe('waitForAndAssert', () => {
         waitForState: ['shutting-down', 'terminated', 'running'],
         assertState: 'running',
         instanceIds: instanceIds,
-        awsInvoker: mockInvoker,
-      });
+      }, { awsInvoker: mockInvoker });
     });
 
     it('throws when the instance state is not desired', () => {
@@ -82,8 +82,7 @@ describe('waitForAndAssert', () => {
         waitForState: ['shutting-down', 'terminated', 'running'],
         assertState: 'running',
         instanceIds: instanceIds,
-        awsInvoker: mockInvoker,
-      }));
+      }, { awsInvoker: mockInvoker }));
     });
   });
 
@@ -96,8 +95,7 @@ describe('waitForAndAssert', () => {
         waitForStatus: ['ok', 'impaired', 'insufficient-data', 'not-applicable'],
         assertStatus: 'ok',
         instanceIds: instanceIds,
-        awsInvoker: mockInvoker,
-      });
+      }, { awsInvoker: mockInvoker });
     });
 
     it('throws when the instance state is not desired', () => {
@@ -108,8 +106,7 @@ describe('waitForAndAssert', () => {
         waitForStatus: ['ok', 'impaired', 'insufficient-data', 'not-applicable'],
         assertStatus: 'ok',
         instanceIds: instanceIds,
-        awsInvoker: mockInvoker,
-      }));
+      }, { awsInvoker: mockInvoker }));
     });
   });
 
@@ -120,8 +117,7 @@ describe('waitForAndAssert', () => {
 
       waitForAndAssertImageAvailable({
         imageId: imageId,
-        awsInvoker: mockInvoker,
-      });
+      }, { awsInvoker: mockInvoker });
     });
 
     it('throws when the image state is not desired', () => {
@@ -130,8 +126,7 @@ describe('waitForAndAssert', () => {
 
       assert.throws(() => waitForAndAssertImageAvailable({
         imageId: imageId,
-        awsInvoker: mockInvoker,
-      }));
+      }, { awsInvoker: mockInvoker }));
     });
   });
 
@@ -144,8 +139,7 @@ describe('waitForAndAssert', () => {
         stackName: stackName,
         waitForStatus: [StackStatus.REVIEW_IN_PROGRESS, StackStatus.IMPORT_IN_PROGRESS],
         assertStatus: StackStatus.REVIEW_IN_PROGRESS,
-        awsInvoker: mockInvoker,
-      });
+      }, { awsInvoker: mockInvoker });
     });
 
     it('throws when the stack status is not desired', () => {
@@ -156,8 +150,7 @@ describe('waitForAndAssert', () => {
         stackName: stackName,
         waitForStatus: [StackStatus.REVIEW_IN_PROGRESS, StackStatus.IMPORT_IN_PROGRESS],
         assertStatus: StackStatus.CREATE_COMPLETE,
-        awsInvoker: mockInvoker,
-      }));
+      }, { awsInvoker: mockInvoker }));
     });
   });
 });

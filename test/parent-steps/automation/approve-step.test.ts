@@ -1,18 +1,18 @@
 import { strict as assert } from 'assert';
 import { Stack } from 'aws-cdk-lib';
 import { ApproveStep, HardCodedNumber, HardCodedString, HardCodedStringList, MockApprove, ResponseCode } from '../../../lib';
+import { AutomationStepSimulation } from '../../../lib/simulation/automation-step-simulation';
 
 describe('ApproveStep', function() {
   describe('#invoke()', function() {
     it('Approve is invoked', function() {
-      const mockApprove = new MockApprove();
       const step = new ApproveStep(new Stack(), 'id2', {
-        approveHook: mockApprove,
         approvers: new HardCodedStringList(['some arn', 'other arn']),
         minRequiredApprovals: new HardCodedNumber(2),
       });
 
-      const result = step.invoke({});
+      const mockApprove = new MockApprove();
+      const result = new AutomationStepSimulation(step, { approveHook: mockApprove }).invoke({});
 
       assert.equal(result.responseCode, ResponseCode.SUCCESS);
       assert.equal(mockApprove.timesInvoked, 2);

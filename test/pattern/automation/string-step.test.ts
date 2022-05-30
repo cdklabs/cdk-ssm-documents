@@ -2,6 +2,7 @@ import * as assert from 'assert';
 import { Stack } from 'aws-cdk-lib';
 import { Construct } from 'constructs';
 import { AutomationDocument, AutomationDocumentProps, DataTypeEnum, StringStep, SynthUtils } from '../../../lib';
+import { Simulation } from '../../../lib/simulation/simulation';
 
 
 describe('StringStep', function() {
@@ -21,7 +22,7 @@ describe('StringStep', function() {
                         action: aws:sleep
                         inputs:
                           Duration: PT0M
-                    `, {});
+                    `);
 
           StringStep.fromYaml(this, `
                         name: myBranch
@@ -33,7 +34,7 @@ describe('StringStep', function() {
                             StringEquals: foo
                           Default:
                             sleep
-                    `, {});
+                    `);
 
           StringStep.fromYaml(this, `
                         name: myPython
@@ -50,7 +51,7 @@ describe('StringStep', function() {
                           Script: >
                             def my_func(args, context):
                               return {"MyReturn": args["MyInput"] + "-suffix"}
-                    `, {});
+                    `);
         }
       }
 
@@ -62,7 +63,7 @@ describe('StringStep', function() {
       SynthUtils.synthesize(stack);
 
       // Execute simulation
-      const simOutput = myAutomationDoc.runSimulation({ MyInput: 'foo' });
+      const simOutput = Simulation.ofAutomation(myAutomationDoc, {}).simulate({ MyInput: 'foo' });
 
       // Assert simulation result
       assert.strictEqual((simOutput.outputs??{})['myPython.MyOutput'], 'foo-suffix');

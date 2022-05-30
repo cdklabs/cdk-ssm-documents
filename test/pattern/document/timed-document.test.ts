@@ -2,7 +2,7 @@ import { strict as assert } from 'assert';
 import { Stack } from 'aws-cdk-lib';
 import { Construct } from 'constructs';
 import { TimedDocument } from '../../../';
-import { AutomationDocumentProps, MockSleep, SleepStep, SynthUtils } from '../../../lib';
+import { AutomationDocumentProps, SleepStep, SynthUtils } from '../../../lib';
 
 
 class MyTimedDocument extends TimedDocument {
@@ -10,7 +10,7 @@ class MyTimedDocument extends TimedDocument {
   constructor(scope: Construct, id: string, props: AutomationDocumentProps) {
     super(scope, id, props);
 
-    new SleepStep(this, 'SleepInsideTimeId', { sleepSeconds: 1, sleepHook: new MockSleep() });
+    new SleepStep(this, 'SleepInsideTimeId', { sleepSeconds: 1 });
   }
 
 }

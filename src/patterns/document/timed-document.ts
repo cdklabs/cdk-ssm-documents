@@ -8,7 +8,7 @@ export class TimedDocument extends AutomationDocument {
     super(stage, id, props);
   }
 
-  protected collectedSteps(): AutomationStep[] {
+  public collectedSteps(): AutomationStep[] {
     const middleSteps = super.collectedSteps();
     // If this is called a second time during synthesis then the newly created objects are inserted into the tree.
     // So first ensure that these aren't already added

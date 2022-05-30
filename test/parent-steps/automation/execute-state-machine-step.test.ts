@@ -1,6 +1,7 @@
 import { strict as assert } from 'assert';
 import { Stack } from 'aws-cdk-lib';
 import { ExecuteStateMachineStep, ExecuteStateMachineStepProps, HardCodedString, MockAwsInvoker, ResponseCode } from '../../../lib';
+import { AutomationStepSimulation } from '../../../lib/simulation/automation-step-simulation';
 
 describe('ExecuteStateMachineStep', () => {
   describe('#invoke()', () => {
@@ -33,10 +34,9 @@ describe('ExecuteStateMachineStep', () => {
         executionName: new HardCodedString(name),
         stateMachineArn: new HardCodedString(stateMachineArn),
         input: new HardCodedString(input),
-        awsInvoker: mockInvoker,
       });
 
-      const result = step.invoke({});
+      const result = new AutomationStepSimulation(step, { awsInvoker: mockInvoker }).invoke({});
 
       assert.equal(result.responseCode, ResponseCode.SUCCESS);
       assert.deepEqual(mockInvoker.previousInvocations[0], {

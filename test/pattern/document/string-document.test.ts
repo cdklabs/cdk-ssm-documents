@@ -1,6 +1,7 @@
 import { strict as assert } from 'assert';
 import { Stack } from 'aws-cdk-lib';
 import { MockAwsInvoker, MockSleep, StringDocument, SynthUtils } from '../../../lib';
+import { Simulation } from '../../../lib/simulation/simulation';
 
 
 describe('StringDocument', function() {
@@ -17,14 +18,14 @@ describe('StringDocument', function() {
 
       // Create document from file
       const stack: Stack = new Stack();
-      const myAutomationDoc = StringDocument.fromFile(stack, 'MyAutomationDoc', 'test/myAutomation.json', {
-        sleepHook: sleeper,
-        awsInvoker: awsInvoker,
-      });
+      const myAutomationDoc = StringDocument.fromFile(stack, 'MyAutomationDoc', 'test/myAutomation.json');
       SynthUtils.synthesize(stack);
 
       // Execute simulation
-      const simOutput = myAutomationDoc.runSimulation({});
+      const simOutput = Simulation.ofAutomation(myAutomationDoc, {
+        sleepHook: sleeper,
+        awsInvoker: awsInvoker,
+      }).simulate({});
 
       // Assert simulation result
       assert.deepEqual(awsInvoker.previousInvocations, [

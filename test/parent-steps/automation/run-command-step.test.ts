@@ -1,6 +1,7 @@
 import { strict as assert } from 'assert';
 import { Stack } from 'aws-cdk-lib';
 import { DocumentHashType, HardCodedDocumentHashType, HardCodedNumber, HardCodedString, HardCodedStringList, HardCodedStringMap, IRunCommandHook, ResponseCode, RunCommandOutputs, RunCommandProps, RunCommandStep } from '../../../lib';
+import { AutomationStepSimulation } from '../../../lib/simulation/automation-step-simulation';
 
 describe('RunCommandStep', () => {
   describe('#invoke()', () => {
@@ -33,7 +34,6 @@ describe('RunCommandStep', () => {
         },
       };
       const step = new RunCommandStep(new Stack(), 'runCommand', {
-        runCommandHook: mockHook,
         documentName: new HardCodedString('name'),
         targets: new HardCodedStringList(['instance']),
         parameters: new HardCodedStringMap({ a: 1 }),
@@ -50,7 +50,7 @@ describe('RunCommandStep', () => {
         maxErrors: new HardCodedNumber(5),
       });
 
-      const result = step.invoke({});
+      const result = new AutomationStepSimulation(step, { runCommandHook: mockHook }).invoke({});
 
       assert.equal(result.responseCode, ResponseCode.SUCCESS);
       assert.deepEqual(result.outputs, {

@@ -2,15 +2,12 @@ import { EOL } from 'os';
 import { CfnTag, IResolvable, Aspects, Lazy } from 'aws-cdk-lib';
 import { CfnDocument } from 'aws-cdk-lib/aws-ssm';
 import { Construct } from 'constructs';
-// @ts-ignore
-import yaml from 'js-yaml';
 import { StepCollector } from '../construct/step-collector';
 import { DataType } from '../domain/data-type';
 import { DocumentOutput } from '../domain/document-output';
-import { DocumentResult } from '../domain/document-result';
 import { Input } from '../domain/input';
-import { ResponseCode } from '../domain/response-code';
-import { SimulationResult } from '../domain/simulation-result';
+// eslint-disable-next-line @typescript-eslint/no-require-imports
+const yaml = require('js-yaml');
 
 
 export enum DocumentFormat {
@@ -118,73 +115,17 @@ export abstract class SsmDocument extends Construct {
           },
         }),
         documentFormat: isYaml ? 'YAML' : 'JSON',
-        documentType: 'Automation',
+        documentType: this.documentType(),
         tags: [{ key: 'CdkGenerated', value: 'true' }, ...(this.props.tags || [])],
       },
     });
   }
 
   /**
-     * Synthesize before calling this function!
-     * You can use this to Synthesize: cdk.SynthUtils.synthesize(stack);
-     *
-     * Executes the SSM Document in simluation mode.
-     * This method DOES NOT result in invocation of SSM APIs.
-     * Rather, all steps are executed locally and mimic the behavior of SSM.
-     * If any inputs are not provided in this function, the specified defaults for the inputs will be used.
-     * @param inputs the inputs to feed into the simulated execution.
-     * @returns the outputs of all of the executed steps.
-     */
-  public runSimulation(inputs: { [name: string]: any }): DocumentResult {
-    this.docInputs.forEach(docInput => {
-      if (inputs[docInput.name] == undefined) {
-        inputs[docInput.name] = docInput.defaultValue;
-        if (docInput.defaultValue == undefined) {
-          throw new Error(`Value not provided for ${docInput.name} and no default value was provided`);
-        }
-      }
-    });
-    for (let key in inputs) {
-      const value = inputs[key];
-      const matchedInput = this.docInputs.filter(docInput => docInput.name == key)[0];
-      if (matchedInput == undefined) {
-        throw new Error(`Value provided to simulation {${key}:${value}} is not a supported input for this document`);
-      }
-      if (!(new DataType(matchedInput.inputType).validateType(value))) {
-        throw new Error(`Value provided for ${key} was ${value} which does not match type ${matchedInput.inputType}`);
-      }
-      if (matchedInput.maxItems && Array.isArray(value) && matchedInput.maxItems < value.length) {
-        throw new Error(`Values for input ${key} were ${value} which is greater than maxItems: ${matchedInput.maxItems}`);
-      }
-      if (matchedInput.minItems && Array.isArray(value) && matchedInput.minItems > value.length) {
-        throw new Error(`Values for input ${key} were ${value} which is less than minItems: ${matchedInput.maxItems}`);
-      }
-      if (matchedInput.allowedPattern && !value.match(matchedInput.allowedPattern)) {
-        throw new Error(`Value for input ${key} was ${value} which does not match regex ${matchedInput.allowedPattern}`);
-      }
-      if (matchedInput.allowedValues && !matchedInput.allowedValues.includes(value)) {
-        throw new Error(`Value for input ${key} was ${value} which is not among allowedValues ${matchedInput.allowedValues}`);
-      }
-    }
-    const simulationResult = this.start(inputs);
-    var outputValues = [];
-    if (simulationResult.responseCode == ResponseCode.SUCCESS) {
-      outputValues = this.docOutputs.map(docOutput => {
-        const valueOfOutput = (simulationResult.outputs ?? {})[docOutput.name];
-        if (!new DataType(docOutput.outputType).validateType(valueOfOutput)) {
-          throw new Error(`Document output ${docOutput.name} did not match type ${docOutput.outputType}: ${valueOfOutput}`);
-        }
-        return valueOfOutput;
-      });
-    }
-    return { ...{ documentOutputs: outputValues }, ...simulationResult };
-  }
-
-  /**
-     * The SSM Document inputs optionally specify a number of parameters including allowedValues, minItems etc.
-     * This function builds an object containing the relevant (declared) input parameters.
-     * The return object will be used to build the yaml/json representation of the document.
-     */
+   * The SSM Document inputs optionally specify a number of parameters including allowedValues, minItems etc.
+   * This function builds an object containing the relevant (declared) input parameters.
+   * The return object will be used to build the yaml/json representation of the document.
+   */
   protected formatInputs(): { [name: string]: any } {
     const ssmInputs: {[name: string]: any} = {};
     this.docInputs.forEach(inp => {
@@ -214,12 +155,7 @@ export abstract class SsmDocument extends Construct {
     return ssmInputs;
   }
 
-  /**
-     * Delegates the execution of the Document to the subclass (Automation, etc).
-     * @param inputs a merge of the defined inputs to the document and the default values if not supplied.
-     * @returns the outputs that were emitted from all of the steps.
-     */
-  protected abstract start(inputs: { [name: string]: any }): SimulationResult;
+  public abstract documentType(): string;
 
   /**
      * Delegates building the SSM Document to be converted to a yaml/json to the subclass (Automation etc).

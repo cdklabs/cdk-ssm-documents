@@ -1,6 +1,7 @@
 import { strict as assert } from 'assert';
 import { Stack } from 'aws-cdk-lib';
 import { HardCodedString, HardCodedStringMap, InvokeLambdaFunctionStep, MockAwsInvoker, ResponseCode } from '../../../lib';
+import { AutomationStepSimulation } from '../../../lib/simulation/automation-step-simulation';
 
 describe('InvokeLambdaFunctionStep', () => {
   describe('#invoke()', () => {
@@ -21,11 +22,10 @@ describe('InvokeLambdaFunctionStep', () => {
         StatusCode: 200,
       });
       const step = new InvokeLambdaFunctionStep(new Stack(), 'id2', {
-        awsInvoker: awsInvoker,
         functionName: new HardCodedString(functionName),
       });
 
-      const result = step.invoke({});
+      const result = new AutomationStepSimulation(step, { awsInvoker: awsInvoker }).invoke({});
 
       assert.equal(result.responseCode, ResponseCode.SUCCESS);
       assert.deepEqual(awsInvoker.previousInvocations[0], {
@@ -67,11 +67,10 @@ describe('InvokeLambdaFunctionStep', () => {
         StatusCode: 200,
       });
       const step = new InvokeLambdaFunctionStep(new Stack(), 'id2', {
-        awsInvoker: awsInvoker,
         ...stepParams,
       });
 
-      const result = step.invoke({});
+      const result = new AutomationStepSimulation(step, { awsInvoker: awsInvoker }).invoke({});
 
       assert.equal(result.responseCode, ResponseCode.SUCCESS);
       assert.deepEqual(awsInvoker.previousInvocations[0], {
@@ -92,9 +91,7 @@ describe('InvokeLambdaFunctionStep', () => {
         clientContext: new HardCodedString('context'),
         payload: new HardCodedStringMap({ a: 1 }),
       };
-      const awsInvoker = new MockAwsInvoker();
       const step = new InvokeLambdaFunctionStep(new Stack(), 'id2', {
-        awsInvoker: awsInvoker,
         ...stepParams,
       });
 

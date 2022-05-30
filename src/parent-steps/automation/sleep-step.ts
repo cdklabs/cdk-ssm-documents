@@ -1,18 +1,11 @@
 import { Construct } from 'constructs';
 import { Output } from '../../domain/output';
-import { SleepImpl, ISleepHook } from '../../interface/sleep-hook';
 import { AutomationStep, AutomationStepProps } from '../automation-step';
 
 /**
  * Properties for sleep step.
  */
 export interface SleepStepProps extends AutomationStepProps {
-  /**
-     * (Optional) Whether to really perform a pause of the runtime.
-     * To override sleep behavior, inject an ISleepHook impl or use the provided MockSleep class.
-     * @default SleeperImpl
-     */
-  readonly sleepHook?: ISleepHook;
 
   /**
      * (Required) The amount of seconds to sleep for. May not exceed 604800.
@@ -27,13 +20,11 @@ export interface SleepStepProps extends AutomationStepProps {
  */
 export class SleepStep extends AutomationStep {
 
-  readonly sleeper: ISleepHook;
   readonly sleepSeconds: number;
   readonly action: string = 'aws:sleep';
 
   constructor(scope: Construct, id: string, props: SleepStepProps) {
     super(scope, id, props);
-    this.sleeper = props.sleepHook ?? new SleepImpl();
     this.sleepSeconds = props.sleepSeconds;
     if (this.sleepSeconds > 604800) {
       throw new Error('Sleep is greater than maximum of 604800. Seconds specified: ' + this.sleepSeconds);
@@ -54,11 +45,6 @@ export class SleepStep extends AutomationStep {
      */
   public listInputs(): string[] {
     return [];
-  }
-
-  public executeStep(_inputs: { [name: string]: any }): { [name: string]: any } {
-    this.sleeper.sleep(1000 * this.sleepSeconds);
-    return {};
   }
 
   public toSsmEntry(): { [name: string]: any } {

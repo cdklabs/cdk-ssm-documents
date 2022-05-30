@@ -1,6 +1,7 @@
 import { strict as assert } from 'assert';
 import { Stack } from 'aws-cdk-lib';
 import { MockAwsInvoker, ResponseCode, WaitForResourceStep } from '../../../lib';
+import { AutomationStepSimulation } from '../../../lib/simulation/automation-step-simulation';
 
 describe('WaitForResourceStep', function() {
   describe('#invoke()', function() {
@@ -14,12 +15,11 @@ describe('WaitForResourceStep', function() {
         name: 'S3List',
         pascalCaseApi: 'listBuckets',
         apiParams: {},
-        awsInvoker: mockInvoker,
         sleepIntervalMillis: 5000,
         timeoutSeconds: 10,
       });
 
-      const res = step.invoke({});
+      const res = new AutomationStepSimulation(step, { awsInvoker: mockInvoker }).invoke({});
       assert.equal(res.responseCode, ResponseCode.SUCCESS);
       assert.equal(mockInvoker.previousInvocations.length, 1);
     });
@@ -35,12 +35,11 @@ describe('WaitForResourceStep', function() {
         name: 'S3List',
         pascalCaseApi: 'listBuckets',
         apiParams: {},
-        awsInvoker: mockInvoker,
         sleepIntervalMillis: 1,
         timeoutSeconds: 1000,
       });
 
-      const res = step.invoke({});
+      const res = new AutomationStepSimulation(step, { awsInvoker: mockInvoker }).invoke({});
       assert.equal(res.responseCode, ResponseCode.SUCCESS);
       assert.equal(mockInvoker.previousInvocations.length, 2);
     });
@@ -56,19 +55,17 @@ describe('WaitForResourceStep', function() {
         name: 'S3List',
         pascalCaseApi: 'listBuckets',
         apiParams: {},
-        awsInvoker: mockInvoker,
         sleepIntervalMillis: 20,
         timeoutSeconds: 0.1,
       });
 
-      const res = step.invoke({});
+      const res = new AutomationStepSimulation(step, { awsInvoker: mockInvoker }).invoke({});
       assert.equal(res.responseCode, ResponseCode.FAILED);
       assert.ok(mockInvoker.previousInvocations.length > 0);
     });
   });
   describe('#toSsmEntry()', function() {
     it('Builds entry as per SSM Document', function() {
-      const mockInvoker = new MockAwsInvoker();
       const step = new WaitForResourceStep(new Stack(), 'id', {
         selector: '$.Owner.DisplayName',
         desiredValues: ['MyDisplayName', 'blabla'],
@@ -76,7 +73,6 @@ describe('WaitForResourceStep', function() {
         name: 'S3List',
         pascalCaseApi: 'listBuckets',
         apiParams: {},
-        awsInvoker: mockInvoker,
         sleepIntervalMillis: 5000,
         timeoutSeconds: 10,
       });

@@ -4,6 +4,7 @@ import { Construct } from 'constructs';
 import {
   RunShellScriptStep, SynthUtils, CommandDocument, DataTypeEnum, ResponseCode, StringFormat, StringVariable, Platform,
 } from '../../lib';
+import { Simulation } from '../../lib/simulation/simulation';
 
 describe('CommandDocument', function() {
   describe('#runSimulation()', function() {
@@ -20,14 +21,12 @@ describe('CommandDocument', function() {
           new RunShellScriptStep(this, 'MyShellScript1', {
             name: 'Shell1',
             runCommand: [new StringFormat('echo %s', [new StringVariable('MyInput')])],
-            simulationPlatform: Platform.LINUX,
           });
 
           // First step
           new RunShellScriptStep(this, 'MyShellScript2', {
             name: 'Shell2',
             runCommand: [new StringFormat('echo again %s', [new StringVariable('MyInput')])],
-            simulationPlatform: Platform.LINUX,
           });
         }
       }
@@ -38,7 +37,7 @@ describe('CommandDocument', function() {
       SynthUtils.synthesize(stack);
 
       // Execute simulation
-      const simOutput = myCommandDoc.runSimulation({});
+      const simOutput = Simulation.ofCommand(myCommandDoc, { simulationPlatform: Platform.LINUX }).simulate({});
 
       // Validate output
       assert.deepEqual(simOutput, {
@@ -62,14 +61,12 @@ describe('CommandDocument', function() {
           new RunShellScriptStep(this, 'MyShellScript1', {
             name: 'Shell1',
             runCommand: [new StringFormat('echo %s', [new StringVariable('MyInput')])],
-            simulationPlatform: Platform.LINUX,
           });
 
           // First step
           new RunShellScriptStep(this, 'MyShellScript2', {
             name: 'Shell2',
             runCommand: [new StringFormat('echo again %s', [new StringVariable('MyInput')])],
-            simulationPlatform: Platform.LINUX,
           });
         }
       }

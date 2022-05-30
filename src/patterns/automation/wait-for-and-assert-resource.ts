@@ -1,5 +1,4 @@
 import { Construct } from 'constructs';
-import { IAwsInvoker } from '../../interface/aws-invoker';
 import { AssertAwsResourceStep, AssertAwsResourceStepProps } from '../../parent-steps/automation/assert-aws-resource-step';
 import { WaitForResourceStep } from '../../parent-steps/automation/wait-for-resource-step';
 
@@ -7,15 +6,10 @@ import { WaitForResourceStep } from '../../parent-steps/automation/wait-for-reso
  * Properties of WaitForAndAssertResource
  */
 export interface WaitForAndAssertResourceProps extends AssertAwsResourceStepProps {
-  /**
-     * (Optional) Use this as a hook to inject an alternate IAwsInvoker (for mocking the AWS API call).
-     * @default - will perform a real invocation of the JavaScript AWS SDK using ReflectiveAwsInvoker class.
-     */
-  awsInvoker?: IAwsInvoker;
 
   /**
-     * (Required) Value extracted from AWS response must be one of these values before asserting the desired value.
-     */
+   * (Required) Value extracted from AWS response must be one of these values before asserting the desired value.
+   */
   waitForValues: string[];
 }
 
@@ -30,7 +24,6 @@ export class WaitForAndAssertResource extends Construct {
       service: props.service,
       pascalCaseApi: props.pascalCaseApi,
       apiParams: props.apiParams,
-      awsInvoker: props.awsInvoker,
       selector: props.selector,
     };
 

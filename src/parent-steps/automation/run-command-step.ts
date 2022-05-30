@@ -1,6 +1,6 @@
 import { Construct } from 'constructs';import { DataTypeEnum } from '../..';
 import { Output } from '../../domain/output';
-import { ApiRunCommandHook, DocumentHashType, IRunCommandHook, RunCommandProps } from '../../interface/run-command-hook';
+import { DocumentHashType } from '../../interface/run-command-hook';
 import { EnumVariable, HardCodedEnum, IEnumVariable } from '../../interface/variables/enum-variable';
 import { IMapListVariable } from '../../interface/variables/map-list-variable';
 import { INumberVariable } from '../../interface/variables/number-variable';
@@ -32,11 +32,6 @@ export class DocumentHashTypeVariable extends EnumVariable<typeof DocumentHashTy
  * Properties for RunCommandStep
  */
 export interface RunCommandStepProps extends AutomationStepProps {
-  /**
-     * Hook for simulating aws:runCommand.
-     * @default - Uses AWS API to execute the document remotely.
-     */
-  readonly runCommandHook?: IRunCommandHook;
 
   /**
      * If the Command type document is owned by you or AWS, specify the name of the document. If you're using a document shared with you by a different AWS account, specify the Amazon Resource Name (ARN) of the document.
@@ -118,7 +113,6 @@ export interface RunCommandStepProps extends AutomationStepProps {
  */
 export class RunCommandStep extends AutomationStep {
   readonly action = 'aws:runCommand';
-  readonly runCommandHook: IRunCommandHook;
   readonly documentName: IStringVariable;
   readonly targets: IStringListVariable | IMapListVariable;
   readonly parameters?: IStringMapVariable;
@@ -136,7 +130,6 @@ export class RunCommandStep extends AutomationStep {
 
   constructor(scope: Construct, id: string, props: RunCommandStepProps) {
     super(scope, id, props);
-    this.runCommandHook = props.runCommandHook ?? new ApiRunCommandHook();
     this.documentName = props.documentName;
     this.targets = props.targets;
     this.parameters = props.parameters;
@@ -192,39 +185,6 @@ export class RunCommandStep extends AutomationStep {
     ];
 
     return inputs.flatMap(i => i?.requiredInputs() ?? []);
-  }
-
-  /**
-     * May perform a real approval ask based on the params used during instance creation.
-     */
-  public executeStep(inputs: Record<string, any>): Record<string, any> {
-    const props: RunCommandProps = {
-      documentName: this.documentName?.resolve(inputs),
-      targets: this.targets?.resolve(inputs),
-      parameters: this.parameters?.resolve(inputs),
-      cloudWatchOutputConfig: this.cloudWatchOutputConfig?.resolve(inputs),
-      comment: this.comment?.resolve(inputs),
-      documentHash: this.documentHash?.resolve(inputs),
-      documentHashType: this.documentHashType?.resolve(inputs),
-      notificationConfig: this.notificationConfig?.resolve(inputs),
-      outputS3BucketName: this.outputS3BucketName?.resolve(inputs),
-      outputS3KeyPrefix: this.outputS3KeyPrefix?.resolve(inputs),
-      serviceRoleArn: this.serviceRoleArn?.resolve(inputs),
-      timeoutSeconds: this.commandTimeoutSeconds?.resolve(inputs),
-      maxConcurrency: this.maxConcurrency?.resolve(inputs),
-      maxErrors: this.maxErrors?.resolve(inputs),
-    };
-
-    console.log('RunCommand: Executing run command hook');
-    const result = this.runCommandHook.execute(props);
-    console.log('RunCommand: Finished executing hook');
-
-    return {
-      CommandId: result.commandId,
-      Status: result.status,
-      ResponseCode: result.responseCode ?? null,
-      Output: result.output ?? null,
-    };
   }
 
   public toSsmEntry(): Record<string, any> {
