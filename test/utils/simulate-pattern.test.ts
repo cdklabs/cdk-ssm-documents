@@ -14,7 +14,7 @@ describe('simulatePattern', () => {
       result: 'result',
     });
 
-    const result = simulatePattern((scope) => {
+    const result = simulatePattern({ awsInvoker: mockInvoker }, (scope) => {
       return new WaitForAndAssertResource(scope, 'id', {
         service: 'Service',
         pascalCaseApi: 'Api',
@@ -22,7 +22,6 @@ describe('simulatePattern', () => {
         selector: '$.result',
         waitForValues: ['result', 'other'],
         desiredValues: ['other'],
-        awsInvoker: mockInvoker,
       });
     }, {});
 

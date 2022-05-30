@@ -1,23 +1,14 @@
-import { ResponseCode, StackStatus } from '../../..';
-import { IAwsInvoker } from '../../../interface/aws-invoker';
+import { ResponseCode } from '../../../domain/response-code';
+import { StackStatus } from '../../../domain/stack-status';
 import { WaitForAndAssertResource, WaitForAndAssertResourceProps } from '../../../patterns/automation/wait-for-and-assert-resource';
+import { SimulationProps } from '../../../simulation/simulation';
 import { simulatePattern } from '../../../utils/simulate-pattern';
-
-/**
- * Prop for something using AWS APIs
- */
-interface AwsInvokerProp {
-  /**
-     * Use this as a hook to inject an alternate IAwsInvoker (for mocking the AWS API call).
-     */
-  awsInvoker: IAwsInvoker;
-}
 
 /**
  * Wait for and assert on an EC2 resource value
  */
-export function waitForAndAssertResource(props: WaitForAndAssertResourceProps): void {
-  const result = simulatePattern((scope) => {
+export function waitForAndAssertResource(props: WaitForAndAssertResourceProps, simulationProps: SimulationProps): void {
+  const result = simulatePattern(simulationProps, (scope) => {
     return new WaitForAndAssertResource(scope, 'waitForAndAssertResource', props);
   }, {});
   if (result.responseCode !== ResponseCode.SUCCESS) {
@@ -28,7 +19,7 @@ export function waitForAndAssertResource(props: WaitForAndAssertResourceProps): 
 /**
  * Props for waitForAndAssertInstanceState
  */
-interface WaitForAndAssertInstanceStateProps extends AwsInvokerProp {
+interface WaitForAndAssertInstanceStateProps {
   /**
      * States to wait for
      */
@@ -48,8 +39,8 @@ interface WaitForAndAssertInstanceStateProps extends AwsInvokerProp {
 /**
  * Wait for and assert on an EC2 instance state
  */
-export function waitForAndAssertInstanceState(props: WaitForAndAssertInstanceStateProps): void {
-  const { waitForState, assertState, instanceIds, awsInvoker } = props;
+export function waitForAndAssertInstanceState(props: WaitForAndAssertInstanceStateProps, simulationProps: SimulationProps): void {
+  const { waitForState, assertState, instanceIds } = props;
   waitForAndAssertResource({
     service: 'EC2',
     pascalCaseApi: 'DescribeInstanceStatus',
@@ -60,14 +51,13 @@ export function waitForAndAssertInstanceState(props: WaitForAndAssertInstanceSta
     selector: '$.InstanceStatuses..InstanceState.Name',
     waitForValues: waitForState,
     desiredValues: [assertState],
-    awsInvoker: awsInvoker,
-  });
+  }, simulationProps);
 }
 
 /**
  * Props for waitForAndAssertInstanceStatus
  */
-interface WaitForAndAssertInstanceStatusProps extends AwsInvokerProp {
+interface WaitForAndAssertInstanceStatusProps {
   /**
      * Statuses to wait for
      */
@@ -87,8 +77,8 @@ interface WaitForAndAssertInstanceStatusProps extends AwsInvokerProp {
 /**
  * Wait for and assert on an EC2 instance status
  */
-export function waitForAndAssertInstanceStatus(props: WaitForAndAssertInstanceStatusProps): void {
-  const { waitForStatus, assertStatus, instanceIds, awsInvoker } = props;
+export function waitForAndAssertInstanceStatus(props: WaitForAndAssertInstanceStatusProps, simulationProps: SimulationProps): void {
+  const { waitForStatus, assertStatus, instanceIds } = props;
   waitForAndAssertResource({
     service: 'EC2',
     pascalCaseApi: 'DescribeInstanceStatus',
@@ -99,14 +89,13 @@ export function waitForAndAssertInstanceStatus(props: WaitForAndAssertInstanceSt
     selector: '$.InstanceStatuses..InstanceStatus.Status',
     waitForValues: waitForStatus,
     desiredValues: [assertStatus],
-    awsInvoker: awsInvoker,
-  });
+  }, simulationProps);
 }
 
 /**
  * Props for waitForAndAssertImageAvailable
  */
-interface WaitForAndAssertImageStateProps extends AwsInvokerProp {
+interface WaitForAndAssertImageStateProps {
   /**
      * Image ID to wait for and assert on
      */
@@ -116,8 +105,8 @@ interface WaitForAndAssertImageStateProps extends AwsInvokerProp {
 /**
  * Wait for and assert on an EC2 image for available state
  */
-export function waitForAndAssertImageAvailable(props: WaitForAndAssertImageStateProps): void {
-  const { imageId, awsInvoker } = props;
+export function waitForAndAssertImageAvailable(props: WaitForAndAssertImageStateProps, simulationProps: SimulationProps): void {
+  const { imageId } = props;
   waitForAndAssertResource({
     service: 'EC2',
     pascalCaseApi: 'DescribeImages',
@@ -127,14 +116,13 @@ export function waitForAndAssertImageAvailable(props: WaitForAndAssertImageState
     },
     waitForValues: ['available', 'invalid', 'deregistered', 'transient', 'failed', 'error'],
     desiredValues: ['available'],
-    awsInvoker: awsInvoker,
-  });
+  }, simulationProps);
 }
 
 /**
  * Props for waitForAndAssertStackStatus
  */
-interface WaitForAndAssertStackStatusProps extends AwsInvokerProp {
+interface WaitForAndAssertStackStatusProps {
   /**
      * Statuses to wait for
      */
@@ -154,8 +142,8 @@ interface WaitForAndAssertStackStatusProps extends AwsInvokerProp {
 /**
  * Wait for and assert on a stack's status
  */
-export function waitForAndAssertStackStatus(props: WaitForAndAssertStackStatusProps): void {
-  const { waitForStatus, assertStatus, stackName, awsInvoker } = props;
+export function waitForAndAssertStackStatus(props: WaitForAndAssertStackStatusProps, simulationProps: SimulationProps): void {
+  const { waitForStatus, assertStatus, stackName } = props;
   waitForAndAssertResource({
     service: 'CloudFormation',
     pascalCaseApi: 'DescribeStacks',
@@ -163,8 +151,7 @@ export function waitForAndAssertStackStatus(props: WaitForAndAssertStackStatusPr
       StackName: stackName,
     },
     selector: '$.Stacks[0].StackStatus',
-    awsInvoker: awsInvoker,
     waitForValues: waitForStatus.map(x => StackStatus[x]),
     desiredValues: [StackStatus[assertStatus]],
-  });
+  }, simulationProps);
 }

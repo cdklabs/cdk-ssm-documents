@@ -1,6 +1,5 @@
 import { Construct } from 'constructs';
 import { Platform } from '../../domain/platform';
-import { IEnvironment, LoggingEnvironment } from '../../interface/environment';
 import { IStringVariable } from '../../interface/variables/string-variable';
 import { CommandStep, CommandStepProps } from '../command-step';
 
@@ -36,21 +35,12 @@ export interface PsModuleStepProps extends CommandStepProps {
      */
   readonly workingDirectory?: IStringVariable;
 
-  /**
-     * (Optional) Specify here the environment in which to execute the scripts.
-     * Use the DockerEnvironment to execute the commands inside the docker.
-     * You can alternatively use the LoggingEnvironment which simply logs the commands
-     * or MockEnvironment which saves them for validation.
-     * @default LoggingEnvironment
-     */
-  readonly environment?: IEnvironment;
 }
 
 /**
-     * AutomationStep implemenation for aws:psmodule
-     * https://docs.aws.amazon.com/systems-manager/latest/userguide/ssm-plugins.html#aws-psModule
-     */
-
+ * AutomationStep implemenation for aws:psmodule
+ * https://docs.aws.amazon.com/systems-manager/latest/userguide/ssm-plugins.html#aws-psModule
+ */
 export class PsModuleStep extends CommandStep {
 
   readonly runCommand?: IStringVariable[];
@@ -58,7 +48,6 @@ export class PsModuleStep extends CommandStep {
   readonly sourceHash?: IStringVariable;
   readonly timeoutSeconds?: number;
   readonly workingDirectory?: IStringVariable;
-  readonly environment: IEnvironment;
 
   readonly platforms = [Platform.WINDOWS];
   readonly action = 'aws:psModule';
@@ -70,7 +59,6 @@ export class PsModuleStep extends CommandStep {
     this.sourceHash = props.sourceHash;
     this.timeoutSeconds = props.timeoutSeconds;
     this.workingDirectory = props.workingDirectory;
-    this.environment = props.environment ?? new LoggingEnvironment();
   }
 
   /**
@@ -83,38 +71,6 @@ export class PsModuleStep extends CommandStep {
       ...this.workingDirectory?.requiredInputs() ?? [],
       ...this.sourceHash?.requiredInputs() ?? [],
     ];
-  }
-
-  /**
-     * Installs the module specified by source then runs the specified commands
-     */
-  public executeStep(inputs: { [name: string]: any }): void {
-    // TODO what should we enclose the string with if it contains both ' and "
-    const resolvedSource = this.source.resolve(inputs);
-    const quote = resolvedSource.includes("\'") ? '\"' : '\'';
-    let commands = this.buildCommands(resolvedSource, inputs);
-    this.environment.run(`pwsh -c ${quote}${commands}${quote}`);
-
-  }
-
-  private buildCommands(resolvedSource:string, inputs: { [name: string]: any}):string {
-    let commands = `Expand-Archive -Path ${resolvedSource} -DestinationPath (Join-Path -Path (Get-Item ${resolvedSource}).DirectoryName -ChildPath (Get-Item ${resolvedSource}).BaseName) -Force ; \
-        Set-Location -Path (Join-Path -Path (Get-Item ${resolvedSource}).DirectoryName -ChildPath (Get-Item ${resolvedSource}).BaseName) ; \
-        Remove-Item -Path package -Recurse -Force ; \
-        Remove-Item -Path _rels -Recurse -Force ; \
-        Remove-Item -LiteralPath [Content_Types].xml -Force ; \
-        Remove-Item -Path (-Join ((Split-Path -Path ${resolvedSource} -LeafBase),".nuspec")) -Force ; \
-        $paths = ($env:PSModulePath -split ":") ; \
-        foreach ($path in $paths) \
-        {Copy-Item -Path ((Join-Path -Path (Get-Item ${resolvedSource}).DirectoryName -ChildPath (Get-Item ${resolvedSource}).BaseName)) -Destination $path -Recurse -Force} ; \
-        Import-Module (Split-Path -Path ${resolvedSource} -LeafBase)`;
-    if (this.runCommand != undefined) {
-      this.runCommand.forEach(cmd => {
-        const command = cmd.resolve(inputs);
-        commands += ` ; ${command}`;
-      });
-    }
-    return commands;
   }
 
   public toSsmEntry(): { [name: string]: any } {

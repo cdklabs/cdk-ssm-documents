@@ -1,19 +1,13 @@
-import { URL as Url } from 'url';
-import { Stack } from 'aws-cdk-lib';
 import { Construct } from 'constructs';
-import { AwsApiStep, IAwsInvoker, ISleepHook, ReflectiveAwsInvoker, ResponseCode } from '../..';
 import { DataTypeEnum } from '../../domain/data-type';
 import { Output } from '../../domain/output';
 import { EnumVariable, HardCodedEnum, IEnumVariable } from '../../interface/variables/enum-variable';
 import { IMapListVariable } from '../../interface/variables/map-list-variable';
 import { INumberVariable } from '../../interface/variables/number-variable';
 import { IStringListVariable } from '../../interface/variables/string-list-variable';
-import { HardCodedString, IStringVariable } from '../../interface/variables/string-variable';
+import { IStringVariable } from '../../interface/variables/string-variable';
 import { pruneAndTransformRecord } from '../../utils/prune-and-transform-record';
 import { AutomationStep, AutomationStepProps } from '../automation-step';
-import { DeleteStackStep } from './delete-stack-step';
-import { SleepStep } from './sleep-step';
-import { waitForAndAssertStackStatus } from './sub-steps/wait-for-and-assert';
 
 /**
  * Resolver for secure strings in Parameters
@@ -75,25 +69,6 @@ export class OnFailureVariable extends EnumVariable<typeof OnFailure> {
  * Properties for CreateStackStep
  */
 export interface CreateStackStepProps extends AutomationStepProps {
-  /**
-     * (Optional) Use this as a hook to inject an alternate IAwsInvoker (for mocking the AWS API call).
-     * @default - will perform a real invocation of the JavaScript AWS SDK using ReflectiveAwsInvoker class.
-     */
-  readonly awsInvoker?: IAwsInvoker;
-
-  /**
-     * (Optional) Whether to really perform a pause of the runtime.
-     * To override sleep behavior, inject an ISleepHook impl or use the provided MockSleep class.
-     * @default SleeperImpl
-     */
-  readonly sleepHook?: ISleepHook;
-
-  /**
-     * (Optional) Resolver for secure strings in parameters.
-     * Required to simulate if using tokens in parameters input.
-     * @default - Treats parameters as literal
-     */
-  readonly parameterResolver?: IParameterResolver;
 
   /**
      * The name that is associated with the stack. The name must be unique in the Region in which you're creating the stack.
@@ -175,59 +150,13 @@ export interface CreateStackStepProps extends AutomationStepProps {
   readonly timeoutInMinutes?: INumberVariable;
 }
 
-interface DescribeStackResult {
-  StackStatus: string;
-  StackStatusReason?: string;
-}
-
-/**
- * Cloud formation stack status
- */
-export enum StackStatus {
-  CREATE_IN_PROGRESS,
-  CREATE_FAILED,
-  CREATE_COMPLETE,
-  ROLLBACK_IN_PROGRESS,
-  ROLLBACK_FAILED,
-  ROLLBACK_COMPLETE,
-  DELETE_IN_PROGRESS,
-  DELETE_FAILED,
-  DELETE_COMPLETE,
-  UPDATE_IN_PROGRESS,
-  UPDATE_COMPLETE_CLEANUP_IN_PROGRESS,
-  UPDATE_COMPLETE,
-  UPDATE_FAILED,
-  UPDATE_ROLLBACK_IN_PROGRESS,
-  UPDATE_ROLLBACK_FAILED,
-  UPDATE_ROLLBACK_COMPLETE_CLEANUP_IN_PROGRESS,
-  UPDATE_ROLLBACK_COMPLETE,
-  REVIEW_IN_PROGRESS,
-  IMPORT_IN_PROGRESS,
-  IMPORT_COMPLETE,
-  IMPORT_ROLLBACK_IN_PROGRESS,
-  IMPORT_ROLLBACK_FAILED,
-  IMPORT_ROLLBACK_COMPLETE
-}
-
 /**
  * AutomationStep implementation for aws:createStack
  * https://docs.aws.amazon.com/systems-manager/latest/userguide/automation-action-createstack.html
  */
 export class CreateStackStep extends AutomationStep {
-  private static readonly InProgressStatuses = [
-    StackStatus.ROLLBACK_IN_PROGRESS,
-    StackStatus.DELETE_IN_PROGRESS,
-    StackStatus.UPDATE_IN_PROGRESS,
-    StackStatus.UPDATE_COMPLETE_CLEANUP_IN_PROGRESS,
-    StackStatus.UPDATE_ROLLBACK_IN_PROGRESS,
-    StackStatus.UPDATE_ROLLBACK_COMPLETE_CLEANUP_IN_PROGRESS,
-    StackStatus.REVIEW_IN_PROGRESS,
-  ];
 
   readonly action: string = 'aws:createStack';
-  readonly awsInvoker: IAwsInvoker;
-  readonly sleepHook?: ISleepHook;
-  readonly parameterResolver: IParameterResolver;
   readonly stackName: IStringVariable;
   readonly capabilities?: IStringListVariable;
   readonly clientRequestToken?: IStringVariable;
@@ -245,9 +174,6 @@ export class CreateStackStep extends AutomationStep {
 
   constructor(scope: Construct, id: string, props: CreateStackStepProps) {
     super(scope, id, props);
-    this.awsInvoker = props.awsInvoker ?? new ReflectiveAwsInvoker();
-    this.sleepHook = props.sleepHook;
-    this.parameterResolver = props.parameterResolver ?? { resolve: (x) => x };
     this.stackName = props.stackName;
     this.capabilities = props.capabilities;
     this.clientRequestToken = props.clientRequestToken;
@@ -305,152 +231,6 @@ export class CreateStackStep extends AutomationStep {
     ];
 
     return inputs.flatMap(i => i?.requiredInputs() ?? []);
-  }
-
-  public executeStep(inputs: Record<string, any>): Record<string, any> {
-    this.verifyUrlProps(inputs);
-    const stackName = this.stackName.resolveToString(inputs);
-    console.log(`CreateStack: Checking that ${stackName} is ready to be created`);
-    this.preVerifyStackSubStep(stackName);
-    console.log(`CreateStack: Creating ${stackName}`);
-    const stackId = this.createStack(inputs);
-    console.log(`CreateStack: Waiting for ${stackName} completion`);
-    this.waitForStackCompletion(stackName);
-    console.log('CreateStack: Stack is created');
-    const stack = this.getStackState(stackName);
-    return {
-      StackId: stackId,
-      StackStatus: stack?.StackStatus,
-      StackStatusReason: stack?.StackStatusReason ?? '',
-    };
-  }
-
-  private verifyUrlProps(inputs: Record<string, any>) {
-    return this.verifyUrlProp(this.templateUrl, inputs)
-            && this.verifyUrlProp(this.stackPolicyUrl, inputs);
-  }
-
-  private verifyUrlProp(urlToVerify: IStringVariable | undefined, inputs: Record<string, any>) {
-    return urlToVerify === undefined || new Url(urlToVerify.resolveToString(inputs));
-  }
-
-  private preVerifyStackSubStep(stackName: string) {
-    while (!this.preVerifyStack(stackName)) {
-      new SleepStep(new Stack(), 'sleep', {
-        sleepSeconds: 2,
-        sleepHook: this.sleepHook,
-      }).invoke({});
-    }
-  }
-
-  private preVerifyStack(stackName: string): boolean {
-    const state = this.getStackState(stackName);
-    if (this.isStackOperationInProgress(state)) { return false; }
-    if (state?.StackStatus !== 'ROLLBACK_COMPLETE') { return true; }
-
-    console.log(`Deleting stack ${stackName} because we are retrying a create on an existing stack in ROLLBACK_COMPLETE state.`);
-    new DeleteStackStep(new Stack(), 'deleteStack', {
-      stackNameVariable: new HardCodedString(stackName),
-      awsInvoker: this.awsInvoker,
-    }).invoke({});
-    return false;
-  }
-
-  private isStackOperationInProgress(state: DescribeStackResult | null): boolean {
-    return state !== null && CreateStackStep.InProgressStatuses.includes(StackStatus[state.StackStatus as keyof typeof StackStatus]);
-  }
-
-  private createStack(inputs: Record<string, any>): string {
-    const apiParams = pruneAndTransformRecord({
-      StackName: this.stackName,
-      Capabilities: this.capabilities,
-      ClientRequestToken: this.clientRequestToken,
-      NotificationARNs: this.notificationARNs,
-      OnFailure: this.onStackFailure,
-      ResourceTypes: this.resourceTypes,
-      RoleARN: this.roleArn,
-      StackPolicyBody: this.stackPolicyBody,
-      StackPolicyURL: this.stackPolicyUrl,
-      Tags: this.tags,
-      TemplateBody: this.templateBody,
-      TemplateURL: this.templateUrl,
-      TimeoutInMinutes: this.timeoutInMinutes,
-    }, x => x.resolve(inputs));
-    const parameters = this.resolveSecureStringsInParametersInput(this.parameters?.resolveToMapList(inputs));
-    if (parameters) { apiParams.Parameters = parameters; }
-
-    const result = new AwsApiStep(new Stack(), 'createStack', {
-      service: 'CloudFormation',
-      pascalCaseApi: 'CreateStack',
-      apiParams: apiParams,
-      outputs: [{
-        outputType: DataTypeEnum.STRING,
-        selector: '$.StackId',
-        name: 'StackId',
-      }],
-      awsInvoker: this.awsInvoker,
-    }).invoke({});
-    if (result.responseCode !== ResponseCode.SUCCESS) {
-      throw new Error(`Create stack failed for ${apiParams.StackName}: ${result.stackTrace}`);
-    }
-    return result.outputs?.['createStack.StackId'];
-  }
-
-  private resolveSecureStringsInParametersInput(parameters: Record<string, any>[] | undefined): Record<string, any>[] | null {
-    if (!parameters) { return null; }
-    for (const parameter of parameters) {
-      const value = parameter.ParameterValue;
-      if (!value) { continue; }
-      parameter.ParameterValue = this.parameterResolver.resolve(value);
-    }
-    return parameters;
-  }
-
-  private getStackState(stackName: string): DescribeStackResult | null {
-    const describeResponse = new AwsApiStep(new Stack(), 'describeStack', {
-      service: 'CloudFormation',
-      pascalCaseApi: 'DescribeStacks',
-      apiParams: {
-        StackName: stackName,
-      },
-      outputs: [{
-        outputType: DataTypeEnum.STRING_MAP,
-        name: 'Stack',
-        selector: '$.Stacks[0]',
-      }],
-      awsInvoker: this.awsInvoker,
-    }).invoke({});
-    return describeResponse.outputs?.['describeStack.Stack'] ?? null;
-  }
-
-  private waitForStackCompletion(stackName: string): void {
-    waitForAndAssertStackStatus({
-      awsInvoker: this.awsInvoker,
-      stackName: stackName,
-      waitForStatus: [
-        StackStatus.CREATE_FAILED,
-        StackStatus.CREATE_COMPLETE,
-        StackStatus.ROLLBACK_FAILED,
-        StackStatus.ROLLBACK_COMPLETE,
-        StackStatus.DELETE_IN_PROGRESS,
-        StackStatus.DELETE_FAILED,
-        StackStatus.UPDATE_IN_PROGRESS,
-        StackStatus.UPDATE_COMPLETE_CLEANUP_IN_PROGRESS,
-        StackStatus.UPDATE_COMPLETE,
-        StackStatus.UPDATE_FAILED,
-        StackStatus.UPDATE_ROLLBACK_IN_PROGRESS,
-        StackStatus.UPDATE_ROLLBACK_FAILED,
-        StackStatus.UPDATE_ROLLBACK_COMPLETE_CLEANUP_IN_PROGRESS,
-        StackStatus.UPDATE_ROLLBACK_COMPLETE,
-        StackStatus.REVIEW_IN_PROGRESS,
-        StackStatus.IMPORT_IN_PROGRESS,
-        StackStatus.IMPORT_COMPLETE,
-        StackStatus.IMPORT_ROLLBACK_IN_PROGRESS,
-        StackStatus.IMPORT_ROLLBACK_FAILED,
-        StackStatus.IMPORT_ROLLBACK_COMPLETE,
-      ],
-      assertStatus: StackStatus.CREATE_COMPLETE,
-    });
   }
 
   public toSsmEntry(): Record<string, any> {

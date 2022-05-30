@@ -7,7 +7,6 @@ import {
   AutomationDocumentProps,
   DataTypeEnum,
   ExecuteScriptStep,
-  MockPause,
   PauseStep,
   ScriptLanguage,
 } from '../../lib';
@@ -19,7 +18,7 @@ describe('AutomationDocument', function () {
       class MyAutomationDoc extends AutomationDocument {
         constructor(scope: Construct, id: string, props: AutomationDocumentProps) {
           super(scope, id, props);
-          new PauseStep(this, 'MyPauseStep', { name: 'MyPauseStep', pauseHook: new MockPause() });
+          new PauseStep(this, 'MyPauseStep', { name: 'MyPauseStep' });
           new ExecuteScriptStep(this, 'MyExecuteStep', {
             name: 'step1',
             handlerName: 'my_func',

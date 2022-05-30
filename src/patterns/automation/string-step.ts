@@ -1,10 +1,10 @@
 import { Construct } from 'constructs';
 import { parse, toSeconds } from 'iso8601-duration';
-import { DataType, IAwsInvoker, IObserver, IPauseHook, ISleepHook, StringVariable } from '../..';
 import { Choice } from '../../domain/choice';
+import { DataType } from '../../domain/data-type';
 import { OperationEvaluator } from '../../domain/operation';
 import { Output } from '../../domain/output';
-import { HardCodedString, IStringVariable } from '../../interface/variables/string-variable';
+import { HardCodedString, IStringVariable, StringVariable } from '../../interface/variables/string-variable';
 import { AssertAwsResourceStep } from '../../parent-steps/automation/assert-aws-resource-step';
 import { AwsApiStep } from '../../parent-steps/automation/aws-api-step';
 import { BranchStep } from '../../parent-steps/automation/branch-step';
@@ -14,40 +14,6 @@ import { SleepStep } from '../../parent-steps/automation/sleep-step';
 import { WaitForResourceStep } from '../../parent-steps/automation/wait-for-resource-step';
 // eslint-disable-next-line
 const yaml = require('js-yaml');
-
-export interface SimulationProps {
-
-  /**
-     * (Optional) Hook to inject alternate ISleeper (to mock the sleep between failed invocations).
-     * @default - really perform sleep using SleeperImpl class.
-     */
-  readonly sleepHook?: ISleepHook;
-
-  /**
-     * (Optional) Use this as a hook to inject an alternate IAwsInvoker (for mocking the AWS API call).
-     * @default - will perform a real invocation of the JavaScript AWS SDK using ReflectiveAwsInvoker class.
-     */
-  readonly awsInvoker?: IAwsInvoker;
-
-  /**
-     * (Optional) Pause hook to be called to pause the execution.
-     * To mock this implemenation either inject an instance of IPauseHook or use the provided MockPause class.
-     * @default PauseHook instance. PauseHook may not work in exported JSII languages. Override interface as needed.
-     */
-  readonly pauseHook?: IPauseHook;
-
-  /**
-     * (Optional) Allows for observing the input to steps as they run.
-     * @default NoopObserver
-     */
-  readonly inputObserver?: IObserver;
-
-  /**
-      * (Optional) Allows for observing the output of steps as they run.
-      * @default NoopObserver
-      */
-  readonly outputObserver?: IObserver;
-}
 
 /**
  * StringStep allows for including a step from an existing automation document verbatim.
@@ -62,8 +28,8 @@ export class StringStep extends Construct {
      * if you wish to gain access to action specific functionality,
      * @returns Step associated with the provided activity.
      */
-  static fromYaml(scope: Construct, inputYaml: string, simulationProps: SimulationProps) {
-    return StringStep.fromObject(scope, yaml.load(inputYaml), simulationProps);
+  static fromYaml(scope: Construct, inputYaml: string) {
+    return StringStep.fromObject(scope, yaml.load(inputYaml));
   }
 
   /**
@@ -72,8 +38,8 @@ export class StringStep extends Construct {
      * if you wish to gain access to action specific functionality,
      * @returns Step associated with the provided activity.
      */
-  static fromJson(scope: Construct, json: string, simulationProps: SimulationProps) {
-    return StringStep.fromObject(scope, JSON.parse(json), simulationProps);
+  static fromJson(scope: Construct, json: string) {
+    return StringStep.fromObject(scope, JSON.parse(json));
   }
 
   /**
@@ -82,11 +48,11 @@ export class StringStep extends Construct {
      * if you wish to gain access to action specific functionality,
      * @returns Step associated with the provided activity.
      */
-  static fromObject(scope: Construct, props: {[name: string]: any}, simulationProps: SimulationProps) {
-    return new StringStep(scope, props.name, props, simulationProps);
+  static fromObject(scope: Construct, props: {[name: string]: any}) {
+    return new StringStep(scope, props.name, props);
   }
 
-  private constructor(scope: Construct, id: string, props: {[name: string]: any}, simulationProps: SimulationProps) {
+  private constructor(scope: Construct, id: string, props: {[name: string]: any}) {
     super(scope, id);
 
     const sharedProps: { [name: string]: any } = {};
@@ -118,7 +84,6 @@ export class StringStep extends Construct {
           apiParams: restParams,
           outputs: sharedProps.outputs,
           ...sharedProps,
-          ...simulationProps,
         });
         break;
       case 'aws:waitForAwsResourceProperty':
@@ -129,7 +94,6 @@ export class StringStep extends Construct {
           selector: PropertySelector,
           desiredValues: DesiredValues,
           ...sharedProps,
-          ...simulationProps,
         });
         break;
       case 'aws:assertAwsResourceProperty':
@@ -140,20 +104,17 @@ export class StringStep extends Construct {
           selector: PropertySelector,
           desiredValues: DesiredValues,
           ...sharedProps,
-          ...simulationProps,
         });
         break;
       case 'aws:pause':
         new PauseStep(this, props.name, {
           ...sharedProps,
-          ...simulationProps,
         });
         break;
       case 'aws:sleep':
         new SleepStep(this, props.name, {
           sleepSeconds: toSeconds(parse(restParams.Duration)),
           ...sharedProps,
-          ...simulationProps,
         });
         break;
       case 'aws:executeScript':
@@ -163,7 +124,6 @@ export class StringStep extends Construct {
           inlineCode: restParams.Script,
           handlerName: restParams.Handler,
           ...sharedProps,
-          ...simulationProps,
         });
         break;
       case 'aws:branch':
@@ -171,7 +131,6 @@ export class StringStep extends Construct {
           choices: this.toChoices(restParams.Choices),
           defaultStepName: restParams.Default,
           ...sharedProps,
-          ...simulationProps,
         });
         break;
       default:

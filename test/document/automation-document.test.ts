@@ -4,6 +4,7 @@ import { Stack } from 'aws-cdk-lib';
 import { Construct } from 'constructs';
 
 import { SynthUtils, AutomationDocument, AutomationDocumentProps, DataTypeEnum, ExecuteScriptStep, MockPause, PauseStep, ResponseCode, ScriptLanguage } from '../../lib';
+import { Simulation } from '../../lib/simulation/simulation';
 
 describe('AutomationDocument', function() {
   describe('#runSimulation()', function() {
@@ -21,7 +22,7 @@ describe('AutomationDocument', function() {
           });
 
           // First step
-          new PauseStep(this, 'MyPauseStep', { name: 'MyPauseStep', pauseHook: new MockPause() });
+          new PauseStep(this, 'MyPauseStep', { name: 'MyPauseStep' });
           // Second step
           new ExecuteScriptStep(this, 'MyExecuteStep', {
             handlerName: 'my_func',
@@ -45,7 +46,7 @@ describe('AutomationDocument', function() {
       SynthUtils.synthesize(stack);
 
       // Execute simulation
-      const simOutput = myAutomationDoc.runSimulation({});
+      const simOutput = Simulation.ofAutomation(myAutomationDoc, { pauseHook: new MockPause() }).simulate({});
 
       // Validate output
       assert.deepEqual(simOutput, {
@@ -64,7 +65,7 @@ describe('AutomationDocument', function() {
       class MyAutomationDoc extends AutomationDocument {
         constructor(scope: Construct, id: string, props: AutomationDocumentProps) {
           super(scope, id, props);
-          new PauseStep(this, 'MyPauseStep', { name: 'MyPauseStep', pauseHook: new MockPause() });
+          new PauseStep(this, 'MyPauseStep', { name: 'MyPauseStep' });
           new ExecuteScriptStep(this, 'MyExecuteStep', {
             handlerName: 'my_func',
             language: ScriptLanguage.PYTHON,
@@ -85,7 +86,7 @@ describe('AutomationDocument', function() {
         docOutputs: [],
       });
       SynthUtils.synthesize(stack);
-      const simOutput = myAutomationDoc.runSimulation({});
+      const simOutput = Simulation.ofAutomation(myAutomationDoc, { pauseHook: new MockPause() }).simulate({});
       assert.deepEqual(simOutput, {
         responseCode: ResponseCode.SUCCESS,
         outputs: { 'MyExecuteStep.MyFuncOut': 'a-suffix' },
@@ -97,7 +98,7 @@ describe('AutomationDocument', function() {
       class MyAutomationDoc extends AutomationDocument {
         constructor(scope: Construct, id: string, props: AutomationDocumentProps) {
           super(scope, id, props);
-          new PauseStep(this, 'MyPauseStep', { name: 'MyPauseStep', pauseHook: new MockPause() });
+          new PauseStep(this, 'MyPauseStep', { name: 'MyPauseStep' });
           new ExecuteScriptStep(this, 'MyExecuteStep', {
             handlerName: 'my_func',
             language: ScriptLanguage.PYTHON,
@@ -125,7 +126,7 @@ describe('AutomationDocument', function() {
       class MyAutomationDoc extends AutomationDocument {
         constructor(scope: Construct, id: string, props: AutomationDocumentProps) {
           super(scope, id, props);
-          new PauseStep(this, 'MyPauseStep', { name: 'MyPauseStep', pauseHook: new MockPause() });
+          new PauseStep(this, 'MyPauseStep', { name: 'MyPauseStep' });
           new ExecuteScriptStep(this, 'MyExecuteStep', {
             name: 'step1',
             handlerName: 'my_func',

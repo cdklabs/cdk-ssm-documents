@@ -2,6 +2,7 @@ import { strict as assert } from 'assert';
 import { resolve } from 'path';
 import { Stack } from 'aws-cdk-lib';
 import { DataTypeEnum, ExecuteScriptStep, ResponseCode, ScriptLanguage } from '../../../lib';
+import { AutomationStepSimulation } from '../../../lib/simulation/automation-step-simulation';
 
 describe('ExecuteScriptStep', function() {
   describe('#invoke()', function() {
@@ -18,7 +19,7 @@ describe('ExecuteScriptStep', function() {
         }],
         inputs: ['MyInput'],
       });
-      const response = scriptStep.invoke({ MyInput: 'a' });
+      const response = new AutomationStepSimulation(scriptStep, {}).invoke({ MyInput: 'a' });
       if (response.responseCode != ResponseCode.SUCCESS) {
         assert.fail(response.stackTrace);
       }
@@ -43,7 +44,7 @@ describe('ExecuteScriptStep', function() {
         inputs: ['MyInput'],
       });
 
-      const response = scriptStep.invoke({ MyInput: 'a' });
+      const response = new AutomationStepSimulation(scriptStep, {}).invoke({ MyInput: 'a' });
       if (response.responseCode != ResponseCode.SUCCESS) {
         assert.fail(response.stackTrace);
       }
@@ -114,7 +115,7 @@ describe('ExecuteScriptStep', function() {
         inputs: ['MyInput'],
       });
 
-      assert.equal(scriptStep.invoke({ MyInput: 'a' }).responseCode, ResponseCode.FAILED);
+      assert.equal(new AutomationStepSimulation(scriptStep, {}).invoke({ MyInput: 'a' }).responseCode, ResponseCode.FAILED);
     });
     it('Fails if input required not provided', function() {
       const scriptStep = new ExecuteScriptStep(new Stack(), 'id', {
@@ -130,7 +131,7 @@ describe('ExecuteScriptStep', function() {
         inputs: ['MyInput'],
       });
 
-      assert.equal(scriptStep.invoke({ NO_INPUT_HERE: 'a' }).responseCode, ResponseCode.FAILED);
+      assert.throws(() => new AutomationStepSimulation(scriptStep, {}).invoke({ NO_INPUT_HERE: 'a' }).responseCode);
     });
     it('Fails if python has bug', function() {
       const scriptStep = new ExecuteScriptStep(new Stack(), 'id', {
@@ -146,7 +147,7 @@ describe('ExecuteScriptStep', function() {
         inputs: ['MyInput'],
       });
 
-      const scriptStepResult = scriptStep.invoke({ MyInput: 'a' });
+      const scriptStepResult = new AutomationStepSimulation(scriptStep, {}).invoke({ MyInput: 'a' });
       assert.equal(scriptStepResult.responseCode, ResponseCode.FAILED);
       assert.ok(scriptStepResult.stackTrace &&
                 scriptStepResult.stackTrace.includes('Traceback') &&

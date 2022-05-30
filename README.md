@@ -34,7 +34,7 @@ class MyAutomationDoc extends AutomationDocument {
     super(scope, id, props);
 
     // Define your steps...
-    new PauseStep(this, "MyPauseStep", {name: "MyPauseStep", pauseHook: new MockPause()});
+    new PauseStep(this, "MyPauseStep", {name: "MyPauseStep"});
     // You can explore avilable steps and initialize using AutomationSteps.newPauseStep(...)
     
     new ExecuteScriptStep(this, "MyExecuteStep", {
@@ -73,14 +73,20 @@ const myDocJson = myDoc.print(); // Print YAML by setting the documentFormat to 
 To run the document object in simulation mode, use the below. Simulation mode does NOT hit the SSM API, rather it mimics the execution that will happen in an SSM execution. The run happens locally and allows you to mock the calls to external services (AWS APIs for example) or to invoke those services using your local credentials.
 
 ```ts
+import { Simulation } from './simulation';
+
 const stack: Stack = new Stack();
 const myDoc = new MyAutomationDoc(stack, "MyAutomationDoc", {
   documentFormat: DocumentFormat.JSON,
   documentName: "MyDoc",
-  docInputs: [{name: "MyInput", defaultValue: "a", inputType: DataTypeEnum.STRING}]
+  docInputs: [{
+    name: "MyInput",
+    defaultValue: "a",
+    inputType: DataTypeEnum.STRING
+  }]
 });
 SynthUtils.synthesize(stack)
-const myDocJson = myDoc.runSimulation({MyInput: "FooBar"});
+const myDocJson = Simulation.ofAutomation(myDoc, { pauseHook: new MockPause() }).simulate({ MyInput: "FooBar" });
 ```
 
 ### Use in CDK Stack
@@ -160,14 +166,15 @@ awsInvoker.whenThen(
 // ======> Create document from file <=======
 const stack: Stack = new Stack();
 const myAutomationDoc = StringDocument.fromFile(stack, "MyAutomationDoc", 'test/myAutomation.json', {
-                                                                        // ====================
-    sleepHook: sleeper,
-    awsInvoker: awsInvoker
+                                                                        // ======================
 });
 SynthUtils.synthesize(stack);
 
 // Execute simulation
-const simOutput = myAutomationDoc.runSimulation({});
+const simOutput = Simulation.ofAutomation(myAutomationDoc, {
+  sleepHook: sleeper,
+  awsInvoker: awsInvoker
+}).simulate({});
 
 // Assert simulation result
 assert.deepEqual(awsInvoker.previousInvocations, [

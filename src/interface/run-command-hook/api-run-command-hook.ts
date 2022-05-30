@@ -1,8 +1,11 @@
 import { Stack } from 'aws-cdk-lib';
-import { IAwsInvoker, IRunCommandHook, ReflectiveAwsInvoker, RunCommandOutputs, RunCommandProps, SleepStep } from '../..';
 import { DataTypeEnum } from '../../domain/data-type';
 import { ResponseCode } from '../../domain/response-code';
 import { AwsApiStep } from '../../parent-steps/automation/aws-api-step';
+import { SleepStep } from '../../parent-steps/automation/sleep-step';
+import { AutomationStepSimulation } from '../../simulation/automation-step-simulation';
+import { IAwsInvoker } from '../aws-invoker';
+import { IRunCommandHook, RunCommandOutputs, RunCommandProps } from '../run-command-hook';
 import { ISleepHook } from '../sleep-hook';
 import { isStringList } from '../variables/string-list-variable';
 import { isStringMap } from '../variables/string-map-variable';
@@ -29,6 +32,11 @@ interface CommandPluginResult {
   Output: string;
 }
 
+export interface ApiRunCommandProps {
+  readonly awsInvoker: IAwsInvoker;
+  readonly sleepHook: ISleepHook;
+}
+
 /**
  * RunCommand implementation using AWS API
  */
@@ -39,11 +47,13 @@ export class ApiRunCommandHook implements IRunCommandHook {
   private static readonly RunningStatuses: CommandStatus[] = ['Pending', 'InProgress', 'Cancelling'];
 
   readonly awsInvoker: IAwsInvoker;
-  readonly sleepHook?: ISleepHook;
+  readonly sleepHook: ISleepHook;
+  readonly props: ApiRunCommandProps;
 
-  constructor(awsInvoker?: IAwsInvoker, sleepHook?: ISleepHook) {
-    this.awsInvoker = awsInvoker ?? new ReflectiveAwsInvoker();
+  constructor(awsInvoker: IAwsInvoker, sleepHook: ISleepHook) {
+    this.awsInvoker = awsInvoker;
     this.sleepHook = sleepHook;
+    this.props = { awsInvoker, sleepHook };
   }
 
   execute(props: RunCommandProps): RunCommandOutputs {
@@ -68,10 +78,9 @@ export class ApiRunCommandHook implements IRunCommandHook {
     let status = this.getCommandStatus(executionId);
     while (status === null || ApiRunCommandHook.RunningStatuses.includes(status)) {
       console.log(`Command ${executionId} is not complete. Status: ${status}.`);
-      new SleepStep(new Stack(), 'sleep', {
+      new AutomationStepSimulation(new SleepStep(new Stack(), 'sleep', {
         sleepSeconds: 2,
-        sleepHook: this.sleepHook,
-      }).invoke({});
+      }), this.props).invoke({});
       status = this.getCommandStatus(executionId);
     }
     if (status !== 'Success') {
@@ -88,7 +97,7 @@ export class ApiRunCommandHook implements IRunCommandHook {
   }
 
   private getCommandStatus(executionId: string): CommandStatus | null {
-    const result = new AwsApiStep(new Stack(), 'listCommands', {
+    const result = new AutomationStepSimulation(new AwsApiStep(new Stack(), 'listCommands', {
       service: 'SSM',
       pascalCaseApi: 'ListCommands',
       apiParams: {
@@ -99,8 +108,7 @@ export class ApiRunCommandHook implements IRunCommandHook {
         name: 'commands',
         selector: '$.Commands',
       }],
-      awsInvoker: this.awsInvoker,
-    }).invoke({});
+    }), this.props).invoke({});
     if (result.responseCode !== ResponseCode.SUCCESS) {
       throw new Error(`Failed to get command ${executionId} status: ${result.stackTrace}`);
     }
@@ -113,7 +121,7 @@ export class ApiRunCommandHook implements IRunCommandHook {
      * We only return status code and output if there is exactly one invocation and one plug-in
      */
   private getSinglePluginStatus(executionId: string): CommandPluginResult | null {
-    const result = new AwsApiStep(new Stack(), 'listCommandInvocations', {
+    const result = new AutomationStepSimulation(new AwsApiStep(new Stack(), 'listCommandInvocations', {
       service: 'SSM',
       pascalCaseApi: 'ListCommandInvocations',
       apiParams: {
@@ -125,8 +133,7 @@ export class ApiRunCommandHook implements IRunCommandHook {
         name: 'result',
         selector: '$',
       }],
-      awsInvoker: this.awsInvoker,
-    }).invoke({});
+    }), this.props).invoke({});
     if (result.responseCode !== ResponseCode.SUCCESS) {
       throw new Error(`Failed to get invocations for ${executionId}: ${result.stackTrace}`);
     }
@@ -138,7 +145,7 @@ export class ApiRunCommandHook implements IRunCommandHook {
   }
 
   private runCommand(props: RunCommandProps): string {
-    const result = new AwsApiStep(new Stack(), 'sendCommand', {
+    const result = new AutomationStepSimulation(new AwsApiStep(new Stack(), 'sendCommand', {
       service: 'SSM',
       pascalCaseApi: 'SendCommand',
       apiParams: this.getSendCommandProps(props),
@@ -147,8 +154,7 @@ export class ApiRunCommandHook implements IRunCommandHook {
         name: 'commandId',
         selector: '$.Command.CommandId',
       }],
-      awsInvoker: this.awsInvoker,
-    }).invoke({});
+    }), this.props).invoke({});
     if (result.responseCode !== ResponseCode.SUCCESS) {
       throw new Error(`Failed to start command: ${result.stackTrace}`);
     }
@@ -229,7 +235,7 @@ export class ApiRunCommandHook implements IRunCommandHook {
       }],
     };
 
-    const result = new AwsApiStep(new Stack(), 'describeInstanceInfo', {
+    const result = new AutomationStepSimulation(new AwsApiStep(new Stack(), 'describeInstanceInfo', {
       service: 'SSM',
       pascalCaseApi: 'DescribeInstanceInformation',
       apiParams: apiParams,
@@ -238,8 +244,7 @@ export class ApiRunCommandHook implements IRunCommandHook {
         name: 'instanceInformation',
         selector: '$.InstanceInformationList',
       }],
-      awsInvoker: this.awsInvoker,
-    }).invoke({});
+    }), this.props).invoke({});
     if (result.responseCode !== ResponseCode.SUCCESS) {
       throw new Error(`Failed to load instance information: ${result.stackTrace}`);
     }

@@ -1,6 +1,7 @@
 import { strict as assert } from 'assert';
 import { Stack } from 'aws-cdk-lib';
 import { BodyOrUrlType, CreateStackStep, CreateStackStepProps, HardCodedMapList, HardCodedNumber, HardCodedOnFailure, HardCodedString, HardCodedStringList, MockAwsInvoker, MockSleep, OnFailure, ResponseCode } from '../../../lib';
+import { AutomationStepSimulation } from '../../../lib/simulation/automation-step-simulation';
 
 describe('CreateStackStep', () => {
   describe('#invoke()', () => {
@@ -37,11 +38,9 @@ describe('CreateStackStep', () => {
           propType: BodyOrUrlType.BODY,
         },
         onStackFailure: new HardCodedOnFailure(OnFailure.DELETE),
-        awsInvoker: mockInvoker,
-        sleepHook: mockSleep,
       });
 
-      const result = step.invoke({});
+      const result = new AutomationStepSimulation(step, { awsInvoker: mockInvoker, sleepHook: mockSleep }).invoke({});
 
       assert.equal(result.responseCode, ResponseCode.SUCCESS);
       assert.deepEqual(result.outputs, {

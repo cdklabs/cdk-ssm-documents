@@ -1,6 +1,7 @@
 import { strict as assert } from 'assert';
 import { Stack } from 'aws-cdk-lib';
 import { HardCodedBoolean, HardCodedMapList, HardCodedNumber, HardCodedString, HardCodedStringList, HardCodedStringMap, MockAwsInvoker, NumberVariable, ResponseCode, RunInstanceStep, StringVariable } from '../../../lib';
+import { AutomationStepSimulation } from '../../../lib/simulation/automation-step-simulation';
 
 describe('RunInstanceStep', function() {
   describe('#invoke()', function() {
@@ -44,11 +45,10 @@ describe('RunInstanceStep', function() {
         ],
       });
       const step = new RunInstanceStep(new Stack(), 'id2', {
-        awsInvoker: awsInvoker,
         imageId: new HardCodedString(imageId),
       });
 
-      const result = step.invoke({});
+      const result = new AutomationStepSimulation(step, { awsInvoker: awsInvoker }).invoke({});
 
       assert.equal(result.responseCode, ResponseCode.SUCCESS);
       assert.deepEqual(awsInvoker.previousInvocations[0], {
@@ -148,11 +148,10 @@ describe('RunInstanceStep', function() {
         ],
       });
       const step = new RunInstanceStep(new Stack(), 'id2', {
-        awsInvoker: awsInvoker,
         ...stepParams,
       });
 
-      const result = step.invoke({});
+      const result = new AutomationStepSimulation(step, { awsInvoker: awsInvoker }).invoke({});
 
       assert.equal(result.responseCode, ResponseCode.SUCCESS);
       assert.deepEqual(awsInvoker.previousInvocations[0], {
@@ -191,9 +190,7 @@ describe('RunInstanceStep', function() {
         tagSpecifications: new HardCodedMapList([{ a: 1 }]),
         userData: new HardCodedString('string'),
       };
-      const awsInvoker = new MockAwsInvoker();
       const step = new RunInstanceStep(new Stack(), 'id2', {
-        awsInvoker: awsInvoker,
         ...stepParams,
       });
 

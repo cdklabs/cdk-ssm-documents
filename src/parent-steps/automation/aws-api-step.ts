@@ -1,7 +1,6 @@
 import { Construct } from 'constructs';
 import { DictFormat } from '../..';
 import { Output } from '../../domain/output';
-import { IAwsInvoker, ReflectiveAwsInvoker } from '../../interface/aws-invoker';
 import { AutomationStep, AutomationStepProps } from '../automation-step';
 
 export interface AwsInvocationProps extends AutomationStepProps {
@@ -33,12 +32,6 @@ export interface AwsInvocationProps extends AutomationStepProps {
      * @default - will use the camelCaseApi param and substitute the first character for lowercase by default.
      */
   readonly javaScriptApi?: string;
-
-  /**
-     * (Optional) Use this as a hook to inject an alternate IAwsInvoker (for mocking the AWS API call).
-     * @default - will perform a real invocation of the JavaScript AWS SDK using ReflectiveAwsInvoker class.
-     */
-  readonly awsInvoker?: IAwsInvoker;
 }
 
 /**
@@ -62,7 +55,6 @@ export class AwsApiStep extends AutomationStep {
   readonly apiParams: DictFormat;
   readonly outputs: Output[];
   readonly javaScriptApi: string;
-  readonly awsInvoker: IAwsInvoker;
   readonly action: string = 'aws:executeAwsApi';
 
   constructor(scope: Construct, id: string, props: AwsApiStepProps) {
@@ -73,7 +65,6 @@ export class AwsApiStep extends AutomationStep {
     this.outputs = props.outputs;
     this.javaScriptApi = props.javaScriptApi ??
             (this.pascalCaseApi.charAt(0).toLowerCase() + this.pascalCaseApi.slice(1));
-    this.awsInvoker = props.awsInvoker ?? new ReflectiveAwsInvoker();
   }
 
   /**
@@ -89,20 +80,6 @@ export class AwsApiStep extends AutomationStep {
      */
   public listInputs(): string[] {
     return this.apiParams.requiredInputs();
-  }
-
-  /**
-     * Invokes the specified service (param) with the specified api (param) with the specified apiParams (param).
-     * This call will be invoked synchronously.
-     * The input variables in apiParams (param) specified using "{{INPUT}}" syntax will be replaced with the inputs.
-     * @returns the AWS api response. The Output selection will take place outside of this function.
-     */
-  public executeStep(inputs: { [name: string]: any }): { [name: string]: any } {
-    return this.awsInvoker.invoke({
-      service: this.service,
-      awsApi: this.javaScriptApi,
-      awsParams: this.apiParams.resolveToDict(inputs),
-    });
   }
 
   public toSsmEntry(): { [name: string]: any } {

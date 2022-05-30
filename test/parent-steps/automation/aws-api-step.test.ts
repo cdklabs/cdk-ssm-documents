@@ -1,6 +1,7 @@
 import { strict as assert } from 'assert';
 import { Stack } from 'aws-cdk-lib';
 import { AwsApiStep, DataTypeEnum, StringVariable, MockAwsInvoker, ResponseCode } from '../../../lib';
+import { AutomationStepSimulation } from '../../../lib/simulation/automation-step-simulation';
 
 
 describe('AwsApiStep', function() {
@@ -11,7 +12,6 @@ describe('AwsApiStep', function() {
 
       const step = new AwsApiStep(new Stack(), 'id', {
         name: 'MyS3List',
-        awsInvoker: mockInvoker,
         outputs: [{
           outputType: DataTypeEnum.STRING,
           name: 'DisplayName',
@@ -22,7 +22,7 @@ describe('AwsApiStep', function() {
         apiParams: { Filter: [{ SomeFilter: new StringVariable('SomeOutput.OutKey') }] },
       });
 
-      const response = step.invoke({ 'SomeOutput.OutKey': 'FilterVal' });
+      const response = new AutomationStepSimulation(step, { awsInvoker: mockInvoker }).invoke({ 'SomeOutput.OutKey': 'FilterVal' });
       if (response.responseCode != ResponseCode.SUCCESS) {
         assert.fail(response.stackTrace);
       }
@@ -34,7 +34,6 @@ describe('AwsApiStep', function() {
       mockInvoker.nextReturn({ Owner: { DisplayName: 'MyDisplayName' } });
       const step = new AwsApiStep(new Stack(), 'id', {
         name: 'MyS3List',
-        awsInvoker: mockInvoker,
         outputs: [{
           outputType: DataTypeEnum.STRING,
           name: 'DisplayName',
@@ -44,7 +43,7 @@ describe('AwsApiStep', function() {
         pascalCaseApi: 'ListBuckets',
         apiParams: { Filter: [{ SomeFilter: new StringVariable('SomeOutput.OutKey') }] },
       });
-      const response = step.invoke({ 'SomeOutput.OutKey': 3 });
+      const response = new AutomationStepSimulation(step, { awsInvoker: mockInvoker }).invoke({ 'SomeOutput.OutKey': 3 });
       if (response.responseCode != ResponseCode.SUCCESS) {
         assert.fail(response.stackTrace);
       }
@@ -56,7 +55,6 @@ describe('AwsApiStep', function() {
       mockInvoker.nextReturn({ Owner: { DisplayName: 4 } });
       const step = new AwsApiStep(new Stack(), 'id', {
         name: 'MyS3List',
-        awsInvoker: mockInvoker,
         outputs: [{
           outputType: DataTypeEnum.STRING,
           name: 'DisplayName',
@@ -67,15 +65,13 @@ describe('AwsApiStep', function() {
         apiParams: { Filter: [{ SomeFilter: new StringVariable('SomeOutput.OutKey') }] },
       });
       // Type is marked as string, but actually returns number.
-      assert.equal(step.invoke({ 'SomeOutput.OutKey': 3 }).responseCode, ResponseCode.FAILED);
+      assert.equal(new AutomationStepSimulation(step, { awsInvoker: mockInvoker }).invoke({ 'SomeOutput.OutKey': 3 }).responseCode, ResponseCode.FAILED);
     });
   });
   describe('#toSsmEntry()', function() {
     it('Builds entry as per SSM Document', function() {
-      const mockInvoker = new MockAwsInvoker();
       const step = new AwsApiStep(new Stack(), 'id', {
         name: 'MyS3List',
-        awsInvoker: mockInvoker,
         outputs: [{
           outputType: DataTypeEnum.STRING,
           name: 'DisplayName',

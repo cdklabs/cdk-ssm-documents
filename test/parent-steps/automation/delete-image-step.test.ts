@@ -2,6 +2,7 @@ import { strict as assert } from 'assert';
 import { Stack } from 'aws-cdk-lib';
 import { HardCodedString, MockAwsInvoker, MockSleep, ResponseCode } from '../../../lib';
 import { DeleteImageStep } from '../../../lib/parent-steps/automation/delete-image-step';
+import { AutomationStepSimulation } from '../../../lib/simulation/automation-step-simulation';
 
 describe('DeleteImageStep', () => {
   describe('#invoke()', () => {
@@ -25,12 +26,10 @@ describe('DeleteImageStep', () => {
       });
 
       const step = new DeleteImageStep(new Stack(), 'id2', {
-        awsInvoker: awsInvoker,
-        sleepHook: new MockSleep(),
         imageId: new HardCodedString(imageId),
       });
 
-      const result = step.invoke({});
+      const result = new AutomationStepSimulation(step, { awsInvoker: awsInvoker, sleepHook: new MockSleep() }).invoke({});
 
       assert.equal(result.responseCode, ResponseCode.SUCCESS);
       assert.deepEqual(awsInvoker.previousInvocations[1], {
@@ -55,9 +54,7 @@ describe('DeleteImageStep', () => {
       const stepParams = {
         imageId: new HardCodedString('image id'),
       };
-      const awsInvoker = new MockAwsInvoker();
       const step = new DeleteImageStep(new Stack(), 'id2', {
-        awsInvoker: awsInvoker,
         ...stepParams,
       });
 

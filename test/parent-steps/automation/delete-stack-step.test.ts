@@ -1,8 +1,7 @@
 import { strict as assert } from 'assert';
 import { Stack } from 'aws-cdk-lib';
-import { StringVariable, MockAwsInvoker, ResponseCode } from '../../../lib';
-import { DeleteStackStep } from '../../../lib/parent-steps/automation/delete-stack-step';
-
+import { StringVariable, MockAwsInvoker, ResponseCode, DeleteStackStep } from '../../../lib';
+import { AutomationStepSimulation } from '../../../lib/simulation/automation-step-simulation';
 
 describe('DeleteStackStep', function() {
   describe('#invoke()', function() {
@@ -29,11 +28,10 @@ describe('DeleteStackStep', function() {
 
       const step = new DeleteStackStep(new Stack(), 'id', {
         name: 'DeleteStack',
-        awsInvoker: mockInvoker,
         stackNameVariable: new StringVariable('MyStackVar'),
       });
 
-      const response = step.invoke({ 'MyStackVar': 'MyStack', 'automation:EXECUTION_ID': 'executionId' });
+      const response = new AutomationStepSimulation(step, { awsInvoker: mockInvoker }).invoke({ 'MyStackVar': 'MyStack', 'automation:EXECUTION_ID': 'executionId' });
       if (response.responseCode != ResponseCode.SUCCESS) {
         assert.fail(response.stackTrace);
       }
@@ -63,10 +61,8 @@ describe('DeleteStackStep', function() {
   });
   describe('#toSsmEntry()', function() {
     it('Builds entry as per SSM Document', function() {
-      const mockInvoker = new MockAwsInvoker();
       const step = new DeleteStackStep(new Stack(), 'id', {
         name: 'MyDeleteStack',
-        awsInvoker: mockInvoker,
         stackNameVariable: new StringVariable('MyStackVar'),
       });
       assert.deepEqual(step.toSsmEntry(), {

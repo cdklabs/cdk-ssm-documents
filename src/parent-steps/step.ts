@@ -1,6 +1,5 @@
 import { Construct } from 'constructs';
 import { Output } from '../domain/output';
-import { SimulationResult } from '../domain/simulation-result';
 import { IObserver, NoopObserver } from '../interface/observer';
 
 export interface StepProps {
@@ -59,12 +58,6 @@ export abstract class Step extends Construct {
      * Lists the inputs that are required for this step.
      */
   public abstract listInputs(): string[]
-
-  /**
-     * Invokes the entire chain of steps including this step (executeStep()) and all subsequent steps in the chain.
-     * @returns SimulationResult containing the response code and result.
-     */
-  public abstract invoke(inputs: { [name: string]: any }): SimulationResult;
 
   /**
      * Converts this step into an object to prepare for yaml/json representation of this step.

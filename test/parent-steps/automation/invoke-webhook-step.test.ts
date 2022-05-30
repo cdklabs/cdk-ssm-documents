@@ -1,6 +1,8 @@
 import { strict as assert } from 'assert';
 import { Stack } from 'aws-cdk-lib';
-import { HardCodedString, IWebhook, InvokeWebhookProps, InvokeWebhookResult, InvokeWebhookStep, InvokeWebhookStepProps, ResponseCode } from '../../../lib';
+import { HardCodedString, InvokeWebhookProps, InvokeWebhookResult, InvokeWebhookStep, InvokeWebhookStepProps, ResponseCode } from '../../../lib';
+import { IWebhook } from '../../../lib/interface/webhook';
+import { AutomationStepSimulation } from '../../../lib/simulation/automation-step-simulation';
 
 describe('InvokeWebhookStep', () => {
   describe('#invoke()', () => {
@@ -23,10 +25,9 @@ describe('InvokeWebhookStep', () => {
       const step = new InvokeWebhookStep(new Stack(), 'invoke', {
         integrationName: new HardCodedString(integrationName),
         body: new HardCodedString(body),
-        webhook: mockWebhook,
       });
 
-      const result = step.invoke({});
+      const result = new AutomationStepSimulation(step, { webhook: mockWebhook }).invoke({});
 
       assert.equal(result.responseCode, ResponseCode.SUCCESS);
       assert.deepEqual(result.outputs, {

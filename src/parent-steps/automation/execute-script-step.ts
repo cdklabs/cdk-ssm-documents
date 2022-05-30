@@ -1,7 +1,6 @@
 import * as fs from 'fs';
 import { Construct } from 'constructs';
 import { Output } from '../../domain/output';
-import { PythonScriptHandler } from '../../script/python-script-handler';
 import { AutomationStep, AutomationStepProps } from '../automation-step';
 
 // eslint-disable-next-line
@@ -121,20 +120,6 @@ export class ExecuteScriptStep extends AutomationStep {
 
   public listInputs(): string[] {
     return this.inputs;
-  }
-
-  /**
-     * Runs the simulation. Nests returned object into a "Payload" key to mimic SSM behavior.
-     * Switch by language and execute code based on specified language.
-     */
-  public executeStep(inputs: { [name: string]: any }): { [name: string]: any } {
-    switch (this.language) {
-      case ScriptLanguage.PYTHON:
-        const pyHandler = new PythonScriptHandler();
-        return pyHandler.run(this.fullPathToCode, this.handlerName, inputs);
-      default:
-        throw new Error(`Language ${this.language} not supported.`);
-    }
   }
 
   public toSsmEntry(): { [name: string]: any } {

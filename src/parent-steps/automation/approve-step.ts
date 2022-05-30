@@ -1,7 +1,6 @@
 import { Construct } from 'constructs';
 import { DataTypeEnum } from '../../domain/data-type';
 import { Output } from '../../domain/output';
-import { ApproveImpl, IApproveHook } from '../../interface/approve-hook';
 import { INumberVariable } from '../../interface/variables/number-variable';
 import { IStringListVariable } from '../../interface/variables/string-list-variable';
 import { IStringVariable } from '../../interface/variables/string-variable';
@@ -12,12 +11,6 @@ import { AutomationStep, AutomationStepProps } from '../automation-step';
  * Properties for ApproveStep
  */
 export interface ApproveStepProps extends AutomationStepProps {
-  /**
-     * (Optional) Approve hook to be called to pause the execution.
-     * To mock this implementation either inject an instance of IApproveHook or use the provided MockApprove class.
-     * @default ApproveHook instance. ApproveHook may not work in exported JSII languages. Override interface as needed.
-     */
-  readonly approveHook?: IApproveHook;
 
   /**
      * A list of AWS authenticated principals who are able to either approve or reject the action. The maximum number of approvers is 10.
@@ -46,27 +39,12 @@ export interface ApproveStepProps extends AutomationStepProps {
   readonly minRequiredApprovals?: INumberVariable;
 }
 
-type OverallApprovalStatus = 'Approved' | 'Rejected';
-type IndividualApprovalStatus = 'Approve' | 'Reject';
-
-interface Approval {
-  Approver: string;
-  ApprovalStatus: IndividualApprovalStatus;
-  ApprovalDecisionTime: Date;
-}
-
-interface ApproveStepOutput {
-  ApprovalStatus: OverallApprovalStatus;
-  ApproverDecisions: Approval[];
-}
-
 /**
  * AutomationStep implementation for aws:approve
  * https://docs.aws.amazon.com/systems-manager/latest/userguide/automation-action-approve.html
  */
 export class ApproveStep extends AutomationStep {
   readonly action = 'aws:approve';
-  readonly approveHook: IApproveHook;
   readonly approvers: IStringListVariable;
   readonly notificationArn?: IStringVariable;
   readonly message?: IStringVariable;
@@ -74,7 +52,6 @@ export class ApproveStep extends AutomationStep {
 
   constructor(scope: Construct, id: string, props: ApproveStepProps) {
     super(scope, id, props);
-    this.approveHook = props.approveHook ?? new ApproveImpl();
     this.approvers = props.approvers;
     this.notificationArn = props.notificationArn;
     this.message = props.message;
@@ -104,39 +81,6 @@ export class ApproveStep extends AutomationStep {
     return inputs.flatMap(i => i?.requiredInputs() ?? []);
   }
 
-  /**
-     * May perform a real approval ask based on the params used during instance creation.
-     */
-  public executeStep(inputs: Record<string, any>): Record<string, any> {
-    const approvers = this.approvers.resolveToStringList(inputs);
-    const requiredApprovals = this.minRequiredApprovals?.resolveToNumber(inputs) ?? 1;
-
-    console.log('Approve: Requesting approval from approvers');
-    const result = this.requestApproval(approvers, requiredApprovals);
-    console.log('Approve: Done requesting approvals');
-
-    return result;
-  }
-
-  private requestApproval(approvers: string[], requiredApprovals: number): ApproveStepOutput {
-    let isApproved = true;
-    const decisions: Approval[] = [];
-    for (const i of [...Array(requiredApprovals).keys()]) {
-      const approval = this.approveHook.ask(approvers[i]);
-      isApproved = isApproved && approval;
-      decisions.push({
-        Approver: approvers[i],
-        ApprovalStatus: approval ? 'Approve' : 'Reject',
-        ApprovalDecisionTime: this.provideDate(),
-      });
-    }
-
-    return {
-      ApprovalStatus: isApproved ? 'Approved' : 'Rejected',
-      ApproverDecisions: decisions,
-    };
-  }
-
   public toSsmEntry(): Record<string, any> {
     return super.prepareSsmEntry(pruneAndTransformRecord({
       Approvers: this.approvers,
@@ -147,8 +91,8 @@ export class ApproveStep extends AutomationStep {
   }
 
   /**
-     * Override to mock the date the reviewer approved
-     */
+   * Override to mock the date the reviewer approved
+   */
   protected provideDate(): Date {
     return new Date();
   }

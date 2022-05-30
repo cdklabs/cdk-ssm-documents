@@ -1,6 +1,7 @@
 import { strict as assert } from 'assert';
 import { Stack } from 'aws-cdk-lib';
 import { ChangeInstanceStateStep, ChangeInstanceStateStepProps, DesiredStateVariable, HardCodedBoolean, HardCodedString, HardCodedStringList, MockAwsInvoker, ResponseCode } from '../../../lib';
+import { AutomationStepSimulation } from '../../../lib/simulation/automation-step-simulation';
 
 function createMockInvokerWithInstanceStateAndStatus(instanceIds: string[], state: string, status: string): MockAwsInvoker {
   const mockInvoker = new MockAwsInvoker();
@@ -36,10 +37,9 @@ describe('ChangeInstanceStateStep', () => {
         instanceIds: new HardCodedStringList(instanceIds),
         desiredState: new DesiredStateVariable('desiredState'),
         additionalInfo: new HardCodedString('additionalInfo'),
-        awsInvoker: mockInvoker,
       });
 
-      const result = step.invoke({ desiredState: 'running' });
+      const result = new AutomationStepSimulation(step, { awsInvoker: mockInvoker }).invoke({ desiredState: 'running' });
 
       assert.equal(result.responseCode, ResponseCode.SUCCESS);
       assert.deepEqual(mockInvoker.previousInvocations[0], {
@@ -59,10 +59,9 @@ describe('ChangeInstanceStateStep', () => {
         instanceIds: new HardCodedStringList(instanceIds),
         desiredState: new DesiredStateVariable('desiredState'),
         force: new HardCodedBoolean(true),
-        awsInvoker: mockInvoker,
       });
 
-      const result = step.invoke({ desiredState: 'stopped' });
+      const result = new AutomationStepSimulation(step, { awsInvoker: mockInvoker }).invoke({ desiredState: 'stopped' });
 
       assert.equal(result.responseCode, ResponseCode.SUCCESS);
       assert.deepEqual(mockInvoker.previousInvocations[0], {
@@ -81,10 +80,9 @@ describe('ChangeInstanceStateStep', () => {
       const step = new ChangeInstanceStateStep(new Stack(), 'step', {
         instanceIds: new HardCodedStringList(instanceIds),
         desiredState: new DesiredStateVariable('desiredState'),
-        awsInvoker: mockInvoker,
       });
 
-      const result = step.invoke({ desiredState: 'terminated' });
+      const result = new AutomationStepSimulation(step, { awsInvoker: mockInvoker }).invoke({ desiredState: 'terminated' });
 
       assert.equal(result.responseCode, ResponseCode.SUCCESS);
       assert.deepEqual(mockInvoker.previousInvocations[0], {
@@ -102,10 +100,9 @@ describe('ChangeInstanceStateStep', () => {
       const step = new ChangeInstanceStateStep(new Stack(), 'step', {
         instanceIds: new HardCodedStringList(instanceIds),
         desiredState: new DesiredStateVariable('desiredState'),
-        awsInvoker: mockInvoker,
       });
 
-      const result = step.invoke({ desiredState: 'pending' });
+      const result = new AutomationStepSimulation(step, { awsInvoker: mockInvoker }).invoke({ desiredState: 'pending' });
 
       assert.equal(result.responseCode, ResponseCode.FAILED);
     });

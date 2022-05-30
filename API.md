@@ -45,11 +45,9 @@ new ApproveStep(scope: Construct, id: string, props: ApproveStepProps)
 | **Name** | **Description** |
 | --- | --- |
 | <code><a href="#cdk-ssm-documents.ApproveStep.toString">toString</a></code> | Returns a string representation of this construct. |
-| <code><a href="#cdk-ssm-documents.ApproveStep.invoke">invoke</a></code> | Invokes the current step on the input and will return a SimulationResult. |
 | <code><a href="#cdk-ssm-documents.ApproveStep.listInputs">listInputs</a></code> | Lists the inputs that are required for this step. |
 | <code><a href="#cdk-ssm-documents.ApproveStep.listOutputs">listOutputs</a></code> | Lists the outputs that will be returned from this step. |
 | <code><a href="#cdk-ssm-documents.ApproveStep.toSsmEntry">toSsmEntry</a></code> | Converts this step into an object to prepare for yaml/json representation of this step. |
-| <code><a href="#cdk-ssm-documents.ApproveStep.executeStep">executeStep</a></code> | May perform a real approval ask based on the params used during instance creation. |
 | <code><a href="#cdk-ssm-documents.ApproveStep.variables">variables</a></code> | *No description.* |
 
 ---
@@ -61,22 +59,6 @@ public toString(): string
 ```
 
 Returns a string representation of this construct.
-
-##### `invoke` <a name="invoke" id="cdk-ssm-documents.ApproveStep.invoke"></a>
-
-```typescript
-public invoke(inputs: {[ key: string ]: any}): SimulationResult
-```
-
-Invokes the current step on the input and will return a SimulationResult.
-
-###### `inputs`<sup>Required</sup> <a name="inputs" id="cdk-ssm-documents.ApproveStep.invoke.parameter.inputs"></a>
-
-- *Type:* {[ key: string ]: any}
-
-must contain all of the inputs declared by the current step.
-
----
 
 ##### `listInputs` <a name="listInputs" id="cdk-ssm-documents.ApproveStep.listInputs"></a>
 
@@ -101,20 +83,6 @@ public toSsmEntry(): {[ key: string ]: any}
 ```
 
 Converts this step into an object to prepare for yaml/json representation of this step.
-
-##### `executeStep` <a name="executeStep" id="cdk-ssm-documents.ApproveStep.executeStep"></a>
-
-```typescript
-public executeStep(inputs: {[ key: string ]: any}): {[ key: string ]: any}
-```
-
-May perform a real approval ask based on the params used during instance creation.
-
-###### `inputs`<sup>Required</sup> <a name="inputs" id="cdk-ssm-documents.ApproveStep.executeStep.parameter.inputs"></a>
-
-- *Type:* {[ key: string ]: any}
-
----
 
 ##### `variables` <a name="variables" id="cdk-ssm-documents.ApproveStep.variables"></a>
 
@@ -161,11 +129,10 @@ Any object.
 | <code><a href="#cdk-ssm-documents.ApproveStep.property.isEnd">isEnd</a></code> | <code>boolean</code> | *No description.* |
 | <code><a href="#cdk-ssm-documents.ApproveStep.property.maxAttempts">maxAttempts</a></code> | <code>number</code> | *No description.* |
 | <code><a href="#cdk-ssm-documents.ApproveStep.property.timeoutSeconds">timeoutSeconds</a></code> | <code>number</code> | *No description.* |
-| <code><a href="#cdk-ssm-documents.ApproveStep.property.onCancel">onCancel</a></code> | <code><a href="#cdk-ssm-documents.Step">Step</a></code> | *No description.* |
-| <code><a href="#cdk-ssm-documents.ApproveStep.property.onFailure">onFailure</a></code> | <code><a href="#cdk-ssm-documents.Step">Step</a></code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.ApproveStep.property.onCancel">onCancel</a></code> | <code><a href="#cdk-ssm-documents.AutomationStep">AutomationStep</a></code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.ApproveStep.property.onFailure">onFailure</a></code> | <code><a href="#cdk-ssm-documents.AutomationStep">AutomationStep</a></code> | *No description.* |
 | <code><a href="#cdk-ssm-documents.ApproveStep.property.allStepsInExecution">allStepsInExecution</a></code> | <code><a href="#cdk-ssm-documents.AutomationStep">AutomationStep</a>[]</code> | *No description.* |
 | <code><a href="#cdk-ssm-documents.ApproveStep.property.nextStep">nextStep</a></code> | <code><a href="#cdk-ssm-documents.AutomationStep">AutomationStep</a></code> | *No description.* |
-| <code><a href="#cdk-ssm-documents.ApproveStep.property.approveHook">approveHook</a></code> | <code><a href="#cdk-ssm-documents.IApproveHook">IApproveHook</a></code> | *No description.* |
 | <code><a href="#cdk-ssm-documents.ApproveStep.property.approvers">approvers</a></code> | <code><a href="#cdk-ssm-documents.IStringListVariable">IStringListVariable</a></code> | *No description.* |
 | <code><a href="#cdk-ssm-documents.ApproveStep.property.message">message</a></code> | <code><a href="#cdk-ssm-documents.IStringVariable">IStringVariable</a></code> | *No description.* |
 | <code><a href="#cdk-ssm-documents.ApproveStep.property.minRequiredApprovals">minRequiredApprovals</a></code> | <code><a href="#cdk-ssm-documents.INumberVariable">INumberVariable</a></code> | *No description.* |
@@ -268,20 +235,20 @@ public readonly timeoutSeconds: number;
 ##### `onCancel`<sup>Optional</sup> <a name="onCancel" id="cdk-ssm-documents.ApproveStep.property.onCancel"></a>
 
 ```typescript
-public readonly onCancel: Step;
+public readonly onCancel: AutomationStep;
 ```
 
-- *Type:* <a href="#cdk-ssm-documents.Step">Step</a>
+- *Type:* <a href="#cdk-ssm-documents.AutomationStep">AutomationStep</a>
 
 ---
 
 ##### `onFailure`<sup>Optional</sup> <a name="onFailure" id="cdk-ssm-documents.ApproveStep.property.onFailure"></a>
 
 ```typescript
-public readonly onFailure: Step;
+public readonly onFailure: AutomationStep;
 ```
 
-- *Type:* <a href="#cdk-ssm-documents.Step">Step</a>
+- *Type:* <a href="#cdk-ssm-documents.AutomationStep">AutomationStep</a>
 
 ---
 
@@ -302,16 +269,6 @@ public readonly nextStep: AutomationStep;
 ```
 
 - *Type:* <a href="#cdk-ssm-documents.AutomationStep">AutomationStep</a>
-
----
-
-##### `approveHook`<sup>Required</sup> <a name="approveHook" id="cdk-ssm-documents.ApproveStep.property.approveHook"></a>
-
-```typescript
-public readonly approveHook: IApproveHook;
-```
-
-- *Type:* <a href="#cdk-ssm-documents.IApproveHook">IApproveHook</a>
 
 ---
 
@@ -429,11 +386,9 @@ new AssertAwsResourceStep(scope: Construct, id: string, props: AssertAwsResource
 | **Name** | **Description** |
 | --- | --- |
 | <code><a href="#cdk-ssm-documents.AssertAwsResourceStep.toString">toString</a></code> | Returns a string representation of this construct. |
-| <code><a href="#cdk-ssm-documents.AssertAwsResourceStep.invoke">invoke</a></code> | Invokes the current step on the input and will return a SimulationResult. |
 | <code><a href="#cdk-ssm-documents.AssertAwsResourceStep.listInputs">listInputs</a></code> | Derives the inputs by parsing the apiParams to find matches for inputs in double circle braces ("{{INPUT}}"). |
 | <code><a href="#cdk-ssm-documents.AssertAwsResourceStep.listOutputs">listOutputs</a></code> | There are no outputs for this step. |
 | <code><a href="#cdk-ssm-documents.AssertAwsResourceStep.toSsmEntry">toSsmEntry</a></code> | Converts this step into an object to prepare for yaml/json representation of this step. |
-| <code><a href="#cdk-ssm-documents.AssertAwsResourceStep.executeStep">executeStep</a></code> | If the value found matches one of the desiredValues, then this function returns. |
 | <code><a href="#cdk-ssm-documents.AssertAwsResourceStep.variables">variables</a></code> | *No description.* |
 
 ---
@@ -445,22 +400,6 @@ public toString(): string
 ```
 
 Returns a string representation of this construct.
-
-##### `invoke` <a name="invoke" id="cdk-ssm-documents.AssertAwsResourceStep.invoke"></a>
-
-```typescript
-public invoke(inputs: {[ key: string ]: any}): SimulationResult
-```
-
-Invokes the current step on the input and will return a SimulationResult.
-
-###### `inputs`<sup>Required</sup> <a name="inputs" id="cdk-ssm-documents.AssertAwsResourceStep.invoke.parameter.inputs"></a>
-
-- *Type:* {[ key: string ]: any}
-
-must contain all of the inputs declared by the current step.
-
----
 
 ##### `listInputs` <a name="listInputs" id="cdk-ssm-documents.AssertAwsResourceStep.listInputs"></a>
 
@@ -485,22 +424,6 @@ public toSsmEntry(): {[ key: string ]: any}
 ```
 
 Converts this step into an object to prepare for yaml/json representation of this step.
-
-##### `executeStep` <a name="executeStep" id="cdk-ssm-documents.AssertAwsResourceStep.executeStep"></a>
-
-```typescript
-public executeStep(inputs: {[ key: string ]: any}): {[ key: string ]: any}
-```
-
-If the value found matches one of the desiredValues, then this function returns.
-
-Otherwise it throws.
-
-###### `inputs`<sup>Required</sup> <a name="inputs" id="cdk-ssm-documents.AssertAwsResourceStep.executeStep.parameter.inputs"></a>
-
-- *Type:* {[ key: string ]: any}
-
----
 
 ##### `variables` <a name="variables" id="cdk-ssm-documents.AssertAwsResourceStep.variables"></a>
 
@@ -547,12 +470,11 @@ Any object.
 | <code><a href="#cdk-ssm-documents.AssertAwsResourceStep.property.isEnd">isEnd</a></code> | <code>boolean</code> | *No description.* |
 | <code><a href="#cdk-ssm-documents.AssertAwsResourceStep.property.maxAttempts">maxAttempts</a></code> | <code>number</code> | *No description.* |
 | <code><a href="#cdk-ssm-documents.AssertAwsResourceStep.property.timeoutSeconds">timeoutSeconds</a></code> | <code>number</code> | *No description.* |
-| <code><a href="#cdk-ssm-documents.AssertAwsResourceStep.property.onCancel">onCancel</a></code> | <code><a href="#cdk-ssm-documents.Step">Step</a></code> | *No description.* |
-| <code><a href="#cdk-ssm-documents.AssertAwsResourceStep.property.onFailure">onFailure</a></code> | <code><a href="#cdk-ssm-documents.Step">Step</a></code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.AssertAwsResourceStep.property.onCancel">onCancel</a></code> | <code><a href="#cdk-ssm-documents.AutomationStep">AutomationStep</a></code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.AssertAwsResourceStep.property.onFailure">onFailure</a></code> | <code><a href="#cdk-ssm-documents.AutomationStep">AutomationStep</a></code> | *No description.* |
 | <code><a href="#cdk-ssm-documents.AssertAwsResourceStep.property.allStepsInExecution">allStepsInExecution</a></code> | <code><a href="#cdk-ssm-documents.AutomationStep">AutomationStep</a>[]</code> | *No description.* |
 | <code><a href="#cdk-ssm-documents.AssertAwsResourceStep.property.nextStep">nextStep</a></code> | <code><a href="#cdk-ssm-documents.AutomationStep">AutomationStep</a></code> | *No description.* |
 | <code><a href="#cdk-ssm-documents.AssertAwsResourceStep.property.apiParams">apiParams</a></code> | <code><a href="#cdk-ssm-documents.DictFormat">DictFormat</a></code> | *No description.* |
-| <code><a href="#cdk-ssm-documents.AssertAwsResourceStep.property.awsInvoker">awsInvoker</a></code> | <code><a href="#cdk-ssm-documents.IAwsInvoker">IAwsInvoker</a></code> | *No description.* |
 | <code><a href="#cdk-ssm-documents.AssertAwsResourceStep.property.javaScriptApi">javaScriptApi</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#cdk-ssm-documents.AssertAwsResourceStep.property.outputs">outputs</a></code> | <code><a href="#cdk-ssm-documents.Output">Output</a>[]</code> | *No description.* |
 | <code><a href="#cdk-ssm-documents.AssertAwsResourceStep.property.pascalCaseApi">pascalCaseApi</a></code> | <code>string</code> | *No description.* |
@@ -657,20 +579,20 @@ public readonly timeoutSeconds: number;
 ##### `onCancel`<sup>Optional</sup> <a name="onCancel" id="cdk-ssm-documents.AssertAwsResourceStep.property.onCancel"></a>
 
 ```typescript
-public readonly onCancel: Step;
+public readonly onCancel: AutomationStep;
 ```
 
-- *Type:* <a href="#cdk-ssm-documents.Step">Step</a>
+- *Type:* <a href="#cdk-ssm-documents.AutomationStep">AutomationStep</a>
 
 ---
 
 ##### `onFailure`<sup>Optional</sup> <a name="onFailure" id="cdk-ssm-documents.AssertAwsResourceStep.property.onFailure"></a>
 
 ```typescript
-public readonly onFailure: Step;
+public readonly onFailure: AutomationStep;
 ```
 
-- *Type:* <a href="#cdk-ssm-documents.Step">Step</a>
+- *Type:* <a href="#cdk-ssm-documents.AutomationStep">AutomationStep</a>
 
 ---
 
@@ -701,16 +623,6 @@ public readonly apiParams: DictFormat;
 ```
 
 - *Type:* <a href="#cdk-ssm-documents.DictFormat">DictFormat</a>
-
----
-
-##### `awsInvoker`<sup>Required</sup> <a name="awsInvoker" id="cdk-ssm-documents.AssertAwsResourceStep.property.awsInvoker"></a>
-
-```typescript
-public readonly awsInvoker: IAwsInvoker;
-```
-
-- *Type:* <a href="#cdk-ssm-documents.IAwsInvoker">IAwsInvoker</a>
 
 ---
 
@@ -849,8 +761,9 @@ new AutomationDocument(scope: Construct, id: string, props: AutomationDocumentPr
 | **Name** | **Description** |
 | --- | --- |
 | <code><a href="#cdk-ssm-documents.AutomationDocument.toString">toString</a></code> | Returns a string representation of this construct. |
+| <code><a href="#cdk-ssm-documents.AutomationDocument.documentType">documentType</a></code> | *No description.* |
 | <code><a href="#cdk-ssm-documents.AutomationDocument.print">print</a></code> | Synthesize before calling this function! You can use this to Synthesize: cdk.SynthUtils.synthesize(stack); |
-| <code><a href="#cdk-ssm-documents.AutomationDocument.runSimulation">runSimulation</a></code> | Synthesize before calling this function! You can use this to Synthesize: cdk.SynthUtils.synthesize(stack); |
+| <code><a href="#cdk-ssm-documents.AutomationDocument.collectedSteps">collectedSteps</a></code> | *No description.* |
 
 ---
 
@@ -861,6 +774,12 @@ public toString(): string
 ```
 
 Returns a string representation of this construct.
+
+##### `documentType` <a name="documentType" id="cdk-ssm-documents.AutomationDocument.documentType"></a>
+
+```typescript
+public documentType(): string
+```
 
 ##### `print` <a name="print" id="cdk-ssm-documents.AutomationDocument.print"></a>
 
@@ -874,26 +793,11 @@ Converts the objects define in the SSM Document (including all of the steps) to 
 The format is dependency on the documentFormat property provided to the class.
 The yaml can be used as is and will behave (or at least should behave) as was simulated in the runSimulation().
 
-##### `runSimulation` <a name="runSimulation" id="cdk-ssm-documents.AutomationDocument.runSimulation"></a>
+##### `collectedSteps` <a name="collectedSteps" id="cdk-ssm-documents.AutomationDocument.collectedSteps"></a>
 
 ```typescript
-public runSimulation(inputs: {[ key: string ]: any}): DocumentResult
+public collectedSteps(): AutomationStep[]
 ```
-
-Synthesize before calling this function! You can use this to Synthesize: cdk.SynthUtils.synthesize(stack);
-
-Executes the SSM Document in simluation mode.
-This method DOES NOT result in invocation of SSM APIs.
-Rather, all steps are executed locally and mimic the behavior of SSM.
-If any inputs are not provided in this function, the specified defaults for the inputs will be used.
-
-###### `inputs`<sup>Required</sup> <a name="inputs" id="cdk-ssm-documents.AutomationDocument.runSimulation.parameter.inputs"></a>
-
-- *Type:* {[ key: string ]: any}
-
-the inputs to feed into the simulated execution.
-
----
 
 #### Static Functions <a name="Static Functions" id="Static Functions"></a>
 
@@ -1080,11 +984,9 @@ new AutomationStep(scope: Construct, id: string, props: AutomationStepProps)
 | **Name** | **Description** |
 | --- | --- |
 | <code><a href="#cdk-ssm-documents.AutomationStep.toString">toString</a></code> | Returns a string representation of this construct. |
-| <code><a href="#cdk-ssm-documents.AutomationStep.invoke">invoke</a></code> | Invokes the current step on the input and will return a SimulationResult. |
 | <code><a href="#cdk-ssm-documents.AutomationStep.listInputs">listInputs</a></code> | Lists the inputs that are required for this step. |
 | <code><a href="#cdk-ssm-documents.AutomationStep.listOutputs">listOutputs</a></code> | Lists the outputs that will be returned from this step. |
 | <code><a href="#cdk-ssm-documents.AutomationStep.toSsmEntry">toSsmEntry</a></code> | Converts this step into an object to prepare for yaml/json representation of this step. |
-| <code><a href="#cdk-ssm-documents.AutomationStep.executeStep">executeStep</a></code> | Runs this step (and only this step) in simulation with the provided inputs. |
 | <code><a href="#cdk-ssm-documents.AutomationStep.variables">variables</a></code> | *No description.* |
 
 ---
@@ -1096,22 +998,6 @@ public toString(): string
 ```
 
 Returns a string representation of this construct.
-
-##### `invoke` <a name="invoke" id="cdk-ssm-documents.AutomationStep.invoke"></a>
-
-```typescript
-public invoke(inputs: {[ key: string ]: any}): SimulationResult
-```
-
-Invokes the current step on the input and will return a SimulationResult.
-
-###### `inputs`<sup>Required</sup> <a name="inputs" id="cdk-ssm-documents.AutomationStep.invoke.parameter.inputs"></a>
-
-- *Type:* {[ key: string ]: any}
-
-must contain all of the inputs declared by the current step.
-
----
 
 ##### `listInputs` <a name="listInputs" id="cdk-ssm-documents.AutomationStep.listInputs"></a>
 
@@ -1136,20 +1022,6 @@ public toSsmEntry(): {[ key: string ]: any}
 ```
 
 Converts this step into an object to prepare for yaml/json representation of this step.
-
-##### `executeStep` <a name="executeStep" id="cdk-ssm-documents.AutomationStep.executeStep"></a>
-
-```typescript
-public executeStep(inputs: {[ key: string ]: any}): {[ key: string ]: any}
-```
-
-Runs this step (and only this step) in simulation with the provided inputs.
-
-###### `inputs`<sup>Required</sup> <a name="inputs" id="cdk-ssm-documents.AutomationStep.executeStep.parameter.inputs"></a>
-
-- *Type:* {[ key: string ]: any}
-
----
 
 ##### `variables` <a name="variables" id="cdk-ssm-documents.AutomationStep.variables"></a>
 
@@ -1196,8 +1068,8 @@ Any object.
 | <code><a href="#cdk-ssm-documents.AutomationStep.property.isEnd">isEnd</a></code> | <code>boolean</code> | *No description.* |
 | <code><a href="#cdk-ssm-documents.AutomationStep.property.maxAttempts">maxAttempts</a></code> | <code>number</code> | *No description.* |
 | <code><a href="#cdk-ssm-documents.AutomationStep.property.timeoutSeconds">timeoutSeconds</a></code> | <code>number</code> | *No description.* |
-| <code><a href="#cdk-ssm-documents.AutomationStep.property.onCancel">onCancel</a></code> | <code><a href="#cdk-ssm-documents.Step">Step</a></code> | *No description.* |
-| <code><a href="#cdk-ssm-documents.AutomationStep.property.onFailure">onFailure</a></code> | <code><a href="#cdk-ssm-documents.Step">Step</a></code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.AutomationStep.property.onCancel">onCancel</a></code> | <code><a href="#cdk-ssm-documents.AutomationStep">AutomationStep</a></code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.AutomationStep.property.onFailure">onFailure</a></code> | <code><a href="#cdk-ssm-documents.AutomationStep">AutomationStep</a></code> | *No description.* |
 | <code><a href="#cdk-ssm-documents.AutomationStep.property.allStepsInExecution">allStepsInExecution</a></code> | <code><a href="#cdk-ssm-documents.AutomationStep">AutomationStep</a>[]</code> | *No description.* |
 | <code><a href="#cdk-ssm-documents.AutomationStep.property.nextStep">nextStep</a></code> | <code><a href="#cdk-ssm-documents.AutomationStep">AutomationStep</a></code> | *No description.* |
 
@@ -1298,20 +1170,20 @@ public readonly timeoutSeconds: number;
 ##### `onCancel`<sup>Optional</sup> <a name="onCancel" id="cdk-ssm-documents.AutomationStep.property.onCancel"></a>
 
 ```typescript
-public readonly onCancel: Step;
+public readonly onCancel: AutomationStep;
 ```
 
-- *Type:* <a href="#cdk-ssm-documents.Step">Step</a>
+- *Type:* <a href="#cdk-ssm-documents.AutomationStep">AutomationStep</a>
 
 ---
 
 ##### `onFailure`<sup>Optional</sup> <a name="onFailure" id="cdk-ssm-documents.AutomationStep.property.onFailure"></a>
 
 ```typescript
-public readonly onFailure: Step;
+public readonly onFailure: AutomationStep;
 ```
 
-- *Type:* <a href="#cdk-ssm-documents.Step">Step</a>
+- *Type:* <a href="#cdk-ssm-documents.AutomationStep">AutomationStep</a>
 
 ---
 
@@ -1407,11 +1279,9 @@ new AwsApiStep(scope: Construct, id: string, props: AwsApiStepProps)
 | **Name** | **Description** |
 | --- | --- |
 | <code><a href="#cdk-ssm-documents.AwsApiStep.toString">toString</a></code> | Returns a string representation of this construct. |
-| <code><a href="#cdk-ssm-documents.AwsApiStep.invoke">invoke</a></code> | Invokes the current step on the input and will return a SimulationResult. |
 | <code><a href="#cdk-ssm-documents.AwsApiStep.listInputs">listInputs</a></code> | Derives the inputs by parsing the apiParams to find matches for inputs in double circle braces ("{{INPUT}}"). |
 | <code><a href="#cdk-ssm-documents.AwsApiStep.listOutputs">listOutputs</a></code> | Lists the outputs that will be returned from this step. |
 | <code><a href="#cdk-ssm-documents.AwsApiStep.toSsmEntry">toSsmEntry</a></code> | Converts this step into an object to prepare for yaml/json representation of this step. |
-| <code><a href="#cdk-ssm-documents.AwsApiStep.executeStep">executeStep</a></code> | Invokes the specified service (param) with the specified api (param) with the specified apiParams (param). |
 | <code><a href="#cdk-ssm-documents.AwsApiStep.variables">variables</a></code> | *No description.* |
 
 ---
@@ -1423,22 +1293,6 @@ public toString(): string
 ```
 
 Returns a string representation of this construct.
-
-##### `invoke` <a name="invoke" id="cdk-ssm-documents.AwsApiStep.invoke"></a>
-
-```typescript
-public invoke(inputs: {[ key: string ]: any}): SimulationResult
-```
-
-Invokes the current step on the input and will return a SimulationResult.
-
-###### `inputs`<sup>Required</sup> <a name="inputs" id="cdk-ssm-documents.AwsApiStep.invoke.parameter.inputs"></a>
-
-- *Type:* {[ key: string ]: any}
-
-must contain all of the inputs declared by the current step.
-
----
 
 ##### `listInputs` <a name="listInputs" id="cdk-ssm-documents.AwsApiStep.listInputs"></a>
 
@@ -1463,23 +1317,6 @@ public toSsmEntry(): {[ key: string ]: any}
 ```
 
 Converts this step into an object to prepare for yaml/json representation of this step.
-
-##### `executeStep` <a name="executeStep" id="cdk-ssm-documents.AwsApiStep.executeStep"></a>
-
-```typescript
-public executeStep(inputs: {[ key: string ]: any}): {[ key: string ]: any}
-```
-
-Invokes the specified service (param) with the specified api (param) with the specified apiParams (param).
-
-This call will be invoked synchronously.
-The input variables in apiParams (param) specified using "{{INPUT}}" syntax will be replaced with the inputs.
-
-###### `inputs`<sup>Required</sup> <a name="inputs" id="cdk-ssm-documents.AwsApiStep.executeStep.parameter.inputs"></a>
-
-- *Type:* {[ key: string ]: any}
-
----
 
 ##### `variables` <a name="variables" id="cdk-ssm-documents.AwsApiStep.variables"></a>
 
@@ -1526,12 +1363,11 @@ Any object.
 | <code><a href="#cdk-ssm-documents.AwsApiStep.property.isEnd">isEnd</a></code> | <code>boolean</code> | *No description.* |
 | <code><a href="#cdk-ssm-documents.AwsApiStep.property.maxAttempts">maxAttempts</a></code> | <code>number</code> | *No description.* |
 | <code><a href="#cdk-ssm-documents.AwsApiStep.property.timeoutSeconds">timeoutSeconds</a></code> | <code>number</code> | *No description.* |
-| <code><a href="#cdk-ssm-documents.AwsApiStep.property.onCancel">onCancel</a></code> | <code><a href="#cdk-ssm-documents.Step">Step</a></code> | *No description.* |
-| <code><a href="#cdk-ssm-documents.AwsApiStep.property.onFailure">onFailure</a></code> | <code><a href="#cdk-ssm-documents.Step">Step</a></code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.AwsApiStep.property.onCancel">onCancel</a></code> | <code><a href="#cdk-ssm-documents.AutomationStep">AutomationStep</a></code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.AwsApiStep.property.onFailure">onFailure</a></code> | <code><a href="#cdk-ssm-documents.AutomationStep">AutomationStep</a></code> | *No description.* |
 | <code><a href="#cdk-ssm-documents.AwsApiStep.property.allStepsInExecution">allStepsInExecution</a></code> | <code><a href="#cdk-ssm-documents.AutomationStep">AutomationStep</a>[]</code> | *No description.* |
 | <code><a href="#cdk-ssm-documents.AwsApiStep.property.nextStep">nextStep</a></code> | <code><a href="#cdk-ssm-documents.AutomationStep">AutomationStep</a></code> | *No description.* |
 | <code><a href="#cdk-ssm-documents.AwsApiStep.property.apiParams">apiParams</a></code> | <code><a href="#cdk-ssm-documents.DictFormat">DictFormat</a></code> | *No description.* |
-| <code><a href="#cdk-ssm-documents.AwsApiStep.property.awsInvoker">awsInvoker</a></code> | <code><a href="#cdk-ssm-documents.IAwsInvoker">IAwsInvoker</a></code> | *No description.* |
 | <code><a href="#cdk-ssm-documents.AwsApiStep.property.javaScriptApi">javaScriptApi</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#cdk-ssm-documents.AwsApiStep.property.outputs">outputs</a></code> | <code><a href="#cdk-ssm-documents.Output">Output</a>[]</code> | *No description.* |
 | <code><a href="#cdk-ssm-documents.AwsApiStep.property.pascalCaseApi">pascalCaseApi</a></code> | <code>string</code> | *No description.* |
@@ -1634,20 +1470,20 @@ public readonly timeoutSeconds: number;
 ##### `onCancel`<sup>Optional</sup> <a name="onCancel" id="cdk-ssm-documents.AwsApiStep.property.onCancel"></a>
 
 ```typescript
-public readonly onCancel: Step;
+public readonly onCancel: AutomationStep;
 ```
 
-- *Type:* <a href="#cdk-ssm-documents.Step">Step</a>
+- *Type:* <a href="#cdk-ssm-documents.AutomationStep">AutomationStep</a>
 
 ---
 
 ##### `onFailure`<sup>Optional</sup> <a name="onFailure" id="cdk-ssm-documents.AwsApiStep.property.onFailure"></a>
 
 ```typescript
-public readonly onFailure: Step;
+public readonly onFailure: AutomationStep;
 ```
 
-- *Type:* <a href="#cdk-ssm-documents.Step">Step</a>
+- *Type:* <a href="#cdk-ssm-documents.AutomationStep">AutomationStep</a>
 
 ---
 
@@ -1678,16 +1514,6 @@ public readonly apiParams: DictFormat;
 ```
 
 - *Type:* <a href="#cdk-ssm-documents.DictFormat">DictFormat</a>
-
----
-
-##### `awsInvoker`<sup>Required</sup> <a name="awsInvoker" id="cdk-ssm-documents.AwsApiStep.property.awsInvoker"></a>
-
-```typescript
-public readonly awsInvoker: IAwsInvoker;
-```
-
-- *Type:* <a href="#cdk-ssm-documents.IAwsInvoker">IAwsInvoker</a>
 
 ---
 
@@ -1803,11 +1629,9 @@ new BranchStep(scope: Construct, id: string, props: BranchStepProps)
 | **Name** | **Description** |
 | --- | --- |
 | <code><a href="#cdk-ssm-documents.BranchStep.toString">toString</a></code> | Returns a string representation of this construct. |
-| <code><a href="#cdk-ssm-documents.BranchStep.invoke">invoke</a></code> | Overrides invoke because control flow of execution is different than standard steps. |
 | <code><a href="#cdk-ssm-documents.BranchStep.listInputs">listInputs</a></code> | Lists the inputs that are required for this step. |
 | <code><a href="#cdk-ssm-documents.BranchStep.listOutputs">listOutputs</a></code> | There is no output from branch steps. |
 | <code><a href="#cdk-ssm-documents.BranchStep.toSsmEntry">toSsmEntry</a></code> | Converts this step into an object to prepare for yaml/json representation of this step. |
-| <code><a href="#cdk-ssm-documents.BranchStep.executeStep">executeStep</a></code> | noop. |
 | <code><a href="#cdk-ssm-documents.BranchStep.variables">variables</a></code> | *No description.* |
 
 ---
@@ -1819,22 +1643,6 @@ public toString(): string
 ```
 
 Returns a string representation of this construct.
-
-##### `invoke` <a name="invoke" id="cdk-ssm-documents.BranchStep.invoke"></a>
-
-```typescript
-public invoke(inputs: {[ key: string ]: any}): SimulationResult
-```
-
-Overrides invoke because control flow of execution is different than standard steps.
-
-Will traverse the choices until one evaluated to true; will skip to that choice.
-
-###### `inputs`<sup>Required</sup> <a name="inputs" id="cdk-ssm-documents.BranchStep.invoke.parameter.inputs"></a>
-
-- *Type:* {[ key: string ]: any}
-
----
 
 ##### `listInputs` <a name="listInputs" id="cdk-ssm-documents.BranchStep.listInputs"></a>
 
@@ -1859,22 +1667,6 @@ public toSsmEntry(): {[ key: string ]: any}
 ```
 
 Converts this step into an object to prepare for yaml/json representation of this step.
-
-##### `executeStep` <a name="executeStep" id="cdk-ssm-documents.BranchStep.executeStep"></a>
-
-```typescript
-public executeStep(_inputs: {[ key: string ]: any}): {[ key: string ]: any}
-```
-
-noop.
-
-The logic performed in the branch step happens in the invoke() function.
-
-###### `_inputs`<sup>Required</sup> <a name="_inputs" id="cdk-ssm-documents.BranchStep.executeStep.parameter._inputs"></a>
-
-- *Type:* {[ key: string ]: any}
-
----
 
 ##### `variables` <a name="variables" id="cdk-ssm-documents.BranchStep.variables"></a>
 
@@ -1921,8 +1713,8 @@ Any object.
 | <code><a href="#cdk-ssm-documents.BranchStep.property.isEnd">isEnd</a></code> | <code>boolean</code> | *No description.* |
 | <code><a href="#cdk-ssm-documents.BranchStep.property.maxAttempts">maxAttempts</a></code> | <code>number</code> | *No description.* |
 | <code><a href="#cdk-ssm-documents.BranchStep.property.timeoutSeconds">timeoutSeconds</a></code> | <code>number</code> | *No description.* |
-| <code><a href="#cdk-ssm-documents.BranchStep.property.onCancel">onCancel</a></code> | <code><a href="#cdk-ssm-documents.Step">Step</a></code> | *No description.* |
-| <code><a href="#cdk-ssm-documents.BranchStep.property.onFailure">onFailure</a></code> | <code><a href="#cdk-ssm-documents.Step">Step</a></code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.BranchStep.property.onCancel">onCancel</a></code> | <code><a href="#cdk-ssm-documents.AutomationStep">AutomationStep</a></code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.BranchStep.property.onFailure">onFailure</a></code> | <code><a href="#cdk-ssm-documents.AutomationStep">AutomationStep</a></code> | *No description.* |
 | <code><a href="#cdk-ssm-documents.BranchStep.property.allStepsInExecution">allStepsInExecution</a></code> | <code><a href="#cdk-ssm-documents.AutomationStep">AutomationStep</a>[]</code> | *No description.* |
 | <code><a href="#cdk-ssm-documents.BranchStep.property.nextStep">nextStep</a></code> | <code><a href="#cdk-ssm-documents.AutomationStep">AutomationStep</a></code> | *No description.* |
 | <code><a href="#cdk-ssm-documents.BranchStep.property.choices">choices</a></code> | <code><a href="#cdk-ssm-documents.Choice">Choice</a>[]</code> | *No description.* |
@@ -2025,20 +1817,20 @@ public readonly timeoutSeconds: number;
 ##### `onCancel`<sup>Optional</sup> <a name="onCancel" id="cdk-ssm-documents.BranchStep.property.onCancel"></a>
 
 ```typescript
-public readonly onCancel: Step;
+public readonly onCancel: AutomationStep;
 ```
 
-- *Type:* <a href="#cdk-ssm-documents.Step">Step</a>
+- *Type:* <a href="#cdk-ssm-documents.AutomationStep">AutomationStep</a>
 
 ---
 
 ##### `onFailure`<sup>Optional</sup> <a name="onFailure" id="cdk-ssm-documents.BranchStep.property.onFailure"></a>
 
 ```typescript
-public readonly onFailure: Step;
+public readonly onFailure: AutomationStep;
 ```
 
-- *Type:* <a href="#cdk-ssm-documents.Step">Step</a>
+- *Type:* <a href="#cdk-ssm-documents.AutomationStep">AutomationStep</a>
 
 ---
 
@@ -2154,11 +1946,9 @@ new ChangeInstanceStateStep(scope: Construct, id: string, props: ChangeInstanceS
 | **Name** | **Description** |
 | --- | --- |
 | <code><a href="#cdk-ssm-documents.ChangeInstanceStateStep.toString">toString</a></code> | Returns a string representation of this construct. |
-| <code><a href="#cdk-ssm-documents.ChangeInstanceStateStep.invoke">invoke</a></code> | Invokes the current step on the input and will return a SimulationResult. |
 | <code><a href="#cdk-ssm-documents.ChangeInstanceStateStep.listInputs">listInputs</a></code> | Lists the inputs that are required for this step. |
 | <code><a href="#cdk-ssm-documents.ChangeInstanceStateStep.listOutputs">listOutputs</a></code> | This step has no outputs. |
 | <code><a href="#cdk-ssm-documents.ChangeInstanceStateStep.toSsmEntry">toSsmEntry</a></code> | Converts this step into an object to prepare for yaml/json representation of this step. |
-| <code><a href="#cdk-ssm-documents.ChangeInstanceStateStep.executeStep">executeStep</a></code> | Runs this step (and only this step) in simulation with the provided inputs. |
 | <code><a href="#cdk-ssm-documents.ChangeInstanceStateStep.variables">variables</a></code> | *No description.* |
 
 ---
@@ -2170,22 +1960,6 @@ public toString(): string
 ```
 
 Returns a string representation of this construct.
-
-##### `invoke` <a name="invoke" id="cdk-ssm-documents.ChangeInstanceStateStep.invoke"></a>
-
-```typescript
-public invoke(inputs: {[ key: string ]: any}): SimulationResult
-```
-
-Invokes the current step on the input and will return a SimulationResult.
-
-###### `inputs`<sup>Required</sup> <a name="inputs" id="cdk-ssm-documents.ChangeInstanceStateStep.invoke.parameter.inputs"></a>
-
-- *Type:* {[ key: string ]: any}
-
-must contain all of the inputs declared by the current step.
-
----
 
 ##### `listInputs` <a name="listInputs" id="cdk-ssm-documents.ChangeInstanceStateStep.listInputs"></a>
 
@@ -2210,20 +1984,6 @@ public toSsmEntry(): {[ key: string ]: any}
 ```
 
 Converts this step into an object to prepare for yaml/json representation of this step.
-
-##### `executeStep` <a name="executeStep" id="cdk-ssm-documents.ChangeInstanceStateStep.executeStep"></a>
-
-```typescript
-public executeStep(inputs: {[ key: string ]: any}): {[ key: string ]: any}
-```
-
-Runs this step (and only this step) in simulation with the provided inputs.
-
-###### `inputs`<sup>Required</sup> <a name="inputs" id="cdk-ssm-documents.ChangeInstanceStateStep.executeStep.parameter.inputs"></a>
-
-- *Type:* {[ key: string ]: any}
-
----
 
 ##### `variables` <a name="variables" id="cdk-ssm-documents.ChangeInstanceStateStep.variables"></a>
 
@@ -2270,11 +2030,10 @@ Any object.
 | <code><a href="#cdk-ssm-documents.ChangeInstanceStateStep.property.isEnd">isEnd</a></code> | <code>boolean</code> | *No description.* |
 | <code><a href="#cdk-ssm-documents.ChangeInstanceStateStep.property.maxAttempts">maxAttempts</a></code> | <code>number</code> | *No description.* |
 | <code><a href="#cdk-ssm-documents.ChangeInstanceStateStep.property.timeoutSeconds">timeoutSeconds</a></code> | <code>number</code> | *No description.* |
-| <code><a href="#cdk-ssm-documents.ChangeInstanceStateStep.property.onCancel">onCancel</a></code> | <code><a href="#cdk-ssm-documents.Step">Step</a></code> | *No description.* |
-| <code><a href="#cdk-ssm-documents.ChangeInstanceStateStep.property.onFailure">onFailure</a></code> | <code><a href="#cdk-ssm-documents.Step">Step</a></code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.ChangeInstanceStateStep.property.onCancel">onCancel</a></code> | <code><a href="#cdk-ssm-documents.AutomationStep">AutomationStep</a></code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.ChangeInstanceStateStep.property.onFailure">onFailure</a></code> | <code><a href="#cdk-ssm-documents.AutomationStep">AutomationStep</a></code> | *No description.* |
 | <code><a href="#cdk-ssm-documents.ChangeInstanceStateStep.property.allStepsInExecution">allStepsInExecution</a></code> | <code><a href="#cdk-ssm-documents.AutomationStep">AutomationStep</a>[]</code> | *No description.* |
 | <code><a href="#cdk-ssm-documents.ChangeInstanceStateStep.property.nextStep">nextStep</a></code> | <code><a href="#cdk-ssm-documents.AutomationStep">AutomationStep</a></code> | *No description.* |
-| <code><a href="#cdk-ssm-documents.ChangeInstanceStateStep.property.awsInvoker">awsInvoker</a></code> | <code><a href="#cdk-ssm-documents.IAwsInvoker">IAwsInvoker</a></code> | *No description.* |
 | <code><a href="#cdk-ssm-documents.ChangeInstanceStateStep.property.desiredState">desiredState</a></code> | <code><a href="#cdk-ssm-documents.IEnumVariable">IEnumVariable</a></code> | *No description.* |
 | <code><a href="#cdk-ssm-documents.ChangeInstanceStateStep.property.instanceIds">instanceIds</a></code> | <code><a href="#cdk-ssm-documents.IStringListVariable">IStringListVariable</a></code> | *No description.* |
 | <code><a href="#cdk-ssm-documents.ChangeInstanceStateStep.property.additionalInfo">additionalInfo</a></code> | <code><a href="#cdk-ssm-documents.IStringVariable">IStringVariable</a></code> | *No description.* |
@@ -2378,20 +2137,20 @@ public readonly timeoutSeconds: number;
 ##### `onCancel`<sup>Optional</sup> <a name="onCancel" id="cdk-ssm-documents.ChangeInstanceStateStep.property.onCancel"></a>
 
 ```typescript
-public readonly onCancel: Step;
+public readonly onCancel: AutomationStep;
 ```
 
-- *Type:* <a href="#cdk-ssm-documents.Step">Step</a>
+- *Type:* <a href="#cdk-ssm-documents.AutomationStep">AutomationStep</a>
 
 ---
 
 ##### `onFailure`<sup>Optional</sup> <a name="onFailure" id="cdk-ssm-documents.ChangeInstanceStateStep.property.onFailure"></a>
 
 ```typescript
-public readonly onFailure: Step;
+public readonly onFailure: AutomationStep;
 ```
 
-- *Type:* <a href="#cdk-ssm-documents.Step">Step</a>
+- *Type:* <a href="#cdk-ssm-documents.AutomationStep">AutomationStep</a>
 
 ---
 
@@ -2412,16 +2171,6 @@ public readonly nextStep: AutomationStep;
 ```
 
 - *Type:* <a href="#cdk-ssm-documents.AutomationStep">AutomationStep</a>
-
----
-
-##### `awsInvoker`<sup>Required</sup> <a name="awsInvoker" id="cdk-ssm-documents.ChangeInstanceStateStep.property.awsInvoker"></a>
-
-```typescript
-public readonly awsInvoker: IAwsInvoker;
-```
-
-- *Type:* <a href="#cdk-ssm-documents.IAwsInvoker">IAwsInvoker</a>
 
 ---
 
@@ -2547,8 +2296,9 @@ new CommandDocument(scope: Construct, id: string, props: CommandDocumentProps)
 | **Name** | **Description** |
 | --- | --- |
 | <code><a href="#cdk-ssm-documents.CommandDocument.toString">toString</a></code> | Returns a string representation of this construct. |
+| <code><a href="#cdk-ssm-documents.CommandDocument.documentType">documentType</a></code> | *No description.* |
 | <code><a href="#cdk-ssm-documents.CommandDocument.print">print</a></code> | Synthesize before calling this function! You can use this to Synthesize: cdk.SynthUtils.synthesize(stack); |
-| <code><a href="#cdk-ssm-documents.CommandDocument.runSimulation">runSimulation</a></code> | Synthesize before calling this function! You can use this to Synthesize: cdk.SynthUtils.synthesize(stack); |
+| <code><a href="#cdk-ssm-documents.CommandDocument.collectedSteps">collectedSteps</a></code> | *No description.* |
 
 ---
 
@@ -2559,6 +2309,12 @@ public toString(): string
 ```
 
 Returns a string representation of this construct.
+
+##### `documentType` <a name="documentType" id="cdk-ssm-documents.CommandDocument.documentType"></a>
+
+```typescript
+public documentType(): string
+```
 
 ##### `print` <a name="print" id="cdk-ssm-documents.CommandDocument.print"></a>
 
@@ -2572,26 +2328,11 @@ Converts the objects define in the SSM Document (including all of the steps) to 
 The format is dependency on the documentFormat property provided to the class.
 The yaml can be used as is and will behave (or at least should behave) as was simulated in the runSimulation().
 
-##### `runSimulation` <a name="runSimulation" id="cdk-ssm-documents.CommandDocument.runSimulation"></a>
+##### `collectedSteps` <a name="collectedSteps" id="cdk-ssm-documents.CommandDocument.collectedSteps"></a>
 
 ```typescript
-public runSimulation(inputs: {[ key: string ]: any}): DocumentResult
+public collectedSteps(): CommandStep[]
 ```
-
-Synthesize before calling this function! You can use this to Synthesize: cdk.SynthUtils.synthesize(stack);
-
-Executes the SSM Document in simluation mode.
-This method DOES NOT result in invocation of SSM APIs.
-Rather, all steps are executed locally and mimic the behavior of SSM.
-If any inputs are not provided in this function, the specified defaults for the inputs will be used.
-
-###### `inputs`<sup>Required</sup> <a name="inputs" id="cdk-ssm-documents.CommandDocument.runSimulation.parameter.inputs"></a>
-
-- *Type:* {[ key: string ]: any}
-
-the inputs to feed into the simulated execution.
-
----
 
 #### Static Functions <a name="Static Functions" id="Static Functions"></a>
 
@@ -2769,11 +2510,9 @@ new CommandStep(scope: Construct, id: string, props: CommandStepProps)
 | **Name** | **Description** |
 | --- | --- |
 | <code><a href="#cdk-ssm-documents.CommandStep.toString">toString</a></code> | Returns a string representation of this construct. |
-| <code><a href="#cdk-ssm-documents.CommandStep.invoke">invoke</a></code> | Invokes the current step on the input and will return a SimulationResult. |
 | <code><a href="#cdk-ssm-documents.CommandStep.listInputs">listInputs</a></code> | Lists the inputs that are required for this step. |
 | <code><a href="#cdk-ssm-documents.CommandStep.listOutputs">listOutputs</a></code> | RunCommand Steps do not have outputs. |
 | <code><a href="#cdk-ssm-documents.CommandStep.toSsmEntry">toSsmEntry</a></code> | Converts this step into an object to prepare for yaml/json representation of this step. |
-| <code><a href="#cdk-ssm-documents.CommandStep.executeStep">executeStep</a></code> | Runs this step (and only this step) in simulation with the provided inputs. |
 | <code><a href="#cdk-ssm-documents.CommandStep.variables">variables</a></code> | *No description.* |
 
 ---
@@ -2785,22 +2524,6 @@ public toString(): string
 ```
 
 Returns a string representation of this construct.
-
-##### `invoke` <a name="invoke" id="cdk-ssm-documents.CommandStep.invoke"></a>
-
-```typescript
-public invoke(inputs: {[ key: string ]: any}): SimulationResult
-```
-
-Invokes the current step on the input and will return a SimulationResult.
-
-###### `inputs`<sup>Required</sup> <a name="inputs" id="cdk-ssm-documents.CommandStep.invoke.parameter.inputs"></a>
-
-- *Type:* {[ key: string ]: any}
-
-must contain all of the inputs declared by the current step.
-
----
 
 ##### `listInputs` <a name="listInputs" id="cdk-ssm-documents.CommandStep.listInputs"></a>
 
@@ -2825,20 +2548,6 @@ public toSsmEntry(): {[ key: string ]: any}
 ```
 
 Converts this step into an object to prepare for yaml/json representation of this step.
-
-##### `executeStep` <a name="executeStep" id="cdk-ssm-documents.CommandStep.executeStep"></a>
-
-```typescript
-public executeStep(inputs: {[ key: string ]: any}): void
-```
-
-Runs this step (and only this step) in simulation with the provided inputs.
-
-###### `inputs`<sup>Required</sup> <a name="inputs" id="cdk-ssm-documents.CommandStep.executeStep.parameter.inputs"></a>
-
-- *Type:* {[ key: string ]: any}
-
----
 
 ##### `variables` <a name="variables" id="cdk-ssm-documents.CommandStep.variables"></a>
 
@@ -2887,7 +2596,6 @@ Any object.
 | <code><a href="#cdk-ssm-documents.CommandStep.property.finallyStep">finallyStep</a></code> | <code>boolean</code> | *No description.* |
 | <code><a href="#cdk-ssm-documents.CommandStep.property.markSuccessAndExitOnFailure">markSuccessAndExitOnFailure</a></code> | <code>boolean</code> | *No description.* |
 | <code><a href="#cdk-ssm-documents.CommandStep.property.platforms">platforms</a></code> | <code><a href="#cdk-ssm-documents.Platform">Platform</a>[]</code> | *No description.* |
-| <code><a href="#cdk-ssm-documents.CommandStep.property.simulationPlatform">simulationPlatform</a></code> | <code><a href="#cdk-ssm-documents.Platform">Platform</a></code> | *No description.* |
 | <code><a href="#cdk-ssm-documents.CommandStep.property.precondition">precondition</a></code> | <code><a href="#cdk-ssm-documents.Precondition">Precondition</a></code> | *No description.* |
 | <code><a href="#cdk-ssm-documents.CommandStep.property.allStepsInExecution">allStepsInExecution</a></code> | <code><a href="#cdk-ssm-documents.CommandStep">CommandStep</a>[]</code> | *No description.* |
 | <code><a href="#cdk-ssm-documents.CommandStep.property.nextStep">nextStep</a></code> | <code><a href="#cdk-ssm-documents.CommandStep">CommandStep</a></code> | *No description.* |
@@ -3006,16 +2714,6 @@ public readonly platforms: Platform[];
 
 ---
 
-##### `simulationPlatform`<sup>Required</sup> <a name="simulationPlatform" id="cdk-ssm-documents.CommandStep.property.simulationPlatform"></a>
-
-```typescript
-public readonly simulationPlatform: Platform;
-```
-
-- *Type:* <a href="#cdk-ssm-documents.Platform">Platform</a>
-
----
-
 ##### `precondition`<sup>Optional</sup> <a name="precondition" id="cdk-ssm-documents.CommandStep.property.precondition"></a>
 
 ```typescript
@@ -3090,11 +2788,9 @@ new CopyImageStep(scope: Construct, id: string, props: CopyImageStepProps)
 | **Name** | **Description** |
 | --- | --- |
 | <code><a href="#cdk-ssm-documents.CopyImageStep.toString">toString</a></code> | Returns a string representation of this construct. |
-| <code><a href="#cdk-ssm-documents.CopyImageStep.invoke">invoke</a></code> | Invokes the current step on the input and will return a SimulationResult. |
 | <code><a href="#cdk-ssm-documents.CopyImageStep.listInputs">listInputs</a></code> | Lists the inputs that are required for this step. |
 | <code><a href="#cdk-ssm-documents.CopyImageStep.listOutputs">listOutputs</a></code> | Lists the outputs that will be returned from this step. |
 | <code><a href="#cdk-ssm-documents.CopyImageStep.toSsmEntry">toSsmEntry</a></code> | Converts this step into an object to prepare for yaml/json representation of this step. |
-| <code><a href="#cdk-ssm-documents.CopyImageStep.executeStep">executeStep</a></code> | Runs this step (and only this step) in simulation with the provided inputs. |
 | <code><a href="#cdk-ssm-documents.CopyImageStep.variables">variables</a></code> | *No description.* |
 
 ---
@@ -3106,22 +2802,6 @@ public toString(): string
 ```
 
 Returns a string representation of this construct.
-
-##### `invoke` <a name="invoke" id="cdk-ssm-documents.CopyImageStep.invoke"></a>
-
-```typescript
-public invoke(inputs: {[ key: string ]: any}): SimulationResult
-```
-
-Invokes the current step on the input and will return a SimulationResult.
-
-###### `inputs`<sup>Required</sup> <a name="inputs" id="cdk-ssm-documents.CopyImageStep.invoke.parameter.inputs"></a>
-
-- *Type:* {[ key: string ]: any}
-
-must contain all of the inputs declared by the current step.
-
----
 
 ##### `listInputs` <a name="listInputs" id="cdk-ssm-documents.CopyImageStep.listInputs"></a>
 
@@ -3146,20 +2826,6 @@ public toSsmEntry(): {[ key: string ]: any}
 ```
 
 Converts this step into an object to prepare for yaml/json representation of this step.
-
-##### `executeStep` <a name="executeStep" id="cdk-ssm-documents.CopyImageStep.executeStep"></a>
-
-```typescript
-public executeStep(inputs: {[ key: string ]: any}): {[ key: string ]: any}
-```
-
-Runs this step (and only this step) in simulation with the provided inputs.
-
-###### `inputs`<sup>Required</sup> <a name="inputs" id="cdk-ssm-documents.CopyImageStep.executeStep.parameter.inputs"></a>
-
-- *Type:* {[ key: string ]: any}
-
----
 
 ##### `variables` <a name="variables" id="cdk-ssm-documents.CopyImageStep.variables"></a>
 
@@ -3206,11 +2872,10 @@ Any object.
 | <code><a href="#cdk-ssm-documents.CopyImageStep.property.isEnd">isEnd</a></code> | <code>boolean</code> | *No description.* |
 | <code><a href="#cdk-ssm-documents.CopyImageStep.property.maxAttempts">maxAttempts</a></code> | <code>number</code> | *No description.* |
 | <code><a href="#cdk-ssm-documents.CopyImageStep.property.timeoutSeconds">timeoutSeconds</a></code> | <code>number</code> | *No description.* |
-| <code><a href="#cdk-ssm-documents.CopyImageStep.property.onCancel">onCancel</a></code> | <code><a href="#cdk-ssm-documents.Step">Step</a></code> | *No description.* |
-| <code><a href="#cdk-ssm-documents.CopyImageStep.property.onFailure">onFailure</a></code> | <code><a href="#cdk-ssm-documents.Step">Step</a></code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.CopyImageStep.property.onCancel">onCancel</a></code> | <code><a href="#cdk-ssm-documents.AutomationStep">AutomationStep</a></code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.CopyImageStep.property.onFailure">onFailure</a></code> | <code><a href="#cdk-ssm-documents.AutomationStep">AutomationStep</a></code> | *No description.* |
 | <code><a href="#cdk-ssm-documents.CopyImageStep.property.allStepsInExecution">allStepsInExecution</a></code> | <code><a href="#cdk-ssm-documents.AutomationStep">AutomationStep</a>[]</code> | *No description.* |
 | <code><a href="#cdk-ssm-documents.CopyImageStep.property.nextStep">nextStep</a></code> | <code><a href="#cdk-ssm-documents.AutomationStep">AutomationStep</a></code> | *No description.* |
-| <code><a href="#cdk-ssm-documents.CopyImageStep.property.awsInvoker">awsInvoker</a></code> | <code><a href="#cdk-ssm-documents.IAwsInvoker">IAwsInvoker</a></code> | *No description.* |
 | <code><a href="#cdk-ssm-documents.CopyImageStep.property.imageName">imageName</a></code> | <code><a href="#cdk-ssm-documents.IStringVariable">IStringVariable</a></code> | *No description.* |
 | <code><a href="#cdk-ssm-documents.CopyImageStep.property.sourceImageId">sourceImageId</a></code> | <code><a href="#cdk-ssm-documents.IStringVariable">IStringVariable</a></code> | *No description.* |
 | <code><a href="#cdk-ssm-documents.CopyImageStep.property.sourceRegion">sourceRegion</a></code> | <code><a href="#cdk-ssm-documents.IStringVariable">IStringVariable</a></code> | *No description.* |
@@ -3316,20 +2981,20 @@ public readonly timeoutSeconds: number;
 ##### `onCancel`<sup>Optional</sup> <a name="onCancel" id="cdk-ssm-documents.CopyImageStep.property.onCancel"></a>
 
 ```typescript
-public readonly onCancel: Step;
+public readonly onCancel: AutomationStep;
 ```
 
-- *Type:* <a href="#cdk-ssm-documents.Step">Step</a>
+- *Type:* <a href="#cdk-ssm-documents.AutomationStep">AutomationStep</a>
 
 ---
 
 ##### `onFailure`<sup>Optional</sup> <a name="onFailure" id="cdk-ssm-documents.CopyImageStep.property.onFailure"></a>
 
 ```typescript
-public readonly onFailure: Step;
+public readonly onFailure: AutomationStep;
 ```
 
-- *Type:* <a href="#cdk-ssm-documents.Step">Step</a>
+- *Type:* <a href="#cdk-ssm-documents.AutomationStep">AutomationStep</a>
 
 ---
 
@@ -3350,16 +3015,6 @@ public readonly nextStep: AutomationStep;
 ```
 
 - *Type:* <a href="#cdk-ssm-documents.AutomationStep">AutomationStep</a>
-
----
-
-##### `awsInvoker`<sup>Required</sup> <a name="awsInvoker" id="cdk-ssm-documents.CopyImageStep.property.awsInvoker"></a>
-
-```typescript
-public readonly awsInvoker: IAwsInvoker;
-```
-
-- *Type:* <a href="#cdk-ssm-documents.IAwsInvoker">IAwsInvoker</a>
 
 ---
 
@@ -3505,11 +3160,9 @@ new CreateImageStep(scope: Construct, id: string, props: CreateImageStepProps)
 | **Name** | **Description** |
 | --- | --- |
 | <code><a href="#cdk-ssm-documents.CreateImageStep.toString">toString</a></code> | Returns a string representation of this construct. |
-| <code><a href="#cdk-ssm-documents.CreateImageStep.invoke">invoke</a></code> | Invokes the current step on the input and will return a SimulationResult. |
 | <code><a href="#cdk-ssm-documents.CreateImageStep.listInputs">listInputs</a></code> | Lists the inputs that are required for this step. |
 | <code><a href="#cdk-ssm-documents.CreateImageStep.listOutputs">listOutputs</a></code> | Lists the outputs that will be returned from this step. |
 | <code><a href="#cdk-ssm-documents.CreateImageStep.toSsmEntry">toSsmEntry</a></code> | Converts this step into an object to prepare for yaml/json representation of this step. |
-| <code><a href="#cdk-ssm-documents.CreateImageStep.executeStep">executeStep</a></code> | Runs this step (and only this step) in simulation with the provided inputs. |
 | <code><a href="#cdk-ssm-documents.CreateImageStep.variables">variables</a></code> | *No description.* |
 
 ---
@@ -3521,22 +3174,6 @@ public toString(): string
 ```
 
 Returns a string representation of this construct.
-
-##### `invoke` <a name="invoke" id="cdk-ssm-documents.CreateImageStep.invoke"></a>
-
-```typescript
-public invoke(inputs: {[ key: string ]: any}): SimulationResult
-```
-
-Invokes the current step on the input and will return a SimulationResult.
-
-###### `inputs`<sup>Required</sup> <a name="inputs" id="cdk-ssm-documents.CreateImageStep.invoke.parameter.inputs"></a>
-
-- *Type:* {[ key: string ]: any}
-
-must contain all of the inputs declared by the current step.
-
----
 
 ##### `listInputs` <a name="listInputs" id="cdk-ssm-documents.CreateImageStep.listInputs"></a>
 
@@ -3561,20 +3198,6 @@ public toSsmEntry(): {[ key: string ]: any}
 ```
 
 Converts this step into an object to prepare for yaml/json representation of this step.
-
-##### `executeStep` <a name="executeStep" id="cdk-ssm-documents.CreateImageStep.executeStep"></a>
-
-```typescript
-public executeStep(inputs: {[ key: string ]: any}): {[ key: string ]: any}
-```
-
-Runs this step (and only this step) in simulation with the provided inputs.
-
-###### `inputs`<sup>Required</sup> <a name="inputs" id="cdk-ssm-documents.CreateImageStep.executeStep.parameter.inputs"></a>
-
-- *Type:* {[ key: string ]: any}
-
----
 
 ##### `variables` <a name="variables" id="cdk-ssm-documents.CreateImageStep.variables"></a>
 
@@ -3621,11 +3244,10 @@ Any object.
 | <code><a href="#cdk-ssm-documents.CreateImageStep.property.isEnd">isEnd</a></code> | <code>boolean</code> | *No description.* |
 | <code><a href="#cdk-ssm-documents.CreateImageStep.property.maxAttempts">maxAttempts</a></code> | <code>number</code> | *No description.* |
 | <code><a href="#cdk-ssm-documents.CreateImageStep.property.timeoutSeconds">timeoutSeconds</a></code> | <code>number</code> | *No description.* |
-| <code><a href="#cdk-ssm-documents.CreateImageStep.property.onCancel">onCancel</a></code> | <code><a href="#cdk-ssm-documents.Step">Step</a></code> | *No description.* |
-| <code><a href="#cdk-ssm-documents.CreateImageStep.property.onFailure">onFailure</a></code> | <code><a href="#cdk-ssm-documents.Step">Step</a></code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.CreateImageStep.property.onCancel">onCancel</a></code> | <code><a href="#cdk-ssm-documents.AutomationStep">AutomationStep</a></code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.CreateImageStep.property.onFailure">onFailure</a></code> | <code><a href="#cdk-ssm-documents.AutomationStep">AutomationStep</a></code> | *No description.* |
 | <code><a href="#cdk-ssm-documents.CreateImageStep.property.allStepsInExecution">allStepsInExecution</a></code> | <code><a href="#cdk-ssm-documents.AutomationStep">AutomationStep</a>[]</code> | *No description.* |
 | <code><a href="#cdk-ssm-documents.CreateImageStep.property.nextStep">nextStep</a></code> | <code><a href="#cdk-ssm-documents.AutomationStep">AutomationStep</a></code> | *No description.* |
-| <code><a href="#cdk-ssm-documents.CreateImageStep.property.awsInvoker">awsInvoker</a></code> | <code><a href="#cdk-ssm-documents.IAwsInvoker">IAwsInvoker</a></code> | *No description.* |
 | <code><a href="#cdk-ssm-documents.CreateImageStep.property.imageName">imageName</a></code> | <code><a href="#cdk-ssm-documents.IStringVariable">IStringVariable</a></code> | *No description.* |
 | <code><a href="#cdk-ssm-documents.CreateImageStep.property.instanceId">instanceId</a></code> | <code><a href="#cdk-ssm-documents.IStringVariable">IStringVariable</a></code> | *No description.* |
 | <code><a href="#cdk-ssm-documents.CreateImageStep.property.blockDeviceMappings">blockDeviceMappings</a></code> | <code><a href="#cdk-ssm-documents.IStringMapVariable">IStringMapVariable</a></code> | *No description.* |
@@ -3729,20 +3351,20 @@ public readonly timeoutSeconds: number;
 ##### `onCancel`<sup>Optional</sup> <a name="onCancel" id="cdk-ssm-documents.CreateImageStep.property.onCancel"></a>
 
 ```typescript
-public readonly onCancel: Step;
+public readonly onCancel: AutomationStep;
 ```
 
-- *Type:* <a href="#cdk-ssm-documents.Step">Step</a>
+- *Type:* <a href="#cdk-ssm-documents.AutomationStep">AutomationStep</a>
 
 ---
 
 ##### `onFailure`<sup>Optional</sup> <a name="onFailure" id="cdk-ssm-documents.CreateImageStep.property.onFailure"></a>
 
 ```typescript
-public readonly onFailure: Step;
+public readonly onFailure: AutomationStep;
 ```
 
-- *Type:* <a href="#cdk-ssm-documents.Step">Step</a>
+- *Type:* <a href="#cdk-ssm-documents.AutomationStep">AutomationStep</a>
 
 ---
 
@@ -3763,16 +3385,6 @@ public readonly nextStep: AutomationStep;
 ```
 
 - *Type:* <a href="#cdk-ssm-documents.AutomationStep">AutomationStep</a>
-
----
-
-##### `awsInvoker`<sup>Required</sup> <a name="awsInvoker" id="cdk-ssm-documents.CreateImageStep.property.awsInvoker"></a>
-
-```typescript
-public readonly awsInvoker: IAwsInvoker;
-```
-
-- *Type:* <a href="#cdk-ssm-documents.IAwsInvoker">IAwsInvoker</a>
 
 ---
 
@@ -3898,11 +3510,9 @@ new CreateStackStep(scope: Construct, id: string, props: CreateStackStepProps)
 | **Name** | **Description** |
 | --- | --- |
 | <code><a href="#cdk-ssm-documents.CreateStackStep.toString">toString</a></code> | Returns a string representation of this construct. |
-| <code><a href="#cdk-ssm-documents.CreateStackStep.invoke">invoke</a></code> | Invokes the current step on the input and will return a SimulationResult. |
 | <code><a href="#cdk-ssm-documents.CreateStackStep.listInputs">listInputs</a></code> | Lists the inputs that are required for this step. |
 | <code><a href="#cdk-ssm-documents.CreateStackStep.listOutputs">listOutputs</a></code> | Lists the outputs that will be returned from this step. |
 | <code><a href="#cdk-ssm-documents.CreateStackStep.toSsmEntry">toSsmEntry</a></code> | Converts this step into an object to prepare for yaml/json representation of this step. |
-| <code><a href="#cdk-ssm-documents.CreateStackStep.executeStep">executeStep</a></code> | Runs this step (and only this step) in simulation with the provided inputs. |
 | <code><a href="#cdk-ssm-documents.CreateStackStep.variables">variables</a></code> | *No description.* |
 
 ---
@@ -3914,22 +3524,6 @@ public toString(): string
 ```
 
 Returns a string representation of this construct.
-
-##### `invoke` <a name="invoke" id="cdk-ssm-documents.CreateStackStep.invoke"></a>
-
-```typescript
-public invoke(inputs: {[ key: string ]: any}): SimulationResult
-```
-
-Invokes the current step on the input and will return a SimulationResult.
-
-###### `inputs`<sup>Required</sup> <a name="inputs" id="cdk-ssm-documents.CreateStackStep.invoke.parameter.inputs"></a>
-
-- *Type:* {[ key: string ]: any}
-
-must contain all of the inputs declared by the current step.
-
----
 
 ##### `listInputs` <a name="listInputs" id="cdk-ssm-documents.CreateStackStep.listInputs"></a>
 
@@ -3954,20 +3548,6 @@ public toSsmEntry(): {[ key: string ]: any}
 ```
 
 Converts this step into an object to prepare for yaml/json representation of this step.
-
-##### `executeStep` <a name="executeStep" id="cdk-ssm-documents.CreateStackStep.executeStep"></a>
-
-```typescript
-public executeStep(inputs: {[ key: string ]: any}): {[ key: string ]: any}
-```
-
-Runs this step (and only this step) in simulation with the provided inputs.
-
-###### `inputs`<sup>Required</sup> <a name="inputs" id="cdk-ssm-documents.CreateStackStep.executeStep.parameter.inputs"></a>
-
-- *Type:* {[ key: string ]: any}
-
----
 
 ##### `variables` <a name="variables" id="cdk-ssm-documents.CreateStackStep.variables"></a>
 
@@ -4014,12 +3594,10 @@ Any object.
 | <code><a href="#cdk-ssm-documents.CreateStackStep.property.isEnd">isEnd</a></code> | <code>boolean</code> | *No description.* |
 | <code><a href="#cdk-ssm-documents.CreateStackStep.property.maxAttempts">maxAttempts</a></code> | <code>number</code> | *No description.* |
 | <code><a href="#cdk-ssm-documents.CreateStackStep.property.timeoutSeconds">timeoutSeconds</a></code> | <code>number</code> | *No description.* |
-| <code><a href="#cdk-ssm-documents.CreateStackStep.property.onCancel">onCancel</a></code> | <code><a href="#cdk-ssm-documents.Step">Step</a></code> | *No description.* |
-| <code><a href="#cdk-ssm-documents.CreateStackStep.property.onFailure">onFailure</a></code> | <code><a href="#cdk-ssm-documents.Step">Step</a></code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.CreateStackStep.property.onCancel">onCancel</a></code> | <code><a href="#cdk-ssm-documents.AutomationStep">AutomationStep</a></code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.CreateStackStep.property.onFailure">onFailure</a></code> | <code><a href="#cdk-ssm-documents.AutomationStep">AutomationStep</a></code> | *No description.* |
 | <code><a href="#cdk-ssm-documents.CreateStackStep.property.allStepsInExecution">allStepsInExecution</a></code> | <code><a href="#cdk-ssm-documents.AutomationStep">AutomationStep</a>[]</code> | *No description.* |
 | <code><a href="#cdk-ssm-documents.CreateStackStep.property.nextStep">nextStep</a></code> | <code><a href="#cdk-ssm-documents.AutomationStep">AutomationStep</a></code> | *No description.* |
-| <code><a href="#cdk-ssm-documents.CreateStackStep.property.awsInvoker">awsInvoker</a></code> | <code><a href="#cdk-ssm-documents.IAwsInvoker">IAwsInvoker</a></code> | *No description.* |
-| <code><a href="#cdk-ssm-documents.CreateStackStep.property.parameterResolver">parameterResolver</a></code> | <code><a href="#cdk-ssm-documents.IParameterResolver">IParameterResolver</a></code> | *No description.* |
 | <code><a href="#cdk-ssm-documents.CreateStackStep.property.stackName">stackName</a></code> | <code><a href="#cdk-ssm-documents.IStringVariable">IStringVariable</a></code> | *No description.* |
 | <code><a href="#cdk-ssm-documents.CreateStackStep.property.capabilities">capabilities</a></code> | <code><a href="#cdk-ssm-documents.IStringListVariable">IStringListVariable</a></code> | *No description.* |
 | <code><a href="#cdk-ssm-documents.CreateStackStep.property.clientRequestToken">clientRequestToken</a></code> | <code><a href="#cdk-ssm-documents.IStringVariable">IStringVariable</a></code> | *No description.* |
@@ -4028,7 +3606,6 @@ Any object.
 | <code><a href="#cdk-ssm-documents.CreateStackStep.property.parameters">parameters</a></code> | <code><a href="#cdk-ssm-documents.IMapListVariable">IMapListVariable</a></code> | *No description.* |
 | <code><a href="#cdk-ssm-documents.CreateStackStep.property.resourceTypes">resourceTypes</a></code> | <code><a href="#cdk-ssm-documents.IStringListVariable">IStringListVariable</a></code> | *No description.* |
 | <code><a href="#cdk-ssm-documents.CreateStackStep.property.roleArn">roleArn</a></code> | <code><a href="#cdk-ssm-documents.IStringVariable">IStringVariable</a></code> | *No description.* |
-| <code><a href="#cdk-ssm-documents.CreateStackStep.property.sleepHook">sleepHook</a></code> | <code><a href="#cdk-ssm-documents.ISleepHook">ISleepHook</a></code> | *No description.* |
 | <code><a href="#cdk-ssm-documents.CreateStackStep.property.stackPolicyBody">stackPolicyBody</a></code> | <code><a href="#cdk-ssm-documents.IStringVariable">IStringVariable</a></code> | *No description.* |
 | <code><a href="#cdk-ssm-documents.CreateStackStep.property.stackPolicyUrl">stackPolicyUrl</a></code> | <code><a href="#cdk-ssm-documents.IStringVariable">IStringVariable</a></code> | *No description.* |
 | <code><a href="#cdk-ssm-documents.CreateStackStep.property.tags">tags</a></code> | <code><a href="#cdk-ssm-documents.IMapListVariable">IMapListVariable</a></code> | *No description.* |
@@ -4133,20 +3710,20 @@ public readonly timeoutSeconds: number;
 ##### `onCancel`<sup>Optional</sup> <a name="onCancel" id="cdk-ssm-documents.CreateStackStep.property.onCancel"></a>
 
 ```typescript
-public readonly onCancel: Step;
+public readonly onCancel: AutomationStep;
 ```
 
-- *Type:* <a href="#cdk-ssm-documents.Step">Step</a>
+- *Type:* <a href="#cdk-ssm-documents.AutomationStep">AutomationStep</a>
 
 ---
 
 ##### `onFailure`<sup>Optional</sup> <a name="onFailure" id="cdk-ssm-documents.CreateStackStep.property.onFailure"></a>
 
 ```typescript
-public readonly onFailure: Step;
+public readonly onFailure: AutomationStep;
 ```
 
-- *Type:* <a href="#cdk-ssm-documents.Step">Step</a>
+- *Type:* <a href="#cdk-ssm-documents.AutomationStep">AutomationStep</a>
 
 ---
 
@@ -4167,26 +3744,6 @@ public readonly nextStep: AutomationStep;
 ```
 
 - *Type:* <a href="#cdk-ssm-documents.AutomationStep">AutomationStep</a>
-
----
-
-##### `awsInvoker`<sup>Required</sup> <a name="awsInvoker" id="cdk-ssm-documents.CreateStackStep.property.awsInvoker"></a>
-
-```typescript
-public readonly awsInvoker: IAwsInvoker;
-```
-
-- *Type:* <a href="#cdk-ssm-documents.IAwsInvoker">IAwsInvoker</a>
-
----
-
-##### `parameterResolver`<sup>Required</sup> <a name="parameterResolver" id="cdk-ssm-documents.CreateStackStep.property.parameterResolver"></a>
-
-```typescript
-public readonly parameterResolver: IParameterResolver;
-```
-
-- *Type:* <a href="#cdk-ssm-documents.IParameterResolver">IParameterResolver</a>
 
 ---
 
@@ -4267,16 +3824,6 @@ public readonly roleArn: IStringVariable;
 ```
 
 - *Type:* <a href="#cdk-ssm-documents.IStringVariable">IStringVariable</a>
-
----
-
-##### `sleepHook`<sup>Optional</sup> <a name="sleepHook" id="cdk-ssm-documents.CreateStackStep.property.sleepHook"></a>
-
-```typescript
-public readonly sleepHook: ISleepHook;
-```
-
-- *Type:* <a href="#cdk-ssm-documents.ISleepHook">ISleepHook</a>
 
 ---
 
@@ -4412,11 +3959,9 @@ new CreateTagsStep(scope: Construct, id: string, props: CreateTagsStepProps)
 | **Name** | **Description** |
 | --- | --- |
 | <code><a href="#cdk-ssm-documents.CreateTagsStep.toString">toString</a></code> | Returns a string representation of this construct. |
-| <code><a href="#cdk-ssm-documents.CreateTagsStep.invoke">invoke</a></code> | Invokes the current step on the input and will return a SimulationResult. |
 | <code><a href="#cdk-ssm-documents.CreateTagsStep.listInputs">listInputs</a></code> | Lists the inputs that are required for this step. |
 | <code><a href="#cdk-ssm-documents.CreateTagsStep.listOutputs">listOutputs</a></code> | This step has no outputs. |
 | <code><a href="#cdk-ssm-documents.CreateTagsStep.toSsmEntry">toSsmEntry</a></code> | Converts this step into an object to prepare for yaml/json representation of this step. |
-| <code><a href="#cdk-ssm-documents.CreateTagsStep.executeStep">executeStep</a></code> | Runs this step (and only this step) in simulation with the provided inputs. |
 | <code><a href="#cdk-ssm-documents.CreateTagsStep.variables">variables</a></code> | *No description.* |
 
 ---
@@ -4428,22 +3973,6 @@ public toString(): string
 ```
 
 Returns a string representation of this construct.
-
-##### `invoke` <a name="invoke" id="cdk-ssm-documents.CreateTagsStep.invoke"></a>
-
-```typescript
-public invoke(inputs: {[ key: string ]: any}): SimulationResult
-```
-
-Invokes the current step on the input and will return a SimulationResult.
-
-###### `inputs`<sup>Required</sup> <a name="inputs" id="cdk-ssm-documents.CreateTagsStep.invoke.parameter.inputs"></a>
-
-- *Type:* {[ key: string ]: any}
-
-must contain all of the inputs declared by the current step.
-
----
 
 ##### `listInputs` <a name="listInputs" id="cdk-ssm-documents.CreateTagsStep.listInputs"></a>
 
@@ -4468,20 +3997,6 @@ public toSsmEntry(): {[ key: string ]: any}
 ```
 
 Converts this step into an object to prepare for yaml/json representation of this step.
-
-##### `executeStep` <a name="executeStep" id="cdk-ssm-documents.CreateTagsStep.executeStep"></a>
-
-```typescript
-public executeStep(inputs: {[ key: string ]: any}): {[ key: string ]: any}
-```
-
-Runs this step (and only this step) in simulation with the provided inputs.
-
-###### `inputs`<sup>Required</sup> <a name="inputs" id="cdk-ssm-documents.CreateTagsStep.executeStep.parameter.inputs"></a>
-
-- *Type:* {[ key: string ]: any}
-
----
 
 ##### `variables` <a name="variables" id="cdk-ssm-documents.CreateTagsStep.variables"></a>
 
@@ -4528,15 +4043,13 @@ Any object.
 | <code><a href="#cdk-ssm-documents.CreateTagsStep.property.isEnd">isEnd</a></code> | <code>boolean</code> | *No description.* |
 | <code><a href="#cdk-ssm-documents.CreateTagsStep.property.maxAttempts">maxAttempts</a></code> | <code>number</code> | *No description.* |
 | <code><a href="#cdk-ssm-documents.CreateTagsStep.property.timeoutSeconds">timeoutSeconds</a></code> | <code>number</code> | *No description.* |
-| <code><a href="#cdk-ssm-documents.CreateTagsStep.property.onCancel">onCancel</a></code> | <code><a href="#cdk-ssm-documents.Step">Step</a></code> | *No description.* |
-| <code><a href="#cdk-ssm-documents.CreateTagsStep.property.onFailure">onFailure</a></code> | <code><a href="#cdk-ssm-documents.Step">Step</a></code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.CreateTagsStep.property.onCancel">onCancel</a></code> | <code><a href="#cdk-ssm-documents.AutomationStep">AutomationStep</a></code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.CreateTagsStep.property.onFailure">onFailure</a></code> | <code><a href="#cdk-ssm-documents.AutomationStep">AutomationStep</a></code> | *No description.* |
 | <code><a href="#cdk-ssm-documents.CreateTagsStep.property.allStepsInExecution">allStepsInExecution</a></code> | <code><a href="#cdk-ssm-documents.AutomationStep">AutomationStep</a>[]</code> | *No description.* |
 | <code><a href="#cdk-ssm-documents.CreateTagsStep.property.nextStep">nextStep</a></code> | <code><a href="#cdk-ssm-documents.AutomationStep">AutomationStep</a></code> | *No description.* |
-| <code><a href="#cdk-ssm-documents.CreateTagsStep.property.awsInvoker">awsInvoker</a></code> | <code><a href="#cdk-ssm-documents.IAwsInvoker">IAwsInvoker</a></code> | *No description.* |
 | <code><a href="#cdk-ssm-documents.CreateTagsStep.property.resourceIds">resourceIds</a></code> | <code><a href="#cdk-ssm-documents.IStringListVariable">IStringListVariable</a></code> | *No description.* |
 | <code><a href="#cdk-ssm-documents.CreateTagsStep.property.tags">tags</a></code> | <code><a href="#cdk-ssm-documents.IMapListVariable">IMapListVariable</a></code> | *No description.* |
 | <code><a href="#cdk-ssm-documents.CreateTagsStep.property.resourceType">resourceType</a></code> | <code><a href="#cdk-ssm-documents.IEnumVariable">IEnumVariable</a></code> | *No description.* |
-| <code><a href="#cdk-ssm-documents.CreateTagsStep.property.sleepHook">sleepHook</a></code> | <code><a href="#cdk-ssm-documents.ISleepHook">ISleepHook</a></code> | *No description.* |
 
 ---
 
@@ -4635,20 +4148,20 @@ public readonly timeoutSeconds: number;
 ##### `onCancel`<sup>Optional</sup> <a name="onCancel" id="cdk-ssm-documents.CreateTagsStep.property.onCancel"></a>
 
 ```typescript
-public readonly onCancel: Step;
+public readonly onCancel: AutomationStep;
 ```
 
-- *Type:* <a href="#cdk-ssm-documents.Step">Step</a>
+- *Type:* <a href="#cdk-ssm-documents.AutomationStep">AutomationStep</a>
 
 ---
 
 ##### `onFailure`<sup>Optional</sup> <a name="onFailure" id="cdk-ssm-documents.CreateTagsStep.property.onFailure"></a>
 
 ```typescript
-public readonly onFailure: Step;
+public readonly onFailure: AutomationStep;
 ```
 
-- *Type:* <a href="#cdk-ssm-documents.Step">Step</a>
+- *Type:* <a href="#cdk-ssm-documents.AutomationStep">AutomationStep</a>
 
 ---
 
@@ -4669,16 +4182,6 @@ public readonly nextStep: AutomationStep;
 ```
 
 - *Type:* <a href="#cdk-ssm-documents.AutomationStep">AutomationStep</a>
-
----
-
-##### `awsInvoker`<sup>Required</sup> <a name="awsInvoker" id="cdk-ssm-documents.CreateTagsStep.property.awsInvoker"></a>
-
-```typescript
-public readonly awsInvoker: IAwsInvoker;
-```
-
-- *Type:* <a href="#cdk-ssm-documents.IAwsInvoker">IAwsInvoker</a>
 
 ---
 
@@ -4709,16 +4212,6 @@ public readonly resourceType: IEnumVariable;
 ```
 
 - *Type:* <a href="#cdk-ssm-documents.IEnumVariable">IEnumVariable</a>
-
----
-
-##### `sleepHook`<sup>Optional</sup> <a name="sleepHook" id="cdk-ssm-documents.CreateTagsStep.property.sleepHook"></a>
-
-```typescript
-public readonly sleepHook: ISleepHook;
-```
-
-- *Type:* <a href="#cdk-ssm-documents.ISleepHook">ISleepHook</a>
 
 ---
 
@@ -4794,11 +4287,9 @@ new DeleteImageStep(scope: Construct, id: string, props: DeleteImageStepProps)
 | **Name** | **Description** |
 | --- | --- |
 | <code><a href="#cdk-ssm-documents.DeleteImageStep.toString">toString</a></code> | Returns a string representation of this construct. |
-| <code><a href="#cdk-ssm-documents.DeleteImageStep.invoke">invoke</a></code> | Invokes the current step on the input and will return a SimulationResult. |
 | <code><a href="#cdk-ssm-documents.DeleteImageStep.listInputs">listInputs</a></code> | Lists the inputs that are required for this step. |
 | <code><a href="#cdk-ssm-documents.DeleteImageStep.listOutputs">listOutputs</a></code> | This step has no outputs. |
 | <code><a href="#cdk-ssm-documents.DeleteImageStep.toSsmEntry">toSsmEntry</a></code> | Converts this step into an object to prepare for yaml/json representation of this step. |
-| <code><a href="#cdk-ssm-documents.DeleteImageStep.executeStep">executeStep</a></code> | Runs this step (and only this step) in simulation with the provided inputs. |
 | <code><a href="#cdk-ssm-documents.DeleteImageStep.variables">variables</a></code> | *No description.* |
 
 ---
@@ -4810,22 +4301,6 @@ public toString(): string
 ```
 
 Returns a string representation of this construct.
-
-##### `invoke` <a name="invoke" id="cdk-ssm-documents.DeleteImageStep.invoke"></a>
-
-```typescript
-public invoke(inputs: {[ key: string ]: any}): SimulationResult
-```
-
-Invokes the current step on the input and will return a SimulationResult.
-
-###### `inputs`<sup>Required</sup> <a name="inputs" id="cdk-ssm-documents.DeleteImageStep.invoke.parameter.inputs"></a>
-
-- *Type:* {[ key: string ]: any}
-
-must contain all of the inputs declared by the current step.
-
----
 
 ##### `listInputs` <a name="listInputs" id="cdk-ssm-documents.DeleteImageStep.listInputs"></a>
 
@@ -4850,20 +4325,6 @@ public toSsmEntry(): {[ key: string ]: any}
 ```
 
 Converts this step into an object to prepare for yaml/json representation of this step.
-
-##### `executeStep` <a name="executeStep" id="cdk-ssm-documents.DeleteImageStep.executeStep"></a>
-
-```typescript
-public executeStep(inputs: {[ key: string ]: any}): {[ key: string ]: any}
-```
-
-Runs this step (and only this step) in simulation with the provided inputs.
-
-###### `inputs`<sup>Required</sup> <a name="inputs" id="cdk-ssm-documents.DeleteImageStep.executeStep.parameter.inputs"></a>
-
-- *Type:* {[ key: string ]: any}
-
----
 
 ##### `variables` <a name="variables" id="cdk-ssm-documents.DeleteImageStep.variables"></a>
 
@@ -4910,13 +4371,11 @@ Any object.
 | <code><a href="#cdk-ssm-documents.DeleteImageStep.property.isEnd">isEnd</a></code> | <code>boolean</code> | *No description.* |
 | <code><a href="#cdk-ssm-documents.DeleteImageStep.property.maxAttempts">maxAttempts</a></code> | <code>number</code> | *No description.* |
 | <code><a href="#cdk-ssm-documents.DeleteImageStep.property.timeoutSeconds">timeoutSeconds</a></code> | <code>number</code> | *No description.* |
-| <code><a href="#cdk-ssm-documents.DeleteImageStep.property.onCancel">onCancel</a></code> | <code><a href="#cdk-ssm-documents.Step">Step</a></code> | *No description.* |
-| <code><a href="#cdk-ssm-documents.DeleteImageStep.property.onFailure">onFailure</a></code> | <code><a href="#cdk-ssm-documents.Step">Step</a></code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.DeleteImageStep.property.onCancel">onCancel</a></code> | <code><a href="#cdk-ssm-documents.AutomationStep">AutomationStep</a></code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.DeleteImageStep.property.onFailure">onFailure</a></code> | <code><a href="#cdk-ssm-documents.AutomationStep">AutomationStep</a></code> | *No description.* |
 | <code><a href="#cdk-ssm-documents.DeleteImageStep.property.allStepsInExecution">allStepsInExecution</a></code> | <code><a href="#cdk-ssm-documents.AutomationStep">AutomationStep</a>[]</code> | *No description.* |
 | <code><a href="#cdk-ssm-documents.DeleteImageStep.property.nextStep">nextStep</a></code> | <code><a href="#cdk-ssm-documents.AutomationStep">AutomationStep</a></code> | *No description.* |
-| <code><a href="#cdk-ssm-documents.DeleteImageStep.property.awsInvoker">awsInvoker</a></code> | <code><a href="#cdk-ssm-documents.IAwsInvoker">IAwsInvoker</a></code> | *No description.* |
 | <code><a href="#cdk-ssm-documents.DeleteImageStep.property.imageId">imageId</a></code> | <code><a href="#cdk-ssm-documents.IStringVariable">IStringVariable</a></code> | *No description.* |
-| <code><a href="#cdk-ssm-documents.DeleteImageStep.property.sleepHook">sleepHook</a></code> | <code><a href="#cdk-ssm-documents.ISleepHook">ISleepHook</a></code> | *No description.* |
 
 ---
 
@@ -5015,20 +4474,20 @@ public readonly timeoutSeconds: number;
 ##### `onCancel`<sup>Optional</sup> <a name="onCancel" id="cdk-ssm-documents.DeleteImageStep.property.onCancel"></a>
 
 ```typescript
-public readonly onCancel: Step;
+public readonly onCancel: AutomationStep;
 ```
 
-- *Type:* <a href="#cdk-ssm-documents.Step">Step</a>
+- *Type:* <a href="#cdk-ssm-documents.AutomationStep">AutomationStep</a>
 
 ---
 
 ##### `onFailure`<sup>Optional</sup> <a name="onFailure" id="cdk-ssm-documents.DeleteImageStep.property.onFailure"></a>
 
 ```typescript
-public readonly onFailure: Step;
+public readonly onFailure: AutomationStep;
 ```
 
-- *Type:* <a href="#cdk-ssm-documents.Step">Step</a>
+- *Type:* <a href="#cdk-ssm-documents.AutomationStep">AutomationStep</a>
 
 ---
 
@@ -5052,16 +4511,6 @@ public readonly nextStep: AutomationStep;
 
 ---
 
-##### `awsInvoker`<sup>Required</sup> <a name="awsInvoker" id="cdk-ssm-documents.DeleteImageStep.property.awsInvoker"></a>
-
-```typescript
-public readonly awsInvoker: IAwsInvoker;
-```
-
-- *Type:* <a href="#cdk-ssm-documents.IAwsInvoker">IAwsInvoker</a>
-
----
-
 ##### `imageId`<sup>Required</sup> <a name="imageId" id="cdk-ssm-documents.DeleteImageStep.property.imageId"></a>
 
 ```typescript
@@ -5069,16 +4518,6 @@ public readonly imageId: IStringVariable;
 ```
 
 - *Type:* <a href="#cdk-ssm-documents.IStringVariable">IStringVariable</a>
-
----
-
-##### `sleepHook`<sup>Optional</sup> <a name="sleepHook" id="cdk-ssm-documents.DeleteImageStep.property.sleepHook"></a>
-
-```typescript
-public readonly sleepHook: ISleepHook;
-```
-
-- *Type:* <a href="#cdk-ssm-documents.ISleepHook">ISleepHook</a>
 
 ---
 
@@ -5154,11 +4593,9 @@ new DeleteStackStep(scope: Construct, id: string, props: DeleteStackStepProps)
 | **Name** | **Description** |
 | --- | --- |
 | <code><a href="#cdk-ssm-documents.DeleteStackStep.toString">toString</a></code> | Returns a string representation of this construct. |
-| <code><a href="#cdk-ssm-documents.DeleteStackStep.invoke">invoke</a></code> | Invokes the current step on the input and will return a SimulationResult. |
 | <code><a href="#cdk-ssm-documents.DeleteStackStep.listInputs">listInputs</a></code> | The input required for this step is the stackNameVariable. |
 | <code><a href="#cdk-ssm-documents.DeleteStackStep.listOutputs">listOutputs</a></code> | No outputs emitted from Delete Stack step. |
 | <code><a href="#cdk-ssm-documents.DeleteStackStep.toSsmEntry">toSsmEntry</a></code> | Converts this step into an object to prepare for yaml/json representation of this step. |
-| <code><a href="#cdk-ssm-documents.DeleteStackStep.executeStep">executeStep</a></code> | Runs this step (and only this step) in simulation with the provided inputs. |
 | <code><a href="#cdk-ssm-documents.DeleteStackStep.variables">variables</a></code> | *No description.* |
 
 ---
@@ -5170,22 +4607,6 @@ public toString(): string
 ```
 
 Returns a string representation of this construct.
-
-##### `invoke` <a name="invoke" id="cdk-ssm-documents.DeleteStackStep.invoke"></a>
-
-```typescript
-public invoke(inputs: {[ key: string ]: any}): SimulationResult
-```
-
-Invokes the current step on the input and will return a SimulationResult.
-
-###### `inputs`<sup>Required</sup> <a name="inputs" id="cdk-ssm-documents.DeleteStackStep.invoke.parameter.inputs"></a>
-
-- *Type:* {[ key: string ]: any}
-
-must contain all of the inputs declared by the current step.
-
----
 
 ##### `listInputs` <a name="listInputs" id="cdk-ssm-documents.DeleteStackStep.listInputs"></a>
 
@@ -5210,20 +4631,6 @@ public toSsmEntry(): {[ key: string ]: any}
 ```
 
 Converts this step into an object to prepare for yaml/json representation of this step.
-
-##### `executeStep` <a name="executeStep" id="cdk-ssm-documents.DeleteStackStep.executeStep"></a>
-
-```typescript
-public executeStep(inputs: {[ key: string ]: any}): {[ key: string ]: any}
-```
-
-Runs this step (and only this step) in simulation with the provided inputs.
-
-###### `inputs`<sup>Required</sup> <a name="inputs" id="cdk-ssm-documents.DeleteStackStep.executeStep.parameter.inputs"></a>
-
-- *Type:* {[ key: string ]: any}
-
----
 
 ##### `variables` <a name="variables" id="cdk-ssm-documents.DeleteStackStep.variables"></a>
 
@@ -5270,11 +4677,10 @@ Any object.
 | <code><a href="#cdk-ssm-documents.DeleteStackStep.property.isEnd">isEnd</a></code> | <code>boolean</code> | *No description.* |
 | <code><a href="#cdk-ssm-documents.DeleteStackStep.property.maxAttempts">maxAttempts</a></code> | <code>number</code> | *No description.* |
 | <code><a href="#cdk-ssm-documents.DeleteStackStep.property.timeoutSeconds">timeoutSeconds</a></code> | <code>number</code> | *No description.* |
-| <code><a href="#cdk-ssm-documents.DeleteStackStep.property.onCancel">onCancel</a></code> | <code><a href="#cdk-ssm-documents.Step">Step</a></code> | *No description.* |
-| <code><a href="#cdk-ssm-documents.DeleteStackStep.property.onFailure">onFailure</a></code> | <code><a href="#cdk-ssm-documents.Step">Step</a></code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.DeleteStackStep.property.onCancel">onCancel</a></code> | <code><a href="#cdk-ssm-documents.AutomationStep">AutomationStep</a></code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.DeleteStackStep.property.onFailure">onFailure</a></code> | <code><a href="#cdk-ssm-documents.AutomationStep">AutomationStep</a></code> | *No description.* |
 | <code><a href="#cdk-ssm-documents.DeleteStackStep.property.allStepsInExecution">allStepsInExecution</a></code> | <code><a href="#cdk-ssm-documents.AutomationStep">AutomationStep</a>[]</code> | *No description.* |
 | <code><a href="#cdk-ssm-documents.DeleteStackStep.property.nextStep">nextStep</a></code> | <code><a href="#cdk-ssm-documents.AutomationStep">AutomationStep</a></code> | *No description.* |
-| <code><a href="#cdk-ssm-documents.DeleteStackStep.property.awsInvoker">awsInvoker</a></code> | <code><a href="#cdk-ssm-documents.IAwsInvoker">IAwsInvoker</a></code> | *No description.* |
 | <code><a href="#cdk-ssm-documents.DeleteStackStep.property.stackNameVariable">stackNameVariable</a></code> | <code><a href="#cdk-ssm-documents.IStringVariable">IStringVariable</a></code> | *No description.* |
 | <code><a href="#cdk-ssm-documents.DeleteStackStep.property.roleArn">roleArn</a></code> | <code><a href="#cdk-ssm-documents.IStringVariable">IStringVariable</a></code> | *No description.* |
 
@@ -5375,20 +4781,20 @@ public readonly timeoutSeconds: number;
 ##### `onCancel`<sup>Optional</sup> <a name="onCancel" id="cdk-ssm-documents.DeleteStackStep.property.onCancel"></a>
 
 ```typescript
-public readonly onCancel: Step;
+public readonly onCancel: AutomationStep;
 ```
 
-- *Type:* <a href="#cdk-ssm-documents.Step">Step</a>
+- *Type:* <a href="#cdk-ssm-documents.AutomationStep">AutomationStep</a>
 
 ---
 
 ##### `onFailure`<sup>Optional</sup> <a name="onFailure" id="cdk-ssm-documents.DeleteStackStep.property.onFailure"></a>
 
 ```typescript
-public readonly onFailure: Step;
+public readonly onFailure: AutomationStep;
 ```
 
-- *Type:* <a href="#cdk-ssm-documents.Step">Step</a>
+- *Type:* <a href="#cdk-ssm-documents.AutomationStep">AutomationStep</a>
 
 ---
 
@@ -5409,16 +4815,6 @@ public readonly nextStep: AutomationStep;
 ```
 
 - *Type:* <a href="#cdk-ssm-documents.AutomationStep">AutomationStep</a>
-
----
-
-##### `awsInvoker`<sup>Required</sup> <a name="awsInvoker" id="cdk-ssm-documents.DeleteStackStep.property.awsInvoker"></a>
-
-```typescript
-public readonly awsInvoker: IAwsInvoker;
-```
-
-- *Type:* <a href="#cdk-ssm-documents.IAwsInvoker">IAwsInvoker</a>
 
 ---
 
@@ -5514,11 +4910,9 @@ new ExecuteScriptStep(stage: Construct, id: string, props: ExecuteScriptStepProp
 | **Name** | **Description** |
 | --- | --- |
 | <code><a href="#cdk-ssm-documents.ExecuteScriptStep.toString">toString</a></code> | Returns a string representation of this construct. |
-| <code><a href="#cdk-ssm-documents.ExecuteScriptStep.invoke">invoke</a></code> | Invokes the current step on the input and will return a SimulationResult. |
 | <code><a href="#cdk-ssm-documents.ExecuteScriptStep.listInputs">listInputs</a></code> | Lists the inputs that are required for this step. |
 | <code><a href="#cdk-ssm-documents.ExecuteScriptStep.listOutputs">listOutputs</a></code> | Lists the outputs that will be returned from this step. |
 | <code><a href="#cdk-ssm-documents.ExecuteScriptStep.toSsmEntry">toSsmEntry</a></code> | Converts this step into an object to prepare for yaml/json representation of this step. |
-| <code><a href="#cdk-ssm-documents.ExecuteScriptStep.executeStep">executeStep</a></code> | Runs the simulation. |
 | <code><a href="#cdk-ssm-documents.ExecuteScriptStep.variables">variables</a></code> | *No description.* |
 
 ---
@@ -5530,22 +4924,6 @@ public toString(): string
 ```
 
 Returns a string representation of this construct.
-
-##### `invoke` <a name="invoke" id="cdk-ssm-documents.ExecuteScriptStep.invoke"></a>
-
-```typescript
-public invoke(inputs: {[ key: string ]: any}): SimulationResult
-```
-
-Invokes the current step on the input and will return a SimulationResult.
-
-###### `inputs`<sup>Required</sup> <a name="inputs" id="cdk-ssm-documents.ExecuteScriptStep.invoke.parameter.inputs"></a>
-
-- *Type:* {[ key: string ]: any}
-
-must contain all of the inputs declared by the current step.
-
----
 
 ##### `listInputs` <a name="listInputs" id="cdk-ssm-documents.ExecuteScriptStep.listInputs"></a>
 
@@ -5570,23 +4948,6 @@ public toSsmEntry(): {[ key: string ]: any}
 ```
 
 Converts this step into an object to prepare for yaml/json representation of this step.
-
-##### `executeStep` <a name="executeStep" id="cdk-ssm-documents.ExecuteScriptStep.executeStep"></a>
-
-```typescript
-public executeStep(inputs: {[ key: string ]: any}): {[ key: string ]: any}
-```
-
-Runs the simulation.
-
-Nests returned object into a "Payload" key to mimic SSM behavior.
-Switch by language and execute code based on specified language.
-
-###### `inputs`<sup>Required</sup> <a name="inputs" id="cdk-ssm-documents.ExecuteScriptStep.executeStep.parameter.inputs"></a>
-
-- *Type:* {[ key: string ]: any}
-
----
 
 ##### `variables` <a name="variables" id="cdk-ssm-documents.ExecuteScriptStep.variables"></a>
 
@@ -5648,8 +5009,8 @@ ExecuteScriptStep.getLanguage(runtime: string)
 | <code><a href="#cdk-ssm-documents.ExecuteScriptStep.property.isEnd">isEnd</a></code> | <code>boolean</code> | *No description.* |
 | <code><a href="#cdk-ssm-documents.ExecuteScriptStep.property.maxAttempts">maxAttempts</a></code> | <code>number</code> | *No description.* |
 | <code><a href="#cdk-ssm-documents.ExecuteScriptStep.property.timeoutSeconds">timeoutSeconds</a></code> | <code>number</code> | *No description.* |
-| <code><a href="#cdk-ssm-documents.ExecuteScriptStep.property.onCancel">onCancel</a></code> | <code><a href="#cdk-ssm-documents.Step">Step</a></code> | *No description.* |
-| <code><a href="#cdk-ssm-documents.ExecuteScriptStep.property.onFailure">onFailure</a></code> | <code><a href="#cdk-ssm-documents.Step">Step</a></code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.ExecuteScriptStep.property.onCancel">onCancel</a></code> | <code><a href="#cdk-ssm-documents.AutomationStep">AutomationStep</a></code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.ExecuteScriptStep.property.onFailure">onFailure</a></code> | <code><a href="#cdk-ssm-documents.AutomationStep">AutomationStep</a></code> | *No description.* |
 | <code><a href="#cdk-ssm-documents.ExecuteScriptStep.property.allStepsInExecution">allStepsInExecution</a></code> | <code><a href="#cdk-ssm-documents.AutomationStep">AutomationStep</a>[]</code> | *No description.* |
 | <code><a href="#cdk-ssm-documents.ExecuteScriptStep.property.nextStep">nextStep</a></code> | <code><a href="#cdk-ssm-documents.AutomationStep">AutomationStep</a></code> | *No description.* |
 | <code><a href="#cdk-ssm-documents.ExecuteScriptStep.property.fullPathToCode">fullPathToCode</a></code> | <code>string</code> | *No description.* |
@@ -5755,20 +5116,20 @@ public readonly timeoutSeconds: number;
 ##### `onCancel`<sup>Optional</sup> <a name="onCancel" id="cdk-ssm-documents.ExecuteScriptStep.property.onCancel"></a>
 
 ```typescript
-public readonly onCancel: Step;
+public readonly onCancel: AutomationStep;
 ```
 
-- *Type:* <a href="#cdk-ssm-documents.Step">Step</a>
+- *Type:* <a href="#cdk-ssm-documents.AutomationStep">AutomationStep</a>
 
 ---
 
 ##### `onFailure`<sup>Optional</sup> <a name="onFailure" id="cdk-ssm-documents.ExecuteScriptStep.property.onFailure"></a>
 
 ```typescript
-public readonly onFailure: Step;
+public readonly onFailure: AutomationStep;
 ```
 
-- *Type:* <a href="#cdk-ssm-documents.Step">Step</a>
+- *Type:* <a href="#cdk-ssm-documents.AutomationStep">AutomationStep</a>
 
 ---
 
@@ -5914,11 +5275,9 @@ new ExecuteStateMachineStep(scope: Construct, id: string, props: ExecuteStateMac
 | **Name** | **Description** |
 | --- | --- |
 | <code><a href="#cdk-ssm-documents.ExecuteStateMachineStep.toString">toString</a></code> | Returns a string representation of this construct. |
-| <code><a href="#cdk-ssm-documents.ExecuteStateMachineStep.invoke">invoke</a></code> | Invokes the current step on the input and will return a SimulationResult. |
 | <code><a href="#cdk-ssm-documents.ExecuteStateMachineStep.listInputs">listInputs</a></code> | Lists the inputs that are required for this step. |
 | <code><a href="#cdk-ssm-documents.ExecuteStateMachineStep.listOutputs">listOutputs</a></code> | No outputs emitted from Delete Stack step. |
 | <code><a href="#cdk-ssm-documents.ExecuteStateMachineStep.toSsmEntry">toSsmEntry</a></code> | Converts this step into an object to prepare for yaml/json representation of this step. |
-| <code><a href="#cdk-ssm-documents.ExecuteStateMachineStep.executeStep">executeStep</a></code> | Runs this step (and only this step) in simulation with the provided inputs. |
 | <code><a href="#cdk-ssm-documents.ExecuteStateMachineStep.variables">variables</a></code> | *No description.* |
 
 ---
@@ -5930,22 +5289,6 @@ public toString(): string
 ```
 
 Returns a string representation of this construct.
-
-##### `invoke` <a name="invoke" id="cdk-ssm-documents.ExecuteStateMachineStep.invoke"></a>
-
-```typescript
-public invoke(inputs: {[ key: string ]: any}): SimulationResult
-```
-
-Invokes the current step on the input and will return a SimulationResult.
-
-###### `inputs`<sup>Required</sup> <a name="inputs" id="cdk-ssm-documents.ExecuteStateMachineStep.invoke.parameter.inputs"></a>
-
-- *Type:* {[ key: string ]: any}
-
-must contain all of the inputs declared by the current step.
-
----
 
 ##### `listInputs` <a name="listInputs" id="cdk-ssm-documents.ExecuteStateMachineStep.listInputs"></a>
 
@@ -5970,20 +5313,6 @@ public toSsmEntry(): {[ key: string ]: any}
 ```
 
 Converts this step into an object to prepare for yaml/json representation of this step.
-
-##### `executeStep` <a name="executeStep" id="cdk-ssm-documents.ExecuteStateMachineStep.executeStep"></a>
-
-```typescript
-public executeStep(inputs: {[ key: string ]: any}): {[ key: string ]: any}
-```
-
-Runs this step (and only this step) in simulation with the provided inputs.
-
-###### `inputs`<sup>Required</sup> <a name="inputs" id="cdk-ssm-documents.ExecuteStateMachineStep.executeStep.parameter.inputs"></a>
-
-- *Type:* {[ key: string ]: any}
-
----
 
 ##### `variables` <a name="variables" id="cdk-ssm-documents.ExecuteStateMachineStep.variables"></a>
 
@@ -6030,11 +5359,10 @@ Any object.
 | <code><a href="#cdk-ssm-documents.ExecuteStateMachineStep.property.isEnd">isEnd</a></code> | <code>boolean</code> | *No description.* |
 | <code><a href="#cdk-ssm-documents.ExecuteStateMachineStep.property.maxAttempts">maxAttempts</a></code> | <code>number</code> | *No description.* |
 | <code><a href="#cdk-ssm-documents.ExecuteStateMachineStep.property.timeoutSeconds">timeoutSeconds</a></code> | <code>number</code> | *No description.* |
-| <code><a href="#cdk-ssm-documents.ExecuteStateMachineStep.property.onCancel">onCancel</a></code> | <code><a href="#cdk-ssm-documents.Step">Step</a></code> | *No description.* |
-| <code><a href="#cdk-ssm-documents.ExecuteStateMachineStep.property.onFailure">onFailure</a></code> | <code><a href="#cdk-ssm-documents.Step">Step</a></code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.ExecuteStateMachineStep.property.onCancel">onCancel</a></code> | <code><a href="#cdk-ssm-documents.AutomationStep">AutomationStep</a></code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.ExecuteStateMachineStep.property.onFailure">onFailure</a></code> | <code><a href="#cdk-ssm-documents.AutomationStep">AutomationStep</a></code> | *No description.* |
 | <code><a href="#cdk-ssm-documents.ExecuteStateMachineStep.property.allStepsInExecution">allStepsInExecution</a></code> | <code><a href="#cdk-ssm-documents.AutomationStep">AutomationStep</a>[]</code> | *No description.* |
 | <code><a href="#cdk-ssm-documents.ExecuteStateMachineStep.property.nextStep">nextStep</a></code> | <code><a href="#cdk-ssm-documents.AutomationStep">AutomationStep</a></code> | *No description.* |
-| <code><a href="#cdk-ssm-documents.ExecuteStateMachineStep.property.awsInvoker">awsInvoker</a></code> | <code><a href="#cdk-ssm-documents.IAwsInvoker">IAwsInvoker</a></code> | *No description.* |
 | <code><a href="#cdk-ssm-documents.ExecuteStateMachineStep.property.stateMachineArn">stateMachineArn</a></code> | <code><a href="#cdk-ssm-documents.IStringVariable">IStringVariable</a></code> | *No description.* |
 | <code><a href="#cdk-ssm-documents.ExecuteStateMachineStep.property.executionName">executionName</a></code> | <code><a href="#cdk-ssm-documents.IStringVariable">IStringVariable</a></code> | *No description.* |
 | <code><a href="#cdk-ssm-documents.ExecuteStateMachineStep.property.input">input</a></code> | <code><a href="#cdk-ssm-documents.IStringVariable">IStringVariable</a></code> | *No description.* |
@@ -6136,20 +5464,20 @@ public readonly timeoutSeconds: number;
 ##### `onCancel`<sup>Optional</sup> <a name="onCancel" id="cdk-ssm-documents.ExecuteStateMachineStep.property.onCancel"></a>
 
 ```typescript
-public readonly onCancel: Step;
+public readonly onCancel: AutomationStep;
 ```
 
-- *Type:* <a href="#cdk-ssm-documents.Step">Step</a>
+- *Type:* <a href="#cdk-ssm-documents.AutomationStep">AutomationStep</a>
 
 ---
 
 ##### `onFailure`<sup>Optional</sup> <a name="onFailure" id="cdk-ssm-documents.ExecuteStateMachineStep.property.onFailure"></a>
 
 ```typescript
-public readonly onFailure: Step;
+public readonly onFailure: AutomationStep;
 ```
 
-- *Type:* <a href="#cdk-ssm-documents.Step">Step</a>
+- *Type:* <a href="#cdk-ssm-documents.AutomationStep">AutomationStep</a>
 
 ---
 
@@ -6170,16 +5498,6 @@ public readonly nextStep: AutomationStep;
 ```
 
 - *Type:* <a href="#cdk-ssm-documents.AutomationStep">AutomationStep</a>
-
----
-
-##### `awsInvoker`<sup>Required</sup> <a name="awsInvoker" id="cdk-ssm-documents.ExecuteStateMachineStep.property.awsInvoker"></a>
-
-```typescript
-public readonly awsInvoker: IAwsInvoker;
-```
-
-- *Type:* <a href="#cdk-ssm-documents.IAwsInvoker">IAwsInvoker</a>
 
 ---
 
@@ -6283,8 +5601,9 @@ new HelloWorld(app: Construct, id: string, props: AutomationDocumentProps)
 | **Name** | **Description** |
 | --- | --- |
 | <code><a href="#cdk-ssm-documents.HelloWorld.toString">toString</a></code> | Returns a string representation of this construct. |
+| <code><a href="#cdk-ssm-documents.HelloWorld.documentType">documentType</a></code> | *No description.* |
 | <code><a href="#cdk-ssm-documents.HelloWorld.print">print</a></code> | Synthesize before calling this function! You can use this to Synthesize: cdk.SynthUtils.synthesize(stack); |
-| <code><a href="#cdk-ssm-documents.HelloWorld.runSimulation">runSimulation</a></code> | Synthesize before calling this function! You can use this to Synthesize: cdk.SynthUtils.synthesize(stack); |
+| <code><a href="#cdk-ssm-documents.HelloWorld.collectedSteps">collectedSteps</a></code> | *No description.* |
 
 ---
 
@@ -6295,6 +5614,12 @@ public toString(): string
 ```
 
 Returns a string representation of this construct.
+
+##### `documentType` <a name="documentType" id="cdk-ssm-documents.HelloWorld.documentType"></a>
+
+```typescript
+public documentType(): string
+```
 
 ##### `print` <a name="print" id="cdk-ssm-documents.HelloWorld.print"></a>
 
@@ -6308,26 +5633,11 @@ Converts the objects define in the SSM Document (including all of the steps) to 
 The format is dependency on the documentFormat property provided to the class.
 The yaml can be used as is and will behave (or at least should behave) as was simulated in the runSimulation().
 
-##### `runSimulation` <a name="runSimulation" id="cdk-ssm-documents.HelloWorld.runSimulation"></a>
+##### `collectedSteps` <a name="collectedSteps" id="cdk-ssm-documents.HelloWorld.collectedSteps"></a>
 
 ```typescript
-public runSimulation(inputs: {[ key: string ]: any}): DocumentResult
+public collectedSteps(): AutomationStep[]
 ```
-
-Synthesize before calling this function! You can use this to Synthesize: cdk.SynthUtils.synthesize(stack);
-
-Executes the SSM Document in simluation mode.
-This method DOES NOT result in invocation of SSM APIs.
-Rather, all steps are executed locally and mimic the behavior of SSM.
-If any inputs are not provided in this function, the specified defaults for the inputs will be used.
-
-###### `inputs`<sup>Required</sup> <a name="inputs" id="cdk-ssm-documents.HelloWorld.runSimulation.parameter.inputs"></a>
-
-- *Type:* {[ key: string ]: any}
-
-the inputs to feed into the simulated execution.
-
----
 
 #### Static Functions <a name="Static Functions" id="Static Functions"></a>
 
@@ -6507,12 +5817,11 @@ new InvokeLambdaFunctionStep(scope: Construct, id: string, props: InvokeLambdaFu
 | **Name** | **Description** |
 | --- | --- |
 | <code><a href="#cdk-ssm-documents.InvokeLambdaFunctionStep.toString">toString</a></code> | Returns a string representation of this construct. |
-| <code><a href="#cdk-ssm-documents.InvokeLambdaFunctionStep.invoke">invoke</a></code> | Invokes the current step on the input and will return a SimulationResult. |
 | <code><a href="#cdk-ssm-documents.InvokeLambdaFunctionStep.listInputs">listInputs</a></code> | Lists the inputs that are required for this step. |
 | <code><a href="#cdk-ssm-documents.InvokeLambdaFunctionStep.listOutputs">listOutputs</a></code> | Lists the outputs that will be returned from this step. |
 | <code><a href="#cdk-ssm-documents.InvokeLambdaFunctionStep.toSsmEntry">toSsmEntry</a></code> | Converts this step into an object to prepare for yaml/json representation of this step. |
-| <code><a href="#cdk-ssm-documents.InvokeLambdaFunctionStep.executeStep">executeStep</a></code> | Runs this step (and only this step) in simulation with the provided inputs. |
 | <code><a href="#cdk-ssm-documents.InvokeLambdaFunctionStep.variables">variables</a></code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.InvokeLambdaFunctionStep.formatInputMap">formatInputMap</a></code> | *No description.* |
 
 ---
 
@@ -6523,22 +5832,6 @@ public toString(): string
 ```
 
 Returns a string representation of this construct.
-
-##### `invoke` <a name="invoke" id="cdk-ssm-documents.InvokeLambdaFunctionStep.invoke"></a>
-
-```typescript
-public invoke(inputs: {[ key: string ]: any}): SimulationResult
-```
-
-Invokes the current step on the input and will return a SimulationResult.
-
-###### `inputs`<sup>Required</sup> <a name="inputs" id="cdk-ssm-documents.InvokeLambdaFunctionStep.invoke.parameter.inputs"></a>
-
-- *Type:* {[ key: string ]: any}
-
-must contain all of the inputs declared by the current step.
-
----
 
 ##### `listInputs` <a name="listInputs" id="cdk-ssm-documents.InvokeLambdaFunctionStep.listInputs"></a>
 
@@ -6564,24 +5857,16 @@ public toSsmEntry(): {[ key: string ]: any}
 
 Converts this step into an object to prepare for yaml/json representation of this step.
 
-##### `executeStep` <a name="executeStep" id="cdk-ssm-documents.InvokeLambdaFunctionStep.executeStep"></a>
-
-```typescript
-public executeStep(inputs: {[ key: string ]: any}): {[ key: string ]: any}
-```
-
-Runs this step (and only this step) in simulation with the provided inputs.
-
-###### `inputs`<sup>Required</sup> <a name="inputs" id="cdk-ssm-documents.InvokeLambdaFunctionStep.executeStep.parameter.inputs"></a>
-
-- *Type:* {[ key: string ]: any}
-
----
-
 ##### `variables` <a name="variables" id="cdk-ssm-documents.InvokeLambdaFunctionStep.variables"></a>
 
 ```typescript
 public variables(): {[ key: string ]: any}
+```
+
+##### `formatInputMap` <a name="formatInputMap" id="cdk-ssm-documents.InvokeLambdaFunctionStep.formatInputMap"></a>
+
+```typescript
+public formatInputMap(): {[ key: string ]: any}
 ```
 
 #### Static Functions <a name="Static Functions" id="Static Functions"></a>
@@ -6623,8 +5908,8 @@ Any object.
 | <code><a href="#cdk-ssm-documents.InvokeLambdaFunctionStep.property.isEnd">isEnd</a></code> | <code>boolean</code> | *No description.* |
 | <code><a href="#cdk-ssm-documents.InvokeLambdaFunctionStep.property.maxAttempts">maxAttempts</a></code> | <code>number</code> | *No description.* |
 | <code><a href="#cdk-ssm-documents.InvokeLambdaFunctionStep.property.timeoutSeconds">timeoutSeconds</a></code> | <code>number</code> | *No description.* |
-| <code><a href="#cdk-ssm-documents.InvokeLambdaFunctionStep.property.onCancel">onCancel</a></code> | <code><a href="#cdk-ssm-documents.Step">Step</a></code> | *No description.* |
-| <code><a href="#cdk-ssm-documents.InvokeLambdaFunctionStep.property.onFailure">onFailure</a></code> | <code><a href="#cdk-ssm-documents.Step">Step</a></code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.InvokeLambdaFunctionStep.property.onCancel">onCancel</a></code> | <code><a href="#cdk-ssm-documents.AutomationStep">AutomationStep</a></code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.InvokeLambdaFunctionStep.property.onFailure">onFailure</a></code> | <code><a href="#cdk-ssm-documents.AutomationStep">AutomationStep</a></code> | *No description.* |
 | <code><a href="#cdk-ssm-documents.InvokeLambdaFunctionStep.property.allStepsInExecution">allStepsInExecution</a></code> | <code><a href="#cdk-ssm-documents.AutomationStep">AutomationStep</a>[]</code> | *No description.* |
 | <code><a href="#cdk-ssm-documents.InvokeLambdaFunctionStep.property.nextStep">nextStep</a></code> | <code><a href="#cdk-ssm-documents.AutomationStep">AutomationStep</a></code> | *No description.* |
 | <code><a href="#cdk-ssm-documents.InvokeLambdaFunctionStep.property.functionName">functionName</a></code> | <code><a href="#cdk-ssm-documents.IStringVariable">IStringVariable</a></code> | *No description.* |
@@ -6732,20 +6017,20 @@ public readonly timeoutSeconds: number;
 ##### `onCancel`<sup>Optional</sup> <a name="onCancel" id="cdk-ssm-documents.InvokeLambdaFunctionStep.property.onCancel"></a>
 
 ```typescript
-public readonly onCancel: Step;
+public readonly onCancel: AutomationStep;
 ```
 
-- *Type:* <a href="#cdk-ssm-documents.Step">Step</a>
+- *Type:* <a href="#cdk-ssm-documents.AutomationStep">AutomationStep</a>
 
 ---
 
 ##### `onFailure`<sup>Optional</sup> <a name="onFailure" id="cdk-ssm-documents.InvokeLambdaFunctionStep.property.onFailure"></a>
 
 ```typescript
-public readonly onFailure: Step;
+public readonly onFailure: AutomationStep;
 ```
 
-- *Type:* <a href="#cdk-ssm-documents.Step">Step</a>
+- *Type:* <a href="#cdk-ssm-documents.AutomationStep">AutomationStep</a>
 
 ---
 
@@ -6911,11 +6196,9 @@ new InvokeWebhookStep(scope: Construct, id: string, props: InvokeWebhookStepProp
 | **Name** | **Description** |
 | --- | --- |
 | <code><a href="#cdk-ssm-documents.InvokeWebhookStep.toString">toString</a></code> | Returns a string representation of this construct. |
-| <code><a href="#cdk-ssm-documents.InvokeWebhookStep.invoke">invoke</a></code> | Invokes the current step on the input and will return a SimulationResult. |
 | <code><a href="#cdk-ssm-documents.InvokeWebhookStep.listInputs">listInputs</a></code> | Lists the inputs that are required for this step. |
 | <code><a href="#cdk-ssm-documents.InvokeWebhookStep.listOutputs">listOutputs</a></code> | Lists the outputs that will be returned from this step. |
 | <code><a href="#cdk-ssm-documents.InvokeWebhookStep.toSsmEntry">toSsmEntry</a></code> | Converts this step into an object to prepare for yaml/json representation of this step. |
-| <code><a href="#cdk-ssm-documents.InvokeWebhookStep.executeStep">executeStep</a></code> | Runs this step (and only this step) in simulation with the provided inputs. |
 | <code><a href="#cdk-ssm-documents.InvokeWebhookStep.variables">variables</a></code> | *No description.* |
 
 ---
@@ -6927,22 +6210,6 @@ public toString(): string
 ```
 
 Returns a string representation of this construct.
-
-##### `invoke` <a name="invoke" id="cdk-ssm-documents.InvokeWebhookStep.invoke"></a>
-
-```typescript
-public invoke(inputs: {[ key: string ]: any}): SimulationResult
-```
-
-Invokes the current step on the input and will return a SimulationResult.
-
-###### `inputs`<sup>Required</sup> <a name="inputs" id="cdk-ssm-documents.InvokeWebhookStep.invoke.parameter.inputs"></a>
-
-- *Type:* {[ key: string ]: any}
-
-must contain all of the inputs declared by the current step.
-
----
 
 ##### `listInputs` <a name="listInputs" id="cdk-ssm-documents.InvokeWebhookStep.listInputs"></a>
 
@@ -6967,20 +6234,6 @@ public toSsmEntry(): {[ key: string ]: any}
 ```
 
 Converts this step into an object to prepare for yaml/json representation of this step.
-
-##### `executeStep` <a name="executeStep" id="cdk-ssm-documents.InvokeWebhookStep.executeStep"></a>
-
-```typescript
-public executeStep(inputs: {[ key: string ]: any}): {[ key: string ]: any}
-```
-
-Runs this step (and only this step) in simulation with the provided inputs.
-
-###### `inputs`<sup>Required</sup> <a name="inputs" id="cdk-ssm-documents.InvokeWebhookStep.executeStep.parameter.inputs"></a>
-
-- *Type:* {[ key: string ]: any}
-
----
 
 ##### `variables` <a name="variables" id="cdk-ssm-documents.InvokeWebhookStep.variables"></a>
 
@@ -7027,12 +6280,11 @@ Any object.
 | <code><a href="#cdk-ssm-documents.InvokeWebhookStep.property.isEnd">isEnd</a></code> | <code>boolean</code> | *No description.* |
 | <code><a href="#cdk-ssm-documents.InvokeWebhookStep.property.maxAttempts">maxAttempts</a></code> | <code>number</code> | *No description.* |
 | <code><a href="#cdk-ssm-documents.InvokeWebhookStep.property.timeoutSeconds">timeoutSeconds</a></code> | <code>number</code> | *No description.* |
-| <code><a href="#cdk-ssm-documents.InvokeWebhookStep.property.onCancel">onCancel</a></code> | <code><a href="#cdk-ssm-documents.Step">Step</a></code> | *No description.* |
-| <code><a href="#cdk-ssm-documents.InvokeWebhookStep.property.onFailure">onFailure</a></code> | <code><a href="#cdk-ssm-documents.Step">Step</a></code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.InvokeWebhookStep.property.onCancel">onCancel</a></code> | <code><a href="#cdk-ssm-documents.AutomationStep">AutomationStep</a></code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.InvokeWebhookStep.property.onFailure">onFailure</a></code> | <code><a href="#cdk-ssm-documents.AutomationStep">AutomationStep</a></code> | *No description.* |
 | <code><a href="#cdk-ssm-documents.InvokeWebhookStep.property.allStepsInExecution">allStepsInExecution</a></code> | <code><a href="#cdk-ssm-documents.AutomationStep">AutomationStep</a>[]</code> | *No description.* |
 | <code><a href="#cdk-ssm-documents.InvokeWebhookStep.property.nextStep">nextStep</a></code> | <code><a href="#cdk-ssm-documents.AutomationStep">AutomationStep</a></code> | *No description.* |
 | <code><a href="#cdk-ssm-documents.InvokeWebhookStep.property.integrationName">integrationName</a></code> | <code><a href="#cdk-ssm-documents.IStringVariable">IStringVariable</a></code> | *No description.* |
-| <code><a href="#cdk-ssm-documents.InvokeWebhookStep.property.webhook">webhook</a></code> | <code><a href="#cdk-ssm-documents.IWebhook">IWebhook</a></code> | *No description.* |
 | <code><a href="#cdk-ssm-documents.InvokeWebhookStep.property.body">body</a></code> | <code><a href="#cdk-ssm-documents.IStringVariable">IStringVariable</a></code> | *No description.* |
 
 ---
@@ -7132,20 +6384,20 @@ public readonly timeoutSeconds: number;
 ##### `onCancel`<sup>Optional</sup> <a name="onCancel" id="cdk-ssm-documents.InvokeWebhookStep.property.onCancel"></a>
 
 ```typescript
-public readonly onCancel: Step;
+public readonly onCancel: AutomationStep;
 ```
 
-- *Type:* <a href="#cdk-ssm-documents.Step">Step</a>
+- *Type:* <a href="#cdk-ssm-documents.AutomationStep">AutomationStep</a>
 
 ---
 
 ##### `onFailure`<sup>Optional</sup> <a name="onFailure" id="cdk-ssm-documents.InvokeWebhookStep.property.onFailure"></a>
 
 ```typescript
-public readonly onFailure: Step;
+public readonly onFailure: AutomationStep;
 ```
 
-- *Type:* <a href="#cdk-ssm-documents.Step">Step</a>
+- *Type:* <a href="#cdk-ssm-documents.AutomationStep">AutomationStep</a>
 
 ---
 
@@ -7176,16 +6428,6 @@ public readonly integrationName: IStringVariable;
 ```
 
 - *Type:* <a href="#cdk-ssm-documents.IStringVariable">IStringVariable</a>
-
----
-
-##### `webhook`<sup>Required</sup> <a name="webhook" id="cdk-ssm-documents.InvokeWebhookStep.property.webhook"></a>
-
-```typescript
-public readonly webhook: IWebhook;
-```
-
-- *Type:* <a href="#cdk-ssm-documents.IWebhook">IWebhook</a>
 
 ---
 
@@ -7237,14 +6479,14 @@ AutomationStep implementation for aws:pause https://docs.aws.amazon.com/systems-
 ```typescript
 import { PauseStep } from 'cdk-ssm-documents'
 
-new PauseStep(scope: Construct, id: string, props: PauseStepProps)
+new PauseStep(scope: Construct, id: string, props: AutomationStepProps)
 ```
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
 | <code><a href="#cdk-ssm-documents.PauseStep.Initializer.parameter.scope">scope</a></code> | <code>constructs.Construct</code> | *No description.* |
 | <code><a href="#cdk-ssm-documents.PauseStep.Initializer.parameter.id">id</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#cdk-ssm-documents.PauseStep.Initializer.parameter.props">props</a></code> | <code><a href="#cdk-ssm-documents.PauseStepProps">PauseStepProps</a></code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.PauseStep.Initializer.parameter.props">props</a></code> | <code><a href="#cdk-ssm-documents.AutomationStepProps">AutomationStepProps</a></code> | *No description.* |
 
 ---
 
@@ -7262,7 +6504,7 @@ new PauseStep(scope: Construct, id: string, props: PauseStepProps)
 
 ##### `props`<sup>Required</sup> <a name="props" id="cdk-ssm-documents.PauseStep.Initializer.parameter.props"></a>
 
-- *Type:* <a href="#cdk-ssm-documents.PauseStepProps">PauseStepProps</a>
+- *Type:* <a href="#cdk-ssm-documents.AutomationStepProps">AutomationStepProps</a>
 
 ---
 
@@ -7271,11 +6513,9 @@ new PauseStep(scope: Construct, id: string, props: PauseStepProps)
 | **Name** | **Description** |
 | --- | --- |
 | <code><a href="#cdk-ssm-documents.PauseStep.toString">toString</a></code> | Returns a string representation of this construct. |
-| <code><a href="#cdk-ssm-documents.PauseStep.invoke">invoke</a></code> | Invokes the current step on the input and will return a SimulationResult. |
 | <code><a href="#cdk-ssm-documents.PauseStep.listInputs">listInputs</a></code> | No inputs required for Pause step. |
 | <code><a href="#cdk-ssm-documents.PauseStep.listOutputs">listOutputs</a></code> | No outputs emitted from Pause step. |
 | <code><a href="#cdk-ssm-documents.PauseStep.toSsmEntry">toSsmEntry</a></code> | Converts this step into an object to prepare for yaml/json representation of this step. |
-| <code><a href="#cdk-ssm-documents.PauseStep.executeStep">executeStep</a></code> | May perform a real pause based on the params used during instance creation. |
 | <code><a href="#cdk-ssm-documents.PauseStep.variables">variables</a></code> | *No description.* |
 
 ---
@@ -7287,22 +6527,6 @@ public toString(): string
 ```
 
 Returns a string representation of this construct.
-
-##### `invoke` <a name="invoke" id="cdk-ssm-documents.PauseStep.invoke"></a>
-
-```typescript
-public invoke(inputs: {[ key: string ]: any}): SimulationResult
-```
-
-Invokes the current step on the input and will return a SimulationResult.
-
-###### `inputs`<sup>Required</sup> <a name="inputs" id="cdk-ssm-documents.PauseStep.invoke.parameter.inputs"></a>
-
-- *Type:* {[ key: string ]: any}
-
-must contain all of the inputs declared by the current step.
-
----
 
 ##### `listInputs` <a name="listInputs" id="cdk-ssm-documents.PauseStep.listInputs"></a>
 
@@ -7327,20 +6551,6 @@ public toSsmEntry(): {[ key: string ]: any}
 ```
 
 Converts this step into an object to prepare for yaml/json representation of this step.
-
-##### `executeStep` <a name="executeStep" id="cdk-ssm-documents.PauseStep.executeStep"></a>
-
-```typescript
-public executeStep(_inputs: {[ key: string ]: any}): {[ key: string ]: any}
-```
-
-May perform a real pause based on the params used during instance creation.
-
-###### `_inputs`<sup>Required</sup> <a name="_inputs" id="cdk-ssm-documents.PauseStep.executeStep.parameter._inputs"></a>
-
-- *Type:* {[ key: string ]: any}
-
----
 
 ##### `variables` <a name="variables" id="cdk-ssm-documents.PauseStep.variables"></a>
 
@@ -7387,11 +6597,10 @@ Any object.
 | <code><a href="#cdk-ssm-documents.PauseStep.property.isEnd">isEnd</a></code> | <code>boolean</code> | *No description.* |
 | <code><a href="#cdk-ssm-documents.PauseStep.property.maxAttempts">maxAttempts</a></code> | <code>number</code> | *No description.* |
 | <code><a href="#cdk-ssm-documents.PauseStep.property.timeoutSeconds">timeoutSeconds</a></code> | <code>number</code> | *No description.* |
-| <code><a href="#cdk-ssm-documents.PauseStep.property.onCancel">onCancel</a></code> | <code><a href="#cdk-ssm-documents.Step">Step</a></code> | *No description.* |
-| <code><a href="#cdk-ssm-documents.PauseStep.property.onFailure">onFailure</a></code> | <code><a href="#cdk-ssm-documents.Step">Step</a></code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.PauseStep.property.onCancel">onCancel</a></code> | <code><a href="#cdk-ssm-documents.AutomationStep">AutomationStep</a></code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.PauseStep.property.onFailure">onFailure</a></code> | <code><a href="#cdk-ssm-documents.AutomationStep">AutomationStep</a></code> | *No description.* |
 | <code><a href="#cdk-ssm-documents.PauseStep.property.allStepsInExecution">allStepsInExecution</a></code> | <code><a href="#cdk-ssm-documents.AutomationStep">AutomationStep</a>[]</code> | *No description.* |
 | <code><a href="#cdk-ssm-documents.PauseStep.property.nextStep">nextStep</a></code> | <code><a href="#cdk-ssm-documents.AutomationStep">AutomationStep</a></code> | *No description.* |
-| <code><a href="#cdk-ssm-documents.PauseStep.property.pauseHook">pauseHook</a></code> | <code><a href="#cdk-ssm-documents.IPauseHook">IPauseHook</a></code> | *No description.* |
 
 ---
 
@@ -7490,20 +6699,20 @@ public readonly timeoutSeconds: number;
 ##### `onCancel`<sup>Optional</sup> <a name="onCancel" id="cdk-ssm-documents.PauseStep.property.onCancel"></a>
 
 ```typescript
-public readonly onCancel: Step;
+public readonly onCancel: AutomationStep;
 ```
 
-- *Type:* <a href="#cdk-ssm-documents.Step">Step</a>
+- *Type:* <a href="#cdk-ssm-documents.AutomationStep">AutomationStep</a>
 
 ---
 
 ##### `onFailure`<sup>Optional</sup> <a name="onFailure" id="cdk-ssm-documents.PauseStep.property.onFailure"></a>
 
 ```typescript
-public readonly onFailure: Step;
+public readonly onFailure: AutomationStep;
 ```
 
-- *Type:* <a href="#cdk-ssm-documents.Step">Step</a>
+- *Type:* <a href="#cdk-ssm-documents.AutomationStep">AutomationStep</a>
 
 ---
 
@@ -7524,16 +6733,6 @@ public readonly nextStep: AutomationStep;
 ```
 
 - *Type:* <a href="#cdk-ssm-documents.AutomationStep">AutomationStep</a>
-
----
-
-##### `pauseHook`<sup>Required</sup> <a name="pauseHook" id="cdk-ssm-documents.PauseStep.property.pauseHook"></a>
-
-```typescript
-public readonly pauseHook: IPauseHook;
-```
-
-- *Type:* <a href="#cdk-ssm-documents.IPauseHook">IPauseHook</a>
 
 ---
 
@@ -7609,11 +6808,9 @@ new PsModuleStep(scope: Construct, id: string, props: PsModuleStepProps)
 | **Name** | **Description** |
 | --- | --- |
 | <code><a href="#cdk-ssm-documents.PsModuleStep.toString">toString</a></code> | Returns a string representation of this construct. |
-| <code><a href="#cdk-ssm-documents.PsModuleStep.invoke">invoke</a></code> | Invokes the current step on the input and will return a SimulationResult. |
 | <code><a href="#cdk-ssm-documents.PsModuleStep.listInputs">listInputs</a></code> | Inputs required for this command includes both the runCommand variables and workingDirectory if provided. |
 | <code><a href="#cdk-ssm-documents.PsModuleStep.listOutputs">listOutputs</a></code> | RunCommand Steps do not have outputs. |
 | <code><a href="#cdk-ssm-documents.PsModuleStep.toSsmEntry">toSsmEntry</a></code> | Converts this step into an object to prepare for yaml/json representation of this step. |
-| <code><a href="#cdk-ssm-documents.PsModuleStep.executeStep">executeStep</a></code> | Installs the module specified by source then runs the specified commands. |
 | <code><a href="#cdk-ssm-documents.PsModuleStep.variables">variables</a></code> | *No description.* |
 
 ---
@@ -7625,22 +6822,6 @@ public toString(): string
 ```
 
 Returns a string representation of this construct.
-
-##### `invoke` <a name="invoke" id="cdk-ssm-documents.PsModuleStep.invoke"></a>
-
-```typescript
-public invoke(inputs: {[ key: string ]: any}): SimulationResult
-```
-
-Invokes the current step on the input and will return a SimulationResult.
-
-###### `inputs`<sup>Required</sup> <a name="inputs" id="cdk-ssm-documents.PsModuleStep.invoke.parameter.inputs"></a>
-
-- *Type:* {[ key: string ]: any}
-
-must contain all of the inputs declared by the current step.
-
----
 
 ##### `listInputs` <a name="listInputs" id="cdk-ssm-documents.PsModuleStep.listInputs"></a>
 
@@ -7665,20 +6846,6 @@ public toSsmEntry(): {[ key: string ]: any}
 ```
 
 Converts this step into an object to prepare for yaml/json representation of this step.
-
-##### `executeStep` <a name="executeStep" id="cdk-ssm-documents.PsModuleStep.executeStep"></a>
-
-```typescript
-public executeStep(inputs: {[ key: string ]: any}): void
-```
-
-Installs the module specified by source then runs the specified commands.
-
-###### `inputs`<sup>Required</sup> <a name="inputs" id="cdk-ssm-documents.PsModuleStep.executeStep.parameter.inputs"></a>
-
-- *Type:* {[ key: string ]: any}
-
----
 
 ##### `variables` <a name="variables" id="cdk-ssm-documents.PsModuleStep.variables"></a>
 
@@ -7727,11 +6894,9 @@ Any object.
 | <code><a href="#cdk-ssm-documents.PsModuleStep.property.finallyStep">finallyStep</a></code> | <code>boolean</code> | *No description.* |
 | <code><a href="#cdk-ssm-documents.PsModuleStep.property.markSuccessAndExitOnFailure">markSuccessAndExitOnFailure</a></code> | <code>boolean</code> | *No description.* |
 | <code><a href="#cdk-ssm-documents.PsModuleStep.property.platforms">platforms</a></code> | <code><a href="#cdk-ssm-documents.Platform">Platform</a>[]</code> | *No description.* |
-| <code><a href="#cdk-ssm-documents.PsModuleStep.property.simulationPlatform">simulationPlatform</a></code> | <code><a href="#cdk-ssm-documents.Platform">Platform</a></code> | *No description.* |
 | <code><a href="#cdk-ssm-documents.PsModuleStep.property.precondition">precondition</a></code> | <code><a href="#cdk-ssm-documents.Precondition">Precondition</a></code> | *No description.* |
 | <code><a href="#cdk-ssm-documents.PsModuleStep.property.allStepsInExecution">allStepsInExecution</a></code> | <code><a href="#cdk-ssm-documents.CommandStep">CommandStep</a>[]</code> | *No description.* |
 | <code><a href="#cdk-ssm-documents.PsModuleStep.property.nextStep">nextStep</a></code> | <code><a href="#cdk-ssm-documents.CommandStep">CommandStep</a></code> | *No description.* |
-| <code><a href="#cdk-ssm-documents.PsModuleStep.property.environment">environment</a></code> | <code><a href="#cdk-ssm-documents.IEnvironment">IEnvironment</a></code> | *No description.* |
 | <code><a href="#cdk-ssm-documents.PsModuleStep.property.source">source</a></code> | <code><a href="#cdk-ssm-documents.IStringVariable">IStringVariable</a></code> | *No description.* |
 | <code><a href="#cdk-ssm-documents.PsModuleStep.property.runCommand">runCommand</a></code> | <code><a href="#cdk-ssm-documents.IStringVariable">IStringVariable</a>[]</code> | *No description.* |
 | <code><a href="#cdk-ssm-documents.PsModuleStep.property.sourceHash">sourceHash</a></code> | <code><a href="#cdk-ssm-documents.IStringVariable">IStringVariable</a></code> | *No description.* |
@@ -7852,16 +7017,6 @@ public readonly platforms: Platform[];
 
 ---
 
-##### `simulationPlatform`<sup>Required</sup> <a name="simulationPlatform" id="cdk-ssm-documents.PsModuleStep.property.simulationPlatform"></a>
-
-```typescript
-public readonly simulationPlatform: Platform;
-```
-
-- *Type:* <a href="#cdk-ssm-documents.Platform">Platform</a>
-
----
-
 ##### `precondition`<sup>Optional</sup> <a name="precondition" id="cdk-ssm-documents.PsModuleStep.property.precondition"></a>
 
 ```typescript
@@ -7889,16 +7044,6 @@ public readonly nextStep: CommandStep;
 ```
 
 - *Type:* <a href="#cdk-ssm-documents.CommandStep">CommandStep</a>
-
----
-
-##### `environment`<sup>Required</sup> <a name="environment" id="cdk-ssm-documents.PsModuleStep.property.environment"></a>
-
-```typescript
-public readonly environment: IEnvironment;
-```
-
-- *Type:* <a href="#cdk-ssm-documents.IEnvironment">IEnvironment</a>
 
 ---
 
@@ -8095,11 +7240,9 @@ new RunCommandStep(scope: Construct, id: string, props: RunCommandStepProps)
 | **Name** | **Description** |
 | --- | --- |
 | <code><a href="#cdk-ssm-documents.RunCommandStep.toString">toString</a></code> | Returns a string representation of this construct. |
-| <code><a href="#cdk-ssm-documents.RunCommandStep.invoke">invoke</a></code> | Invokes the current step on the input and will return a SimulationResult. |
 | <code><a href="#cdk-ssm-documents.RunCommandStep.listInputs">listInputs</a></code> | Lists the inputs that are required for this step. |
 | <code><a href="#cdk-ssm-documents.RunCommandStep.listOutputs">listOutputs</a></code> | Lists the outputs that will be returned from this step. |
 | <code><a href="#cdk-ssm-documents.RunCommandStep.toSsmEntry">toSsmEntry</a></code> | Converts this step into an object to prepare for yaml/json representation of this step. |
-| <code><a href="#cdk-ssm-documents.RunCommandStep.executeStep">executeStep</a></code> | May perform a real approval ask based on the params used during instance creation. |
 | <code><a href="#cdk-ssm-documents.RunCommandStep.variables">variables</a></code> | *No description.* |
 
 ---
@@ -8111,22 +7254,6 @@ public toString(): string
 ```
 
 Returns a string representation of this construct.
-
-##### `invoke` <a name="invoke" id="cdk-ssm-documents.RunCommandStep.invoke"></a>
-
-```typescript
-public invoke(inputs: {[ key: string ]: any}): SimulationResult
-```
-
-Invokes the current step on the input and will return a SimulationResult.
-
-###### `inputs`<sup>Required</sup> <a name="inputs" id="cdk-ssm-documents.RunCommandStep.invoke.parameter.inputs"></a>
-
-- *Type:* {[ key: string ]: any}
-
-must contain all of the inputs declared by the current step.
-
----
 
 ##### `listInputs` <a name="listInputs" id="cdk-ssm-documents.RunCommandStep.listInputs"></a>
 
@@ -8151,20 +7278,6 @@ public toSsmEntry(): {[ key: string ]: any}
 ```
 
 Converts this step into an object to prepare for yaml/json representation of this step.
-
-##### `executeStep` <a name="executeStep" id="cdk-ssm-documents.RunCommandStep.executeStep"></a>
-
-```typescript
-public executeStep(inputs: {[ key: string ]: any}): {[ key: string ]: any}
-```
-
-May perform a real approval ask based on the params used during instance creation.
-
-###### `inputs`<sup>Required</sup> <a name="inputs" id="cdk-ssm-documents.RunCommandStep.executeStep.parameter.inputs"></a>
-
-- *Type:* {[ key: string ]: any}
-
----
 
 ##### `variables` <a name="variables" id="cdk-ssm-documents.RunCommandStep.variables"></a>
 
@@ -8211,12 +7324,11 @@ Any object.
 | <code><a href="#cdk-ssm-documents.RunCommandStep.property.isEnd">isEnd</a></code> | <code>boolean</code> | *No description.* |
 | <code><a href="#cdk-ssm-documents.RunCommandStep.property.maxAttempts">maxAttempts</a></code> | <code>number</code> | *No description.* |
 | <code><a href="#cdk-ssm-documents.RunCommandStep.property.timeoutSeconds">timeoutSeconds</a></code> | <code>number</code> | *No description.* |
-| <code><a href="#cdk-ssm-documents.RunCommandStep.property.onCancel">onCancel</a></code> | <code><a href="#cdk-ssm-documents.Step">Step</a></code> | *No description.* |
-| <code><a href="#cdk-ssm-documents.RunCommandStep.property.onFailure">onFailure</a></code> | <code><a href="#cdk-ssm-documents.Step">Step</a></code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.RunCommandStep.property.onCancel">onCancel</a></code> | <code><a href="#cdk-ssm-documents.AutomationStep">AutomationStep</a></code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.RunCommandStep.property.onFailure">onFailure</a></code> | <code><a href="#cdk-ssm-documents.AutomationStep">AutomationStep</a></code> | *No description.* |
 | <code><a href="#cdk-ssm-documents.RunCommandStep.property.allStepsInExecution">allStepsInExecution</a></code> | <code><a href="#cdk-ssm-documents.AutomationStep">AutomationStep</a>[]</code> | *No description.* |
 | <code><a href="#cdk-ssm-documents.RunCommandStep.property.nextStep">nextStep</a></code> | <code><a href="#cdk-ssm-documents.AutomationStep">AutomationStep</a></code> | *No description.* |
 | <code><a href="#cdk-ssm-documents.RunCommandStep.property.documentName">documentName</a></code> | <code><a href="#cdk-ssm-documents.IStringVariable">IStringVariable</a></code> | *No description.* |
-| <code><a href="#cdk-ssm-documents.RunCommandStep.property.runCommandHook">runCommandHook</a></code> | <code><a href="#cdk-ssm-documents.IRunCommandHook">IRunCommandHook</a></code> | *No description.* |
 | <code><a href="#cdk-ssm-documents.RunCommandStep.property.targets">targets</a></code> | <code><a href="#cdk-ssm-documents.IStringListVariable">IStringListVariable</a> \| <a href="#cdk-ssm-documents.IMapListVariable">IMapListVariable</a></code> | *No description.* |
 | <code><a href="#cdk-ssm-documents.RunCommandStep.property.cloudWatchOutputConfig">cloudWatchOutputConfig</a></code> | <code><a href="#cdk-ssm-documents.IStringMapVariable">IStringMapVariable</a></code> | *No description.* |
 | <code><a href="#cdk-ssm-documents.RunCommandStep.property.commandTimeoutSeconds">commandTimeoutSeconds</a></code> | <code><a href="#cdk-ssm-documents.INumberVariable">INumberVariable</a></code> | *No description.* |
@@ -8328,20 +7440,20 @@ public readonly timeoutSeconds: number;
 ##### `onCancel`<sup>Optional</sup> <a name="onCancel" id="cdk-ssm-documents.RunCommandStep.property.onCancel"></a>
 
 ```typescript
-public readonly onCancel: Step;
+public readonly onCancel: AutomationStep;
 ```
 
-- *Type:* <a href="#cdk-ssm-documents.Step">Step</a>
+- *Type:* <a href="#cdk-ssm-documents.AutomationStep">AutomationStep</a>
 
 ---
 
 ##### `onFailure`<sup>Optional</sup> <a name="onFailure" id="cdk-ssm-documents.RunCommandStep.property.onFailure"></a>
 
 ```typescript
-public readonly onFailure: Step;
+public readonly onFailure: AutomationStep;
 ```
 
-- *Type:* <a href="#cdk-ssm-documents.Step">Step</a>
+- *Type:* <a href="#cdk-ssm-documents.AutomationStep">AutomationStep</a>
 
 ---
 
@@ -8372,16 +7484,6 @@ public readonly documentName: IStringVariable;
 ```
 
 - *Type:* <a href="#cdk-ssm-documents.IStringVariable">IStringVariable</a>
-
----
-
-##### `runCommandHook`<sup>Required</sup> <a name="runCommandHook" id="cdk-ssm-documents.RunCommandStep.property.runCommandHook"></a>
-
-```typescript
-public readonly runCommandHook: IRunCommandHook;
-```
-
-- *Type:* <a href="#cdk-ssm-documents.IRunCommandHook">IRunCommandHook</a>
 
 ---
 
@@ -8587,11 +7689,9 @@ new RunInstanceStep(scope: Construct, id: string, props: RunInstanceStepProps)
 | **Name** | **Description** |
 | --- | --- |
 | <code><a href="#cdk-ssm-documents.RunInstanceStep.toString">toString</a></code> | Returns a string representation of this construct. |
-| <code><a href="#cdk-ssm-documents.RunInstanceStep.invoke">invoke</a></code> | Invokes the current step on the input and will return a SimulationResult. |
 | <code><a href="#cdk-ssm-documents.RunInstanceStep.listInputs">listInputs</a></code> | Derives the inputs based on given variables. |
 | <code><a href="#cdk-ssm-documents.RunInstanceStep.listOutputs">listOutputs</a></code> | Lists the outputs that will be returned from this step. |
 | <code><a href="#cdk-ssm-documents.RunInstanceStep.toSsmEntry">toSsmEntry</a></code> | Converts this step into an object to prepare for yaml/json representation of this step. |
-| <code><a href="#cdk-ssm-documents.RunInstanceStep.executeStep">executeStep</a></code> | Runs this step (and only this step) in simulation with the provided inputs. |
 | <code><a href="#cdk-ssm-documents.RunInstanceStep.variables">variables</a></code> | *No description.* |
 
 ---
@@ -8603,22 +7703,6 @@ public toString(): string
 ```
 
 Returns a string representation of this construct.
-
-##### `invoke` <a name="invoke" id="cdk-ssm-documents.RunInstanceStep.invoke"></a>
-
-```typescript
-public invoke(inputs: {[ key: string ]: any}): SimulationResult
-```
-
-Invokes the current step on the input and will return a SimulationResult.
-
-###### `inputs`<sup>Required</sup> <a name="inputs" id="cdk-ssm-documents.RunInstanceStep.invoke.parameter.inputs"></a>
-
-- *Type:* {[ key: string ]: any}
-
-must contain all of the inputs declared by the current step.
-
----
 
 ##### `listInputs` <a name="listInputs" id="cdk-ssm-documents.RunInstanceStep.listInputs"></a>
 
@@ -8643,20 +7727,6 @@ public toSsmEntry(): {[ key: string ]: any}
 ```
 
 Converts this step into an object to prepare for yaml/json representation of this step.
-
-##### `executeStep` <a name="executeStep" id="cdk-ssm-documents.RunInstanceStep.executeStep"></a>
-
-```typescript
-public executeStep(inputs: {[ key: string ]: any}): {[ key: string ]: any}
-```
-
-Runs this step (and only this step) in simulation with the provided inputs.
-
-###### `inputs`<sup>Required</sup> <a name="inputs" id="cdk-ssm-documents.RunInstanceStep.executeStep.parameter.inputs"></a>
-
-- *Type:* {[ key: string ]: any}
-
----
 
 ##### `variables` <a name="variables" id="cdk-ssm-documents.RunInstanceStep.variables"></a>
 
@@ -8703,11 +7773,10 @@ Any object.
 | <code><a href="#cdk-ssm-documents.RunInstanceStep.property.isEnd">isEnd</a></code> | <code>boolean</code> | *No description.* |
 | <code><a href="#cdk-ssm-documents.RunInstanceStep.property.maxAttempts">maxAttempts</a></code> | <code>number</code> | *No description.* |
 | <code><a href="#cdk-ssm-documents.RunInstanceStep.property.timeoutSeconds">timeoutSeconds</a></code> | <code>number</code> | *No description.* |
-| <code><a href="#cdk-ssm-documents.RunInstanceStep.property.onCancel">onCancel</a></code> | <code><a href="#cdk-ssm-documents.Step">Step</a></code> | *No description.* |
-| <code><a href="#cdk-ssm-documents.RunInstanceStep.property.onFailure">onFailure</a></code> | <code><a href="#cdk-ssm-documents.Step">Step</a></code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.RunInstanceStep.property.onCancel">onCancel</a></code> | <code><a href="#cdk-ssm-documents.AutomationStep">AutomationStep</a></code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.RunInstanceStep.property.onFailure">onFailure</a></code> | <code><a href="#cdk-ssm-documents.AutomationStep">AutomationStep</a></code> | *No description.* |
 | <code><a href="#cdk-ssm-documents.RunInstanceStep.property.allStepsInExecution">allStepsInExecution</a></code> | <code><a href="#cdk-ssm-documents.AutomationStep">AutomationStep</a>[]</code> | *No description.* |
 | <code><a href="#cdk-ssm-documents.RunInstanceStep.property.nextStep">nextStep</a></code> | <code><a href="#cdk-ssm-documents.AutomationStep">AutomationStep</a></code> | *No description.* |
-| <code><a href="#cdk-ssm-documents.RunInstanceStep.property.awsInvoker">awsInvoker</a></code> | <code><a href="#cdk-ssm-documents.IAwsInvoker">IAwsInvoker</a></code> | *No description.* |
 | <code><a href="#cdk-ssm-documents.RunInstanceStep.property.imageId">imageId</a></code> | <code><a href="#cdk-ssm-documents.IStringVariable">IStringVariable</a></code> | *No description.* |
 | <code><a href="#cdk-ssm-documents.RunInstanceStep.property.additionalInfo">additionalInfo</a></code> | <code><a href="#cdk-ssm-documents.IStringVariable">IStringVariable</a></code> | *No description.* |
 | <code><a href="#cdk-ssm-documents.RunInstanceStep.property.blockDeviceMappings">blockDeviceMappings</a></code> | <code><a href="#cdk-ssm-documents.IMapListVariable">IMapListVariable</a></code> | *No description.* |
@@ -8830,20 +7899,20 @@ public readonly timeoutSeconds: number;
 ##### `onCancel`<sup>Optional</sup> <a name="onCancel" id="cdk-ssm-documents.RunInstanceStep.property.onCancel"></a>
 
 ```typescript
-public readonly onCancel: Step;
+public readonly onCancel: AutomationStep;
 ```
 
-- *Type:* <a href="#cdk-ssm-documents.Step">Step</a>
+- *Type:* <a href="#cdk-ssm-documents.AutomationStep">AutomationStep</a>
 
 ---
 
 ##### `onFailure`<sup>Optional</sup> <a name="onFailure" id="cdk-ssm-documents.RunInstanceStep.property.onFailure"></a>
 
 ```typescript
-public readonly onFailure: Step;
+public readonly onFailure: AutomationStep;
 ```
 
-- *Type:* <a href="#cdk-ssm-documents.Step">Step</a>
+- *Type:* <a href="#cdk-ssm-documents.AutomationStep">AutomationStep</a>
 
 ---
 
@@ -8864,16 +7933,6 @@ public readonly nextStep: AutomationStep;
 ```
 
 - *Type:* <a href="#cdk-ssm-documents.AutomationStep">AutomationStep</a>
-
----
-
-##### `awsInvoker`<sup>Required</sup> <a name="awsInvoker" id="cdk-ssm-documents.RunInstanceStep.property.awsInvoker"></a>
-
-```typescript
-public readonly awsInvoker: IAwsInvoker;
-```
-
-- *Type:* <a href="#cdk-ssm-documents.IAwsInvoker">IAwsInvoker</a>
 
 ---
 
@@ -9189,11 +8248,9 @@ new RunPowerShellScriptStep(scope: Construct, id: string, props: RunPowerShellSc
 | **Name** | **Description** |
 | --- | --- |
 | <code><a href="#cdk-ssm-documents.RunPowerShellScriptStep.toString">toString</a></code> | Returns a string representation of this construct. |
-| <code><a href="#cdk-ssm-documents.RunPowerShellScriptStep.invoke">invoke</a></code> | Invokes the current step on the input and will return a SimulationResult. |
 | <code><a href="#cdk-ssm-documents.RunPowerShellScriptStep.listInputs">listInputs</a></code> | Inputs required for this command includes both the runCommand variables and workingDirectory if provided. |
 | <code><a href="#cdk-ssm-documents.RunPowerShellScriptStep.listOutputs">listOutputs</a></code> | RunCommand Steps do not have outputs. |
 | <code><a href="#cdk-ssm-documents.RunPowerShellScriptStep.toSsmEntry">toSsmEntry</a></code> | Converts this step into an object to prepare for yaml/json representation of this step. |
-| <code><a href="#cdk-ssm-documents.RunPowerShellScriptStep.executeStep">executeStep</a></code> | Executes the runCommands against the environment provided in the constructor. |
 | <code><a href="#cdk-ssm-documents.RunPowerShellScriptStep.variables">variables</a></code> | *No description.* |
 
 ---
@@ -9205,22 +8262,6 @@ public toString(): string
 ```
 
 Returns a string representation of this construct.
-
-##### `invoke` <a name="invoke" id="cdk-ssm-documents.RunPowerShellScriptStep.invoke"></a>
-
-```typescript
-public invoke(inputs: {[ key: string ]: any}): SimulationResult
-```
-
-Invokes the current step on the input and will return a SimulationResult.
-
-###### `inputs`<sup>Required</sup> <a name="inputs" id="cdk-ssm-documents.RunPowerShellScriptStep.invoke.parameter.inputs"></a>
-
-- *Type:* {[ key: string ]: any}
-
-must contain all of the inputs declared by the current step.
-
----
 
 ##### `listInputs` <a name="listInputs" id="cdk-ssm-documents.RunPowerShellScriptStep.listInputs"></a>
 
@@ -9245,20 +8286,6 @@ public toSsmEntry(): {[ key: string ]: any}
 ```
 
 Converts this step into an object to prepare for yaml/json representation of this step.
-
-##### `executeStep` <a name="executeStep" id="cdk-ssm-documents.RunPowerShellScriptStep.executeStep"></a>
-
-```typescript
-public executeStep(inputs: {[ key: string ]: any}): void
-```
-
-Executes the runCommands against the environment provided in the constructor.
-
-###### `inputs`<sup>Required</sup> <a name="inputs" id="cdk-ssm-documents.RunPowerShellScriptStep.executeStep.parameter.inputs"></a>
-
-- *Type:* {[ key: string ]: any}
-
----
 
 ##### `variables` <a name="variables" id="cdk-ssm-documents.RunPowerShellScriptStep.variables"></a>
 
@@ -9307,11 +8334,9 @@ Any object.
 | <code><a href="#cdk-ssm-documents.RunPowerShellScriptStep.property.finallyStep">finallyStep</a></code> | <code>boolean</code> | *No description.* |
 | <code><a href="#cdk-ssm-documents.RunPowerShellScriptStep.property.markSuccessAndExitOnFailure">markSuccessAndExitOnFailure</a></code> | <code>boolean</code> | *No description.* |
 | <code><a href="#cdk-ssm-documents.RunPowerShellScriptStep.property.platforms">platforms</a></code> | <code><a href="#cdk-ssm-documents.Platform">Platform</a>[]</code> | *No description.* |
-| <code><a href="#cdk-ssm-documents.RunPowerShellScriptStep.property.simulationPlatform">simulationPlatform</a></code> | <code><a href="#cdk-ssm-documents.Platform">Platform</a></code> | *No description.* |
 | <code><a href="#cdk-ssm-documents.RunPowerShellScriptStep.property.precondition">precondition</a></code> | <code><a href="#cdk-ssm-documents.Precondition">Precondition</a></code> | *No description.* |
 | <code><a href="#cdk-ssm-documents.RunPowerShellScriptStep.property.allStepsInExecution">allStepsInExecution</a></code> | <code><a href="#cdk-ssm-documents.CommandStep">CommandStep</a>[]</code> | *No description.* |
 | <code><a href="#cdk-ssm-documents.RunPowerShellScriptStep.property.nextStep">nextStep</a></code> | <code><a href="#cdk-ssm-documents.CommandStep">CommandStep</a></code> | *No description.* |
-| <code><a href="#cdk-ssm-documents.RunPowerShellScriptStep.property.environment">environment</a></code> | <code><a href="#cdk-ssm-documents.IEnvironment">IEnvironment</a></code> | *No description.* |
 | <code><a href="#cdk-ssm-documents.RunPowerShellScriptStep.property.runCommand">runCommand</a></code> | <code><a href="#cdk-ssm-documents.IStringVariable">IStringVariable</a>[]</code> | *No description.* |
 | <code><a href="#cdk-ssm-documents.RunPowerShellScriptStep.property.timeoutSeconds">timeoutSeconds</a></code> | <code>number</code> | *No description.* |
 | <code><a href="#cdk-ssm-documents.RunPowerShellScriptStep.property.workingDirectory">workingDirectory</a></code> | <code><a href="#cdk-ssm-documents.IStringVariable">IStringVariable</a></code> | *No description.* |
@@ -9430,16 +8455,6 @@ public readonly platforms: Platform[];
 
 ---
 
-##### `simulationPlatform`<sup>Required</sup> <a name="simulationPlatform" id="cdk-ssm-documents.RunPowerShellScriptStep.property.simulationPlatform"></a>
-
-```typescript
-public readonly simulationPlatform: Platform;
-```
-
-- *Type:* <a href="#cdk-ssm-documents.Platform">Platform</a>
-
----
-
 ##### `precondition`<sup>Optional</sup> <a name="precondition" id="cdk-ssm-documents.RunPowerShellScriptStep.property.precondition"></a>
 
 ```typescript
@@ -9467,16 +8482,6 @@ public readonly nextStep: CommandStep;
 ```
 
 - *Type:* <a href="#cdk-ssm-documents.CommandStep">CommandStep</a>
-
----
-
-##### `environment`<sup>Required</sup> <a name="environment" id="cdk-ssm-documents.RunPowerShellScriptStep.property.environment"></a>
-
-```typescript
-public readonly environment: IEnvironment;
-```
-
-- *Type:* <a href="#cdk-ssm-documents.IEnvironment">IEnvironment</a>
 
 ---
 
@@ -9554,11 +8559,9 @@ new RunShellScriptStep(scope: Construct, id: string, props: RunShellScriptStepPr
 | **Name** | **Description** |
 | --- | --- |
 | <code><a href="#cdk-ssm-documents.RunShellScriptStep.toString">toString</a></code> | Returns a string representation of this construct. |
-| <code><a href="#cdk-ssm-documents.RunShellScriptStep.invoke">invoke</a></code> | Invokes the current step on the input and will return a SimulationResult. |
 | <code><a href="#cdk-ssm-documents.RunShellScriptStep.listInputs">listInputs</a></code> | Inputs required for this command includes both the runCommand variables and workingDirectory if provided. |
 | <code><a href="#cdk-ssm-documents.RunShellScriptStep.listOutputs">listOutputs</a></code> | RunCommand Steps do not have outputs. |
 | <code><a href="#cdk-ssm-documents.RunShellScriptStep.toSsmEntry">toSsmEntry</a></code> | Converts this step into an object to prepare for yaml/json representation of this step. |
-| <code><a href="#cdk-ssm-documents.RunShellScriptStep.executeStep">executeStep</a></code> | Executes the runCommands against the environment provided in the constructor. |
 | <code><a href="#cdk-ssm-documents.RunShellScriptStep.variables">variables</a></code> | *No description.* |
 
 ---
@@ -9570,22 +8573,6 @@ public toString(): string
 ```
 
 Returns a string representation of this construct.
-
-##### `invoke` <a name="invoke" id="cdk-ssm-documents.RunShellScriptStep.invoke"></a>
-
-```typescript
-public invoke(inputs: {[ key: string ]: any}): SimulationResult
-```
-
-Invokes the current step on the input and will return a SimulationResult.
-
-###### `inputs`<sup>Required</sup> <a name="inputs" id="cdk-ssm-documents.RunShellScriptStep.invoke.parameter.inputs"></a>
-
-- *Type:* {[ key: string ]: any}
-
-must contain all of the inputs declared by the current step.
-
----
 
 ##### `listInputs` <a name="listInputs" id="cdk-ssm-documents.RunShellScriptStep.listInputs"></a>
 
@@ -9610,20 +8597,6 @@ public toSsmEntry(): {[ key: string ]: any}
 ```
 
 Converts this step into an object to prepare for yaml/json representation of this step.
-
-##### `executeStep` <a name="executeStep" id="cdk-ssm-documents.RunShellScriptStep.executeStep"></a>
-
-```typescript
-public executeStep(inputs: {[ key: string ]: any}): void
-```
-
-Executes the runCommands against the environment provided in the constructor.
-
-###### `inputs`<sup>Required</sup> <a name="inputs" id="cdk-ssm-documents.RunShellScriptStep.executeStep.parameter.inputs"></a>
-
-- *Type:* {[ key: string ]: any}
-
----
 
 ##### `variables` <a name="variables" id="cdk-ssm-documents.RunShellScriptStep.variables"></a>
 
@@ -9672,11 +8645,9 @@ Any object.
 | <code><a href="#cdk-ssm-documents.RunShellScriptStep.property.finallyStep">finallyStep</a></code> | <code>boolean</code> | *No description.* |
 | <code><a href="#cdk-ssm-documents.RunShellScriptStep.property.markSuccessAndExitOnFailure">markSuccessAndExitOnFailure</a></code> | <code>boolean</code> | *No description.* |
 | <code><a href="#cdk-ssm-documents.RunShellScriptStep.property.platforms">platforms</a></code> | <code><a href="#cdk-ssm-documents.Platform">Platform</a>[]</code> | *No description.* |
-| <code><a href="#cdk-ssm-documents.RunShellScriptStep.property.simulationPlatform">simulationPlatform</a></code> | <code><a href="#cdk-ssm-documents.Platform">Platform</a></code> | *No description.* |
 | <code><a href="#cdk-ssm-documents.RunShellScriptStep.property.precondition">precondition</a></code> | <code><a href="#cdk-ssm-documents.Precondition">Precondition</a></code> | *No description.* |
 | <code><a href="#cdk-ssm-documents.RunShellScriptStep.property.allStepsInExecution">allStepsInExecution</a></code> | <code><a href="#cdk-ssm-documents.CommandStep">CommandStep</a>[]</code> | *No description.* |
 | <code><a href="#cdk-ssm-documents.RunShellScriptStep.property.nextStep">nextStep</a></code> | <code><a href="#cdk-ssm-documents.CommandStep">CommandStep</a></code> | *No description.* |
-| <code><a href="#cdk-ssm-documents.RunShellScriptStep.property.environment">environment</a></code> | <code><a href="#cdk-ssm-documents.IEnvironment">IEnvironment</a></code> | *No description.* |
 | <code><a href="#cdk-ssm-documents.RunShellScriptStep.property.runCommand">runCommand</a></code> | <code><a href="#cdk-ssm-documents.IStringVariable">IStringVariable</a>[]</code> | *No description.* |
 | <code><a href="#cdk-ssm-documents.RunShellScriptStep.property.timeoutSeconds">timeoutSeconds</a></code> | <code>number</code> | *No description.* |
 | <code><a href="#cdk-ssm-documents.RunShellScriptStep.property.workingDirectory">workingDirectory</a></code> | <code><a href="#cdk-ssm-documents.IStringVariable">IStringVariable</a></code> | *No description.* |
@@ -9795,16 +8766,6 @@ public readonly platforms: Platform[];
 
 ---
 
-##### `simulationPlatform`<sup>Required</sup> <a name="simulationPlatform" id="cdk-ssm-documents.RunShellScriptStep.property.simulationPlatform"></a>
-
-```typescript
-public readonly simulationPlatform: Platform;
-```
-
-- *Type:* <a href="#cdk-ssm-documents.Platform">Platform</a>
-
----
-
 ##### `precondition`<sup>Optional</sup> <a name="precondition" id="cdk-ssm-documents.RunShellScriptStep.property.precondition"></a>
 
 ```typescript
@@ -9832,16 +8793,6 @@ public readonly nextStep: CommandStep;
 ```
 
 - *Type:* <a href="#cdk-ssm-documents.CommandStep">CommandStep</a>
-
----
-
-##### `environment`<sup>Required</sup> <a name="environment" id="cdk-ssm-documents.RunShellScriptStep.property.environment"></a>
-
-```typescript
-public readonly environment: IEnvironment;
-```
-
-- *Type:* <a href="#cdk-ssm-documents.IEnvironment">IEnvironment</a>
 
 ---
 
@@ -9919,11 +8870,9 @@ new SleepStep(scope: Construct, id: string, props: SleepStepProps)
 | **Name** | **Description** |
 | --- | --- |
 | <code><a href="#cdk-ssm-documents.SleepStep.toString">toString</a></code> | Returns a string representation of this construct. |
-| <code><a href="#cdk-ssm-documents.SleepStep.invoke">invoke</a></code> | Invokes the current step on the input and will return a SimulationResult. |
 | <code><a href="#cdk-ssm-documents.SleepStep.listInputs">listInputs</a></code> | No inputs required for Sleep step. |
 | <code><a href="#cdk-ssm-documents.SleepStep.listOutputs">listOutputs</a></code> | No outputs emitted from Sleep step. |
 | <code><a href="#cdk-ssm-documents.SleepStep.toSsmEntry">toSsmEntry</a></code> | Converts this step into an object to prepare for yaml/json representation of this step. |
-| <code><a href="#cdk-ssm-documents.SleepStep.executeStep">executeStep</a></code> | Runs this step (and only this step) in simulation with the provided inputs. |
 | <code><a href="#cdk-ssm-documents.SleepStep.variables">variables</a></code> | *No description.* |
 
 ---
@@ -9935,22 +8884,6 @@ public toString(): string
 ```
 
 Returns a string representation of this construct.
-
-##### `invoke` <a name="invoke" id="cdk-ssm-documents.SleepStep.invoke"></a>
-
-```typescript
-public invoke(inputs: {[ key: string ]: any}): SimulationResult
-```
-
-Invokes the current step on the input and will return a SimulationResult.
-
-###### `inputs`<sup>Required</sup> <a name="inputs" id="cdk-ssm-documents.SleepStep.invoke.parameter.inputs"></a>
-
-- *Type:* {[ key: string ]: any}
-
-must contain all of the inputs declared by the current step.
-
----
 
 ##### `listInputs` <a name="listInputs" id="cdk-ssm-documents.SleepStep.listInputs"></a>
 
@@ -9975,20 +8908,6 @@ public toSsmEntry(): {[ key: string ]: any}
 ```
 
 Converts this step into an object to prepare for yaml/json representation of this step.
-
-##### `executeStep` <a name="executeStep" id="cdk-ssm-documents.SleepStep.executeStep"></a>
-
-```typescript
-public executeStep(_inputs: {[ key: string ]: any}): {[ key: string ]: any}
-```
-
-Runs this step (and only this step) in simulation with the provided inputs.
-
-###### `_inputs`<sup>Required</sup> <a name="_inputs" id="cdk-ssm-documents.SleepStep.executeStep.parameter._inputs"></a>
-
-- *Type:* {[ key: string ]: any}
-
----
 
 ##### `variables` <a name="variables" id="cdk-ssm-documents.SleepStep.variables"></a>
 
@@ -10035,11 +8954,10 @@ Any object.
 | <code><a href="#cdk-ssm-documents.SleepStep.property.isEnd">isEnd</a></code> | <code>boolean</code> | *No description.* |
 | <code><a href="#cdk-ssm-documents.SleepStep.property.maxAttempts">maxAttempts</a></code> | <code>number</code> | *No description.* |
 | <code><a href="#cdk-ssm-documents.SleepStep.property.timeoutSeconds">timeoutSeconds</a></code> | <code>number</code> | *No description.* |
-| <code><a href="#cdk-ssm-documents.SleepStep.property.onCancel">onCancel</a></code> | <code><a href="#cdk-ssm-documents.Step">Step</a></code> | *No description.* |
-| <code><a href="#cdk-ssm-documents.SleepStep.property.onFailure">onFailure</a></code> | <code><a href="#cdk-ssm-documents.Step">Step</a></code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.SleepStep.property.onCancel">onCancel</a></code> | <code><a href="#cdk-ssm-documents.AutomationStep">AutomationStep</a></code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.SleepStep.property.onFailure">onFailure</a></code> | <code><a href="#cdk-ssm-documents.AutomationStep">AutomationStep</a></code> | *No description.* |
 | <code><a href="#cdk-ssm-documents.SleepStep.property.allStepsInExecution">allStepsInExecution</a></code> | <code><a href="#cdk-ssm-documents.AutomationStep">AutomationStep</a>[]</code> | *No description.* |
 | <code><a href="#cdk-ssm-documents.SleepStep.property.nextStep">nextStep</a></code> | <code><a href="#cdk-ssm-documents.AutomationStep">AutomationStep</a></code> | *No description.* |
-| <code><a href="#cdk-ssm-documents.SleepStep.property.sleeper">sleeper</a></code> | <code><a href="#cdk-ssm-documents.ISleepHook">ISleepHook</a></code> | *No description.* |
 | <code><a href="#cdk-ssm-documents.SleepStep.property.sleepSeconds">sleepSeconds</a></code> | <code>number</code> | *No description.* |
 
 ---
@@ -10139,20 +9057,20 @@ public readonly timeoutSeconds: number;
 ##### `onCancel`<sup>Optional</sup> <a name="onCancel" id="cdk-ssm-documents.SleepStep.property.onCancel"></a>
 
 ```typescript
-public readonly onCancel: Step;
+public readonly onCancel: AutomationStep;
 ```
 
-- *Type:* <a href="#cdk-ssm-documents.Step">Step</a>
+- *Type:* <a href="#cdk-ssm-documents.AutomationStep">AutomationStep</a>
 
 ---
 
 ##### `onFailure`<sup>Optional</sup> <a name="onFailure" id="cdk-ssm-documents.SleepStep.property.onFailure"></a>
 
 ```typescript
-public readonly onFailure: Step;
+public readonly onFailure: AutomationStep;
 ```
 
-- *Type:* <a href="#cdk-ssm-documents.Step">Step</a>
+- *Type:* <a href="#cdk-ssm-documents.AutomationStep">AutomationStep</a>
 
 ---
 
@@ -10173,16 +9091,6 @@ public readonly nextStep: AutomationStep;
 ```
 
 - *Type:* <a href="#cdk-ssm-documents.AutomationStep">AutomationStep</a>
-
----
-
-##### `sleeper`<sup>Required</sup> <a name="sleeper" id="cdk-ssm-documents.SleepStep.property.sleeper"></a>
-
-```typescript
-public readonly sleeper: ISleepHook;
-```
-
-- *Type:* <a href="#cdk-ssm-documents.ISleepHook">ISleepHook</a>
 
 ---
 
@@ -10266,8 +9174,8 @@ new SsmDocument(scope: Construct, id: string, props: SsmDocumentProps)
 | **Name** | **Description** |
 | --- | --- |
 | <code><a href="#cdk-ssm-documents.SsmDocument.toString">toString</a></code> | Returns a string representation of this construct. |
+| <code><a href="#cdk-ssm-documents.SsmDocument.documentType">documentType</a></code> | *No description.* |
 | <code><a href="#cdk-ssm-documents.SsmDocument.print">print</a></code> | Synthesize before calling this function! You can use this to Synthesize: cdk.SynthUtils.synthesize(stack); |
-| <code><a href="#cdk-ssm-documents.SsmDocument.runSimulation">runSimulation</a></code> | Synthesize before calling this function! You can use this to Synthesize: cdk.SynthUtils.synthesize(stack); |
 
 ---
 
@@ -10278,6 +9186,12 @@ public toString(): string
 ```
 
 Returns a string representation of this construct.
+
+##### `documentType` <a name="documentType" id="cdk-ssm-documents.SsmDocument.documentType"></a>
+
+```typescript
+public documentType(): string
+```
 
 ##### `print` <a name="print" id="cdk-ssm-documents.SsmDocument.print"></a>
 
@@ -10290,27 +9204,6 @@ Synthesize before calling this function! You can use this to Synthesize: cdk.Syn
 Converts the objects define in the SSM Document (including all of the steps) to an SSM document string.
 The format is dependency on the documentFormat property provided to the class.
 The yaml can be used as is and will behave (or at least should behave) as was simulated in the runSimulation().
-
-##### `runSimulation` <a name="runSimulation" id="cdk-ssm-documents.SsmDocument.runSimulation"></a>
-
-```typescript
-public runSimulation(inputs: {[ key: string ]: any}): DocumentResult
-```
-
-Synthesize before calling this function! You can use this to Synthesize: cdk.SynthUtils.synthesize(stack);
-
-Executes the SSM Document in simluation mode.
-This method DOES NOT result in invocation of SSM APIs.
-Rather, all steps are executed locally and mimic the behavior of SSM.
-If any inputs are not provided in this function, the specified defaults for the inputs will be used.
-
-###### `inputs`<sup>Required</sup> <a name="inputs" id="cdk-ssm-documents.SsmDocument.runSimulation.parameter.inputs"></a>
-
-- *Type:* {[ key: string ]: any}
-
-the inputs to feed into the simulated execution.
-
----
 
 #### Static Functions <a name="Static Functions" id="Static Functions"></a>
 
@@ -10488,7 +9381,6 @@ new Step(scope: Construct, id: string, props: StepProps)
 | **Name** | **Description** |
 | --- | --- |
 | <code><a href="#cdk-ssm-documents.Step.toString">toString</a></code> | Returns a string representation of this construct. |
-| <code><a href="#cdk-ssm-documents.Step.invoke">invoke</a></code> | Invokes the entire chain of steps including this step (executeStep()) and all subsequent steps in the chain. |
 | <code><a href="#cdk-ssm-documents.Step.listInputs">listInputs</a></code> | Lists the inputs that are required for this step. |
 | <code><a href="#cdk-ssm-documents.Step.listOutputs">listOutputs</a></code> | Lists the outputs that will be returned from this step. |
 | <code><a href="#cdk-ssm-documents.Step.toSsmEntry">toSsmEntry</a></code> | Converts this step into an object to prepare for yaml/json representation of this step. |
@@ -10502,20 +9394,6 @@ public toString(): string
 ```
 
 Returns a string representation of this construct.
-
-##### `invoke` <a name="invoke" id="cdk-ssm-documents.Step.invoke"></a>
-
-```typescript
-public invoke(inputs: {[ key: string ]: any}): SimulationResult
-```
-
-Invokes the entire chain of steps including this step (executeStep()) and all subsequent steps in the chain.
-
-###### `inputs`<sup>Required</sup> <a name="inputs" id="cdk-ssm-documents.Step.invoke.parameter.inputs"></a>
-
-- *Type:* {[ key: string ]: any}
-
----
 
 ##### `listInputs` <a name="listInputs" id="cdk-ssm-documents.Step.listInputs"></a>
 
@@ -10656,8 +9534,9 @@ You can supply mocks to the simulator and validate the calls and the flow of the
 | **Name** | **Description** |
 | --- | --- |
 | <code><a href="#cdk-ssm-documents.StringDocument.toString">toString</a></code> | Returns a string representation of this construct. |
+| <code><a href="#cdk-ssm-documents.StringDocument.documentType">documentType</a></code> | *No description.* |
 | <code><a href="#cdk-ssm-documents.StringDocument.print">print</a></code> | Synthesize before calling this function! You can use this to Synthesize: cdk.SynthUtils.synthesize(stack); |
-| <code><a href="#cdk-ssm-documents.StringDocument.runSimulation">runSimulation</a></code> | Synthesize before calling this function! You can use this to Synthesize: cdk.SynthUtils.synthesize(stack); |
+| <code><a href="#cdk-ssm-documents.StringDocument.collectedSteps">collectedSteps</a></code> | *No description.* |
 
 ---
 
@@ -10668,6 +9547,12 @@ public toString(): string
 ```
 
 Returns a string representation of this construct.
+
+##### `documentType` <a name="documentType" id="cdk-ssm-documents.StringDocument.documentType"></a>
+
+```typescript
+public documentType(): string
+```
 
 ##### `print` <a name="print" id="cdk-ssm-documents.StringDocument.print"></a>
 
@@ -10681,26 +9566,11 @@ Converts the objects define in the SSM Document (including all of the steps) to 
 The format is dependency on the documentFormat property provided to the class.
 The yaml can be used as is and will behave (or at least should behave) as was simulated in the runSimulation().
 
-##### `runSimulation` <a name="runSimulation" id="cdk-ssm-documents.StringDocument.runSimulation"></a>
+##### `collectedSteps` <a name="collectedSteps" id="cdk-ssm-documents.StringDocument.collectedSteps"></a>
 
 ```typescript
-public runSimulation(inputs: {[ key: string ]: any}): DocumentResult
+public collectedSteps(): AutomationStep[]
 ```
-
-Synthesize before calling this function! You can use this to Synthesize: cdk.SynthUtils.synthesize(stack);
-
-Executes the SSM Document in simluation mode.
-This method DOES NOT result in invocation of SSM APIs.
-Rather, all steps are executed locally and mimic the behavior of SSM.
-If any inputs are not provided in this function, the specified defaults for the inputs will be used.
-
-###### `inputs`<sup>Required</sup> <a name="inputs" id="cdk-ssm-documents.StringDocument.runSimulation.parameter.inputs"></a>
-
-- *Type:* {[ key: string ]: any}
-
-the inputs to feed into the simulated execution.
-
----
 
 #### Static Functions <a name="Static Functions" id="Static Functions"></a>
 
@@ -10736,7 +9606,7 @@ Any object.
 ```typescript
 import { StringDocument } from 'cdk-ssm-documents'
 
-StringDocument.fromFile(stack: Construct, id: string, documentFilePath: string, simulationProps: SimulationProps)
+StringDocument.fromFile(stack: Construct, id: string, documentFilePath: string)
 ```
 
 Create an AutomationDocument from an existing AutomationDocument yaml or json file.
@@ -10762,18 +9632,12 @@ You can use the returned AutomationDocument to run simulations as you would othe
 
 ---
 
-###### `simulationProps`<sup>Required</sup> <a name="simulationProps" id="cdk-ssm-documents.StringDocument.fromFile.parameter.simulationProps"></a>
-
-- *Type:* <a href="#cdk-ssm-documents.SimulationProps">SimulationProps</a>
-
----
-
 ##### `fromJson` <a name="fromJson" id="cdk-ssm-documents.StringDocument.fromJson"></a>
 
 ```typescript
 import { StringDocument } from 'cdk-ssm-documents'
 
-StringDocument.fromJson(stack: Construct, id: string, documentJson: string, simulationProps: SimulationProps)
+StringDocument.fromJson(stack: Construct, id: string, documentJson: string)
 ```
 
 Create an AutomationDocument from an existing json string.
@@ -10798,18 +9662,12 @@ You can use the returned AutomationDocument to run simulations as you would othe
 
 ---
 
-###### `simulationProps`<sup>Required</sup> <a name="simulationProps" id="cdk-ssm-documents.StringDocument.fromJson.parameter.simulationProps"></a>
-
-- *Type:* <a href="#cdk-ssm-documents.SimulationProps">SimulationProps</a>
-
----
-
 ##### `fromYaml` <a name="fromYaml" id="cdk-ssm-documents.StringDocument.fromYaml"></a>
 
 ```typescript
 import { StringDocument } from 'cdk-ssm-documents'
 
-StringDocument.fromYaml(stack: Construct, id: string, documentYaml: string, simulationProps: SimulationProps)
+StringDocument.fromYaml(stack: Construct, id: string, documentYaml: string)
 ```
 
 Create an AutomationDocument from an existing yaml string.
@@ -10831,12 +9689,6 @@ You can use the returned AutomationDocument to run simulations as you would othe
 ###### `documentYaml`<sup>Required</sup> <a name="documentYaml" id="cdk-ssm-documents.StringDocument.fromYaml.parameter.documentYaml"></a>
 
 - *Type:* string
-
----
-
-###### `simulationProps`<sup>Required</sup> <a name="simulationProps" id="cdk-ssm-documents.StringDocument.fromYaml.parameter.simulationProps"></a>
-
-- *Type:* <a href="#cdk-ssm-documents.SimulationProps">SimulationProps</a>
 
 ---
 
@@ -11006,7 +9858,7 @@ Any object.
 ```typescript
 import { StringStep } from 'cdk-ssm-documents'
 
-StringStep.fromJson(scope: Construct, json: string, simulationProps: SimulationProps)
+StringStep.fromJson(scope: Construct, json: string)
 ```
 
 Builds a step object from a json declaration.
@@ -11026,18 +9878,12 @@ if you wish to gain access to action specific functionality,
 
 ---
 
-###### `simulationProps`<sup>Required</sup> <a name="simulationProps" id="cdk-ssm-documents.StringStep.fromJson.parameter.simulationProps"></a>
-
-- *Type:* <a href="#cdk-ssm-documents.SimulationProps">SimulationProps</a>
-
----
-
 ##### `fromObject` <a name="fromObject" id="cdk-ssm-documents.StringStep.fromObject"></a>
 
 ```typescript
 import { StringStep } from 'cdk-ssm-documents'
 
-StringStep.fromObject(scope: Construct, props: {[ key: string ]: any}, simulationProps: SimulationProps)
+StringStep.fromObject(scope: Construct, props: {[ key: string ]: any})
 ```
 
 Builds a step object from an object.
@@ -11057,18 +9903,12 @@ if you wish to gain access to action specific functionality,
 
 ---
 
-###### `simulationProps`<sup>Required</sup> <a name="simulationProps" id="cdk-ssm-documents.StringStep.fromObject.parameter.simulationProps"></a>
-
-- *Type:* <a href="#cdk-ssm-documents.SimulationProps">SimulationProps</a>
-
----
-
 ##### `fromYaml` <a name="fromYaml" id="cdk-ssm-documents.StringStep.fromYaml"></a>
 
 ```typescript
 import { StringStep } from 'cdk-ssm-documents'
 
-StringStep.fromYaml(scope: Construct, inputYaml: string, simulationProps: SimulationProps)
+StringStep.fromYaml(scope: Construct, inputYaml: string)
 ```
 
 Builds a step object from a yaml declaration.
@@ -11085,12 +9925,6 @@ if you wish to gain access to action specific functionality,
 ###### `inputYaml`<sup>Required</sup> <a name="inputYaml" id="cdk-ssm-documents.StringStep.fromYaml.parameter.inputYaml"></a>
 
 - *Type:* string
-
----
-
-###### `simulationProps`<sup>Required</sup> <a name="simulationProps" id="cdk-ssm-documents.StringStep.fromYaml.parameter.simulationProps"></a>
-
-- *Type:* <a href="#cdk-ssm-documents.SimulationProps">SimulationProps</a>
 
 ---
 
@@ -11156,8 +9990,9 @@ new TimedDocument(stage: Construct, id: string, props: AutomationDocumentProps)
 | **Name** | **Description** |
 | --- | --- |
 | <code><a href="#cdk-ssm-documents.TimedDocument.toString">toString</a></code> | Returns a string representation of this construct. |
+| <code><a href="#cdk-ssm-documents.TimedDocument.documentType">documentType</a></code> | *No description.* |
 | <code><a href="#cdk-ssm-documents.TimedDocument.print">print</a></code> | Synthesize before calling this function! You can use this to Synthesize: cdk.SynthUtils.synthesize(stack); |
-| <code><a href="#cdk-ssm-documents.TimedDocument.runSimulation">runSimulation</a></code> | Synthesize before calling this function! You can use this to Synthesize: cdk.SynthUtils.synthesize(stack); |
+| <code><a href="#cdk-ssm-documents.TimedDocument.collectedSteps">collectedSteps</a></code> | *No description.* |
 
 ---
 
@@ -11168,6 +10003,12 @@ public toString(): string
 ```
 
 Returns a string representation of this construct.
+
+##### `documentType` <a name="documentType" id="cdk-ssm-documents.TimedDocument.documentType"></a>
+
+```typescript
+public documentType(): string
+```
 
 ##### `print` <a name="print" id="cdk-ssm-documents.TimedDocument.print"></a>
 
@@ -11181,26 +10022,11 @@ Converts the objects define in the SSM Document (including all of the steps) to 
 The format is dependency on the documentFormat property provided to the class.
 The yaml can be used as is and will behave (or at least should behave) as was simulated in the runSimulation().
 
-##### `runSimulation` <a name="runSimulation" id="cdk-ssm-documents.TimedDocument.runSimulation"></a>
+##### `collectedSteps` <a name="collectedSteps" id="cdk-ssm-documents.TimedDocument.collectedSteps"></a>
 
 ```typescript
-public runSimulation(inputs: {[ key: string ]: any}): DocumentResult
+public collectedSteps(): AutomationStep[]
 ```
-
-Synthesize before calling this function! You can use this to Synthesize: cdk.SynthUtils.synthesize(stack);
-
-Executes the SSM Document in simluation mode.
-This method DOES NOT result in invocation of SSM APIs.
-Rather, all steps are executed locally and mimic the behavior of SSM.
-If any inputs are not provided in this function, the specified defaults for the inputs will be used.
-
-###### `inputs`<sup>Required</sup> <a name="inputs" id="cdk-ssm-documents.TimedDocument.runSimulation.parameter.inputs"></a>
-
-- *Type:* {[ key: string ]: any}
-
-the inputs to feed into the simulated execution.
-
----
 
 #### Static Functions <a name="Static Functions" id="Static Functions"></a>
 
@@ -11380,11 +10206,9 @@ new WaitForResourceStep(scope: Construct, id: string, props: WaitForResourceStep
 | **Name** | **Description** |
 | --- | --- |
 | <code><a href="#cdk-ssm-documents.WaitForResourceStep.toString">toString</a></code> | Returns a string representation of this construct. |
-| <code><a href="#cdk-ssm-documents.WaitForResourceStep.invoke">invoke</a></code> | Invokes the current step on the input and will return a SimulationResult. |
 | <code><a href="#cdk-ssm-documents.WaitForResourceStep.listInputs">listInputs</a></code> | Derives the inputs by parsing the apiParams to find matches for inputs in double circle braces ("{{INPUT}}"). |
 | <code><a href="#cdk-ssm-documents.WaitForResourceStep.listOutputs">listOutputs</a></code> | There are no outputs for this step. |
 | <code><a href="#cdk-ssm-documents.WaitForResourceStep.toSsmEntry">toSsmEntry</a></code> | Converts this step into an object to prepare for yaml/json representation of this step. |
-| <code><a href="#cdk-ssm-documents.WaitForResourceStep.executeStep">executeStep</a></code> | As is the case in an SSM Automation execution, this will continue to sleep/execute until desired value is found. |
 | <code><a href="#cdk-ssm-documents.WaitForResourceStep.variables">variables</a></code> | *No description.* |
 
 ---
@@ -11396,22 +10220,6 @@ public toString(): string
 ```
 
 Returns a string representation of this construct.
-
-##### `invoke` <a name="invoke" id="cdk-ssm-documents.WaitForResourceStep.invoke"></a>
-
-```typescript
-public invoke(inputs: {[ key: string ]: any}): SimulationResult
-```
-
-Invokes the current step on the input and will return a SimulationResult.
-
-###### `inputs`<sup>Required</sup> <a name="inputs" id="cdk-ssm-documents.WaitForResourceStep.invoke.parameter.inputs"></a>
-
-- *Type:* {[ key: string ]: any}
-
-must contain all of the inputs declared by the current step.
-
----
 
 ##### `listInputs` <a name="listInputs" id="cdk-ssm-documents.WaitForResourceStep.listInputs"></a>
 
@@ -11436,22 +10244,6 @@ public toSsmEntry(): {[ key: string ]: any}
 ```
 
 Converts this step into an object to prepare for yaml/json representation of this step.
-
-##### `executeStep` <a name="executeStep" id="cdk-ssm-documents.WaitForResourceStep.executeStep"></a>
-
-```typescript
-public executeStep(inputs: {[ key: string ]: any}): {[ key: string ]: any}
-```
-
-As is the case in an SSM Automation execution, this will continue to sleep/execute until desired value is found.
-
-This function will throw if the timeoutSeconds is exceeded and the desired value is still not received from AWS.
-
-###### `inputs`<sup>Required</sup> <a name="inputs" id="cdk-ssm-documents.WaitForResourceStep.executeStep.parameter.inputs"></a>
-
-- *Type:* {[ key: string ]: any}
-
----
 
 ##### `variables` <a name="variables" id="cdk-ssm-documents.WaitForResourceStep.variables"></a>
 
@@ -11498,19 +10290,17 @@ Any object.
 | <code><a href="#cdk-ssm-documents.WaitForResourceStep.property.isEnd">isEnd</a></code> | <code>boolean</code> | *No description.* |
 | <code><a href="#cdk-ssm-documents.WaitForResourceStep.property.maxAttempts">maxAttempts</a></code> | <code>number</code> | *No description.* |
 | <code><a href="#cdk-ssm-documents.WaitForResourceStep.property.timeoutSeconds">timeoutSeconds</a></code> | <code>number</code> | *No description.* |
-| <code><a href="#cdk-ssm-documents.WaitForResourceStep.property.onCancel">onCancel</a></code> | <code><a href="#cdk-ssm-documents.Step">Step</a></code> | *No description.* |
-| <code><a href="#cdk-ssm-documents.WaitForResourceStep.property.onFailure">onFailure</a></code> | <code><a href="#cdk-ssm-documents.Step">Step</a></code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.WaitForResourceStep.property.onCancel">onCancel</a></code> | <code><a href="#cdk-ssm-documents.AutomationStep">AutomationStep</a></code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.WaitForResourceStep.property.onFailure">onFailure</a></code> | <code><a href="#cdk-ssm-documents.AutomationStep">AutomationStep</a></code> | *No description.* |
 | <code><a href="#cdk-ssm-documents.WaitForResourceStep.property.allStepsInExecution">allStepsInExecution</a></code> | <code><a href="#cdk-ssm-documents.AutomationStep">AutomationStep</a>[]</code> | *No description.* |
 | <code><a href="#cdk-ssm-documents.WaitForResourceStep.property.nextStep">nextStep</a></code> | <code><a href="#cdk-ssm-documents.AutomationStep">AutomationStep</a></code> | *No description.* |
 | <code><a href="#cdk-ssm-documents.WaitForResourceStep.property.apiParams">apiParams</a></code> | <code><a href="#cdk-ssm-documents.DictFormat">DictFormat</a></code> | *No description.* |
-| <code><a href="#cdk-ssm-documents.WaitForResourceStep.property.awsInvoker">awsInvoker</a></code> | <code><a href="#cdk-ssm-documents.IAwsInvoker">IAwsInvoker</a></code> | *No description.* |
 | <code><a href="#cdk-ssm-documents.WaitForResourceStep.property.javaScriptApi">javaScriptApi</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#cdk-ssm-documents.WaitForResourceStep.property.outputs">outputs</a></code> | <code><a href="#cdk-ssm-documents.Output">Output</a>[]</code> | *No description.* |
 | <code><a href="#cdk-ssm-documents.WaitForResourceStep.property.pascalCaseApi">pascalCaseApi</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#cdk-ssm-documents.WaitForResourceStep.property.service">service</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#cdk-ssm-documents.WaitForResourceStep.property.desiredValues">desiredValues</a></code> | <code>string[]</code> | *No description.* |
 | <code><a href="#cdk-ssm-documents.WaitForResourceStep.property.selector">selector</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#cdk-ssm-documents.WaitForResourceStep.property.sleeper">sleeper</a></code> | <code><a href="#cdk-ssm-documents.ISleepHook">ISleepHook</a></code> | *No description.* |
 | <code><a href="#cdk-ssm-documents.WaitForResourceStep.property.sleepIntervalMillis">sleepIntervalMillis</a></code> | <code>number</code> | *No description.* |
 
 ---
@@ -11610,20 +10400,20 @@ public readonly timeoutSeconds: number;
 ##### `onCancel`<sup>Optional</sup> <a name="onCancel" id="cdk-ssm-documents.WaitForResourceStep.property.onCancel"></a>
 
 ```typescript
-public readonly onCancel: Step;
+public readonly onCancel: AutomationStep;
 ```
 
-- *Type:* <a href="#cdk-ssm-documents.Step">Step</a>
+- *Type:* <a href="#cdk-ssm-documents.AutomationStep">AutomationStep</a>
 
 ---
 
 ##### `onFailure`<sup>Optional</sup> <a name="onFailure" id="cdk-ssm-documents.WaitForResourceStep.property.onFailure"></a>
 
 ```typescript
-public readonly onFailure: Step;
+public readonly onFailure: AutomationStep;
 ```
 
-- *Type:* <a href="#cdk-ssm-documents.Step">Step</a>
+- *Type:* <a href="#cdk-ssm-documents.AutomationStep">AutomationStep</a>
 
 ---
 
@@ -11654,16 +10444,6 @@ public readonly apiParams: DictFormat;
 ```
 
 - *Type:* <a href="#cdk-ssm-documents.DictFormat">DictFormat</a>
-
----
-
-##### `awsInvoker`<sup>Required</sup> <a name="awsInvoker" id="cdk-ssm-documents.WaitForResourceStep.property.awsInvoker"></a>
-
-```typescript
-public readonly awsInvoker: IAwsInvoker;
-```
-
-- *Type:* <a href="#cdk-ssm-documents.IAwsInvoker">IAwsInvoker</a>
 
 ---
 
@@ -11727,16 +10507,6 @@ public readonly selector: string;
 
 ---
 
-##### `sleeper`<sup>Required</sup> <a name="sleeper" id="cdk-ssm-documents.WaitForResourceStep.property.sleeper"></a>
-
-```typescript
-public readonly sleeper: ISleepHook;
-```
-
-- *Type:* <a href="#cdk-ssm-documents.ISleepHook">ISleepHook</a>
-
----
-
 ##### `sleepIntervalMillis`<sup>Required</sup> <a name="sleepIntervalMillis" id="cdk-ssm-documents.WaitForResourceStep.property.sleepIntervalMillis"></a>
 
 ```typescript
@@ -11778,6 +10548,45 @@ public readonly DEFAULT_TIMEOUT: number;
 
 ## Structs <a name="Structs" id="Structs"></a>
 
+### ApiRunCommandProps <a name="ApiRunCommandProps" id="cdk-ssm-documents.ApiRunCommandProps"></a>
+
+#### Initializer <a name="Initializer" id="cdk-ssm-documents.ApiRunCommandProps.Initializer"></a>
+
+```typescript
+import { ApiRunCommandProps } from 'cdk-ssm-documents'
+
+const apiRunCommandProps: ApiRunCommandProps = { ... }
+```
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#cdk-ssm-documents.ApiRunCommandProps.property.awsInvoker">awsInvoker</a></code> | <code><a href="#cdk-ssm-documents.IAwsInvoker">IAwsInvoker</a></code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.ApiRunCommandProps.property.sleepHook">sleepHook</a></code> | <code><a href="#cdk-ssm-documents.ISleepHook">ISleepHook</a></code> | *No description.* |
+
+---
+
+##### `awsInvoker`<sup>Required</sup> <a name="awsInvoker" id="cdk-ssm-documents.ApiRunCommandProps.property.awsInvoker"></a>
+
+```typescript
+public readonly awsInvoker: IAwsInvoker;
+```
+
+- *Type:* <a href="#cdk-ssm-documents.IAwsInvoker">IAwsInvoker</a>
+
+---
+
+##### `sleepHook`<sup>Required</sup> <a name="sleepHook" id="cdk-ssm-documents.ApiRunCommandProps.property.sleepHook"></a>
+
+```typescript
+public readonly sleepHook: ISleepHook;
+```
+
+- *Type:* <a href="#cdk-ssm-documents.ISleepHook">ISleepHook</a>
+
+---
+
 ### ApproveStepProps <a name="ApproveStepProps" id="cdk-ssm-documents.ApproveStepProps"></a>
 
 Properties for ApproveStep.
@@ -11800,11 +10609,10 @@ const approveStepProps: ApproveStepProps = { ... }
 | <code><a href="#cdk-ssm-documents.ApproveStepProps.property.outputObserver">outputObserver</a></code> | <code><a href="#cdk-ssm-documents.IObserver">IObserver</a></code> | (Optional) Allows for observing the output of steps as they run. |
 | <code><a href="#cdk-ssm-documents.ApproveStepProps.property.isEnd">isEnd</a></code> | <code>boolean</code> | Whether to stop document execution after this step. |
 | <code><a href="#cdk-ssm-documents.ApproveStepProps.property.maxAttempts">maxAttempts</a></code> | <code>number</code> | (Optional) max attempts to run this step if there are failures. |
-| <code><a href="#cdk-ssm-documents.ApproveStepProps.property.onCancel">onCancel</a></code> | <code><a href="#cdk-ssm-documents.Step">Step</a></code> | (Optional) Step to jump to in the event that this step is cancelled. |
-| <code><a href="#cdk-ssm-documents.ApproveStepProps.property.onFailure">onFailure</a></code> | <code><a href="#cdk-ssm-documents.Step">Step</a></code> | (Optional) Step to jump to in the event that this step fails. |
+| <code><a href="#cdk-ssm-documents.ApproveStepProps.property.onCancel">onCancel</a></code> | <code><a href="#cdk-ssm-documents.AutomationStep">AutomationStep</a></code> | (Optional) Step to jump to in the event that this step is cancelled. |
+| <code><a href="#cdk-ssm-documents.ApproveStepProps.property.onFailure">onFailure</a></code> | <code><a href="#cdk-ssm-documents.AutomationStep">AutomationStep</a></code> | (Optional) Step to jump to in the event that this step fails. |
 | <code><a href="#cdk-ssm-documents.ApproveStepProps.property.timeoutSeconds">timeoutSeconds</a></code> | <code>number</code> | (Optional) timeout seconds to run this step. |
 | <code><a href="#cdk-ssm-documents.ApproveStepProps.property.approvers">approvers</a></code> | <code><a href="#cdk-ssm-documents.IStringListVariable">IStringListVariable</a></code> | A list of AWS authenticated principals who are able to either approve or reject the action. |
-| <code><a href="#cdk-ssm-documents.ApproveStepProps.property.approveHook">approveHook</a></code> | <code><a href="#cdk-ssm-documents.IApproveHook">IApproveHook</a></code> | (Optional) Approve hook to be called to pause the execution. |
 | <code><a href="#cdk-ssm-documents.ApproveStepProps.property.message">message</a></code> | <code><a href="#cdk-ssm-documents.IStringVariable">IStringVariable</a></code> | (Optional) The information you want to include in the Amazon SNS topic when the approval request is sent. |
 | <code><a href="#cdk-ssm-documents.ApproveStepProps.property.minRequiredApprovals">minRequiredApprovals</a></code> | <code><a href="#cdk-ssm-documents.INumberVariable">INumberVariable</a></code> | (Optional) The minimum number of approvals required to resume the automation. |
 | <code><a href="#cdk-ssm-documents.ApproveStepProps.property.notificationArn">notificationArn</a></code> | <code><a href="#cdk-ssm-documents.IStringVariable">IStringVariable</a></code> | (Optional) The Amazon Resource Name (ARN of an Amazon Simple Notification Service (Amazon SNS) topic for Automation approvals. |
@@ -11895,10 +10703,10 @@ public readonly maxAttempts: number;
 ##### `onCancel`<sup>Optional</sup> <a name="onCancel" id="cdk-ssm-documents.ApproveStepProps.property.onCancel"></a>
 
 ```typescript
-public readonly onCancel: Step;
+public readonly onCancel: AutomationStep;
 ```
 
-- *Type:* <a href="#cdk-ssm-documents.Step">Step</a>
+- *Type:* <a href="#cdk-ssm-documents.AutomationStep">AutomationStep</a>
 - *Default:* undefined
 
 (Optional) Step to jump to in the event that this step is cancelled.
@@ -11908,10 +10716,10 @@ public readonly onCancel: Step;
 ##### `onFailure`<sup>Optional</sup> <a name="onFailure" id="cdk-ssm-documents.ApproveStepProps.property.onFailure"></a>
 
 ```typescript
-public readonly onFailure: Step;
+public readonly onFailure: AutomationStep;
 ```
 
-- *Type:* <a href="#cdk-ssm-documents.Step">Step</a>
+- *Type:* <a href="#cdk-ssm-documents.AutomationStep">AutomationStep</a>
 - *Default:* undefined
 
 (Optional) Step to jump to in the event that this step fails.
@@ -11950,21 +10758,6 @@ You can specify principals by using any of the following formats:
 * An IAM user ARN
 * An IAM role ARN
 * An IAM assume role user ARN
-
----
-
-##### `approveHook`<sup>Optional</sup> <a name="approveHook" id="cdk-ssm-documents.ApproveStepProps.property.approveHook"></a>
-
-```typescript
-public readonly approveHook: IApproveHook;
-```
-
-- *Type:* <a href="#cdk-ssm-documents.IApproveHook">IApproveHook</a>
-- *Default:* ApproveHook instance. ApproveHook may not work in exported JSII languages. Override interface as needed.
-
-(Optional) Approve hook to be called to pause the execution.
-
-To mock this implementation either inject an instance of IApproveHook or use the provided MockApprove class.
 
 ---
 
@@ -12032,13 +10825,12 @@ const assertAwsResourceStepProps: AssertAwsResourceStepProps = { ... }
 | <code><a href="#cdk-ssm-documents.AssertAwsResourceStepProps.property.outputObserver">outputObserver</a></code> | <code><a href="#cdk-ssm-documents.IObserver">IObserver</a></code> | (Optional) Allows for observing the output of steps as they run. |
 | <code><a href="#cdk-ssm-documents.AssertAwsResourceStepProps.property.isEnd">isEnd</a></code> | <code>boolean</code> | Whether to stop document execution after this step. |
 | <code><a href="#cdk-ssm-documents.AssertAwsResourceStepProps.property.maxAttempts">maxAttempts</a></code> | <code>number</code> | (Optional) max attempts to run this step if there are failures. |
-| <code><a href="#cdk-ssm-documents.AssertAwsResourceStepProps.property.onCancel">onCancel</a></code> | <code><a href="#cdk-ssm-documents.Step">Step</a></code> | (Optional) Step to jump to in the event that this step is cancelled. |
-| <code><a href="#cdk-ssm-documents.AssertAwsResourceStepProps.property.onFailure">onFailure</a></code> | <code><a href="#cdk-ssm-documents.Step">Step</a></code> | (Optional) Step to jump to in the event that this step fails. |
+| <code><a href="#cdk-ssm-documents.AssertAwsResourceStepProps.property.onCancel">onCancel</a></code> | <code><a href="#cdk-ssm-documents.AutomationStep">AutomationStep</a></code> | (Optional) Step to jump to in the event that this step is cancelled. |
+| <code><a href="#cdk-ssm-documents.AssertAwsResourceStepProps.property.onFailure">onFailure</a></code> | <code><a href="#cdk-ssm-documents.AutomationStep">AutomationStep</a></code> | (Optional) Step to jump to in the event that this step fails. |
 | <code><a href="#cdk-ssm-documents.AssertAwsResourceStepProps.property.timeoutSeconds">timeoutSeconds</a></code> | <code>number</code> | (Optional) timeout seconds to run this step. |
 | <code><a href="#cdk-ssm-documents.AssertAwsResourceStepProps.property.apiParams">apiParams</a></code> | <code>{[ key: string ]: any}</code> | (Required) API Params to submit with the request to the api. |
 | <code><a href="#cdk-ssm-documents.AssertAwsResourceStepProps.property.pascalCaseApi">pascalCaseApi</a></code> | <code>string</code> | (Required) The AWS api represented in PascalCase. |
 | <code><a href="#cdk-ssm-documents.AssertAwsResourceStepProps.property.service">service</a></code> | <code>string</code> | (Required) The AWS service to be invoked. |
-| <code><a href="#cdk-ssm-documents.AssertAwsResourceStepProps.property.awsInvoker">awsInvoker</a></code> | <code><a href="#cdk-ssm-documents.IAwsInvoker">IAwsInvoker</a></code> | (Optional) Use this as a hook to inject an alternate IAwsInvoker (for mocking the AWS API call). |
 | <code><a href="#cdk-ssm-documents.AssertAwsResourceStepProps.property.javaScriptApi">javaScriptApi</a></code> | <code>string</code> | (Optional) The api as represented the AWS JavaScript API. |
 | <code><a href="#cdk-ssm-documents.AssertAwsResourceStepProps.property.desiredValues">desiredValues</a></code> | <code>string[]</code> | (Required) Value extracted from AWS response desired to be one of these desired values. |
 | <code><a href="#cdk-ssm-documents.AssertAwsResourceStepProps.property.selector">selector</a></code> | <code>string</code> | (Required) Json path selector to extract value from AWS response. |
@@ -12129,10 +10921,10 @@ public readonly maxAttempts: number;
 ##### `onCancel`<sup>Optional</sup> <a name="onCancel" id="cdk-ssm-documents.AssertAwsResourceStepProps.property.onCancel"></a>
 
 ```typescript
-public readonly onCancel: Step;
+public readonly onCancel: AutomationStep;
 ```
 
-- *Type:* <a href="#cdk-ssm-documents.Step">Step</a>
+- *Type:* <a href="#cdk-ssm-documents.AutomationStep">AutomationStep</a>
 - *Default:* undefined
 
 (Optional) Step to jump to in the event that this step is cancelled.
@@ -12142,10 +10934,10 @@ public readonly onCancel: Step;
 ##### `onFailure`<sup>Optional</sup> <a name="onFailure" id="cdk-ssm-documents.AssertAwsResourceStepProps.property.onFailure"></a>
 
 ```typescript
-public readonly onFailure: Step;
+public readonly onFailure: AutomationStep;
 ```
 
-- *Type:* <a href="#cdk-ssm-documents.Step">Step</a>
+- *Type:* <a href="#cdk-ssm-documents.AutomationStep">AutomationStep</a>
 - *Default:* undefined
 
 (Optional) Step to jump to in the event that this step fails.
@@ -12228,19 +11020,6 @@ public readonly service: string;
 ec2
 ```
 
-
-##### `awsInvoker`<sup>Optional</sup> <a name="awsInvoker" id="cdk-ssm-documents.AssertAwsResourceStepProps.property.awsInvoker"></a>
-
-```typescript
-public readonly awsInvoker: IAwsInvoker;
-```
-
-- *Type:* <a href="#cdk-ssm-documents.IAwsInvoker">IAwsInvoker</a>
-- *Default:* will perform a real invocation of the JavaScript AWS SDK using ReflectiveAwsInvoker class.
-
-(Optional) Use this as a hook to inject an alternate IAwsInvoker (for mocking the AWS API call).
-
----
 
 ##### `javaScriptApi`<sup>Optional</sup> <a name="javaScriptApi" id="cdk-ssm-documents.AssertAwsResourceStepProps.property.javaScriptApi"></a>
 
@@ -12491,8 +11270,8 @@ const automationStepProps: AutomationStepProps = { ... }
 | <code><a href="#cdk-ssm-documents.AutomationStepProps.property.outputObserver">outputObserver</a></code> | <code><a href="#cdk-ssm-documents.IObserver">IObserver</a></code> | (Optional) Allows for observing the output of steps as they run. |
 | <code><a href="#cdk-ssm-documents.AutomationStepProps.property.isEnd">isEnd</a></code> | <code>boolean</code> | Whether to stop document execution after this step. |
 | <code><a href="#cdk-ssm-documents.AutomationStepProps.property.maxAttempts">maxAttempts</a></code> | <code>number</code> | (Optional) max attempts to run this step if there are failures. |
-| <code><a href="#cdk-ssm-documents.AutomationStepProps.property.onCancel">onCancel</a></code> | <code><a href="#cdk-ssm-documents.Step">Step</a></code> | (Optional) Step to jump to in the event that this step is cancelled. |
-| <code><a href="#cdk-ssm-documents.AutomationStepProps.property.onFailure">onFailure</a></code> | <code><a href="#cdk-ssm-documents.Step">Step</a></code> | (Optional) Step to jump to in the event that this step fails. |
+| <code><a href="#cdk-ssm-documents.AutomationStepProps.property.onCancel">onCancel</a></code> | <code><a href="#cdk-ssm-documents.AutomationStep">AutomationStep</a></code> | (Optional) Step to jump to in the event that this step is cancelled. |
+| <code><a href="#cdk-ssm-documents.AutomationStepProps.property.onFailure">onFailure</a></code> | <code><a href="#cdk-ssm-documents.AutomationStep">AutomationStep</a></code> | (Optional) Step to jump to in the event that this step fails. |
 | <code><a href="#cdk-ssm-documents.AutomationStepProps.property.timeoutSeconds">timeoutSeconds</a></code> | <code>number</code> | (Optional) timeout seconds to run this step. |
 
 ---
@@ -12581,10 +11360,10 @@ public readonly maxAttempts: number;
 ##### `onCancel`<sup>Optional</sup> <a name="onCancel" id="cdk-ssm-documents.AutomationStepProps.property.onCancel"></a>
 
 ```typescript
-public readonly onCancel: Step;
+public readonly onCancel: AutomationStep;
 ```
 
-- *Type:* <a href="#cdk-ssm-documents.Step">Step</a>
+- *Type:* <a href="#cdk-ssm-documents.AutomationStep">AutomationStep</a>
 - *Default:* undefined
 
 (Optional) Step to jump to in the event that this step is cancelled.
@@ -12594,10 +11373,10 @@ public readonly onCancel: Step;
 ##### `onFailure`<sup>Optional</sup> <a name="onFailure" id="cdk-ssm-documents.AutomationStepProps.property.onFailure"></a>
 
 ```typescript
-public readonly onFailure: Step;
+public readonly onFailure: AutomationStep;
 ```
 
-- *Type:* <a href="#cdk-ssm-documents.Step">Step</a>
+- *Type:* <a href="#cdk-ssm-documents.AutomationStep">AutomationStep</a>
 - *Default:* undefined
 
 (Optional) Step to jump to in the event that this step fails.
@@ -12641,13 +11420,12 @@ const awsApiStepProps: AwsApiStepProps = { ... }
 | <code><a href="#cdk-ssm-documents.AwsApiStepProps.property.outputObserver">outputObserver</a></code> | <code><a href="#cdk-ssm-documents.IObserver">IObserver</a></code> | (Optional) Allows for observing the output of steps as they run. |
 | <code><a href="#cdk-ssm-documents.AwsApiStepProps.property.isEnd">isEnd</a></code> | <code>boolean</code> | Whether to stop document execution after this step. |
 | <code><a href="#cdk-ssm-documents.AwsApiStepProps.property.maxAttempts">maxAttempts</a></code> | <code>number</code> | (Optional) max attempts to run this step if there are failures. |
-| <code><a href="#cdk-ssm-documents.AwsApiStepProps.property.onCancel">onCancel</a></code> | <code><a href="#cdk-ssm-documents.Step">Step</a></code> | (Optional) Step to jump to in the event that this step is cancelled. |
-| <code><a href="#cdk-ssm-documents.AwsApiStepProps.property.onFailure">onFailure</a></code> | <code><a href="#cdk-ssm-documents.Step">Step</a></code> | (Optional) Step to jump to in the event that this step fails. |
+| <code><a href="#cdk-ssm-documents.AwsApiStepProps.property.onCancel">onCancel</a></code> | <code><a href="#cdk-ssm-documents.AutomationStep">AutomationStep</a></code> | (Optional) Step to jump to in the event that this step is cancelled. |
+| <code><a href="#cdk-ssm-documents.AwsApiStepProps.property.onFailure">onFailure</a></code> | <code><a href="#cdk-ssm-documents.AutomationStep">AutomationStep</a></code> | (Optional) Step to jump to in the event that this step fails. |
 | <code><a href="#cdk-ssm-documents.AwsApiStepProps.property.timeoutSeconds">timeoutSeconds</a></code> | <code>number</code> | (Optional) timeout seconds to run this step. |
 | <code><a href="#cdk-ssm-documents.AwsApiStepProps.property.apiParams">apiParams</a></code> | <code>{[ key: string ]: any}</code> | (Required) API Params to submit with the request to the api. |
 | <code><a href="#cdk-ssm-documents.AwsApiStepProps.property.pascalCaseApi">pascalCaseApi</a></code> | <code>string</code> | (Required) The AWS api represented in PascalCase. |
 | <code><a href="#cdk-ssm-documents.AwsApiStepProps.property.service">service</a></code> | <code>string</code> | (Required) The AWS service to be invoked. |
-| <code><a href="#cdk-ssm-documents.AwsApiStepProps.property.awsInvoker">awsInvoker</a></code> | <code><a href="#cdk-ssm-documents.IAwsInvoker">IAwsInvoker</a></code> | (Optional) Use this as a hook to inject an alternate IAwsInvoker (for mocking the AWS API call). |
 | <code><a href="#cdk-ssm-documents.AwsApiStepProps.property.javaScriptApi">javaScriptApi</a></code> | <code>string</code> | (Optional) The api as represented the AWS JavaScript API. |
 | <code><a href="#cdk-ssm-documents.AwsApiStepProps.property.outputs">outputs</a></code> | <code><a href="#cdk-ssm-documents.Output">Output</a>[]</code> | (Required) specify the outputs to extract from the JavaScript JSON response. |
 
@@ -12737,10 +11515,10 @@ public readonly maxAttempts: number;
 ##### `onCancel`<sup>Optional</sup> <a name="onCancel" id="cdk-ssm-documents.AwsApiStepProps.property.onCancel"></a>
 
 ```typescript
-public readonly onCancel: Step;
+public readonly onCancel: AutomationStep;
 ```
 
-- *Type:* <a href="#cdk-ssm-documents.Step">Step</a>
+- *Type:* <a href="#cdk-ssm-documents.AutomationStep">AutomationStep</a>
 - *Default:* undefined
 
 (Optional) Step to jump to in the event that this step is cancelled.
@@ -12750,10 +11528,10 @@ public readonly onCancel: Step;
 ##### `onFailure`<sup>Optional</sup> <a name="onFailure" id="cdk-ssm-documents.AwsApiStepProps.property.onFailure"></a>
 
 ```typescript
-public readonly onFailure: Step;
+public readonly onFailure: AutomationStep;
 ```
 
-- *Type:* <a href="#cdk-ssm-documents.Step">Step</a>
+- *Type:* <a href="#cdk-ssm-documents.AutomationStep">AutomationStep</a>
 - *Default:* undefined
 
 (Optional) Step to jump to in the event that this step fails.
@@ -12837,19 +11615,6 @@ ec2
 ```
 
 
-##### `awsInvoker`<sup>Optional</sup> <a name="awsInvoker" id="cdk-ssm-documents.AwsApiStepProps.property.awsInvoker"></a>
-
-```typescript
-public readonly awsInvoker: IAwsInvoker;
-```
-
-- *Type:* <a href="#cdk-ssm-documents.IAwsInvoker">IAwsInvoker</a>
-- *Default:* will perform a real invocation of the JavaScript AWS SDK using ReflectiveAwsInvoker class.
-
-(Optional) Use this as a hook to inject an alternate IAwsInvoker (for mocking the AWS API call).
-
----
-
 ##### `javaScriptApi`<sup>Optional</sup> <a name="javaScriptApi" id="cdk-ssm-documents.AwsApiStepProps.property.javaScriptApi"></a>
 
 ```typescript
@@ -12905,13 +11670,12 @@ const awsInvocationProps: AwsInvocationProps = { ... }
 | <code><a href="#cdk-ssm-documents.AwsInvocationProps.property.outputObserver">outputObserver</a></code> | <code><a href="#cdk-ssm-documents.IObserver">IObserver</a></code> | (Optional) Allows for observing the output of steps as they run. |
 | <code><a href="#cdk-ssm-documents.AwsInvocationProps.property.isEnd">isEnd</a></code> | <code>boolean</code> | Whether to stop document execution after this step. |
 | <code><a href="#cdk-ssm-documents.AwsInvocationProps.property.maxAttempts">maxAttempts</a></code> | <code>number</code> | (Optional) max attempts to run this step if there are failures. |
-| <code><a href="#cdk-ssm-documents.AwsInvocationProps.property.onCancel">onCancel</a></code> | <code><a href="#cdk-ssm-documents.Step">Step</a></code> | (Optional) Step to jump to in the event that this step is cancelled. |
-| <code><a href="#cdk-ssm-documents.AwsInvocationProps.property.onFailure">onFailure</a></code> | <code><a href="#cdk-ssm-documents.Step">Step</a></code> | (Optional) Step to jump to in the event that this step fails. |
+| <code><a href="#cdk-ssm-documents.AwsInvocationProps.property.onCancel">onCancel</a></code> | <code><a href="#cdk-ssm-documents.AutomationStep">AutomationStep</a></code> | (Optional) Step to jump to in the event that this step is cancelled. |
+| <code><a href="#cdk-ssm-documents.AwsInvocationProps.property.onFailure">onFailure</a></code> | <code><a href="#cdk-ssm-documents.AutomationStep">AutomationStep</a></code> | (Optional) Step to jump to in the event that this step fails. |
 | <code><a href="#cdk-ssm-documents.AwsInvocationProps.property.timeoutSeconds">timeoutSeconds</a></code> | <code>number</code> | (Optional) timeout seconds to run this step. |
 | <code><a href="#cdk-ssm-documents.AwsInvocationProps.property.apiParams">apiParams</a></code> | <code>{[ key: string ]: any}</code> | (Required) API Params to submit with the request to the api. |
 | <code><a href="#cdk-ssm-documents.AwsInvocationProps.property.pascalCaseApi">pascalCaseApi</a></code> | <code>string</code> | (Required) The AWS api represented in PascalCase. |
 | <code><a href="#cdk-ssm-documents.AwsInvocationProps.property.service">service</a></code> | <code>string</code> | (Required) The AWS service to be invoked. |
-| <code><a href="#cdk-ssm-documents.AwsInvocationProps.property.awsInvoker">awsInvoker</a></code> | <code><a href="#cdk-ssm-documents.IAwsInvoker">IAwsInvoker</a></code> | (Optional) Use this as a hook to inject an alternate IAwsInvoker (for mocking the AWS API call). |
 | <code><a href="#cdk-ssm-documents.AwsInvocationProps.property.javaScriptApi">javaScriptApi</a></code> | <code>string</code> | (Optional) The api as represented the AWS JavaScript API. |
 
 ---
@@ -13000,10 +11764,10 @@ public readonly maxAttempts: number;
 ##### `onCancel`<sup>Optional</sup> <a name="onCancel" id="cdk-ssm-documents.AwsInvocationProps.property.onCancel"></a>
 
 ```typescript
-public readonly onCancel: Step;
+public readonly onCancel: AutomationStep;
 ```
 
-- *Type:* <a href="#cdk-ssm-documents.Step">Step</a>
+- *Type:* <a href="#cdk-ssm-documents.AutomationStep">AutomationStep</a>
 - *Default:* undefined
 
 (Optional) Step to jump to in the event that this step is cancelled.
@@ -13013,10 +11777,10 @@ public readonly onCancel: Step;
 ##### `onFailure`<sup>Optional</sup> <a name="onFailure" id="cdk-ssm-documents.AwsInvocationProps.property.onFailure"></a>
 
 ```typescript
-public readonly onFailure: Step;
+public readonly onFailure: AutomationStep;
 ```
 
-- *Type:* <a href="#cdk-ssm-documents.Step">Step</a>
+- *Type:* <a href="#cdk-ssm-documents.AutomationStep">AutomationStep</a>
 - *Default:* undefined
 
 (Optional) Step to jump to in the event that this step fails.
@@ -13099,19 +11863,6 @@ public readonly service: string;
 ec2
 ```
 
-
-##### `awsInvoker`<sup>Optional</sup> <a name="awsInvoker" id="cdk-ssm-documents.AwsInvocationProps.property.awsInvoker"></a>
-
-```typescript
-public readonly awsInvoker: IAwsInvoker;
-```
-
-- *Type:* <a href="#cdk-ssm-documents.IAwsInvoker">IAwsInvoker</a>
-- *Default:* will perform a real invocation of the JavaScript AWS SDK using ReflectiveAwsInvoker class.
-
-(Optional) Use this as a hook to inject an alternate IAwsInvoker (for mocking the AWS API call).
-
----
 
 ##### `javaScriptApi`<sup>Optional</sup> <a name="javaScriptApi" id="cdk-ssm-documents.AwsInvocationProps.property.javaScriptApi"></a>
 
@@ -13201,8 +11952,8 @@ const branchStepProps: BranchStepProps = { ... }
 | <code><a href="#cdk-ssm-documents.BranchStepProps.property.outputObserver">outputObserver</a></code> | <code><a href="#cdk-ssm-documents.IObserver">IObserver</a></code> | (Optional) Allows for observing the output of steps as they run. |
 | <code><a href="#cdk-ssm-documents.BranchStepProps.property.isEnd">isEnd</a></code> | <code>boolean</code> | Whether to stop document execution after this step. |
 | <code><a href="#cdk-ssm-documents.BranchStepProps.property.maxAttempts">maxAttempts</a></code> | <code>number</code> | (Optional) max attempts to run this step if there are failures. |
-| <code><a href="#cdk-ssm-documents.BranchStepProps.property.onCancel">onCancel</a></code> | <code><a href="#cdk-ssm-documents.Step">Step</a></code> | (Optional) Step to jump to in the event that this step is cancelled. |
-| <code><a href="#cdk-ssm-documents.BranchStepProps.property.onFailure">onFailure</a></code> | <code><a href="#cdk-ssm-documents.Step">Step</a></code> | (Optional) Step to jump to in the event that this step fails. |
+| <code><a href="#cdk-ssm-documents.BranchStepProps.property.onCancel">onCancel</a></code> | <code><a href="#cdk-ssm-documents.AutomationStep">AutomationStep</a></code> | (Optional) Step to jump to in the event that this step is cancelled. |
+| <code><a href="#cdk-ssm-documents.BranchStepProps.property.onFailure">onFailure</a></code> | <code><a href="#cdk-ssm-documents.AutomationStep">AutomationStep</a></code> | (Optional) Step to jump to in the event that this step fails. |
 | <code><a href="#cdk-ssm-documents.BranchStepProps.property.timeoutSeconds">timeoutSeconds</a></code> | <code>number</code> | (Optional) timeout seconds to run this step. |
 | <code><a href="#cdk-ssm-documents.BranchStepProps.property.choices">choices</a></code> | <code><a href="#cdk-ssm-documents.Choice">Choice</a>[]</code> | (Required) list of choices. |
 | <code><a href="#cdk-ssm-documents.BranchStepProps.property.defaultStepName">defaultStepName</a></code> | <code>string</code> | (Optional) default step in all of the choices evaluate to false. |
@@ -13293,10 +12044,10 @@ public readonly maxAttempts: number;
 ##### `onCancel`<sup>Optional</sup> <a name="onCancel" id="cdk-ssm-documents.BranchStepProps.property.onCancel"></a>
 
 ```typescript
-public readonly onCancel: Step;
+public readonly onCancel: AutomationStep;
 ```
 
-- *Type:* <a href="#cdk-ssm-documents.Step">Step</a>
+- *Type:* <a href="#cdk-ssm-documents.AutomationStep">AutomationStep</a>
 - *Default:* undefined
 
 (Optional) Step to jump to in the event that this step is cancelled.
@@ -13306,10 +12057,10 @@ public readonly onCancel: Step;
 ##### `onFailure`<sup>Optional</sup> <a name="onFailure" id="cdk-ssm-documents.BranchStepProps.property.onFailure"></a>
 
 ```typescript
-public readonly onFailure: Step;
+public readonly onFailure: AutomationStep;
 ```
 
-- *Type:* <a href="#cdk-ssm-documents.Step">Step</a>
+- *Type:* <a href="#cdk-ssm-documents.AutomationStep">AutomationStep</a>
 - *Default:* undefined
 
 (Optional) Step to jump to in the event that this step fails.
@@ -13380,13 +12131,12 @@ const changeInstanceStateStepProps: ChangeInstanceStateStepProps = { ... }
 | <code><a href="#cdk-ssm-documents.ChangeInstanceStateStepProps.property.outputObserver">outputObserver</a></code> | <code><a href="#cdk-ssm-documents.IObserver">IObserver</a></code> | (Optional) Allows for observing the output of steps as they run. |
 | <code><a href="#cdk-ssm-documents.ChangeInstanceStateStepProps.property.isEnd">isEnd</a></code> | <code>boolean</code> | Whether to stop document execution after this step. |
 | <code><a href="#cdk-ssm-documents.ChangeInstanceStateStepProps.property.maxAttempts">maxAttempts</a></code> | <code>number</code> | (Optional) max attempts to run this step if there are failures. |
-| <code><a href="#cdk-ssm-documents.ChangeInstanceStateStepProps.property.onCancel">onCancel</a></code> | <code><a href="#cdk-ssm-documents.Step">Step</a></code> | (Optional) Step to jump to in the event that this step is cancelled. |
-| <code><a href="#cdk-ssm-documents.ChangeInstanceStateStepProps.property.onFailure">onFailure</a></code> | <code><a href="#cdk-ssm-documents.Step">Step</a></code> | (Optional) Step to jump to in the event that this step fails. |
+| <code><a href="#cdk-ssm-documents.ChangeInstanceStateStepProps.property.onCancel">onCancel</a></code> | <code><a href="#cdk-ssm-documents.AutomationStep">AutomationStep</a></code> | (Optional) Step to jump to in the event that this step is cancelled. |
+| <code><a href="#cdk-ssm-documents.ChangeInstanceStateStepProps.property.onFailure">onFailure</a></code> | <code><a href="#cdk-ssm-documents.AutomationStep">AutomationStep</a></code> | (Optional) Step to jump to in the event that this step fails. |
 | <code><a href="#cdk-ssm-documents.ChangeInstanceStateStepProps.property.timeoutSeconds">timeoutSeconds</a></code> | <code>number</code> | (Optional) timeout seconds to run this step. |
 | <code><a href="#cdk-ssm-documents.ChangeInstanceStateStepProps.property.desiredState">desiredState</a></code> | <code><a href="#cdk-ssm-documents.IEnumVariable">IEnumVariable</a></code> | The desired state. |
 | <code><a href="#cdk-ssm-documents.ChangeInstanceStateStepProps.property.instanceIds">instanceIds</a></code> | <code><a href="#cdk-ssm-documents.IStringListVariable">IStringListVariable</a></code> | The IDs of the instances. |
 | <code><a href="#cdk-ssm-documents.ChangeInstanceStateStepProps.property.additionalInfo">additionalInfo</a></code> | <code><a href="#cdk-ssm-documents.IStringVariable">IStringVariable</a></code> | (Optional) Reserved. |
-| <code><a href="#cdk-ssm-documents.ChangeInstanceStateStepProps.property.awsInvoker">awsInvoker</a></code> | <code><a href="#cdk-ssm-documents.IAwsInvoker">IAwsInvoker</a></code> | (Optional) Use this as a hook to inject an alternate IAwsInvoker (for mocking the AWS API call). |
 | <code><a href="#cdk-ssm-documents.ChangeInstanceStateStepProps.property.checkStateOnly">checkStateOnly</a></code> | <code><a href="#cdk-ssm-documents.IBooleanVariable">IBooleanVariable</a></code> | (Optional) If false, sets the instance state to the desired state. |
 | <code><a href="#cdk-ssm-documents.ChangeInstanceStateStepProps.property.force">force</a></code> | <code><a href="#cdk-ssm-documents.IBooleanVariable">IBooleanVariable</a></code> | (Optional) If set, forces the instances to stop. |
 
@@ -13476,10 +12226,10 @@ public readonly maxAttempts: number;
 ##### `onCancel`<sup>Optional</sup> <a name="onCancel" id="cdk-ssm-documents.ChangeInstanceStateStepProps.property.onCancel"></a>
 
 ```typescript
-public readonly onCancel: Step;
+public readonly onCancel: AutomationStep;
 ```
 
-- *Type:* <a href="#cdk-ssm-documents.Step">Step</a>
+- *Type:* <a href="#cdk-ssm-documents.AutomationStep">AutomationStep</a>
 - *Default:* undefined
 
 (Optional) Step to jump to in the event that this step is cancelled.
@@ -13489,10 +12239,10 @@ public readonly onCancel: Step;
 ##### `onFailure`<sup>Optional</sup> <a name="onFailure" id="cdk-ssm-documents.ChangeInstanceStateStepProps.property.onFailure"></a>
 
 ```typescript
-public readonly onFailure: Step;
+public readonly onFailure: AutomationStep;
 ```
 
-- *Type:* <a href="#cdk-ssm-documents.Step">Step</a>
+- *Type:* <a href="#cdk-ssm-documents.AutomationStep">AutomationStep</a>
 - *Default:* undefined
 
 (Optional) Step to jump to in the event that this step fails.
@@ -13550,19 +12300,6 @@ public readonly additionalInfo: IStringVariable;
 - *Type:* <a href="#cdk-ssm-documents.IStringVariable">IStringVariable</a>
 
 (Optional) Reserved.
-
----
-
-##### `awsInvoker`<sup>Optional</sup> <a name="awsInvoker" id="cdk-ssm-documents.ChangeInstanceStateStepProps.property.awsInvoker"></a>
-
-```typescript
-public readonly awsInvoker: IAwsInvoker;
-```
-
-- *Type:* <a href="#cdk-ssm-documents.IAwsInvoker">IAwsInvoker</a>
-- *Default:* will perform a real invocation of the JavaScript AWS SDK using ReflectiveAwsInvoker class.
-
-(Optional) Use this as a hook to inject an alternate IAwsInvoker (for mocking the AWS API call).
 
 ---
 
@@ -13868,7 +12605,6 @@ const commandStepProps: CommandStepProps = { ... }
 | <code><a href="#cdk-ssm-documents.CommandStepProps.property.inputObserver">inputObserver</a></code> | <code><a href="#cdk-ssm-documents.IObserver">IObserver</a></code> | (Optional) Allows for observing the input to steps as they run. |
 | <code><a href="#cdk-ssm-documents.CommandStepProps.property.name">name</a></code> | <code>string</code> | (Optional) Name of the current step. |
 | <code><a href="#cdk-ssm-documents.CommandStepProps.property.outputObserver">outputObserver</a></code> | <code><a href="#cdk-ssm-documents.IObserver">IObserver</a></code> | (Optional) Allows for observing the output of steps as they run. |
-| <code><a href="#cdk-ssm-documents.CommandStepProps.property.simulationPlatform">simulationPlatform</a></code> | <code><a href="#cdk-ssm-documents.Platform">Platform</a></code> | The Platform used in executing the command step. |
 | <code><a href="#cdk-ssm-documents.CommandStepProps.property.exitOnFailure">exitOnFailure</a></code> | <code>boolean</code> | (Optional) Whether to exit the document execution after failed execution of this step. |
 | <code><a href="#cdk-ssm-documents.CommandStepProps.property.exitOnSuccess">exitOnSuccess</a></code> | <code>boolean</code> | (Optional) Whether to exit the document execution after successful execution of this step. |
 | <code><a href="#cdk-ssm-documents.CommandStepProps.property.finallyStep">finallyStep</a></code> | <code>boolean</code> | *No description.* |
@@ -13930,18 +12666,6 @@ public readonly outputObserver: IObserver;
 - *Default:* NoopObserver
 
 (Optional) Allows for observing the output of steps as they run.
-
----
-
-##### `simulationPlatform`<sup>Required</sup> <a name="simulationPlatform" id="cdk-ssm-documents.CommandStepProps.property.simulationPlatform"></a>
-
-```typescript
-public readonly simulationPlatform: Platform;
-```
-
-- *Type:* <a href="#cdk-ssm-documents.Platform">Platform</a>
-
-The Platform used in executing the command step.
 
 ---
 
@@ -14045,13 +12769,12 @@ const copyImageStepProps: CopyImageStepProps = { ... }
 | <code><a href="#cdk-ssm-documents.CopyImageStepProps.property.outputObserver">outputObserver</a></code> | <code><a href="#cdk-ssm-documents.IObserver">IObserver</a></code> | (Optional) Allows for observing the output of steps as they run. |
 | <code><a href="#cdk-ssm-documents.CopyImageStepProps.property.isEnd">isEnd</a></code> | <code>boolean</code> | Whether to stop document execution after this step. |
 | <code><a href="#cdk-ssm-documents.CopyImageStepProps.property.maxAttempts">maxAttempts</a></code> | <code>number</code> | (Optional) max attempts to run this step if there are failures. |
-| <code><a href="#cdk-ssm-documents.CopyImageStepProps.property.onCancel">onCancel</a></code> | <code><a href="#cdk-ssm-documents.Step">Step</a></code> | (Optional) Step to jump to in the event that this step is cancelled. |
-| <code><a href="#cdk-ssm-documents.CopyImageStepProps.property.onFailure">onFailure</a></code> | <code><a href="#cdk-ssm-documents.Step">Step</a></code> | (Optional) Step to jump to in the event that this step fails. |
+| <code><a href="#cdk-ssm-documents.CopyImageStepProps.property.onCancel">onCancel</a></code> | <code><a href="#cdk-ssm-documents.AutomationStep">AutomationStep</a></code> | (Optional) Step to jump to in the event that this step is cancelled. |
+| <code><a href="#cdk-ssm-documents.CopyImageStepProps.property.onFailure">onFailure</a></code> | <code><a href="#cdk-ssm-documents.AutomationStep">AutomationStep</a></code> | (Optional) Step to jump to in the event that this step fails. |
 | <code><a href="#cdk-ssm-documents.CopyImageStepProps.property.timeoutSeconds">timeoutSeconds</a></code> | <code>number</code> | (Optional) timeout seconds to run this step. |
 | <code><a href="#cdk-ssm-documents.CopyImageStepProps.property.imageName">imageName</a></code> | <code><a href="#cdk-ssm-documents.IStringVariable">IStringVariable</a></code> | The name for the image. |
 | <code><a href="#cdk-ssm-documents.CopyImageStepProps.property.sourceImageId">sourceImageId</a></code> | <code><a href="#cdk-ssm-documents.IStringVariable">IStringVariable</a></code> | The AMI ID to copy from the source Region. |
 | <code><a href="#cdk-ssm-documents.CopyImageStepProps.property.sourceRegion">sourceRegion</a></code> | <code><a href="#cdk-ssm-documents.IStringVariable">IStringVariable</a></code> | The region where the source AMI exists. |
-| <code><a href="#cdk-ssm-documents.CopyImageStepProps.property.awsInvoker">awsInvoker</a></code> | <code><a href="#cdk-ssm-documents.IAwsInvoker">IAwsInvoker</a></code> | (Optional) Use this as a hook to inject an alternate IAwsInvoker (for mocking the AWS API call). |
 | <code><a href="#cdk-ssm-documents.CopyImageStepProps.property.clientToken">clientToken</a></code> | <code><a href="#cdk-ssm-documents.IStringVariable">IStringVariable</a></code> | (Optional) A unique, case-sensitive identifier that you provide to ensure request idempotency. |
 | <code><a href="#cdk-ssm-documents.CopyImageStepProps.property.encrypted">encrypted</a></code> | <code><a href="#cdk-ssm-documents.IBooleanVariable">IBooleanVariable</a></code> | (Optional) Encrypt the target AMI. |
 | <code><a href="#cdk-ssm-documents.CopyImageStepProps.property.imageDescription">imageDescription</a></code> | <code><a href="#cdk-ssm-documents.IStringVariable">IStringVariable</a></code> | (Optional) A description of the image. |
@@ -14143,10 +12866,10 @@ public readonly maxAttempts: number;
 ##### `onCancel`<sup>Optional</sup> <a name="onCancel" id="cdk-ssm-documents.CopyImageStepProps.property.onCancel"></a>
 
 ```typescript
-public readonly onCancel: Step;
+public readonly onCancel: AutomationStep;
 ```
 
-- *Type:* <a href="#cdk-ssm-documents.Step">Step</a>
+- *Type:* <a href="#cdk-ssm-documents.AutomationStep">AutomationStep</a>
 - *Default:* undefined
 
 (Optional) Step to jump to in the event that this step is cancelled.
@@ -14156,10 +12879,10 @@ public readonly onCancel: Step;
 ##### `onFailure`<sup>Optional</sup> <a name="onFailure" id="cdk-ssm-documents.CopyImageStepProps.property.onFailure"></a>
 
 ```typescript
-public readonly onFailure: Step;
+public readonly onFailure: AutomationStep;
 ```
 
-- *Type:* <a href="#cdk-ssm-documents.Step">Step</a>
+- *Type:* <a href="#cdk-ssm-documents.AutomationStep">AutomationStep</a>
 - *Default:* undefined
 
 (Optional) Step to jump to in the event that this step fails.
@@ -14214,19 +12937,6 @@ public readonly sourceRegion: IStringVariable;
 - *Type:* <a href="#cdk-ssm-documents.IStringVariable">IStringVariable</a>
 
 The region where the source AMI exists.
-
----
-
-##### `awsInvoker`<sup>Optional</sup> <a name="awsInvoker" id="cdk-ssm-documents.CopyImageStepProps.property.awsInvoker"></a>
-
-```typescript
-public readonly awsInvoker: IAwsInvoker;
-```
-
-- *Type:* <a href="#cdk-ssm-documents.IAwsInvoker">IAwsInvoker</a>
-- *Default:* will perform a real invocation of the JavaScript AWS SDK using ReflectiveAwsInvoker class.
-
-(Optional) Use this as a hook to inject an alternate IAwsInvoker (for mocking the AWS API call).
 
 ---
 
@@ -14300,12 +13010,11 @@ const createImageStepProps: CreateImageStepProps = { ... }
 | <code><a href="#cdk-ssm-documents.CreateImageStepProps.property.outputObserver">outputObserver</a></code> | <code><a href="#cdk-ssm-documents.IObserver">IObserver</a></code> | (Optional) Allows for observing the output of steps as they run. |
 | <code><a href="#cdk-ssm-documents.CreateImageStepProps.property.isEnd">isEnd</a></code> | <code>boolean</code> | Whether to stop document execution after this step. |
 | <code><a href="#cdk-ssm-documents.CreateImageStepProps.property.maxAttempts">maxAttempts</a></code> | <code>number</code> | (Optional) max attempts to run this step if there are failures. |
-| <code><a href="#cdk-ssm-documents.CreateImageStepProps.property.onCancel">onCancel</a></code> | <code><a href="#cdk-ssm-documents.Step">Step</a></code> | (Optional) Step to jump to in the event that this step is cancelled. |
-| <code><a href="#cdk-ssm-documents.CreateImageStepProps.property.onFailure">onFailure</a></code> | <code><a href="#cdk-ssm-documents.Step">Step</a></code> | (Optional) Step to jump to in the event that this step fails. |
+| <code><a href="#cdk-ssm-documents.CreateImageStepProps.property.onCancel">onCancel</a></code> | <code><a href="#cdk-ssm-documents.AutomationStep">AutomationStep</a></code> | (Optional) Step to jump to in the event that this step is cancelled. |
+| <code><a href="#cdk-ssm-documents.CreateImageStepProps.property.onFailure">onFailure</a></code> | <code><a href="#cdk-ssm-documents.AutomationStep">AutomationStep</a></code> | (Optional) Step to jump to in the event that this step fails. |
 | <code><a href="#cdk-ssm-documents.CreateImageStepProps.property.timeoutSeconds">timeoutSeconds</a></code> | <code>number</code> | (Optional) timeout seconds to run this step. |
 | <code><a href="#cdk-ssm-documents.CreateImageStepProps.property.imageName">imageName</a></code> | <code><a href="#cdk-ssm-documents.IStringVariable">IStringVariable</a></code> | The name for the image. |
 | <code><a href="#cdk-ssm-documents.CreateImageStepProps.property.instanceId">instanceId</a></code> | <code><a href="#cdk-ssm-documents.IStringVariable">IStringVariable</a></code> | The ID of the instance. |
-| <code><a href="#cdk-ssm-documents.CreateImageStepProps.property.awsInvoker">awsInvoker</a></code> | <code><a href="#cdk-ssm-documents.IAwsInvoker">IAwsInvoker</a></code> | (Optional) Use this as a hook to inject an alternate IAwsInvoker (for mocking the AWS API call). |
 | <code><a href="#cdk-ssm-documents.CreateImageStepProps.property.blockDeviceMappings">blockDeviceMappings</a></code> | <code><a href="#cdk-ssm-documents.IStringMapVariable">IStringMapVariable</a></code> | (Optional) The block devices for the instance. |
 | <code><a href="#cdk-ssm-documents.CreateImageStepProps.property.imageDescription">imageDescription</a></code> | <code><a href="#cdk-ssm-documents.IStringVariable">IStringVariable</a></code> | (Optional) A description of the image. |
 | <code><a href="#cdk-ssm-documents.CreateImageStepProps.property.noReboot">noReboot</a></code> | <code><a href="#cdk-ssm-documents.IBooleanVariable">IBooleanVariable</a></code> | (Optional) By default, Amazon Elastic Compute Cloud (Amazon EC2) attempts to shut down and reboot the instance before creating the image. |
@@ -14396,10 +13105,10 @@ public readonly maxAttempts: number;
 ##### `onCancel`<sup>Optional</sup> <a name="onCancel" id="cdk-ssm-documents.CreateImageStepProps.property.onCancel"></a>
 
 ```typescript
-public readonly onCancel: Step;
+public readonly onCancel: AutomationStep;
 ```
 
-- *Type:* <a href="#cdk-ssm-documents.Step">Step</a>
+- *Type:* <a href="#cdk-ssm-documents.AutomationStep">AutomationStep</a>
 - *Default:* undefined
 
 (Optional) Step to jump to in the event that this step is cancelled.
@@ -14409,10 +13118,10 @@ public readonly onCancel: Step;
 ##### `onFailure`<sup>Optional</sup> <a name="onFailure" id="cdk-ssm-documents.CreateImageStepProps.property.onFailure"></a>
 
 ```typescript
-public readonly onFailure: Step;
+public readonly onFailure: AutomationStep;
 ```
 
-- *Type:* <a href="#cdk-ssm-documents.Step">Step</a>
+- *Type:* <a href="#cdk-ssm-documents.AutomationStep">AutomationStep</a>
 - *Default:* undefined
 
 (Optional) Step to jump to in the event that this step fails.
@@ -14455,19 +13164,6 @@ public readonly instanceId: IStringVariable;
 - *Type:* <a href="#cdk-ssm-documents.IStringVariable">IStringVariable</a>
 
 The ID of the instance.
-
----
-
-##### `awsInvoker`<sup>Optional</sup> <a name="awsInvoker" id="cdk-ssm-documents.CreateImageStepProps.property.awsInvoker"></a>
-
-```typescript
-public readonly awsInvoker: IAwsInvoker;
-```
-
-- *Type:* <a href="#cdk-ssm-documents.IAwsInvoker">IAwsInvoker</a>
-- *Default:* will perform a real invocation of the JavaScript AWS SDK using ReflectiveAwsInvoker class.
-
-(Optional) Use this as a hook to inject an alternate IAwsInvoker (for mocking the AWS API call).
 
 ---
 
@@ -14532,21 +13228,18 @@ const createStackStepProps: CreateStackStepProps = { ... }
 | <code><a href="#cdk-ssm-documents.CreateStackStepProps.property.outputObserver">outputObserver</a></code> | <code><a href="#cdk-ssm-documents.IObserver">IObserver</a></code> | (Optional) Allows for observing the output of steps as they run. |
 | <code><a href="#cdk-ssm-documents.CreateStackStepProps.property.isEnd">isEnd</a></code> | <code>boolean</code> | Whether to stop document execution after this step. |
 | <code><a href="#cdk-ssm-documents.CreateStackStepProps.property.maxAttempts">maxAttempts</a></code> | <code>number</code> | (Optional) max attempts to run this step if there are failures. |
-| <code><a href="#cdk-ssm-documents.CreateStackStepProps.property.onCancel">onCancel</a></code> | <code><a href="#cdk-ssm-documents.Step">Step</a></code> | (Optional) Step to jump to in the event that this step is cancelled. |
-| <code><a href="#cdk-ssm-documents.CreateStackStepProps.property.onFailure">onFailure</a></code> | <code><a href="#cdk-ssm-documents.Step">Step</a></code> | (Optional) Step to jump to in the event that this step fails. |
+| <code><a href="#cdk-ssm-documents.CreateStackStepProps.property.onCancel">onCancel</a></code> | <code><a href="#cdk-ssm-documents.AutomationStep">AutomationStep</a></code> | (Optional) Step to jump to in the event that this step is cancelled. |
+| <code><a href="#cdk-ssm-documents.CreateStackStepProps.property.onFailure">onFailure</a></code> | <code><a href="#cdk-ssm-documents.AutomationStep">AutomationStep</a></code> | (Optional) Step to jump to in the event that this step fails. |
 | <code><a href="#cdk-ssm-documents.CreateStackStepProps.property.timeoutSeconds">timeoutSeconds</a></code> | <code>number</code> | (Optional) timeout seconds to run this step. |
 | <code><a href="#cdk-ssm-documents.CreateStackStepProps.property.stackName">stackName</a></code> | <code><a href="#cdk-ssm-documents.IStringVariable">IStringVariable</a></code> | The name that is associated with the stack. |
 | <code><a href="#cdk-ssm-documents.CreateStackStepProps.property.template">template</a></code> | <code><a href="#cdk-ssm-documents.BodyOrUrlProp">BodyOrUrlProp</a></code> | Template body or URL. |
-| <code><a href="#cdk-ssm-documents.CreateStackStepProps.property.awsInvoker">awsInvoker</a></code> | <code><a href="#cdk-ssm-documents.IAwsInvoker">IAwsInvoker</a></code> | (Optional) Use this as a hook to inject an alternate IAwsInvoker (for mocking the AWS API call). |
 | <code><a href="#cdk-ssm-documents.CreateStackStepProps.property.capabilities">capabilities</a></code> | <code><a href="#cdk-ssm-documents.IStringListVariable">IStringListVariable</a></code> | (Optional) A list of values that you specify before CloudFormation can create certain stacks. |
 | <code><a href="#cdk-ssm-documents.CreateStackStepProps.property.clientRequestToken">clientRequestToken</a></code> | <code><a href="#cdk-ssm-documents.IStringVariable">IStringVariable</a></code> | (Optional) A unique identifier for this CreateStack request. |
 | <code><a href="#cdk-ssm-documents.CreateStackStepProps.property.notificationARNs">notificationARNs</a></code> | <code><a href="#cdk-ssm-documents.IStringListVariable">IStringListVariable</a></code> | (Optional) The Amazon Simple Notification Service (Amazon SNS) topic ARNs for publishing stack-related events. |
 | <code><a href="#cdk-ssm-documents.CreateStackStepProps.property.onStackFailure">onStackFailure</a></code> | <code><a href="#cdk-ssm-documents.IEnumVariable">IEnumVariable</a></code> | (Optional) Determines the action to take if stack creation failed. |
-| <code><a href="#cdk-ssm-documents.CreateStackStepProps.property.parameterResolver">parameterResolver</a></code> | <code><a href="#cdk-ssm-documents.IParameterResolver">IParameterResolver</a></code> | (Optional) Resolver for secure strings in parameters. |
 | <code><a href="#cdk-ssm-documents.CreateStackStepProps.property.parameters">parameters</a></code> | <code><a href="#cdk-ssm-documents.IMapListVariable">IMapListVariable</a></code> | (Optional) A list of Parameter structures that specify input parameters for the stack. |
 | <code><a href="#cdk-ssm-documents.CreateStackStepProps.property.resourceTypes">resourceTypes</a></code> | <code><a href="#cdk-ssm-documents.IStringListVariable">IStringListVariable</a></code> | (Optional) The template resource types that you have permissions to work with for this create stack action. |
 | <code><a href="#cdk-ssm-documents.CreateStackStepProps.property.roleArn">roleArn</a></code> | <code><a href="#cdk-ssm-documents.IStringVariable">IStringVariable</a></code> | (Optional) The Amazon Resource Name (ARN) of an AWS Identity and Access Management (IAM) role that CloudFormation assumes to create the stack. |
-| <code><a href="#cdk-ssm-documents.CreateStackStepProps.property.sleepHook">sleepHook</a></code> | <code><a href="#cdk-ssm-documents.ISleepHook">ISleepHook</a></code> | (Optional) Whether to really perform a pause of the runtime. |
 | <code><a href="#cdk-ssm-documents.CreateStackStepProps.property.stackPolicy">stackPolicy</a></code> | <code><a href="#cdk-ssm-documents.BodyOrUrlProp">BodyOrUrlProp</a></code> | (Optional) Stack policy body or URL. |
 | <code><a href="#cdk-ssm-documents.CreateStackStepProps.property.tags">tags</a></code> | <code><a href="#cdk-ssm-documents.IMapListVariable">IMapListVariable</a></code> | (Optional) Key-value pairs to associate with this stack. |
 | <code><a href="#cdk-ssm-documents.CreateStackStepProps.property.timeoutInMinutes">timeoutInMinutes</a></code> | <code><a href="#cdk-ssm-documents.INumberVariable">INumberVariable</a></code> | (Optional) The amount of time that can pass before the stack status becomes CREATE_FAILED. |
@@ -14637,10 +13330,10 @@ public readonly maxAttempts: number;
 ##### `onCancel`<sup>Optional</sup> <a name="onCancel" id="cdk-ssm-documents.CreateStackStepProps.property.onCancel"></a>
 
 ```typescript
-public readonly onCancel: Step;
+public readonly onCancel: AutomationStep;
 ```
 
-- *Type:* <a href="#cdk-ssm-documents.Step">Step</a>
+- *Type:* <a href="#cdk-ssm-documents.AutomationStep">AutomationStep</a>
 - *Default:* undefined
 
 (Optional) Step to jump to in the event that this step is cancelled.
@@ -14650,10 +13343,10 @@ public readonly onCancel: Step;
 ##### `onFailure`<sup>Optional</sup> <a name="onFailure" id="cdk-ssm-documents.CreateStackStepProps.property.onFailure"></a>
 
 ```typescript
-public readonly onFailure: Step;
+public readonly onFailure: AutomationStep;
 ```
 
-- *Type:* <a href="#cdk-ssm-documents.Step">Step</a>
+- *Type:* <a href="#cdk-ssm-documents.AutomationStep">AutomationStep</a>
 - *Default:* undefined
 
 (Optional) Step to jump to in the event that this step fails.
@@ -14700,19 +13393,6 @@ public readonly template: BodyOrUrlProp;
 Template body or URL.
 
 For more information, see [Template Anatomy](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html).
-
----
-
-##### `awsInvoker`<sup>Optional</sup> <a name="awsInvoker" id="cdk-ssm-documents.CreateStackStepProps.property.awsInvoker"></a>
-
-```typescript
-public readonly awsInvoker: IAwsInvoker;
-```
-
-- *Type:* <a href="#cdk-ssm-documents.IAwsInvoker">IAwsInvoker</a>
-- *Default:* will perform a real invocation of the JavaScript AWS SDK using ReflectiveAwsInvoker class.
-
-(Optional) Use this as a hook to inject an alternate IAwsInvoker (for mocking the AWS API call).
 
 ---
 
@@ -14774,21 +13454,6 @@ public readonly onStackFailure: IEnumVariable;
 
 ---
 
-##### `parameterResolver`<sup>Optional</sup> <a name="parameterResolver" id="cdk-ssm-documents.CreateStackStepProps.property.parameterResolver"></a>
-
-```typescript
-public readonly parameterResolver: IParameterResolver;
-```
-
-- *Type:* <a href="#cdk-ssm-documents.IParameterResolver">IParameterResolver</a>
-- *Default:* Treats parameters as literal
-
-(Optional) Resolver for secure strings in parameters.
-
-Required to simulate if using tokens in parameters input.
-
----
-
 ##### `parameters`<sup>Optional</sup> <a name="parameters" id="cdk-ssm-documents.CreateStackStepProps.property.parameters"></a>
 
 ```typescript
@@ -14834,21 +13499,6 @@ if the users don't have permission to pass it. Ensure that the role grants the l
 
 If you don't specify a value, CloudFormation uses the role that was previously associated with the stack.
 If no role is available, CloudFormation uses a temporary session that is generated from your user credentials.
-
----
-
-##### `sleepHook`<sup>Optional</sup> <a name="sleepHook" id="cdk-ssm-documents.CreateStackStepProps.property.sleepHook"></a>
-
-```typescript
-public readonly sleepHook: ISleepHook;
-```
-
-- *Type:* <a href="#cdk-ssm-documents.ISleepHook">ISleepHook</a>
-- *Default:* SleeperImpl
-
-(Optional) Whether to really perform a pause of the runtime.
-
-To override sleep behavior, inject an ISleepHook impl or use the provided MockSleep class.
 
 ---
 
@@ -14916,14 +13566,12 @@ const createTagsStepProps: CreateTagsStepProps = { ... }
 | <code><a href="#cdk-ssm-documents.CreateTagsStepProps.property.outputObserver">outputObserver</a></code> | <code><a href="#cdk-ssm-documents.IObserver">IObserver</a></code> | (Optional) Allows for observing the output of steps as they run. |
 | <code><a href="#cdk-ssm-documents.CreateTagsStepProps.property.isEnd">isEnd</a></code> | <code>boolean</code> | Whether to stop document execution after this step. |
 | <code><a href="#cdk-ssm-documents.CreateTagsStepProps.property.maxAttempts">maxAttempts</a></code> | <code>number</code> | (Optional) max attempts to run this step if there are failures. |
-| <code><a href="#cdk-ssm-documents.CreateTagsStepProps.property.onCancel">onCancel</a></code> | <code><a href="#cdk-ssm-documents.Step">Step</a></code> | (Optional) Step to jump to in the event that this step is cancelled. |
-| <code><a href="#cdk-ssm-documents.CreateTagsStepProps.property.onFailure">onFailure</a></code> | <code><a href="#cdk-ssm-documents.Step">Step</a></code> | (Optional) Step to jump to in the event that this step fails. |
+| <code><a href="#cdk-ssm-documents.CreateTagsStepProps.property.onCancel">onCancel</a></code> | <code><a href="#cdk-ssm-documents.AutomationStep">AutomationStep</a></code> | (Optional) Step to jump to in the event that this step is cancelled. |
+| <code><a href="#cdk-ssm-documents.CreateTagsStepProps.property.onFailure">onFailure</a></code> | <code><a href="#cdk-ssm-documents.AutomationStep">AutomationStep</a></code> | (Optional) Step to jump to in the event that this step fails. |
 | <code><a href="#cdk-ssm-documents.CreateTagsStepProps.property.timeoutSeconds">timeoutSeconds</a></code> | <code>number</code> | (Optional) timeout seconds to run this step. |
 | <code><a href="#cdk-ssm-documents.CreateTagsStepProps.property.resourceIds">resourceIds</a></code> | <code><a href="#cdk-ssm-documents.IStringListVariable">IStringListVariable</a></code> | The IDs of the resource(s) to be tagged. |
 | <code><a href="#cdk-ssm-documents.CreateTagsStepProps.property.tags">tags</a></code> | <code><a href="#cdk-ssm-documents.IMapListVariable">IMapListVariable</a></code> | The tags to associate with the resource(s). |
-| <code><a href="#cdk-ssm-documents.CreateTagsStepProps.property.awsInvoker">awsInvoker</a></code> | <code><a href="#cdk-ssm-documents.IAwsInvoker">IAwsInvoker</a></code> | (Optional) Use this as a hook to inject an alternate IAwsInvoker (for mocking the AWS API call). |
 | <code><a href="#cdk-ssm-documents.CreateTagsStepProps.property.resourceType">resourceType</a></code> | <code><a href="#cdk-ssm-documents.IEnumVariable">IEnumVariable</a></code> | (Optional) The type of resource(s) to be tagged. |
-| <code><a href="#cdk-ssm-documents.CreateTagsStepProps.property.sleepHook">sleepHook</a></code> | <code><a href="#cdk-ssm-documents.ISleepHook">ISleepHook</a></code> | (Optional) Whether to really perform a pause of the runtime. |
 
 ---
 
@@ -15011,10 +13659,10 @@ public readonly maxAttempts: number;
 ##### `onCancel`<sup>Optional</sup> <a name="onCancel" id="cdk-ssm-documents.CreateTagsStepProps.property.onCancel"></a>
 
 ```typescript
-public readonly onCancel: Step;
+public readonly onCancel: AutomationStep;
 ```
 
-- *Type:* <a href="#cdk-ssm-documents.Step">Step</a>
+- *Type:* <a href="#cdk-ssm-documents.AutomationStep">AutomationStep</a>
 - *Default:* undefined
 
 (Optional) Step to jump to in the event that this step is cancelled.
@@ -15024,10 +13672,10 @@ public readonly onCancel: Step;
 ##### `onFailure`<sup>Optional</sup> <a name="onFailure" id="cdk-ssm-documents.CreateTagsStepProps.property.onFailure"></a>
 
 ```typescript
-public readonly onFailure: Step;
+public readonly onFailure: AutomationStep;
 ```
 
-- *Type:* <a href="#cdk-ssm-documents.Step">Step</a>
+- *Type:* <a href="#cdk-ssm-documents.AutomationStep">AutomationStep</a>
 - *Default:* undefined
 
 (Optional) Step to jump to in the event that this step fails.
@@ -15075,19 +13723,6 @@ The tags to associate with the resource(s).
 
 ---
 
-##### `awsInvoker`<sup>Optional</sup> <a name="awsInvoker" id="cdk-ssm-documents.CreateTagsStepProps.property.awsInvoker"></a>
-
-```typescript
-public readonly awsInvoker: IAwsInvoker;
-```
-
-- *Type:* <a href="#cdk-ssm-documents.IAwsInvoker">IAwsInvoker</a>
-- *Default:* will perform a real invocation of the JavaScript AWS SDK using ReflectiveAwsInvoker class.
-
-(Optional) Use this as a hook to inject an alternate IAwsInvoker (for mocking the AWS API call).
-
----
-
 ##### `resourceType`<sup>Optional</sup> <a name="resourceType" id="cdk-ssm-documents.CreateTagsStepProps.property.resourceType"></a>
 
 ```typescript
@@ -15100,21 +13735,6 @@ public readonly resourceType: IEnumVariable;
 (Optional) The type of resource(s) to be tagged.
 
 Valid values: EC2 | ManagedInstance | MaintenanceWindow | Parameter
-
----
-
-##### `sleepHook`<sup>Optional</sup> <a name="sleepHook" id="cdk-ssm-documents.CreateTagsStepProps.property.sleepHook"></a>
-
-```typescript
-public readonly sleepHook: ISleepHook;
-```
-
-- *Type:* <a href="#cdk-ssm-documents.ISleepHook">ISleepHook</a>
-- *Default:* SleeperImpl
-
-(Optional) Whether to really perform a pause of the runtime.
-
-To override sleep behavior, inject an ISleepHook impl or use the provided MockSleep class.
 
 ---
 
@@ -15140,12 +13760,10 @@ const deleteImageStepProps: DeleteImageStepProps = { ... }
 | <code><a href="#cdk-ssm-documents.DeleteImageStepProps.property.outputObserver">outputObserver</a></code> | <code><a href="#cdk-ssm-documents.IObserver">IObserver</a></code> | (Optional) Allows for observing the output of steps as they run. |
 | <code><a href="#cdk-ssm-documents.DeleteImageStepProps.property.isEnd">isEnd</a></code> | <code>boolean</code> | Whether to stop document execution after this step. |
 | <code><a href="#cdk-ssm-documents.DeleteImageStepProps.property.maxAttempts">maxAttempts</a></code> | <code>number</code> | (Optional) max attempts to run this step if there are failures. |
-| <code><a href="#cdk-ssm-documents.DeleteImageStepProps.property.onCancel">onCancel</a></code> | <code><a href="#cdk-ssm-documents.Step">Step</a></code> | (Optional) Step to jump to in the event that this step is cancelled. |
-| <code><a href="#cdk-ssm-documents.DeleteImageStepProps.property.onFailure">onFailure</a></code> | <code><a href="#cdk-ssm-documents.Step">Step</a></code> | (Optional) Step to jump to in the event that this step fails. |
+| <code><a href="#cdk-ssm-documents.DeleteImageStepProps.property.onCancel">onCancel</a></code> | <code><a href="#cdk-ssm-documents.AutomationStep">AutomationStep</a></code> | (Optional) Step to jump to in the event that this step is cancelled. |
+| <code><a href="#cdk-ssm-documents.DeleteImageStepProps.property.onFailure">onFailure</a></code> | <code><a href="#cdk-ssm-documents.AutomationStep">AutomationStep</a></code> | (Optional) Step to jump to in the event that this step fails. |
 | <code><a href="#cdk-ssm-documents.DeleteImageStepProps.property.timeoutSeconds">timeoutSeconds</a></code> | <code>number</code> | (Optional) timeout seconds to run this step. |
 | <code><a href="#cdk-ssm-documents.DeleteImageStepProps.property.imageId">imageId</a></code> | <code><a href="#cdk-ssm-documents.IStringVariable">IStringVariable</a></code> | The ID of the image to be deleted. |
-| <code><a href="#cdk-ssm-documents.DeleteImageStepProps.property.awsInvoker">awsInvoker</a></code> | <code><a href="#cdk-ssm-documents.IAwsInvoker">IAwsInvoker</a></code> | (Optional) Use this as a hook to inject an alternate IAwsInvoker (for mocking the AWS API call). |
-| <code><a href="#cdk-ssm-documents.DeleteImageStepProps.property.sleepHook">sleepHook</a></code> | <code><a href="#cdk-ssm-documents.ISleepHook">ISleepHook</a></code> | (Optional) Whether to really perform a pause of the runtime. |
 
 ---
 
@@ -15233,10 +13851,10 @@ public readonly maxAttempts: number;
 ##### `onCancel`<sup>Optional</sup> <a name="onCancel" id="cdk-ssm-documents.DeleteImageStepProps.property.onCancel"></a>
 
 ```typescript
-public readonly onCancel: Step;
+public readonly onCancel: AutomationStep;
 ```
 
-- *Type:* <a href="#cdk-ssm-documents.Step">Step</a>
+- *Type:* <a href="#cdk-ssm-documents.AutomationStep">AutomationStep</a>
 - *Default:* undefined
 
 (Optional) Step to jump to in the event that this step is cancelled.
@@ -15246,10 +13864,10 @@ public readonly onCancel: Step;
 ##### `onFailure`<sup>Optional</sup> <a name="onFailure" id="cdk-ssm-documents.DeleteImageStepProps.property.onFailure"></a>
 
 ```typescript
-public readonly onFailure: Step;
+public readonly onFailure: AutomationStep;
 ```
 
-- *Type:* <a href="#cdk-ssm-documents.Step">Step</a>
+- *Type:* <a href="#cdk-ssm-documents.AutomationStep">AutomationStep</a>
 - *Default:* undefined
 
 (Optional) Step to jump to in the event that this step fails.
@@ -15283,34 +13901,6 @@ The ID of the image to be deleted.
 
 ---
 
-##### `awsInvoker`<sup>Optional</sup> <a name="awsInvoker" id="cdk-ssm-documents.DeleteImageStepProps.property.awsInvoker"></a>
-
-```typescript
-public readonly awsInvoker: IAwsInvoker;
-```
-
-- *Type:* <a href="#cdk-ssm-documents.IAwsInvoker">IAwsInvoker</a>
-- *Default:* will perform a real invocation of the JavaScript AWS SDK using ReflectiveAwsInvoker class.
-
-(Optional) Use this as a hook to inject an alternate IAwsInvoker (for mocking the AWS API call).
-
----
-
-##### `sleepHook`<sup>Optional</sup> <a name="sleepHook" id="cdk-ssm-documents.DeleteImageStepProps.property.sleepHook"></a>
-
-```typescript
-public readonly sleepHook: ISleepHook;
-```
-
-- *Type:* <a href="#cdk-ssm-documents.ISleepHook">ISleepHook</a>
-- *Default:* SleeperImpl
-
-(Optional) Whether to really perform a pause of the runtime.
-
-To override sleep behavior, inject an ISleepHook impl or use the provided MockSleep class.
-
----
-
 ### DeleteStackStepProps <a name="DeleteStackStepProps" id="cdk-ssm-documents.DeleteStackStepProps"></a>
 
 Properties for DeleteStackStep.
@@ -15333,11 +13923,10 @@ const deleteStackStepProps: DeleteStackStepProps = { ... }
 | <code><a href="#cdk-ssm-documents.DeleteStackStepProps.property.outputObserver">outputObserver</a></code> | <code><a href="#cdk-ssm-documents.IObserver">IObserver</a></code> | (Optional) Allows for observing the output of steps as they run. |
 | <code><a href="#cdk-ssm-documents.DeleteStackStepProps.property.isEnd">isEnd</a></code> | <code>boolean</code> | Whether to stop document execution after this step. |
 | <code><a href="#cdk-ssm-documents.DeleteStackStepProps.property.maxAttempts">maxAttempts</a></code> | <code>number</code> | (Optional) max attempts to run this step if there are failures. |
-| <code><a href="#cdk-ssm-documents.DeleteStackStepProps.property.onCancel">onCancel</a></code> | <code><a href="#cdk-ssm-documents.Step">Step</a></code> | (Optional) Step to jump to in the event that this step is cancelled. |
-| <code><a href="#cdk-ssm-documents.DeleteStackStepProps.property.onFailure">onFailure</a></code> | <code><a href="#cdk-ssm-documents.Step">Step</a></code> | (Optional) Step to jump to in the event that this step fails. |
+| <code><a href="#cdk-ssm-documents.DeleteStackStepProps.property.onCancel">onCancel</a></code> | <code><a href="#cdk-ssm-documents.AutomationStep">AutomationStep</a></code> | (Optional) Step to jump to in the event that this step is cancelled. |
+| <code><a href="#cdk-ssm-documents.DeleteStackStepProps.property.onFailure">onFailure</a></code> | <code><a href="#cdk-ssm-documents.AutomationStep">AutomationStep</a></code> | (Optional) Step to jump to in the event that this step fails. |
 | <code><a href="#cdk-ssm-documents.DeleteStackStepProps.property.timeoutSeconds">timeoutSeconds</a></code> | <code>number</code> | (Optional) timeout seconds to run this step. |
 | <code><a href="#cdk-ssm-documents.DeleteStackStepProps.property.stackNameVariable">stackNameVariable</a></code> | <code><a href="#cdk-ssm-documents.IStringVariable">IStringVariable</a></code> | (Optional) Variable that is fed into this step declaring which stack to delete. |
-| <code><a href="#cdk-ssm-documents.DeleteStackStepProps.property.awsInvoker">awsInvoker</a></code> | <code><a href="#cdk-ssm-documents.IAwsInvoker">IAwsInvoker</a></code> | (Optional) Use this as a hook to inject an alternate IAwsInvoker (for mocking the AWS API call). |
 | <code><a href="#cdk-ssm-documents.DeleteStackStepProps.property.roleArn">roleArn</a></code> | <code><a href="#cdk-ssm-documents.IStringVariable">IStringVariable</a></code> | (Optional) The Amazon Resource Name (ARN) of an AWS Identity and Access Management (IAM) role that CloudFormation assumes to create the stack. |
 
 ---
@@ -15426,10 +14015,10 @@ public readonly maxAttempts: number;
 ##### `onCancel`<sup>Optional</sup> <a name="onCancel" id="cdk-ssm-documents.DeleteStackStepProps.property.onCancel"></a>
 
 ```typescript
-public readonly onCancel: Step;
+public readonly onCancel: AutomationStep;
 ```
 
-- *Type:* <a href="#cdk-ssm-documents.Step">Step</a>
+- *Type:* <a href="#cdk-ssm-documents.AutomationStep">AutomationStep</a>
 - *Default:* undefined
 
 (Optional) Step to jump to in the event that this step is cancelled.
@@ -15439,10 +14028,10 @@ public readonly onCancel: Step;
 ##### `onFailure`<sup>Optional</sup> <a name="onFailure" id="cdk-ssm-documents.DeleteStackStepProps.property.onFailure"></a>
 
 ```typescript
-public readonly onFailure: Step;
+public readonly onFailure: AutomationStep;
 ```
 
-- *Type:* <a href="#cdk-ssm-documents.Step">Step</a>
+- *Type:* <a href="#cdk-ssm-documents.AutomationStep">AutomationStep</a>
 - *Default:* undefined
 
 (Optional) Step to jump to in the event that this step fails.
@@ -15474,19 +14063,6 @@ public readonly stackNameVariable: IStringVariable;
 - *Default:* StackName is the default value.
 
 (Optional) Variable that is fed into this step declaring which stack to delete.
-
----
-
-##### `awsInvoker`<sup>Optional</sup> <a name="awsInvoker" id="cdk-ssm-documents.DeleteStackStepProps.property.awsInvoker"></a>
-
-```typescript
-public readonly awsInvoker: IAwsInvoker;
-```
-
-- *Type:* <a href="#cdk-ssm-documents.IAwsInvoker">IAwsInvoker</a>
-- *Default:* will perform a real invocation of the JavaScript AWS SDK using ReflectiveAwsInvoker class.
-
-(Optional) Use this as a hook to inject an alternate IAwsInvoker (for mocking the AWS API call).
 
 ---
 
@@ -15669,8 +14245,8 @@ const executeScriptStepProps: ExecuteScriptStepProps = { ... }
 | <code><a href="#cdk-ssm-documents.ExecuteScriptStepProps.property.outputObserver">outputObserver</a></code> | <code><a href="#cdk-ssm-documents.IObserver">IObserver</a></code> | (Optional) Allows for observing the output of steps as they run. |
 | <code><a href="#cdk-ssm-documents.ExecuteScriptStepProps.property.isEnd">isEnd</a></code> | <code>boolean</code> | Whether to stop document execution after this step. |
 | <code><a href="#cdk-ssm-documents.ExecuteScriptStepProps.property.maxAttempts">maxAttempts</a></code> | <code>number</code> | (Optional) max attempts to run this step if there are failures. |
-| <code><a href="#cdk-ssm-documents.ExecuteScriptStepProps.property.onCancel">onCancel</a></code> | <code><a href="#cdk-ssm-documents.Step">Step</a></code> | (Optional) Step to jump to in the event that this step is cancelled. |
-| <code><a href="#cdk-ssm-documents.ExecuteScriptStepProps.property.onFailure">onFailure</a></code> | <code><a href="#cdk-ssm-documents.Step">Step</a></code> | (Optional) Step to jump to in the event that this step fails. |
+| <code><a href="#cdk-ssm-documents.ExecuteScriptStepProps.property.onCancel">onCancel</a></code> | <code><a href="#cdk-ssm-documents.AutomationStep">AutomationStep</a></code> | (Optional) Step to jump to in the event that this step is cancelled. |
+| <code><a href="#cdk-ssm-documents.ExecuteScriptStepProps.property.onFailure">onFailure</a></code> | <code><a href="#cdk-ssm-documents.AutomationStep">AutomationStep</a></code> | (Optional) Step to jump to in the event that this step fails. |
 | <code><a href="#cdk-ssm-documents.ExecuteScriptStepProps.property.timeoutSeconds">timeoutSeconds</a></code> | <code>number</code> | (Optional) timeout seconds to run this step. |
 | <code><a href="#cdk-ssm-documents.ExecuteScriptStepProps.property.inputs">inputs</a></code> | <code>string[]</code> | (Optional) Inputs that the function needs in order to execute. |
 | <code><a href="#cdk-ssm-documents.ExecuteScriptStepProps.property.language">language</a></code> | <code><a href="#cdk-ssm-documents.ScriptLanguage">ScriptLanguage</a></code> | (Required) Language used to execute the script. |
@@ -15765,10 +14341,10 @@ public readonly maxAttempts: number;
 ##### `onCancel`<sup>Optional</sup> <a name="onCancel" id="cdk-ssm-documents.ExecuteScriptStepProps.property.onCancel"></a>
 
 ```typescript
-public readonly onCancel: Step;
+public readonly onCancel: AutomationStep;
 ```
 
-- *Type:* <a href="#cdk-ssm-documents.Step">Step</a>
+- *Type:* <a href="#cdk-ssm-documents.AutomationStep">AutomationStep</a>
 - *Default:* undefined
 
 (Optional) Step to jump to in the event that this step is cancelled.
@@ -15778,10 +14354,10 @@ public readonly onCancel: Step;
 ##### `onFailure`<sup>Optional</sup> <a name="onFailure" id="cdk-ssm-documents.ExecuteScriptStepProps.property.onFailure"></a>
 
 ```typescript
-public readonly onFailure: Step;
+public readonly onFailure: AutomationStep;
 ```
 
-- *Type:* <a href="#cdk-ssm-documents.Step">Step</a>
+- *Type:* <a href="#cdk-ssm-documents.AutomationStep">AutomationStep</a>
 - *Default:* undefined
 
 (Optional) Step to jump to in the event that this step fails.
@@ -15910,11 +14486,10 @@ const executeStateMachineStepProps: ExecuteStateMachineStepProps = { ... }
 | <code><a href="#cdk-ssm-documents.ExecuteStateMachineStepProps.property.outputObserver">outputObserver</a></code> | <code><a href="#cdk-ssm-documents.IObserver">IObserver</a></code> | (Optional) Allows for observing the output of steps as they run. |
 | <code><a href="#cdk-ssm-documents.ExecuteStateMachineStepProps.property.isEnd">isEnd</a></code> | <code>boolean</code> | Whether to stop document execution after this step. |
 | <code><a href="#cdk-ssm-documents.ExecuteStateMachineStepProps.property.maxAttempts">maxAttempts</a></code> | <code>number</code> | (Optional) max attempts to run this step if there are failures. |
-| <code><a href="#cdk-ssm-documents.ExecuteStateMachineStepProps.property.onCancel">onCancel</a></code> | <code><a href="#cdk-ssm-documents.Step">Step</a></code> | (Optional) Step to jump to in the event that this step is cancelled. |
-| <code><a href="#cdk-ssm-documents.ExecuteStateMachineStepProps.property.onFailure">onFailure</a></code> | <code><a href="#cdk-ssm-documents.Step">Step</a></code> | (Optional) Step to jump to in the event that this step fails. |
+| <code><a href="#cdk-ssm-documents.ExecuteStateMachineStepProps.property.onCancel">onCancel</a></code> | <code><a href="#cdk-ssm-documents.AutomationStep">AutomationStep</a></code> | (Optional) Step to jump to in the event that this step is cancelled. |
+| <code><a href="#cdk-ssm-documents.ExecuteStateMachineStepProps.property.onFailure">onFailure</a></code> | <code><a href="#cdk-ssm-documents.AutomationStep">AutomationStep</a></code> | (Optional) Step to jump to in the event that this step fails. |
 | <code><a href="#cdk-ssm-documents.ExecuteStateMachineStepProps.property.timeoutSeconds">timeoutSeconds</a></code> | <code>number</code> | (Optional) timeout seconds to run this step. |
 | <code><a href="#cdk-ssm-documents.ExecuteStateMachineStepProps.property.stateMachineArn">stateMachineArn</a></code> | <code><a href="#cdk-ssm-documents.IStringVariable">IStringVariable</a></code> | The Amazon Resource Name (ARN) of the Step Functions state machine. |
-| <code><a href="#cdk-ssm-documents.ExecuteStateMachineStepProps.property.awsInvoker">awsInvoker</a></code> | <code><a href="#cdk-ssm-documents.IAwsInvoker">IAwsInvoker</a></code> | (Optional) Use this as a hook to inject an alternate IAwsInvoker (for mocking the AWS API call). |
 | <code><a href="#cdk-ssm-documents.ExecuteStateMachineStepProps.property.executionName">executionName</a></code> | <code><a href="#cdk-ssm-documents.IStringVariable">IStringVariable</a></code> | (Optional) The name of the execution. |
 | <code><a href="#cdk-ssm-documents.ExecuteStateMachineStepProps.property.input">input</a></code> | <code><a href="#cdk-ssm-documents.IStringVariable">IStringVariable</a></code> | (Optional) A string that contains the JSON input data for the execution. |
 
@@ -16004,10 +14579,10 @@ public readonly maxAttempts: number;
 ##### `onCancel`<sup>Optional</sup> <a name="onCancel" id="cdk-ssm-documents.ExecuteStateMachineStepProps.property.onCancel"></a>
 
 ```typescript
-public readonly onCancel: Step;
+public readonly onCancel: AutomationStep;
 ```
 
-- *Type:* <a href="#cdk-ssm-documents.Step">Step</a>
+- *Type:* <a href="#cdk-ssm-documents.AutomationStep">AutomationStep</a>
 - *Default:* undefined
 
 (Optional) Step to jump to in the event that this step is cancelled.
@@ -16017,10 +14592,10 @@ public readonly onCancel: Step;
 ##### `onFailure`<sup>Optional</sup> <a name="onFailure" id="cdk-ssm-documents.ExecuteStateMachineStepProps.property.onFailure"></a>
 
 ```typescript
-public readonly onFailure: Step;
+public readonly onFailure: AutomationStep;
 ```
 
-- *Type:* <a href="#cdk-ssm-documents.Step">Step</a>
+- *Type:* <a href="#cdk-ssm-documents.AutomationStep">AutomationStep</a>
 - *Default:* undefined
 
 (Optional) Step to jump to in the event that this step fails.
@@ -16051,19 +14626,6 @@ public readonly stateMachineArn: IStringVariable;
 - *Type:* <a href="#cdk-ssm-documents.IStringVariable">IStringVariable</a>
 
 The Amazon Resource Name (ARN) of the Step Functions state machine.
-
----
-
-##### `awsInvoker`<sup>Optional</sup> <a name="awsInvoker" id="cdk-ssm-documents.ExecuteStateMachineStepProps.property.awsInvoker"></a>
-
-```typescript
-public readonly awsInvoker: IAwsInvoker;
-```
-
-- *Type:* <a href="#cdk-ssm-documents.IAwsInvoker">IAwsInvoker</a>
-- *Default:* will perform a real invocation of the JavaScript AWS SDK using ReflectiveAwsInvoker class.
-
-(Optional) Use this as a hook to inject an alternate IAwsInvoker (for mocking the AWS API call).
 
 ---
 
@@ -16324,11 +14886,10 @@ const invokeLambdaFunctionStepProps: InvokeLambdaFunctionStepProps = { ... }
 | <code><a href="#cdk-ssm-documents.InvokeLambdaFunctionStepProps.property.outputObserver">outputObserver</a></code> | <code><a href="#cdk-ssm-documents.IObserver">IObserver</a></code> | (Optional) Allows for observing the output of steps as they run. |
 | <code><a href="#cdk-ssm-documents.InvokeLambdaFunctionStepProps.property.isEnd">isEnd</a></code> | <code>boolean</code> | Whether to stop document execution after this step. |
 | <code><a href="#cdk-ssm-documents.InvokeLambdaFunctionStepProps.property.maxAttempts">maxAttempts</a></code> | <code>number</code> | (Optional) max attempts to run this step if there are failures. |
-| <code><a href="#cdk-ssm-documents.InvokeLambdaFunctionStepProps.property.onCancel">onCancel</a></code> | <code><a href="#cdk-ssm-documents.Step">Step</a></code> | (Optional) Step to jump to in the event that this step is cancelled. |
-| <code><a href="#cdk-ssm-documents.InvokeLambdaFunctionStepProps.property.onFailure">onFailure</a></code> | <code><a href="#cdk-ssm-documents.Step">Step</a></code> | (Optional) Step to jump to in the event that this step fails. |
+| <code><a href="#cdk-ssm-documents.InvokeLambdaFunctionStepProps.property.onCancel">onCancel</a></code> | <code><a href="#cdk-ssm-documents.AutomationStep">AutomationStep</a></code> | (Optional) Step to jump to in the event that this step is cancelled. |
+| <code><a href="#cdk-ssm-documents.InvokeLambdaFunctionStepProps.property.onFailure">onFailure</a></code> | <code><a href="#cdk-ssm-documents.AutomationStep">AutomationStep</a></code> | (Optional) Step to jump to in the event that this step fails. |
 | <code><a href="#cdk-ssm-documents.InvokeLambdaFunctionStepProps.property.timeoutSeconds">timeoutSeconds</a></code> | <code>number</code> | (Optional) timeout seconds to run this step. |
 | <code><a href="#cdk-ssm-documents.InvokeLambdaFunctionStepProps.property.functionName">functionName</a></code> | <code><a href="#cdk-ssm-documents.IStringVariable">IStringVariable</a></code> | The name of the Lambda function. |
-| <code><a href="#cdk-ssm-documents.InvokeLambdaFunctionStepProps.property.awsInvoker">awsInvoker</a></code> | <code><a href="#cdk-ssm-documents.IAwsInvoker">IAwsInvoker</a></code> | (Optional) Use this as a hook to inject an alternate IAwsInvoker (for mocking the AWS API call). |
 | <code><a href="#cdk-ssm-documents.InvokeLambdaFunctionStepProps.property.clientContext">clientContext</a></code> | <code><a href="#cdk-ssm-documents.IStringVariable">IStringVariable</a></code> | (Optional) The client-specific information. |
 | <code><a href="#cdk-ssm-documents.InvokeLambdaFunctionStepProps.property.invocationType">invocationType</a></code> | <code><a href="#cdk-ssm-documents.IStringVariable">IStringVariable</a></code> | (Optional) The invocation type. |
 | <code><a href="#cdk-ssm-documents.InvokeLambdaFunctionStepProps.property.logType">logType</a></code> | <code><a href="#cdk-ssm-documents.IStringVariable">IStringVariable</a></code> | (Optional) If the default value is Tail, the invocation type must be RequestResponse. |
@@ -16421,10 +14982,10 @@ public readonly maxAttempts: number;
 ##### `onCancel`<sup>Optional</sup> <a name="onCancel" id="cdk-ssm-documents.InvokeLambdaFunctionStepProps.property.onCancel"></a>
 
 ```typescript
-public readonly onCancel: Step;
+public readonly onCancel: AutomationStep;
 ```
 
-- *Type:* <a href="#cdk-ssm-documents.Step">Step</a>
+- *Type:* <a href="#cdk-ssm-documents.AutomationStep">AutomationStep</a>
 - *Default:* undefined
 
 (Optional) Step to jump to in the event that this step is cancelled.
@@ -16434,10 +14995,10 @@ public readonly onCancel: Step;
 ##### `onFailure`<sup>Optional</sup> <a name="onFailure" id="cdk-ssm-documents.InvokeLambdaFunctionStepProps.property.onFailure"></a>
 
 ```typescript
-public readonly onFailure: Step;
+public readonly onFailure: AutomationStep;
 ```
 
-- *Type:* <a href="#cdk-ssm-documents.Step">Step</a>
+- *Type:* <a href="#cdk-ssm-documents.AutomationStep">AutomationStep</a>
 - *Default:* undefined
 
 (Optional) Step to jump to in the event that this step fails.
@@ -16470,19 +15031,6 @@ public readonly functionName: IStringVariable;
 The name of the Lambda function.
 
 This function must exist.
-
----
-
-##### `awsInvoker`<sup>Optional</sup> <a name="awsInvoker" id="cdk-ssm-documents.InvokeLambdaFunctionStepProps.property.awsInvoker"></a>
-
-```typescript
-public readonly awsInvoker: IAwsInvoker;
-```
-
-- *Type:* <a href="#cdk-ssm-documents.IAwsInvoker">IAwsInvoker</a>
-- *Default:* will perform a real invocation of the JavaScript AWS SDK using ReflectiveAwsInvoker class.
-
-(Optional) Use this as a hook to inject an alternate IAwsInvoker (for mocking the AWS API call).
 
 ---
 
@@ -16664,12 +15212,11 @@ const invokeWebhookStepProps: InvokeWebhookStepProps = { ... }
 | <code><a href="#cdk-ssm-documents.InvokeWebhookStepProps.property.outputObserver">outputObserver</a></code> | <code><a href="#cdk-ssm-documents.IObserver">IObserver</a></code> | (Optional) Allows for observing the output of steps as they run. |
 | <code><a href="#cdk-ssm-documents.InvokeWebhookStepProps.property.isEnd">isEnd</a></code> | <code>boolean</code> | Whether to stop document execution after this step. |
 | <code><a href="#cdk-ssm-documents.InvokeWebhookStepProps.property.maxAttempts">maxAttempts</a></code> | <code>number</code> | (Optional) max attempts to run this step if there are failures. |
-| <code><a href="#cdk-ssm-documents.InvokeWebhookStepProps.property.onCancel">onCancel</a></code> | <code><a href="#cdk-ssm-documents.Step">Step</a></code> | (Optional) Step to jump to in the event that this step is cancelled. |
-| <code><a href="#cdk-ssm-documents.InvokeWebhookStepProps.property.onFailure">onFailure</a></code> | <code><a href="#cdk-ssm-documents.Step">Step</a></code> | (Optional) Step to jump to in the event that this step fails. |
+| <code><a href="#cdk-ssm-documents.InvokeWebhookStepProps.property.onCancel">onCancel</a></code> | <code><a href="#cdk-ssm-documents.AutomationStep">AutomationStep</a></code> | (Optional) Step to jump to in the event that this step is cancelled. |
+| <code><a href="#cdk-ssm-documents.InvokeWebhookStepProps.property.onFailure">onFailure</a></code> | <code><a href="#cdk-ssm-documents.AutomationStep">AutomationStep</a></code> | (Optional) Step to jump to in the event that this step fails. |
 | <code><a href="#cdk-ssm-documents.InvokeWebhookStepProps.property.timeoutSeconds">timeoutSeconds</a></code> | <code>number</code> | (Optional) timeout seconds to run this step. |
 | <code><a href="#cdk-ssm-documents.InvokeWebhookStepProps.property.integrationName">integrationName</a></code> | <code><a href="#cdk-ssm-documents.IStringVariable">IStringVariable</a></code> | The name of the Automation integration. |
 | <code><a href="#cdk-ssm-documents.InvokeWebhookStepProps.property.body">body</a></code> | <code><a href="#cdk-ssm-documents.IStringVariable">IStringVariable</a></code> | (Optional) The payload you want to send when your webhook integration is invoked. |
-| <code><a href="#cdk-ssm-documents.InvokeWebhookStepProps.property.webhook">webhook</a></code> | <code><a href="#cdk-ssm-documents.IWebhook">IWebhook</a></code> | (Optional) Hook for simulating aws:invokeWebhook. |
 
 ---
 
@@ -16757,10 +15304,10 @@ public readonly maxAttempts: number;
 ##### `onCancel`<sup>Optional</sup> <a name="onCancel" id="cdk-ssm-documents.InvokeWebhookStepProps.property.onCancel"></a>
 
 ```typescript
-public readonly onCancel: Step;
+public readonly onCancel: AutomationStep;
 ```
 
-- *Type:* <a href="#cdk-ssm-documents.Step">Step</a>
+- *Type:* <a href="#cdk-ssm-documents.AutomationStep">AutomationStep</a>
 - *Default:* undefined
 
 (Optional) Step to jump to in the event that this step is cancelled.
@@ -16770,10 +15317,10 @@ public readonly onCancel: Step;
 ##### `onFailure`<sup>Optional</sup> <a name="onFailure" id="cdk-ssm-documents.InvokeWebhookStepProps.property.onFailure"></a>
 
 ```typescript
-public readonly onFailure: Step;
+public readonly onFailure: AutomationStep;
 ```
 
-- *Type:* <a href="#cdk-ssm-documents.Step">Step</a>
+- *Type:* <a href="#cdk-ssm-documents.AutomationStep">AutomationStep</a>
 - *Default:* undefined
 
 (Optional) Step to jump to in the event that this step fails.
@@ -16818,19 +15365,6 @@ public readonly body: IStringVariable;
 - *Type:* <a href="#cdk-ssm-documents.IStringVariable">IStringVariable</a>
 
 (Optional) The payload you want to send when your webhook integration is invoked.
-
----
-
-##### `webhook`<sup>Optional</sup> <a name="webhook" id="cdk-ssm-documents.InvokeWebhookStepProps.property.webhook"></a>
-
-```typescript
-public readonly webhook: IWebhook;
-```
-
-- *Type:* <a href="#cdk-ssm-documents.IWebhook">IWebhook</a>
-- *Default:* Returns 204 with an empty response
-
-(Optional) Hook for simulating aws:invokeWebhook.
 
 ---
 
@@ -16893,172 +15427,6 @@ public readonly selector: string;
 - *Type:* string
 
 Json selector for locating the value in the json step response.
-
----
-
-### PauseStepProps <a name="PauseStepProps" id="cdk-ssm-documents.PauseStepProps"></a>
-
-Properties for PauseStep.
-
-#### Initializer <a name="Initializer" id="cdk-ssm-documents.PauseStepProps.Initializer"></a>
-
-```typescript
-import { PauseStepProps } from 'cdk-ssm-documents'
-
-const pauseStepProps: PauseStepProps = { ... }
-```
-
-#### Properties <a name="Properties" id="Properties"></a>
-
-| **Name** | **Type** | **Description** |
-| --- | --- | --- |
-| <code><a href="#cdk-ssm-documents.PauseStepProps.property.description">description</a></code> | <code>string</code> | (Optional) description of the current step. |
-| <code><a href="#cdk-ssm-documents.PauseStepProps.property.inputObserver">inputObserver</a></code> | <code><a href="#cdk-ssm-documents.IObserver">IObserver</a></code> | (Optional) Allows for observing the input to steps as they run. |
-| <code><a href="#cdk-ssm-documents.PauseStepProps.property.name">name</a></code> | <code>string</code> | (Optional) Name of the current step. |
-| <code><a href="#cdk-ssm-documents.PauseStepProps.property.outputObserver">outputObserver</a></code> | <code><a href="#cdk-ssm-documents.IObserver">IObserver</a></code> | (Optional) Allows for observing the output of steps as they run. |
-| <code><a href="#cdk-ssm-documents.PauseStepProps.property.isEnd">isEnd</a></code> | <code>boolean</code> | Whether to stop document execution after this step. |
-| <code><a href="#cdk-ssm-documents.PauseStepProps.property.maxAttempts">maxAttempts</a></code> | <code>number</code> | (Optional) max attempts to run this step if there are failures. |
-| <code><a href="#cdk-ssm-documents.PauseStepProps.property.onCancel">onCancel</a></code> | <code><a href="#cdk-ssm-documents.Step">Step</a></code> | (Optional) Step to jump to in the event that this step is cancelled. |
-| <code><a href="#cdk-ssm-documents.PauseStepProps.property.onFailure">onFailure</a></code> | <code><a href="#cdk-ssm-documents.Step">Step</a></code> | (Optional) Step to jump to in the event that this step fails. |
-| <code><a href="#cdk-ssm-documents.PauseStepProps.property.timeoutSeconds">timeoutSeconds</a></code> | <code>number</code> | (Optional) timeout seconds to run this step. |
-| <code><a href="#cdk-ssm-documents.PauseStepProps.property.pauseHook">pauseHook</a></code> | <code><a href="#cdk-ssm-documents.IPauseHook">IPauseHook</a></code> | (Optional) Pause hook to be called to pause the execution. |
-
----
-
-##### `description`<sup>Optional</sup> <a name="description" id="cdk-ssm-documents.PauseStepProps.property.description"></a>
-
-```typescript
-public readonly description: string;
-```
-
-- *Type:* string
-- *Default:* undefined
-
-(Optional) description of the current step.
-
----
-
-##### `inputObserver`<sup>Optional</sup> <a name="inputObserver" id="cdk-ssm-documents.PauseStepProps.property.inputObserver"></a>
-
-```typescript
-public readonly inputObserver: IObserver;
-```
-
-- *Type:* <a href="#cdk-ssm-documents.IObserver">IObserver</a>
-- *Default:* NoopObserver
-
-(Optional) Allows for observing the input to steps as they run.
-
----
-
-##### `name`<sup>Optional</sup> <a name="name" id="cdk-ssm-documents.PauseStepProps.property.name"></a>
-
-```typescript
-public readonly name: string;
-```
-
-- *Type:* string
-
-(Optional) Name of the current step.
-
-The name will be prepended onto all of the outputs emitted from this step.
-This name will also be used to reference this step in logs.
-Defaults to the id of the CDK node.
-
----
-
-##### `outputObserver`<sup>Optional</sup> <a name="outputObserver" id="cdk-ssm-documents.PauseStepProps.property.outputObserver"></a>
-
-```typescript
-public readonly outputObserver: IObserver;
-```
-
-- *Type:* <a href="#cdk-ssm-documents.IObserver">IObserver</a>
-- *Default:* NoopObserver
-
-(Optional) Allows for observing the output of steps as they run.
-
----
-
-##### `isEnd`<sup>Optional</sup> <a name="isEnd" id="cdk-ssm-documents.PauseStepProps.property.isEnd"></a>
-
-```typescript
-public readonly isEnd: boolean;
-```
-
-- *Type:* boolean
-- *Default:* false
-
-Whether to stop document execution after this step.
-
----
-
-##### `maxAttempts`<sup>Optional</sup> <a name="maxAttempts" id="cdk-ssm-documents.PauseStepProps.property.maxAttempts"></a>
-
-```typescript
-public readonly maxAttempts: number;
-```
-
-- *Type:* number
-- *Default:* Step.DEFAULT_MAX_ATTEMPTS
-
-(Optional) max attempts to run this step if there are failures.
-
----
-
-##### `onCancel`<sup>Optional</sup> <a name="onCancel" id="cdk-ssm-documents.PauseStepProps.property.onCancel"></a>
-
-```typescript
-public readonly onCancel: Step;
-```
-
-- *Type:* <a href="#cdk-ssm-documents.Step">Step</a>
-- *Default:* undefined
-
-(Optional) Step to jump to in the event that this step is cancelled.
-
----
-
-##### `onFailure`<sup>Optional</sup> <a name="onFailure" id="cdk-ssm-documents.PauseStepProps.property.onFailure"></a>
-
-```typescript
-public readonly onFailure: Step;
-```
-
-- *Type:* <a href="#cdk-ssm-documents.Step">Step</a>
-- *Default:* undefined
-
-(Optional) Step to jump to in the event that this step fails.
-
----
-
-##### `timeoutSeconds`<sup>Optional</sup> <a name="timeoutSeconds" id="cdk-ssm-documents.PauseStepProps.property.timeoutSeconds"></a>
-
-```typescript
-public readonly timeoutSeconds: number;
-```
-
-- *Type:* number
-- *Default:* Step.DEFAULT_TIMEOUT
-
-(Optional) timeout seconds to run this step.
-
-In a simulation run, this will only be encorced after-the-fact but execution will not be stopped mid-step.
-
----
-
-##### `pauseHook`<sup>Optional</sup> <a name="pauseHook" id="cdk-ssm-documents.PauseStepProps.property.pauseHook"></a>
-
-```typescript
-public readonly pauseHook: IPauseHook;
-```
-
-- *Type:* <a href="#cdk-ssm-documents.IPauseHook">IPauseHook</a>
-- *Default:* PauseHook instance. PauseHook may not work in exported JSII languages. Override interface as needed.
-
-(Optional) Pause hook to be called to pause the execution.
-
-To mock this implementation either inject an instance of IPauseHook or use the provided MockPause class.
 
 ---
 
@@ -17142,7 +15510,6 @@ const psModuleStepProps: PsModuleStepProps = { ... }
 | <code><a href="#cdk-ssm-documents.PsModuleStepProps.property.inputObserver">inputObserver</a></code> | <code><a href="#cdk-ssm-documents.IObserver">IObserver</a></code> | (Optional) Allows for observing the input to steps as they run. |
 | <code><a href="#cdk-ssm-documents.PsModuleStepProps.property.name">name</a></code> | <code>string</code> | (Optional) Name of the current step. |
 | <code><a href="#cdk-ssm-documents.PsModuleStepProps.property.outputObserver">outputObserver</a></code> | <code><a href="#cdk-ssm-documents.IObserver">IObserver</a></code> | (Optional) Allows for observing the output of steps as they run. |
-| <code><a href="#cdk-ssm-documents.PsModuleStepProps.property.simulationPlatform">simulationPlatform</a></code> | <code><a href="#cdk-ssm-documents.Platform">Platform</a></code> | The Platform used in executing the command step. |
 | <code><a href="#cdk-ssm-documents.PsModuleStepProps.property.exitOnFailure">exitOnFailure</a></code> | <code>boolean</code> | (Optional) Whether to exit the document execution after failed execution of this step. |
 | <code><a href="#cdk-ssm-documents.PsModuleStepProps.property.exitOnSuccess">exitOnSuccess</a></code> | <code>boolean</code> | (Optional) Whether to exit the document execution after successful execution of this step. |
 | <code><a href="#cdk-ssm-documents.PsModuleStepProps.property.finallyStep">finallyStep</a></code> | <code>boolean</code> | *No description.* |
@@ -17150,7 +15517,6 @@ const psModuleStepProps: PsModuleStepProps = { ... }
 | <code><a href="#cdk-ssm-documents.PsModuleStepProps.property.onCancel">onCancel</a></code> | <code><a href="#cdk-ssm-documents.Step">Step</a></code> | (Optional) Step to jump to in the event that this step is cancelled. |
 | <code><a href="#cdk-ssm-documents.PsModuleStepProps.property.precondition">precondition</a></code> | <code><a href="#cdk-ssm-documents.Precondition">Precondition</a></code> | (Optional) A precondition to test before execution occurrs. |
 | <code><a href="#cdk-ssm-documents.PsModuleStepProps.property.source">source</a></code> | <code><a href="#cdk-ssm-documents.IStringVariable">IStringVariable</a></code> | The URL or local path on the instance to the application .zip file. The name of the zip file must be the name of the module to be installed. |
-| <code><a href="#cdk-ssm-documents.PsModuleStepProps.property.environment">environment</a></code> | <code><a href="#cdk-ssm-documents.IEnvironment">IEnvironment</a></code> | (Optional) Specify here the environment in which to execute the scripts. |
 | <code><a href="#cdk-ssm-documents.PsModuleStepProps.property.runCommand">runCommand</a></code> | <code><a href="#cdk-ssm-documents.IStringVariable">IStringVariable</a>[]</code> | Specify the commands to run or the path to an existing script on the instance. |
 | <code><a href="#cdk-ssm-documents.PsModuleStepProps.property.sourceHash">sourceHash</a></code> | <code><a href="#cdk-ssm-documents.IStringVariable">IStringVariable</a></code> | (Optional) The SHA256 hash of the .zip file. |
 | <code><a href="#cdk-ssm-documents.PsModuleStepProps.property.timeoutSeconds">timeoutSeconds</a></code> | <code>number</code> | (Optional) The time in seconds for a command to be completed before it's considered to have failed. |
@@ -17210,18 +15576,6 @@ public readonly outputObserver: IObserver;
 - *Default:* NoopObserver
 
 (Optional) Allows for observing the output of steps as they run.
-
----
-
-##### `simulationPlatform`<sup>Required</sup> <a name="simulationPlatform" id="cdk-ssm-documents.PsModuleStepProps.property.simulationPlatform"></a>
-
-```typescript
-public readonly simulationPlatform: Platform;
-```
-
-- *Type:* <a href="#cdk-ssm-documents.Platform">Platform</a>
-
-The Platform used in executing the command step.
 
 ---
 
@@ -17312,23 +15666,6 @@ public readonly source: IStringVariable;
 - *Type:* <a href="#cdk-ssm-documents.IStringVariable">IStringVariable</a>
 
 The URL or local path on the instance to the application .zip file. The name of the zip file must be the name of the module to be installed.
-
----
-
-##### `environment`<sup>Optional</sup> <a name="environment" id="cdk-ssm-documents.PsModuleStepProps.property.environment"></a>
-
-```typescript
-public readonly environment: IEnvironment;
-```
-
-- *Type:* <a href="#cdk-ssm-documents.IEnvironment">IEnvironment</a>
-- *Default:* LoggingEnvironment
-
-(Optional) Specify here the environment in which to execute the scripts.
-
-Use the DockerEnvironment to execute the commands inside the docker.
-You can alternatively use the LoggingEnvironment which simply logs the commands
-or MockEnvironment which saves them for validation.
 
 ---
 
@@ -17686,8 +16023,8 @@ const runCommandStepProps: RunCommandStepProps = { ... }
 | <code><a href="#cdk-ssm-documents.RunCommandStepProps.property.outputObserver">outputObserver</a></code> | <code><a href="#cdk-ssm-documents.IObserver">IObserver</a></code> | (Optional) Allows for observing the output of steps as they run. |
 | <code><a href="#cdk-ssm-documents.RunCommandStepProps.property.isEnd">isEnd</a></code> | <code>boolean</code> | Whether to stop document execution after this step. |
 | <code><a href="#cdk-ssm-documents.RunCommandStepProps.property.maxAttempts">maxAttempts</a></code> | <code>number</code> | (Optional) max attempts to run this step if there are failures. |
-| <code><a href="#cdk-ssm-documents.RunCommandStepProps.property.onCancel">onCancel</a></code> | <code><a href="#cdk-ssm-documents.Step">Step</a></code> | (Optional) Step to jump to in the event that this step is cancelled. |
-| <code><a href="#cdk-ssm-documents.RunCommandStepProps.property.onFailure">onFailure</a></code> | <code><a href="#cdk-ssm-documents.Step">Step</a></code> | (Optional) Step to jump to in the event that this step fails. |
+| <code><a href="#cdk-ssm-documents.RunCommandStepProps.property.onCancel">onCancel</a></code> | <code><a href="#cdk-ssm-documents.AutomationStep">AutomationStep</a></code> | (Optional) Step to jump to in the event that this step is cancelled. |
+| <code><a href="#cdk-ssm-documents.RunCommandStepProps.property.onFailure">onFailure</a></code> | <code><a href="#cdk-ssm-documents.AutomationStep">AutomationStep</a></code> | (Optional) Step to jump to in the event that this step fails. |
 | <code><a href="#cdk-ssm-documents.RunCommandStepProps.property.timeoutSeconds">timeoutSeconds</a></code> | <code>number</code> | (Optional) timeout seconds to run this step. |
 | <code><a href="#cdk-ssm-documents.RunCommandStepProps.property.documentName">documentName</a></code> | <code><a href="#cdk-ssm-documents.IStringVariable">IStringVariable</a></code> | If the Command type document is owned by you or AWS, specify the name of the document. |
 | <code><a href="#cdk-ssm-documents.RunCommandStepProps.property.targets">targets</a></code> | <code><a href="#cdk-ssm-documents.IStringListVariable">IStringListVariable</a> \| <a href="#cdk-ssm-documents.IMapListVariable">IMapListVariable</a></code> | The instance IDs where you want the command to run. You can specify a maximum of 50 IDs. |
@@ -17702,7 +16039,6 @@ const runCommandStepProps: RunCommandStepProps = { ... }
 | <code><a href="#cdk-ssm-documents.RunCommandStepProps.property.outputS3BucketName">outputS3BucketName</a></code> | <code><a href="#cdk-ssm-documents.IStringVariable">IStringVariable</a></code> | (Optional) The name of the S3 bucket for command output responses. |
 | <code><a href="#cdk-ssm-documents.RunCommandStepProps.property.outputS3KeyPrefix">outputS3KeyPrefix</a></code> | <code><a href="#cdk-ssm-documents.IStringVariable">IStringVariable</a></code> | (Optional) The prefix. |
 | <code><a href="#cdk-ssm-documents.RunCommandStepProps.property.parameters">parameters</a></code> | <code><a href="#cdk-ssm-documents.IStringMapVariable">IStringMapVariable</a></code> | (Optional) The required and optional parameters specified in the document. |
-| <code><a href="#cdk-ssm-documents.RunCommandStepProps.property.runCommandHook">runCommandHook</a></code> | <code><a href="#cdk-ssm-documents.IRunCommandHook">IRunCommandHook</a></code> | Hook for simulating aws:runCommand. |
 | <code><a href="#cdk-ssm-documents.RunCommandStepProps.property.serviceRoleArn">serviceRoleArn</a></code> | <code><a href="#cdk-ssm-documents.IStringVariable">IStringVariable</a></code> | (Optional) The ARN of the AWS Identity and Access Management (IAM) role. |
 
 ---
@@ -17791,10 +16127,10 @@ public readonly maxAttempts: number;
 ##### `onCancel`<sup>Optional</sup> <a name="onCancel" id="cdk-ssm-documents.RunCommandStepProps.property.onCancel"></a>
 
 ```typescript
-public readonly onCancel: Step;
+public readonly onCancel: AutomationStep;
 ```
 
-- *Type:* <a href="#cdk-ssm-documents.Step">Step</a>
+- *Type:* <a href="#cdk-ssm-documents.AutomationStep">AutomationStep</a>
 - *Default:* undefined
 
 (Optional) Step to jump to in the event that this step is cancelled.
@@ -17804,10 +16140,10 @@ public readonly onCancel: Step;
 ##### `onFailure`<sup>Optional</sup> <a name="onFailure" id="cdk-ssm-documents.RunCommandStepProps.property.onFailure"></a>
 
 ```typescript
-public readonly onFailure: Step;
+public readonly onFailure: AutomationStep;
 ```
 
-- *Type:* <a href="#cdk-ssm-documents.Step">Step</a>
+- *Type:* <a href="#cdk-ssm-documents.AutomationStep">AutomationStep</a>
 - *Default:* undefined
 
 (Optional) Step to jump to in the event that this step fails.
@@ -17995,19 +16331,6 @@ public readonly parameters: IStringMapVariable;
 
 ---
 
-##### `runCommandHook`<sup>Optional</sup> <a name="runCommandHook" id="cdk-ssm-documents.RunCommandStepProps.property.runCommandHook"></a>
-
-```typescript
-public readonly runCommandHook: IRunCommandHook;
-```
-
-- *Type:* <a href="#cdk-ssm-documents.IRunCommandHook">IRunCommandHook</a>
-- *Default:* Uses AWS API to execute the document remotely.
-
-Hook for simulating aws:runCommand.
-
----
-
 ##### `serviceRoleArn`<sup>Optional</sup> <a name="serviceRoleArn" id="cdk-ssm-documents.RunCommandStepProps.property.serviceRoleArn"></a>
 
 ```typescript
@@ -18042,12 +16365,11 @@ const runInstanceStepProps: RunInstanceStepProps = { ... }
 | <code><a href="#cdk-ssm-documents.RunInstanceStepProps.property.outputObserver">outputObserver</a></code> | <code><a href="#cdk-ssm-documents.IObserver">IObserver</a></code> | (Optional) Allows for observing the output of steps as they run. |
 | <code><a href="#cdk-ssm-documents.RunInstanceStepProps.property.isEnd">isEnd</a></code> | <code>boolean</code> | Whether to stop document execution after this step. |
 | <code><a href="#cdk-ssm-documents.RunInstanceStepProps.property.maxAttempts">maxAttempts</a></code> | <code>number</code> | (Optional) max attempts to run this step if there are failures. |
-| <code><a href="#cdk-ssm-documents.RunInstanceStepProps.property.onCancel">onCancel</a></code> | <code><a href="#cdk-ssm-documents.Step">Step</a></code> | (Optional) Step to jump to in the event that this step is cancelled. |
-| <code><a href="#cdk-ssm-documents.RunInstanceStepProps.property.onFailure">onFailure</a></code> | <code><a href="#cdk-ssm-documents.Step">Step</a></code> | (Optional) Step to jump to in the event that this step fails. |
+| <code><a href="#cdk-ssm-documents.RunInstanceStepProps.property.onCancel">onCancel</a></code> | <code><a href="#cdk-ssm-documents.AutomationStep">AutomationStep</a></code> | (Optional) Step to jump to in the event that this step is cancelled. |
+| <code><a href="#cdk-ssm-documents.RunInstanceStepProps.property.onFailure">onFailure</a></code> | <code><a href="#cdk-ssm-documents.AutomationStep">AutomationStep</a></code> | (Optional) Step to jump to in the event that this step fails. |
 | <code><a href="#cdk-ssm-documents.RunInstanceStepProps.property.timeoutSeconds">timeoutSeconds</a></code> | <code>number</code> | (Optional) timeout seconds to run this step. |
 | <code><a href="#cdk-ssm-documents.RunInstanceStepProps.property.imageId">imageId</a></code> | <code><a href="#cdk-ssm-documents.IStringVariable">IStringVariable</a></code> | The ID of the Amazon Machine Image (AMI). |
 | <code><a href="#cdk-ssm-documents.RunInstanceStepProps.property.additionalInfo">additionalInfo</a></code> | <code><a href="#cdk-ssm-documents.IStringVariable">IStringVariable</a></code> | (Optional) Reserved. |
-| <code><a href="#cdk-ssm-documents.RunInstanceStepProps.property.awsInvoker">awsInvoker</a></code> | <code><a href="#cdk-ssm-documents.IAwsInvoker">IAwsInvoker</a></code> | (Optional) Use this as a hook to inject an alternate IAwsInvoker (for mocking the AWS API call). |
 | <code><a href="#cdk-ssm-documents.RunInstanceStepProps.property.blockDeviceMappings">blockDeviceMappings</a></code> | <code><a href="#cdk-ssm-documents.IMapListVariable">IMapListVariable</a></code> | (Optional) The block devices for the instance. |
 | <code><a href="#cdk-ssm-documents.RunInstanceStepProps.property.clientToken">clientToken</a></code> | <code><a href="#cdk-ssm-documents.IStringVariable">IStringVariable</a></code> | (Optional) The identifier to ensure idempotency of the request. |
 | <code><a href="#cdk-ssm-documents.RunInstanceStepProps.property.disableApiTermination">disableApiTermination</a></code> | <code><a href="#cdk-ssm-documents.IBooleanVariable">IBooleanVariable</a></code> | (Optional) Turns on or turns off instance API termination. |
@@ -18157,10 +16479,10 @@ public readonly maxAttempts: number;
 ##### `onCancel`<sup>Optional</sup> <a name="onCancel" id="cdk-ssm-documents.RunInstanceStepProps.property.onCancel"></a>
 
 ```typescript
-public readonly onCancel: Step;
+public readonly onCancel: AutomationStep;
 ```
 
-- *Type:* <a href="#cdk-ssm-documents.Step">Step</a>
+- *Type:* <a href="#cdk-ssm-documents.AutomationStep">AutomationStep</a>
 - *Default:* undefined
 
 (Optional) Step to jump to in the event that this step is cancelled.
@@ -18170,10 +16492,10 @@ public readonly onCancel: Step;
 ##### `onFailure`<sup>Optional</sup> <a name="onFailure" id="cdk-ssm-documents.RunInstanceStepProps.property.onFailure"></a>
 
 ```typescript
-public readonly onFailure: Step;
+public readonly onFailure: AutomationStep;
 ```
 
-- *Type:* <a href="#cdk-ssm-documents.Step">Step</a>
+- *Type:* <a href="#cdk-ssm-documents.AutomationStep">AutomationStep</a>
 - *Default:* undefined
 
 (Optional) Step to jump to in the event that this step fails.
@@ -18216,19 +16538,6 @@ public readonly additionalInfo: IStringVariable;
 - *Type:* <a href="#cdk-ssm-documents.IStringVariable">IStringVariable</a>
 
 (Optional) Reserved.
-
----
-
-##### `awsInvoker`<sup>Optional</sup> <a name="awsInvoker" id="cdk-ssm-documents.RunInstanceStepProps.property.awsInvoker"></a>
-
-```typescript
-public readonly awsInvoker: IAwsInvoker;
-```
-
-- *Type:* <a href="#cdk-ssm-documents.IAwsInvoker">IAwsInvoker</a>
-- *Default:* will perform a real invocation of the JavaScript AWS SDK using ReflectiveAwsInvoker class.
-
-(Optional) Use this as a hook to inject an alternate IAwsInvoker (for mocking the AWS API call).
 
 ---
 
@@ -18521,7 +16830,6 @@ const runPowerShellScriptStepProps: RunPowerShellScriptStepProps = { ... }
 | <code><a href="#cdk-ssm-documents.RunPowerShellScriptStepProps.property.inputObserver">inputObserver</a></code> | <code><a href="#cdk-ssm-documents.IObserver">IObserver</a></code> | (Optional) Allows for observing the input to steps as they run. |
 | <code><a href="#cdk-ssm-documents.RunPowerShellScriptStepProps.property.name">name</a></code> | <code>string</code> | (Optional) Name of the current step. |
 | <code><a href="#cdk-ssm-documents.RunPowerShellScriptStepProps.property.outputObserver">outputObserver</a></code> | <code><a href="#cdk-ssm-documents.IObserver">IObserver</a></code> | (Optional) Allows for observing the output of steps as they run. |
-| <code><a href="#cdk-ssm-documents.RunPowerShellScriptStepProps.property.simulationPlatform">simulationPlatform</a></code> | <code><a href="#cdk-ssm-documents.Platform">Platform</a></code> | The Platform used in executing the command step. |
 | <code><a href="#cdk-ssm-documents.RunPowerShellScriptStepProps.property.exitOnFailure">exitOnFailure</a></code> | <code>boolean</code> | (Optional) Whether to exit the document execution after failed execution of this step. |
 | <code><a href="#cdk-ssm-documents.RunPowerShellScriptStepProps.property.exitOnSuccess">exitOnSuccess</a></code> | <code>boolean</code> | (Optional) Whether to exit the document execution after successful execution of this step. |
 | <code><a href="#cdk-ssm-documents.RunPowerShellScriptStepProps.property.finallyStep">finallyStep</a></code> | <code>boolean</code> | *No description.* |
@@ -18529,7 +16837,6 @@ const runPowerShellScriptStepProps: RunPowerShellScriptStepProps = { ... }
 | <code><a href="#cdk-ssm-documents.RunPowerShellScriptStepProps.property.onCancel">onCancel</a></code> | <code><a href="#cdk-ssm-documents.Step">Step</a></code> | (Optional) Step to jump to in the event that this step is cancelled. |
 | <code><a href="#cdk-ssm-documents.RunPowerShellScriptStepProps.property.precondition">precondition</a></code> | <code><a href="#cdk-ssm-documents.Precondition">Precondition</a></code> | (Optional) A precondition to test before execution occurrs. |
 | <code><a href="#cdk-ssm-documents.RunPowerShellScriptStepProps.property.runCommand">runCommand</a></code> | <code><a href="#cdk-ssm-documents.IStringVariable">IStringVariable</a>[]</code> | Specify the commands to run or the path to an existing script on the instance. |
-| <code><a href="#cdk-ssm-documents.RunPowerShellScriptStepProps.property.environment">environment</a></code> | <code><a href="#cdk-ssm-documents.IEnvironment">IEnvironment</a></code> | (Optional) Specify here the environment in which to execute the scripts. |
 | <code><a href="#cdk-ssm-documents.RunPowerShellScriptStepProps.property.timeoutSeconds">timeoutSeconds</a></code> | <code>number</code> | (Optional) The time in seconds for a command to be completed before it's considered to have failed. |
 | <code><a href="#cdk-ssm-documents.RunPowerShellScriptStepProps.property.workingDirectory">workingDirectory</a></code> | <code><a href="#cdk-ssm-documents.IStringVariable">IStringVariable</a></code> | (Optional) The path to the working directory on your instance. |
 
@@ -18587,18 +16894,6 @@ public readonly outputObserver: IObserver;
 - *Default:* NoopObserver
 
 (Optional) Allows for observing the output of steps as they run.
-
----
-
-##### `simulationPlatform`<sup>Required</sup> <a name="simulationPlatform" id="cdk-ssm-documents.RunPowerShellScriptStepProps.property.simulationPlatform"></a>
-
-```typescript
-public readonly simulationPlatform: Platform;
-```
-
-- *Type:* <a href="#cdk-ssm-documents.Platform">Platform</a>
-
-The Platform used in executing the command step.
 
 ---
 
@@ -18692,23 +16987,6 @@ Specify the commands to run or the path to an existing script on the instance.
 
 ---
 
-##### `environment`<sup>Optional</sup> <a name="environment" id="cdk-ssm-documents.RunPowerShellScriptStepProps.property.environment"></a>
-
-```typescript
-public readonly environment: IEnvironment;
-```
-
-- *Type:* <a href="#cdk-ssm-documents.IEnvironment">IEnvironment</a>
-- *Default:* LoggingEnvironment
-
-(Optional) Specify here the environment in which to execute the scripts.
-
-Use the DockerEnvironment to execute the commands inside the docker.
-You can alternatively use the LoggingEnvironment which simply logs the commands
-or MockEnvironment which saves them for validation.
-
----
-
 ##### `timeoutSeconds`<sup>Optional</sup> <a name="timeoutSeconds" id="cdk-ssm-documents.RunPowerShellScriptStepProps.property.timeoutSeconds"></a>
 
 ```typescript
@@ -18755,7 +17033,6 @@ const runShellScriptStepProps: RunShellScriptStepProps = { ... }
 | <code><a href="#cdk-ssm-documents.RunShellScriptStepProps.property.inputObserver">inputObserver</a></code> | <code><a href="#cdk-ssm-documents.IObserver">IObserver</a></code> | (Optional) Allows for observing the input to steps as they run. |
 | <code><a href="#cdk-ssm-documents.RunShellScriptStepProps.property.name">name</a></code> | <code>string</code> | (Optional) Name of the current step. |
 | <code><a href="#cdk-ssm-documents.RunShellScriptStepProps.property.outputObserver">outputObserver</a></code> | <code><a href="#cdk-ssm-documents.IObserver">IObserver</a></code> | (Optional) Allows for observing the output of steps as they run. |
-| <code><a href="#cdk-ssm-documents.RunShellScriptStepProps.property.simulationPlatform">simulationPlatform</a></code> | <code><a href="#cdk-ssm-documents.Platform">Platform</a></code> | The Platform used in executing the command step. |
 | <code><a href="#cdk-ssm-documents.RunShellScriptStepProps.property.exitOnFailure">exitOnFailure</a></code> | <code>boolean</code> | (Optional) Whether to exit the document execution after failed execution of this step. |
 | <code><a href="#cdk-ssm-documents.RunShellScriptStepProps.property.exitOnSuccess">exitOnSuccess</a></code> | <code>boolean</code> | (Optional) Whether to exit the document execution after successful execution of this step. |
 | <code><a href="#cdk-ssm-documents.RunShellScriptStepProps.property.finallyStep">finallyStep</a></code> | <code>boolean</code> | *No description.* |
@@ -18763,7 +17040,6 @@ const runShellScriptStepProps: RunShellScriptStepProps = { ... }
 | <code><a href="#cdk-ssm-documents.RunShellScriptStepProps.property.onCancel">onCancel</a></code> | <code><a href="#cdk-ssm-documents.Step">Step</a></code> | (Optional) Step to jump to in the event that this step is cancelled. |
 | <code><a href="#cdk-ssm-documents.RunShellScriptStepProps.property.precondition">precondition</a></code> | <code><a href="#cdk-ssm-documents.Precondition">Precondition</a></code> | (Optional) A precondition to test before execution occurrs. |
 | <code><a href="#cdk-ssm-documents.RunShellScriptStepProps.property.runCommand">runCommand</a></code> | <code><a href="#cdk-ssm-documents.IStringVariable">IStringVariable</a>[]</code> | Specify the commands to run or the path to an existing script on the instance. |
-| <code><a href="#cdk-ssm-documents.RunShellScriptStepProps.property.environment">environment</a></code> | <code><a href="#cdk-ssm-documents.IEnvironment">IEnvironment</a></code> | (Optional) Specify here the environment in which to execute the scripts. |
 | <code><a href="#cdk-ssm-documents.RunShellScriptStepProps.property.timeoutSeconds">timeoutSeconds</a></code> | <code>number</code> | (Optional) The time in seconds for a command to be completed before it's considered to have failed. |
 | <code><a href="#cdk-ssm-documents.RunShellScriptStepProps.property.workingDirectory">workingDirectory</a></code> | <code><a href="#cdk-ssm-documents.IStringVariable">IStringVariable</a></code> | (Optional) The path to the working directory on your instance. |
 
@@ -18821,18 +17097,6 @@ public readonly outputObserver: IObserver;
 - *Default:* NoopObserver
 
 (Optional) Allows for observing the output of steps as they run.
-
----
-
-##### `simulationPlatform`<sup>Required</sup> <a name="simulationPlatform" id="cdk-ssm-documents.RunShellScriptStepProps.property.simulationPlatform"></a>
-
-```typescript
-public readonly simulationPlatform: Platform;
-```
-
-- *Type:* <a href="#cdk-ssm-documents.Platform">Platform</a>
-
-The Platform used in executing the command step.
 
 ---
 
@@ -18926,23 +17190,6 @@ Specify the commands to run or the path to an existing script on the instance.
 
 ---
 
-##### `environment`<sup>Optional</sup> <a name="environment" id="cdk-ssm-documents.RunShellScriptStepProps.property.environment"></a>
-
-```typescript
-public readonly environment: IEnvironment;
-```
-
-- *Type:* <a href="#cdk-ssm-documents.IEnvironment">IEnvironment</a>
-- *Default:* LoggingEnvironment
-
-(Optional) Specify here the environment in which to execute the scripts.
-
-Use the DockerEnvironment to execute the commands inside the docker.
-You can alternatively use the LoggingEnvironment which simply logs the commands
-or MockEnvironment which saves them for validation.
-
----
-
 ##### `timeoutSeconds`<sup>Optional</sup> <a name="timeoutSeconds" id="cdk-ssm-documents.RunShellScriptStepProps.property.timeoutSeconds"></a>
 
 ```typescript
@@ -18966,95 +17213,6 @@ public readonly workingDirectory: IStringVariable;
 - *Type:* <a href="#cdk-ssm-documents.IStringVariable">IStringVariable</a>
 
 (Optional) The path to the working directory on your instance.
-
----
-
-### SimulationProps <a name="SimulationProps" id="cdk-ssm-documents.SimulationProps"></a>
-
-#### Initializer <a name="Initializer" id="cdk-ssm-documents.SimulationProps.Initializer"></a>
-
-```typescript
-import { SimulationProps } from 'cdk-ssm-documents'
-
-const simulationProps: SimulationProps = { ... }
-```
-
-#### Properties <a name="Properties" id="Properties"></a>
-
-| **Name** | **Type** | **Description** |
-| --- | --- | --- |
-| <code><a href="#cdk-ssm-documents.SimulationProps.property.awsInvoker">awsInvoker</a></code> | <code><a href="#cdk-ssm-documents.IAwsInvoker">IAwsInvoker</a></code> | (Optional) Use this as a hook to inject an alternate IAwsInvoker (for mocking the AWS API call). |
-| <code><a href="#cdk-ssm-documents.SimulationProps.property.inputObserver">inputObserver</a></code> | <code><a href="#cdk-ssm-documents.IObserver">IObserver</a></code> | (Optional) Allows for observing the input to steps as they run. |
-| <code><a href="#cdk-ssm-documents.SimulationProps.property.outputObserver">outputObserver</a></code> | <code><a href="#cdk-ssm-documents.IObserver">IObserver</a></code> | (Optional) Allows for observing the output of steps as they run. |
-| <code><a href="#cdk-ssm-documents.SimulationProps.property.pauseHook">pauseHook</a></code> | <code><a href="#cdk-ssm-documents.IPauseHook">IPauseHook</a></code> | (Optional) Pause hook to be called to pause the execution. |
-| <code><a href="#cdk-ssm-documents.SimulationProps.property.sleepHook">sleepHook</a></code> | <code><a href="#cdk-ssm-documents.ISleepHook">ISleepHook</a></code> | (Optional) Hook to inject alternate ISleeper (to mock the sleep between failed invocations). |
-
----
-
-##### `awsInvoker`<sup>Optional</sup> <a name="awsInvoker" id="cdk-ssm-documents.SimulationProps.property.awsInvoker"></a>
-
-```typescript
-public readonly awsInvoker: IAwsInvoker;
-```
-
-- *Type:* <a href="#cdk-ssm-documents.IAwsInvoker">IAwsInvoker</a>
-- *Default:* will perform a real invocation of the JavaScript AWS SDK using ReflectiveAwsInvoker class.
-
-(Optional) Use this as a hook to inject an alternate IAwsInvoker (for mocking the AWS API call).
-
----
-
-##### `inputObserver`<sup>Optional</sup> <a name="inputObserver" id="cdk-ssm-documents.SimulationProps.property.inputObserver"></a>
-
-```typescript
-public readonly inputObserver: IObserver;
-```
-
-- *Type:* <a href="#cdk-ssm-documents.IObserver">IObserver</a>
-- *Default:* NoopObserver
-
-(Optional) Allows for observing the input to steps as they run.
-
----
-
-##### `outputObserver`<sup>Optional</sup> <a name="outputObserver" id="cdk-ssm-documents.SimulationProps.property.outputObserver"></a>
-
-```typescript
-public readonly outputObserver: IObserver;
-```
-
-- *Type:* <a href="#cdk-ssm-documents.IObserver">IObserver</a>
-- *Default:* NoopObserver
-
-(Optional) Allows for observing the output of steps as they run.
-
----
-
-##### `pauseHook`<sup>Optional</sup> <a name="pauseHook" id="cdk-ssm-documents.SimulationProps.property.pauseHook"></a>
-
-```typescript
-public readonly pauseHook: IPauseHook;
-```
-
-- *Type:* <a href="#cdk-ssm-documents.IPauseHook">IPauseHook</a>
-- *Default:* PauseHook instance. PauseHook may not work in exported JSII languages. Override interface as needed.
-
-(Optional) Pause hook to be called to pause the execution.
-
-To mock this implemenation either inject an instance of IPauseHook or use the provided MockPause class.
-
----
-
-##### `sleepHook`<sup>Optional</sup> <a name="sleepHook" id="cdk-ssm-documents.SimulationProps.property.sleepHook"></a>
-
-```typescript
-public readonly sleepHook: ISleepHook;
-```
-
-- *Type:* <a href="#cdk-ssm-documents.ISleepHook">ISleepHook</a>
-- *Default:* really perform sleep using SleeperImpl class.
-
-(Optional) Hook to inject alternate ISleeper (to mock the sleep between failed invocations).
 
 ---
 
@@ -19155,11 +17313,10 @@ const sleepStepProps: SleepStepProps = { ... }
 | <code><a href="#cdk-ssm-documents.SleepStepProps.property.outputObserver">outputObserver</a></code> | <code><a href="#cdk-ssm-documents.IObserver">IObserver</a></code> | (Optional) Allows for observing the output of steps as they run. |
 | <code><a href="#cdk-ssm-documents.SleepStepProps.property.isEnd">isEnd</a></code> | <code>boolean</code> | Whether to stop document execution after this step. |
 | <code><a href="#cdk-ssm-documents.SleepStepProps.property.maxAttempts">maxAttempts</a></code> | <code>number</code> | (Optional) max attempts to run this step if there are failures. |
-| <code><a href="#cdk-ssm-documents.SleepStepProps.property.onCancel">onCancel</a></code> | <code><a href="#cdk-ssm-documents.Step">Step</a></code> | (Optional) Step to jump to in the event that this step is cancelled. |
-| <code><a href="#cdk-ssm-documents.SleepStepProps.property.onFailure">onFailure</a></code> | <code><a href="#cdk-ssm-documents.Step">Step</a></code> | (Optional) Step to jump to in the event that this step fails. |
+| <code><a href="#cdk-ssm-documents.SleepStepProps.property.onCancel">onCancel</a></code> | <code><a href="#cdk-ssm-documents.AutomationStep">AutomationStep</a></code> | (Optional) Step to jump to in the event that this step is cancelled. |
+| <code><a href="#cdk-ssm-documents.SleepStepProps.property.onFailure">onFailure</a></code> | <code><a href="#cdk-ssm-documents.AutomationStep">AutomationStep</a></code> | (Optional) Step to jump to in the event that this step fails. |
 | <code><a href="#cdk-ssm-documents.SleepStepProps.property.timeoutSeconds">timeoutSeconds</a></code> | <code>number</code> | (Optional) timeout seconds to run this step. |
 | <code><a href="#cdk-ssm-documents.SleepStepProps.property.sleepSeconds">sleepSeconds</a></code> | <code>number</code> | (Required) The amount of seconds to sleep for. |
-| <code><a href="#cdk-ssm-documents.SleepStepProps.property.sleepHook">sleepHook</a></code> | <code><a href="#cdk-ssm-documents.ISleepHook">ISleepHook</a></code> | (Optional) Whether to really perform a pause of the runtime. |
 
 ---
 
@@ -19247,10 +17404,10 @@ public readonly maxAttempts: number;
 ##### `onCancel`<sup>Optional</sup> <a name="onCancel" id="cdk-ssm-documents.SleepStepProps.property.onCancel"></a>
 
 ```typescript
-public readonly onCancel: Step;
+public readonly onCancel: AutomationStep;
 ```
 
-- *Type:* <a href="#cdk-ssm-documents.Step">Step</a>
+- *Type:* <a href="#cdk-ssm-documents.AutomationStep">AutomationStep</a>
 - *Default:* undefined
 
 (Optional) Step to jump to in the event that this step is cancelled.
@@ -19260,10 +17417,10 @@ public readonly onCancel: Step;
 ##### `onFailure`<sup>Optional</sup> <a name="onFailure" id="cdk-ssm-documents.SleepStepProps.property.onFailure"></a>
 
 ```typescript
-public readonly onFailure: Step;
+public readonly onFailure: AutomationStep;
 ```
 
-- *Type:* <a href="#cdk-ssm-documents.Step">Step</a>
+- *Type:* <a href="#cdk-ssm-documents.AutomationStep">AutomationStep</a>
 - *Default:* undefined
 
 (Optional) Step to jump to in the event that this step fails.
@@ -19297,21 +17454,6 @@ public readonly sleepSeconds: number;
 
 May not exceed 604800.
 This will be used in the SSM doc as well as how long to indicate sleep to the sleepHook.
-
----
-
-##### `sleepHook`<sup>Optional</sup> <a name="sleepHook" id="cdk-ssm-documents.SleepStepProps.property.sleepHook"></a>
-
-```typescript
-public readonly sleepHook: ISleepHook;
-```
-
-- *Type:* <a href="#cdk-ssm-documents.ISleepHook">ISleepHook</a>
-- *Default:* SleeperImpl
-
-(Optional) Whether to really perform a pause of the runtime.
-
-To override sleep behavior, inject an ISleepHook impl or use the provided MockSleep class.
 
 ---
 
@@ -19591,17 +17733,15 @@ const waitForResourceStepProps: WaitForResourceStepProps = { ... }
 | <code><a href="#cdk-ssm-documents.WaitForResourceStepProps.property.outputObserver">outputObserver</a></code> | <code><a href="#cdk-ssm-documents.IObserver">IObserver</a></code> | (Optional) Allows for observing the output of steps as they run. |
 | <code><a href="#cdk-ssm-documents.WaitForResourceStepProps.property.isEnd">isEnd</a></code> | <code>boolean</code> | Whether to stop document execution after this step. |
 | <code><a href="#cdk-ssm-documents.WaitForResourceStepProps.property.maxAttempts">maxAttempts</a></code> | <code>number</code> | (Optional) max attempts to run this step if there are failures. |
-| <code><a href="#cdk-ssm-documents.WaitForResourceStepProps.property.onCancel">onCancel</a></code> | <code><a href="#cdk-ssm-documents.Step">Step</a></code> | (Optional) Step to jump to in the event that this step is cancelled. |
-| <code><a href="#cdk-ssm-documents.WaitForResourceStepProps.property.onFailure">onFailure</a></code> | <code><a href="#cdk-ssm-documents.Step">Step</a></code> | (Optional) Step to jump to in the event that this step fails. |
+| <code><a href="#cdk-ssm-documents.WaitForResourceStepProps.property.onCancel">onCancel</a></code> | <code><a href="#cdk-ssm-documents.AutomationStep">AutomationStep</a></code> | (Optional) Step to jump to in the event that this step is cancelled. |
+| <code><a href="#cdk-ssm-documents.WaitForResourceStepProps.property.onFailure">onFailure</a></code> | <code><a href="#cdk-ssm-documents.AutomationStep">AutomationStep</a></code> | (Optional) Step to jump to in the event that this step fails. |
 | <code><a href="#cdk-ssm-documents.WaitForResourceStepProps.property.timeoutSeconds">timeoutSeconds</a></code> | <code>number</code> | (Optional) timeout seconds to run this step. |
 | <code><a href="#cdk-ssm-documents.WaitForResourceStepProps.property.apiParams">apiParams</a></code> | <code>{[ key: string ]: any}</code> | (Required) API Params to submit with the request to the api. |
 | <code><a href="#cdk-ssm-documents.WaitForResourceStepProps.property.pascalCaseApi">pascalCaseApi</a></code> | <code>string</code> | (Required) The AWS api represented in PascalCase. |
 | <code><a href="#cdk-ssm-documents.WaitForResourceStepProps.property.service">service</a></code> | <code>string</code> | (Required) The AWS service to be invoked. |
-| <code><a href="#cdk-ssm-documents.WaitForResourceStepProps.property.awsInvoker">awsInvoker</a></code> | <code><a href="#cdk-ssm-documents.IAwsInvoker">IAwsInvoker</a></code> | (Optional) Use this as a hook to inject an alternate IAwsInvoker (for mocking the AWS API call). |
 | <code><a href="#cdk-ssm-documents.WaitForResourceStepProps.property.javaScriptApi">javaScriptApi</a></code> | <code>string</code> | (Optional) The api as represented the AWS JavaScript API. |
 | <code><a href="#cdk-ssm-documents.WaitForResourceStepProps.property.desiredValues">desiredValues</a></code> | <code>string[]</code> | (Required) Value extracted from AWS response desired to be one of these desired values. |
 | <code><a href="#cdk-ssm-documents.WaitForResourceStepProps.property.selector">selector</a></code> | <code>string</code> | (Required) Json path selector to extract value from AWS response. |
-| <code><a href="#cdk-ssm-documents.WaitForResourceStepProps.property.sleeper">sleeper</a></code> | <code><a href="#cdk-ssm-documents.ISleepHook">ISleepHook</a></code> | (Optional) Hook to inject alternate ISleeper (to mock the sleep between failed invocations). |
 | <code><a href="#cdk-ssm-documents.WaitForResourceStepProps.property.sleepIntervalMillis">sleepIntervalMillis</a></code> | <code>number</code> | (Optional) How much time to sleep after not receiving desired response from AWS SDK. |
 
 ---
@@ -19690,10 +17830,10 @@ public readonly maxAttempts: number;
 ##### `onCancel`<sup>Optional</sup> <a name="onCancel" id="cdk-ssm-documents.WaitForResourceStepProps.property.onCancel"></a>
 
 ```typescript
-public readonly onCancel: Step;
+public readonly onCancel: AutomationStep;
 ```
 
-- *Type:* <a href="#cdk-ssm-documents.Step">Step</a>
+- *Type:* <a href="#cdk-ssm-documents.AutomationStep">AutomationStep</a>
 - *Default:* undefined
 
 (Optional) Step to jump to in the event that this step is cancelled.
@@ -19703,10 +17843,10 @@ public readonly onCancel: Step;
 ##### `onFailure`<sup>Optional</sup> <a name="onFailure" id="cdk-ssm-documents.WaitForResourceStepProps.property.onFailure"></a>
 
 ```typescript
-public readonly onFailure: Step;
+public readonly onFailure: AutomationStep;
 ```
 
-- *Type:* <a href="#cdk-ssm-documents.Step">Step</a>
+- *Type:* <a href="#cdk-ssm-documents.AutomationStep">AutomationStep</a>
 - *Default:* undefined
 
 (Optional) Step to jump to in the event that this step fails.
@@ -19790,19 +17930,6 @@ ec2
 ```
 
 
-##### `awsInvoker`<sup>Optional</sup> <a name="awsInvoker" id="cdk-ssm-documents.WaitForResourceStepProps.property.awsInvoker"></a>
-
-```typescript
-public readonly awsInvoker: IAwsInvoker;
-```
-
-- *Type:* <a href="#cdk-ssm-documents.IAwsInvoker">IAwsInvoker</a>
-- *Default:* will perform a real invocation of the JavaScript AWS SDK using ReflectiveAwsInvoker class.
-
-(Optional) Use this as a hook to inject an alternate IAwsInvoker (for mocking the AWS API call).
-
----
-
 ##### `javaScriptApi`<sup>Optional</sup> <a name="javaScriptApi" id="cdk-ssm-documents.WaitForResourceStepProps.property.javaScriptApi"></a>
 
 ```typescript
@@ -19850,19 +17977,6 @@ public readonly selector: string;
 
 ---
 
-##### `sleeper`<sup>Optional</sup> <a name="sleeper" id="cdk-ssm-documents.WaitForResourceStepProps.property.sleeper"></a>
-
-```typescript
-public readonly sleeper: ISleepHook;
-```
-
-- *Type:* <a href="#cdk-ssm-documents.ISleepHook">ISleepHook</a>
-- *Default:* really perform sleep using SleeperImpl class.
-
-(Optional) Hook to inject alternate ISleeper (to mock the sleep between failed invocations).
-
----
-
 ##### `sleepIntervalMillis`<sup>Optional</sup> <a name="sleepIntervalMillis" id="cdk-ssm-documents.WaitForResourceStepProps.property.sleepIntervalMillis"></a>
 
 ```typescript
@@ -19892,7 +18006,7 @@ RunCommand implementation using AWS API.
 ```typescript
 import { ApiRunCommandHook } from 'cdk-ssm-documents'
 
-new ApiRunCommandHook(awsInvoker?: IAwsInvoker, sleepHook?: ISleepHook)
+new ApiRunCommandHook(awsInvoker: IAwsInvoker, sleepHook: ISleepHook)
 ```
 
 | **Name** | **Type** | **Description** |
@@ -19902,13 +18016,13 @@ new ApiRunCommandHook(awsInvoker?: IAwsInvoker, sleepHook?: ISleepHook)
 
 ---
 
-##### `awsInvoker`<sup>Optional</sup> <a name="awsInvoker" id="cdk-ssm-documents.ApiRunCommandHook.Initializer.parameter.awsInvoker"></a>
+##### `awsInvoker`<sup>Required</sup> <a name="awsInvoker" id="cdk-ssm-documents.ApiRunCommandHook.Initializer.parameter.awsInvoker"></a>
 
 - *Type:* <a href="#cdk-ssm-documents.IAwsInvoker">IAwsInvoker</a>
 
 ---
 
-##### `sleepHook`<sup>Optional</sup> <a name="sleepHook" id="cdk-ssm-documents.ApiRunCommandHook.Initializer.parameter.sleepHook"></a>
+##### `sleepHook`<sup>Required</sup> <a name="sleepHook" id="cdk-ssm-documents.ApiRunCommandHook.Initializer.parameter.sleepHook"></a>
 
 - *Type:* <a href="#cdk-ssm-documents.ISleepHook">ISleepHook</a>
 
@@ -19942,6 +18056,7 @@ Simulate the aws:runCommand.
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
 | <code><a href="#cdk-ssm-documents.ApiRunCommandHook.property.awsInvoker">awsInvoker</a></code> | <code><a href="#cdk-ssm-documents.IAwsInvoker">IAwsInvoker</a></code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.ApiRunCommandHook.property.props">props</a></code> | <code><a href="#cdk-ssm-documents.ApiRunCommandProps">ApiRunCommandProps</a></code> | *No description.* |
 | <code><a href="#cdk-ssm-documents.ApiRunCommandHook.property.sleepHook">sleepHook</a></code> | <code><a href="#cdk-ssm-documents.ISleepHook">ISleepHook</a></code> | *No description.* |
 
 ---
@@ -19956,7 +18071,17 @@ public readonly awsInvoker: IAwsInvoker;
 
 ---
 
-##### `sleepHook`<sup>Optional</sup> <a name="sleepHook" id="cdk-ssm-documents.ApiRunCommandHook.property.sleepHook"></a>
+##### `props`<sup>Required</sup> <a name="props" id="cdk-ssm-documents.ApiRunCommandHook.property.props"></a>
+
+```typescript
+public readonly props: ApiRunCommandProps;
+```
+
+- *Type:* <a href="#cdk-ssm-documents.ApiRunCommandProps">ApiRunCommandProps</a>
+
+---
+
+##### `sleepHook`<sup>Required</sup> <a name="sleepHook" id="cdk-ssm-documents.ApiRunCommandHook.property.sleepHook"></a>
 
 ```typescript
 public readonly sleepHook: ISleepHook;
@@ -24720,35 +22845,6 @@ are the execution inputs.
 ---
 
 
-### IWebhook <a name="IWebhook" id="cdk-ssm-documents.IWebhook"></a>
-
-- *Implemented By:* <a href="#cdk-ssm-documents.IWebhook">IWebhook</a>
-
-Hook for simulating aws:invokeWebhook.
-
-#### Methods <a name="Methods" id="Methods"></a>
-
-| **Name** | **Description** |
-| --- | --- |
-| <code><a href="#cdk-ssm-documents.IWebhook.invoke">invoke</a></code> | Invoke the web hook. |
-
----
-
-##### `invoke` <a name="invoke" id="cdk-ssm-documents.IWebhook.invoke"></a>
-
-```typescript
-public invoke(props: InvokeWebhookProps): InvokeWebhookResult
-```
-
-Invoke the web hook.
-
-###### `props`<sup>Required</sup> <a name="props" id="cdk-ssm-documents.IWebhook.invoke.parameter.props"></a>
-
-- *Type:* <a href="#cdk-ssm-documents.InvokeWebhookProps">InvokeWebhookProps</a>
-
----
-
-
 ## Enums <a name="Enums" id="Enums"></a>
 
 ### BodyOrUrlType <a name="BodyOrUrlType" id="cdk-ssm-documents.BodyOrUrlType"></a>
@@ -25107,155 +23203,6 @@ A failed/canceled response will contain the stackTrace.
 ---
 
 ##### `PYTHON` <a name="PYTHON" id="cdk-ssm-documents.ScriptLanguage.PYTHON"></a>
-
----
-
-
-### StackStatus <a name="StackStatus" id="cdk-ssm-documents.StackStatus"></a>
-
-Cloud formation stack status.
-
-#### Members <a name="Members" id="Members"></a>
-
-| **Name** | **Description** |
-| --- | --- |
-| <code><a href="#cdk-ssm-documents.StackStatus.CREATE_IN_PROGRESS">CREATE_IN_PROGRESS</a></code> | *No description.* |
-| <code><a href="#cdk-ssm-documents.StackStatus.CREATE_FAILED">CREATE_FAILED</a></code> | *No description.* |
-| <code><a href="#cdk-ssm-documents.StackStatus.CREATE_COMPLETE">CREATE_COMPLETE</a></code> | *No description.* |
-| <code><a href="#cdk-ssm-documents.StackStatus.ROLLBACK_IN_PROGRESS">ROLLBACK_IN_PROGRESS</a></code> | *No description.* |
-| <code><a href="#cdk-ssm-documents.StackStatus.ROLLBACK_FAILED">ROLLBACK_FAILED</a></code> | *No description.* |
-| <code><a href="#cdk-ssm-documents.StackStatus.ROLLBACK_COMPLETE">ROLLBACK_COMPLETE</a></code> | *No description.* |
-| <code><a href="#cdk-ssm-documents.StackStatus.DELETE_IN_PROGRESS">DELETE_IN_PROGRESS</a></code> | *No description.* |
-| <code><a href="#cdk-ssm-documents.StackStatus.DELETE_FAILED">DELETE_FAILED</a></code> | *No description.* |
-| <code><a href="#cdk-ssm-documents.StackStatus.DELETE_COMPLETE">DELETE_COMPLETE</a></code> | *No description.* |
-| <code><a href="#cdk-ssm-documents.StackStatus.UPDATE_IN_PROGRESS">UPDATE_IN_PROGRESS</a></code> | *No description.* |
-| <code><a href="#cdk-ssm-documents.StackStatus.UPDATE_COMPLETE_CLEANUP_IN_PROGRESS">UPDATE_COMPLETE_CLEANUP_IN_PROGRESS</a></code> | *No description.* |
-| <code><a href="#cdk-ssm-documents.StackStatus.UPDATE_COMPLETE">UPDATE_COMPLETE</a></code> | *No description.* |
-| <code><a href="#cdk-ssm-documents.StackStatus.UPDATE_FAILED">UPDATE_FAILED</a></code> | *No description.* |
-| <code><a href="#cdk-ssm-documents.StackStatus.UPDATE_ROLLBACK_IN_PROGRESS">UPDATE_ROLLBACK_IN_PROGRESS</a></code> | *No description.* |
-| <code><a href="#cdk-ssm-documents.StackStatus.UPDATE_ROLLBACK_FAILED">UPDATE_ROLLBACK_FAILED</a></code> | *No description.* |
-| <code><a href="#cdk-ssm-documents.StackStatus.UPDATE_ROLLBACK_COMPLETE_CLEANUP_IN_PROGRESS">UPDATE_ROLLBACK_COMPLETE_CLEANUP_IN_PROGRESS</a></code> | *No description.* |
-| <code><a href="#cdk-ssm-documents.StackStatus.UPDATE_ROLLBACK_COMPLETE">UPDATE_ROLLBACK_COMPLETE</a></code> | *No description.* |
-| <code><a href="#cdk-ssm-documents.StackStatus.REVIEW_IN_PROGRESS">REVIEW_IN_PROGRESS</a></code> | *No description.* |
-| <code><a href="#cdk-ssm-documents.StackStatus.IMPORT_IN_PROGRESS">IMPORT_IN_PROGRESS</a></code> | *No description.* |
-| <code><a href="#cdk-ssm-documents.StackStatus.IMPORT_COMPLETE">IMPORT_COMPLETE</a></code> | *No description.* |
-| <code><a href="#cdk-ssm-documents.StackStatus.IMPORT_ROLLBACK_IN_PROGRESS">IMPORT_ROLLBACK_IN_PROGRESS</a></code> | *No description.* |
-| <code><a href="#cdk-ssm-documents.StackStatus.IMPORT_ROLLBACK_FAILED">IMPORT_ROLLBACK_FAILED</a></code> | *No description.* |
-| <code><a href="#cdk-ssm-documents.StackStatus.IMPORT_ROLLBACK_COMPLETE">IMPORT_ROLLBACK_COMPLETE</a></code> | *No description.* |
-
----
-
-##### `CREATE_IN_PROGRESS` <a name="CREATE_IN_PROGRESS" id="cdk-ssm-documents.StackStatus.CREATE_IN_PROGRESS"></a>
-
----
-
-
-##### `CREATE_FAILED` <a name="CREATE_FAILED" id="cdk-ssm-documents.StackStatus.CREATE_FAILED"></a>
-
----
-
-
-##### `CREATE_COMPLETE` <a name="CREATE_COMPLETE" id="cdk-ssm-documents.StackStatus.CREATE_COMPLETE"></a>
-
----
-
-
-##### `ROLLBACK_IN_PROGRESS` <a name="ROLLBACK_IN_PROGRESS" id="cdk-ssm-documents.StackStatus.ROLLBACK_IN_PROGRESS"></a>
-
----
-
-
-##### `ROLLBACK_FAILED` <a name="ROLLBACK_FAILED" id="cdk-ssm-documents.StackStatus.ROLLBACK_FAILED"></a>
-
----
-
-
-##### `ROLLBACK_COMPLETE` <a name="ROLLBACK_COMPLETE" id="cdk-ssm-documents.StackStatus.ROLLBACK_COMPLETE"></a>
-
----
-
-
-##### `DELETE_IN_PROGRESS` <a name="DELETE_IN_PROGRESS" id="cdk-ssm-documents.StackStatus.DELETE_IN_PROGRESS"></a>
-
----
-
-
-##### `DELETE_FAILED` <a name="DELETE_FAILED" id="cdk-ssm-documents.StackStatus.DELETE_FAILED"></a>
-
----
-
-
-##### `DELETE_COMPLETE` <a name="DELETE_COMPLETE" id="cdk-ssm-documents.StackStatus.DELETE_COMPLETE"></a>
-
----
-
-
-##### `UPDATE_IN_PROGRESS` <a name="UPDATE_IN_PROGRESS" id="cdk-ssm-documents.StackStatus.UPDATE_IN_PROGRESS"></a>
-
----
-
-
-##### `UPDATE_COMPLETE_CLEANUP_IN_PROGRESS` <a name="UPDATE_COMPLETE_CLEANUP_IN_PROGRESS" id="cdk-ssm-documents.StackStatus.UPDATE_COMPLETE_CLEANUP_IN_PROGRESS"></a>
-
----
-
-
-##### `UPDATE_COMPLETE` <a name="UPDATE_COMPLETE" id="cdk-ssm-documents.StackStatus.UPDATE_COMPLETE"></a>
-
----
-
-
-##### `UPDATE_FAILED` <a name="UPDATE_FAILED" id="cdk-ssm-documents.StackStatus.UPDATE_FAILED"></a>
-
----
-
-
-##### `UPDATE_ROLLBACK_IN_PROGRESS` <a name="UPDATE_ROLLBACK_IN_PROGRESS" id="cdk-ssm-documents.StackStatus.UPDATE_ROLLBACK_IN_PROGRESS"></a>
-
----
-
-
-##### `UPDATE_ROLLBACK_FAILED` <a name="UPDATE_ROLLBACK_FAILED" id="cdk-ssm-documents.StackStatus.UPDATE_ROLLBACK_FAILED"></a>
-
----
-
-
-##### `UPDATE_ROLLBACK_COMPLETE_CLEANUP_IN_PROGRESS` <a name="UPDATE_ROLLBACK_COMPLETE_CLEANUP_IN_PROGRESS" id="cdk-ssm-documents.StackStatus.UPDATE_ROLLBACK_COMPLETE_CLEANUP_IN_PROGRESS"></a>
-
----
-
-
-##### `UPDATE_ROLLBACK_COMPLETE` <a name="UPDATE_ROLLBACK_COMPLETE" id="cdk-ssm-documents.StackStatus.UPDATE_ROLLBACK_COMPLETE"></a>
-
----
-
-
-##### `REVIEW_IN_PROGRESS` <a name="REVIEW_IN_PROGRESS" id="cdk-ssm-documents.StackStatus.REVIEW_IN_PROGRESS"></a>
-
----
-
-
-##### `IMPORT_IN_PROGRESS` <a name="IMPORT_IN_PROGRESS" id="cdk-ssm-documents.StackStatus.IMPORT_IN_PROGRESS"></a>
-
----
-
-
-##### `IMPORT_COMPLETE` <a name="IMPORT_COMPLETE" id="cdk-ssm-documents.StackStatus.IMPORT_COMPLETE"></a>
-
----
-
-
-##### `IMPORT_ROLLBACK_IN_PROGRESS` <a name="IMPORT_ROLLBACK_IN_PROGRESS" id="cdk-ssm-documents.StackStatus.IMPORT_ROLLBACK_IN_PROGRESS"></a>
-
----
-
-
-##### `IMPORT_ROLLBACK_FAILED` <a name="IMPORT_ROLLBACK_FAILED" id="cdk-ssm-documents.StackStatus.IMPORT_ROLLBACK_FAILED"></a>
-
----
-
-
-##### `IMPORT_ROLLBACK_COMPLETE` <a name="IMPORT_ROLLBACK_COMPLETE" id="cdk-ssm-documents.StackStatus.IMPORT_ROLLBACK_COMPLETE"></a>
 
 ---
 

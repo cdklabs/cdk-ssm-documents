@@ -1,7 +1,10 @@
 import { strict as assert } from 'assert';
 import { Stack } from 'aws-cdk-lib';
-import { HardCodedMapList, HardCodedStringList, MockAwsInvoker, ResponseCode } from '../../../lib';
-import { CreateTagsStep, HardCodedResourceType, ResourceType, ResourceTypeVariable } from '../../../lib/parent-steps/automation/create-tags-step';
+import {
+  HardCodedMapList, HardCodedStringList, MockAwsInvoker, ResponseCode,
+  CreateTagsStep, HardCodedResourceType, ResourceType, ResourceTypeVariable,
+} from '../../../lib';
+import { AutomationStepSimulation } from '../../../lib/simulation/automation-step-simulation';
 
 describe('CreateTagsStep', () => {
   describe('#invoke()', () => {
@@ -36,10 +39,9 @@ describe('CreateTagsStep', () => {
       const step = new CreateTagsStep(new Stack(), 'createTags', {
         resourceIds: new HardCodedStringList([instanceId]),
         tags: new HardCodedMapList([tag]),
-        awsInvoker: awsInvoker,
       });
 
-      const result = step.invoke({});
+      const result = new AutomationStepSimulation(step, { awsInvoker: awsInvoker }).invoke({});
 
       assert.equal(result.responseCode, ResponseCode.SUCCESS);
       assert.deepEqual(awsInvoker.previousInvocations[0], {
@@ -76,10 +78,9 @@ describe('CreateTagsStep', () => {
         resourceIds: new HardCodedStringList([resourceId]),
         resourceType: new HardCodedResourceType(ResourceType.MAINTENANCE_WINDOW),
         tags: new HardCodedMapList([tag]),
-        awsInvoker: awsInvoker,
       });
 
-      const result = step.invoke({});
+      const result = new AutomationStepSimulation(step, { awsInvoker: awsInvoker }).invoke({});
 
       assert.equal(result.responseCode, ResponseCode.SUCCESS);
       assert.deepEqual(awsInvoker.previousInvocations[0], {
@@ -101,10 +102,9 @@ describe('CreateTagsStep', () => {
         resourceIds: new HardCodedStringList(resourceIds),
         resourceType: new HardCodedResourceType(ResourceType.MAINTENANCE_WINDOW),
         tags: new HardCodedMapList([tag]),
-        awsInvoker: awsInvoker,
       });
 
-      const result = step.invoke({});
+      const result = new AutomationStepSimulation(step, { awsInvoker: awsInvoker }).invoke({});
 
       assert.equal(result.responseCode, ResponseCode.FAILED);
     });

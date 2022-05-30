@@ -1,6 +1,5 @@
 import { Construct } from 'constructs';
 import { Platform } from '../../domain/platform';
-import { IEnvironment, LoggingEnvironment } from '../../interface/environment';
 import { IStringVariable } from '../../interface/variables/string-variable';
 import { CommandStep, CommandStepProps } from '../command-step';
 
@@ -25,15 +24,6 @@ export interface RunPowerShellScriptStepProps extends CommandStepProps {
      */
   readonly workingDirectory?: IStringVariable;
 
-  /**
-     * (Optional) Specify here the environment in which to execute the scripts.
-     * Use the DockerEnvironment to execute the commands inside the docker.
-     * You can alternatively use the LoggingEnvironment which simply logs the commands
-     * or MockEnvironment which saves them for validation.
-     * @default LoggingEnvironment
-     */
-  readonly environment?: IEnvironment;
-
 }
 
 /**
@@ -45,7 +35,6 @@ export class RunPowerShellScriptStep extends CommandStep {
   readonly runCommand: IStringVariable[];
   readonly timeoutSeconds?: number;
   readonly workingDirectory?: IStringVariable;
-  readonly environment: IEnvironment;
 
   readonly platforms = [Platform.WINDOWS];
   readonly action = 'aws:runPowerShellScript';
@@ -55,7 +44,6 @@ export class RunPowerShellScriptStep extends CommandStep {
     this.runCommand = props.runCommand;
     this.timeoutSeconds = props.timeoutSeconds;
     this.workingDirectory = props.workingDirectory;
-    this.environment = props.environment ?? new LoggingEnvironment();
   }
 
   /**
@@ -66,18 +54,6 @@ export class RunPowerShellScriptStep extends CommandStep {
       ...this.runCommand.flatMap(v => v.requiredInputs()),
       ...this.workingDirectory?.requiredInputs() ?? [],
     ];
-  }
-
-  /**
-     * Executes the runCommands against the environment provided in the constructor.
-     */
-  public executeStep(inputs: { [name: string]: any }): void {
-    this.runCommand.forEach(cmd => {
-      const command = cmd.resolve(inputs);
-      // TODO what should we enclose the string with if it contains both ' and "
-      const quote = command.includes("\'") ? '\"' : '\'';
-      this.environment.run(`pwsh -c ${quote}${command}${quote}`);
-    });
   }
 
   public toSsmEntry(): { [name: string]: any } {

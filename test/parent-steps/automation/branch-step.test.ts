@@ -1,15 +1,16 @@
 import { strict as assert } from 'assert';
 import { Stack } from 'aws-cdk-lib';
 import { BranchStep, Choice, MockPause, Operation, PauseStep, StringVariable } from '../../../lib';
+import { AutomationStepSimulation } from '../../../lib/simulation/automation-step-simulation';
 
 
 describe('BranchStep', function() {
   describe('#invoke()', function() {
     it('Branches to first found matching value', function() {
-      const step1 = new PauseStep(new Stack(), 'id', { name: 'step1', pauseHook: new MockPause() });
-      const step2 = new PauseStep(new Stack(), 'id', { name: 'step2', pauseHook: new MockPause() });
-      const step3 = new PauseStep(new Stack(), 'id', { name: 'step3', pauseHook: new MockPause() });
-      const step4 = new PauseStep(new Stack(), 'id', { name: 'step4', pauseHook: new MockPause() });
+      const step1 = new PauseStep(new Stack(), 'id', { name: 'step1' });
+      const step2 = new PauseStep(new Stack(), 'id', { name: 'step2' });
+      const step3 = new PauseStep(new Stack(), 'id', { name: 'step3' });
+      const step4 = new PauseStep(new Stack(), 'id', { name: 'step4' });
       const branchStep = new BranchStep(new Stack(), 'id', {
         name: 'branch',
         choices: [
@@ -41,15 +42,15 @@ describe('BranchStep', function() {
         defaultStepName: step1.name,
       });
       branchStep.allStepsInExecution = [branchStep, step1, step2, step3, step4];
-      const response = branchStep.invoke({ myKey: 'c' });
+      const response = new AutomationStepSimulation(branchStep, { pauseHook: new MockPause() }).invoke({ myKey: 'c' });
       assert.deepEqual(response.executedSteps, ['branch', 'step3']);
     });
     it('Branches default if no matches found', function() {
-      const step1 = new PauseStep(new Stack(), 'id', { name: 'step1', pauseHook: new MockPause() });
-      const step2 = new PauseStep(new Stack(), 'id', { name: 'step2', pauseHook: new MockPause() });
-      const step3 = new PauseStep(new Stack(), 'id', { name: 'step3', pauseHook: new MockPause() });
-      const step4 = new PauseStep(new Stack(), 'id', { name: 'step4', pauseHook: new MockPause() });
-      const step5 = new PauseStep(new Stack(), 'id', { name: 'step5', pauseHook: new MockPause() });
+      const step1 = new PauseStep(new Stack(), 'id', { name: 'step1' });
+      const step2 = new PauseStep(new Stack(), 'id', { name: 'step2' });
+      const step3 = new PauseStep(new Stack(), 'id', { name: 'step3' });
+      const step4 = new PauseStep(new Stack(), 'id', { name: 'step4' });
+      const step5 = new PauseStep(new Stack(), 'id', { name: 'step5' });
       const branchStep = new BranchStep(new Stack(), 'id', {
         name: 'branch',
         choices: [
@@ -81,14 +82,14 @@ describe('BranchStep', function() {
         defaultStepName: step5.name,
       });
       branchStep.allStepsInExecution = [branchStep, step1, step2, step3, step4, step5];
-      const response = branchStep.invoke({ myKey: 'e' });
+      const response = new AutomationStepSimulation(branchStep, { pauseHook: new MockPause() }).invoke({ myKey: 'e' });
       assert.deepEqual(response.executedSteps, ['branch', 'step5']);
     });
     it('Fails with no default or next', function() {
-      const step1 = new PauseStep(new Stack(), 'id', { name: 'step1', pauseHook: new MockPause() });
-      const step2 = new PauseStep(new Stack(), 'id', { name: 'step2', pauseHook: new MockPause() });
-      const step3 = new PauseStep(new Stack(), 'id', { name: 'step3', pauseHook: new MockPause() });
-      const step4 = new PauseStep(new Stack(), 'id', { name: 'step4', pauseHook: new MockPause() });
+      const step1 = new PauseStep(new Stack(), 'id', { name: 'step1' });
+      const step2 = new PauseStep(new Stack(), 'id', { name: 'step2' });
+      const step3 = new PauseStep(new Stack(), 'id', { name: 'step3' });
+      const step4 = new PauseStep(new Stack(), 'id', { name: 'step4' });
       const branchStep = new BranchStep(new Stack(), 'id', {
         name: 'branch',
         choices: [
@@ -119,14 +120,14 @@ describe('BranchStep', function() {
         ],
       });
       branchStep.allStepsInExecution = [branchStep, step1, step2, step3, step4];
-      assert.throws(() => branchStep.invoke({ myKey: 'e' }));
+      assert.throws(() => new AutomationStepSimulation(branchStep, { pauseHook: new MockPause() }).invoke({ myKey: 'e' }));
     });
   });
   describe('#toSsmEntry()', function() {
     it('Builds entry as per SSM Document', function() {
-      const step1 = new PauseStep(new Stack(), 'id', { name: 'step1', pauseHook: new MockPause() });
-      const step2 = new PauseStep(new Stack(), 'id', { name: 'step2', pauseHook: new MockPause() });
-      const step3 = new PauseStep(new Stack(), 'id', { name: 'step3', pauseHook: new MockPause() });
+      const step1 = new PauseStep(new Stack(), 'id', { name: 'step1' });
+      const step2 = new PauseStep(new Stack(), 'id', { name: 'step2' });
+      const step3 = new PauseStep(new Stack(), 'id', { name: 'step3' });
       const step = new BranchStep(new Stack(), 'id', {
         name: 'branch',
         choices: [
