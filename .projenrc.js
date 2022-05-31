@@ -38,7 +38,6 @@ const project = new awscdk.AwsCdkConstructLibrary({
     },
   },
   releaseToNpm: true,
-  majorVersion: 1,
 
   //  publishToNuget: {
   //    dotNetNamespace: 'Cdklabs.CdkSsmDocuments',
