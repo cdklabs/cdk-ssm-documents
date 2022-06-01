@@ -1,10 +1,8 @@
 import { resolve } from 'path';
 import { Stack } from 'aws-cdk-lib';
 import { Template } from 'aws-cdk-lib/assertions';
-import { Construct } from 'constructs';
 import {
   AutomationDocument,
-  AutomationDocumentProps,
   DataTypeEnum,
   ExecuteScriptStep,
   PauseStep,
@@ -15,30 +13,24 @@ import {
 describe('AutomationDocument', function () {
   describe('toCloudFormation()', function () {
     it('Prints a deployable CloudFormation', function () {
-      class MyAutomationDoc extends AutomationDocument {
-        constructor(scope: Construct, id: string, props: AutomationDocumentProps) {
-          super(scope, id, props);
-          new PauseStep(this, 'MyPauseStep', { name: 'MyPauseStep' });
-          new ExecuteScriptStep(this, 'MyExecuteStep', {
-            name: 'step1',
-            handlerName: 'my_func',
-            language: ScriptLanguage.PYTHON,
-            fullPathToCode: resolve('test/test_file.py'),
-            outputs: [{
-              outputType: DataTypeEnum.STRING,
-              name: 'MyFuncOut',
-              selector: '$.Payload.MyReturn',
-            }],
-            inputs: ['MyInput'],
-          });
-        }
-      }
-
       const stack: Stack = new Stack();
-      new MyAutomationDoc(stack, 'MyAutomationDoc', {
+      const doc = new AutomationDocument(stack, 'MyAutomationDoc', {
         documentName: 'MyDoc',
         docInputs: [{ name: 'MyInput', defaultValue: 'a', inputType: DataTypeEnum.STRING }],
       });
+      doc.addStep(new PauseStep(stack, 'MyPauseStep', { name: 'MyPauseStep' }));
+      doc.addStep(new ExecuteScriptStep(stack, 'MyExecuteStep', {
+        name: 'step1',
+        handlerName: 'my_func',
+        language: ScriptLanguage.PYTHON,
+        fullPathToCode: resolve('test/test_file.py'),
+        outputs: [{
+          outputType: DataTypeEnum.STRING,
+          name: 'MyFuncOut',
+          selector: '$.Payload.MyReturn',
+        }],
+        inputs: ['MyInput'],
+      }));
       Template.fromStack(stack).templateMatches({
         Resources: {
           MyAutomationDocMyAutomationDocCfnDoc6CF92755: {

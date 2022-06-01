@@ -3,6 +3,8 @@ import { StringVariable } from '..';
 import { DataType } from '../domain/data-type';
 import { Output } from '../domain/output';
 import { Step, StepProps } from './step';
+import { AutomationDocumentBuilder } from '../document/document-builder';
+import { IAutomationComponent } from '../construct/document-component';
 
 export interface AutomationStepProps extends StepProps {
 
@@ -48,7 +50,7 @@ export interface AutomationStepProps extends StepProps {
  * The flow of the execution therefore follows a chain-of-responsibility pattern.
  * The inputs received into a step AND the outputs of previous steps are merged to form inputs of subsequent steps.
  */
-export abstract class AutomationStep extends Step {
+export abstract class AutomationStep extends Step implements IAutomationComponent {
   static readonly DEFAULT_TIMEOUT = 3600;
   static readonly DEFAULT_MAX_ATTEMPTS = 1;
   readonly maxAttempts: number;
@@ -67,6 +69,10 @@ export abstract class AutomationStep extends Step {
     this.isEnd = props.isEnd ?? false;
     this.onFailure = props.onFailure;
     this.onCancel = props.onCancel ?? undefined;
+  }
+
+  public addToDocument(doc: AutomationDocumentBuilder): void {
+    doc.addStep(this);
   }
 
   protected prepareSsmEntry(inputs: { [name: string]: any }): { [name: string]: any } {

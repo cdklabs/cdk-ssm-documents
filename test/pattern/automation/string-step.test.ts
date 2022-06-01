@@ -1,30 +1,26 @@
 import * as assert from 'assert';
 import { Stack } from 'aws-cdk-lib';
-import { Construct } from 'constructs';
-import { AutomationDocument, AutomationDocumentProps, DataTypeEnum, StringStep, SynthUtils } from '../../../lib';
+import { AutomationDocument, DataTypeEnum, StringStep } from '../../../lib';
 import { Simulation } from '../../../lib/simulation/simulation';
 
 
 describe('StringStep', function() {
   describe('#invoke()', function() {
     it('Strings are converted to their steps', function() {
-      // Declare Automation Document
-      class MyAutomationDoc extends AutomationDocument {
-        constructor(scope: Construct, id: string, props: AutomationDocumentProps) {
-          super(scope, id, {
-            ...props,
-            docInputs: [{ name: 'MyInput', inputType: DataTypeEnum.STRING, defaultValue: 'bar' }],
-            docOutputs: [{ name: 'myPython.MyOutput', outputType: DataTypeEnum.STRING }],
-          });
-
-          StringStep.fromYaml(this, `
+      const stack: Stack = new Stack();
+      const myAutomationDoc = new AutomationDocument(stack, 'MyAutomationDoc', {
+        documentName: 'MyDoc',
+        docInputs: [{ name: 'MyInput', inputType: DataTypeEnum.STRING, defaultValue: 'bar' }],
+        docOutputs: [{ name: 'myPython.MyOutput', outputType: DataTypeEnum.STRING }],
+      });
+      myAutomationDoc.addStep(StringStep.fromYaml(stack, `
                         name: sleep
                         action: aws:sleep
                         inputs:
                           Duration: PT0M
-                    `);
+                    `));
 
-          StringStep.fromYaml(this, `
+      myAutomationDoc.addStep(StringStep.fromYaml(stack, `
                         name: myBranch
                         action: aws:branch
                         inputs:
@@ -34,9 +30,9 @@ describe('StringStep', function() {
                             StringEquals: foo
                           Default:
                             sleep
-                    `);
+                    `));
 
-          StringStep.fromYaml(this, `
+      myAutomationDoc.addStep(StringStep.fromYaml(stack, `
                         name: myPython
                         action: "aws:executeScript"
                         outputs:
@@ -51,16 +47,7 @@ describe('StringStep', function() {
                           Script: >
                             def my_func(args, context):
                               return {"MyReturn": args["MyInput"] + "-suffix"}
-                    `);
-        }
-      }
-
-      // Synthesize it
-      const stack: Stack = new Stack();
-      const myAutomationDoc = new MyAutomationDoc(stack, 'MyAutomationDoc', {
-        documentName: 'MyDoc',
-      });
-      SynthUtils.synthesize(stack);
+                    `));
 
       // Execute simulation
       const simOutput = Simulation.ofAutomation(myAutomationDoc, {}).simulate({ MyInput: 'foo' });

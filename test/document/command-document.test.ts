@@ -1,40 +1,27 @@
 import * as assert from 'assert';
 import { Stack } from 'aws-cdk-lib';
-import { Construct } from 'constructs';
 import {
-  RunShellScriptStep, SynthUtils, CommandDocument, DataTypeEnum, ResponseCode, StringFormat, StringVariable, Platform,
+  RunShellScriptStep, CommandDocument, DataTypeEnum, ResponseCode, StringFormat, StringVariable, Platform,
 } from '../../lib';
 import { Simulation } from '../../lib/simulation/simulation';
 
 describe('CommandDocument', function() {
   describe('#runSimulation()', function() {
     it('Outputs the status and results of steps', function() {
-
-      // Declare Command Document
-      class MyCommandDoc extends CommandDocument {
-        constructor(scope: Construct, id: string) {
-          super(scope, id, {
-            docInputs: [{ name: 'MyInput', defaultValue: 'a', inputType: DataTypeEnum.STRING }],
-          });
-
-          // First step
-          new RunShellScriptStep(this, 'MyShellScript1', {
-            name: 'Shell1',
-            runCommand: [new StringFormat('echo %s', [new StringVariable('MyInput')])],
-          });
-
-          // First step
-          new RunShellScriptStep(this, 'MyShellScript2', {
-            name: 'Shell2',
-            runCommand: [new StringFormat('echo again %s', [new StringVariable('MyInput')])],
-          });
-        }
-      }
-
-      // Synthesize it
       const stack: Stack = new Stack();
-      const myCommandDoc = new MyCommandDoc(stack, 'MyCommandDoc');
-      SynthUtils.synthesize(stack);
+      const myCommandDoc = new CommandDocument(stack, 'MyCommandDoc', { docInputs: [{ name: 'MyInput', defaultValue: 'a', inputType: DataTypeEnum.STRING }] });
+
+      // First step
+      myCommandDoc.addStep(new RunShellScriptStep(stack, 'MyShellScript1', {
+        name: 'Shell1',
+        runCommand: [new StringFormat('echo %s', [new StringVariable('MyInput')])],
+      }));
+
+      // Seconds step
+      myCommandDoc.addStep( new RunShellScriptStep(stack, 'MyShellScript2', {
+        name: 'Shell2',
+        runCommand: [new StringFormat('echo again %s', [new StringVariable('MyInput')])],
+      }));
 
       // Execute simulation
       const simOutput = Simulation.ofCommand(myCommandDoc, { simulationPlatform: Platform.LINUX }).simulate({});
@@ -50,30 +37,20 @@ describe('CommandDocument', function() {
       });
     });
     it('Document outputs only includes those outputs specified as document outputs', function() {
-      // Declare Command Document
-      class MyCommandDoc extends CommandDocument {
-        constructor(scope: Construct, id: string) {
-          super(scope, id, {
-            docInputs: [{ name: 'MyInput', defaultValue: 'a', inputType: DataTypeEnum.STRING }],
-          });
-
-          // First step
-          new RunShellScriptStep(this, 'MyShellScript1', {
-            name: 'Shell1',
-            runCommand: [new StringFormat('echo %s', [new StringVariable('MyInput')])],
-          });
-
-          // First step
-          new RunShellScriptStep(this, 'MyShellScript2', {
-            name: 'Shell2',
-            runCommand: [new StringFormat('echo again %s', [new StringVariable('MyInput')])],
-          });
-        }
-      }
-
       const stack: Stack = new Stack();
-      const myCommandDoc = new MyCommandDoc(stack, 'MyCommandDoc');
-      SynthUtils.synthesize(stack);
+      const myCommandDoc = new CommandDocument(stack, 'MyCommandDoc',
+        { docInputs: [{ name: 'MyInput', defaultValue: 'a', inputType: DataTypeEnum.STRING }] });
+      // First step
+      myCommandDoc.addStep(new RunShellScriptStep(stack, 'MyShellScript1', {
+        name: 'Shell1',
+        runCommand: [new StringFormat('echo %s', [new StringVariable('MyInput')])],
+      }));
+
+      // First step
+      myCommandDoc.addStep(new RunShellScriptStep(stack, 'MyShellScript2', {
+        name: 'Shell2',
+        runCommand: [new StringFormat('echo again %s', [new StringVariable('MyInput')])],
+      }));
       const ssmJson = myCommandDoc.print();
       assert.deepEqual(JSON.parse(ssmJson),
         {

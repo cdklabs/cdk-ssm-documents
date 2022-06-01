@@ -1,6 +1,8 @@
 import { Construct } from 'constructs';
 import { CommandStep } from '../parent-steps/command-step';
 import { SsmDocumentProps, SsmDocument } from './ssm-document';
+import { CommandDocumentBuilder } from './document-builder';
+import { ICommandComponent } from '../construct/document-component';
 
 export interface CommandDocumentProps extends SsmDocumentProps {
 
@@ -13,8 +15,15 @@ export interface CommandDocumentProps extends SsmDocumentProps {
  */
 export class CommandDocument extends SsmDocument {
 
+  readonly builder: CommandDocumentBuilder;
+
   constructor(scope: Construct, id: string, props: CommandDocumentProps) {
     super(scope, id, props);
+    this.builder = new CommandDocumentBuilder();
+  }
+
+  public addStep(component: ICommandComponent) {
+    component.addToDocument(this.builder);
   }
 
   protected buildSsmDocument(): { [p: string]: any } {
@@ -36,11 +45,11 @@ export class CommandDocument extends SsmDocument {
   }
 
   public collectedSteps(): CommandStep[] {
-    if (this.stepCollector.runCommandSteps.length == 0) {
+    if (this.builder.steps.length == 0) {
       throw new Error('No Steps found. Either you did not declare steps or did not synthesize CDK. ' +
                 'Be sure to run cdk.SynthUtils.synthesize(stack) prior to printing or running simulation');
     }
-    return this.stepCollector.runCommandSteps;
+    return this.builder.steps;
   }
 
   public documentType(): string {

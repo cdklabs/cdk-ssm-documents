@@ -1,6 +1,8 @@
 import { Construct } from 'constructs';
 import { IAwsInvoker } from '../../interface/aws-invoker';
 import { WaitForAndAssertResource } from './wait-for-and-assert-resource';
+import { CompositeAutomationStep } from './composite-step';
+import { AutomationDocumentBuilder } from '../../document/document-builder';
 
 /**
  * Properties of WaitForInstanceRunning
@@ -21,7 +23,8 @@ export interface WaitForInstanceRunningProps {
 /**
  * Waits for EC2 instance(s) to be no longer pending and asserts that the status is running.
  */
-export class WaitForInstanceRunning extends Construct {
+export class WaitForInstanceRunning extends CompositeAutomationStep {
+  readonly component: CompositeAutomationStep;
   constructor(scope: Construct, id: string, props: WaitForInstanceRunningProps) {
     super(scope, id);
 
@@ -38,6 +41,10 @@ export class WaitForInstanceRunning extends Construct {
       desiredValues: ['running'],
     };
 
-    new WaitForAndAssertResource(this, 'waitForInstanceRunning', stepParams);
+    this.component = new WaitForAndAssertResource(this, 'waitForInstanceRunning', stepParams);
+  }
+
+  addToDocument(doc: AutomationDocumentBuilder): void {
+    this.component.addToDocument(doc);
   }
 }

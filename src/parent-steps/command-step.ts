@@ -4,43 +4,45 @@ import { Platform } from '../domain/platform';
 import { Precondition } from '../domain/precondition';
 import { StringVariable } from '../interface/variables/string-variable';
 import { Step, StepProps } from './step';
+import { ICommandComponent } from '../construct/document-component';
+import { CommandDocumentBuilder } from '../document/document-builder';
 
 export interface CommandStepProps extends StepProps {
 
   /**
-     * (Optional) Whether to exit the document execution after failed execution of this step.
-     * Finally step will be run.
-     * @default false
-     */
+   * (Optional) Whether to exit the document execution after failed execution of this step.
+   * Finally step will be run.
+   * @default false
+   */
   readonly exitOnFailure?: boolean;
 
   /**
-     * (Optional) Whether to exit the document execution after successful execution of this step.
-     * Finally step will be run.
-     * @default false
-     */
+   * (Optional) Whether to exit the document execution after successful execution of this step.
+   * Finally step will be run.
+   * @default false
+   */
   readonly exitOnSuccess?: boolean;
 
   readonly markSuccessAndExitOnFailure?: boolean;
 
   /**
-     * (Optional) Step to jump to in the event that this step is cancelled.
-     * @default undefined
-     */
+   * (Optional) Step to jump to in the event that this step is cancelled.
+   * @default undefined
+   */
   readonly onCancel?: Step;
 
   readonly finallyStep?: boolean;
 
   /**
-     * (Optional) A precondition to test before execution occurrs.
-     * When the precondition isn't met, the command step isn't executed.
-     * @default undefined
-     */
+   * (Optional) A precondition to test before execution occurrs.
+   * When the precondition isn't met, the command step isn't executed.
+   * @default undefined
+   */
   readonly precondition?: Precondition;
 
 }
 
-export abstract class CommandStep extends Step {
+export abstract class CommandStep extends Step implements ICommandComponent {
 
   nextStep: CommandStep | undefined;
   allStepsInExecution: CommandStep[] | undefined;
@@ -58,6 +60,10 @@ export abstract class CommandStep extends Step {
     this.markSuccessAndExitOnFailure = props.markSuccessAndExitOnFailure ?? false;
     this.finallyStep = props.finallyStep ?? false;
     this.precondition = props.precondition;
+  }
+
+  public addToDocument(doc: CommandDocumentBuilder): void {
+    doc.addStep(this);
   }
 
   protected prepareSsmEntry(inputs: { [name: string]: any }): { [name: string]: any } {

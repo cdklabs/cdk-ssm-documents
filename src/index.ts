@@ -1,6 +1,7 @@
 export * from './document/automation-document';
 export * from './document/command-document';
 export * from './document/ssm-document';
+export * from './document/document-builder';
 
 export * from './domain/choice';
 export * from './domain/data-type';
@@ -14,7 +15,7 @@ export * from './domain/simulation-result';
 export * from './domain/operation';
 export * from './domain/precondition';
 
-export * from './construct/step-collector';
+export * from './construct/document-component';
 export * from './construct/synth-utils';
 
 export * from './parent-steps/automation-step';
@@ -42,7 +43,6 @@ export * from './parent-steps/automation/create-image-step';
 export * from './parent-steps/automation/copy-image-step';
 export * from './parent-steps/automation/change-instance-state-step';
 
-
 export * from './parent-steps/command/run-powershell-script-step';
 export * from './parent-steps/command/run-shell-script-step';
 export * from './parent-steps/command/ps-module-step';
@@ -51,6 +51,7 @@ export * from './patterns/automation/reboot-instance-and-wait';
 export * from './patterns/automation/string-step';
 export * from './patterns/document/timed-document';
 export * from './patterns/document/string-document';
+export * from './patterns/automation/composite-step';
 
 export * from './samples/hello-world';
 

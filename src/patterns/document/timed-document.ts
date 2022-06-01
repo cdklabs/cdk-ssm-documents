@@ -34,11 +34,9 @@ export class TimedDocument extends AutomationDocument {
       outputs: [{ outputType: DataTypeEnum.INTEGER, name: 'RecoveryTime', selector: '$.Payload' }],
       inputs: ['RecordStartTime.StartTime'],
     });
-    middleSteps[0].node.addDependency(recordStartTime);
-    this.stepCollector.automationSteps.unshift(recordStartTime);
-    outputRecoveryTime.node.addDependency(middleSteps[middleSteps.length-1]);
-    this.stepCollector.automationSteps.push(outputRecoveryTime);
-    return this.stepCollector.automationSteps;
+    this.builder.steps.unshift(recordStartTime);
+    this.builder.steps.push(outputRecoveryTime);
+    return this.builder.steps;
   }
 
 }

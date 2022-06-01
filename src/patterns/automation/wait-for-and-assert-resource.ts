@@ -1,6 +1,9 @@
 import { Construct } from 'constructs';
 import { AssertAwsResourceStep, AssertAwsResourceStepProps } from '../../parent-steps/automation/assert-aws-resource-step';
 import { WaitForResourceStep } from '../../parent-steps/automation/wait-for-resource-step';
+import { CompositeAutomationStep } from './composite-step';
+import { AutomationDocumentBuilder } from '../../document/document-builder';
+import { AutomationStep } from '../../parent-steps/automation-step';
 
 /**
  * Properties of WaitForAndAssertResource
@@ -16,7 +19,11 @@ export interface WaitForAndAssertResourceProps extends AssertAwsResourceStepProp
 /**
  * Waits for resource value and asserts that the value is one of the desired values.
  */
-export class WaitForAndAssertResource extends Construct {
+export class WaitForAndAssertResource extends CompositeAutomationStep {
+
+  readonly waitForValues: AutomationStep;
+  readonly assertDesired: AutomationStep;
+
   constructor(scope: Construct, id: string, props: WaitForAndAssertResourceProps) {
     super(scope, id);
 
@@ -27,13 +34,18 @@ export class WaitForAndAssertResource extends Construct {
       selector: props.selector,
     };
 
-    new WaitForResourceStep(this, 'waitForValues', {
+    this.waitForValues = new WaitForResourceStep(this, 'waitForValues', {
       ...stepParams,
       desiredValues: props.waitForValues,
     });
-    new AssertAwsResourceStep(this, 'assertDesired', {
+    this.assertDesired = new AssertAwsResourceStep(this, 'assertDesired', {
       ...stepParams,
       desiredValues: props.desiredValues,
     });
+  }
+
+  addToDocument(doc: AutomationDocumentBuilder): void {
+    doc.addStep(this.waitForValues);
+    doc.addStep(this.assertDesired);
   }
 }

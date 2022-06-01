@@ -1,27 +1,17 @@
 import { strict as assert } from 'assert';
 import { Stack } from 'aws-cdk-lib';
-import { Construct } from 'constructs';
 import {
   AutomationDocument,
-  AutomationDocumentProps,
   RebootInstanceAndWait,
   StringVariable,
-  SynthUtils,
 } from '../../../lib';
-
-class MyRebootAutomationDoc extends AutomationDocument {
-  constructor(scope: Construct, id: string, props: AutomationDocumentProps) {
-    super(scope, id, props);
-    new RebootInstanceAndWait(this, 'RebootAndWait', new StringVariable('InstanceId'));
-  }
-}
 
 describe('RebootInstanceAndWait', function() {
   describe('#synthesize()', function() {
     it('All child steps are available in document', function() {
       const stack = new Stack();
-      const myRebootDoc = new MyRebootAutomationDoc(stack, 'myRebootDoc', {});
-      SynthUtils.synthesize(stack);
+      const myRebootDoc = new AutomationDocument(stack, 'myRebootDoc', {});
+      myRebootDoc.addStep(new RebootInstanceAndWait(stack, 'RebootAndWait', new StringVariable('InstanceId')));
       assert.deepEqual(JSON.parse(myRebootDoc.print()), {
         description: 'myRebootDoc',
         schemaVersion: '0.3',
