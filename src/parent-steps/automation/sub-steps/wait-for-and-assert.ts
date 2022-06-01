@@ -3,14 +3,14 @@ import { StackStatus } from '../../../domain/stack-status';
 import { WaitForAndAssertResource, WaitForAndAssertResourceProps } from '../../../patterns/automation/wait-for-and-assert-resource';
 import { SimulationProps } from '../../../simulation/simulation';
 import { simulatePattern } from '../../../utils/simulate-pattern';
+import { Stack } from 'aws-cdk-lib';
 
 /**
  * Wait for and assert on an EC2 resource value
  */
 export function waitForAndAssertResource(props: WaitForAndAssertResourceProps, simulationProps: SimulationProps): void {
-  const result = simulatePattern(simulationProps, (scope) => {
-    return new WaitForAndAssertResource(scope, 'waitForAndAssertResource', props);
-  }, {});
+  const component = new WaitForAndAssertResource(new Stack(), 'waitForAndAssertResource', props);
+  const result = simulatePattern(component, simulationProps, {});
   if (result.responseCode !== ResponseCode.SUCCESS) {
     throw new Error(`Wait and assert for resource failes for ${JSON.stringify(props)}: ${result.stackTrace}`);
   }

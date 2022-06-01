@@ -1,6 +1,8 @@
 import { Construct } from 'constructs';
 import { AutomationStep } from '../parent-steps/automation-step';
 import { SsmDocumentProps, SsmDocument } from './ssm-document';
+import { AutomationDocumentBuilder } from './document-builder';
+import { IAutomationComponent } from '../construct/document-component';
 
 /**
  * Options for AutomationDocument
@@ -16,17 +18,24 @@ export interface AutomationDocumentProps extends SsmDocumentProps {
  */
 export class AutomationDocument extends SsmDocument {
 
+  readonly builder: AutomationDocumentBuilder;
+
   constructor(scope: Construct, id: string, props: AutomationDocumentProps) {
     super(scope, id, props);
+    this.builder = new AutomationDocumentBuilder();
+  }
+
+  public addStep(component: IAutomationComponent) {
+    component.addToDocument(this.builder);
   }
 
   public collectedSteps(): AutomationStep[] {
-    this.validateOutputs(this.stepCollector.automationSteps);
-    if (this.stepCollector.automationSteps.length == 0) {
+    this.validateOutputs(this.builder.steps);
+    if (this.builder.steps.length == 0) {
       throw new Error('No Steps found. Either you did not declare steps or did not synthesize CDK. ' +
                 'Be sure to run cdk.SynthUtils.synthesize(stack) prior to printing or running simulation');
     }
-    return this.stepCollector.automationSteps;
+    return this.builder.steps;
   }
 
   /**

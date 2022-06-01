@@ -7,11 +7,11 @@ const yaml = require('js-yaml');
 
 /**
  * This AutomationDocument supports declaring your document from an existing document (JSON/YAML String/File).
- * Importing an existing file allows for benefitting from the simulated execution.
+ * Importing an existing file allows for benefiting from the simulated execution.
  * The simulated execution will run locally in the same fashion that SSM Execution would run the document.
  * You can supply mocks to the simulator and validate the calls and the flow of the document without running via SSM execution.
  */
-export class StringDocument extends AutomationDocument {
+export class StringDocument {
 
   /**
      * Create an AutomationDocument from an existing AutomationDocument yaml or json file.
@@ -32,7 +32,7 @@ export class StringDocument extends AutomationDocument {
      * You can use the returned AutomationDocument to run simulations as you would other documents created using this library.
      */
   public static fromYaml(stack: Construct, id: string, documentYaml: string) {
-    return new StringDocument(stack, id, { ...yaml.load(documentYaml), documentFormat: DocumentFormat.YAML });
+    return StringDocument.toAutomationDoc(stack, id, { ...yaml.load(documentYaml), documentFormat: DocumentFormat.YAML });
   }
 
   /**
@@ -40,7 +40,7 @@ export class StringDocument extends AutomationDocument {
      * You can use the returned AutomationDocument to run simulations as you would other documents created using this library.
      */
   public static fromJson(stack: Construct, id: string, documentJson: string) {
-    return new StringDocument(stack, id, { ...JSON.parse(documentJson), documentFormat: DocumentFormat.JSON });
+    return StringDocument.toAutomationDoc(stack, id, { ...JSON.parse(documentJson), documentFormat: DocumentFormat.JSON });
   }
 
   // This must be static because it is called prior to the super call in the constructor
@@ -65,13 +65,14 @@ export class StringDocument extends AutomationDocument {
     };
   }
 
-  private constructor(stack: Construct, id: string, params: {[name: string]: any}) {
+  private static toAutomationDoc(stack: Construct, id: string, params: {[name: string]: any}) {
     const docProps = StringDocument.toDocProps(id, params);
-    super(stack, id, docProps);
+    const doc = new AutomationDocument(stack, id, docProps);
     const steps: {[name: string]: any}[] = params.mainSteps;
     steps.forEach(step => {
-      StringStep.fromObject(this, step);
+      doc.addStep(StringStep.fromObject(stack, step));
     });
+    return doc;
   }
 
 }

@@ -1,25 +1,24 @@
+import { Stack } from 'aws-cdk-lib';
 import { Construct } from 'constructs';
-import { AutomationDocument, AutomationDocumentProps } from '../document/automation-document';
+import { AutomationDocument } from '../document/automation-document';
 import { DataTypeEnum } from '../domain/data-type';
 import { StringVariable } from '../interface/variables/string-variable';
 import { AwsApiStep } from '../parent-steps/automation/aws-api-step';
 import { ExecuteScriptStep, ScriptLanguage } from '../parent-steps/automation/execute-script-step';
 
-export class HelloWorld extends AutomationDocument {
-  constructor(app: Construct, id: string, props: AutomationDocumentProps) {
-    super(app, id, {
-      ...props,
-      ...{
-        docInputs: [{
-          name: 'Someone',
-          inputType: DataTypeEnum.STRING,
-          allowedPattern: '[a-zA-Z]+',
-        },
-        {
-          name: 'SnsTopic',
-          inputType: DataTypeEnum.STRING,
-        }],
+export class HelloWorld extends Stack {
+  constructor(app: Construct, id: string) {
+    super(app, id);
+    const doc = new AutomationDocument(this, 'HelloWorld', {
+      docInputs: [{
+        name: 'Someone',
+        inputType: DataTypeEnum.STRING,
+        allowedPattern: '[a-zA-Z]+',
       },
+      {
+        name: 'SnsTopic',
+        inputType: DataTypeEnum.STRING,
+      }],
     });
 
     const greeting = new ExecuteScriptStep(this, 'PrependWithGreeting', {
@@ -35,8 +34,9 @@ export class HelloWorld extends AutomationDocument {
         selector: '$.Payload.Greeting',
       }],
     });
+    doc.addStep(greeting);
 
-    new AwsApiStep(this, 'PublishToSns', {
+    doc.addStep(new AwsApiStep(this, 'PublishToSns', {
       outputs: [],
       service: 'SNS',
       pascalCaseApi: 'publish',
@@ -44,6 +44,6 @@ export class HelloWorld extends AutomationDocument {
         TargetArn: new StringVariable('SnsTopic'),
         Message: greeting.variables().Greeting,
       },
-    });
+    }));
   }
 }

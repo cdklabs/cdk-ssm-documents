@@ -2,15 +2,16 @@ import { strict as assert } from 'assert';
 import { Stack } from 'aws-cdk-lib';
 import { Construct } from 'constructs';
 import { TimedDocument } from '../../../';
-import { AutomationDocumentProps, SleepStep, SynthUtils } from '../../../lib';
+import { SleepStep, SynthUtils } from '../../../lib';
 
 
-class MyTimedDocument extends TimedDocument {
+class MyTimedDocumentStack extends Stack {
 
-  constructor(scope: Construct, id: string, props: AutomationDocumentProps) {
-    super(scope, id, props);
-
-    new SleepStep(this, 'SleepInsideTimeId', { sleepSeconds: 1 });
+  constructor(scope: Construct, id: string) {
+    super(scope, id);
+    const doc = new TimedDocument(this, 'myDoc2', {});
+    const sleep = new SleepStep(this, 'SleepInsideTimeId', { sleepSeconds: 1 });
+    doc.addStep(sleep);
   }
 
 }
@@ -19,9 +20,10 @@ describe('TimedDocument', function() {
   describe('#print()', function() {
     it('Includes start and end steps', function() {
       const stack = new Stack();
-      const myTimedDoc = new MyTimedDocument(stack, 'myDoc2', {});
-      SynthUtils.synthesize(stack);
-      assert.deepEqual(JSON.parse(myTimedDoc.print()), {
+      const doc = new TimedDocument(stack, 'myDoc2', {});
+      const sleep = new SleepStep(stack, 'SleepInsideTimeId', { sleepSeconds: 1 });
+      sleep.addToDocument(doc.builder);
+      assert.deepEqual(JSON.parse(doc.print()), {
         description: 'myDoc2',
         schemaVersion: '0.3',
         parameters: {},
@@ -67,7 +69,7 @@ describe('TimedDocument', function() {
   describe('#runSimulation()', function() {
     it('Outputs runtime from final step', function() {
       const stack = new Stack();
-      new MyTimedDocument(stack, 'myDoc2', {});
+      new MyTimedDocumentStack(stack, 'myDoc2');
       SynthUtils.synthesize(stack);
       // == Below is not working because python cannot find datetime on build fleet ==
       // const simResult = myTimedDoc.runSimulation({});

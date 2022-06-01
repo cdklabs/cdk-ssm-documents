@@ -6,9 +6,9 @@ import { App, Stack } from 'aws-cdk-lib';
 export class SynthUtils {
 
   /**
-     * Wraps @aws-cdk/assert SynthUtils.synthesize(stack).
-     * Synthesizes the stack provided.
-     */
+   * Wraps @aws-cdk/assert SynthUtils.synthesize(stack).
+   * Synthesizes the stack provided.
+   */
   public static synthesize(stack: Stack) {
     return App.of(stack)?.synth();
   }

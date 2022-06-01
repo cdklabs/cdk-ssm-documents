@@ -1,5 +1,6 @@
 import { Construct } from 'constructs';
 import { parse, toSeconds } from 'iso8601-duration';
+import { AutomationDocumentBuilder } from '../../document/document-builder';
 import { Choice } from '../../domain/choice';
 import { DataType } from '../../domain/data-type';
 import { OperationEvaluator } from '../../domain/operation';
@@ -12,6 +13,8 @@ import { ExecuteScriptStep } from '../../parent-steps/automation/execute-script-
 import { PauseStep } from '../../parent-steps/automation/pause-step';
 import { SleepStep } from '../../parent-steps/automation/sleep-step';
 import { WaitForResourceStep } from '../../parent-steps/automation/wait-for-resource-step';
+import { CompositeAutomationStep } from './composite-step';
+import { AutomationStep } from '../../parent-steps/automation-step';
 // eslint-disable-next-line
 const yaml = require('js-yaml');
 
@@ -20,7 +23,7 @@ const yaml = require('js-yaml');
  * This is useful in that it allows developers to integrate with existing document steps.
  * This step can be used just as you would use any other Step including simulation and deployment.
  */
-export class StringStep extends Construct {
+export class StringStep extends CompositeAutomationStep {
 
   /**
      * Builds a step object from a yaml declaration.
@@ -52,6 +55,8 @@ export class StringStep extends Construct {
     return new StringStep(scope, props.name, props);
   }
 
+  private automationStep: AutomationStep;
+
   private constructor(scope: Construct, id: string, props: {[name: string]: any}) {
     super(scope, id);
 
@@ -78,7 +83,7 @@ export class StringStep extends Construct {
 
     switch (props.action) {
       case 'aws:executeAwsApi':
-        new AwsApiStep(this, props.name, {
+        this.automationStep = new AwsApiStep(this, props.name, {
           service: Service,
           pascalCaseApi: Api,
           apiParams: restParams,
@@ -87,7 +92,7 @@ export class StringStep extends Construct {
         });
         break;
       case 'aws:waitForAwsResourceProperty':
-        new WaitForResourceStep(this, props.name, {
+        this.automationStep = new WaitForResourceStep(this, props.name, {
           service: Service,
           pascalCaseApi: Api,
           apiParams: restParams,
@@ -97,7 +102,7 @@ export class StringStep extends Construct {
         });
         break;
       case 'aws:assertAwsResourceProperty':
-        new AssertAwsResourceStep(this, props.name, {
+        this.automationStep = new AssertAwsResourceStep(this, props.name, {
           service: Service,
           pascalCaseApi: Api,
           apiParams: restParams,
@@ -107,18 +112,18 @@ export class StringStep extends Construct {
         });
         break;
       case 'aws:pause':
-        new PauseStep(this, props.name, {
+        this.automationStep = new PauseStep(this, props.name, {
           ...sharedProps,
         });
         break;
       case 'aws:sleep':
-        new SleepStep(this, props.name, {
+        this.automationStep = new SleepStep(this, props.name, {
           sleepSeconds: toSeconds(parse(restParams.Duration)),
           ...sharedProps,
         });
         break;
       case 'aws:executeScript':
-        new ExecuteScriptStep(this, props.name, {
+        this.automationStep = new ExecuteScriptStep(this, props.name, {
           language: ExecuteScriptStep.getLanguage(restParams.Runtime),
           inputs: Object.keys(restParams.InputPayload),
           inlineCode: restParams.Script,
@@ -127,7 +132,7 @@ export class StringStep extends Construct {
         });
         break;
       case 'aws:branch':
-        new BranchStep(this, props.name, {
+        this.automationStep = new BranchStep(this, props.name, {
           choices: this.toChoices(restParams.Choices),
           defaultStepName: restParams.Default,
           ...sharedProps,
@@ -136,6 +141,10 @@ export class StringStep extends Construct {
       default:
         throw new Error('Action not implemented as StringStep ' + props.action);
     }
+  }
+
+  addToDocument(doc: AutomationDocumentBuilder): void {
+    doc.addStep(this.automationStep);
   }
 
   private toOutputs(declaredOutputs: {[name: string]: string}[]): Output[] {

@@ -26,44 +26,47 @@ You would use this if you want:
 ### Document Creation
 
 Typescript usage (Execute AWS API Step)...
-
+The below creates the AutomationDocument in an AWS CDK stack.
 ```ts
-// Extend AutomationDocument
-class MyAutomationDoc extends AutomationDocument {
-  constructor(scope: Construct, id: string, props: AutomationDocumentProps) {
-    super(scope, id, props);
+import { AutomationDocument } from './automation-document';
+
+export class HelloWorld extends Stack {
+  constructor(app: Construct, id: string) {
+    super(app, id);
+
+    // Create AutomationDocument
+    const myDoc = new AutomationDocument(this, "MyDoc", {
+      documentFormat: DocumentFormat.JSON,
+      documentName: "MyDoc",
+      docInputs: [{name: "MyInput", defaultValue: "a", inputType: DataTypeEnum.STRING}]
+    });
 
     // Define your steps...
-    new PauseStep(this, "MyPauseStep", {name: "MyPauseStep"});
-    // You can explore avilable steps and initialize using AutomationSteps.newPauseStep(...)
-    
-    new ExecuteScriptStep(this, "MyExecuteStep", {
+    myDoc.addStep(new PauseStep(this, "MyPauseStep", { name: "MyPauseStep" }));
+
+    myDoc.addStep(new ExecuteScriptStep(this, "MyExecuteStep", {
       name: "step1",
       handlerName: "my_func",
       language: ScriptLanguage.PYTHON,
       fullPathToCode: resolve("test/test_file.py"),
       // OR .inlineCode("def my_func(args, context):\n  return {'MyReturn': args['MyInput'] + '-suffix'}\n")
       outputs: [{
-          outputType: DataTypeEnum.STRING,
-          name: "MyFuncOut",
-          selector: "$.Payload.MyReturn"}],
-      inputs: ["MyInput"]})
+        outputType: DataTypeEnum.STRING,
+        name: "MyFuncOut",
+        selector: "$.Payload.MyReturn"
+      }],
+      inputs: ["MyInput"]
+    }));
   }
 }
 ```
 
 ### Document JSON/YAML Export as YAML/JSON
 
+You can deploy the above document using CDK.
 To print the above document object as a JSON (or YAML), do the following:
 
 ```ts
-const stack: Stack = new Stack();
-const myDoc = new MyAutomationDoc(stack, "MyAutomationDoc", {
-  documentFormat: DocumentFormat.JSON,
-  documentName: "MyDoc",
-  docInputs: [{name: "MyInput", defaultValue: "a", inputType: DataTypeEnum.STRING}]
-});
-SynthUtils.synthesize(stack)
 const myDocJson = myDoc.print(); // Print YAML by setting the documentFormat to YAML
 ```
 
@@ -75,38 +78,8 @@ To run the document object in simulation mode, use the below. Simulation mode do
 ```ts
 import { Simulation } from './simulation';
 
-const stack: Stack = new Stack();
-const myDoc = new MyAutomationDoc(stack, "MyAutomationDoc", {
-  documentFormat: DocumentFormat.JSON,
-  documentName: "MyDoc",
-  docInputs: [{
-    name: "MyInput",
-    defaultValue: "a",
-    inputType: DataTypeEnum.STRING
-  }]
-});
-SynthUtils.synthesize(stack)
-const myDocJson = Simulation.ofAutomation(myDoc, { pauseHook: new MockPause() }).simulate({ MyInput: "FooBar" });
+const myDocJson = Simulation.ofAutomation(myDoc, {}).simulate({ MyInput: "FooBar" });
 ```
-
-### Use in CDK Stack
-
-You can create a CDK stack and deploy the Automation Document as follows:
-
-```ts
-export class AutomationDocCdk extends cdk.Stack {
-  constructor(scope: cdk.Construct, id: string, props?: cdk.StackProps) {
-    super(scope, id, props);
-    const myDoc = new MyAutomationDoc(stack, "MyAutomationDoc", {
-      documentFormat: DocumentFormat.JSON,
-      documentName: "MyDoc",
-      docInputs: [{name: "MyInput", defaultValue: "a", inputType: DataTypeEnum.STRING}]
-    });
-  }
-}
-```
-
-The stack created will deploy the Automation Document!
 
 ## Patterns (High-Level Constructs)
 
@@ -121,26 +94,34 @@ Or consider the case of multiple steps that are always run together such as rebo
 The below example is copied from the `RebootInstanceAndWait` class:
 
 ```ts
-import {IVariable} from "./variable";
+export class RebootInstanceAndWait extends CompositeAutomationStep {
 
-export class RebootInstanceAndWait extends Construct {
-    constructor(scope: Construct, id: string, instanceId: IVariable) {
-        super(scope, id);
-        new AwsApiStep(this, "RebootInstances", {
-            service: "ec2",
-            camelCaseApi: "RebootInstances",
-            apiParams: {'InstanceIds': [instanceId]},
-            outputs: []
-        });
-        new WaitForResourceStep(this, "DescribeInstances", {
-            service: "ec2",
-            camelCaseApi: "DescribeInstances",
-            apiParams: {'InstanceIds': [instanceId]},
-            selector: "$.Reservations[0].Instances[0].State.Name",
-            desiredValues: ['running']
-        });
-    }
+  readonly reboot: AwsApiStep;
+  readonly describe: WaitForResourceStep;
+
+  constructor(scope: Construct, id: string, instanceId: IStringVariable) {
+    super(scope, id);
+    this.reboot = new AwsApiStep(this, 'RebootInstances', {
+      service: 'ec2',
+      pascalCaseApi: 'RebootInstances',
+      apiParams: { InstanceIds: [instanceId] },
+      outputs: [],
+    });
+    this.describe = new WaitForResourceStep(this, 'DescribeInstances', {
+      service: 'ec2',
+      pascalCaseApi: 'DescribeInstances',
+      apiParams: { InstanceIds: [instanceId] },
+      selector: '$.Reservations[0].Instances[0].State.Name',
+      desiredValues: ['running'],
+    });
+  }
+
+  addToDocument(doc: AutomationDocumentBuilder): void {
+    doc.addStep(this.reboot);
+    doc.addStep(this.describe);
+  }
 }
+
 ```
 
 Now, you can use `RebootInstanceAndWait` as a step in a document and the child steps will be included.
@@ -168,7 +149,6 @@ const stack: Stack = new Stack();
 const myAutomationDoc = StringDocument.fromFile(stack, "MyAutomationDoc", 'test/myAutomation.json', {
                                                                         // ======================
 });
-SynthUtils.synthesize(stack);
 
 // Execute simulation
 const simOutput = Simulation.ofAutomation(myAutomationDoc, {

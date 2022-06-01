@@ -9,41 +9,27 @@ import { Simulation } from '../../lib/simulation/simulation';
 describe('AutomationDocument', function() {
   describe('#runSimulation()', function() {
     it('Outputs the status and results of steps', function() {
-
-      // Declare Automation Document
-      class MyAutomationDoc extends AutomationDocument {
-        constructor(scope: Construct, id: string, props: AutomationDocumentProps) {
-          super(scope, id, {
-            ...props,
-            ...{
-              docInputs: [{ name: 'MyInput', defaultValue: 'a', inputType: DataTypeEnum.STRING }],
-              docOutputs: [{ name: 'MyExecuteStep.MyFuncOut', outputType: DataTypeEnum.STRING }],
-            },
-          });
-
-          // First step
-          new PauseStep(this, 'MyPauseStep', { name: 'MyPauseStep' });
-          // Second step
-          new ExecuteScriptStep(this, 'MyExecuteStep', {
-            handlerName: 'my_func',
-            language: ScriptLanguage.PYTHON,
-            fullPathToCode: resolve('test/test_file.py'),
-            outputs: [{
-              outputType: DataTypeEnum.STRING,
-              name: 'MyFuncOut',
-              selector: '$.Payload.MyReturn',
-            }],
-            inputs: ['MyInput'],
-          });
-        }
-      }
-
-      // Synthesize it
       const stack: Stack = new Stack();
-      const myAutomationDoc = new MyAutomationDoc(stack, 'MyAutomationDoc', {
+      const myAutomationDoc = new AutomationDocument(stack, 'MyAutomationDoc', {
+        docInputs: [{ name: 'MyInput', defaultValue: 'a', inputType: DataTypeEnum.STRING }],
+        docOutputs: [{ name: 'MyExecuteStep.MyFuncOut', outputType: DataTypeEnum.STRING }],
         documentName: 'MyDoc',
       });
-      SynthUtils.synthesize(stack);
+
+      // First step
+      myAutomationDoc.addStep(new PauseStep(stack, 'MyPauseStep', { name: 'MyPauseStep' }));
+      // Second step
+      myAutomationDoc.addStep(new ExecuteScriptStep(stack, 'MyExecuteStep', {
+        handlerName: 'my_func',
+        language: ScriptLanguage.PYTHON,
+        fullPathToCode: resolve('test/test_file.py'),
+        outputs: [{
+          outputType: DataTypeEnum.STRING,
+          name: 'MyFuncOut',
+          selector: '$.Payload.MyReturn',
+        }],
+        inputs: ['MyInput'],
+      }));
 
       // Execute simulation
       const simOutput = Simulation.ofAutomation(myAutomationDoc, { pauseHook: new MockPause() }).simulate({});
@@ -62,31 +48,25 @@ describe('AutomationDocument', function() {
       });
     });
     it('Document outputs only includes those outputs specified as document outputs', function() {
-      class MyAutomationDoc extends AutomationDocument {
-        constructor(scope: Construct, id: string, props: AutomationDocumentProps) {
-          super(scope, id, props);
-          new PauseStep(this, 'MyPauseStep', { name: 'MyPauseStep' });
-          new ExecuteScriptStep(this, 'MyExecuteStep', {
-            handlerName: 'my_func',
-            language: ScriptLanguage.PYTHON,
-            fullPathToCode: resolve('test/test_file.py'),
-            outputs: [{
-              outputType: DataTypeEnum.STRING,
-              name: 'MyFuncOut',
-              selector: '$.Payload.MyReturn',
-            }],
-            inputs: ['MyInput'],
-          });
-        }
-      }
-      const stack: Stack = new Stack();
-      const myAutomationDoc = new MyAutomationDoc(stack, 'MyAutomationDoc', {
+      const stack = new Stack();
+      const doc = new AutomationDocument(stack, 'MyAutomationDoc', {
         documentName: 'MyDoc',
         docInputs: [{ name: 'MyInput', defaultValue: 'a', inputType: DataTypeEnum.STRING }],
         docOutputs: [],
       });
-      SynthUtils.synthesize(stack);
-      const simOutput = Simulation.ofAutomation(myAutomationDoc, { pauseHook: new MockPause() }).simulate({});
+      doc.addStep(new PauseStep(stack, 'MyPauseStep', { name: 'MyPauseStep' }));
+      doc.addStep(new ExecuteScriptStep(stack, 'MyExecuteStep', {
+        handlerName: 'my_func',
+        language: ScriptLanguage.PYTHON,
+        fullPathToCode: resolve('test/test_file.py'),
+        outputs: [{
+          outputType: DataTypeEnum.STRING,
+          name: 'MyFuncOut',
+          selector: '$.Payload.MyReturn',
+        }],
+        inputs: ['MyInput'],
+      }));
+      const simOutput = Simulation.ofAutomation(doc, { pauseHook: new MockPause() }).simulate({});
       assert.deepEqual(simOutput, {
         responseCode: ResponseCode.SUCCESS,
         outputs: { 'MyExecuteStep.MyFuncOut': 'a-suffix' },
@@ -123,29 +103,26 @@ describe('AutomationDocument', function() {
   });
   describe('#printAsJson()', function() {
     it('Prints an SSM Automation doc', function() {
-      class MyAutomationDoc extends AutomationDocument {
-        constructor(scope: Construct, id: string, props: AutomationDocumentProps) {
-          super(scope, id, props);
-          new PauseStep(this, 'MyPauseStep', { name: 'MyPauseStep' });
-          new ExecuteScriptStep(this, 'MyExecuteStep', {
-            name: 'step1',
-            handlerName: 'my_func',
-            language: ScriptLanguage.PYTHON,
-            fullPathToCode: resolve('test/test_file.py'),
-            outputs: [{
-              outputType: DataTypeEnum.STRING,
-              name: 'MyFuncOut',
-              selector: '$.Payload.MyReturn',
-            }],
-            inputs: ['MyInput'],
-          });
-        }
-      }
+
+
       const stack: Stack = new Stack();
-      const myAutomationDoc = new MyAutomationDoc(stack, 'MyAutomationDoc', {
+      const myAutomationDoc = new AutomationDocument(stack, 'MyAutomationDoc', {
         documentName: 'MyDoc',
         docInputs: [{ name: 'MyInput', defaultValue: 'a', inputType: DataTypeEnum.STRING }],
       });
+      myAutomationDoc.addStep(new PauseStep(stack, 'MyPauseStep', { name: 'MyPauseStep' }));
+      myAutomationDoc.addStep(new ExecuteScriptStep(stack, 'MyExecuteStep', {
+        name: 'step1',
+        handlerName: 'my_func',
+        language: ScriptLanguage.PYTHON,
+        fullPathToCode: resolve('test/test_file.py'),
+        outputs: [{
+          outputType: DataTypeEnum.STRING,
+          name: 'MyFuncOut',
+          selector: '$.Payload.MyReturn',
+        }],
+        inputs: ['MyInput'],
+      }));
       SynthUtils.synthesize(stack);
       const ssmJson = myAutomationDoc.print();
 

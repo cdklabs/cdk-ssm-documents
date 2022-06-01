@@ -48,6 +48,7 @@ new ApproveStep(scope: Construct, id: string, props: ApproveStepProps)
 | <code><a href="#cdk-ssm-documents.ApproveStep.listInputs">listInputs</a></code> | Lists the inputs that are required for this step. |
 | <code><a href="#cdk-ssm-documents.ApproveStep.listOutputs">listOutputs</a></code> | Lists the outputs that will be returned from this step. |
 | <code><a href="#cdk-ssm-documents.ApproveStep.toSsmEntry">toSsmEntry</a></code> | Converts this step into an object to prepare for yaml/json representation of this step. |
+| <code><a href="#cdk-ssm-documents.ApproveStep.addToDocument">addToDocument</a></code> | *No description.* |
 | <code><a href="#cdk-ssm-documents.ApproveStep.variables">variables</a></code> | *No description.* |
 
 ---
@@ -83,6 +84,18 @@ public toSsmEntry(): {[ key: string ]: any}
 ```
 
 Converts this step into an object to prepare for yaml/json representation of this step.
+
+##### `addToDocument` <a name="addToDocument" id="cdk-ssm-documents.ApproveStep.addToDocument"></a>
+
+```typescript
+public addToDocument(doc: AutomationDocumentBuilder): void
+```
+
+###### `doc`<sup>Required</sup> <a name="doc" id="cdk-ssm-documents.ApproveStep.addToDocument.parameter.doc"></a>
+
+- *Type:* <a href="#cdk-ssm-documents.AutomationDocumentBuilder">AutomationDocumentBuilder</a>
+
+---
 
 ##### `variables` <a name="variables" id="cdk-ssm-documents.ApproveStep.variables"></a>
 
@@ -389,6 +402,7 @@ new AssertAwsResourceStep(scope: Construct, id: string, props: AssertAwsResource
 | <code><a href="#cdk-ssm-documents.AssertAwsResourceStep.listInputs">listInputs</a></code> | Derives the inputs by parsing the apiParams to find matches for inputs in double circle braces ("{{INPUT}}"). |
 | <code><a href="#cdk-ssm-documents.AssertAwsResourceStep.listOutputs">listOutputs</a></code> | There are no outputs for this step. |
 | <code><a href="#cdk-ssm-documents.AssertAwsResourceStep.toSsmEntry">toSsmEntry</a></code> | Converts this step into an object to prepare for yaml/json representation of this step. |
+| <code><a href="#cdk-ssm-documents.AssertAwsResourceStep.addToDocument">addToDocument</a></code> | *No description.* |
 | <code><a href="#cdk-ssm-documents.AssertAwsResourceStep.variables">variables</a></code> | *No description.* |
 
 ---
@@ -424,6 +438,18 @@ public toSsmEntry(): {[ key: string ]: any}
 ```
 
 Converts this step into an object to prepare for yaml/json representation of this step.
+
+##### `addToDocument` <a name="addToDocument" id="cdk-ssm-documents.AssertAwsResourceStep.addToDocument"></a>
+
+```typescript
+public addToDocument(doc: AutomationDocumentBuilder): void
+```
+
+###### `doc`<sup>Required</sup> <a name="doc" id="cdk-ssm-documents.AssertAwsResourceStep.addToDocument.parameter.doc"></a>
+
+- *Type:* <a href="#cdk-ssm-documents.AutomationDocumentBuilder">AutomationDocumentBuilder</a>
+
+---
 
 ##### `variables` <a name="variables" id="cdk-ssm-documents.AssertAwsResourceStep.variables"></a>
 
@@ -763,6 +789,7 @@ new AutomationDocument(scope: Construct, id: string, props: AutomationDocumentPr
 | <code><a href="#cdk-ssm-documents.AutomationDocument.toString">toString</a></code> | Returns a string representation of this construct. |
 | <code><a href="#cdk-ssm-documents.AutomationDocument.documentType">documentType</a></code> | *No description.* |
 | <code><a href="#cdk-ssm-documents.AutomationDocument.print">print</a></code> | Synthesize before calling this function! You can use this to Synthesize: cdk.SynthUtils.synthesize(stack); |
+| <code><a href="#cdk-ssm-documents.AutomationDocument.addStep">addStep</a></code> | *No description.* |
 | <code><a href="#cdk-ssm-documents.AutomationDocument.collectedSteps">collectedSteps</a></code> | *No description.* |
 
 ---
@@ -792,6 +819,18 @@ Synthesize before calling this function! You can use this to Synthesize: cdk.Syn
 Converts the objects define in the SSM Document (including all of the steps) to an SSM document string.
 The format is dependency on the documentFormat property provided to the class.
 The yaml can be used as is and will behave (or at least should behave) as was simulated in the runSimulation().
+
+##### `addStep` <a name="addStep" id="cdk-ssm-documents.AutomationDocument.addStep"></a>
+
+```typescript
+public addStep(component: IAutomationComponent): void
+```
+
+###### `component`<sup>Required</sup> <a name="component" id="cdk-ssm-documents.AutomationDocument.addStep.parameter.component"></a>
+
+- *Type:* <a href="#cdk-ssm-documents.IAutomationComponent">IAutomationComponent</a>
+
+---
 
 ##### `collectedSteps` <a name="collectedSteps" id="cdk-ssm-documents.AutomationDocument.collectedSteps"></a>
 
@@ -835,9 +874,9 @@ Any object.
 | <code><a href="#cdk-ssm-documents.AutomationDocument.property.docOutputs">docOutputs</a></code> | <code><a href="#cdk-ssm-documents.DocumentOutput">DocumentOutput</a>[]</code> | *No description.* |
 | <code><a href="#cdk-ssm-documents.AutomationDocument.property.documentName">documentName</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#cdk-ssm-documents.AutomationDocument.property.props">props</a></code> | <code><a href="#cdk-ssm-documents.SsmDocumentProps">SsmDocumentProps</a></code> | *No description.* |
-| <code><a href="#cdk-ssm-documents.AutomationDocument.property.stepCollector">stepCollector</a></code> | <code><a href="#cdk-ssm-documents.StepCollector">StepCollector</a></code> | *No description.* |
 | <code><a href="#cdk-ssm-documents.AutomationDocument.property.assumeRole">assumeRole</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#cdk-ssm-documents.AutomationDocument.property.header">header</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.AutomationDocument.property.builder">builder</a></code> | <code><a href="#cdk-ssm-documents.AutomationDocumentBuilder">AutomationDocumentBuilder</a></code> | *No description.* |
 
 ---
 
@@ -903,16 +942,6 @@ public readonly props: SsmDocumentProps;
 
 ---
 
-##### `stepCollector`<sup>Required</sup> <a name="stepCollector" id="cdk-ssm-documents.AutomationDocument.property.stepCollector"></a>
-
-```typescript
-public readonly stepCollector: StepCollector;
-```
-
-- *Type:* <a href="#cdk-ssm-documents.StepCollector">StepCollector</a>
-
----
-
 ##### `assumeRole`<sup>Optional</sup> <a name="assumeRole" id="cdk-ssm-documents.AutomationDocument.property.assumeRole"></a>
 
 ```typescript
@@ -933,8 +962,20 @@ public readonly header: string;
 
 ---
 
+##### `builder`<sup>Required</sup> <a name="builder" id="cdk-ssm-documents.AutomationDocument.property.builder"></a>
+
+```typescript
+public readonly builder: AutomationDocumentBuilder;
+```
+
+- *Type:* <a href="#cdk-ssm-documents.AutomationDocumentBuilder">AutomationDocumentBuilder</a>
+
+---
+
 
 ### AutomationStep <a name="AutomationStep" id="cdk-ssm-documents.AutomationStep"></a>
+
+- *Implements:* <a href="#cdk-ssm-documents.IAutomationComponent">IAutomationComponent</a>
 
 Parent class for AutomationSteps.
 
@@ -987,6 +1028,7 @@ new AutomationStep(scope: Construct, id: string, props: AutomationStepProps)
 | <code><a href="#cdk-ssm-documents.AutomationStep.listInputs">listInputs</a></code> | Lists the inputs that are required for this step. |
 | <code><a href="#cdk-ssm-documents.AutomationStep.listOutputs">listOutputs</a></code> | Lists the outputs that will be returned from this step. |
 | <code><a href="#cdk-ssm-documents.AutomationStep.toSsmEntry">toSsmEntry</a></code> | Converts this step into an object to prepare for yaml/json representation of this step. |
+| <code><a href="#cdk-ssm-documents.AutomationStep.addToDocument">addToDocument</a></code> | *No description.* |
 | <code><a href="#cdk-ssm-documents.AutomationStep.variables">variables</a></code> | *No description.* |
 
 ---
@@ -1022,6 +1064,18 @@ public toSsmEntry(): {[ key: string ]: any}
 ```
 
 Converts this step into an object to prepare for yaml/json representation of this step.
+
+##### `addToDocument` <a name="addToDocument" id="cdk-ssm-documents.AutomationStep.addToDocument"></a>
+
+```typescript
+public addToDocument(doc: AutomationDocumentBuilder): void
+```
+
+###### `doc`<sup>Required</sup> <a name="doc" id="cdk-ssm-documents.AutomationStep.addToDocument.parameter.doc"></a>
+
+- *Type:* <a href="#cdk-ssm-documents.AutomationDocumentBuilder">AutomationDocumentBuilder</a>
+
+---
 
 ##### `variables` <a name="variables" id="cdk-ssm-documents.AutomationStep.variables"></a>
 
@@ -1282,6 +1336,7 @@ new AwsApiStep(scope: Construct, id: string, props: AwsApiStepProps)
 | <code><a href="#cdk-ssm-documents.AwsApiStep.listInputs">listInputs</a></code> | Derives the inputs by parsing the apiParams to find matches for inputs in double circle braces ("{{INPUT}}"). |
 | <code><a href="#cdk-ssm-documents.AwsApiStep.listOutputs">listOutputs</a></code> | Lists the outputs that will be returned from this step. |
 | <code><a href="#cdk-ssm-documents.AwsApiStep.toSsmEntry">toSsmEntry</a></code> | Converts this step into an object to prepare for yaml/json representation of this step. |
+| <code><a href="#cdk-ssm-documents.AwsApiStep.addToDocument">addToDocument</a></code> | *No description.* |
 | <code><a href="#cdk-ssm-documents.AwsApiStep.variables">variables</a></code> | *No description.* |
 
 ---
@@ -1317,6 +1372,18 @@ public toSsmEntry(): {[ key: string ]: any}
 ```
 
 Converts this step into an object to prepare for yaml/json representation of this step.
+
+##### `addToDocument` <a name="addToDocument" id="cdk-ssm-documents.AwsApiStep.addToDocument"></a>
+
+```typescript
+public addToDocument(doc: AutomationDocumentBuilder): void
+```
+
+###### `doc`<sup>Required</sup> <a name="doc" id="cdk-ssm-documents.AwsApiStep.addToDocument.parameter.doc"></a>
+
+- *Type:* <a href="#cdk-ssm-documents.AutomationDocumentBuilder">AutomationDocumentBuilder</a>
+
+---
 
 ##### `variables` <a name="variables" id="cdk-ssm-documents.AwsApiStep.variables"></a>
 
@@ -1632,6 +1699,7 @@ new BranchStep(scope: Construct, id: string, props: BranchStepProps)
 | <code><a href="#cdk-ssm-documents.BranchStep.listInputs">listInputs</a></code> | Lists the inputs that are required for this step. |
 | <code><a href="#cdk-ssm-documents.BranchStep.listOutputs">listOutputs</a></code> | There is no output from branch steps. |
 | <code><a href="#cdk-ssm-documents.BranchStep.toSsmEntry">toSsmEntry</a></code> | Converts this step into an object to prepare for yaml/json representation of this step. |
+| <code><a href="#cdk-ssm-documents.BranchStep.addToDocument">addToDocument</a></code> | *No description.* |
 | <code><a href="#cdk-ssm-documents.BranchStep.variables">variables</a></code> | *No description.* |
 
 ---
@@ -1667,6 +1735,18 @@ public toSsmEntry(): {[ key: string ]: any}
 ```
 
 Converts this step into an object to prepare for yaml/json representation of this step.
+
+##### `addToDocument` <a name="addToDocument" id="cdk-ssm-documents.BranchStep.addToDocument"></a>
+
+```typescript
+public addToDocument(doc: AutomationDocumentBuilder): void
+```
+
+###### `doc`<sup>Required</sup> <a name="doc" id="cdk-ssm-documents.BranchStep.addToDocument.parameter.doc"></a>
+
+- *Type:* <a href="#cdk-ssm-documents.AutomationDocumentBuilder">AutomationDocumentBuilder</a>
+
+---
 
 ##### `variables` <a name="variables" id="cdk-ssm-documents.BranchStep.variables"></a>
 
@@ -1949,6 +2029,7 @@ new ChangeInstanceStateStep(scope: Construct, id: string, props: ChangeInstanceS
 | <code><a href="#cdk-ssm-documents.ChangeInstanceStateStep.listInputs">listInputs</a></code> | Lists the inputs that are required for this step. |
 | <code><a href="#cdk-ssm-documents.ChangeInstanceStateStep.listOutputs">listOutputs</a></code> | This step has no outputs. |
 | <code><a href="#cdk-ssm-documents.ChangeInstanceStateStep.toSsmEntry">toSsmEntry</a></code> | Converts this step into an object to prepare for yaml/json representation of this step. |
+| <code><a href="#cdk-ssm-documents.ChangeInstanceStateStep.addToDocument">addToDocument</a></code> | *No description.* |
 | <code><a href="#cdk-ssm-documents.ChangeInstanceStateStep.variables">variables</a></code> | *No description.* |
 
 ---
@@ -1984,6 +2065,18 @@ public toSsmEntry(): {[ key: string ]: any}
 ```
 
 Converts this step into an object to prepare for yaml/json representation of this step.
+
+##### `addToDocument` <a name="addToDocument" id="cdk-ssm-documents.ChangeInstanceStateStep.addToDocument"></a>
+
+```typescript
+public addToDocument(doc: AutomationDocumentBuilder): void
+```
+
+###### `doc`<sup>Required</sup> <a name="doc" id="cdk-ssm-documents.ChangeInstanceStateStep.addToDocument.parameter.doc"></a>
+
+- *Type:* <a href="#cdk-ssm-documents.AutomationDocumentBuilder">AutomationDocumentBuilder</a>
+
+---
 
 ##### `variables` <a name="variables" id="cdk-ssm-documents.ChangeInstanceStateStep.variables"></a>
 
@@ -2298,6 +2391,7 @@ new CommandDocument(scope: Construct, id: string, props: CommandDocumentProps)
 | <code><a href="#cdk-ssm-documents.CommandDocument.toString">toString</a></code> | Returns a string representation of this construct. |
 | <code><a href="#cdk-ssm-documents.CommandDocument.documentType">documentType</a></code> | *No description.* |
 | <code><a href="#cdk-ssm-documents.CommandDocument.print">print</a></code> | Synthesize before calling this function! You can use this to Synthesize: cdk.SynthUtils.synthesize(stack); |
+| <code><a href="#cdk-ssm-documents.CommandDocument.addStep">addStep</a></code> | *No description.* |
 | <code><a href="#cdk-ssm-documents.CommandDocument.collectedSteps">collectedSteps</a></code> | *No description.* |
 
 ---
@@ -2327,6 +2421,18 @@ Synthesize before calling this function! You can use this to Synthesize: cdk.Syn
 Converts the objects define in the SSM Document (including all of the steps) to an SSM document string.
 The format is dependency on the documentFormat property provided to the class.
 The yaml can be used as is and will behave (or at least should behave) as was simulated in the runSimulation().
+
+##### `addStep` <a name="addStep" id="cdk-ssm-documents.CommandDocument.addStep"></a>
+
+```typescript
+public addStep(component: ICommandComponent): void
+```
+
+###### `component`<sup>Required</sup> <a name="component" id="cdk-ssm-documents.CommandDocument.addStep.parameter.component"></a>
+
+- *Type:* <a href="#cdk-ssm-documents.ICommandComponent">ICommandComponent</a>
+
+---
 
 ##### `collectedSteps` <a name="collectedSteps" id="cdk-ssm-documents.CommandDocument.collectedSteps"></a>
 
@@ -2370,9 +2476,9 @@ Any object.
 | <code><a href="#cdk-ssm-documents.CommandDocument.property.docOutputs">docOutputs</a></code> | <code><a href="#cdk-ssm-documents.DocumentOutput">DocumentOutput</a>[]</code> | *No description.* |
 | <code><a href="#cdk-ssm-documents.CommandDocument.property.documentName">documentName</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#cdk-ssm-documents.CommandDocument.property.props">props</a></code> | <code><a href="#cdk-ssm-documents.SsmDocumentProps">SsmDocumentProps</a></code> | *No description.* |
-| <code><a href="#cdk-ssm-documents.CommandDocument.property.stepCollector">stepCollector</a></code> | <code><a href="#cdk-ssm-documents.StepCollector">StepCollector</a></code> | *No description.* |
 | <code><a href="#cdk-ssm-documents.CommandDocument.property.assumeRole">assumeRole</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#cdk-ssm-documents.CommandDocument.property.header">header</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.CommandDocument.property.builder">builder</a></code> | <code><a href="#cdk-ssm-documents.CommandDocumentBuilder">CommandDocumentBuilder</a></code> | *No description.* |
 
 ---
 
@@ -2438,16 +2544,6 @@ public readonly props: SsmDocumentProps;
 
 ---
 
-##### `stepCollector`<sup>Required</sup> <a name="stepCollector" id="cdk-ssm-documents.CommandDocument.property.stepCollector"></a>
-
-```typescript
-public readonly stepCollector: StepCollector;
-```
-
-- *Type:* <a href="#cdk-ssm-documents.StepCollector">StepCollector</a>
-
----
-
 ##### `assumeRole`<sup>Optional</sup> <a name="assumeRole" id="cdk-ssm-documents.CommandDocument.property.assumeRole"></a>
 
 ```typescript
@@ -2468,8 +2564,20 @@ public readonly header: string;
 
 ---
 
+##### `builder`<sup>Required</sup> <a name="builder" id="cdk-ssm-documents.CommandDocument.property.builder"></a>
+
+```typescript
+public readonly builder: CommandDocumentBuilder;
+```
+
+- *Type:* <a href="#cdk-ssm-documents.CommandDocumentBuilder">CommandDocumentBuilder</a>
+
+---
+
 
 ### CommandStep <a name="CommandStep" id="cdk-ssm-documents.CommandStep"></a>
+
+- *Implements:* <a href="#cdk-ssm-documents.ICommandComponent">ICommandComponent</a>
 
 #### Initializers <a name="Initializers" id="cdk-ssm-documents.CommandStep.Initializer"></a>
 
@@ -2513,6 +2621,7 @@ new CommandStep(scope: Construct, id: string, props: CommandStepProps)
 | <code><a href="#cdk-ssm-documents.CommandStep.listInputs">listInputs</a></code> | Lists the inputs that are required for this step. |
 | <code><a href="#cdk-ssm-documents.CommandStep.listOutputs">listOutputs</a></code> | RunCommand Steps do not have outputs. |
 | <code><a href="#cdk-ssm-documents.CommandStep.toSsmEntry">toSsmEntry</a></code> | Converts this step into an object to prepare for yaml/json representation of this step. |
+| <code><a href="#cdk-ssm-documents.CommandStep.addToDocument">addToDocument</a></code> | *No description.* |
 | <code><a href="#cdk-ssm-documents.CommandStep.variables">variables</a></code> | *No description.* |
 
 ---
@@ -2548,6 +2657,18 @@ public toSsmEntry(): {[ key: string ]: any}
 ```
 
 Converts this step into an object to prepare for yaml/json representation of this step.
+
+##### `addToDocument` <a name="addToDocument" id="cdk-ssm-documents.CommandStep.addToDocument"></a>
+
+```typescript
+public addToDocument(doc: CommandDocumentBuilder): void
+```
+
+###### `doc`<sup>Required</sup> <a name="doc" id="cdk-ssm-documents.CommandStep.addToDocument.parameter.doc"></a>
+
+- *Type:* <a href="#cdk-ssm-documents.CommandDocumentBuilder">CommandDocumentBuilder</a>
+
+---
 
 ##### `variables` <a name="variables" id="cdk-ssm-documents.CommandStep.variables"></a>
 
@@ -2745,6 +2866,220 @@ public readonly nextStep: CommandStep;
 ---
 
 
+### CompositeAutomationStep <a name="CompositeAutomationStep" id="cdk-ssm-documents.CompositeAutomationStep"></a>
+
+- *Implements:* <a href="#cdk-ssm-documents.IAutomationComponent">IAutomationComponent</a>
+
+#### Initializers <a name="Initializers" id="cdk-ssm-documents.CompositeAutomationStep.Initializer"></a>
+
+```typescript
+import { CompositeAutomationStep } from 'cdk-ssm-documents'
+
+new CompositeAutomationStep(scope: Construct, id: string)
+```
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#cdk-ssm-documents.CompositeAutomationStep.Initializer.parameter.scope">scope</a></code> | <code>constructs.Construct</code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.CompositeAutomationStep.Initializer.parameter.id">id</a></code> | <code>string</code> | *No description.* |
+
+---
+
+##### `scope`<sup>Required</sup> <a name="scope" id="cdk-ssm-documents.CompositeAutomationStep.Initializer.parameter.scope"></a>
+
+- *Type:* constructs.Construct
+
+---
+
+##### `id`<sup>Required</sup> <a name="id" id="cdk-ssm-documents.CompositeAutomationStep.Initializer.parameter.id"></a>
+
+- *Type:* string
+
+---
+
+#### Methods <a name="Methods" id="Methods"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#cdk-ssm-documents.CompositeAutomationStep.toString">toString</a></code> | Returns a string representation of this construct. |
+| <code><a href="#cdk-ssm-documents.CompositeAutomationStep.addToDocument">addToDocument</a></code> | *No description.* |
+
+---
+
+##### `toString` <a name="toString" id="cdk-ssm-documents.CompositeAutomationStep.toString"></a>
+
+```typescript
+public toString(): string
+```
+
+Returns a string representation of this construct.
+
+##### `addToDocument` <a name="addToDocument" id="cdk-ssm-documents.CompositeAutomationStep.addToDocument"></a>
+
+```typescript
+public addToDocument(doc: AutomationDocumentBuilder): void
+```
+
+###### `doc`<sup>Required</sup> <a name="doc" id="cdk-ssm-documents.CompositeAutomationStep.addToDocument.parameter.doc"></a>
+
+- *Type:* <a href="#cdk-ssm-documents.AutomationDocumentBuilder">AutomationDocumentBuilder</a>
+
+---
+
+#### Static Functions <a name="Static Functions" id="Static Functions"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#cdk-ssm-documents.CompositeAutomationStep.isConstruct">isConstruct</a></code> | Checks if `x` is a construct. |
+
+---
+
+##### ~~`isConstruct`~~ <a name="isConstruct" id="cdk-ssm-documents.CompositeAutomationStep.isConstruct"></a>
+
+```typescript
+import { CompositeAutomationStep } from 'cdk-ssm-documents'
+
+CompositeAutomationStep.isConstruct(x: any)
+```
+
+Checks if `x` is a construct.
+
+###### `x`<sup>Required</sup> <a name="x" id="cdk-ssm-documents.CompositeAutomationStep.isConstruct.parameter.x"></a>
+
+- *Type:* any
+
+Any object.
+
+---
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#cdk-ssm-documents.CompositeAutomationStep.property.node">node</a></code> | <code>constructs.Node</code> | The tree node. |
+
+---
+
+##### `node`<sup>Required</sup> <a name="node" id="cdk-ssm-documents.CompositeAutomationStep.property.node"></a>
+
+```typescript
+public readonly node: Node;
+```
+
+- *Type:* constructs.Node
+
+The tree node.
+
+---
+
+
+### CompositeCommandStep <a name="CompositeCommandStep" id="cdk-ssm-documents.CompositeCommandStep"></a>
+
+- *Implements:* <a href="#cdk-ssm-documents.ICommandComponent">ICommandComponent</a>
+
+#### Initializers <a name="Initializers" id="cdk-ssm-documents.CompositeCommandStep.Initializer"></a>
+
+```typescript
+import { CompositeCommandStep } from 'cdk-ssm-documents'
+
+new CompositeCommandStep(scope: Construct, id: string)
+```
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#cdk-ssm-documents.CompositeCommandStep.Initializer.parameter.scope">scope</a></code> | <code>constructs.Construct</code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.CompositeCommandStep.Initializer.parameter.id">id</a></code> | <code>string</code> | *No description.* |
+
+---
+
+##### `scope`<sup>Required</sup> <a name="scope" id="cdk-ssm-documents.CompositeCommandStep.Initializer.parameter.scope"></a>
+
+- *Type:* constructs.Construct
+
+---
+
+##### `id`<sup>Required</sup> <a name="id" id="cdk-ssm-documents.CompositeCommandStep.Initializer.parameter.id"></a>
+
+- *Type:* string
+
+---
+
+#### Methods <a name="Methods" id="Methods"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#cdk-ssm-documents.CompositeCommandStep.toString">toString</a></code> | Returns a string representation of this construct. |
+| <code><a href="#cdk-ssm-documents.CompositeCommandStep.addToDocument">addToDocument</a></code> | *No description.* |
+
+---
+
+##### `toString` <a name="toString" id="cdk-ssm-documents.CompositeCommandStep.toString"></a>
+
+```typescript
+public toString(): string
+```
+
+Returns a string representation of this construct.
+
+##### `addToDocument` <a name="addToDocument" id="cdk-ssm-documents.CompositeCommandStep.addToDocument"></a>
+
+```typescript
+public addToDocument(doc: CommandDocumentBuilder): void
+```
+
+###### `doc`<sup>Required</sup> <a name="doc" id="cdk-ssm-documents.CompositeCommandStep.addToDocument.parameter.doc"></a>
+
+- *Type:* <a href="#cdk-ssm-documents.CommandDocumentBuilder">CommandDocumentBuilder</a>
+
+---
+
+#### Static Functions <a name="Static Functions" id="Static Functions"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#cdk-ssm-documents.CompositeCommandStep.isConstruct">isConstruct</a></code> | Checks if `x` is a construct. |
+
+---
+
+##### ~~`isConstruct`~~ <a name="isConstruct" id="cdk-ssm-documents.CompositeCommandStep.isConstruct"></a>
+
+```typescript
+import { CompositeCommandStep } from 'cdk-ssm-documents'
+
+CompositeCommandStep.isConstruct(x: any)
+```
+
+Checks if `x` is a construct.
+
+###### `x`<sup>Required</sup> <a name="x" id="cdk-ssm-documents.CompositeCommandStep.isConstruct.parameter.x"></a>
+
+- *Type:* any
+
+Any object.
+
+---
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#cdk-ssm-documents.CompositeCommandStep.property.node">node</a></code> | <code>constructs.Node</code> | The tree node. |
+
+---
+
+##### `node`<sup>Required</sup> <a name="node" id="cdk-ssm-documents.CompositeCommandStep.property.node"></a>
+
+```typescript
+public readonly node: Node;
+```
+
+- *Type:* constructs.Node
+
+The tree node.
+
+---
+
+
 ### CopyImageStep <a name="CopyImageStep" id="cdk-ssm-documents.CopyImageStep"></a>
 
 AutomationStep implemenation for aws:copyImage https://docs.aws.amazon.com/systems-manager/latest/userguide/automation-action-copyimage.html.
@@ -2791,6 +3126,7 @@ new CopyImageStep(scope: Construct, id: string, props: CopyImageStepProps)
 | <code><a href="#cdk-ssm-documents.CopyImageStep.listInputs">listInputs</a></code> | Lists the inputs that are required for this step. |
 | <code><a href="#cdk-ssm-documents.CopyImageStep.listOutputs">listOutputs</a></code> | Lists the outputs that will be returned from this step. |
 | <code><a href="#cdk-ssm-documents.CopyImageStep.toSsmEntry">toSsmEntry</a></code> | Converts this step into an object to prepare for yaml/json representation of this step. |
+| <code><a href="#cdk-ssm-documents.CopyImageStep.addToDocument">addToDocument</a></code> | *No description.* |
 | <code><a href="#cdk-ssm-documents.CopyImageStep.variables">variables</a></code> | *No description.* |
 
 ---
@@ -2826,6 +3162,18 @@ public toSsmEntry(): {[ key: string ]: any}
 ```
 
 Converts this step into an object to prepare for yaml/json representation of this step.
+
+##### `addToDocument` <a name="addToDocument" id="cdk-ssm-documents.CopyImageStep.addToDocument"></a>
+
+```typescript
+public addToDocument(doc: AutomationDocumentBuilder): void
+```
+
+###### `doc`<sup>Required</sup> <a name="doc" id="cdk-ssm-documents.CopyImageStep.addToDocument.parameter.doc"></a>
+
+- *Type:* <a href="#cdk-ssm-documents.AutomationDocumentBuilder">AutomationDocumentBuilder</a>
+
+---
 
 ##### `variables` <a name="variables" id="cdk-ssm-documents.CopyImageStep.variables"></a>
 
@@ -3163,6 +3511,7 @@ new CreateImageStep(scope: Construct, id: string, props: CreateImageStepProps)
 | <code><a href="#cdk-ssm-documents.CreateImageStep.listInputs">listInputs</a></code> | Lists the inputs that are required for this step. |
 | <code><a href="#cdk-ssm-documents.CreateImageStep.listOutputs">listOutputs</a></code> | Lists the outputs that will be returned from this step. |
 | <code><a href="#cdk-ssm-documents.CreateImageStep.toSsmEntry">toSsmEntry</a></code> | Converts this step into an object to prepare for yaml/json representation of this step. |
+| <code><a href="#cdk-ssm-documents.CreateImageStep.addToDocument">addToDocument</a></code> | *No description.* |
 | <code><a href="#cdk-ssm-documents.CreateImageStep.variables">variables</a></code> | *No description.* |
 
 ---
@@ -3198,6 +3547,18 @@ public toSsmEntry(): {[ key: string ]: any}
 ```
 
 Converts this step into an object to prepare for yaml/json representation of this step.
+
+##### `addToDocument` <a name="addToDocument" id="cdk-ssm-documents.CreateImageStep.addToDocument"></a>
+
+```typescript
+public addToDocument(doc: AutomationDocumentBuilder): void
+```
+
+###### `doc`<sup>Required</sup> <a name="doc" id="cdk-ssm-documents.CreateImageStep.addToDocument.parameter.doc"></a>
+
+- *Type:* <a href="#cdk-ssm-documents.AutomationDocumentBuilder">AutomationDocumentBuilder</a>
+
+---
 
 ##### `variables` <a name="variables" id="cdk-ssm-documents.CreateImageStep.variables"></a>
 
@@ -3513,6 +3874,7 @@ new CreateStackStep(scope: Construct, id: string, props: CreateStackStepProps)
 | <code><a href="#cdk-ssm-documents.CreateStackStep.listInputs">listInputs</a></code> | Lists the inputs that are required for this step. |
 | <code><a href="#cdk-ssm-documents.CreateStackStep.listOutputs">listOutputs</a></code> | Lists the outputs that will be returned from this step. |
 | <code><a href="#cdk-ssm-documents.CreateStackStep.toSsmEntry">toSsmEntry</a></code> | Converts this step into an object to prepare for yaml/json representation of this step. |
+| <code><a href="#cdk-ssm-documents.CreateStackStep.addToDocument">addToDocument</a></code> | *No description.* |
 | <code><a href="#cdk-ssm-documents.CreateStackStep.variables">variables</a></code> | *No description.* |
 
 ---
@@ -3548,6 +3910,18 @@ public toSsmEntry(): {[ key: string ]: any}
 ```
 
 Converts this step into an object to prepare for yaml/json representation of this step.
+
+##### `addToDocument` <a name="addToDocument" id="cdk-ssm-documents.CreateStackStep.addToDocument"></a>
+
+```typescript
+public addToDocument(doc: AutomationDocumentBuilder): void
+```
+
+###### `doc`<sup>Required</sup> <a name="doc" id="cdk-ssm-documents.CreateStackStep.addToDocument.parameter.doc"></a>
+
+- *Type:* <a href="#cdk-ssm-documents.AutomationDocumentBuilder">AutomationDocumentBuilder</a>
+
+---
 
 ##### `variables` <a name="variables" id="cdk-ssm-documents.CreateStackStep.variables"></a>
 
@@ -3962,6 +4336,7 @@ new CreateTagsStep(scope: Construct, id: string, props: CreateTagsStepProps)
 | <code><a href="#cdk-ssm-documents.CreateTagsStep.listInputs">listInputs</a></code> | Lists the inputs that are required for this step. |
 | <code><a href="#cdk-ssm-documents.CreateTagsStep.listOutputs">listOutputs</a></code> | This step has no outputs. |
 | <code><a href="#cdk-ssm-documents.CreateTagsStep.toSsmEntry">toSsmEntry</a></code> | Converts this step into an object to prepare for yaml/json representation of this step. |
+| <code><a href="#cdk-ssm-documents.CreateTagsStep.addToDocument">addToDocument</a></code> | *No description.* |
 | <code><a href="#cdk-ssm-documents.CreateTagsStep.variables">variables</a></code> | *No description.* |
 
 ---
@@ -3997,6 +4372,18 @@ public toSsmEntry(): {[ key: string ]: any}
 ```
 
 Converts this step into an object to prepare for yaml/json representation of this step.
+
+##### `addToDocument` <a name="addToDocument" id="cdk-ssm-documents.CreateTagsStep.addToDocument"></a>
+
+```typescript
+public addToDocument(doc: AutomationDocumentBuilder): void
+```
+
+###### `doc`<sup>Required</sup> <a name="doc" id="cdk-ssm-documents.CreateTagsStep.addToDocument.parameter.doc"></a>
+
+- *Type:* <a href="#cdk-ssm-documents.AutomationDocumentBuilder">AutomationDocumentBuilder</a>
+
+---
 
 ##### `variables` <a name="variables" id="cdk-ssm-documents.CreateTagsStep.variables"></a>
 
@@ -4290,6 +4677,7 @@ new DeleteImageStep(scope: Construct, id: string, props: DeleteImageStepProps)
 | <code><a href="#cdk-ssm-documents.DeleteImageStep.listInputs">listInputs</a></code> | Lists the inputs that are required for this step. |
 | <code><a href="#cdk-ssm-documents.DeleteImageStep.listOutputs">listOutputs</a></code> | This step has no outputs. |
 | <code><a href="#cdk-ssm-documents.DeleteImageStep.toSsmEntry">toSsmEntry</a></code> | Converts this step into an object to prepare for yaml/json representation of this step. |
+| <code><a href="#cdk-ssm-documents.DeleteImageStep.addToDocument">addToDocument</a></code> | *No description.* |
 | <code><a href="#cdk-ssm-documents.DeleteImageStep.variables">variables</a></code> | *No description.* |
 
 ---
@@ -4325,6 +4713,18 @@ public toSsmEntry(): {[ key: string ]: any}
 ```
 
 Converts this step into an object to prepare for yaml/json representation of this step.
+
+##### `addToDocument` <a name="addToDocument" id="cdk-ssm-documents.DeleteImageStep.addToDocument"></a>
+
+```typescript
+public addToDocument(doc: AutomationDocumentBuilder): void
+```
+
+###### `doc`<sup>Required</sup> <a name="doc" id="cdk-ssm-documents.DeleteImageStep.addToDocument.parameter.doc"></a>
+
+- *Type:* <a href="#cdk-ssm-documents.AutomationDocumentBuilder">AutomationDocumentBuilder</a>
+
+---
 
 ##### `variables` <a name="variables" id="cdk-ssm-documents.DeleteImageStep.variables"></a>
 
@@ -4596,6 +4996,7 @@ new DeleteStackStep(scope: Construct, id: string, props: DeleteStackStepProps)
 | <code><a href="#cdk-ssm-documents.DeleteStackStep.listInputs">listInputs</a></code> | The input required for this step is the stackNameVariable. |
 | <code><a href="#cdk-ssm-documents.DeleteStackStep.listOutputs">listOutputs</a></code> | No outputs emitted from Delete Stack step. |
 | <code><a href="#cdk-ssm-documents.DeleteStackStep.toSsmEntry">toSsmEntry</a></code> | Converts this step into an object to prepare for yaml/json representation of this step. |
+| <code><a href="#cdk-ssm-documents.DeleteStackStep.addToDocument">addToDocument</a></code> | *No description.* |
 | <code><a href="#cdk-ssm-documents.DeleteStackStep.variables">variables</a></code> | *No description.* |
 
 ---
@@ -4631,6 +5032,18 @@ public toSsmEntry(): {[ key: string ]: any}
 ```
 
 Converts this step into an object to prepare for yaml/json representation of this step.
+
+##### `addToDocument` <a name="addToDocument" id="cdk-ssm-documents.DeleteStackStep.addToDocument"></a>
+
+```typescript
+public addToDocument(doc: AutomationDocumentBuilder): void
+```
+
+###### `doc`<sup>Required</sup> <a name="doc" id="cdk-ssm-documents.DeleteStackStep.addToDocument.parameter.doc"></a>
+
+- *Type:* <a href="#cdk-ssm-documents.AutomationDocumentBuilder">AutomationDocumentBuilder</a>
+
+---
 
 ##### `variables` <a name="variables" id="cdk-ssm-documents.DeleteStackStep.variables"></a>
 
@@ -4913,6 +5326,7 @@ new ExecuteScriptStep(stage: Construct, id: string, props: ExecuteScriptStepProp
 | <code><a href="#cdk-ssm-documents.ExecuteScriptStep.listInputs">listInputs</a></code> | Lists the inputs that are required for this step. |
 | <code><a href="#cdk-ssm-documents.ExecuteScriptStep.listOutputs">listOutputs</a></code> | Lists the outputs that will be returned from this step. |
 | <code><a href="#cdk-ssm-documents.ExecuteScriptStep.toSsmEntry">toSsmEntry</a></code> | Converts this step into an object to prepare for yaml/json representation of this step. |
+| <code><a href="#cdk-ssm-documents.ExecuteScriptStep.addToDocument">addToDocument</a></code> | *No description.* |
 | <code><a href="#cdk-ssm-documents.ExecuteScriptStep.variables">variables</a></code> | *No description.* |
 
 ---
@@ -4948,6 +5362,18 @@ public toSsmEntry(): {[ key: string ]: any}
 ```
 
 Converts this step into an object to prepare for yaml/json representation of this step.
+
+##### `addToDocument` <a name="addToDocument" id="cdk-ssm-documents.ExecuteScriptStep.addToDocument"></a>
+
+```typescript
+public addToDocument(doc: AutomationDocumentBuilder): void
+```
+
+###### `doc`<sup>Required</sup> <a name="doc" id="cdk-ssm-documents.ExecuteScriptStep.addToDocument.parameter.doc"></a>
+
+- *Type:* <a href="#cdk-ssm-documents.AutomationDocumentBuilder">AutomationDocumentBuilder</a>
+
+---
 
 ##### `variables` <a name="variables" id="cdk-ssm-documents.ExecuteScriptStep.variables"></a>
 
@@ -5278,6 +5704,7 @@ new ExecuteStateMachineStep(scope: Construct, id: string, props: ExecuteStateMac
 | <code><a href="#cdk-ssm-documents.ExecuteStateMachineStep.listInputs">listInputs</a></code> | Lists the inputs that are required for this step. |
 | <code><a href="#cdk-ssm-documents.ExecuteStateMachineStep.listOutputs">listOutputs</a></code> | No outputs emitted from Delete Stack step. |
 | <code><a href="#cdk-ssm-documents.ExecuteStateMachineStep.toSsmEntry">toSsmEntry</a></code> | Converts this step into an object to prepare for yaml/json representation of this step. |
+| <code><a href="#cdk-ssm-documents.ExecuteStateMachineStep.addToDocument">addToDocument</a></code> | *No description.* |
 | <code><a href="#cdk-ssm-documents.ExecuteStateMachineStep.variables">variables</a></code> | *No description.* |
 
 ---
@@ -5313,6 +5740,18 @@ public toSsmEntry(): {[ key: string ]: any}
 ```
 
 Converts this step into an object to prepare for yaml/json representation of this step.
+
+##### `addToDocument` <a name="addToDocument" id="cdk-ssm-documents.ExecuteStateMachineStep.addToDocument"></a>
+
+```typescript
+public addToDocument(doc: AutomationDocumentBuilder): void
+```
+
+###### `doc`<sup>Required</sup> <a name="doc" id="cdk-ssm-documents.ExecuteStateMachineStep.addToDocument.parameter.doc"></a>
+
+- *Type:* <a href="#cdk-ssm-documents.AutomationDocumentBuilder">AutomationDocumentBuilder</a>
+
+---
 
 ##### `variables` <a name="variables" id="cdk-ssm-documents.ExecuteStateMachineStep.variables"></a>
 
@@ -5567,14 +6006,13 @@ public readonly DEFAULT_TIMEOUT: number;
 ```typescript
 import { HelloWorld } from 'cdk-ssm-documents'
 
-new HelloWorld(app: Construct, id: string, props: AutomationDocumentProps)
+new HelloWorld(app: Construct, id: string)
 ```
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
 | <code><a href="#cdk-ssm-documents.HelloWorld.Initializer.parameter.app">app</a></code> | <code>constructs.Construct</code> | *No description.* |
 | <code><a href="#cdk-ssm-documents.HelloWorld.Initializer.parameter.id">id</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#cdk-ssm-documents.HelloWorld.Initializer.parameter.props">props</a></code> | <code><a href="#cdk-ssm-documents.AutomationDocumentProps">AutomationDocumentProps</a></code> | *No description.* |
 
 ---
 
@@ -5590,20 +6028,21 @@ new HelloWorld(app: Construct, id: string, props: AutomationDocumentProps)
 
 ---
 
-##### `props`<sup>Required</sup> <a name="props" id="cdk-ssm-documents.HelloWorld.Initializer.parameter.props"></a>
-
-- *Type:* <a href="#cdk-ssm-documents.AutomationDocumentProps">AutomationDocumentProps</a>
-
----
-
 #### Methods <a name="Methods" id="Methods"></a>
 
 | **Name** | **Description** |
 | --- | --- |
 | <code><a href="#cdk-ssm-documents.HelloWorld.toString">toString</a></code> | Returns a string representation of this construct. |
-| <code><a href="#cdk-ssm-documents.HelloWorld.documentType">documentType</a></code> | *No description.* |
-| <code><a href="#cdk-ssm-documents.HelloWorld.print">print</a></code> | Synthesize before calling this function! You can use this to Synthesize: cdk.SynthUtils.synthesize(stack); |
-| <code><a href="#cdk-ssm-documents.HelloWorld.collectedSteps">collectedSteps</a></code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.HelloWorld.addDependency">addDependency</a></code> | Add a dependency between this stack and another stack. |
+| <code><a href="#cdk-ssm-documents.HelloWorld.addTransform">addTransform</a></code> | Add a Transform to this stack. A Transform is a macro that AWS CloudFormation uses to process your template. |
+| <code><a href="#cdk-ssm-documents.HelloWorld.exportValue">exportValue</a></code> | Create a CloudFormation Export for a value. |
+| <code><a href="#cdk-ssm-documents.HelloWorld.formatArn">formatArn</a></code> | Creates an ARN from components. |
+| <code><a href="#cdk-ssm-documents.HelloWorld.getLogicalId">getLogicalId</a></code> | Allocates a stack-unique CloudFormation-compatible logical identity for a specific resource. |
+| <code><a href="#cdk-ssm-documents.HelloWorld.renameLogicalId">renameLogicalId</a></code> | Rename a generated logical identities. |
+| <code><a href="#cdk-ssm-documents.HelloWorld.reportMissingContextKey">reportMissingContextKey</a></code> | Indicate that a context key was expected. |
+| <code><a href="#cdk-ssm-documents.HelloWorld.resolve">resolve</a></code> | Resolve a tokenized value in the context of the current stack. |
+| <code><a href="#cdk-ssm-documents.HelloWorld.splitArn">splitArn</a></code> | Splits the provided ARN into its components. |
+| <code><a href="#cdk-ssm-documents.HelloWorld.toJsonString">toJsonString</a></code> | Convert an object, potentially containing tokens, to a JSON string. |
 
 ---
 
@@ -5615,35 +6054,285 @@ public toString(): string
 
 Returns a string representation of this construct.
 
-##### `documentType` <a name="documentType" id="cdk-ssm-documents.HelloWorld.documentType"></a>
+##### `addDependency` <a name="addDependency" id="cdk-ssm-documents.HelloWorld.addDependency"></a>
 
 ```typescript
-public documentType(): string
+public addDependency(target: Stack, reason?: string): void
 ```
 
-##### `print` <a name="print" id="cdk-ssm-documents.HelloWorld.print"></a>
+Add a dependency between this stack and another stack.
+
+This can be used to define dependencies between any two stacks within an
+app, and also supports nested stacks.
+
+###### `target`<sup>Required</sup> <a name="target" id="cdk-ssm-documents.HelloWorld.addDependency.parameter.target"></a>
+
+- *Type:* aws-cdk-lib.Stack
+
+---
+
+###### `reason`<sup>Optional</sup> <a name="reason" id="cdk-ssm-documents.HelloWorld.addDependency.parameter.reason"></a>
+
+- *Type:* string
+
+---
+
+##### `addTransform` <a name="addTransform" id="cdk-ssm-documents.HelloWorld.addTransform"></a>
 
 ```typescript
-public print(): string
+public addTransform(transform: string): void
 ```
 
-Synthesize before calling this function! You can use this to Synthesize: cdk.SynthUtils.synthesize(stack);
+Add a Transform to this stack. A Transform is a macro that AWS CloudFormation uses to process your template.
 
-Converts the objects define in the SSM Document (including all of the steps) to an SSM document string.
-The format is dependency on the documentFormat property provided to the class.
-The yaml can be used as is and will behave (or at least should behave) as was simulated in the runSimulation().
+Duplicate values are removed when stack is synthesized.
 
-##### `collectedSteps` <a name="collectedSteps" id="cdk-ssm-documents.HelloWorld.collectedSteps"></a>
+> [https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-section-structure.html](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-section-structure.html)
+
+*Example*
 
 ```typescript
-public collectedSteps(): AutomationStep[]
+declare const stack: Stack;
+
+stack.addTransform('AWS::Serverless-2016-10-31')
 ```
+
+
+###### `transform`<sup>Required</sup> <a name="transform" id="cdk-ssm-documents.HelloWorld.addTransform.parameter.transform"></a>
+
+- *Type:* string
+
+The transform to add.
+
+---
+
+##### `exportValue` <a name="exportValue" id="cdk-ssm-documents.HelloWorld.exportValue"></a>
+
+```typescript
+public exportValue(exportedValue: any, options?: ExportValueOptions): string
+```
+
+Create a CloudFormation Export for a value.
+
+Returns a string representing the corresponding `Fn.importValue()`
+expression for this Export. You can control the name for the export by
+passing the `name` option.
+
+If you don't supply a value for `name`, the value you're exporting must be
+a Resource attribute (for example: `bucket.bucketName`) and it will be
+given the same name as the automatic cross-stack reference that would be created
+if you used the attribute in another Stack.
+
+One of the uses for this method is to *remove* the relationship between
+two Stacks established by automatic cross-stack references. It will
+temporarily ensure that the CloudFormation Export still exists while you
+remove the reference from the consuming stack. After that, you can remove
+the resource and the manual export.
+
+## Example
+
+Here is how the process works. Let's say there are two stacks,
+`producerStack` and `consumerStack`, and `producerStack` has a bucket
+called `bucket`, which is referenced by `consumerStack` (perhaps because
+an AWS Lambda Function writes into it, or something like that).
+
+It is not safe to remove `producerStack.bucket` because as the bucket is being
+deleted, `consumerStack` might still be using it.
+
+Instead, the process takes two deployments:
+
+### Deployment 1: break the relationship
+
+- Make sure `consumerStack` no longer references `bucket.bucketName` (maybe the consumer
+   stack now uses its own bucket, or it writes to an AWS DynamoDB table, or maybe you just
+   remove the Lambda Function altogether).
+- In the `ProducerStack` class, call `this.exportValue(this.bucket.bucketName)`. This
+   will make sure the CloudFormation Export continues to exist while the relationship
+   between the two stacks is being broken.
+- Deploy (this will effectively only change the `consumerStack`, but it's safe to deploy both).
+
+### Deployment 2: remove the bucket resource
+
+- You are now free to remove the `bucket` resource from `producerStack`.
+- Don't forget to remove the `exportValue()` call as well.
+- Deploy again (this time only the `producerStack` will be changed -- the bucket will be deleted).
+
+###### `exportedValue`<sup>Required</sup> <a name="exportedValue" id="cdk-ssm-documents.HelloWorld.exportValue.parameter.exportedValue"></a>
+
+- *Type:* any
+
+---
+
+###### `options`<sup>Optional</sup> <a name="options" id="cdk-ssm-documents.HelloWorld.exportValue.parameter.options"></a>
+
+- *Type:* aws-cdk-lib.ExportValueOptions
+
+---
+
+##### `formatArn` <a name="formatArn" id="cdk-ssm-documents.HelloWorld.formatArn"></a>
+
+```typescript
+public formatArn(components: ArnComponents): string
+```
+
+Creates an ARN from components.
+
+If `partition`, `region` or `account` are not specified, the stack's
+partition, region and account will be used.
+
+If any component is the empty string, an empty string will be inserted
+into the generated ARN at the location that component corresponds to.
+
+The ARN will be formatted as follows:
+
+   arn:{partition}:{service}:{region}:{account}:{resource}{sep}}{resource-name}
+
+The required ARN pieces that are omitted will be taken from the stack that
+the 'scope' is attached to. If all ARN pieces are supplied, the supplied scope
+can be 'undefined'.
+
+###### `components`<sup>Required</sup> <a name="components" id="cdk-ssm-documents.HelloWorld.formatArn.parameter.components"></a>
+
+- *Type:* aws-cdk-lib.ArnComponents
+
+---
+
+##### `getLogicalId` <a name="getLogicalId" id="cdk-ssm-documents.HelloWorld.getLogicalId"></a>
+
+```typescript
+public getLogicalId(element: CfnElement): string
+```
+
+Allocates a stack-unique CloudFormation-compatible logical identity for a specific resource.
+
+This method is called when a `CfnElement` is created and used to render the
+initial logical identity of resources. Logical ID renames are applied at
+this stage.
+
+This method uses the protected method `allocateLogicalId` to render the
+logical ID for an element. To modify the naming scheme, extend the `Stack`
+class and override this method.
+
+###### `element`<sup>Required</sup> <a name="element" id="cdk-ssm-documents.HelloWorld.getLogicalId.parameter.element"></a>
+
+- *Type:* aws-cdk-lib.CfnElement
+
+The CloudFormation element for which a logical identity is needed.
+
+---
+
+##### `renameLogicalId` <a name="renameLogicalId" id="cdk-ssm-documents.HelloWorld.renameLogicalId"></a>
+
+```typescript
+public renameLogicalId(oldId: string, newId: string): void
+```
+
+Rename a generated logical identities.
+
+To modify the naming scheme strategy, extend the `Stack` class and
+override the `allocateLogicalId` method.
+
+###### `oldId`<sup>Required</sup> <a name="oldId" id="cdk-ssm-documents.HelloWorld.renameLogicalId.parameter.oldId"></a>
+
+- *Type:* string
+
+---
+
+###### `newId`<sup>Required</sup> <a name="newId" id="cdk-ssm-documents.HelloWorld.renameLogicalId.parameter.newId"></a>
+
+- *Type:* string
+
+---
+
+##### `reportMissingContextKey` <a name="reportMissingContextKey" id="cdk-ssm-documents.HelloWorld.reportMissingContextKey"></a>
+
+```typescript
+public reportMissingContextKey(report: MissingContext): void
+```
+
+Indicate that a context key was expected.
+
+Contains instructions which will be emitted into the cloud assembly on how
+the key should be supplied.
+
+###### `report`<sup>Required</sup> <a name="report" id="cdk-ssm-documents.HelloWorld.reportMissingContextKey.parameter.report"></a>
+
+- *Type:* aws-cdk-lib.cloud_assembly_schema.MissingContext
+
+The set of parameters needed to obtain the context.
+
+---
+
+##### `resolve` <a name="resolve" id="cdk-ssm-documents.HelloWorld.resolve"></a>
+
+```typescript
+public resolve(obj: any): any
+```
+
+Resolve a tokenized value in the context of the current stack.
+
+###### `obj`<sup>Required</sup> <a name="obj" id="cdk-ssm-documents.HelloWorld.resolve.parameter.obj"></a>
+
+- *Type:* any
+
+---
+
+##### `splitArn` <a name="splitArn" id="cdk-ssm-documents.HelloWorld.splitArn"></a>
+
+```typescript
+public splitArn(arn: string, arnFormat: ArnFormat): ArnComponents
+```
+
+Splits the provided ARN into its components.
+
+Works both if 'arn' is a string like 'arn:aws:s3:::bucket',
+and a Token representing a dynamic CloudFormation expression
+(in which case the returned components will also be dynamic CloudFormation expressions,
+encoded as Tokens).
+
+###### `arn`<sup>Required</sup> <a name="arn" id="cdk-ssm-documents.HelloWorld.splitArn.parameter.arn"></a>
+
+- *Type:* string
+
+the ARN to split into its components.
+
+---
+
+###### `arnFormat`<sup>Required</sup> <a name="arnFormat" id="cdk-ssm-documents.HelloWorld.splitArn.parameter.arnFormat"></a>
+
+- *Type:* aws-cdk-lib.ArnFormat
+
+the expected format of 'arn' - depends on what format the service 'arn' represents uses.
+
+---
+
+##### `toJsonString` <a name="toJsonString" id="cdk-ssm-documents.HelloWorld.toJsonString"></a>
+
+```typescript
+public toJsonString(obj: any, space?: number): string
+```
+
+Convert an object, potentially containing tokens, to a JSON string.
+
+###### `obj`<sup>Required</sup> <a name="obj" id="cdk-ssm-documents.HelloWorld.toJsonString.parameter.obj"></a>
+
+- *Type:* any
+
+---
+
+###### `space`<sup>Optional</sup> <a name="space" id="cdk-ssm-documents.HelloWorld.toJsonString.parameter.space"></a>
+
+- *Type:* number
+
+---
 
 #### Static Functions <a name="Static Functions" id="Static Functions"></a>
 
 | **Name** | **Description** |
 | --- | --- |
 | <code><a href="#cdk-ssm-documents.HelloWorld.isConstruct">isConstruct</a></code> | Checks if `x` is a construct. |
+| <code><a href="#cdk-ssm-documents.HelloWorld.isStack">isStack</a></code> | Return whether the given object is a Stack. |
+| <code><a href="#cdk-ssm-documents.HelloWorld.of">of</a></code> | Looks up the first stack scope in which `construct` is defined. |
 
 ---
 
@@ -5665,19 +6354,68 @@ Any object.
 
 ---
 
+##### `isStack` <a name="isStack" id="cdk-ssm-documents.HelloWorld.isStack"></a>
+
+```typescript
+import { HelloWorld } from 'cdk-ssm-documents'
+
+HelloWorld.isStack(x: any)
+```
+
+Return whether the given object is a Stack.
+
+We do attribute detection since we can't reliably use 'instanceof'.
+
+###### `x`<sup>Required</sup> <a name="x" id="cdk-ssm-documents.HelloWorld.isStack.parameter.x"></a>
+
+- *Type:* any
+
+---
+
+##### `of` <a name="of" id="cdk-ssm-documents.HelloWorld.of"></a>
+
+```typescript
+import { HelloWorld } from 'cdk-ssm-documents'
+
+HelloWorld.of(construct: IConstruct)
+```
+
+Looks up the first stack scope in which `construct` is defined.
+
+Fails if there is no stack up the tree.
+
+###### `construct`<sup>Required</sup> <a name="construct" id="cdk-ssm-documents.HelloWorld.of.parameter.construct"></a>
+
+- *Type:* constructs.IConstruct
+
+The construct to start the search from.
+
+---
+
 #### Properties <a name="Properties" id="Properties"></a>
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
 | <code><a href="#cdk-ssm-documents.HelloWorld.property.node">node</a></code> | <code>constructs.Node</code> | The tree node. |
-| <code><a href="#cdk-ssm-documents.HelloWorld.property.description">description</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#cdk-ssm-documents.HelloWorld.property.docInputs">docInputs</a></code> | <code><a href="#cdk-ssm-documents.Input">Input</a>[]</code> | *No description.* |
-| <code><a href="#cdk-ssm-documents.HelloWorld.property.docOutputs">docOutputs</a></code> | <code><a href="#cdk-ssm-documents.DocumentOutput">DocumentOutput</a>[]</code> | *No description.* |
-| <code><a href="#cdk-ssm-documents.HelloWorld.property.documentName">documentName</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#cdk-ssm-documents.HelloWorld.property.props">props</a></code> | <code><a href="#cdk-ssm-documents.SsmDocumentProps">SsmDocumentProps</a></code> | *No description.* |
-| <code><a href="#cdk-ssm-documents.HelloWorld.property.stepCollector">stepCollector</a></code> | <code><a href="#cdk-ssm-documents.StepCollector">StepCollector</a></code> | *No description.* |
-| <code><a href="#cdk-ssm-documents.HelloWorld.property.assumeRole">assumeRole</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#cdk-ssm-documents.HelloWorld.property.header">header</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.HelloWorld.property.account">account</a></code> | <code>string</code> | The AWS account into which this stack will be deployed. |
+| <code><a href="#cdk-ssm-documents.HelloWorld.property.artifactId">artifactId</a></code> | <code>string</code> | The ID of the cloud assembly artifact for this stack. |
+| <code><a href="#cdk-ssm-documents.HelloWorld.property.availabilityZones">availabilityZones</a></code> | <code>string[]</code> | Returns the list of AZs that are available in the AWS environment (account/region) associated with this stack. |
+| <code><a href="#cdk-ssm-documents.HelloWorld.property.dependencies">dependencies</a></code> | <code>aws-cdk-lib.Stack[]</code> | Return the stacks this stack depends on. |
+| <code><a href="#cdk-ssm-documents.HelloWorld.property.environment">environment</a></code> | <code>string</code> | The environment coordinates in which this stack is deployed. |
+| <code><a href="#cdk-ssm-documents.HelloWorld.property.nested">nested</a></code> | <code>boolean</code> | Indicates if this is a nested stack, in which case `parentStack` will include a reference to it's parent. |
+| <code><a href="#cdk-ssm-documents.HelloWorld.property.nestedStackParent">nestedStackParent</a></code> | <code>aws-cdk-lib.Stack</code> | If this is a nested stack, returns it's parent stack. |
+| <code><a href="#cdk-ssm-documents.HelloWorld.property.nestedStackResource">nestedStackResource</a></code> | <code>aws-cdk-lib.CfnResource</code> | If this is a nested stack, this represents its `AWS::CloudFormation::Stack` resource. |
+| <code><a href="#cdk-ssm-documents.HelloWorld.property.notificationArns">notificationArns</a></code> | <code>string[]</code> | Returns the list of notification Amazon Resource Names (ARNs) for the current stack. |
+| <code><a href="#cdk-ssm-documents.HelloWorld.property.partition">partition</a></code> | <code>string</code> | The partition in which this stack is defined. |
+| <code><a href="#cdk-ssm-documents.HelloWorld.property.region">region</a></code> | <code>string</code> | The AWS region into which this stack will be deployed (e.g. `us-west-2`). |
+| <code><a href="#cdk-ssm-documents.HelloWorld.property.stackId">stackId</a></code> | <code>string</code> | The ID of the stack. |
+| <code><a href="#cdk-ssm-documents.HelloWorld.property.stackName">stackName</a></code> | <code>string</code> | The concrete CloudFormation physical stack name. |
+| <code><a href="#cdk-ssm-documents.HelloWorld.property.synthesizer">synthesizer</a></code> | <code>aws-cdk-lib.IStackSynthesizer</code> | Synthesis method for this stack. |
+| <code><a href="#cdk-ssm-documents.HelloWorld.property.tags">tags</a></code> | <code>aws-cdk-lib.TagManager</code> | Tags to be applied to the stack. |
+| <code><a href="#cdk-ssm-documents.HelloWorld.property.templateFile">templateFile</a></code> | <code>string</code> | The name of the CloudFormation template file emitted to the output directory during synthesis. |
+| <code><a href="#cdk-ssm-documents.HelloWorld.property.templateOptions">templateOptions</a></code> | <code>aws-cdk-lib.ITemplateOptions</code> | Options for CloudFormation template (like version, transform, description). |
+| <code><a href="#cdk-ssm-documents.HelloWorld.property.terminationProtection">terminationProtection</a></code> | <code>boolean</code> | Whether termination protection is enabled for this stack. |
+| <code><a href="#cdk-ssm-documents.HelloWorld.property.urlSuffix">urlSuffix</a></code> | <code>string</code> | The Amazon domain suffix for the region in which this stack is defined. |
 
 ---
 
@@ -5693,83 +6431,309 @@ The tree node.
 
 ---
 
-##### `description`<sup>Required</sup> <a name="description" id="cdk-ssm-documents.HelloWorld.property.description"></a>
+##### `account`<sup>Required</sup> <a name="account" id="cdk-ssm-documents.HelloWorld.property.account"></a>
 
 ```typescript
-public readonly description: string;
+public readonly account: string;
 ```
 
 - *Type:* string
 
----
+The AWS account into which this stack will be deployed.
 
-##### `docInputs`<sup>Required</sup> <a name="docInputs" id="cdk-ssm-documents.HelloWorld.property.docInputs"></a>
+This value is resolved according to the following rules:
 
-```typescript
-public readonly docInputs: Input[];
-```
+1. The value provided to `env.account` when the stack is defined. This can
+    either be a concerete account (e.g. `585695031111`) or the
+    `Aws.accountId` token.
+3. `Aws.accountId`, which represents the CloudFormation intrinsic reference
+    `{ "Ref": "AWS::AccountId" }` encoded as a string token.
 
-- *Type:* <a href="#cdk-ssm-documents.Input">Input</a>[]
-
----
-
-##### `docOutputs`<sup>Required</sup> <a name="docOutputs" id="cdk-ssm-documents.HelloWorld.property.docOutputs"></a>
-
-```typescript
-public readonly docOutputs: DocumentOutput[];
-```
-
-- *Type:* <a href="#cdk-ssm-documents.DocumentOutput">DocumentOutput</a>[]
-
----
-
-##### `documentName`<sup>Required</sup> <a name="documentName" id="cdk-ssm-documents.HelloWorld.property.documentName"></a>
-
-```typescript
-public readonly documentName: string;
-```
-
-- *Type:* string
+Preferably, you should use the return value as an opaque string and not
+attempt to parse it to implement your logic. If you do, you must first
+check that it is a concerete value an not an unresolved token. If this
+value is an unresolved token (`Token.isUnresolved(stack.account)` returns
+`true`), this implies that the user wishes that this stack will synthesize
+into a **account-agnostic template**. In this case, your code should either
+fail (throw an error, emit a synth error using `Annotations.of(construct).addError()`) or
+implement some other region-agnostic behavior.
 
 ---
 
-##### `props`<sup>Required</sup> <a name="props" id="cdk-ssm-documents.HelloWorld.property.props"></a>
+##### `artifactId`<sup>Required</sup> <a name="artifactId" id="cdk-ssm-documents.HelloWorld.property.artifactId"></a>
 
 ```typescript
-public readonly props: SsmDocumentProps;
-```
-
-- *Type:* <a href="#cdk-ssm-documents.SsmDocumentProps">SsmDocumentProps</a>
-
----
-
-##### `stepCollector`<sup>Required</sup> <a name="stepCollector" id="cdk-ssm-documents.HelloWorld.property.stepCollector"></a>
-
-```typescript
-public readonly stepCollector: StepCollector;
-```
-
-- *Type:* <a href="#cdk-ssm-documents.StepCollector">StepCollector</a>
-
----
-
-##### `assumeRole`<sup>Optional</sup> <a name="assumeRole" id="cdk-ssm-documents.HelloWorld.property.assumeRole"></a>
-
-```typescript
-public readonly assumeRole: string;
+public readonly artifactId: string;
 ```
 
 - *Type:* string
 
+The ID of the cloud assembly artifact for this stack.
+
 ---
 
-##### `header`<sup>Optional</sup> <a name="header" id="cdk-ssm-documents.HelloWorld.property.header"></a>
+##### `availabilityZones`<sup>Required</sup> <a name="availabilityZones" id="cdk-ssm-documents.HelloWorld.property.availabilityZones"></a>
 
 ```typescript
-public readonly header: string;
+public readonly availabilityZones: string[];
+```
+
+- *Type:* string[]
+
+Returns the list of AZs that are available in the AWS environment (account/region) associated with this stack.
+
+If the stack is environment-agnostic (either account and/or region are
+tokens), this property will return an array with 2 tokens that will resolve
+at deploy-time to the first two availability zones returned from CloudFormation's
+`Fn::GetAZs` intrinsic function.
+
+If they are not available in the context, returns a set of dummy values and
+reports them as missing, and let the CLI resolve them by calling EC2
+`DescribeAvailabilityZones` on the target environment.
+
+To specify a different strategy for selecting availability zones override this method.
+
+---
+
+##### `dependencies`<sup>Required</sup> <a name="dependencies" id="cdk-ssm-documents.HelloWorld.property.dependencies"></a>
+
+```typescript
+public readonly dependencies: Stack[];
+```
+
+- *Type:* aws-cdk-lib.Stack[]
+
+Return the stacks this stack depends on.
+
+---
+
+##### `environment`<sup>Required</sup> <a name="environment" id="cdk-ssm-documents.HelloWorld.property.environment"></a>
+
+```typescript
+public readonly environment: string;
 ```
 
 - *Type:* string
+
+The environment coordinates in which this stack is deployed.
+
+In the form
+`aws://account/region`. Use `stack.account` and `stack.region` to obtain
+the specific values, no need to parse.
+
+You can use this value to determine if two stacks are targeting the same
+environment.
+
+If either `stack.account` or `stack.region` are not concrete values (e.g.
+`Aws.account` or `Aws.region`) the special strings `unknown-account` and/or
+`unknown-region` will be used respectively to indicate this stack is
+region/account-agnostic.
+
+---
+
+##### `nested`<sup>Required</sup> <a name="nested" id="cdk-ssm-documents.HelloWorld.property.nested"></a>
+
+```typescript
+public readonly nested: boolean;
+```
+
+- *Type:* boolean
+
+Indicates if this is a nested stack, in which case `parentStack` will include a reference to it's parent.
+
+---
+
+##### `nestedStackParent`<sup>Optional</sup> <a name="nestedStackParent" id="cdk-ssm-documents.HelloWorld.property.nestedStackParent"></a>
+
+```typescript
+public readonly nestedStackParent: Stack;
+```
+
+- *Type:* aws-cdk-lib.Stack
+
+If this is a nested stack, returns it's parent stack.
+
+---
+
+##### `nestedStackResource`<sup>Optional</sup> <a name="nestedStackResource" id="cdk-ssm-documents.HelloWorld.property.nestedStackResource"></a>
+
+```typescript
+public readonly nestedStackResource: CfnResource;
+```
+
+- *Type:* aws-cdk-lib.CfnResource
+
+If this is a nested stack, this represents its `AWS::CloudFormation::Stack` resource.
+
+`undefined` for top-level (non-nested) stacks.
+
+---
+
+##### `notificationArns`<sup>Required</sup> <a name="notificationArns" id="cdk-ssm-documents.HelloWorld.property.notificationArns"></a>
+
+```typescript
+public readonly notificationArns: string[];
+```
+
+- *Type:* string[]
+
+Returns the list of notification Amazon Resource Names (ARNs) for the current stack.
+
+---
+
+##### `partition`<sup>Required</sup> <a name="partition" id="cdk-ssm-documents.HelloWorld.property.partition"></a>
+
+```typescript
+public readonly partition: string;
+```
+
+- *Type:* string
+
+The partition in which this stack is defined.
+
+---
+
+##### `region`<sup>Required</sup> <a name="region" id="cdk-ssm-documents.HelloWorld.property.region"></a>
+
+```typescript
+public readonly region: string;
+```
+
+- *Type:* string
+
+The AWS region into which this stack will be deployed (e.g. `us-west-2`).
+
+This value is resolved according to the following rules:
+
+1. The value provided to `env.region` when the stack is defined. This can
+    either be a concerete region (e.g. `us-west-2`) or the `Aws.region`
+    token.
+3. `Aws.region`, which is represents the CloudFormation intrinsic reference
+    `{ "Ref": "AWS::Region" }` encoded as a string token.
+
+Preferably, you should use the return value as an opaque string and not
+attempt to parse it to implement your logic. If you do, you must first
+check that it is a concerete value an not an unresolved token. If this
+value is an unresolved token (`Token.isUnresolved(stack.region)` returns
+`true`), this implies that the user wishes that this stack will synthesize
+into a **region-agnostic template**. In this case, your code should either
+fail (throw an error, emit a synth error using `Annotations.of(construct).addError()`) or
+implement some other region-agnostic behavior.
+
+---
+
+##### `stackId`<sup>Required</sup> <a name="stackId" id="cdk-ssm-documents.HelloWorld.property.stackId"></a>
+
+```typescript
+public readonly stackId: string;
+```
+
+- *Type:* string
+
+The ID of the stack.
+
+---
+
+*Example*
+
+```typescript
+// After resolving, looks like
+'arn:aws:cloudformation:us-west-2:123456789012:stack/teststack/51af3dc0-da77-11e4-872e-1234567db123'
+```
+
+
+##### `stackName`<sup>Required</sup> <a name="stackName" id="cdk-ssm-documents.HelloWorld.property.stackName"></a>
+
+```typescript
+public readonly stackName: string;
+```
+
+- *Type:* string
+
+The concrete CloudFormation physical stack name.
+
+This is either the name defined explicitly in the `stackName` prop or
+allocated based on the stack's location in the construct tree. Stacks that
+are directly defined under the app use their construct `id` as their stack
+name. Stacks that are defined deeper within the tree will use a hashed naming
+scheme based on the construct path to ensure uniqueness.
+
+If you wish to obtain the deploy-time AWS::StackName intrinsic,
+you can use `Aws.stackName` directly.
+
+---
+
+##### `synthesizer`<sup>Required</sup> <a name="synthesizer" id="cdk-ssm-documents.HelloWorld.property.synthesizer"></a>
+
+```typescript
+public readonly synthesizer: IStackSynthesizer;
+```
+
+- *Type:* aws-cdk-lib.IStackSynthesizer
+
+Synthesis method for this stack.
+
+---
+
+##### `tags`<sup>Required</sup> <a name="tags" id="cdk-ssm-documents.HelloWorld.property.tags"></a>
+
+```typescript
+public readonly tags: TagManager;
+```
+
+- *Type:* aws-cdk-lib.TagManager
+
+Tags to be applied to the stack.
+
+---
+
+##### `templateFile`<sup>Required</sup> <a name="templateFile" id="cdk-ssm-documents.HelloWorld.property.templateFile"></a>
+
+```typescript
+public readonly templateFile: string;
+```
+
+- *Type:* string
+
+The name of the CloudFormation template file emitted to the output directory during synthesis.
+
+Example value: `MyStack.template.json`
+
+---
+
+##### `templateOptions`<sup>Required</sup> <a name="templateOptions" id="cdk-ssm-documents.HelloWorld.property.templateOptions"></a>
+
+```typescript
+public readonly templateOptions: ITemplateOptions;
+```
+
+- *Type:* aws-cdk-lib.ITemplateOptions
+
+Options for CloudFormation template (like version, transform, description).
+
+---
+
+##### `terminationProtection`<sup>Optional</sup> <a name="terminationProtection" id="cdk-ssm-documents.HelloWorld.property.terminationProtection"></a>
+
+```typescript
+public readonly terminationProtection: boolean;
+```
+
+- *Type:* boolean
+
+Whether termination protection is enabled for this stack.
+
+---
+
+##### `urlSuffix`<sup>Required</sup> <a name="urlSuffix" id="cdk-ssm-documents.HelloWorld.property.urlSuffix"></a>
+
+```typescript
+public readonly urlSuffix: string;
+```
+
+- *Type:* string
+
+The Amazon domain suffix for the region in which this stack is defined.
 
 ---
 
@@ -5820,6 +6784,7 @@ new InvokeLambdaFunctionStep(scope: Construct, id: string, props: InvokeLambdaFu
 | <code><a href="#cdk-ssm-documents.InvokeLambdaFunctionStep.listInputs">listInputs</a></code> | Lists the inputs that are required for this step. |
 | <code><a href="#cdk-ssm-documents.InvokeLambdaFunctionStep.listOutputs">listOutputs</a></code> | Lists the outputs that will be returned from this step. |
 | <code><a href="#cdk-ssm-documents.InvokeLambdaFunctionStep.toSsmEntry">toSsmEntry</a></code> | Converts this step into an object to prepare for yaml/json representation of this step. |
+| <code><a href="#cdk-ssm-documents.InvokeLambdaFunctionStep.addToDocument">addToDocument</a></code> | *No description.* |
 | <code><a href="#cdk-ssm-documents.InvokeLambdaFunctionStep.variables">variables</a></code> | *No description.* |
 | <code><a href="#cdk-ssm-documents.InvokeLambdaFunctionStep.formatInputMap">formatInputMap</a></code> | *No description.* |
 
@@ -5856,6 +6821,18 @@ public toSsmEntry(): {[ key: string ]: any}
 ```
 
 Converts this step into an object to prepare for yaml/json representation of this step.
+
+##### `addToDocument` <a name="addToDocument" id="cdk-ssm-documents.InvokeLambdaFunctionStep.addToDocument"></a>
+
+```typescript
+public addToDocument(doc: AutomationDocumentBuilder): void
+```
+
+###### `doc`<sup>Required</sup> <a name="doc" id="cdk-ssm-documents.InvokeLambdaFunctionStep.addToDocument.parameter.doc"></a>
+
+- *Type:* <a href="#cdk-ssm-documents.AutomationDocumentBuilder">AutomationDocumentBuilder</a>
+
+---
 
 ##### `variables` <a name="variables" id="cdk-ssm-documents.InvokeLambdaFunctionStep.variables"></a>
 
@@ -6199,6 +7176,7 @@ new InvokeWebhookStep(scope: Construct, id: string, props: InvokeWebhookStepProp
 | <code><a href="#cdk-ssm-documents.InvokeWebhookStep.listInputs">listInputs</a></code> | Lists the inputs that are required for this step. |
 | <code><a href="#cdk-ssm-documents.InvokeWebhookStep.listOutputs">listOutputs</a></code> | Lists the outputs that will be returned from this step. |
 | <code><a href="#cdk-ssm-documents.InvokeWebhookStep.toSsmEntry">toSsmEntry</a></code> | Converts this step into an object to prepare for yaml/json representation of this step. |
+| <code><a href="#cdk-ssm-documents.InvokeWebhookStep.addToDocument">addToDocument</a></code> | *No description.* |
 | <code><a href="#cdk-ssm-documents.InvokeWebhookStep.variables">variables</a></code> | *No description.* |
 
 ---
@@ -6234,6 +7212,18 @@ public toSsmEntry(): {[ key: string ]: any}
 ```
 
 Converts this step into an object to prepare for yaml/json representation of this step.
+
+##### `addToDocument` <a name="addToDocument" id="cdk-ssm-documents.InvokeWebhookStep.addToDocument"></a>
+
+```typescript
+public addToDocument(doc: AutomationDocumentBuilder): void
+```
+
+###### `doc`<sup>Required</sup> <a name="doc" id="cdk-ssm-documents.InvokeWebhookStep.addToDocument.parameter.doc"></a>
+
+- *Type:* <a href="#cdk-ssm-documents.AutomationDocumentBuilder">AutomationDocumentBuilder</a>
+
+---
 
 ##### `variables` <a name="variables" id="cdk-ssm-documents.InvokeWebhookStep.variables"></a>
 
@@ -6516,6 +7506,7 @@ new PauseStep(scope: Construct, id: string, props: AutomationStepProps)
 | <code><a href="#cdk-ssm-documents.PauseStep.listInputs">listInputs</a></code> | No inputs required for Pause step. |
 | <code><a href="#cdk-ssm-documents.PauseStep.listOutputs">listOutputs</a></code> | No outputs emitted from Pause step. |
 | <code><a href="#cdk-ssm-documents.PauseStep.toSsmEntry">toSsmEntry</a></code> | Converts this step into an object to prepare for yaml/json representation of this step. |
+| <code><a href="#cdk-ssm-documents.PauseStep.addToDocument">addToDocument</a></code> | *No description.* |
 | <code><a href="#cdk-ssm-documents.PauseStep.variables">variables</a></code> | *No description.* |
 
 ---
@@ -6551,6 +7542,18 @@ public toSsmEntry(): {[ key: string ]: any}
 ```
 
 Converts this step into an object to prepare for yaml/json representation of this step.
+
+##### `addToDocument` <a name="addToDocument" id="cdk-ssm-documents.PauseStep.addToDocument"></a>
+
+```typescript
+public addToDocument(doc: AutomationDocumentBuilder): void
+```
+
+###### `doc`<sup>Required</sup> <a name="doc" id="cdk-ssm-documents.PauseStep.addToDocument.parameter.doc"></a>
+
+- *Type:* <a href="#cdk-ssm-documents.AutomationDocumentBuilder">AutomationDocumentBuilder</a>
+
+---
 
 ##### `variables` <a name="variables" id="cdk-ssm-documents.PauseStep.variables"></a>
 
@@ -6811,6 +7814,7 @@ new PsModuleStep(scope: Construct, id: string, props: PsModuleStepProps)
 | <code><a href="#cdk-ssm-documents.PsModuleStep.listInputs">listInputs</a></code> | Inputs required for this command includes both the runCommand variables and workingDirectory if provided. |
 | <code><a href="#cdk-ssm-documents.PsModuleStep.listOutputs">listOutputs</a></code> | RunCommand Steps do not have outputs. |
 | <code><a href="#cdk-ssm-documents.PsModuleStep.toSsmEntry">toSsmEntry</a></code> | Converts this step into an object to prepare for yaml/json representation of this step. |
+| <code><a href="#cdk-ssm-documents.PsModuleStep.addToDocument">addToDocument</a></code> | *No description.* |
 | <code><a href="#cdk-ssm-documents.PsModuleStep.variables">variables</a></code> | *No description.* |
 
 ---
@@ -6846,6 +7850,18 @@ public toSsmEntry(): {[ key: string ]: any}
 ```
 
 Converts this step into an object to prepare for yaml/json representation of this step.
+
+##### `addToDocument` <a name="addToDocument" id="cdk-ssm-documents.PsModuleStep.addToDocument"></a>
+
+```typescript
+public addToDocument(doc: CommandDocumentBuilder): void
+```
+
+###### `doc`<sup>Required</sup> <a name="doc" id="cdk-ssm-documents.PsModuleStep.addToDocument.parameter.doc"></a>
+
+- *Type:* <a href="#cdk-ssm-documents.CommandDocumentBuilder">CommandDocumentBuilder</a>
+
+---
 
 ##### `variables` <a name="variables" id="cdk-ssm-documents.PsModuleStep.variables"></a>
 
@@ -7139,6 +8155,7 @@ new RebootInstanceAndWait(scope: Construct, id: string, instanceId: IStringVaria
 | **Name** | **Description** |
 | --- | --- |
 | <code><a href="#cdk-ssm-documents.RebootInstanceAndWait.toString">toString</a></code> | Returns a string representation of this construct. |
+| <code><a href="#cdk-ssm-documents.RebootInstanceAndWait.addToDocument">addToDocument</a></code> | *No description.* |
 
 ---
 
@@ -7149,6 +8166,18 @@ public toString(): string
 ```
 
 Returns a string representation of this construct.
+
+##### `addToDocument` <a name="addToDocument" id="cdk-ssm-documents.RebootInstanceAndWait.addToDocument"></a>
+
+```typescript
+public addToDocument(doc: AutomationDocumentBuilder): void
+```
+
+###### `doc`<sup>Required</sup> <a name="doc" id="cdk-ssm-documents.RebootInstanceAndWait.addToDocument.parameter.doc"></a>
+
+- *Type:* <a href="#cdk-ssm-documents.AutomationDocumentBuilder">AutomationDocumentBuilder</a>
+
+---
 
 #### Static Functions <a name="Static Functions" id="Static Functions"></a>
 
@@ -7181,6 +8210,8 @@ Any object.
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
 | <code><a href="#cdk-ssm-documents.RebootInstanceAndWait.property.node">node</a></code> | <code>constructs.Node</code> | The tree node. |
+| <code><a href="#cdk-ssm-documents.RebootInstanceAndWait.property.describe">describe</a></code> | <code><a href="#cdk-ssm-documents.WaitForResourceStep">WaitForResourceStep</a></code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.RebootInstanceAndWait.property.reboot">reboot</a></code> | <code><a href="#cdk-ssm-documents.AwsApiStep">AwsApiStep</a></code> | *No description.* |
 
 ---
 
@@ -7193,6 +8224,26 @@ public readonly node: Node;
 - *Type:* constructs.Node
 
 The tree node.
+
+---
+
+##### `describe`<sup>Required</sup> <a name="describe" id="cdk-ssm-documents.RebootInstanceAndWait.property.describe"></a>
+
+```typescript
+public readonly describe: WaitForResourceStep;
+```
+
+- *Type:* <a href="#cdk-ssm-documents.WaitForResourceStep">WaitForResourceStep</a>
+
+---
+
+##### `reboot`<sup>Required</sup> <a name="reboot" id="cdk-ssm-documents.RebootInstanceAndWait.property.reboot"></a>
+
+```typescript
+public readonly reboot: AwsApiStep;
+```
+
+- *Type:* <a href="#cdk-ssm-documents.AwsApiStep">AwsApiStep</a>
 
 ---
 
@@ -7243,6 +8294,7 @@ new RunCommandStep(scope: Construct, id: string, props: RunCommandStepProps)
 | <code><a href="#cdk-ssm-documents.RunCommandStep.listInputs">listInputs</a></code> | Lists the inputs that are required for this step. |
 | <code><a href="#cdk-ssm-documents.RunCommandStep.listOutputs">listOutputs</a></code> | Lists the outputs that will be returned from this step. |
 | <code><a href="#cdk-ssm-documents.RunCommandStep.toSsmEntry">toSsmEntry</a></code> | Converts this step into an object to prepare for yaml/json representation of this step. |
+| <code><a href="#cdk-ssm-documents.RunCommandStep.addToDocument">addToDocument</a></code> | *No description.* |
 | <code><a href="#cdk-ssm-documents.RunCommandStep.variables">variables</a></code> | *No description.* |
 
 ---
@@ -7278,6 +8330,18 @@ public toSsmEntry(): {[ key: string ]: any}
 ```
 
 Converts this step into an object to prepare for yaml/json representation of this step.
+
+##### `addToDocument` <a name="addToDocument" id="cdk-ssm-documents.RunCommandStep.addToDocument"></a>
+
+```typescript
+public addToDocument(doc: AutomationDocumentBuilder): void
+```
+
+###### `doc`<sup>Required</sup> <a name="doc" id="cdk-ssm-documents.RunCommandStep.addToDocument.parameter.doc"></a>
+
+- *Type:* <a href="#cdk-ssm-documents.AutomationDocumentBuilder">AutomationDocumentBuilder</a>
+
+---
 
 ##### `variables` <a name="variables" id="cdk-ssm-documents.RunCommandStep.variables"></a>
 
@@ -7692,6 +8756,7 @@ new RunInstanceStep(scope: Construct, id: string, props: RunInstanceStepProps)
 | <code><a href="#cdk-ssm-documents.RunInstanceStep.listInputs">listInputs</a></code> | Derives the inputs based on given variables. |
 | <code><a href="#cdk-ssm-documents.RunInstanceStep.listOutputs">listOutputs</a></code> | Lists the outputs that will be returned from this step. |
 | <code><a href="#cdk-ssm-documents.RunInstanceStep.toSsmEntry">toSsmEntry</a></code> | Converts this step into an object to prepare for yaml/json representation of this step. |
+| <code><a href="#cdk-ssm-documents.RunInstanceStep.addToDocument">addToDocument</a></code> | *No description.* |
 | <code><a href="#cdk-ssm-documents.RunInstanceStep.variables">variables</a></code> | *No description.* |
 
 ---
@@ -7727,6 +8792,18 @@ public toSsmEntry(): {[ key: string ]: any}
 ```
 
 Converts this step into an object to prepare for yaml/json representation of this step.
+
+##### `addToDocument` <a name="addToDocument" id="cdk-ssm-documents.RunInstanceStep.addToDocument"></a>
+
+```typescript
+public addToDocument(doc: AutomationDocumentBuilder): void
+```
+
+###### `doc`<sup>Required</sup> <a name="doc" id="cdk-ssm-documents.RunInstanceStep.addToDocument.parameter.doc"></a>
+
+- *Type:* <a href="#cdk-ssm-documents.AutomationDocumentBuilder">AutomationDocumentBuilder</a>
+
+---
 
 ##### `variables` <a name="variables" id="cdk-ssm-documents.RunInstanceStep.variables"></a>
 
@@ -8251,6 +9328,7 @@ new RunPowerShellScriptStep(scope: Construct, id: string, props: RunPowerShellSc
 | <code><a href="#cdk-ssm-documents.RunPowerShellScriptStep.listInputs">listInputs</a></code> | Inputs required for this command includes both the runCommand variables and workingDirectory if provided. |
 | <code><a href="#cdk-ssm-documents.RunPowerShellScriptStep.listOutputs">listOutputs</a></code> | RunCommand Steps do not have outputs. |
 | <code><a href="#cdk-ssm-documents.RunPowerShellScriptStep.toSsmEntry">toSsmEntry</a></code> | Converts this step into an object to prepare for yaml/json representation of this step. |
+| <code><a href="#cdk-ssm-documents.RunPowerShellScriptStep.addToDocument">addToDocument</a></code> | *No description.* |
 | <code><a href="#cdk-ssm-documents.RunPowerShellScriptStep.variables">variables</a></code> | *No description.* |
 
 ---
@@ -8286,6 +9364,18 @@ public toSsmEntry(): {[ key: string ]: any}
 ```
 
 Converts this step into an object to prepare for yaml/json representation of this step.
+
+##### `addToDocument` <a name="addToDocument" id="cdk-ssm-documents.RunPowerShellScriptStep.addToDocument"></a>
+
+```typescript
+public addToDocument(doc: CommandDocumentBuilder): void
+```
+
+###### `doc`<sup>Required</sup> <a name="doc" id="cdk-ssm-documents.RunPowerShellScriptStep.addToDocument.parameter.doc"></a>
+
+- *Type:* <a href="#cdk-ssm-documents.CommandDocumentBuilder">CommandDocumentBuilder</a>
+
+---
 
 ##### `variables` <a name="variables" id="cdk-ssm-documents.RunPowerShellScriptStep.variables"></a>
 
@@ -8562,6 +9652,7 @@ new RunShellScriptStep(scope: Construct, id: string, props: RunShellScriptStepPr
 | <code><a href="#cdk-ssm-documents.RunShellScriptStep.listInputs">listInputs</a></code> | Inputs required for this command includes both the runCommand variables and workingDirectory if provided. |
 | <code><a href="#cdk-ssm-documents.RunShellScriptStep.listOutputs">listOutputs</a></code> | RunCommand Steps do not have outputs. |
 | <code><a href="#cdk-ssm-documents.RunShellScriptStep.toSsmEntry">toSsmEntry</a></code> | Converts this step into an object to prepare for yaml/json representation of this step. |
+| <code><a href="#cdk-ssm-documents.RunShellScriptStep.addToDocument">addToDocument</a></code> | *No description.* |
 | <code><a href="#cdk-ssm-documents.RunShellScriptStep.variables">variables</a></code> | *No description.* |
 
 ---
@@ -8597,6 +9688,18 @@ public toSsmEntry(): {[ key: string ]: any}
 ```
 
 Converts this step into an object to prepare for yaml/json representation of this step.
+
+##### `addToDocument` <a name="addToDocument" id="cdk-ssm-documents.RunShellScriptStep.addToDocument"></a>
+
+```typescript
+public addToDocument(doc: CommandDocumentBuilder): void
+```
+
+###### `doc`<sup>Required</sup> <a name="doc" id="cdk-ssm-documents.RunShellScriptStep.addToDocument.parameter.doc"></a>
+
+- *Type:* <a href="#cdk-ssm-documents.CommandDocumentBuilder">CommandDocumentBuilder</a>
+
+---
 
 ##### `variables` <a name="variables" id="cdk-ssm-documents.RunShellScriptStep.variables"></a>
 
@@ -8873,6 +9976,7 @@ new SleepStep(scope: Construct, id: string, props: SleepStepProps)
 | <code><a href="#cdk-ssm-documents.SleepStep.listInputs">listInputs</a></code> | No inputs required for Sleep step. |
 | <code><a href="#cdk-ssm-documents.SleepStep.listOutputs">listOutputs</a></code> | No outputs emitted from Sleep step. |
 | <code><a href="#cdk-ssm-documents.SleepStep.toSsmEntry">toSsmEntry</a></code> | Converts this step into an object to prepare for yaml/json representation of this step. |
+| <code><a href="#cdk-ssm-documents.SleepStep.addToDocument">addToDocument</a></code> | *No description.* |
 | <code><a href="#cdk-ssm-documents.SleepStep.variables">variables</a></code> | *No description.* |
 
 ---
@@ -8908,6 +10012,18 @@ public toSsmEntry(): {[ key: string ]: any}
 ```
 
 Converts this step into an object to prepare for yaml/json representation of this step.
+
+##### `addToDocument` <a name="addToDocument" id="cdk-ssm-documents.SleepStep.addToDocument"></a>
+
+```typescript
+public addToDocument(doc: AutomationDocumentBuilder): void
+```
+
+###### `doc`<sup>Required</sup> <a name="doc" id="cdk-ssm-documents.SleepStep.addToDocument.parameter.doc"></a>
+
+- *Type:* <a href="#cdk-ssm-documents.AutomationDocumentBuilder">AutomationDocumentBuilder</a>
+
+---
 
 ##### `variables` <a name="variables" id="cdk-ssm-documents.SleepStep.variables"></a>
 
@@ -9241,7 +10357,6 @@ Any object.
 | <code><a href="#cdk-ssm-documents.SsmDocument.property.docOutputs">docOutputs</a></code> | <code><a href="#cdk-ssm-documents.DocumentOutput">DocumentOutput</a>[]</code> | *No description.* |
 | <code><a href="#cdk-ssm-documents.SsmDocument.property.documentName">documentName</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#cdk-ssm-documents.SsmDocument.property.props">props</a></code> | <code><a href="#cdk-ssm-documents.SsmDocumentProps">SsmDocumentProps</a></code> | *No description.* |
-| <code><a href="#cdk-ssm-documents.SsmDocument.property.stepCollector">stepCollector</a></code> | <code><a href="#cdk-ssm-documents.StepCollector">StepCollector</a></code> | *No description.* |
 | <code><a href="#cdk-ssm-documents.SsmDocument.property.assumeRole">assumeRole</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#cdk-ssm-documents.SsmDocument.property.header">header</a></code> | <code>string</code> | *No description.* |
 
@@ -9306,16 +10421,6 @@ public readonly props: SsmDocumentProps;
 ```
 
 - *Type:* <a href="#cdk-ssm-documents.SsmDocumentProps">SsmDocumentProps</a>
-
----
-
-##### `stepCollector`<sup>Required</sup> <a name="stepCollector" id="cdk-ssm-documents.SsmDocument.property.stepCollector"></a>
-
-```typescript
-public readonly stepCollector: StepCollector;
-```
-
-- *Type:* <a href="#cdk-ssm-documents.StepCollector">StepCollector</a>
 
 ---
 
@@ -9521,286 +10626,6 @@ public readonly description: string;
 ---
 
 
-### StringDocument <a name="StringDocument" id="cdk-ssm-documents.StringDocument"></a>
-
-This AutomationDocument supports declaring your document from an existing document (JSON/YAML String/File).
-
-Importing an existing file allows for benefitting from the simulated execution.
-The simulated execution will run locally in the same fashion that SSM Execution would run the document.
-You can supply mocks to the simulator and validate the calls and the flow of the document without running via SSM execution.
-
-#### Methods <a name="Methods" id="Methods"></a>
-
-| **Name** | **Description** |
-| --- | --- |
-| <code><a href="#cdk-ssm-documents.StringDocument.toString">toString</a></code> | Returns a string representation of this construct. |
-| <code><a href="#cdk-ssm-documents.StringDocument.documentType">documentType</a></code> | *No description.* |
-| <code><a href="#cdk-ssm-documents.StringDocument.print">print</a></code> | Synthesize before calling this function! You can use this to Synthesize: cdk.SynthUtils.synthesize(stack); |
-| <code><a href="#cdk-ssm-documents.StringDocument.collectedSteps">collectedSteps</a></code> | *No description.* |
-
----
-
-##### `toString` <a name="toString" id="cdk-ssm-documents.StringDocument.toString"></a>
-
-```typescript
-public toString(): string
-```
-
-Returns a string representation of this construct.
-
-##### `documentType` <a name="documentType" id="cdk-ssm-documents.StringDocument.documentType"></a>
-
-```typescript
-public documentType(): string
-```
-
-##### `print` <a name="print" id="cdk-ssm-documents.StringDocument.print"></a>
-
-```typescript
-public print(): string
-```
-
-Synthesize before calling this function! You can use this to Synthesize: cdk.SynthUtils.synthesize(stack);
-
-Converts the objects define in the SSM Document (including all of the steps) to an SSM document string.
-The format is dependency on the documentFormat property provided to the class.
-The yaml can be used as is and will behave (or at least should behave) as was simulated in the runSimulation().
-
-##### `collectedSteps` <a name="collectedSteps" id="cdk-ssm-documents.StringDocument.collectedSteps"></a>
-
-```typescript
-public collectedSteps(): AutomationStep[]
-```
-
-#### Static Functions <a name="Static Functions" id="Static Functions"></a>
-
-| **Name** | **Description** |
-| --- | --- |
-| <code><a href="#cdk-ssm-documents.StringDocument.isConstruct">isConstruct</a></code> | Checks if `x` is a construct. |
-| <code><a href="#cdk-ssm-documents.StringDocument.fromFile">fromFile</a></code> | Create an AutomationDocument from an existing AutomationDocument yaml or json file. |
-| <code><a href="#cdk-ssm-documents.StringDocument.fromJson">fromJson</a></code> | Create an AutomationDocument from an existing json string. |
-| <code><a href="#cdk-ssm-documents.StringDocument.fromYaml">fromYaml</a></code> | Create an AutomationDocument from an existing yaml string. |
-
----
-
-##### ~~`isConstruct`~~ <a name="isConstruct" id="cdk-ssm-documents.StringDocument.isConstruct"></a>
-
-```typescript
-import { StringDocument } from 'cdk-ssm-documents'
-
-StringDocument.isConstruct(x: any)
-```
-
-Checks if `x` is a construct.
-
-###### `x`<sup>Required</sup> <a name="x" id="cdk-ssm-documents.StringDocument.isConstruct.parameter.x"></a>
-
-- *Type:* any
-
-Any object.
-
----
-
-##### `fromFile` <a name="fromFile" id="cdk-ssm-documents.StringDocument.fromFile"></a>
-
-```typescript
-import { StringDocument } from 'cdk-ssm-documents'
-
-StringDocument.fromFile(stack: Construct, id: string, documentFilePath: string)
-```
-
-Create an AutomationDocument from an existing AutomationDocument yaml or json file.
-
-Note: This function will deduce whether the file is written in yaml or json based on whether it has a .yaml or .yml extention.
-You can use the returned AutomationDocument to run simulations as you would other documents created using this library.
-
-###### `stack`<sup>Required</sup> <a name="stack" id="cdk-ssm-documents.StringDocument.fromFile.parameter.stack"></a>
-
-- *Type:* constructs.Construct
-
----
-
-###### `id`<sup>Required</sup> <a name="id" id="cdk-ssm-documents.StringDocument.fromFile.parameter.id"></a>
-
-- *Type:* string
-
----
-
-###### `documentFilePath`<sup>Required</sup> <a name="documentFilePath" id="cdk-ssm-documents.StringDocument.fromFile.parameter.documentFilePath"></a>
-
-- *Type:* string
-
----
-
-##### `fromJson` <a name="fromJson" id="cdk-ssm-documents.StringDocument.fromJson"></a>
-
-```typescript
-import { StringDocument } from 'cdk-ssm-documents'
-
-StringDocument.fromJson(stack: Construct, id: string, documentJson: string)
-```
-
-Create an AutomationDocument from an existing json string.
-
-You can use the returned AutomationDocument to run simulations as you would other documents created using this library.
-
-###### `stack`<sup>Required</sup> <a name="stack" id="cdk-ssm-documents.StringDocument.fromJson.parameter.stack"></a>
-
-- *Type:* constructs.Construct
-
----
-
-###### `id`<sup>Required</sup> <a name="id" id="cdk-ssm-documents.StringDocument.fromJson.parameter.id"></a>
-
-- *Type:* string
-
----
-
-###### `documentJson`<sup>Required</sup> <a name="documentJson" id="cdk-ssm-documents.StringDocument.fromJson.parameter.documentJson"></a>
-
-- *Type:* string
-
----
-
-##### `fromYaml` <a name="fromYaml" id="cdk-ssm-documents.StringDocument.fromYaml"></a>
-
-```typescript
-import { StringDocument } from 'cdk-ssm-documents'
-
-StringDocument.fromYaml(stack: Construct, id: string, documentYaml: string)
-```
-
-Create an AutomationDocument from an existing yaml string.
-
-You can use the returned AutomationDocument to run simulations as you would other documents created using this library.
-
-###### `stack`<sup>Required</sup> <a name="stack" id="cdk-ssm-documents.StringDocument.fromYaml.parameter.stack"></a>
-
-- *Type:* constructs.Construct
-
----
-
-###### `id`<sup>Required</sup> <a name="id" id="cdk-ssm-documents.StringDocument.fromYaml.parameter.id"></a>
-
-- *Type:* string
-
----
-
-###### `documentYaml`<sup>Required</sup> <a name="documentYaml" id="cdk-ssm-documents.StringDocument.fromYaml.parameter.documentYaml"></a>
-
-- *Type:* string
-
----
-
-#### Properties <a name="Properties" id="Properties"></a>
-
-| **Name** | **Type** | **Description** |
-| --- | --- | --- |
-| <code><a href="#cdk-ssm-documents.StringDocument.property.node">node</a></code> | <code>constructs.Node</code> | The tree node. |
-| <code><a href="#cdk-ssm-documents.StringDocument.property.description">description</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#cdk-ssm-documents.StringDocument.property.docInputs">docInputs</a></code> | <code><a href="#cdk-ssm-documents.Input">Input</a>[]</code> | *No description.* |
-| <code><a href="#cdk-ssm-documents.StringDocument.property.docOutputs">docOutputs</a></code> | <code><a href="#cdk-ssm-documents.DocumentOutput">DocumentOutput</a>[]</code> | *No description.* |
-| <code><a href="#cdk-ssm-documents.StringDocument.property.documentName">documentName</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#cdk-ssm-documents.StringDocument.property.props">props</a></code> | <code><a href="#cdk-ssm-documents.SsmDocumentProps">SsmDocumentProps</a></code> | *No description.* |
-| <code><a href="#cdk-ssm-documents.StringDocument.property.stepCollector">stepCollector</a></code> | <code><a href="#cdk-ssm-documents.StepCollector">StepCollector</a></code> | *No description.* |
-| <code><a href="#cdk-ssm-documents.StringDocument.property.assumeRole">assumeRole</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#cdk-ssm-documents.StringDocument.property.header">header</a></code> | <code>string</code> | *No description.* |
-
----
-
-##### `node`<sup>Required</sup> <a name="node" id="cdk-ssm-documents.StringDocument.property.node"></a>
-
-```typescript
-public readonly node: Node;
-```
-
-- *Type:* constructs.Node
-
-The tree node.
-
----
-
-##### `description`<sup>Required</sup> <a name="description" id="cdk-ssm-documents.StringDocument.property.description"></a>
-
-```typescript
-public readonly description: string;
-```
-
-- *Type:* string
-
----
-
-##### `docInputs`<sup>Required</sup> <a name="docInputs" id="cdk-ssm-documents.StringDocument.property.docInputs"></a>
-
-```typescript
-public readonly docInputs: Input[];
-```
-
-- *Type:* <a href="#cdk-ssm-documents.Input">Input</a>[]
-
----
-
-##### `docOutputs`<sup>Required</sup> <a name="docOutputs" id="cdk-ssm-documents.StringDocument.property.docOutputs"></a>
-
-```typescript
-public readonly docOutputs: DocumentOutput[];
-```
-
-- *Type:* <a href="#cdk-ssm-documents.DocumentOutput">DocumentOutput</a>[]
-
----
-
-##### `documentName`<sup>Required</sup> <a name="documentName" id="cdk-ssm-documents.StringDocument.property.documentName"></a>
-
-```typescript
-public readonly documentName: string;
-```
-
-- *Type:* string
-
----
-
-##### `props`<sup>Required</sup> <a name="props" id="cdk-ssm-documents.StringDocument.property.props"></a>
-
-```typescript
-public readonly props: SsmDocumentProps;
-```
-
-- *Type:* <a href="#cdk-ssm-documents.SsmDocumentProps">SsmDocumentProps</a>
-
----
-
-##### `stepCollector`<sup>Required</sup> <a name="stepCollector" id="cdk-ssm-documents.StringDocument.property.stepCollector"></a>
-
-```typescript
-public readonly stepCollector: StepCollector;
-```
-
-- *Type:* <a href="#cdk-ssm-documents.StepCollector">StepCollector</a>
-
----
-
-##### `assumeRole`<sup>Optional</sup> <a name="assumeRole" id="cdk-ssm-documents.StringDocument.property.assumeRole"></a>
-
-```typescript
-public readonly assumeRole: string;
-```
-
-- *Type:* string
-
----
-
-##### `header`<sup>Optional</sup> <a name="header" id="cdk-ssm-documents.StringDocument.property.header"></a>
-
-```typescript
-public readonly header: string;
-```
-
-- *Type:* string
-
----
-
-
 ### StringStep <a name="StringStep" id="cdk-ssm-documents.StringStep"></a>
 
 StringStep allows for including a step from an existing automation document verbatim.
@@ -9813,6 +10638,7 @@ This step can be used just as you would use any other Step including simulation 
 | **Name** | **Description** |
 | --- | --- |
 | <code><a href="#cdk-ssm-documents.StringStep.toString">toString</a></code> | Returns a string representation of this construct. |
+| <code><a href="#cdk-ssm-documents.StringStep.addToDocument">addToDocument</a></code> | *No description.* |
 
 ---
 
@@ -9823,6 +10649,18 @@ public toString(): string
 ```
 
 Returns a string representation of this construct.
+
+##### `addToDocument` <a name="addToDocument" id="cdk-ssm-documents.StringStep.addToDocument"></a>
+
+```typescript
+public addToDocument(doc: AutomationDocumentBuilder): void
+```
+
+###### `doc`<sup>Required</sup> <a name="doc" id="cdk-ssm-documents.StringStep.addToDocument.parameter.doc"></a>
+
+- *Type:* <a href="#cdk-ssm-documents.AutomationDocumentBuilder">AutomationDocumentBuilder</a>
+
+---
 
 #### Static Functions <a name="Static Functions" id="Static Functions"></a>
 
@@ -9992,6 +10830,7 @@ new TimedDocument(stage: Construct, id: string, props: AutomationDocumentProps)
 | <code><a href="#cdk-ssm-documents.TimedDocument.toString">toString</a></code> | Returns a string representation of this construct. |
 | <code><a href="#cdk-ssm-documents.TimedDocument.documentType">documentType</a></code> | *No description.* |
 | <code><a href="#cdk-ssm-documents.TimedDocument.print">print</a></code> | Synthesize before calling this function! You can use this to Synthesize: cdk.SynthUtils.synthesize(stack); |
+| <code><a href="#cdk-ssm-documents.TimedDocument.addStep">addStep</a></code> | *No description.* |
 | <code><a href="#cdk-ssm-documents.TimedDocument.collectedSteps">collectedSteps</a></code> | *No description.* |
 
 ---
@@ -10021,6 +10860,18 @@ Synthesize before calling this function! You can use this to Synthesize: cdk.Syn
 Converts the objects define in the SSM Document (including all of the steps) to an SSM document string.
 The format is dependency on the documentFormat property provided to the class.
 The yaml can be used as is and will behave (or at least should behave) as was simulated in the runSimulation().
+
+##### `addStep` <a name="addStep" id="cdk-ssm-documents.TimedDocument.addStep"></a>
+
+```typescript
+public addStep(component: IAutomationComponent): void
+```
+
+###### `component`<sup>Required</sup> <a name="component" id="cdk-ssm-documents.TimedDocument.addStep.parameter.component"></a>
+
+- *Type:* <a href="#cdk-ssm-documents.IAutomationComponent">IAutomationComponent</a>
+
+---
 
 ##### `collectedSteps` <a name="collectedSteps" id="cdk-ssm-documents.TimedDocument.collectedSteps"></a>
 
@@ -10064,9 +10915,9 @@ Any object.
 | <code><a href="#cdk-ssm-documents.TimedDocument.property.docOutputs">docOutputs</a></code> | <code><a href="#cdk-ssm-documents.DocumentOutput">DocumentOutput</a>[]</code> | *No description.* |
 | <code><a href="#cdk-ssm-documents.TimedDocument.property.documentName">documentName</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#cdk-ssm-documents.TimedDocument.property.props">props</a></code> | <code><a href="#cdk-ssm-documents.SsmDocumentProps">SsmDocumentProps</a></code> | *No description.* |
-| <code><a href="#cdk-ssm-documents.TimedDocument.property.stepCollector">stepCollector</a></code> | <code><a href="#cdk-ssm-documents.StepCollector">StepCollector</a></code> | *No description.* |
 | <code><a href="#cdk-ssm-documents.TimedDocument.property.assumeRole">assumeRole</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#cdk-ssm-documents.TimedDocument.property.header">header</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.TimedDocument.property.builder">builder</a></code> | <code><a href="#cdk-ssm-documents.AutomationDocumentBuilder">AutomationDocumentBuilder</a></code> | *No description.* |
 
 ---
 
@@ -10132,16 +10983,6 @@ public readonly props: SsmDocumentProps;
 
 ---
 
-##### `stepCollector`<sup>Required</sup> <a name="stepCollector" id="cdk-ssm-documents.TimedDocument.property.stepCollector"></a>
-
-```typescript
-public readonly stepCollector: StepCollector;
-```
-
-- *Type:* <a href="#cdk-ssm-documents.StepCollector">StepCollector</a>
-
----
-
 ##### `assumeRole`<sup>Optional</sup> <a name="assumeRole" id="cdk-ssm-documents.TimedDocument.property.assumeRole"></a>
 
 ```typescript
@@ -10159,6 +11000,16 @@ public readonly header: string;
 ```
 
 - *Type:* string
+
+---
+
+##### `builder`<sup>Required</sup> <a name="builder" id="cdk-ssm-documents.TimedDocument.property.builder"></a>
+
+```typescript
+public readonly builder: AutomationDocumentBuilder;
+```
+
+- *Type:* <a href="#cdk-ssm-documents.AutomationDocumentBuilder">AutomationDocumentBuilder</a>
 
 ---
 
@@ -10209,6 +11060,7 @@ new WaitForResourceStep(scope: Construct, id: string, props: WaitForResourceStep
 | <code><a href="#cdk-ssm-documents.WaitForResourceStep.listInputs">listInputs</a></code> | Derives the inputs by parsing the apiParams to find matches for inputs in double circle braces ("{{INPUT}}"). |
 | <code><a href="#cdk-ssm-documents.WaitForResourceStep.listOutputs">listOutputs</a></code> | There are no outputs for this step. |
 | <code><a href="#cdk-ssm-documents.WaitForResourceStep.toSsmEntry">toSsmEntry</a></code> | Converts this step into an object to prepare for yaml/json representation of this step. |
+| <code><a href="#cdk-ssm-documents.WaitForResourceStep.addToDocument">addToDocument</a></code> | *No description.* |
 | <code><a href="#cdk-ssm-documents.WaitForResourceStep.variables">variables</a></code> | *No description.* |
 
 ---
@@ -10244,6 +11096,18 @@ public toSsmEntry(): {[ key: string ]: any}
 ```
 
 Converts this step into an object to prepare for yaml/json representation of this step.
+
+##### `addToDocument` <a name="addToDocument" id="cdk-ssm-documents.WaitForResourceStep.addToDocument"></a>
+
+```typescript
+public addToDocument(doc: AutomationDocumentBuilder): void
+```
+
+###### `doc`<sup>Required</sup> <a name="doc" id="cdk-ssm-documents.WaitForResourceStep.addToDocument.parameter.doc"></a>
+
+- *Type:* <a href="#cdk-ssm-documents.AutomationDocumentBuilder">AutomationDocumentBuilder</a>
+
+---
 
 ##### `variables` <a name="variables" id="cdk-ssm-documents.WaitForResourceStep.variables"></a>
 
@@ -18139,6 +19003,61 @@ Ask for approval.
 
 
 
+### AutomationDocumentBuilder <a name="AutomationDocumentBuilder" id="cdk-ssm-documents.AutomationDocumentBuilder"></a>
+
+#### Initializers <a name="Initializers" id="cdk-ssm-documents.AutomationDocumentBuilder.Initializer"></a>
+
+```typescript
+import { AutomationDocumentBuilder } from 'cdk-ssm-documents'
+
+new AutomationDocumentBuilder()
+```
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+
+---
+
+#### Methods <a name="Methods" id="Methods"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#cdk-ssm-documents.AutomationDocumentBuilder.addStep">addStep</a></code> | *No description.* |
+
+---
+
+##### `addStep` <a name="addStep" id="cdk-ssm-documents.AutomationDocumentBuilder.addStep"></a>
+
+```typescript
+public addStep(step: AutomationStep): void
+```
+
+###### `step`<sup>Required</sup> <a name="step" id="cdk-ssm-documents.AutomationDocumentBuilder.addStep.parameter.step"></a>
+
+- *Type:* <a href="#cdk-ssm-documents.AutomationStep">AutomationStep</a>
+
+---
+
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#cdk-ssm-documents.AutomationDocumentBuilder.property.steps">steps</a></code> | <code><a href="#cdk-ssm-documents.AutomationStep">AutomationStep</a>[]</code> | *No description.* |
+
+---
+
+##### `steps`<sup>Required</sup> <a name="steps" id="cdk-ssm-documents.AutomationDocumentBuilder.property.steps"></a>
+
+```typescript
+public readonly steps: AutomationStep[];
+```
+
+- *Type:* <a href="#cdk-ssm-documents.AutomationStep">AutomationStep</a>[]
+
+---
+
+
 ### BooleanVariable <a name="BooleanVariable" id="cdk-ssm-documents.BooleanVariable"></a>
 
 - *Implements:* <a href="#cdk-ssm-documents.IBooleanVariable">IBooleanVariable</a>
@@ -18359,6 +19278,61 @@ public readonly variable: IBooleanVariable | INumberVariable | IStringVariable;
 ```
 
 - *Type:* <a href="#cdk-ssm-documents.IBooleanVariable">IBooleanVariable</a> | <a href="#cdk-ssm-documents.INumberVariable">INumberVariable</a> | <a href="#cdk-ssm-documents.IStringVariable">IStringVariable</a>
+
+---
+
+
+### CommandDocumentBuilder <a name="CommandDocumentBuilder" id="cdk-ssm-documents.CommandDocumentBuilder"></a>
+
+#### Initializers <a name="Initializers" id="cdk-ssm-documents.CommandDocumentBuilder.Initializer"></a>
+
+```typescript
+import { CommandDocumentBuilder } from 'cdk-ssm-documents'
+
+new CommandDocumentBuilder()
+```
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+
+---
+
+#### Methods <a name="Methods" id="Methods"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#cdk-ssm-documents.CommandDocumentBuilder.addStep">addStep</a></code> | *No description.* |
+
+---
+
+##### `addStep` <a name="addStep" id="cdk-ssm-documents.CommandDocumentBuilder.addStep"></a>
+
+```typescript
+public addStep(step: CommandStep): void
+```
+
+###### `step`<sup>Required</sup> <a name="step" id="cdk-ssm-documents.CommandDocumentBuilder.addStep.parameter.step"></a>
+
+- *Type:* <a href="#cdk-ssm-documents.CommandStep">CommandStep</a>
+
+---
+
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#cdk-ssm-documents.CommandDocumentBuilder.property.steps">steps</a></code> | <code><a href="#cdk-ssm-documents.CommandStep">CommandStep</a>[]</code> | *No description.* |
+
+---
+
+##### `steps`<sup>Required</sup> <a name="steps" id="cdk-ssm-documents.CommandDocumentBuilder.property.steps"></a>
+
+```typescript
+public readonly steps: CommandStep[];
+```
+
+- *Type:* <a href="#cdk-ssm-documents.CommandStep">CommandStep</a>[]
 
 ---
 
@@ -21709,18 +22683,20 @@ Synchronously sleeps for duration specified in millis.
 
 
 
-### StepCollector <a name="StepCollector" id="cdk-ssm-documents.StepCollector"></a>
+### StringDocument <a name="StringDocument" id="cdk-ssm-documents.StringDocument"></a>
 
-- *Implements:* aws-cdk-lib.IAspect
+This AutomationDocument supports declaring your document from an existing document (JSON/YAML String/File).
 
-Collects steps found in the tree using the visitor pattern (IAspect).
+Importing an existing file allows for benefiting from the simulated execution.
+The simulated execution will run locally in the same fashion that SSM Execution would run the document.
+You can supply mocks to the simulator and validate the calls and the flow of the document without running via SSM execution.
 
-#### Initializers <a name="Initializers" id="cdk-ssm-documents.StepCollector.Initializer"></a>
+#### Initializers <a name="Initializers" id="cdk-ssm-documents.StringDocument.Initializer"></a>
 
 ```typescript
-import { StepCollector } from 'cdk-ssm-documents'
+import { StringDocument } from 'cdk-ssm-documents'
 
-new StepCollector()
+new StringDocument()
 ```
 
 | **Name** | **Type** | **Description** |
@@ -21728,61 +22704,108 @@ new StepCollector()
 
 ---
 
-#### Methods <a name="Methods" id="Methods"></a>
+
+#### Static Functions <a name="Static Functions" id="Static Functions"></a>
 
 | **Name** | **Description** |
 | --- | --- |
-| <code><a href="#cdk-ssm-documents.StepCollector.visit">visit</a></code> | This is called prior to synthesis thereby allowing all Steps to be found. |
+| <code><a href="#cdk-ssm-documents.StringDocument.fromFile">fromFile</a></code> | Create an AutomationDocument from an existing AutomationDocument yaml or json file. |
+| <code><a href="#cdk-ssm-documents.StringDocument.fromJson">fromJson</a></code> | Create an AutomationDocument from an existing json string. |
+| <code><a href="#cdk-ssm-documents.StringDocument.fromYaml">fromYaml</a></code> | Create an AutomationDocument from an existing yaml string. |
 
 ---
 
-##### `visit` <a name="visit" id="cdk-ssm-documents.StepCollector.visit"></a>
+##### `fromFile` <a name="fromFile" id="cdk-ssm-documents.StringDocument.fromFile"></a>
 
 ```typescript
-public visit(node: IConstruct): void
+import { StringDocument } from 'cdk-ssm-documents'
+
+StringDocument.fromFile(stack: Construct, id: string, documentFilePath: string)
 ```
 
-This is called prior to synthesis thereby allowing all Steps to be found.
+Create an AutomationDocument from an existing AutomationDocument yaml or json file.
 
-###### `node`<sup>Required</sup> <a name="node" id="cdk-ssm-documents.StepCollector.visit.parameter.node"></a>
+Note: This function will deduce whether the file is written in yaml or json based on whether it has a .yaml or .yml extention.
+You can use the returned AutomationDocument to run simulations as you would other documents created using this library.
 
-- *Type:* constructs.IConstruct
+###### `stack`<sup>Required</sup> <a name="stack" id="cdk-ssm-documents.StringDocument.fromFile.parameter.stack"></a>
 
----
-
-
-#### Properties <a name="Properties" id="Properties"></a>
-
-| **Name** | **Type** | **Description** |
-| --- | --- | --- |
-| <code><a href="#cdk-ssm-documents.StepCollector.property.automationSteps">automationSteps</a></code> | <code><a href="#cdk-ssm-documents.AutomationStep">AutomationStep</a>[]</code> | All AutomationSteps found in tree. |
-| <code><a href="#cdk-ssm-documents.StepCollector.property.runCommandSteps">runCommandSteps</a></code> | <code><a href="#cdk-ssm-documents.CommandStep">CommandStep</a>[]</code> | All RunCommandSteps found in tree. |
+- *Type:* constructs.Construct
 
 ---
 
-##### `automationSteps`<sup>Required</sup> <a name="automationSteps" id="cdk-ssm-documents.StepCollector.property.automationSteps"></a>
+###### `id`<sup>Required</sup> <a name="id" id="cdk-ssm-documents.StringDocument.fromFile.parameter.id"></a>
+
+- *Type:* string
+
+---
+
+###### `documentFilePath`<sup>Required</sup> <a name="documentFilePath" id="cdk-ssm-documents.StringDocument.fromFile.parameter.documentFilePath"></a>
+
+- *Type:* string
+
+---
+
+##### `fromJson` <a name="fromJson" id="cdk-ssm-documents.StringDocument.fromJson"></a>
 
 ```typescript
-public readonly automationSteps: AutomationStep[];
+import { StringDocument } from 'cdk-ssm-documents'
+
+StringDocument.fromJson(stack: Construct, id: string, documentJson: string)
 ```
 
-- *Type:* <a href="#cdk-ssm-documents.AutomationStep">AutomationStep</a>[]
+Create an AutomationDocument from an existing json string.
 
-All AutomationSteps found in tree.
+You can use the returned AutomationDocument to run simulations as you would other documents created using this library.
+
+###### `stack`<sup>Required</sup> <a name="stack" id="cdk-ssm-documents.StringDocument.fromJson.parameter.stack"></a>
+
+- *Type:* constructs.Construct
 
 ---
 
-##### `runCommandSteps`<sup>Required</sup> <a name="runCommandSteps" id="cdk-ssm-documents.StepCollector.property.runCommandSteps"></a>
+###### `id`<sup>Required</sup> <a name="id" id="cdk-ssm-documents.StringDocument.fromJson.parameter.id"></a>
+
+- *Type:* string
+
+---
+
+###### `documentJson`<sup>Required</sup> <a name="documentJson" id="cdk-ssm-documents.StringDocument.fromJson.parameter.documentJson"></a>
+
+- *Type:* string
+
+---
+
+##### `fromYaml` <a name="fromYaml" id="cdk-ssm-documents.StringDocument.fromYaml"></a>
 
 ```typescript
-public readonly runCommandSteps: CommandStep[];
+import { StringDocument } from 'cdk-ssm-documents'
+
+StringDocument.fromYaml(stack: Construct, id: string, documentYaml: string)
 ```
 
-- *Type:* <a href="#cdk-ssm-documents.CommandStep">CommandStep</a>[]
+Create an AutomationDocument from an existing yaml string.
 
-All RunCommandSteps found in tree.
+You can use the returned AutomationDocument to run simulations as you would other documents created using this library.
+
+###### `stack`<sup>Required</sup> <a name="stack" id="cdk-ssm-documents.StringDocument.fromYaml.parameter.stack"></a>
+
+- *Type:* constructs.Construct
 
 ---
+
+###### `id`<sup>Required</sup> <a name="id" id="cdk-ssm-documents.StringDocument.fromYaml.parameter.id"></a>
+
+- *Type:* string
+
+---
+
+###### `documentYaml`<sup>Required</sup> <a name="documentYaml" id="cdk-ssm-documents.StringDocument.fromYaml.parameter.documentYaml"></a>
+
+- *Type:* string
+
+---
+
 
 
 ### StringFormat <a name="StringFormat" id="cdk-ssm-documents.StringFormat"></a>
@@ -22346,6 +23369,31 @@ Ask for approval.
 ---
 
 
+### IAutomationComponent <a name="IAutomationComponent" id="cdk-ssm-documents.IAutomationComponent"></a>
+
+- *Implemented By:* <a href="#cdk-ssm-documents.ApproveStep">ApproveStep</a>, <a href="#cdk-ssm-documents.AssertAwsResourceStep">AssertAwsResourceStep</a>, <a href="#cdk-ssm-documents.AutomationStep">AutomationStep</a>, <a href="#cdk-ssm-documents.AwsApiStep">AwsApiStep</a>, <a href="#cdk-ssm-documents.BranchStep">BranchStep</a>, <a href="#cdk-ssm-documents.ChangeInstanceStateStep">ChangeInstanceStateStep</a>, <a href="#cdk-ssm-documents.CompositeAutomationStep">CompositeAutomationStep</a>, <a href="#cdk-ssm-documents.CopyImageStep">CopyImageStep</a>, <a href="#cdk-ssm-documents.CreateImageStep">CreateImageStep</a>, <a href="#cdk-ssm-documents.CreateStackStep">CreateStackStep</a>, <a href="#cdk-ssm-documents.CreateTagsStep">CreateTagsStep</a>, <a href="#cdk-ssm-documents.DeleteImageStep">DeleteImageStep</a>, <a href="#cdk-ssm-documents.DeleteStackStep">DeleteStackStep</a>, <a href="#cdk-ssm-documents.ExecuteScriptStep">ExecuteScriptStep</a>, <a href="#cdk-ssm-documents.ExecuteStateMachineStep">ExecuteStateMachineStep</a>, <a href="#cdk-ssm-documents.InvokeLambdaFunctionStep">InvokeLambdaFunctionStep</a>, <a href="#cdk-ssm-documents.InvokeWebhookStep">InvokeWebhookStep</a>, <a href="#cdk-ssm-documents.PauseStep">PauseStep</a>, <a href="#cdk-ssm-documents.RebootInstanceAndWait">RebootInstanceAndWait</a>, <a href="#cdk-ssm-documents.RunCommandStep">RunCommandStep</a>, <a href="#cdk-ssm-documents.RunInstanceStep">RunInstanceStep</a>, <a href="#cdk-ssm-documents.SleepStep">SleepStep</a>, <a href="#cdk-ssm-documents.StringStep">StringStep</a>, <a href="#cdk-ssm-documents.WaitForResourceStep">WaitForResourceStep</a>, <a href="#cdk-ssm-documents.IAutomationComponent">IAutomationComponent</a>
+
+#### Methods <a name="Methods" id="Methods"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#cdk-ssm-documents.IAutomationComponent.addToDocument">addToDocument</a></code> | *No description.* |
+
+---
+
+##### `addToDocument` <a name="addToDocument" id="cdk-ssm-documents.IAutomationComponent.addToDocument"></a>
+
+```typescript
+public addToDocument(doc: AutomationDocumentBuilder): void
+```
+
+###### `doc`<sup>Required</sup> <a name="doc" id="cdk-ssm-documents.IAutomationComponent.addToDocument.parameter.doc"></a>
+
+- *Type:* <a href="#cdk-ssm-documents.AutomationDocumentBuilder">AutomationDocumentBuilder</a>
+
+---
+
+
 ### IAwsInvoker <a name="IAwsInvoker" id="cdk-ssm-documents.IAwsInvoker"></a>
 
 - *Implemented By:* <a href="#cdk-ssm-documents.MockAwsInvoker">MockAwsInvoker</a>, <a href="#cdk-ssm-documents.ReflectiveAwsInvoker">ReflectiveAwsInvoker</a>, <a href="#cdk-ssm-documents.IAwsInvoker">IAwsInvoker</a>
@@ -22408,6 +23456,31 @@ Given the execution inputs, return the resolved value of this variable.
 - *Type:* {[ key: string ]: any}
 
 are the execution inputs.
+
+---
+
+
+### ICommandComponent <a name="ICommandComponent" id="cdk-ssm-documents.ICommandComponent"></a>
+
+- *Implemented By:* <a href="#cdk-ssm-documents.CommandStep">CommandStep</a>, <a href="#cdk-ssm-documents.CompositeCommandStep">CompositeCommandStep</a>, <a href="#cdk-ssm-documents.PsModuleStep">PsModuleStep</a>, <a href="#cdk-ssm-documents.RunPowerShellScriptStep">RunPowerShellScriptStep</a>, <a href="#cdk-ssm-documents.RunShellScriptStep">RunShellScriptStep</a>, <a href="#cdk-ssm-documents.ICommandComponent">ICommandComponent</a>
+
+#### Methods <a name="Methods" id="Methods"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#cdk-ssm-documents.ICommandComponent.addToDocument">addToDocument</a></code> | *No description.* |
+
+---
+
+##### `addToDocument` <a name="addToDocument" id="cdk-ssm-documents.ICommandComponent.addToDocument"></a>
+
+```typescript
+public addToDocument(doc: CommandDocumentBuilder): void
+```
+
+###### `doc`<sup>Required</sup> <a name="doc" id="cdk-ssm-documents.ICommandComponent.addToDocument.parameter.doc"></a>
+
+- *Type:* <a href="#cdk-ssm-documents.CommandDocumentBuilder">CommandDocumentBuilder</a>
 
 ---
 

@@ -1,8 +1,7 @@
 import { EOL } from 'os';
-import { CfnTag, IResolvable, Aspects, Lazy } from 'aws-cdk-lib';
+import { CfnTag, IResolvable, Lazy } from 'aws-cdk-lib';
 import { CfnDocument } from 'aws-cdk-lib/aws-ssm';
 import { Construct } from 'constructs';
-import { StepCollector } from '../construct/step-collector';
 import { DataType } from '../domain/data-type';
 import { DocumentOutput } from '../domain/document-output';
 import { Input } from '../domain/input';
@@ -88,7 +87,6 @@ export abstract class SsmDocument extends Construct {
   readonly docOutputs: DocumentOutput[];
   readonly docInputs: Input[];
   readonly props: SsmDocumentProps;
-  readonly stepCollector: StepCollector;
 
   constructor(scope: Construct, id: string, props: SsmDocumentProps) {
     super(scope, id);
@@ -102,8 +100,6 @@ export abstract class SsmDocument extends Construct {
       throw new Error('Assume rold specified but not provided in inputs: ' + this.assumeRole);
     }
     this.props = props;
-    this.stepCollector = new StepCollector();
-    Aspects.of(this).add(this.stepCollector);
     const isYaml = this.props.documentFormat == DocumentFormat.YAML;
     new CfnDocument(this, this.node.id + 'CfnDoc', {
       ...this.props,
