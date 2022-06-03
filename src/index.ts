@@ -49,6 +49,7 @@ export * from './parent-steps/command/ps-module-step';
 export * from './parent-steps/command/software-inventory-step';
 export * from './parent-steps/command/update-agent-step';
 export * from './parent-steps/command/update-ssm-agent-step';
+export * from './parent-steps/command/configure-package-step';
 
 export * from './patterns/automation/reboot-instance-and-wait';
 export * from './patterns/automation/string-step';

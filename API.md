@@ -3080,6 +3080,352 @@ The tree node.
 ---
 
 
+### ConfigurePackageStep <a name="ConfigurePackageStep" id="cdk-ssm-documents.ConfigurePackageStep"></a>
+
+AutomationStep implemenation for aws:configurePackage https://docs.aws.amazon.com/systems-manager/latest/userguide/ssm-plugins.html#aws-updateagent.
+
+#### Initializers <a name="Initializers" id="cdk-ssm-documents.ConfigurePackageStep.Initializer"></a>
+
+```typescript
+import { ConfigurePackageStep } from 'cdk-ssm-documents'
+
+new ConfigurePackageStep(scope: Construct, id: string, props: ConfigurePackageStepProps)
+```
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#cdk-ssm-documents.ConfigurePackageStep.Initializer.parameter.scope">scope</a></code> | <code>constructs.Construct</code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.ConfigurePackageStep.Initializer.parameter.id">id</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.ConfigurePackageStep.Initializer.parameter.props">props</a></code> | <code><a href="#cdk-ssm-documents.ConfigurePackageStepProps">ConfigurePackageStepProps</a></code> | *No description.* |
+
+---
+
+##### `scope`<sup>Required</sup> <a name="scope" id="cdk-ssm-documents.ConfigurePackageStep.Initializer.parameter.scope"></a>
+
+- *Type:* constructs.Construct
+
+---
+
+##### `id`<sup>Required</sup> <a name="id" id="cdk-ssm-documents.ConfigurePackageStep.Initializer.parameter.id"></a>
+
+- *Type:* string
+
+---
+
+##### `props`<sup>Required</sup> <a name="props" id="cdk-ssm-documents.ConfigurePackageStep.Initializer.parameter.props"></a>
+
+- *Type:* <a href="#cdk-ssm-documents.ConfigurePackageStepProps">ConfigurePackageStepProps</a>
+
+---
+
+#### Methods <a name="Methods" id="Methods"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#cdk-ssm-documents.ConfigurePackageStep.toString">toString</a></code> | Returns a string representation of this construct. |
+| <code><a href="#cdk-ssm-documents.ConfigurePackageStep.listInputs">listInputs</a></code> | Inputs required for this command include ... |
+| <code><a href="#cdk-ssm-documents.ConfigurePackageStep.listOutputs">listOutputs</a></code> | RunCommand Steps do not have outputs. |
+| <code><a href="#cdk-ssm-documents.ConfigurePackageStep.toSsmEntry">toSsmEntry</a></code> | Converts this step into an object to prepare for yaml/json representation of this step. |
+| <code><a href="#cdk-ssm-documents.ConfigurePackageStep.addToDocument">addToDocument</a></code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.ConfigurePackageStep.variables">variables</a></code> | *No description.* |
+
+---
+
+##### `toString` <a name="toString" id="cdk-ssm-documents.ConfigurePackageStep.toString"></a>
+
+```typescript
+public toString(): string
+```
+
+Returns a string representation of this construct.
+
+##### `listInputs` <a name="listInputs" id="cdk-ssm-documents.ConfigurePackageStep.listInputs"></a>
+
+```typescript
+public listInputs(): string[]
+```
+
+Inputs required for this command include ...
+
+##### `listOutputs` <a name="listOutputs" id="cdk-ssm-documents.ConfigurePackageStep.listOutputs"></a>
+
+```typescript
+public listOutputs(): Output[]
+```
+
+RunCommand Steps do not have outputs.
+
+##### `toSsmEntry` <a name="toSsmEntry" id="cdk-ssm-documents.ConfigurePackageStep.toSsmEntry"></a>
+
+```typescript
+public toSsmEntry(): {[ key: string ]: any}
+```
+
+Converts this step into an object to prepare for yaml/json representation of this step.
+
+##### `addToDocument` <a name="addToDocument" id="cdk-ssm-documents.ConfigurePackageStep.addToDocument"></a>
+
+```typescript
+public addToDocument(doc: CommandDocumentBuilder): void
+```
+
+###### `doc`<sup>Required</sup> <a name="doc" id="cdk-ssm-documents.ConfigurePackageStep.addToDocument.parameter.doc"></a>
+
+- *Type:* <a href="#cdk-ssm-documents.CommandDocumentBuilder">CommandDocumentBuilder</a>
+
+---
+
+##### `variables` <a name="variables" id="cdk-ssm-documents.ConfigurePackageStep.variables"></a>
+
+```typescript
+public variables(): {[ key: string ]: any}
+```
+
+#### Static Functions <a name="Static Functions" id="Static Functions"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#cdk-ssm-documents.ConfigurePackageStep.isConstruct">isConstruct</a></code> | Checks if `x` is a construct. |
+
+---
+
+##### ~~`isConstruct`~~ <a name="isConstruct" id="cdk-ssm-documents.ConfigurePackageStep.isConstruct"></a>
+
+```typescript
+import { ConfigurePackageStep } from 'cdk-ssm-documents'
+
+ConfigurePackageStep.isConstruct(x: any)
+```
+
+Checks if `x` is a construct.
+
+###### `x`<sup>Required</sup> <a name="x" id="cdk-ssm-documents.ConfigurePackageStep.isConstruct.parameter.x"></a>
+
+- *Type:* any
+
+Any object.
+
+---
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#cdk-ssm-documents.ConfigurePackageStep.property.node">node</a></code> | <code>constructs.Node</code> | The tree node. |
+| <code><a href="#cdk-ssm-documents.ConfigurePackageStep.property.action">action</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.ConfigurePackageStep.property.inputObserver">inputObserver</a></code> | <code><a href="#cdk-ssm-documents.IObserver">IObserver</a></code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.ConfigurePackageStep.property.name">name</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.ConfigurePackageStep.property.outputObserver">outputObserver</a></code> | <code><a href="#cdk-ssm-documents.IObserver">IObserver</a></code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.ConfigurePackageStep.property.description">description</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.ConfigurePackageStep.property.exitOnFailure">exitOnFailure</a></code> | <code>boolean</code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.ConfigurePackageStep.property.exitOnSuccess">exitOnSuccess</a></code> | <code>boolean</code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.ConfigurePackageStep.property.finallyStep">finallyStep</a></code> | <code>boolean</code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.ConfigurePackageStep.property.markSuccessAndExitOnFailure">markSuccessAndExitOnFailure</a></code> | <code>boolean</code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.ConfigurePackageStep.property.platforms">platforms</a></code> | <code><a href="#cdk-ssm-documents.Platform">Platform</a>[]</code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.ConfigurePackageStep.property.precondition">precondition</a></code> | <code><a href="#cdk-ssm-documents.Precondition">Precondition</a></code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.ConfigurePackageStep.property.allStepsInExecution">allStepsInExecution</a></code> | <code><a href="#cdk-ssm-documents.CommandStep">CommandStep</a>[]</code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.ConfigurePackageStep.property.nextStep">nextStep</a></code> | <code><a href="#cdk-ssm-documents.CommandStep">CommandStep</a></code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.ConfigurePackageStep.property.packageAction">packageAction</a></code> | <code><a href="#cdk-ssm-documents.IStringVariable">IStringVariable</a></code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.ConfigurePackageStep.property.packageName">packageName</a></code> | <code><a href="#cdk-ssm-documents.IStringVariable">IStringVariable</a></code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.ConfigurePackageStep.property.additionalArguments">additionalArguments</a></code> | <code><a href="#cdk-ssm-documents.IStringMapVariable">IStringMapVariable</a></code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.ConfigurePackageStep.property.installationType">installationType</a></code> | <code><a href="#cdk-ssm-documents.IStringVariable">IStringVariable</a></code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.ConfigurePackageStep.property.version">version</a></code> | <code><a href="#cdk-ssm-documents.IStringVariable">IStringVariable</a></code> | *No description.* |
+
+---
+
+##### `node`<sup>Required</sup> <a name="node" id="cdk-ssm-documents.ConfigurePackageStep.property.node"></a>
+
+```typescript
+public readonly node: Node;
+```
+
+- *Type:* constructs.Node
+
+The tree node.
+
+---
+
+##### `action`<sup>Required</sup> <a name="action" id="cdk-ssm-documents.ConfigurePackageStep.property.action"></a>
+
+```typescript
+public readonly action: string;
+```
+
+- *Type:* string
+
+---
+
+##### `inputObserver`<sup>Required</sup> <a name="inputObserver" id="cdk-ssm-documents.ConfigurePackageStep.property.inputObserver"></a>
+
+```typescript
+public readonly inputObserver: IObserver;
+```
+
+- *Type:* <a href="#cdk-ssm-documents.IObserver">IObserver</a>
+
+---
+
+##### `name`<sup>Required</sup> <a name="name" id="cdk-ssm-documents.ConfigurePackageStep.property.name"></a>
+
+```typescript
+public readonly name: string;
+```
+
+- *Type:* string
+
+---
+
+##### `outputObserver`<sup>Required</sup> <a name="outputObserver" id="cdk-ssm-documents.ConfigurePackageStep.property.outputObserver"></a>
+
+```typescript
+public readonly outputObserver: IObserver;
+```
+
+- *Type:* <a href="#cdk-ssm-documents.IObserver">IObserver</a>
+
+---
+
+##### `description`<sup>Optional</sup> <a name="description" id="cdk-ssm-documents.ConfigurePackageStep.property.description"></a>
+
+```typescript
+public readonly description: string;
+```
+
+- *Type:* string
+
+---
+
+##### `exitOnFailure`<sup>Required</sup> <a name="exitOnFailure" id="cdk-ssm-documents.ConfigurePackageStep.property.exitOnFailure"></a>
+
+```typescript
+public readonly exitOnFailure: boolean;
+```
+
+- *Type:* boolean
+
+---
+
+##### `exitOnSuccess`<sup>Required</sup> <a name="exitOnSuccess" id="cdk-ssm-documents.ConfigurePackageStep.property.exitOnSuccess"></a>
+
+```typescript
+public readonly exitOnSuccess: boolean;
+```
+
+- *Type:* boolean
+
+---
+
+##### `finallyStep`<sup>Required</sup> <a name="finallyStep" id="cdk-ssm-documents.ConfigurePackageStep.property.finallyStep"></a>
+
+```typescript
+public readonly finallyStep: boolean;
+```
+
+- *Type:* boolean
+
+---
+
+##### `markSuccessAndExitOnFailure`<sup>Required</sup> <a name="markSuccessAndExitOnFailure" id="cdk-ssm-documents.ConfigurePackageStep.property.markSuccessAndExitOnFailure"></a>
+
+```typescript
+public readonly markSuccessAndExitOnFailure: boolean;
+```
+
+- *Type:* boolean
+
+---
+
+##### `platforms`<sup>Required</sup> <a name="platforms" id="cdk-ssm-documents.ConfigurePackageStep.property.platforms"></a>
+
+```typescript
+public readonly platforms: Platform[];
+```
+
+- *Type:* <a href="#cdk-ssm-documents.Platform">Platform</a>[]
+
+---
+
+##### `precondition`<sup>Optional</sup> <a name="precondition" id="cdk-ssm-documents.ConfigurePackageStep.property.precondition"></a>
+
+```typescript
+public readonly precondition: Precondition;
+```
+
+- *Type:* <a href="#cdk-ssm-documents.Precondition">Precondition</a>
+
+---
+
+##### `allStepsInExecution`<sup>Optional</sup> <a name="allStepsInExecution" id="cdk-ssm-documents.ConfigurePackageStep.property.allStepsInExecution"></a>
+
+```typescript
+public readonly allStepsInExecution: CommandStep[];
+```
+
+- *Type:* <a href="#cdk-ssm-documents.CommandStep">CommandStep</a>[]
+
+---
+
+##### `nextStep`<sup>Optional</sup> <a name="nextStep" id="cdk-ssm-documents.ConfigurePackageStep.property.nextStep"></a>
+
+```typescript
+public readonly nextStep: CommandStep;
+```
+
+- *Type:* <a href="#cdk-ssm-documents.CommandStep">CommandStep</a>
+
+---
+
+##### `packageAction`<sup>Required</sup> <a name="packageAction" id="cdk-ssm-documents.ConfigurePackageStep.property.packageAction"></a>
+
+```typescript
+public readonly packageAction: IStringVariable;
+```
+
+- *Type:* <a href="#cdk-ssm-documents.IStringVariable">IStringVariable</a>
+
+---
+
+##### `packageName`<sup>Required</sup> <a name="packageName" id="cdk-ssm-documents.ConfigurePackageStep.property.packageName"></a>
+
+```typescript
+public readonly packageName: IStringVariable;
+```
+
+- *Type:* <a href="#cdk-ssm-documents.IStringVariable">IStringVariable</a>
+
+---
+
+##### `additionalArguments`<sup>Optional</sup> <a name="additionalArguments" id="cdk-ssm-documents.ConfigurePackageStep.property.additionalArguments"></a>
+
+```typescript
+public readonly additionalArguments: IStringMapVariable;
+```
+
+- *Type:* <a href="#cdk-ssm-documents.IStringMapVariable">IStringMapVariable</a>
+
+---
+
+##### `installationType`<sup>Optional</sup> <a name="installationType" id="cdk-ssm-documents.ConfigurePackageStep.property.installationType"></a>
+
+```typescript
+public readonly installationType: IStringVariable;
+```
+
+- *Type:* <a href="#cdk-ssm-documents.IStringVariable">IStringVariable</a>
+
+---
+
+##### `version`<sup>Optional</sup> <a name="version" id="cdk-ssm-documents.ConfigurePackageStep.property.version"></a>
+
+```typescript
+public readonly version: IStringVariable;
+```
+
+- *Type:* <a href="#cdk-ssm-documents.IStringVariable">IStringVariable</a>
+
+---
+
+
 ### CopyImageStep <a name="CopyImageStep" id="cdk-ssm-documents.CopyImageStep"></a>
 
 AutomationStep implemenation for aws:copyImage https://docs.aws.amazon.com/systems-manager/latest/userguide/automation-action-copyimage.html.
@@ -14679,6 +15025,253 @@ public readonly precondition: Precondition;
 (Optional) A precondition to test before execution occurrs.
 
 When the precondition isn't met, the command step isn't executed.
+
+---
+
+### ConfigurePackageStepProps <a name="ConfigurePackageStepProps" id="cdk-ssm-documents.ConfigurePackageStepProps"></a>
+
+Properties ConfigurePackage step.
+
+#### Initializer <a name="Initializer" id="cdk-ssm-documents.ConfigurePackageStepProps.Initializer"></a>
+
+```typescript
+import { ConfigurePackageStepProps } from 'cdk-ssm-documents'
+
+const configurePackageStepProps: ConfigurePackageStepProps = { ... }
+```
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#cdk-ssm-documents.ConfigurePackageStepProps.property.description">description</a></code> | <code>string</code> | (Optional) description of the current step. |
+| <code><a href="#cdk-ssm-documents.ConfigurePackageStepProps.property.inputObserver">inputObserver</a></code> | <code><a href="#cdk-ssm-documents.IObserver">IObserver</a></code> | (Optional) Allows for observing the input to steps as they run. |
+| <code><a href="#cdk-ssm-documents.ConfigurePackageStepProps.property.name">name</a></code> | <code>string</code> | (Optional) Name of the current step. |
+| <code><a href="#cdk-ssm-documents.ConfigurePackageStepProps.property.outputObserver">outputObserver</a></code> | <code><a href="#cdk-ssm-documents.IObserver">IObserver</a></code> | (Optional) Allows for observing the output of steps as they run. |
+| <code><a href="#cdk-ssm-documents.ConfigurePackageStepProps.property.exitOnFailure">exitOnFailure</a></code> | <code>boolean</code> | (Optional) Whether to exit the document execution after failed execution of this step. |
+| <code><a href="#cdk-ssm-documents.ConfigurePackageStepProps.property.exitOnSuccess">exitOnSuccess</a></code> | <code>boolean</code> | (Optional) Whether to exit the document execution after successful execution of this step. |
+| <code><a href="#cdk-ssm-documents.ConfigurePackageStepProps.property.finallyStep">finallyStep</a></code> | <code>boolean</code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.ConfigurePackageStepProps.property.markSuccessAndExitOnFailure">markSuccessAndExitOnFailure</a></code> | <code>boolean</code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.ConfigurePackageStepProps.property.onCancel">onCancel</a></code> | <code><a href="#cdk-ssm-documents.Step">Step</a></code> | (Optional) Step to jump to in the event that this step is cancelled. |
+| <code><a href="#cdk-ssm-documents.ConfigurePackageStepProps.property.precondition">precondition</a></code> | <code><a href="#cdk-ssm-documents.Precondition">Precondition</a></code> | (Optional) A precondition to test before execution occurrs. |
+| <code><a href="#cdk-ssm-documents.ConfigurePackageStepProps.property.packageAction">packageAction</a></code> | <code><a href="#cdk-ssm-documents.IStringVariable">IStringVariable</a></code> | Install or uninstall a package. |
+| <code><a href="#cdk-ssm-documents.ConfigurePackageStepProps.property.packageName">packageName</a></code> | <code><a href="#cdk-ssm-documents.IStringVariable">IStringVariable</a></code> | The name of the AWS package to install or uninstall. |
+| <code><a href="#cdk-ssm-documents.ConfigurePackageStepProps.property.additionalArguments">additionalArguments</a></code> | <code><a href="#cdk-ssm-documents.IStringMapVariable">IStringMapVariable</a></code> | The additional parameters to provide to your install, uninstall, or update scripts. |
+| <code><a href="#cdk-ssm-documents.ConfigurePackageStepProps.property.installationType">installationType</a></code> | <code><a href="#cdk-ssm-documents.IStringVariable">IStringVariable</a></code> | The type of installation to perform. |
+| <code><a href="#cdk-ssm-documents.ConfigurePackageStepProps.property.version">version</a></code> | <code><a href="#cdk-ssm-documents.IStringVariable">IStringVariable</a></code> | A specific version of the package to install or uninstall. |
+
+---
+
+##### `description`<sup>Optional</sup> <a name="description" id="cdk-ssm-documents.ConfigurePackageStepProps.property.description"></a>
+
+```typescript
+public readonly description: string;
+```
+
+- *Type:* string
+- *Default:* undefined
+
+(Optional) description of the current step.
+
+---
+
+##### `inputObserver`<sup>Optional</sup> <a name="inputObserver" id="cdk-ssm-documents.ConfigurePackageStepProps.property.inputObserver"></a>
+
+```typescript
+public readonly inputObserver: IObserver;
+```
+
+- *Type:* <a href="#cdk-ssm-documents.IObserver">IObserver</a>
+- *Default:* NoopObserver
+
+(Optional) Allows for observing the input to steps as they run.
+
+---
+
+##### `name`<sup>Optional</sup> <a name="name" id="cdk-ssm-documents.ConfigurePackageStepProps.property.name"></a>
+
+```typescript
+public readonly name: string;
+```
+
+- *Type:* string
+
+(Optional) Name of the current step.
+
+The name will be prepended onto all of the outputs emitted from this step.
+This name will also be used to reference this step in logs.
+Defaults to the id of the CDK node.
+
+---
+
+##### `outputObserver`<sup>Optional</sup> <a name="outputObserver" id="cdk-ssm-documents.ConfigurePackageStepProps.property.outputObserver"></a>
+
+```typescript
+public readonly outputObserver: IObserver;
+```
+
+- *Type:* <a href="#cdk-ssm-documents.IObserver">IObserver</a>
+- *Default:* NoopObserver
+
+(Optional) Allows for observing the output of steps as they run.
+
+---
+
+##### `exitOnFailure`<sup>Optional</sup> <a name="exitOnFailure" id="cdk-ssm-documents.ConfigurePackageStepProps.property.exitOnFailure"></a>
+
+```typescript
+public readonly exitOnFailure: boolean;
+```
+
+- *Type:* boolean
+- *Default:* false
+
+(Optional) Whether to exit the document execution after failed execution of this step.
+
+Finally step will be run.
+
+---
+
+##### `exitOnSuccess`<sup>Optional</sup> <a name="exitOnSuccess" id="cdk-ssm-documents.ConfigurePackageStepProps.property.exitOnSuccess"></a>
+
+```typescript
+public readonly exitOnSuccess: boolean;
+```
+
+- *Type:* boolean
+- *Default:* false
+
+(Optional) Whether to exit the document execution after successful execution of this step.
+
+Finally step will be run.
+
+---
+
+##### `finallyStep`<sup>Optional</sup> <a name="finallyStep" id="cdk-ssm-documents.ConfigurePackageStepProps.property.finallyStep"></a>
+
+```typescript
+public readonly finallyStep: boolean;
+```
+
+- *Type:* boolean
+
+---
+
+##### `markSuccessAndExitOnFailure`<sup>Optional</sup> <a name="markSuccessAndExitOnFailure" id="cdk-ssm-documents.ConfigurePackageStepProps.property.markSuccessAndExitOnFailure"></a>
+
+```typescript
+public readonly markSuccessAndExitOnFailure: boolean;
+```
+
+- *Type:* boolean
+
+---
+
+##### `onCancel`<sup>Optional</sup> <a name="onCancel" id="cdk-ssm-documents.ConfigurePackageStepProps.property.onCancel"></a>
+
+```typescript
+public readonly onCancel: Step;
+```
+
+- *Type:* <a href="#cdk-ssm-documents.Step">Step</a>
+- *Default:* undefined
+
+(Optional) Step to jump to in the event that this step is cancelled.
+
+---
+
+##### `precondition`<sup>Optional</sup> <a name="precondition" id="cdk-ssm-documents.ConfigurePackageStepProps.property.precondition"></a>
+
+```typescript
+public readonly precondition: Precondition;
+```
+
+- *Type:* <a href="#cdk-ssm-documents.Precondition">Precondition</a>
+- *Default:* undefined
+
+(Optional) A precondition to test before execution occurrs.
+
+When the precondition isn't met, the command step isn't executed.
+
+---
+
+##### `packageAction`<sup>Required</sup> <a name="packageAction" id="cdk-ssm-documents.ConfigurePackageStepProps.property.packageAction"></a>
+
+```typescript
+public readonly packageAction: IStringVariable;
+```
+
+- *Type:* <a href="#cdk-ssm-documents.IStringVariable">IStringVariable</a>
+
+Install or uninstall a package.
+
+---
+
+##### `packageName`<sup>Required</sup> <a name="packageName" id="cdk-ssm-documents.ConfigurePackageStepProps.property.packageName"></a>
+
+```typescript
+public readonly packageName: IStringVariable;
+```
+
+- *Type:* <a href="#cdk-ssm-documents.IStringVariable">IStringVariable</a>
+
+The name of the AWS package to install or uninstall.
+
+Available packages include the following: AWSPVDriver, AwsEnaNetworkDriver, AwsVssComponents, and AmazonCloudWatchAgent.
+
+---
+
+##### `additionalArguments`<sup>Optional</sup> <a name="additionalArguments" id="cdk-ssm-documents.ConfigurePackageStepProps.property.additionalArguments"></a>
+
+```typescript
+public readonly additionalArguments: IStringMapVariable;
+```
+
+- *Type:* <a href="#cdk-ssm-documents.IStringMapVariable">IStringMapVariable</a>
+
+The additional parameters to provide to your install, uninstall, or update scripts.
+
+Each parameter must be prefixed with SSM_.
+You can reference a Parameter Store parameter in your additional arguments by using the convention {{ssm:parameter-name}}.
+To use the additional parameter in your install, uninstall, or update script,
+you must reference the parameter as an environment variable using the syntax appropriate for the operating system.
+For example, in PowerShell, you reference the SSM_arg argument as $Env:SSM_arg.
+There is no limit to the number of arguments you define, but the additional argument input has a 4096 character limit.
+This limit includes all of the keys and values you define.
+
+---
+
+##### `installationType`<sup>Optional</sup> <a name="installationType" id="cdk-ssm-documents.ConfigurePackageStepProps.property.installationType"></a>
+
+```typescript
+public readonly installationType: IStringVariable;
+```
+
+- *Type:* <a href="#cdk-ssm-documents.IStringVariable">IStringVariable</a>
+
+The type of installation to perform.
+
+If you specify Uninstall and reinstall, the package is completely uninstalled, and then reinstalled.
+The application is unavailable until the reinstallation is complete.
+If you specify In-place update, only new or changed files are added to the existing installation according you instructions you provide in an update script.
+The application remains available throughout the update process.
+The In-place update option isn't supported for AWS-published packages. Uninstall and reinstall is the default value.
+
+---
+
+##### `version`<sup>Optional</sup> <a name="version" id="cdk-ssm-documents.ConfigurePackageStepProps.property.version"></a>
+
+```typescript
+public readonly version: IStringVariable;
+```
+
+- *Type:* <a href="#cdk-ssm-documents.IStringVariable">IStringVariable</a>
+
+A specific version of the package to install or uninstall.
+
+If installing, the system installs the latest published version, by default.
+If uninstalling, the system uninstalls the currently installed version, by default.
+If no installed version is found, the latest published version is downloaded, and the uninstall action is run.
 
 ---
 
