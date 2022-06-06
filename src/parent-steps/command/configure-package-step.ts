@@ -63,7 +63,7 @@ export class ConfigurePackageStep extends CommandStep {
   readonly additionalArguments?: IStringMapVariable;
   readonly version?: IStringVariable;
 
-  readonly platforms = [Platform.WINDOWS];
+  readonly platforms = [Platform.WINDOWS, Platform.LINUX];
   readonly action = 'aws:configurePackage';
 
   constructor(scope: Construct, id: string, props: ConfigurePackageStepProps) {
