@@ -1,9 +1,9 @@
 import { Construct } from 'constructs';
+import { AutomationDocumentBuilder } from '../../document/document-builder';
+import { AutomationStep } from '../../parent-steps/automation-step';
 import { AssertAwsResourceStep, AssertAwsResourceStepProps } from '../../parent-steps/automation/assert-aws-resource-step';
 import { WaitForResourceStep } from '../../parent-steps/automation/wait-for-resource-step';
 import { CompositeAutomationStep } from './composite-step';
-import { AutomationDocumentBuilder } from '../../document/document-builder';
-import { AutomationStep } from '../../parent-steps/automation-step';
 
 /**
  * Properties of WaitForAndAssertResource

@@ -1,8 +1,8 @@
 import { Construct } from 'constructs';
-import { CommandStep } from '../parent-steps/command-step';
-import { SsmDocumentProps, SsmDocument } from './ssm-document';
-import { CommandDocumentBuilder } from './document-builder';
 import { ICommandComponent } from '../construct/document-component';
+import { CommandStep } from '../parent-steps/command-step';
+import { CommandDocumentBuilder } from './document-builder';
+import { SsmDocumentProps, SsmDocument } from './ssm-document';
 
 export interface CommandDocumentProps extends SsmDocumentProps {
 

@@ -1,8 +1,8 @@
 import { strict as assert } from 'assert';
+import { Stack } from 'aws-cdk-lib';
 import { MockAwsInvoker, ResponseCode } from '../../lib';
 import { WaitForAndAssertResource } from '../../lib/patterns/automation/wait-for-and-assert-resource';
 import { simulatePattern } from '../../lib/utils/simulate-pattern';
-import { Stack } from 'aws-cdk-lib';
 
 describe('simulatePattern', () => {
   it('returns the result of the simulation', () => {

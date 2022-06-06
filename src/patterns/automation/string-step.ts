@@ -6,6 +6,7 @@ import { DataType } from '../../domain/data-type';
 import { OperationEvaluator } from '../../domain/operation';
 import { Output } from '../../domain/output';
 import { HardCodedString, IStringVariable, StringVariable } from '../../interface/variables/string-variable';
+import { AutomationStep } from '../../parent-steps/automation-step';
 import { AssertAwsResourceStep } from '../../parent-steps/automation/assert-aws-resource-step';
 import { AwsApiStep } from '../../parent-steps/automation/aws-api-step';
 import { BranchStep } from '../../parent-steps/automation/branch-step';
@@ -14,7 +15,6 @@ import { PauseStep } from '../../parent-steps/automation/pause-step';
 import { SleepStep } from '../../parent-steps/automation/sleep-step';
 import { WaitForResourceStep } from '../../parent-steps/automation/wait-for-resource-step';
 import { CompositeAutomationStep } from './composite-step';
-import { AutomationStep } from '../../parent-steps/automation-step';
 // eslint-disable-next-line
 const yaml = require('js-yaml');
 

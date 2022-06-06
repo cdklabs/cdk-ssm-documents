@@ -1,8 +1,8 @@
 import { Construct } from 'constructs';
-import { AutomationStep } from '../parent-steps/automation-step';
-import { SsmDocumentProps, SsmDocument } from './ssm-document';
-import { AutomationDocumentBuilder } from './document-builder';
 import { IAutomationComponent } from '../construct/document-component';
+import { AutomationStep } from '../parent-steps/automation-step';
+import { AutomationDocumentBuilder } from './document-builder';
+import { SsmDocumentProps, SsmDocument } from './ssm-document';
 
 /**
  * Options for AutomationDocument
