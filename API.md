@@ -3080,6 +3080,308 @@ The tree node.
 ---
 
 
+### ConfigureDockerStep <a name="ConfigureDockerStep" id="cdk-ssm-documents.ConfigureDockerStep"></a>
+
+AutomationStep implemenation for aws:UpdateAgent https://docs.aws.amazon.com/systems-manager/latest/userguide/ssm-plugins.html#aws-configuredocker.
+
+#### Initializers <a name="Initializers" id="cdk-ssm-documents.ConfigureDockerStep.Initializer"></a>
+
+```typescript
+import { ConfigureDockerStep } from 'cdk-ssm-documents'
+
+new ConfigureDockerStep(scope: Construct, id: string, props: ConfigureDockerStepProps)
+```
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#cdk-ssm-documents.ConfigureDockerStep.Initializer.parameter.scope">scope</a></code> | <code>constructs.Construct</code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.ConfigureDockerStep.Initializer.parameter.id">id</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.ConfigureDockerStep.Initializer.parameter.props">props</a></code> | <code><a href="#cdk-ssm-documents.ConfigureDockerStepProps">ConfigureDockerStepProps</a></code> | *No description.* |
+
+---
+
+##### `scope`<sup>Required</sup> <a name="scope" id="cdk-ssm-documents.ConfigureDockerStep.Initializer.parameter.scope"></a>
+
+- *Type:* constructs.Construct
+
+---
+
+##### `id`<sup>Required</sup> <a name="id" id="cdk-ssm-documents.ConfigureDockerStep.Initializer.parameter.id"></a>
+
+- *Type:* string
+
+---
+
+##### `props`<sup>Required</sup> <a name="props" id="cdk-ssm-documents.ConfigureDockerStep.Initializer.parameter.props"></a>
+
+- *Type:* <a href="#cdk-ssm-documents.ConfigureDockerStepProps">ConfigureDockerStepProps</a>
+
+---
+
+#### Methods <a name="Methods" id="Methods"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#cdk-ssm-documents.ConfigureDockerStep.toString">toString</a></code> | Returns a string representation of this construct. |
+| <code><a href="#cdk-ssm-documents.ConfigureDockerStep.listInputs">listInputs</a></code> | Inputs required for this command include agentName allowDowngrade source and targetVersion if version other than latest is desired. |
+| <code><a href="#cdk-ssm-documents.ConfigureDockerStep.listOutputs">listOutputs</a></code> | RunCommand Steps do not have outputs. |
+| <code><a href="#cdk-ssm-documents.ConfigureDockerStep.toSsmEntry">toSsmEntry</a></code> | Converts this step into an object to prepare for yaml/json representation of this step. |
+| <code><a href="#cdk-ssm-documents.ConfigureDockerStep.addToDocument">addToDocument</a></code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.ConfigureDockerStep.variables">variables</a></code> | *No description.* |
+
+---
+
+##### `toString` <a name="toString" id="cdk-ssm-documents.ConfigureDockerStep.toString"></a>
+
+```typescript
+public toString(): string
+```
+
+Returns a string representation of this construct.
+
+##### `listInputs` <a name="listInputs" id="cdk-ssm-documents.ConfigureDockerStep.listInputs"></a>
+
+```typescript
+public listInputs(): string[]
+```
+
+Inputs required for this command include agentName allowDowngrade source and targetVersion if version other than latest is desired.
+
+##### `listOutputs` <a name="listOutputs" id="cdk-ssm-documents.ConfigureDockerStep.listOutputs"></a>
+
+```typescript
+public listOutputs(): Output[]
+```
+
+RunCommand Steps do not have outputs.
+
+##### `toSsmEntry` <a name="toSsmEntry" id="cdk-ssm-documents.ConfigureDockerStep.toSsmEntry"></a>
+
+```typescript
+public toSsmEntry(): {[ key: string ]: any}
+```
+
+Converts this step into an object to prepare for yaml/json representation of this step.
+
+##### `addToDocument` <a name="addToDocument" id="cdk-ssm-documents.ConfigureDockerStep.addToDocument"></a>
+
+```typescript
+public addToDocument(doc: CommandDocumentBuilder): void
+```
+
+###### `doc`<sup>Required</sup> <a name="doc" id="cdk-ssm-documents.ConfigureDockerStep.addToDocument.parameter.doc"></a>
+
+- *Type:* <a href="#cdk-ssm-documents.CommandDocumentBuilder">CommandDocumentBuilder</a>
+
+---
+
+##### `variables` <a name="variables" id="cdk-ssm-documents.ConfigureDockerStep.variables"></a>
+
+```typescript
+public variables(): {[ key: string ]: any}
+```
+
+#### Static Functions <a name="Static Functions" id="Static Functions"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#cdk-ssm-documents.ConfigureDockerStep.isConstruct">isConstruct</a></code> | Checks if `x` is a construct. |
+
+---
+
+##### ~~`isConstruct`~~ <a name="isConstruct" id="cdk-ssm-documents.ConfigureDockerStep.isConstruct"></a>
+
+```typescript
+import { ConfigureDockerStep } from 'cdk-ssm-documents'
+
+ConfigureDockerStep.isConstruct(x: any)
+```
+
+Checks if `x` is a construct.
+
+###### `x`<sup>Required</sup> <a name="x" id="cdk-ssm-documents.ConfigureDockerStep.isConstruct.parameter.x"></a>
+
+- *Type:* any
+
+Any object.
+
+---
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#cdk-ssm-documents.ConfigureDockerStep.property.node">node</a></code> | <code>constructs.Node</code> | The tree node. |
+| <code><a href="#cdk-ssm-documents.ConfigureDockerStep.property.action">action</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.ConfigureDockerStep.property.inputObserver">inputObserver</a></code> | <code><a href="#cdk-ssm-documents.IObserver">IObserver</a></code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.ConfigureDockerStep.property.name">name</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.ConfigureDockerStep.property.outputObserver">outputObserver</a></code> | <code><a href="#cdk-ssm-documents.IObserver">IObserver</a></code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.ConfigureDockerStep.property.description">description</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.ConfigureDockerStep.property.exitOnFailure">exitOnFailure</a></code> | <code>boolean</code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.ConfigureDockerStep.property.exitOnSuccess">exitOnSuccess</a></code> | <code>boolean</code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.ConfigureDockerStep.property.finallyStep">finallyStep</a></code> | <code>boolean</code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.ConfigureDockerStep.property.markSuccessAndExitOnFailure">markSuccessAndExitOnFailure</a></code> | <code>boolean</code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.ConfigureDockerStep.property.platforms">platforms</a></code> | <code><a href="#cdk-ssm-documents.Platform">Platform</a>[]</code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.ConfigureDockerStep.property.precondition">precondition</a></code> | <code><a href="#cdk-ssm-documents.Precondition">Precondition</a></code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.ConfigureDockerStep.property.allStepsInExecution">allStepsInExecution</a></code> | <code><a href="#cdk-ssm-documents.CommandStep">CommandStep</a>[]</code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.ConfigureDockerStep.property.nextStep">nextStep</a></code> | <code><a href="#cdk-ssm-documents.CommandStep">CommandStep</a></code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.ConfigureDockerStep.property.installAction">installAction</a></code> | <code><a href="#cdk-ssm-documents.IActionVariable">IActionVariable</a></code> | *No description.* |
+
+---
+
+##### `node`<sup>Required</sup> <a name="node" id="cdk-ssm-documents.ConfigureDockerStep.property.node"></a>
+
+```typescript
+public readonly node: Node;
+```
+
+- *Type:* constructs.Node
+
+The tree node.
+
+---
+
+##### `action`<sup>Required</sup> <a name="action" id="cdk-ssm-documents.ConfigureDockerStep.property.action"></a>
+
+```typescript
+public readonly action: string;
+```
+
+- *Type:* string
+
+---
+
+##### `inputObserver`<sup>Required</sup> <a name="inputObserver" id="cdk-ssm-documents.ConfigureDockerStep.property.inputObserver"></a>
+
+```typescript
+public readonly inputObserver: IObserver;
+```
+
+- *Type:* <a href="#cdk-ssm-documents.IObserver">IObserver</a>
+
+---
+
+##### `name`<sup>Required</sup> <a name="name" id="cdk-ssm-documents.ConfigureDockerStep.property.name"></a>
+
+```typescript
+public readonly name: string;
+```
+
+- *Type:* string
+
+---
+
+##### `outputObserver`<sup>Required</sup> <a name="outputObserver" id="cdk-ssm-documents.ConfigureDockerStep.property.outputObserver"></a>
+
+```typescript
+public readonly outputObserver: IObserver;
+```
+
+- *Type:* <a href="#cdk-ssm-documents.IObserver">IObserver</a>
+
+---
+
+##### `description`<sup>Optional</sup> <a name="description" id="cdk-ssm-documents.ConfigureDockerStep.property.description"></a>
+
+```typescript
+public readonly description: string;
+```
+
+- *Type:* string
+
+---
+
+##### `exitOnFailure`<sup>Required</sup> <a name="exitOnFailure" id="cdk-ssm-documents.ConfigureDockerStep.property.exitOnFailure"></a>
+
+```typescript
+public readonly exitOnFailure: boolean;
+```
+
+- *Type:* boolean
+
+---
+
+##### `exitOnSuccess`<sup>Required</sup> <a name="exitOnSuccess" id="cdk-ssm-documents.ConfigureDockerStep.property.exitOnSuccess"></a>
+
+```typescript
+public readonly exitOnSuccess: boolean;
+```
+
+- *Type:* boolean
+
+---
+
+##### `finallyStep`<sup>Required</sup> <a name="finallyStep" id="cdk-ssm-documents.ConfigureDockerStep.property.finallyStep"></a>
+
+```typescript
+public readonly finallyStep: boolean;
+```
+
+- *Type:* boolean
+
+---
+
+##### `markSuccessAndExitOnFailure`<sup>Required</sup> <a name="markSuccessAndExitOnFailure" id="cdk-ssm-documents.ConfigureDockerStep.property.markSuccessAndExitOnFailure"></a>
+
+```typescript
+public readonly markSuccessAndExitOnFailure: boolean;
+```
+
+- *Type:* boolean
+
+---
+
+##### `platforms`<sup>Required</sup> <a name="platforms" id="cdk-ssm-documents.ConfigureDockerStep.property.platforms"></a>
+
+```typescript
+public readonly platforms: Platform[];
+```
+
+- *Type:* <a href="#cdk-ssm-documents.Platform">Platform</a>[]
+
+---
+
+##### `precondition`<sup>Optional</sup> <a name="precondition" id="cdk-ssm-documents.ConfigureDockerStep.property.precondition"></a>
+
+```typescript
+public readonly precondition: Precondition;
+```
+
+- *Type:* <a href="#cdk-ssm-documents.Precondition">Precondition</a>
+
+---
+
+##### `allStepsInExecution`<sup>Optional</sup> <a name="allStepsInExecution" id="cdk-ssm-documents.ConfigureDockerStep.property.allStepsInExecution"></a>
+
+```typescript
+public readonly allStepsInExecution: CommandStep[];
+```
+
+- *Type:* <a href="#cdk-ssm-documents.CommandStep">CommandStep</a>[]
+
+---
+
+##### `nextStep`<sup>Optional</sup> <a name="nextStep" id="cdk-ssm-documents.ConfigureDockerStep.property.nextStep"></a>
+
+```typescript
+public readonly nextStep: CommandStep;
+```
+
+- *Type:* <a href="#cdk-ssm-documents.CommandStep">CommandStep</a>
+
+---
+
+##### `installAction`<sup>Required</sup> <a name="installAction" id="cdk-ssm-documents.ConfigureDockerStep.property.installAction"></a>
+
+```typescript
+public readonly installAction: IActionVariable;
+```
+
+- *Type:* <a href="#cdk-ssm-documents.IActionVariable">IActionVariable</a>
+
+---
+
+
 ### ConfigurePackageStep <a name="ConfigurePackageStep" id="cdk-ssm-documents.ConfigurePackageStep"></a>
 
 CommandStep implemenation for aws:configurePackage https://docs.aws.amazon.com/systems-manager/latest/userguide/ssm-plugins.html#aws-configurepackage.
@@ -15028,6 +15330,183 @@ When the precondition isn't met, the command step isn't executed.
 
 ---
 
+### ConfigureDockerStepProps <a name="ConfigureDockerStepProps" id="cdk-ssm-documents.ConfigureDockerStepProps"></a>
+
+Properties for ConfigureDocker step.
+
+#### Initializer <a name="Initializer" id="cdk-ssm-documents.ConfigureDockerStepProps.Initializer"></a>
+
+```typescript
+import { ConfigureDockerStepProps } from 'cdk-ssm-documents'
+
+const configureDockerStepProps: ConfigureDockerStepProps = { ... }
+```
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#cdk-ssm-documents.ConfigureDockerStepProps.property.description">description</a></code> | <code>string</code> | (Optional) description of the current step. |
+| <code><a href="#cdk-ssm-documents.ConfigureDockerStepProps.property.inputObserver">inputObserver</a></code> | <code><a href="#cdk-ssm-documents.IObserver">IObserver</a></code> | (Optional) Allows for observing the input to steps as they run. |
+| <code><a href="#cdk-ssm-documents.ConfigureDockerStepProps.property.name">name</a></code> | <code>string</code> | (Optional) Name of the current step. |
+| <code><a href="#cdk-ssm-documents.ConfigureDockerStepProps.property.outputObserver">outputObserver</a></code> | <code><a href="#cdk-ssm-documents.IObserver">IObserver</a></code> | (Optional) Allows for observing the output of steps as they run. |
+| <code><a href="#cdk-ssm-documents.ConfigureDockerStepProps.property.exitOnFailure">exitOnFailure</a></code> | <code>boolean</code> | (Optional) Whether to exit the document execution after failed execution of this step. |
+| <code><a href="#cdk-ssm-documents.ConfigureDockerStepProps.property.exitOnSuccess">exitOnSuccess</a></code> | <code>boolean</code> | (Optional) Whether to exit the document execution after successful execution of this step. |
+| <code><a href="#cdk-ssm-documents.ConfigureDockerStepProps.property.finallyStep">finallyStep</a></code> | <code>boolean</code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.ConfigureDockerStepProps.property.markSuccessAndExitOnFailure">markSuccessAndExitOnFailure</a></code> | <code>boolean</code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.ConfigureDockerStepProps.property.onCancel">onCancel</a></code> | <code><a href="#cdk-ssm-documents.Step">Step</a></code> | (Optional) Step to jump to in the event that this step is cancelled. |
+| <code><a href="#cdk-ssm-documents.ConfigureDockerStepProps.property.precondition">precondition</a></code> | <code><a href="#cdk-ssm-documents.Precondition">Precondition</a></code> | (Optional) A precondition to test before execution occurrs. |
+| <code><a href="#cdk-ssm-documents.ConfigureDockerStepProps.property.action">action</a></code> | <code><a href="#cdk-ssm-documents.IActionVariable">IActionVariable</a></code> | The type of action to perform. |
+
+---
+
+##### `description`<sup>Optional</sup> <a name="description" id="cdk-ssm-documents.ConfigureDockerStepProps.property.description"></a>
+
+```typescript
+public readonly description: string;
+```
+
+- *Type:* string
+- *Default:* undefined
+
+(Optional) description of the current step.
+
+---
+
+##### `inputObserver`<sup>Optional</sup> <a name="inputObserver" id="cdk-ssm-documents.ConfigureDockerStepProps.property.inputObserver"></a>
+
+```typescript
+public readonly inputObserver: IObserver;
+```
+
+- *Type:* <a href="#cdk-ssm-documents.IObserver">IObserver</a>
+- *Default:* NoopObserver
+
+(Optional) Allows for observing the input to steps as they run.
+
+---
+
+##### `name`<sup>Optional</sup> <a name="name" id="cdk-ssm-documents.ConfigureDockerStepProps.property.name"></a>
+
+```typescript
+public readonly name: string;
+```
+
+- *Type:* string
+
+(Optional) Name of the current step.
+
+The name will be prepended onto all of the outputs emitted from this step.
+This name will also be used to reference this step in logs.
+Defaults to the id of the CDK node.
+
+---
+
+##### `outputObserver`<sup>Optional</sup> <a name="outputObserver" id="cdk-ssm-documents.ConfigureDockerStepProps.property.outputObserver"></a>
+
+```typescript
+public readonly outputObserver: IObserver;
+```
+
+- *Type:* <a href="#cdk-ssm-documents.IObserver">IObserver</a>
+- *Default:* NoopObserver
+
+(Optional) Allows for observing the output of steps as they run.
+
+---
+
+##### `exitOnFailure`<sup>Optional</sup> <a name="exitOnFailure" id="cdk-ssm-documents.ConfigureDockerStepProps.property.exitOnFailure"></a>
+
+```typescript
+public readonly exitOnFailure: boolean;
+```
+
+- *Type:* boolean
+- *Default:* false
+
+(Optional) Whether to exit the document execution after failed execution of this step.
+
+Finally step will be run.
+
+---
+
+##### `exitOnSuccess`<sup>Optional</sup> <a name="exitOnSuccess" id="cdk-ssm-documents.ConfigureDockerStepProps.property.exitOnSuccess"></a>
+
+```typescript
+public readonly exitOnSuccess: boolean;
+```
+
+- *Type:* boolean
+- *Default:* false
+
+(Optional) Whether to exit the document execution after successful execution of this step.
+
+Finally step will be run.
+
+---
+
+##### `finallyStep`<sup>Optional</sup> <a name="finallyStep" id="cdk-ssm-documents.ConfigureDockerStepProps.property.finallyStep"></a>
+
+```typescript
+public readonly finallyStep: boolean;
+```
+
+- *Type:* boolean
+
+---
+
+##### `markSuccessAndExitOnFailure`<sup>Optional</sup> <a name="markSuccessAndExitOnFailure" id="cdk-ssm-documents.ConfigureDockerStepProps.property.markSuccessAndExitOnFailure"></a>
+
+```typescript
+public readonly markSuccessAndExitOnFailure: boolean;
+```
+
+- *Type:* boolean
+
+---
+
+##### `onCancel`<sup>Optional</sup> <a name="onCancel" id="cdk-ssm-documents.ConfigureDockerStepProps.property.onCancel"></a>
+
+```typescript
+public readonly onCancel: Step;
+```
+
+- *Type:* <a href="#cdk-ssm-documents.Step">Step</a>
+- *Default:* undefined
+
+(Optional) Step to jump to in the event that this step is cancelled.
+
+---
+
+##### `precondition`<sup>Optional</sup> <a name="precondition" id="cdk-ssm-documents.ConfigureDockerStepProps.property.precondition"></a>
+
+```typescript
+public readonly precondition: Precondition;
+```
+
+- *Type:* <a href="#cdk-ssm-documents.Precondition">Precondition</a>
+- *Default:* undefined
+
+(Optional) A precondition to test before execution occurrs.
+
+When the precondition isn't met, the command step isn't executed.
+
+---
+
+##### `action`<sup>Required</sup> <a name="action" id="cdk-ssm-documents.ConfigureDockerStepProps.property.action"></a>
+
+```typescript
+public readonly action: IActionVariable;
+```
+
+- *Type:* <a href="#cdk-ssm-documents.IActionVariable">IActionVariable</a>
+
+The type of action to perform.
+
+True correlates to "Install" false correlates to "Uninstall"
+
+---
+
 ### ConfigurePackageStepProps <a name="ConfigurePackageStepProps" id="cdk-ssm-documents.ConfigurePackageStepProps"></a>
 
 Properties ConfigurePackage step.
@@ -26631,7 +27110,7 @@ are the execution inputs.
 
 ### ICommandComponent <a name="ICommandComponent" id="cdk-ssm-documents.ICommandComponent"></a>
 
-- *Implemented By:* <a href="#cdk-ssm-documents.CommandStep">CommandStep</a>, <a href="#cdk-ssm-documents.CompositeCommandStep">CompositeCommandStep</a>, <a href="#cdk-ssm-documents.ConfigurePackageStep">ConfigurePackageStep</a>, <a href="#cdk-ssm-documents.PsModuleStep">PsModuleStep</a>, <a href="#cdk-ssm-documents.RunPowerShellScriptStep">RunPowerShellScriptStep</a>, <a href="#cdk-ssm-documents.RunShellScriptStep">RunShellScriptStep</a>, <a href="#cdk-ssm-documents.SoftwareInventoryStep">SoftwareInventoryStep</a>, <a href="#cdk-ssm-documents.UpdateAgentStep">UpdateAgentStep</a>, <a href="#cdk-ssm-documents.UpdateSSMAgentStep">UpdateSSMAgentStep</a>, <a href="#cdk-ssm-documents.ICommandComponent">ICommandComponent</a>
+- *Implemented By:* <a href="#cdk-ssm-documents.CommandStep">CommandStep</a>, <a href="#cdk-ssm-documents.CompositeCommandStep">CompositeCommandStep</a>, <a href="#cdk-ssm-documents.ConfigureDockerStep">ConfigureDockerStep</a>, <a href="#cdk-ssm-documents.ConfigurePackageStep">ConfigurePackageStep</a>, <a href="#cdk-ssm-documents.PsModuleStep">PsModuleStep</a>, <a href="#cdk-ssm-documents.RunPowerShellScriptStep">RunPowerShellScriptStep</a>, <a href="#cdk-ssm-documents.RunShellScriptStep">RunShellScriptStep</a>, <a href="#cdk-ssm-documents.SoftwareInventoryStep">SoftwareInventoryStep</a>, <a href="#cdk-ssm-documents.UpdateAgentStep">UpdateAgentStep</a>, <a href="#cdk-ssm-documents.UpdateSSMAgentStep">UpdateSSMAgentStep</a>, <a href="#cdk-ssm-documents.ICommandComponent">ICommandComponent</a>
 
 #### Methods <a name="Methods" id="Methods"></a>
 
