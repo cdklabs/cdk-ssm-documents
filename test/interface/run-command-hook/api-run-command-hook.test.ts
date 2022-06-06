@@ -1,5 +1,5 @@
 import { strict as assert } from 'assert';
-import { ApiRunCommandHook, DocumentHashType, MockAwsInvoker, MockSleep, RunCommandProps } from '../../../lib';
+import { ApiRunCommandHook, MockAwsInvoker, MockSleep, RunCommandProps } from '../../../lib';
 
 describe('ApiRunCommandHook', () => {
   describe('execute', () => {
@@ -13,7 +13,7 @@ describe('ApiRunCommandHook', () => {
         cloudWatchOutputConfig: { b: 1 },
         comment: 'comment',
         documentHash: 'hash',
-        documentHashType: DocumentHashType.SHA256,
+        documentHashType: 'Sha256',
         notificationConfig: { c: 1 },
         outputS3BucketName: 'name',
         outputS3KeyPrefix: 'prefix',

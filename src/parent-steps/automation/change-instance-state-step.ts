@@ -1,9 +1,8 @@
 import { Construct } from 'constructs';
 import { Output } from '../../domain/output';
 import { IBooleanVariable } from '../../interface/variables/boolean-variable';
-import { IEnumVariable, HardCodedEnum, EnumVariable } from '../../interface/variables/enum-variable';
 import { IStringListVariable } from '../../interface/variables/string-list-variable';
-import { IStringVariable } from '../../interface/variables/string-variable';
+import { assertString, HardCodedString, IStringVariable, StringVariable } from '../../interface/variables/string-variable';
 import { IGenericVariable } from '../../interface/variables/variable';
 import { pruneAndTransformRecord } from '../../utils/prune-and-transform-record';
 import { AutomationStepProps, AutomationStep } from '../automation-step';
@@ -22,7 +21,7 @@ export interface ChangeInstanceStateStepProps extends AutomationStepProps {
    * The desired state. When set to running, this action waits for the Amazon EC2 state to be Running, the Instance Status to be OK,
    * and the System Status to be OK before completing.
    */
-  readonly desiredState: IEnumVariable<typeof DesiredState>;
+  readonly desiredState: IDesiredStateVariable;
 
   /**
    * (Optional) If false, sets the instance state to the desired state. If true, asserts the desired state using polling.
@@ -43,30 +42,28 @@ export interface ChangeInstanceStateStepProps extends AutomationStepProps {
   readonly additionalInfo?: IStringVariable;
 }
 
-export enum DesiredState {
-  RUNNING = 'running',
-  STOPPED = 'stopped',
-  TERMINATED = 'terminated',
+export interface IDesiredStateVariable extends IStringVariable {
 }
 
-/**
- * A desired state variable reference.
- */
-export class DesiredStateVariable extends EnumVariable<typeof DesiredState> {
-  constructor(reference: string) {
-    super(reference, DesiredState);
+export class HardCodedDesiredState extends HardCodedString implements IDesiredStateVariable {
+  public static readonly RUNNING = new HardCodedDesiredState('running');
+  public static readonly STOPPED = new HardCodedDesiredState('stopped');
+  public static readonly TERMINATED = new HardCodedDesiredState('terminated');
+  private constructor(val: string) {
+    super(val);
   }
 }
 
-/**
- * A hard coded desired state.
- */
-export class HardCodedDesiredState extends HardCodedEnum<typeof DesiredState> {
-  constructor(value: DesiredState) {
-    super(value, DesiredState);
+export class DesiredStateVariable extends StringVariable implements IDesiredStateVariable {
+  readonly validValues = ['running', 'stopped', 'terminated'];
+
+  protected assertType(value: any): void {
+    assertString(value);
+    if (!this.validValues.includes(value)) {
+      throw new Error(`${value} is not a valid enum value`);
+    }
   }
 }
-
 /**
  * AutomationStep implemenation for aws:changeInstanceState
  * https://docs.aws.amazon.com/systems-manager/latest/userguide/automation-action-changestate.html
@@ -74,7 +71,7 @@ export class HardCodedDesiredState extends HardCodedEnum<typeof DesiredState> {
 export class ChangeInstanceStateStep extends AutomationStep {
   readonly action: string = 'aws:changeInstanceState';
   readonly instanceIds: IStringListVariable;
-  readonly desiredState: IEnumVariable<typeof DesiredState>;
+  readonly desiredState: IDesiredStateVariable;
   readonly checkStateOnly?: IBooleanVariable;
   readonly force?: IBooleanVariable;
   readonly additionalInfo?: IStringVariable;

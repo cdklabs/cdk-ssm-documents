@@ -1,33 +1,34 @@
 import { Construct } from 'constructs';import { DataTypeEnum } from '../..';
 import { Output } from '../../domain/output';
-import { DocumentHashType } from '../../interface/run-command-hook';
-import { EnumVariable, HardCodedEnum, IEnumVariable } from '../../interface/variables/enum-variable';
 import { IMapListVariable } from '../../interface/variables/map-list-variable';
 import { INumberVariable } from '../../interface/variables/number-variable';
 import { IStringListVariable } from '../../interface/variables/string-list-variable';
 import { IStringMapVariable } from '../../interface/variables/string-map-variable';
-import { IStringVariable } from '../../interface/variables/string-variable';
+import { assertString, HardCodedString, IStringVariable, StringVariable } from '../../interface/variables/string-variable';
 import { pruneAndTransformRecord } from '../../utils/prune-and-transform-record';
 import { AutomationStep, AutomationStepProps } from '../automation-step';
 
-/**
- * Hard coded document hash type
- */
-export class HardCodedDocumentHashType extends HardCodedEnum<typeof DocumentHashType> {
-  constructor(value: DocumentHashType) {
-    super(value, DocumentHashType);
+export interface IDocumentHashTypeVariable extends IStringVariable {
+}
+
+export class HardCodedDocumentHashType extends HardCodedString implements IDocumentHashTypeVariable {
+  public static readonly SHA256 = new HardCodedDocumentHashType('Sha256');
+  public static readonly SHA1 = new HardCodedDocumentHashType('Sha1');
+  private constructor(val: string) {
+    super(val);
   }
 }
 
-/**
- * Reference to document hash type
- */
-export class DocumentHashTypeVariable extends EnumVariable<typeof DocumentHashType> {
-  constructor(reference: string) {
-    super(reference, DocumentHashType);
+export class DocumentHashTypeVariable extends StringVariable implements IDocumentHashTypeVariable {
+  readonly validValues = ['Sha256', 'Sha1'];
+
+  protected assertType(value: any): void {
+    assertString(value);
+    if (!this.validValues.includes(value)) {
+      throw new Error(`${value} is not a valid enum value`);
+    }
   }
 }
-
 /**
  * Properties for RunCommandStep
  */
@@ -70,7 +71,7 @@ export interface RunCommandStepProps extends AutomationStepProps {
   /**
      * (Optional) The type of the hash.
      */
-  readonly documentHashType?: IEnumVariable<typeof DocumentHashType>;
+  readonly documentHashType?: IDocumentHashTypeVariable;
 
   /**
      * (Optional) The configurations for sending notifications.
@@ -119,7 +120,7 @@ export class RunCommandStep extends AutomationStep {
   readonly cloudWatchOutputConfig?: IStringMapVariable;
   readonly comment?: IStringVariable;
   readonly documentHash?: IStringVariable;
-  readonly documentHashType?: IEnumVariable<typeof DocumentHashType>;
+  readonly documentHashType?: IDocumentHashTypeVariable;
   readonly notificationConfig?: IStringMapVariable;
   readonly outputS3BucketName?: IStringVariable;
   readonly outputS3KeyPrefix?: IStringVariable;

@@ -1,11 +1,10 @@
 import { Construct } from 'constructs';
 import { DataTypeEnum } from '../../domain/data-type';
 import { Output } from '../../domain/output';
-import { EnumVariable, HardCodedEnum, IEnumVariable } from '../../interface/variables/enum-variable';
 import { IMapListVariable } from '../../interface/variables/map-list-variable';
 import { INumberVariable } from '../../interface/variables/number-variable';
 import { IStringListVariable } from '../../interface/variables/string-list-variable';
-import { IStringVariable } from '../../interface/variables/string-variable';
+import { assertString, HardCodedString, IStringVariable, StringVariable } from '../../interface/variables/string-variable';
 import { pruneAndTransformRecord } from '../../utils/prune-and-transform-record';
 import { AutomationStep, AutomationStepProps } from '../automation-step';
 
@@ -38,30 +37,26 @@ export interface BodyOrUrlProp {
   readonly propType: BodyOrUrlType;
 }
 
-/**
- * Values for CreateStackStep's OnFailure property
- */
-export enum OnFailure {
-  DO_NOTHING,
-  ROLLBACK,
-  DELETE,
+export interface IOnFailureVariable extends IStringVariable {
 }
 
-/**
- * Hard coded OnFailure value
- */
-export class HardCodedOnFailure extends HardCodedEnum<typeof OnFailure> {
-  constructor(value: OnFailure) {
-    super(value, OnFailure);
+export class HardCodedOnFailure extends HardCodedString implements IOnFailureVariable {
+  public static readonly DO_NOTHING = new HardCodedOnFailure('DO_NOTHING');
+  public static readonly ROLLBACK = new HardCodedOnFailure('ROLLBACK');
+  public static readonly DELETE = new HardCodedOnFailure('DELETE');
+  private constructor(val: string) {
+    super(val);
   }
 }
 
-/**
- * OnFailure reference value
- */
-export class OnFailureVariable extends EnumVariable<typeof OnFailure> {
-  constructor(reference: string) {
-    super(reference, OnFailure);
+export class OnFailureVariable extends StringVariable implements IOnFailureVariable {
+  readonly validValues = ['DO_NOTHING', 'ROLLBACK', 'DELETE'];
+
+  protected assertType(value: any): void {
+    assertString(value);
+    if (!this.validValues.includes(value)) {
+      throw new Error(`${value} is not a valid enum value`);
+    }
   }
 }
 
@@ -91,7 +86,7 @@ export interface CreateStackStepProps extends AutomationStepProps {
      * (Optional) Determines the action to take if stack creation failed.
      * @default - Rollback on failure
      */
-  readonly onStackFailure?: IEnumVariable<typeof OnFailure>;
+  readonly onStackFailure?: IOnFailureVariable;
 
   /**
      * (Optional) A list of values that you specify before CloudFormation can create certain stacks.
@@ -161,7 +156,7 @@ export class CreateStackStep extends AutomationStep {
   readonly capabilities?: IStringListVariable;
   readonly clientRequestToken?: IStringVariable;
   readonly notificationARNs?: IStringListVariable;
-  readonly onStackFailure?: IEnumVariable<typeof OnFailure>;
+  readonly onStackFailure?: IOnFailureVariable;
   readonly parameters?: IMapListVariable;
   readonly resourceTypes?: IStringListVariable;
   readonly roleArn?: IStringVariable;

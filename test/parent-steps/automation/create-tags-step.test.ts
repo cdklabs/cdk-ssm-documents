@@ -2,7 +2,7 @@ import { strict as assert } from 'assert';
 import { Stack } from 'aws-cdk-lib';
 import {
   HardCodedMapList, HardCodedStringList, MockAwsInvoker, ResponseCode,
-  CreateTagsStep, HardCodedResourceType, ResourceType, ResourceTypeVariable,
+  CreateTagsStep, HardCodedResourceType, ResourceTypeVariable,
 } from '../../../lib';
 import { AutomationStepSimulation } from '../../../lib/simulation/automation-step-simulation';
 
@@ -76,7 +76,7 @@ describe('CreateTagsStep', () => {
       });
       const step = new CreateTagsStep(new Stack(), 'createTags', {
         resourceIds: new HardCodedStringList([resourceId]),
-        resourceType: new HardCodedResourceType(ResourceType.MAINTENANCE_WINDOW),
+        resourceType: HardCodedResourceType.MAINTENANCE_WINDOW,
         tags: new HardCodedMapList([tag]),
       });
 
@@ -100,7 +100,7 @@ describe('CreateTagsStep', () => {
       const awsInvoker = new MockAwsInvoker();
       const step = new CreateTagsStep(new Stack(), 'createTags', {
         resourceIds: new HardCodedStringList(resourceIds),
-        resourceType: new HardCodedResourceType(ResourceType.MAINTENANCE_WINDOW),
+        resourceType: HardCodedResourceType.MAINTENANCE_WINDOW,
         tags: new HardCodedMapList([tag]),
       });
 

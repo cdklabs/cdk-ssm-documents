@@ -2127,7 +2127,7 @@ Any object.
 | <code><a href="#cdk-ssm-documents.ChangeInstanceStateStep.property.onFailure">onFailure</a></code> | <code><a href="#cdk-ssm-documents.AutomationStep">AutomationStep</a></code> | *No description.* |
 | <code><a href="#cdk-ssm-documents.ChangeInstanceStateStep.property.allStepsInExecution">allStepsInExecution</a></code> | <code><a href="#cdk-ssm-documents.AutomationStep">AutomationStep</a>[]</code> | *No description.* |
 | <code><a href="#cdk-ssm-documents.ChangeInstanceStateStep.property.nextStep">nextStep</a></code> | <code><a href="#cdk-ssm-documents.AutomationStep">AutomationStep</a></code> | *No description.* |
-| <code><a href="#cdk-ssm-documents.ChangeInstanceStateStep.property.desiredState">desiredState</a></code> | <code><a href="#cdk-ssm-documents.IEnumVariable">IEnumVariable</a></code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.ChangeInstanceStateStep.property.desiredState">desiredState</a></code> | <code><a href="#cdk-ssm-documents.IDesiredStateVariable">IDesiredStateVariable</a></code> | *No description.* |
 | <code><a href="#cdk-ssm-documents.ChangeInstanceStateStep.property.instanceIds">instanceIds</a></code> | <code><a href="#cdk-ssm-documents.IStringListVariable">IStringListVariable</a></code> | *No description.* |
 | <code><a href="#cdk-ssm-documents.ChangeInstanceStateStep.property.additionalInfo">additionalInfo</a></code> | <code><a href="#cdk-ssm-documents.IStringVariable">IStringVariable</a></code> | *No description.* |
 | <code><a href="#cdk-ssm-documents.ChangeInstanceStateStep.property.checkStateOnly">checkStateOnly</a></code> | <code><a href="#cdk-ssm-documents.IBooleanVariable">IBooleanVariable</a></code> | *No description.* |
@@ -2270,10 +2270,10 @@ public readonly nextStep: AutomationStep;
 ##### `desiredState`<sup>Required</sup> <a name="desiredState" id="cdk-ssm-documents.ChangeInstanceStateStep.property.desiredState"></a>
 
 ```typescript
-public readonly desiredState: IEnumVariable;
+public readonly desiredState: IDesiredStateVariable;
 ```
 
-- *Type:* <a href="#cdk-ssm-documents.IEnumVariable">IEnumVariable</a>
+- *Type:* <a href="#cdk-ssm-documents.IDesiredStateVariable">IDesiredStateVariable</a>
 
 ---
 
@@ -3076,6 +3076,352 @@ public readonly node: Node;
 - *Type:* constructs.Node
 
 The tree node.
+
+---
+
+
+### ConfigurePackageStep <a name="ConfigurePackageStep" id="cdk-ssm-documents.ConfigurePackageStep"></a>
+
+CommandStep implemenation for aws:configurePackage https://docs.aws.amazon.com/systems-manager/latest/userguide/ssm-plugins.html#aws-configurepackage.
+
+#### Initializers <a name="Initializers" id="cdk-ssm-documents.ConfigurePackageStep.Initializer"></a>
+
+```typescript
+import { ConfigurePackageStep } from 'cdk-ssm-documents'
+
+new ConfigurePackageStep(scope: Construct, id: string, props: ConfigurePackageStepProps)
+```
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#cdk-ssm-documents.ConfigurePackageStep.Initializer.parameter.scope">scope</a></code> | <code>constructs.Construct</code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.ConfigurePackageStep.Initializer.parameter.id">id</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.ConfigurePackageStep.Initializer.parameter.props">props</a></code> | <code><a href="#cdk-ssm-documents.ConfigurePackageStepProps">ConfigurePackageStepProps</a></code> | *No description.* |
+
+---
+
+##### `scope`<sup>Required</sup> <a name="scope" id="cdk-ssm-documents.ConfigurePackageStep.Initializer.parameter.scope"></a>
+
+- *Type:* constructs.Construct
+
+---
+
+##### `id`<sup>Required</sup> <a name="id" id="cdk-ssm-documents.ConfigurePackageStep.Initializer.parameter.id"></a>
+
+- *Type:* string
+
+---
+
+##### `props`<sup>Required</sup> <a name="props" id="cdk-ssm-documents.ConfigurePackageStep.Initializer.parameter.props"></a>
+
+- *Type:* <a href="#cdk-ssm-documents.ConfigurePackageStepProps">ConfigurePackageStepProps</a>
+
+---
+
+#### Methods <a name="Methods" id="Methods"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#cdk-ssm-documents.ConfigurePackageStep.toString">toString</a></code> | Returns a string representation of this construct. |
+| <code><a href="#cdk-ssm-documents.ConfigurePackageStep.listInputs">listInputs</a></code> | Inputs required for this command include ... |
+| <code><a href="#cdk-ssm-documents.ConfigurePackageStep.listOutputs">listOutputs</a></code> | RunCommand Steps do not have outputs. |
+| <code><a href="#cdk-ssm-documents.ConfigurePackageStep.toSsmEntry">toSsmEntry</a></code> | Converts this step into an object to prepare for yaml/json representation of this step. |
+| <code><a href="#cdk-ssm-documents.ConfigurePackageStep.addToDocument">addToDocument</a></code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.ConfigurePackageStep.variables">variables</a></code> | *No description.* |
+
+---
+
+##### `toString` <a name="toString" id="cdk-ssm-documents.ConfigurePackageStep.toString"></a>
+
+```typescript
+public toString(): string
+```
+
+Returns a string representation of this construct.
+
+##### `listInputs` <a name="listInputs" id="cdk-ssm-documents.ConfigurePackageStep.listInputs"></a>
+
+```typescript
+public listInputs(): string[]
+```
+
+Inputs required for this command include ...
+
+##### `listOutputs` <a name="listOutputs" id="cdk-ssm-documents.ConfigurePackageStep.listOutputs"></a>
+
+```typescript
+public listOutputs(): Output[]
+```
+
+RunCommand Steps do not have outputs.
+
+##### `toSsmEntry` <a name="toSsmEntry" id="cdk-ssm-documents.ConfigurePackageStep.toSsmEntry"></a>
+
+```typescript
+public toSsmEntry(): {[ key: string ]: any}
+```
+
+Converts this step into an object to prepare for yaml/json representation of this step.
+
+##### `addToDocument` <a name="addToDocument" id="cdk-ssm-documents.ConfigurePackageStep.addToDocument"></a>
+
+```typescript
+public addToDocument(doc: CommandDocumentBuilder): void
+```
+
+###### `doc`<sup>Required</sup> <a name="doc" id="cdk-ssm-documents.ConfigurePackageStep.addToDocument.parameter.doc"></a>
+
+- *Type:* <a href="#cdk-ssm-documents.CommandDocumentBuilder">CommandDocumentBuilder</a>
+
+---
+
+##### `variables` <a name="variables" id="cdk-ssm-documents.ConfigurePackageStep.variables"></a>
+
+```typescript
+public variables(): {[ key: string ]: any}
+```
+
+#### Static Functions <a name="Static Functions" id="Static Functions"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#cdk-ssm-documents.ConfigurePackageStep.isConstruct">isConstruct</a></code> | Checks if `x` is a construct. |
+
+---
+
+##### ~~`isConstruct`~~ <a name="isConstruct" id="cdk-ssm-documents.ConfigurePackageStep.isConstruct"></a>
+
+```typescript
+import { ConfigurePackageStep } from 'cdk-ssm-documents'
+
+ConfigurePackageStep.isConstruct(x: any)
+```
+
+Checks if `x` is a construct.
+
+###### `x`<sup>Required</sup> <a name="x" id="cdk-ssm-documents.ConfigurePackageStep.isConstruct.parameter.x"></a>
+
+- *Type:* any
+
+Any object.
+
+---
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#cdk-ssm-documents.ConfigurePackageStep.property.node">node</a></code> | <code>constructs.Node</code> | The tree node. |
+| <code><a href="#cdk-ssm-documents.ConfigurePackageStep.property.action">action</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.ConfigurePackageStep.property.inputObserver">inputObserver</a></code> | <code><a href="#cdk-ssm-documents.IObserver">IObserver</a></code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.ConfigurePackageStep.property.name">name</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.ConfigurePackageStep.property.outputObserver">outputObserver</a></code> | <code><a href="#cdk-ssm-documents.IObserver">IObserver</a></code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.ConfigurePackageStep.property.description">description</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.ConfigurePackageStep.property.exitOnFailure">exitOnFailure</a></code> | <code>boolean</code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.ConfigurePackageStep.property.exitOnSuccess">exitOnSuccess</a></code> | <code>boolean</code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.ConfigurePackageStep.property.finallyStep">finallyStep</a></code> | <code>boolean</code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.ConfigurePackageStep.property.markSuccessAndExitOnFailure">markSuccessAndExitOnFailure</a></code> | <code>boolean</code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.ConfigurePackageStep.property.platforms">platforms</a></code> | <code><a href="#cdk-ssm-documents.Platform">Platform</a>[]</code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.ConfigurePackageStep.property.precondition">precondition</a></code> | <code><a href="#cdk-ssm-documents.Precondition">Precondition</a></code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.ConfigurePackageStep.property.allStepsInExecution">allStepsInExecution</a></code> | <code><a href="#cdk-ssm-documents.CommandStep">CommandStep</a>[]</code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.ConfigurePackageStep.property.nextStep">nextStep</a></code> | <code><a href="#cdk-ssm-documents.CommandStep">CommandStep</a></code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.ConfigurePackageStep.property.packageAction">packageAction</a></code> | <code><a href="#cdk-ssm-documents.IActionVariable">IActionVariable</a></code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.ConfigurePackageStep.property.packageName">packageName</a></code> | <code><a href="#cdk-ssm-documents.IPackageNameVariable">IPackageNameVariable</a></code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.ConfigurePackageStep.property.additionalArguments">additionalArguments</a></code> | <code><a href="#cdk-ssm-documents.IStringMapVariable">IStringMapVariable</a></code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.ConfigurePackageStep.property.installationType">installationType</a></code> | <code><a href="#cdk-ssm-documents.IInstallationTypeVariable">IInstallationTypeVariable</a></code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.ConfigurePackageStep.property.version">version</a></code> | <code><a href="#cdk-ssm-documents.IStringVariable">IStringVariable</a></code> | *No description.* |
+
+---
+
+##### `node`<sup>Required</sup> <a name="node" id="cdk-ssm-documents.ConfigurePackageStep.property.node"></a>
+
+```typescript
+public readonly node: Node;
+```
+
+- *Type:* constructs.Node
+
+The tree node.
+
+---
+
+##### `action`<sup>Required</sup> <a name="action" id="cdk-ssm-documents.ConfigurePackageStep.property.action"></a>
+
+```typescript
+public readonly action: string;
+```
+
+- *Type:* string
+
+---
+
+##### `inputObserver`<sup>Required</sup> <a name="inputObserver" id="cdk-ssm-documents.ConfigurePackageStep.property.inputObserver"></a>
+
+```typescript
+public readonly inputObserver: IObserver;
+```
+
+- *Type:* <a href="#cdk-ssm-documents.IObserver">IObserver</a>
+
+---
+
+##### `name`<sup>Required</sup> <a name="name" id="cdk-ssm-documents.ConfigurePackageStep.property.name"></a>
+
+```typescript
+public readonly name: string;
+```
+
+- *Type:* string
+
+---
+
+##### `outputObserver`<sup>Required</sup> <a name="outputObserver" id="cdk-ssm-documents.ConfigurePackageStep.property.outputObserver"></a>
+
+```typescript
+public readonly outputObserver: IObserver;
+```
+
+- *Type:* <a href="#cdk-ssm-documents.IObserver">IObserver</a>
+
+---
+
+##### `description`<sup>Optional</sup> <a name="description" id="cdk-ssm-documents.ConfigurePackageStep.property.description"></a>
+
+```typescript
+public readonly description: string;
+```
+
+- *Type:* string
+
+---
+
+##### `exitOnFailure`<sup>Required</sup> <a name="exitOnFailure" id="cdk-ssm-documents.ConfigurePackageStep.property.exitOnFailure"></a>
+
+```typescript
+public readonly exitOnFailure: boolean;
+```
+
+- *Type:* boolean
+
+---
+
+##### `exitOnSuccess`<sup>Required</sup> <a name="exitOnSuccess" id="cdk-ssm-documents.ConfigurePackageStep.property.exitOnSuccess"></a>
+
+```typescript
+public readonly exitOnSuccess: boolean;
+```
+
+- *Type:* boolean
+
+---
+
+##### `finallyStep`<sup>Required</sup> <a name="finallyStep" id="cdk-ssm-documents.ConfigurePackageStep.property.finallyStep"></a>
+
+```typescript
+public readonly finallyStep: boolean;
+```
+
+- *Type:* boolean
+
+---
+
+##### `markSuccessAndExitOnFailure`<sup>Required</sup> <a name="markSuccessAndExitOnFailure" id="cdk-ssm-documents.ConfigurePackageStep.property.markSuccessAndExitOnFailure"></a>
+
+```typescript
+public readonly markSuccessAndExitOnFailure: boolean;
+```
+
+- *Type:* boolean
+
+---
+
+##### `platforms`<sup>Required</sup> <a name="platforms" id="cdk-ssm-documents.ConfigurePackageStep.property.platforms"></a>
+
+```typescript
+public readonly platforms: Platform[];
+```
+
+- *Type:* <a href="#cdk-ssm-documents.Platform">Platform</a>[]
+
+---
+
+##### `precondition`<sup>Optional</sup> <a name="precondition" id="cdk-ssm-documents.ConfigurePackageStep.property.precondition"></a>
+
+```typescript
+public readonly precondition: Precondition;
+```
+
+- *Type:* <a href="#cdk-ssm-documents.Precondition">Precondition</a>
+
+---
+
+##### `allStepsInExecution`<sup>Optional</sup> <a name="allStepsInExecution" id="cdk-ssm-documents.ConfigurePackageStep.property.allStepsInExecution"></a>
+
+```typescript
+public readonly allStepsInExecution: CommandStep[];
+```
+
+- *Type:* <a href="#cdk-ssm-documents.CommandStep">CommandStep</a>[]
+
+---
+
+##### `nextStep`<sup>Optional</sup> <a name="nextStep" id="cdk-ssm-documents.ConfigurePackageStep.property.nextStep"></a>
+
+```typescript
+public readonly nextStep: CommandStep;
+```
+
+- *Type:* <a href="#cdk-ssm-documents.CommandStep">CommandStep</a>
+
+---
+
+##### `packageAction`<sup>Required</sup> <a name="packageAction" id="cdk-ssm-documents.ConfigurePackageStep.property.packageAction"></a>
+
+```typescript
+public readonly packageAction: IActionVariable;
+```
+
+- *Type:* <a href="#cdk-ssm-documents.IActionVariable">IActionVariable</a>
+
+---
+
+##### `packageName`<sup>Required</sup> <a name="packageName" id="cdk-ssm-documents.ConfigurePackageStep.property.packageName"></a>
+
+```typescript
+public readonly packageName: IPackageNameVariable;
+```
+
+- *Type:* <a href="#cdk-ssm-documents.IPackageNameVariable">IPackageNameVariable</a>
+
+---
+
+##### `additionalArguments`<sup>Optional</sup> <a name="additionalArguments" id="cdk-ssm-documents.ConfigurePackageStep.property.additionalArguments"></a>
+
+```typescript
+public readonly additionalArguments: IStringMapVariable;
+```
+
+- *Type:* <a href="#cdk-ssm-documents.IStringMapVariable">IStringMapVariable</a>
+
+---
+
+##### `installationType`<sup>Optional</sup> <a name="installationType" id="cdk-ssm-documents.ConfigurePackageStep.property.installationType"></a>
+
+```typescript
+public readonly installationType: IInstallationTypeVariable;
+```
+
+- *Type:* <a href="#cdk-ssm-documents.IInstallationTypeVariable">IInstallationTypeVariable</a>
+
+---
+
+##### `version`<sup>Optional</sup> <a name="version" id="cdk-ssm-documents.ConfigurePackageStep.property.version"></a>
+
+```typescript
+public readonly version: IStringVariable;
+```
+
+- *Type:* <a href="#cdk-ssm-documents.IStringVariable">IStringVariable</a>
 
 ---
 
@@ -3976,7 +4322,7 @@ Any object.
 | <code><a href="#cdk-ssm-documents.CreateStackStep.property.capabilities">capabilities</a></code> | <code><a href="#cdk-ssm-documents.IStringListVariable">IStringListVariable</a></code> | *No description.* |
 | <code><a href="#cdk-ssm-documents.CreateStackStep.property.clientRequestToken">clientRequestToken</a></code> | <code><a href="#cdk-ssm-documents.IStringVariable">IStringVariable</a></code> | *No description.* |
 | <code><a href="#cdk-ssm-documents.CreateStackStep.property.notificationARNs">notificationARNs</a></code> | <code><a href="#cdk-ssm-documents.IStringListVariable">IStringListVariable</a></code> | *No description.* |
-| <code><a href="#cdk-ssm-documents.CreateStackStep.property.onStackFailure">onStackFailure</a></code> | <code><a href="#cdk-ssm-documents.IEnumVariable">IEnumVariable</a></code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.CreateStackStep.property.onStackFailure">onStackFailure</a></code> | <code><a href="#cdk-ssm-documents.IOnFailureVariable">IOnFailureVariable</a></code> | *No description.* |
 | <code><a href="#cdk-ssm-documents.CreateStackStep.property.parameters">parameters</a></code> | <code><a href="#cdk-ssm-documents.IMapListVariable">IMapListVariable</a></code> | *No description.* |
 | <code><a href="#cdk-ssm-documents.CreateStackStep.property.resourceTypes">resourceTypes</a></code> | <code><a href="#cdk-ssm-documents.IStringListVariable">IStringListVariable</a></code> | *No description.* |
 | <code><a href="#cdk-ssm-documents.CreateStackStep.property.roleArn">roleArn</a></code> | <code><a href="#cdk-ssm-documents.IStringVariable">IStringVariable</a></code> | *No description.* |
@@ -4164,10 +4510,10 @@ public readonly notificationARNs: IStringListVariable;
 ##### `onStackFailure`<sup>Optional</sup> <a name="onStackFailure" id="cdk-ssm-documents.CreateStackStep.property.onStackFailure"></a>
 
 ```typescript
-public readonly onStackFailure: IEnumVariable;
+public readonly onStackFailure: IOnFailureVariable;
 ```
 
-- *Type:* <a href="#cdk-ssm-documents.IEnumVariable">IEnumVariable</a>
+- *Type:* <a href="#cdk-ssm-documents.IOnFailureVariable">IOnFailureVariable</a>
 
 ---
 
@@ -4436,7 +4782,7 @@ Any object.
 | <code><a href="#cdk-ssm-documents.CreateTagsStep.property.nextStep">nextStep</a></code> | <code><a href="#cdk-ssm-documents.AutomationStep">AutomationStep</a></code> | *No description.* |
 | <code><a href="#cdk-ssm-documents.CreateTagsStep.property.resourceIds">resourceIds</a></code> | <code><a href="#cdk-ssm-documents.IStringListVariable">IStringListVariable</a></code> | *No description.* |
 | <code><a href="#cdk-ssm-documents.CreateTagsStep.property.tags">tags</a></code> | <code><a href="#cdk-ssm-documents.IMapListVariable">IMapListVariable</a></code> | *No description.* |
-| <code><a href="#cdk-ssm-documents.CreateTagsStep.property.resourceType">resourceType</a></code> | <code><a href="#cdk-ssm-documents.IEnumVariable">IEnumVariable</a></code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.CreateTagsStep.property.resourceType">resourceType</a></code> | <code><a href="#cdk-ssm-documents.IResourceTypeVariable">IResourceTypeVariable</a></code> | *No description.* |
 
 ---
 
@@ -4595,10 +4941,10 @@ public readonly tags: IMapListVariable;
 ##### `resourceType`<sup>Optional</sup> <a name="resourceType" id="cdk-ssm-documents.CreateTagsStep.property.resourceType"></a>
 
 ```typescript
-public readonly resourceType: IEnumVariable;
+public readonly resourceType: IResourceTypeVariable;
 ```
 
-- *Type:* <a href="#cdk-ssm-documents.IEnumVariable">IEnumVariable</a>
+- *Type:* <a href="#cdk-ssm-documents.IResourceTypeVariable">IResourceTypeVariable</a>
 
 ---
 
@@ -8398,7 +8744,7 @@ Any object.
 | <code><a href="#cdk-ssm-documents.RunCommandStep.property.commandTimeoutSeconds">commandTimeoutSeconds</a></code> | <code><a href="#cdk-ssm-documents.INumberVariable">INumberVariable</a></code> | *No description.* |
 | <code><a href="#cdk-ssm-documents.RunCommandStep.property.comment">comment</a></code> | <code><a href="#cdk-ssm-documents.IStringVariable">IStringVariable</a></code> | *No description.* |
 | <code><a href="#cdk-ssm-documents.RunCommandStep.property.documentHash">documentHash</a></code> | <code><a href="#cdk-ssm-documents.IStringVariable">IStringVariable</a></code> | *No description.* |
-| <code><a href="#cdk-ssm-documents.RunCommandStep.property.documentHashType">documentHashType</a></code> | <code><a href="#cdk-ssm-documents.IEnumVariable">IEnumVariable</a></code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.RunCommandStep.property.documentHashType">documentHashType</a></code> | <code><a href="#cdk-ssm-documents.IDocumentHashTypeVariable">IDocumentHashTypeVariable</a></code> | *No description.* |
 | <code><a href="#cdk-ssm-documents.RunCommandStep.property.maxConcurrency">maxConcurrency</a></code> | <code><a href="#cdk-ssm-documents.INumberVariable">INumberVariable</a></code> | *No description.* |
 | <code><a href="#cdk-ssm-documents.RunCommandStep.property.maxErrors">maxErrors</a></code> | <code><a href="#cdk-ssm-documents.INumberVariable">INumberVariable</a></code> | *No description.* |
 | <code><a href="#cdk-ssm-documents.RunCommandStep.property.notificationConfig">notificationConfig</a></code> | <code><a href="#cdk-ssm-documents.IStringMapVariable">IStringMapVariable</a></code> | *No description.* |
@@ -8604,10 +8950,10 @@ public readonly documentHash: IStringVariable;
 ##### `documentHashType`<sup>Optional</sup> <a name="documentHashType" id="cdk-ssm-documents.RunCommandStep.property.documentHashType"></a>
 
 ```typescript
-public readonly documentHashType: IEnumVariable;
+public readonly documentHashType: IDocumentHashTypeVariable;
 ```
 
-- *Type:* <a href="#cdk-ssm-documents.IEnumVariable">IEnumVariable</a>
+- *Type:* <a href="#cdk-ssm-documents.IDocumentHashTypeVariable">IDocumentHashTypeVariable</a>
 
 ---
 
@@ -14069,7 +14415,7 @@ const changeInstanceStateStepProps: ChangeInstanceStateStepProps = { ... }
 | <code><a href="#cdk-ssm-documents.ChangeInstanceStateStepProps.property.onCancel">onCancel</a></code> | <code><a href="#cdk-ssm-documents.AutomationStep">AutomationStep</a></code> | (Optional) Step to jump to in the event that this step is cancelled. |
 | <code><a href="#cdk-ssm-documents.ChangeInstanceStateStepProps.property.onFailure">onFailure</a></code> | <code><a href="#cdk-ssm-documents.AutomationStep">AutomationStep</a></code> | (Optional) Step to jump to in the event that this step fails. |
 | <code><a href="#cdk-ssm-documents.ChangeInstanceStateStepProps.property.timeoutSeconds">timeoutSeconds</a></code> | <code>number</code> | (Optional) timeout seconds to run this step. |
-| <code><a href="#cdk-ssm-documents.ChangeInstanceStateStepProps.property.desiredState">desiredState</a></code> | <code><a href="#cdk-ssm-documents.IEnumVariable">IEnumVariable</a></code> | The desired state. |
+| <code><a href="#cdk-ssm-documents.ChangeInstanceStateStepProps.property.desiredState">desiredState</a></code> | <code><a href="#cdk-ssm-documents.IDesiredStateVariable">IDesiredStateVariable</a></code> | The desired state. |
 | <code><a href="#cdk-ssm-documents.ChangeInstanceStateStepProps.property.instanceIds">instanceIds</a></code> | <code><a href="#cdk-ssm-documents.IStringListVariable">IStringListVariable</a></code> | The IDs of the instances. |
 | <code><a href="#cdk-ssm-documents.ChangeInstanceStateStepProps.property.additionalInfo">additionalInfo</a></code> | <code><a href="#cdk-ssm-documents.IStringVariable">IStringVariable</a></code> | (Optional) Reserved. |
 | <code><a href="#cdk-ssm-documents.ChangeInstanceStateStepProps.property.checkStateOnly">checkStateOnly</a></code> | <code><a href="#cdk-ssm-documents.IBooleanVariable">IBooleanVariable</a></code> | (Optional) If false, sets the instance state to the desired state. |
@@ -14202,10 +14548,10 @@ In a simulation run, this will only be encorced after-the-fact but execution wil
 ##### `desiredState`<sup>Required</sup> <a name="desiredState" id="cdk-ssm-documents.ChangeInstanceStateStepProps.property.desiredState"></a>
 
 ```typescript
-public readonly desiredState: IEnumVariable;
+public readonly desiredState: IDesiredStateVariable;
 ```
 
-- *Type:* <a href="#cdk-ssm-documents.IEnumVariable">IEnumVariable</a>
+- *Type:* <a href="#cdk-ssm-documents.IDesiredStateVariable">IDesiredStateVariable</a>
 
 The desired state.
 
@@ -14679,6 +15025,251 @@ public readonly precondition: Precondition;
 (Optional) A precondition to test before execution occurrs.
 
 When the precondition isn't met, the command step isn't executed.
+
+---
+
+### ConfigurePackageStepProps <a name="ConfigurePackageStepProps" id="cdk-ssm-documents.ConfigurePackageStepProps"></a>
+
+Properties ConfigurePackage step.
+
+#### Initializer <a name="Initializer" id="cdk-ssm-documents.ConfigurePackageStepProps.Initializer"></a>
+
+```typescript
+import { ConfigurePackageStepProps } from 'cdk-ssm-documents'
+
+const configurePackageStepProps: ConfigurePackageStepProps = { ... }
+```
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#cdk-ssm-documents.ConfigurePackageStepProps.property.description">description</a></code> | <code>string</code> | (Optional) description of the current step. |
+| <code><a href="#cdk-ssm-documents.ConfigurePackageStepProps.property.inputObserver">inputObserver</a></code> | <code><a href="#cdk-ssm-documents.IObserver">IObserver</a></code> | (Optional) Allows for observing the input to steps as they run. |
+| <code><a href="#cdk-ssm-documents.ConfigurePackageStepProps.property.name">name</a></code> | <code>string</code> | (Optional) Name of the current step. |
+| <code><a href="#cdk-ssm-documents.ConfigurePackageStepProps.property.outputObserver">outputObserver</a></code> | <code><a href="#cdk-ssm-documents.IObserver">IObserver</a></code> | (Optional) Allows for observing the output of steps as they run. |
+| <code><a href="#cdk-ssm-documents.ConfigurePackageStepProps.property.exitOnFailure">exitOnFailure</a></code> | <code>boolean</code> | (Optional) Whether to exit the document execution after failed execution of this step. |
+| <code><a href="#cdk-ssm-documents.ConfigurePackageStepProps.property.exitOnSuccess">exitOnSuccess</a></code> | <code>boolean</code> | (Optional) Whether to exit the document execution after successful execution of this step. |
+| <code><a href="#cdk-ssm-documents.ConfigurePackageStepProps.property.finallyStep">finallyStep</a></code> | <code>boolean</code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.ConfigurePackageStepProps.property.markSuccessAndExitOnFailure">markSuccessAndExitOnFailure</a></code> | <code>boolean</code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.ConfigurePackageStepProps.property.onCancel">onCancel</a></code> | <code><a href="#cdk-ssm-documents.Step">Step</a></code> | (Optional) Step to jump to in the event that this step is cancelled. |
+| <code><a href="#cdk-ssm-documents.ConfigurePackageStepProps.property.precondition">precondition</a></code> | <code><a href="#cdk-ssm-documents.Precondition">Precondition</a></code> | (Optional) A precondition to test before execution occurrs. |
+| <code><a href="#cdk-ssm-documents.ConfigurePackageStepProps.property.packageAction">packageAction</a></code> | <code><a href="#cdk-ssm-documents.IActionVariable">IActionVariable</a></code> | Install or uninstall a package. |
+| <code><a href="#cdk-ssm-documents.ConfigurePackageStepProps.property.packageName">packageName</a></code> | <code><a href="#cdk-ssm-documents.IPackageNameVariable">IPackageNameVariable</a></code> | The name of the AWS package to install or uninstall. |
+| <code><a href="#cdk-ssm-documents.ConfigurePackageStepProps.property.additionalArguments">additionalArguments</a></code> | <code><a href="#cdk-ssm-documents.IStringMapVariable">IStringMapVariable</a></code> | The additional parameters to provide to your install, uninstall, or update scripts. |
+| <code><a href="#cdk-ssm-documents.ConfigurePackageStepProps.property.installationType">installationType</a></code> | <code><a href="#cdk-ssm-documents.IInstallationTypeVariable">IInstallationTypeVariable</a></code> | The type of installation to perform. |
+| <code><a href="#cdk-ssm-documents.ConfigurePackageStepProps.property.version">version</a></code> | <code><a href="#cdk-ssm-documents.IStringVariable">IStringVariable</a></code> | A specific version of the package to install or uninstall. |
+
+---
+
+##### `description`<sup>Optional</sup> <a name="description" id="cdk-ssm-documents.ConfigurePackageStepProps.property.description"></a>
+
+```typescript
+public readonly description: string;
+```
+
+- *Type:* string
+- *Default:* undefined
+
+(Optional) description of the current step.
+
+---
+
+##### `inputObserver`<sup>Optional</sup> <a name="inputObserver" id="cdk-ssm-documents.ConfigurePackageStepProps.property.inputObserver"></a>
+
+```typescript
+public readonly inputObserver: IObserver;
+```
+
+- *Type:* <a href="#cdk-ssm-documents.IObserver">IObserver</a>
+- *Default:* NoopObserver
+
+(Optional) Allows for observing the input to steps as they run.
+
+---
+
+##### `name`<sup>Optional</sup> <a name="name" id="cdk-ssm-documents.ConfigurePackageStepProps.property.name"></a>
+
+```typescript
+public readonly name: string;
+```
+
+- *Type:* string
+
+(Optional) Name of the current step.
+
+The name will be prepended onto all of the outputs emitted from this step.
+This name will also be used to reference this step in logs.
+Defaults to the id of the CDK node.
+
+---
+
+##### `outputObserver`<sup>Optional</sup> <a name="outputObserver" id="cdk-ssm-documents.ConfigurePackageStepProps.property.outputObserver"></a>
+
+```typescript
+public readonly outputObserver: IObserver;
+```
+
+- *Type:* <a href="#cdk-ssm-documents.IObserver">IObserver</a>
+- *Default:* NoopObserver
+
+(Optional) Allows for observing the output of steps as they run.
+
+---
+
+##### `exitOnFailure`<sup>Optional</sup> <a name="exitOnFailure" id="cdk-ssm-documents.ConfigurePackageStepProps.property.exitOnFailure"></a>
+
+```typescript
+public readonly exitOnFailure: boolean;
+```
+
+- *Type:* boolean
+- *Default:* false
+
+(Optional) Whether to exit the document execution after failed execution of this step.
+
+Finally step will be run.
+
+---
+
+##### `exitOnSuccess`<sup>Optional</sup> <a name="exitOnSuccess" id="cdk-ssm-documents.ConfigurePackageStepProps.property.exitOnSuccess"></a>
+
+```typescript
+public readonly exitOnSuccess: boolean;
+```
+
+- *Type:* boolean
+- *Default:* false
+
+(Optional) Whether to exit the document execution after successful execution of this step.
+
+Finally step will be run.
+
+---
+
+##### `finallyStep`<sup>Optional</sup> <a name="finallyStep" id="cdk-ssm-documents.ConfigurePackageStepProps.property.finallyStep"></a>
+
+```typescript
+public readonly finallyStep: boolean;
+```
+
+- *Type:* boolean
+
+---
+
+##### `markSuccessAndExitOnFailure`<sup>Optional</sup> <a name="markSuccessAndExitOnFailure" id="cdk-ssm-documents.ConfigurePackageStepProps.property.markSuccessAndExitOnFailure"></a>
+
+```typescript
+public readonly markSuccessAndExitOnFailure: boolean;
+```
+
+- *Type:* boolean
+
+---
+
+##### `onCancel`<sup>Optional</sup> <a name="onCancel" id="cdk-ssm-documents.ConfigurePackageStepProps.property.onCancel"></a>
+
+```typescript
+public readonly onCancel: Step;
+```
+
+- *Type:* <a href="#cdk-ssm-documents.Step">Step</a>
+- *Default:* undefined
+
+(Optional) Step to jump to in the event that this step is cancelled.
+
+---
+
+##### `precondition`<sup>Optional</sup> <a name="precondition" id="cdk-ssm-documents.ConfigurePackageStepProps.property.precondition"></a>
+
+```typescript
+public readonly precondition: Precondition;
+```
+
+- *Type:* <a href="#cdk-ssm-documents.Precondition">Precondition</a>
+- *Default:* undefined
+
+(Optional) A precondition to test before execution occurrs.
+
+When the precondition isn't met, the command step isn't executed.
+
+---
+
+##### `packageAction`<sup>Required</sup> <a name="packageAction" id="cdk-ssm-documents.ConfigurePackageStepProps.property.packageAction"></a>
+
+```typescript
+public readonly packageAction: IActionVariable;
+```
+
+- *Type:* <a href="#cdk-ssm-documents.IActionVariable">IActionVariable</a>
+
+Install or uninstall a package.
+
+---
+
+##### `packageName`<sup>Required</sup> <a name="packageName" id="cdk-ssm-documents.ConfigurePackageStepProps.property.packageName"></a>
+
+```typescript
+public readonly packageName: IPackageNameVariable;
+```
+
+- *Type:* <a href="#cdk-ssm-documents.IPackageNameVariable">IPackageNameVariable</a>
+
+The name of the AWS package to install or uninstall.
+
+---
+
+##### `additionalArguments`<sup>Optional</sup> <a name="additionalArguments" id="cdk-ssm-documents.ConfigurePackageStepProps.property.additionalArguments"></a>
+
+```typescript
+public readonly additionalArguments: IStringMapVariable;
+```
+
+- *Type:* <a href="#cdk-ssm-documents.IStringMapVariable">IStringMapVariable</a>
+
+The additional parameters to provide to your install, uninstall, or update scripts.
+
+Each parameter must be prefixed with SSM_.
+You can reference a Parameter Store parameter in your additional arguments by using the convention {{ssm:parameter-name}}.
+To use the additional parameter in your install, uninstall, or update script,
+you must reference the parameter as an environment variable using the syntax appropriate for the operating system.
+For example, in PowerShell, you reference the SSM_arg argument as $Env:SSM_arg.
+There is no limit to the number of arguments you define, but the additional argument input has a 4096 character limit.
+This limit includes all of the keys and values you define.
+
+---
+
+##### `installationType`<sup>Optional</sup> <a name="installationType" id="cdk-ssm-documents.ConfigurePackageStepProps.property.installationType"></a>
+
+```typescript
+public readonly installationType: IInstallationTypeVariable;
+```
+
+- *Type:* <a href="#cdk-ssm-documents.IInstallationTypeVariable">IInstallationTypeVariable</a>
+
+The type of installation to perform.
+
+If you specify Uninstall and reinstall, the package is completely uninstalled, and then reinstalled.
+The application is unavailable until the reinstallation is complete.
+If you specify In-place update, only new or changed files are added to the existing installation according you instructions you provide in an update script.
+The application remains available throughout the update process.
+The In-place update option isn't supported for AWS-published packages. Uninstall and reinstall is the default value.
+
+---
+
+##### `version`<sup>Optional</sup> <a name="version" id="cdk-ssm-documents.ConfigurePackageStepProps.property.version"></a>
+
+```typescript
+public readonly version: IStringVariable;
+```
+
+- *Type:* <a href="#cdk-ssm-documents.IStringVariable">IStringVariable</a>
+
+A specific version of the package to install or uninstall.
+
+If installing, the system installs the latest published version, by default.
+If uninstalling, the system uninstalls the currently installed version, by default.
+If no installed version is found, the latest published version is downloaded, and the uninstall action is run.
 
 ---
 
@@ -15171,7 +15762,7 @@ const createStackStepProps: CreateStackStepProps = { ... }
 | <code><a href="#cdk-ssm-documents.CreateStackStepProps.property.capabilities">capabilities</a></code> | <code><a href="#cdk-ssm-documents.IStringListVariable">IStringListVariable</a></code> | (Optional) A list of values that you specify before CloudFormation can create certain stacks. |
 | <code><a href="#cdk-ssm-documents.CreateStackStepProps.property.clientRequestToken">clientRequestToken</a></code> | <code><a href="#cdk-ssm-documents.IStringVariable">IStringVariable</a></code> | (Optional) A unique identifier for this CreateStack request. |
 | <code><a href="#cdk-ssm-documents.CreateStackStepProps.property.notificationARNs">notificationARNs</a></code> | <code><a href="#cdk-ssm-documents.IStringListVariable">IStringListVariable</a></code> | (Optional) The Amazon Simple Notification Service (Amazon SNS) topic ARNs for publishing stack-related events. |
-| <code><a href="#cdk-ssm-documents.CreateStackStepProps.property.onStackFailure">onStackFailure</a></code> | <code><a href="#cdk-ssm-documents.IEnumVariable">IEnumVariable</a></code> | (Optional) Determines the action to take if stack creation failed. |
+| <code><a href="#cdk-ssm-documents.CreateStackStepProps.property.onStackFailure">onStackFailure</a></code> | <code><a href="#cdk-ssm-documents.IOnFailureVariable">IOnFailureVariable</a></code> | (Optional) Determines the action to take if stack creation failed. |
 | <code><a href="#cdk-ssm-documents.CreateStackStepProps.property.parameters">parameters</a></code> | <code><a href="#cdk-ssm-documents.IMapListVariable">IMapListVariable</a></code> | (Optional) A list of Parameter structures that specify input parameters for the stack. |
 | <code><a href="#cdk-ssm-documents.CreateStackStepProps.property.resourceTypes">resourceTypes</a></code> | <code><a href="#cdk-ssm-documents.IStringListVariable">IStringListVariable</a></code> | (Optional) The template resource types that you have permissions to work with for this create stack action. |
 | <code><a href="#cdk-ssm-documents.CreateStackStepProps.property.roleArn">roleArn</a></code> | <code><a href="#cdk-ssm-documents.IStringVariable">IStringVariable</a></code> | (Optional) The Amazon Resource Name (ARN) of an AWS Identity and Access Management (IAM) role that CloudFormation assumes to create the stack. |
@@ -15379,10 +15970,10 @@ public readonly notificationARNs: IStringListVariable;
 ##### `onStackFailure`<sup>Optional</sup> <a name="onStackFailure" id="cdk-ssm-documents.CreateStackStepProps.property.onStackFailure"></a>
 
 ```typescript
-public readonly onStackFailure: IEnumVariable;
+public readonly onStackFailure: IOnFailureVariable;
 ```
 
-- *Type:* <a href="#cdk-ssm-documents.IEnumVariable">IEnumVariable</a>
+- *Type:* <a href="#cdk-ssm-documents.IOnFailureVariable">IOnFailureVariable</a>
 - *Default:* Rollback on failure
 
 (Optional) Determines the action to take if stack creation failed.
@@ -15506,7 +16097,7 @@ const createTagsStepProps: CreateTagsStepProps = { ... }
 | <code><a href="#cdk-ssm-documents.CreateTagsStepProps.property.timeoutSeconds">timeoutSeconds</a></code> | <code>number</code> | (Optional) timeout seconds to run this step. |
 | <code><a href="#cdk-ssm-documents.CreateTagsStepProps.property.resourceIds">resourceIds</a></code> | <code><a href="#cdk-ssm-documents.IStringListVariable">IStringListVariable</a></code> | The IDs of the resource(s) to be tagged. |
 | <code><a href="#cdk-ssm-documents.CreateTagsStepProps.property.tags">tags</a></code> | <code><a href="#cdk-ssm-documents.IMapListVariable">IMapListVariable</a></code> | The tags to associate with the resource(s). |
-| <code><a href="#cdk-ssm-documents.CreateTagsStepProps.property.resourceType">resourceType</a></code> | <code><a href="#cdk-ssm-documents.IEnumVariable">IEnumVariable</a></code> | (Optional) The type of resource(s) to be tagged. |
+| <code><a href="#cdk-ssm-documents.CreateTagsStepProps.property.resourceType">resourceType</a></code> | <code><a href="#cdk-ssm-documents.IResourceTypeVariable">IResourceTypeVariable</a></code> | (Optional) The type of resource(s) to be tagged. |
 
 ---
 
@@ -15661,10 +16252,10 @@ The tags to associate with the resource(s).
 ##### `resourceType`<sup>Optional</sup> <a name="resourceType" id="cdk-ssm-documents.CreateTagsStepProps.property.resourceType"></a>
 
 ```typescript
-public readonly resourceType: IEnumVariable;
+public readonly resourceType: IResourceTypeVariable;
 ```
 
-- *Type:* <a href="#cdk-ssm-documents.IEnumVariable">IEnumVariable</a>
+- *Type:* <a href="#cdk-ssm-documents.IResourceTypeVariable">IResourceTypeVariable</a>
 - *Default:* EC2
 
 (Optional) The type of resource(s) to be tagged.
@@ -17746,7 +18337,7 @@ const runCommandProps: RunCommandProps = { ... }
 | <code><a href="#cdk-ssm-documents.RunCommandProps.property.cloudWatchOutputConfig">cloudWatchOutputConfig</a></code> | <code>{[ key: string ]: any}</code> | (Optional) Configuration options for sending command output to Amazon CloudWatch Logs. |
 | <code><a href="#cdk-ssm-documents.RunCommandProps.property.comment">comment</a></code> | <code>string</code> | (Optional) User-defined information about the command. |
 | <code><a href="#cdk-ssm-documents.RunCommandProps.property.documentHash">documentHash</a></code> | <code>string</code> | (Optional) The hash for the document. |
-| <code><a href="#cdk-ssm-documents.RunCommandProps.property.documentHashType">documentHashType</a></code> | <code><a href="#cdk-ssm-documents.DocumentHashType">DocumentHashType</a></code> | (Optional) The type of the hash. |
+| <code><a href="#cdk-ssm-documents.RunCommandProps.property.documentHashType">documentHashType</a></code> | <code>string</code> | (Optional) The type of the hash. |
 | <code><a href="#cdk-ssm-documents.RunCommandProps.property.maxConcurrency">maxConcurrency</a></code> | <code>number</code> | (Optional) The maximum concurrency. |
 | <code><a href="#cdk-ssm-documents.RunCommandProps.property.maxErrors">maxErrors</a></code> | <code>number</code> | (Optional) The maximum errors. |
 | <code><a href="#cdk-ssm-documents.RunCommandProps.property.notificationConfig">notificationConfig</a></code> | <code>{[ key: string ]: any}</code> | (Optional) The configurations for sending notifications. |
@@ -17829,10 +18420,10 @@ public readonly documentHash: string;
 ##### `documentHashType`<sup>Optional</sup> <a name="documentHashType" id="cdk-ssm-documents.RunCommandProps.property.documentHashType"></a>
 
 ```typescript
-public readonly documentHashType: DocumentHashType;
+public readonly documentHashType: string;
 ```
 
-- *Type:* <a href="#cdk-ssm-documents.DocumentHashType">DocumentHashType</a>
+- *Type:* string
 
 (Optional) The type of the hash.
 
@@ -17967,7 +18558,7 @@ const runCommandStepProps: RunCommandStepProps = { ... }
 | <code><a href="#cdk-ssm-documents.RunCommandStepProps.property.commandTimeoutSeconds">commandTimeoutSeconds</a></code> | <code><a href="#cdk-ssm-documents.INumberVariable">INumberVariable</a></code> | (Optional) The amount of time in seconds to wait for a command to deliver to the AWS Systems Manager SSM Agent on an instance. |
 | <code><a href="#cdk-ssm-documents.RunCommandStepProps.property.comment">comment</a></code> | <code><a href="#cdk-ssm-documents.IStringVariable">IStringVariable</a></code> | (Optional) User-defined information about the command. |
 | <code><a href="#cdk-ssm-documents.RunCommandStepProps.property.documentHash">documentHash</a></code> | <code><a href="#cdk-ssm-documents.IStringVariable">IStringVariable</a></code> | (Optional) The hash for the document. |
-| <code><a href="#cdk-ssm-documents.RunCommandStepProps.property.documentHashType">documentHashType</a></code> | <code><a href="#cdk-ssm-documents.IEnumVariable">IEnumVariable</a></code> | (Optional) The type of the hash. |
+| <code><a href="#cdk-ssm-documents.RunCommandStepProps.property.documentHashType">documentHashType</a></code> | <code><a href="#cdk-ssm-documents.IDocumentHashTypeVariable">IDocumentHashTypeVariable</a></code> | (Optional) The type of the hash. |
 | <code><a href="#cdk-ssm-documents.RunCommandStepProps.property.maxConcurrency">maxConcurrency</a></code> | <code><a href="#cdk-ssm-documents.INumberVariable">INumberVariable</a></code> | (Optional) The maximum concurrency. |
 | <code><a href="#cdk-ssm-documents.RunCommandStepProps.property.maxErrors">maxErrors</a></code> | <code><a href="#cdk-ssm-documents.INumberVariable">INumberVariable</a></code> | (Optional) The maximum errors. |
 | <code><a href="#cdk-ssm-documents.RunCommandStepProps.property.notificationConfig">notificationConfig</a></code> | <code><a href="#cdk-ssm-documents.IStringMapVariable">IStringMapVariable</a></code> | (Optional) The configurations for sending notifications. |
@@ -18185,10 +18776,10 @@ public readonly documentHash: IStringVariable;
 ##### `documentHashType`<sup>Optional</sup> <a name="documentHashType" id="cdk-ssm-documents.RunCommandStepProps.property.documentHashType"></a>
 
 ```typescript
-public readonly documentHashType: IEnumVariable;
+public readonly documentHashType: IDocumentHashTypeVariable;
 ```
 
-- *Type:* <a href="#cdk-ssm-documents.IEnumVariable">IEnumVariable</a>
+- *Type:* <a href="#cdk-ssm-documents.IDocumentHashTypeVariable">IDocumentHashTypeVariable</a>
 
 (Optional) The type of the hash.
 
@@ -20686,6 +21277,129 @@ This is not used by SSM and is therefore not declared in the SSM yaml/json.
 
 ## Classes <a name="Classes" id="Classes"></a>
 
+### ActionVariable <a name="ActionVariable" id="cdk-ssm-documents.ActionVariable"></a>
+
+- *Implements:* <a href="#cdk-ssm-documents.IActionVariable">IActionVariable</a>
+
+#### Initializers <a name="Initializers" id="cdk-ssm-documents.ActionVariable.Initializer"></a>
+
+```typescript
+import { ActionVariable } from 'cdk-ssm-documents'
+
+new ActionVariable(reference: string)
+```
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#cdk-ssm-documents.ActionVariable.Initializer.parameter.reference">reference</a></code> | <code>string</code> | *No description.* |
+
+---
+
+##### `reference`<sup>Required</sup> <a name="reference" id="cdk-ssm-documents.ActionVariable.Initializer.parameter.reference"></a>
+
+- *Type:* string
+
+---
+
+#### Methods <a name="Methods" id="Methods"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#cdk-ssm-documents.ActionVariable.print">print</a></code> | Prints the variable in a way that SSM understands. |
+| <code><a href="#cdk-ssm-documents.ActionVariable.requiredInputs">requiredInputs</a></code> | The inputs that are required for determining the value of this variable. |
+| <code><a href="#cdk-ssm-documents.ActionVariable.resolve">resolve</a></code> | Given the execution inputs, return the resolved value of this variable. |
+| <code><a href="#cdk-ssm-documents.ActionVariable.toJSON">toJSON</a></code> | JSON.stringify(variable) will implicitly invoke this variable. |
+| <code><a href="#cdk-ssm-documents.ActionVariable.resolveToString">resolveToString</a></code> | Given the execution inputs, return the resolved value of this variable. |
+
+---
+
+##### `print` <a name="print" id="cdk-ssm-documents.ActionVariable.print"></a>
+
+```typescript
+public print(): any
+```
+
+Prints the variable in a way that SSM understands.
+
+This is typically in the form of {{Variable}} or the value.
+
+##### `requiredInputs` <a name="requiredInputs" id="cdk-ssm-documents.ActionVariable.requiredInputs"></a>
+
+```typescript
+public requiredInputs(): string[]
+```
+
+The inputs that are required for determining the value of this variable.
+
+In the case of a single variable string, this will return a single value.
+
+##### `resolve` <a name="resolve" id="cdk-ssm-documents.ActionVariable.resolve"></a>
+
+```typescript
+public resolve(inputs: {[ key: string ]: any}): any
+```
+
+Given the execution inputs, return the resolved value of this variable.
+
+###### `inputs`<sup>Required</sup> <a name="inputs" id="cdk-ssm-documents.ActionVariable.resolve.parameter.inputs"></a>
+
+- *Type:* {[ key: string ]: any}
+
+---
+
+##### `toJSON` <a name="toJSON" id="cdk-ssm-documents.ActionVariable.toJSON"></a>
+
+```typescript
+public toJSON(): any
+```
+
+JSON.stringify(variable) will implicitly invoke this variable.
+
+##### `resolveToString` <a name="resolveToString" id="cdk-ssm-documents.ActionVariable.resolveToString"></a>
+
+```typescript
+public resolveToString(inputs: {[ key: string ]: any}): string
+```
+
+Given the execution inputs, return the resolved value of this variable.
+
+###### `inputs`<sup>Required</sup> <a name="inputs" id="cdk-ssm-documents.ActionVariable.resolveToString.parameter.inputs"></a>
+
+- *Type:* {[ key: string ]: any}
+
+---
+
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#cdk-ssm-documents.ActionVariable.property.reference">reference</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.ActionVariable.property.validValues">validValues</a></code> | <code>string[]</code> | *No description.* |
+
+---
+
+##### `reference`<sup>Required</sup> <a name="reference" id="cdk-ssm-documents.ActionVariable.property.reference"></a>
+
+```typescript
+public readonly reference: string;
+```
+
+- *Type:* string
+
+---
+
+##### `validValues`<sup>Required</sup> <a name="validValues" id="cdk-ssm-documents.ActionVariable.property.validValues"></a>
+
+```typescript
+public readonly validValues: string[];
+```
+
+- *Type:* string[]
+
+---
+
+
 ### ApiRunCommandHook <a name="ApiRunCommandHook" id="cdk-ssm-documents.ApiRunCommandHook"></a>
 
 - *Implements:* <a href="#cdk-ssm-documents.IRunCommandHook">IRunCommandHook</a>
@@ -21260,7 +21974,7 @@ public readonly dataTypeEnum: DataTypeEnum;
 
 ### DesiredStateVariable <a name="DesiredStateVariable" id="cdk-ssm-documents.DesiredStateVariable"></a>
 
-A desired state variable reference.
+- *Implements:* <a href="#cdk-ssm-documents.IDesiredStateVariable">IDesiredStateVariable</a>
 
 #### Initializers <a name="Initializers" id="cdk-ssm-documents.DesiredStateVariable.Initializer"></a>
 
@@ -21290,7 +22004,7 @@ new DesiredStateVariable(reference: string)
 | <code><a href="#cdk-ssm-documents.DesiredStateVariable.requiredInputs">requiredInputs</a></code> | The inputs that are required for determining the value of this variable. |
 | <code><a href="#cdk-ssm-documents.DesiredStateVariable.resolve">resolve</a></code> | Given the execution inputs, return the resolved value of this variable. |
 | <code><a href="#cdk-ssm-documents.DesiredStateVariable.toJSON">toJSON</a></code> | JSON.stringify(variable) will implicitly invoke this variable. |
-| <code><a href="#cdk-ssm-documents.DesiredStateVariable.resolveToEnum">resolveToEnum</a></code> | Given the execution inputs, return the resolved value of this variable. |
+| <code><a href="#cdk-ssm-documents.DesiredStateVariable.resolveToString">resolveToString</a></code> | Given the execution inputs, return the resolved value of this variable. |
 
 ---
 
@@ -21336,15 +22050,15 @@ public toJSON(): any
 
 JSON.stringify(variable) will implicitly invoke this variable.
 
-##### `resolveToEnum` <a name="resolveToEnum" id="cdk-ssm-documents.DesiredStateVariable.resolveToEnum"></a>
+##### `resolveToString` <a name="resolveToString" id="cdk-ssm-documents.DesiredStateVariable.resolveToString"></a>
 
 ```typescript
-public resolveToEnum(inputs: {[ key: string ]: any}): any
+public resolveToString(inputs: {[ key: string ]: any}): string
 ```
 
 Given the execution inputs, return the resolved value of this variable.
 
-###### `inputs`<sup>Required</sup> <a name="inputs" id="cdk-ssm-documents.DesiredStateVariable.resolveToEnum.parameter.inputs"></a>
+###### `inputs`<sup>Required</sup> <a name="inputs" id="cdk-ssm-documents.DesiredStateVariable.resolveToString.parameter.inputs"></a>
 
 - *Type:* {[ key: string ]: any}
 
@@ -21356,6 +22070,7 @@ Given the execution inputs, return the resolved value of this variable.
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
 | <code><a href="#cdk-ssm-documents.DesiredStateVariable.property.reference">reference</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.DesiredStateVariable.property.validValues">validValues</a></code> | <code>string[]</code> | *No description.* |
 
 ---
 
@@ -21366,6 +22081,16 @@ public readonly reference: string;
 ```
 
 - *Type:* string
+
+---
+
+##### `validValues`<sup>Required</sup> <a name="validValues" id="cdk-ssm-documents.DesiredStateVariable.property.validValues"></a>
+
+```typescript
+public readonly validValues: string[];
+```
+
+- *Type:* string[]
 
 ---
 
@@ -21601,7 +22326,7 @@ public readonly containerId: string;
 
 ### DocumentHashTypeVariable <a name="DocumentHashTypeVariable" id="cdk-ssm-documents.DocumentHashTypeVariable"></a>
 
-Reference to document hash type.
+- *Implements:* <a href="#cdk-ssm-documents.IDocumentHashTypeVariable">IDocumentHashTypeVariable</a>
 
 #### Initializers <a name="Initializers" id="cdk-ssm-documents.DocumentHashTypeVariable.Initializer"></a>
 
@@ -21631,7 +22356,7 @@ new DocumentHashTypeVariable(reference: string)
 | <code><a href="#cdk-ssm-documents.DocumentHashTypeVariable.requiredInputs">requiredInputs</a></code> | The inputs that are required for determining the value of this variable. |
 | <code><a href="#cdk-ssm-documents.DocumentHashTypeVariable.resolve">resolve</a></code> | Given the execution inputs, return the resolved value of this variable. |
 | <code><a href="#cdk-ssm-documents.DocumentHashTypeVariable.toJSON">toJSON</a></code> | JSON.stringify(variable) will implicitly invoke this variable. |
-| <code><a href="#cdk-ssm-documents.DocumentHashTypeVariable.resolveToEnum">resolveToEnum</a></code> | Given the execution inputs, return the resolved value of this variable. |
+| <code><a href="#cdk-ssm-documents.DocumentHashTypeVariable.resolveToString">resolveToString</a></code> | Given the execution inputs, return the resolved value of this variable. |
 
 ---
 
@@ -21677,15 +22402,15 @@ public toJSON(): any
 
 JSON.stringify(variable) will implicitly invoke this variable.
 
-##### `resolveToEnum` <a name="resolveToEnum" id="cdk-ssm-documents.DocumentHashTypeVariable.resolveToEnum"></a>
+##### `resolveToString` <a name="resolveToString" id="cdk-ssm-documents.DocumentHashTypeVariable.resolveToString"></a>
 
 ```typescript
-public resolveToEnum(inputs: {[ key: string ]: any}): any
+public resolveToString(inputs: {[ key: string ]: any}): string
 ```
 
 Given the execution inputs, return the resolved value of this variable.
 
-###### `inputs`<sup>Required</sup> <a name="inputs" id="cdk-ssm-documents.DocumentHashTypeVariable.resolveToEnum.parameter.inputs"></a>
+###### `inputs`<sup>Required</sup> <a name="inputs" id="cdk-ssm-documents.DocumentHashTypeVariable.resolveToString.parameter.inputs"></a>
 
 - *Type:* {[ key: string ]: any}
 
@@ -21697,6 +22422,7 @@ Given the execution inputs, return the resolved value of this variable.
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
 | <code><a href="#cdk-ssm-documents.DocumentHashTypeVariable.property.reference">reference</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.DocumentHashTypeVariable.property.validValues">validValues</a></code> | <code>string[]</code> | *No description.* |
 
 ---
 
@@ -21710,126 +22436,13 @@ public readonly reference: string;
 
 ---
 
-
-### EnumVariable <a name="EnumVariable" id="cdk-ssm-documents.EnumVariable"></a>
-
-- *Implements:* <a href="#cdk-ssm-documents.IEnumVariable">IEnumVariable</a>
-
-An enum variable reference.
-
-Used to resolve the value from step inputs.
-
-#### Initializers <a name="Initializers" id="cdk-ssm-documents.EnumVariable.Initializer"></a>
+##### `validValues`<sup>Required</sup> <a name="validValues" id="cdk-ssm-documents.DocumentHashTypeVariable.property.validValues"></a>
 
 ```typescript
-import { EnumVariable } from 'cdk-ssm-documents'
-
-new EnumVariable(reference: string, enumType: {[ key: string ]: any})
+public readonly validValues: string[];
 ```
 
-| **Name** | **Type** | **Description** |
-| --- | --- | --- |
-| <code><a href="#cdk-ssm-documents.EnumVariable.Initializer.parameter.reference">reference</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#cdk-ssm-documents.EnumVariable.Initializer.parameter.enumType">enumType</a></code> | <code>{[ key: string ]: any}</code> | *No description.* |
-
----
-
-##### `reference`<sup>Required</sup> <a name="reference" id="cdk-ssm-documents.EnumVariable.Initializer.parameter.reference"></a>
-
-- *Type:* string
-
----
-
-##### `enumType`<sup>Required</sup> <a name="enumType" id="cdk-ssm-documents.EnumVariable.Initializer.parameter.enumType"></a>
-
-- *Type:* {[ key: string ]: any}
-
----
-
-#### Methods <a name="Methods" id="Methods"></a>
-
-| **Name** | **Description** |
-| --- | --- |
-| <code><a href="#cdk-ssm-documents.EnumVariable.print">print</a></code> | Prints the variable in a way that SSM understands. |
-| <code><a href="#cdk-ssm-documents.EnumVariable.requiredInputs">requiredInputs</a></code> | The inputs that are required for determining the value of this variable. |
-| <code><a href="#cdk-ssm-documents.EnumVariable.resolve">resolve</a></code> | Given the execution inputs, return the resolved value of this variable. |
-| <code><a href="#cdk-ssm-documents.EnumVariable.toJSON">toJSON</a></code> | JSON.stringify(variable) will implicitly invoke this variable. |
-| <code><a href="#cdk-ssm-documents.EnumVariable.resolveToEnum">resolveToEnum</a></code> | Given the execution inputs, return the resolved value of this variable. |
-
----
-
-##### `print` <a name="print" id="cdk-ssm-documents.EnumVariable.print"></a>
-
-```typescript
-public print(): any
-```
-
-Prints the variable in a way that SSM understands.
-
-This is typically in the form of {{Variable}} or the value.
-
-##### `requiredInputs` <a name="requiredInputs" id="cdk-ssm-documents.EnumVariable.requiredInputs"></a>
-
-```typescript
-public requiredInputs(): string[]
-```
-
-The inputs that are required for determining the value of this variable.
-
-In the case of a single variable string, this will return a single value.
-
-##### `resolve` <a name="resolve" id="cdk-ssm-documents.EnumVariable.resolve"></a>
-
-```typescript
-public resolve(inputs: {[ key: string ]: any}): any
-```
-
-Given the execution inputs, return the resolved value of this variable.
-
-###### `inputs`<sup>Required</sup> <a name="inputs" id="cdk-ssm-documents.EnumVariable.resolve.parameter.inputs"></a>
-
-- *Type:* {[ key: string ]: any}
-
----
-
-##### `toJSON` <a name="toJSON" id="cdk-ssm-documents.EnumVariable.toJSON"></a>
-
-```typescript
-public toJSON(): any
-```
-
-JSON.stringify(variable) will implicitly invoke this variable.
-
-##### `resolveToEnum` <a name="resolveToEnum" id="cdk-ssm-documents.EnumVariable.resolveToEnum"></a>
-
-```typescript
-public resolveToEnum(inputs: {[ key: string ]: any}): any
-```
-
-Given the execution inputs, return the resolved value of this variable.
-
-###### `inputs`<sup>Required</sup> <a name="inputs" id="cdk-ssm-documents.EnumVariable.resolveToEnum.parameter.inputs"></a>
-
-- *Type:* {[ key: string ]: any}
-
----
-
-
-#### Properties <a name="Properties" id="Properties"></a>
-
-| **Name** | **Type** | **Description** |
-| --- | --- | --- |
-| <code><a href="#cdk-ssm-documents.EnumVariable.property.reference">reference</a></code> | <code>string</code> | *No description.* |
-
----
-
-##### `reference`<sup>Required</sup> <a name="reference" id="cdk-ssm-documents.EnumVariable.property.reference"></a>
-
-```typescript
-public readonly reference: string;
-```
-
-- *Type:* string
+- *Type:* string[]
 
 ---
 
@@ -21935,6 +22548,126 @@ public readonly reference: string;
 
 ---
 
+
+### HardCodedAction <a name="HardCodedAction" id="cdk-ssm-documents.HardCodedAction"></a>
+
+- *Implements:* <a href="#cdk-ssm-documents.IActionVariable">IActionVariable</a>
+
+#### Methods <a name="Methods" id="Methods"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#cdk-ssm-documents.HardCodedAction.print">print</a></code> | Prints the variable in a way that SSM understands. |
+| <code><a href="#cdk-ssm-documents.HardCodedAction.requiredInputs">requiredInputs</a></code> | The inputs that are required for determining the value of this variable. |
+| <code><a href="#cdk-ssm-documents.HardCodedAction.resolve">resolve</a></code> | Given the execution inputs, return the resolved value of this variable. |
+| <code><a href="#cdk-ssm-documents.HardCodedAction.toJSON">toJSON</a></code> | JSON.stringify(variable) will implicitly invoke this variable. |
+| <code><a href="#cdk-ssm-documents.HardCodedAction.resolveToString">resolveToString</a></code> | Given the execution inputs, return the resolved value of this variable. |
+
+---
+
+##### `print` <a name="print" id="cdk-ssm-documents.HardCodedAction.print"></a>
+
+```typescript
+public print(): any
+```
+
+Prints the variable in a way that SSM understands.
+
+This is typically in the form of {{Variable}} or the value.
+
+##### `requiredInputs` <a name="requiredInputs" id="cdk-ssm-documents.HardCodedAction.requiredInputs"></a>
+
+```typescript
+public requiredInputs(): string[]
+```
+
+The inputs that are required for determining the value of this variable.
+
+In the case of a single variable string, this will return a single value.
+
+##### `resolve` <a name="resolve" id="cdk-ssm-documents.HardCodedAction.resolve"></a>
+
+```typescript
+public resolve(_inputs: {[ key: string ]: any}): any
+```
+
+Given the execution inputs, return the resolved value of this variable.
+
+###### `_inputs`<sup>Required</sup> <a name="_inputs" id="cdk-ssm-documents.HardCodedAction.resolve.parameter._inputs"></a>
+
+- *Type:* {[ key: string ]: any}
+
+---
+
+##### `toJSON` <a name="toJSON" id="cdk-ssm-documents.HardCodedAction.toJSON"></a>
+
+```typescript
+public toJSON(): any
+```
+
+JSON.stringify(variable) will implicitly invoke this variable.
+
+##### `resolveToString` <a name="resolveToString" id="cdk-ssm-documents.HardCodedAction.resolveToString"></a>
+
+```typescript
+public resolveToString(inputs: {[ key: string ]: any}): string
+```
+
+Given the execution inputs, return the resolved value of this variable.
+
+###### `inputs`<sup>Required</sup> <a name="inputs" id="cdk-ssm-documents.HardCodedAction.resolveToString.parameter.inputs"></a>
+
+- *Type:* {[ key: string ]: any}
+
+---
+
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#cdk-ssm-documents.HardCodedAction.property.val">val</a></code> | <code>any</code> | *No description.* |
+
+---
+
+##### `val`<sup>Required</sup> <a name="val" id="cdk-ssm-documents.HardCodedAction.property.val"></a>
+
+```typescript
+public readonly val: any;
+```
+
+- *Type:* any
+
+---
+
+#### Constants <a name="Constants" id="Constants"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#cdk-ssm-documents.HardCodedAction.property.INSTALL">INSTALL</a></code> | <code><a href="#cdk-ssm-documents.HardCodedAction">HardCodedAction</a></code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.HardCodedAction.property.UNINSTALL">UNINSTALL</a></code> | <code><a href="#cdk-ssm-documents.HardCodedAction">HardCodedAction</a></code> | *No description.* |
+
+---
+
+##### `INSTALL`<sup>Required</sup> <a name="INSTALL" id="cdk-ssm-documents.HardCodedAction.property.INSTALL"></a>
+
+```typescript
+public readonly INSTALL: HardCodedAction;
+```
+
+- *Type:* <a href="#cdk-ssm-documents.HardCodedAction">HardCodedAction</a>
+
+---
+
+##### `UNINSTALL`<sup>Required</sup> <a name="UNINSTALL" id="cdk-ssm-documents.HardCodedAction.property.UNINSTALL"></a>
+
+```typescript
+public readonly UNINSTALL: HardCodedAction;
+```
+
+- *Type:* <a href="#cdk-ssm-documents.HardCodedAction">HardCodedAction</a>
+
+---
 
 ### HardCodedBoolean <a name="HardCodedBoolean" id="cdk-ssm-documents.HardCodedBoolean"></a>
 
@@ -22054,27 +22787,7 @@ public readonly val: any;
 
 ### HardCodedDesiredState <a name="HardCodedDesiredState" id="cdk-ssm-documents.HardCodedDesiredState"></a>
 
-A hard coded desired state.
-
-#### Initializers <a name="Initializers" id="cdk-ssm-documents.HardCodedDesiredState.Initializer"></a>
-
-```typescript
-import { HardCodedDesiredState } from 'cdk-ssm-documents'
-
-new HardCodedDesiredState(value: DesiredState)
-```
-
-| **Name** | **Type** | **Description** |
-| --- | --- | --- |
-| <code><a href="#cdk-ssm-documents.HardCodedDesiredState.Initializer.parameter.value">value</a></code> | <code><a href="#cdk-ssm-documents.DesiredState">DesiredState</a></code> | *No description.* |
-
----
-
-##### `value`<sup>Required</sup> <a name="value" id="cdk-ssm-documents.HardCodedDesiredState.Initializer.parameter.value"></a>
-
-- *Type:* <a href="#cdk-ssm-documents.DesiredState">DesiredState</a>
-
----
+- *Implements:* <a href="#cdk-ssm-documents.IDesiredStateVariable">IDesiredStateVariable</a>
 
 #### Methods <a name="Methods" id="Methods"></a>
 
@@ -22083,8 +22796,8 @@ new HardCodedDesiredState(value: DesiredState)
 | <code><a href="#cdk-ssm-documents.HardCodedDesiredState.print">print</a></code> | Prints the variable in a way that SSM understands. |
 | <code><a href="#cdk-ssm-documents.HardCodedDesiredState.requiredInputs">requiredInputs</a></code> | The inputs that are required for determining the value of this variable. |
 | <code><a href="#cdk-ssm-documents.HardCodedDesiredState.resolve">resolve</a></code> | Given the execution inputs, return the resolved value of this variable. |
-| <code><a href="#cdk-ssm-documents.HardCodedDesiredState.resolveToEnum">resolveToEnum</a></code> | Given the execution inputs, return the resolved value of this variable. |
 | <code><a href="#cdk-ssm-documents.HardCodedDesiredState.toJSON">toJSON</a></code> | JSON.stringify(variable) will implicitly invoke this variable. |
+| <code><a href="#cdk-ssm-documents.HardCodedDesiredState.resolveToString">resolveToString</a></code> | Given the execution inputs, return the resolved value of this variable. |
 
 ---
 
@@ -22122,20 +22835,6 @@ Given the execution inputs, return the resolved value of this variable.
 
 ---
 
-##### `resolveToEnum` <a name="resolveToEnum" id="cdk-ssm-documents.HardCodedDesiredState.resolveToEnum"></a>
-
-```typescript
-public resolveToEnum(_inputs: {[ key: string ]: any}): any
-```
-
-Given the execution inputs, return the resolved value of this variable.
-
-###### `_inputs`<sup>Required</sup> <a name="_inputs" id="cdk-ssm-documents.HardCodedDesiredState.resolveToEnum.parameter._inputs"></a>
-
-- *Type:* {[ key: string ]: any}
-
----
-
 ##### `toJSON` <a name="toJSON" id="cdk-ssm-documents.HardCodedDesiredState.toJSON"></a>
 
 ```typescript
@@ -22144,32 +22843,82 @@ public toJSON(): any
 
 JSON.stringify(variable) will implicitly invoke this variable.
 
-
-
-
-### HardCodedDocumentHashType <a name="HardCodedDocumentHashType" id="cdk-ssm-documents.HardCodedDocumentHashType"></a>
-
-Hard coded document hash type.
-
-#### Initializers <a name="Initializers" id="cdk-ssm-documents.HardCodedDocumentHashType.Initializer"></a>
+##### `resolveToString` <a name="resolveToString" id="cdk-ssm-documents.HardCodedDesiredState.resolveToString"></a>
 
 ```typescript
-import { HardCodedDocumentHashType } from 'cdk-ssm-documents'
-
-new HardCodedDocumentHashType(value: DocumentHashType)
+public resolveToString(inputs: {[ key: string ]: any}): string
 ```
+
+Given the execution inputs, return the resolved value of this variable.
+
+###### `inputs`<sup>Required</sup> <a name="inputs" id="cdk-ssm-documents.HardCodedDesiredState.resolveToString.parameter.inputs"></a>
+
+- *Type:* {[ key: string ]: any}
+
+---
+
+
+#### Properties <a name="Properties" id="Properties"></a>
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#cdk-ssm-documents.HardCodedDocumentHashType.Initializer.parameter.value">value</a></code> | <code><a href="#cdk-ssm-documents.DocumentHashType">DocumentHashType</a></code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.HardCodedDesiredState.property.val">val</a></code> | <code>any</code> | *No description.* |
 
 ---
 
-##### `value`<sup>Required</sup> <a name="value" id="cdk-ssm-documents.HardCodedDocumentHashType.Initializer.parameter.value"></a>
+##### `val`<sup>Required</sup> <a name="val" id="cdk-ssm-documents.HardCodedDesiredState.property.val"></a>
 
-- *Type:* <a href="#cdk-ssm-documents.DocumentHashType">DocumentHashType</a>
+```typescript
+public readonly val: any;
+```
+
+- *Type:* any
 
 ---
+
+#### Constants <a name="Constants" id="Constants"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#cdk-ssm-documents.HardCodedDesiredState.property.RUNNING">RUNNING</a></code> | <code><a href="#cdk-ssm-documents.HardCodedDesiredState">HardCodedDesiredState</a></code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.HardCodedDesiredState.property.STOPPED">STOPPED</a></code> | <code><a href="#cdk-ssm-documents.HardCodedDesiredState">HardCodedDesiredState</a></code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.HardCodedDesiredState.property.TERMINATED">TERMINATED</a></code> | <code><a href="#cdk-ssm-documents.HardCodedDesiredState">HardCodedDesiredState</a></code> | *No description.* |
+
+---
+
+##### `RUNNING`<sup>Required</sup> <a name="RUNNING" id="cdk-ssm-documents.HardCodedDesiredState.property.RUNNING"></a>
+
+```typescript
+public readonly RUNNING: HardCodedDesiredState;
+```
+
+- *Type:* <a href="#cdk-ssm-documents.HardCodedDesiredState">HardCodedDesiredState</a>
+
+---
+
+##### `STOPPED`<sup>Required</sup> <a name="STOPPED" id="cdk-ssm-documents.HardCodedDesiredState.property.STOPPED"></a>
+
+```typescript
+public readonly STOPPED: HardCodedDesiredState;
+```
+
+- *Type:* <a href="#cdk-ssm-documents.HardCodedDesiredState">HardCodedDesiredState</a>
+
+---
+
+##### `TERMINATED`<sup>Required</sup> <a name="TERMINATED" id="cdk-ssm-documents.HardCodedDesiredState.property.TERMINATED"></a>
+
+```typescript
+public readonly TERMINATED: HardCodedDesiredState;
+```
+
+- *Type:* <a href="#cdk-ssm-documents.HardCodedDesiredState">HardCodedDesiredState</a>
+
+---
+
+### HardCodedDocumentHashType <a name="HardCodedDocumentHashType" id="cdk-ssm-documents.HardCodedDocumentHashType"></a>
+
+- *Implements:* <a href="#cdk-ssm-documents.IDocumentHashTypeVariable">IDocumentHashTypeVariable</a>
 
 #### Methods <a name="Methods" id="Methods"></a>
 
@@ -22178,8 +22927,8 @@ new HardCodedDocumentHashType(value: DocumentHashType)
 | <code><a href="#cdk-ssm-documents.HardCodedDocumentHashType.print">print</a></code> | Prints the variable in a way that SSM understands. |
 | <code><a href="#cdk-ssm-documents.HardCodedDocumentHashType.requiredInputs">requiredInputs</a></code> | The inputs that are required for determining the value of this variable. |
 | <code><a href="#cdk-ssm-documents.HardCodedDocumentHashType.resolve">resolve</a></code> | Given the execution inputs, return the resolved value of this variable. |
-| <code><a href="#cdk-ssm-documents.HardCodedDocumentHashType.resolveToEnum">resolveToEnum</a></code> | Given the execution inputs, return the resolved value of this variable. |
 | <code><a href="#cdk-ssm-documents.HardCodedDocumentHashType.toJSON">toJSON</a></code> | JSON.stringify(variable) will implicitly invoke this variable. |
+| <code><a href="#cdk-ssm-documents.HardCodedDocumentHashType.resolveToString">resolveToString</a></code> | Given the execution inputs, return the resolved value of this variable. |
 
 ---
 
@@ -22217,20 +22966,6 @@ Given the execution inputs, return the resolved value of this variable.
 
 ---
 
-##### `resolveToEnum` <a name="resolveToEnum" id="cdk-ssm-documents.HardCodedDocumentHashType.resolveToEnum"></a>
-
-```typescript
-public resolveToEnum(_inputs: {[ key: string ]: any}): any
-```
-
-Given the execution inputs, return the resolved value of this variable.
-
-###### `_inputs`<sup>Required</sup> <a name="_inputs" id="cdk-ssm-documents.HardCodedDocumentHashType.resolveToEnum.parameter._inputs"></a>
-
-- *Type:* {[ key: string ]: any}
-
----
-
 ##### `toJSON` <a name="toJSON" id="cdk-ssm-documents.HardCodedDocumentHashType.toJSON"></a>
 
 ```typescript
@@ -22239,57 +22974,85 @@ public toJSON(): any
 
 JSON.stringify(variable) will implicitly invoke this variable.
 
-
-
-
-### HardCodedEnum <a name="HardCodedEnum" id="cdk-ssm-documents.HardCodedEnum"></a>
-
-- *Implements:* <a href="#cdk-ssm-documents.IEnumVariable">IEnumVariable</a>
-
-A hard-coded enum variable.
-
-Used when not dependent on step inputs.
-
-#### Initializers <a name="Initializers" id="cdk-ssm-documents.HardCodedEnum.Initializer"></a>
+##### `resolveToString` <a name="resolveToString" id="cdk-ssm-documents.HardCodedDocumentHashType.resolveToString"></a>
 
 ```typescript
-import { HardCodedEnum } from 'cdk-ssm-documents'
-
-new HardCodedEnum(value: any, enumType: {[ key: string ]: any})
+public resolveToString(inputs: {[ key: string ]: any}): string
 ```
 
-| **Name** | **Type** | **Description** |
-| --- | --- | --- |
-| <code><a href="#cdk-ssm-documents.HardCodedEnum.Initializer.parameter.value">value</a></code> | <code>any</code> | *No description.* |
-| <code><a href="#cdk-ssm-documents.HardCodedEnum.Initializer.parameter.enumType">enumType</a></code> | <code>{[ key: string ]: any}</code> | *No description.* |
+Given the execution inputs, return the resolved value of this variable.
 
----
-
-##### `value`<sup>Required</sup> <a name="value" id="cdk-ssm-documents.HardCodedEnum.Initializer.parameter.value"></a>
-
-- *Type:* any
-
----
-
-##### `enumType`<sup>Required</sup> <a name="enumType" id="cdk-ssm-documents.HardCodedEnum.Initializer.parameter.enumType"></a>
+###### `inputs`<sup>Required</sup> <a name="inputs" id="cdk-ssm-documents.HardCodedDocumentHashType.resolveToString.parameter.inputs"></a>
 
 - *Type:* {[ key: string ]: any}
 
 ---
 
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#cdk-ssm-documents.HardCodedDocumentHashType.property.val">val</a></code> | <code>any</code> | *No description.* |
+
+---
+
+##### `val`<sup>Required</sup> <a name="val" id="cdk-ssm-documents.HardCodedDocumentHashType.property.val"></a>
+
+```typescript
+public readonly val: any;
+```
+
+- *Type:* any
+
+---
+
+#### Constants <a name="Constants" id="Constants"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#cdk-ssm-documents.HardCodedDocumentHashType.property.SHA1">SHA1</a></code> | <code><a href="#cdk-ssm-documents.HardCodedDocumentHashType">HardCodedDocumentHashType</a></code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.HardCodedDocumentHashType.property.SHA256">SHA256</a></code> | <code><a href="#cdk-ssm-documents.HardCodedDocumentHashType">HardCodedDocumentHashType</a></code> | *No description.* |
+
+---
+
+##### `SHA1`<sup>Required</sup> <a name="SHA1" id="cdk-ssm-documents.HardCodedDocumentHashType.property.SHA1"></a>
+
+```typescript
+public readonly SHA1: HardCodedDocumentHashType;
+```
+
+- *Type:* <a href="#cdk-ssm-documents.HardCodedDocumentHashType">HardCodedDocumentHashType</a>
+
+---
+
+##### `SHA256`<sup>Required</sup> <a name="SHA256" id="cdk-ssm-documents.HardCodedDocumentHashType.property.SHA256"></a>
+
+```typescript
+public readonly SHA256: HardCodedDocumentHashType;
+```
+
+- *Type:* <a href="#cdk-ssm-documents.HardCodedDocumentHashType">HardCodedDocumentHashType</a>
+
+---
+
+### HardCodedInstallationType <a name="HardCodedInstallationType" id="cdk-ssm-documents.HardCodedInstallationType"></a>
+
+- *Implements:* <a href="#cdk-ssm-documents.IInstallationTypeVariable">IInstallationTypeVariable</a>
+
 #### Methods <a name="Methods" id="Methods"></a>
 
 | **Name** | **Description** |
 | --- | --- |
-| <code><a href="#cdk-ssm-documents.HardCodedEnum.print">print</a></code> | Prints the variable in a way that SSM understands. |
-| <code><a href="#cdk-ssm-documents.HardCodedEnum.requiredInputs">requiredInputs</a></code> | The inputs that are required for determining the value of this variable. |
-| <code><a href="#cdk-ssm-documents.HardCodedEnum.resolve">resolve</a></code> | Given the execution inputs, return the resolved value of this variable. |
-| <code><a href="#cdk-ssm-documents.HardCodedEnum.resolveToEnum">resolveToEnum</a></code> | Given the execution inputs, return the resolved value of this variable. |
-| <code><a href="#cdk-ssm-documents.HardCodedEnum.toJSON">toJSON</a></code> | JSON.stringify(variable) will implicitly invoke this variable. |
+| <code><a href="#cdk-ssm-documents.HardCodedInstallationType.print">print</a></code> | Prints the variable in a way that SSM understands. |
+| <code><a href="#cdk-ssm-documents.HardCodedInstallationType.requiredInputs">requiredInputs</a></code> | The inputs that are required for determining the value of this variable. |
+| <code><a href="#cdk-ssm-documents.HardCodedInstallationType.resolve">resolve</a></code> | Given the execution inputs, return the resolved value of this variable. |
+| <code><a href="#cdk-ssm-documents.HardCodedInstallationType.toJSON">toJSON</a></code> | JSON.stringify(variable) will implicitly invoke this variable. |
+| <code><a href="#cdk-ssm-documents.HardCodedInstallationType.resolveToString">resolveToString</a></code> | Given the execution inputs, return the resolved value of this variable. |
 
 ---
 
-##### `print` <a name="print" id="cdk-ssm-documents.HardCodedEnum.print"></a>
+##### `print` <a name="print" id="cdk-ssm-documents.HardCodedInstallationType.print"></a>
 
 ```typescript
 public print(): any
@@ -22299,7 +23062,7 @@ Prints the variable in a way that SSM understands.
 
 This is typically in the form of {{Variable}} or the value.
 
-##### `requiredInputs` <a name="requiredInputs" id="cdk-ssm-documents.HardCodedEnum.requiredInputs"></a>
+##### `requiredInputs` <a name="requiredInputs" id="cdk-ssm-documents.HardCodedInstallationType.requiredInputs"></a>
 
 ```typescript
 public requiredInputs(): string[]
@@ -22309,7 +23072,7 @@ The inputs that are required for determining the value of this variable.
 
 In the case of a single variable string, this will return a single value.
 
-##### `resolve` <a name="resolve" id="cdk-ssm-documents.HardCodedEnum.resolve"></a>
+##### `resolve` <a name="resolve" id="cdk-ssm-documents.HardCodedInstallationType.resolve"></a>
 
 ```typescript
 public resolve(_inputs: {[ key: string ]: any}): any
@@ -22317,27 +23080,13 @@ public resolve(_inputs: {[ key: string ]: any}): any
 
 Given the execution inputs, return the resolved value of this variable.
 
-###### `_inputs`<sup>Required</sup> <a name="_inputs" id="cdk-ssm-documents.HardCodedEnum.resolve.parameter._inputs"></a>
+###### `_inputs`<sup>Required</sup> <a name="_inputs" id="cdk-ssm-documents.HardCodedInstallationType.resolve.parameter._inputs"></a>
 
 - *Type:* {[ key: string ]: any}
 
 ---
 
-##### `resolveToEnum` <a name="resolveToEnum" id="cdk-ssm-documents.HardCodedEnum.resolveToEnum"></a>
-
-```typescript
-public resolveToEnum(_inputs: {[ key: string ]: any}): any
-```
-
-Given the execution inputs, return the resolved value of this variable.
-
-###### `_inputs`<sup>Required</sup> <a name="_inputs" id="cdk-ssm-documents.HardCodedEnum.resolveToEnum.parameter._inputs"></a>
-
-- *Type:* {[ key: string ]: any}
-
----
-
-##### `toJSON` <a name="toJSON" id="cdk-ssm-documents.HardCodedEnum.toJSON"></a>
+##### `toJSON` <a name="toJSON" id="cdk-ssm-documents.HardCodedInstallationType.toJSON"></a>
 
 ```typescript
 public toJSON(): any
@@ -22345,8 +23094,67 @@ public toJSON(): any
 
 JSON.stringify(variable) will implicitly invoke this variable.
 
+##### `resolveToString` <a name="resolveToString" id="cdk-ssm-documents.HardCodedInstallationType.resolveToString"></a>
+
+```typescript
+public resolveToString(inputs: {[ key: string ]: any}): string
+```
+
+Given the execution inputs, return the resolved value of this variable.
+
+###### `inputs`<sup>Required</sup> <a name="inputs" id="cdk-ssm-documents.HardCodedInstallationType.resolveToString.parameter.inputs"></a>
+
+- *Type:* {[ key: string ]: any}
+
+---
 
 
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#cdk-ssm-documents.HardCodedInstallationType.property.val">val</a></code> | <code>any</code> | *No description.* |
+
+---
+
+##### `val`<sup>Required</sup> <a name="val" id="cdk-ssm-documents.HardCodedInstallationType.property.val"></a>
+
+```typescript
+public readonly val: any;
+```
+
+- *Type:* any
+
+---
+
+#### Constants <a name="Constants" id="Constants"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#cdk-ssm-documents.HardCodedInstallationType.property.IN_PLACE_UPDATE">IN_PLACE_UPDATE</a></code> | <code><a href="#cdk-ssm-documents.HardCodedInstallationType">HardCodedInstallationType</a></code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.HardCodedInstallationType.property.UNINSTALL_AND_REINSTALL">UNINSTALL_AND_REINSTALL</a></code> | <code><a href="#cdk-ssm-documents.HardCodedInstallationType">HardCodedInstallationType</a></code> | *No description.* |
+
+---
+
+##### `IN_PLACE_UPDATE`<sup>Required</sup> <a name="IN_PLACE_UPDATE" id="cdk-ssm-documents.HardCodedInstallationType.property.IN_PLACE_UPDATE"></a>
+
+```typescript
+public readonly IN_PLACE_UPDATE: HardCodedInstallationType;
+```
+
+- *Type:* <a href="#cdk-ssm-documents.HardCodedInstallationType">HardCodedInstallationType</a>
+
+---
+
+##### `UNINSTALL_AND_REINSTALL`<sup>Required</sup> <a name="UNINSTALL_AND_REINSTALL" id="cdk-ssm-documents.HardCodedInstallationType.property.UNINSTALL_AND_REINSTALL"></a>
+
+```typescript
+public readonly UNINSTALL_AND_REINSTALL: HardCodedInstallationType;
+```
+
+- *Type:* <a href="#cdk-ssm-documents.HardCodedInstallationType">HardCodedInstallationType</a>
+
+---
 
 ### HardCodedMapList <a name="HardCodedMapList" id="cdk-ssm-documents.HardCodedMapList"></a>
 
@@ -22582,27 +23390,7 @@ public readonly val: any;
 
 ### HardCodedOnFailure <a name="HardCodedOnFailure" id="cdk-ssm-documents.HardCodedOnFailure"></a>
 
-Hard coded OnFailure value.
-
-#### Initializers <a name="Initializers" id="cdk-ssm-documents.HardCodedOnFailure.Initializer"></a>
-
-```typescript
-import { HardCodedOnFailure } from 'cdk-ssm-documents'
-
-new HardCodedOnFailure(value: OnFailure)
-```
-
-| **Name** | **Type** | **Description** |
-| --- | --- | --- |
-| <code><a href="#cdk-ssm-documents.HardCodedOnFailure.Initializer.parameter.value">value</a></code> | <code><a href="#cdk-ssm-documents.OnFailure">OnFailure</a></code> | *No description.* |
-
----
-
-##### `value`<sup>Required</sup> <a name="value" id="cdk-ssm-documents.HardCodedOnFailure.Initializer.parameter.value"></a>
-
-- *Type:* <a href="#cdk-ssm-documents.OnFailure">OnFailure</a>
-
----
+- *Implements:* <a href="#cdk-ssm-documents.IOnFailureVariable">IOnFailureVariable</a>
 
 #### Methods <a name="Methods" id="Methods"></a>
 
@@ -22611,8 +23399,8 @@ new HardCodedOnFailure(value: OnFailure)
 | <code><a href="#cdk-ssm-documents.HardCodedOnFailure.print">print</a></code> | Prints the variable in a way that SSM understands. |
 | <code><a href="#cdk-ssm-documents.HardCodedOnFailure.requiredInputs">requiredInputs</a></code> | The inputs that are required for determining the value of this variable. |
 | <code><a href="#cdk-ssm-documents.HardCodedOnFailure.resolve">resolve</a></code> | Given the execution inputs, return the resolved value of this variable. |
-| <code><a href="#cdk-ssm-documents.HardCodedOnFailure.resolveToEnum">resolveToEnum</a></code> | Given the execution inputs, return the resolved value of this variable. |
 | <code><a href="#cdk-ssm-documents.HardCodedOnFailure.toJSON">toJSON</a></code> | JSON.stringify(variable) will implicitly invoke this variable. |
+| <code><a href="#cdk-ssm-documents.HardCodedOnFailure.resolveToString">resolveToString</a></code> | Given the execution inputs, return the resolved value of this variable. |
 
 ---
 
@@ -22650,20 +23438,6 @@ Given the execution inputs, return the resolved value of this variable.
 
 ---
 
-##### `resolveToEnum` <a name="resolveToEnum" id="cdk-ssm-documents.HardCodedOnFailure.resolveToEnum"></a>
-
-```typescript
-public resolveToEnum(_inputs: {[ key: string ]: any}): any
-```
-
-Given the execution inputs, return the resolved value of this variable.
-
-###### `_inputs`<sup>Required</sup> <a name="_inputs" id="cdk-ssm-documents.HardCodedOnFailure.resolveToEnum.parameter._inputs"></a>
-
-- *Type:* {[ key: string ]: any}
-
----
-
 ##### `toJSON` <a name="toJSON" id="cdk-ssm-documents.HardCodedOnFailure.toJSON"></a>
 
 ```typescript
@@ -22672,32 +23446,257 @@ public toJSON(): any
 
 JSON.stringify(variable) will implicitly invoke this variable.
 
-
-
-
-### HardCodedResourceType <a name="HardCodedResourceType" id="cdk-ssm-documents.HardCodedResourceType"></a>
-
-A hard coded resource type.
-
-#### Initializers <a name="Initializers" id="cdk-ssm-documents.HardCodedResourceType.Initializer"></a>
+##### `resolveToString` <a name="resolveToString" id="cdk-ssm-documents.HardCodedOnFailure.resolveToString"></a>
 
 ```typescript
-import { HardCodedResourceType } from 'cdk-ssm-documents'
-
-new HardCodedResourceType(value: ResourceType)
+public resolveToString(inputs: {[ key: string ]: any}): string
 ```
+
+Given the execution inputs, return the resolved value of this variable.
+
+###### `inputs`<sup>Required</sup> <a name="inputs" id="cdk-ssm-documents.HardCodedOnFailure.resolveToString.parameter.inputs"></a>
+
+- *Type:* {[ key: string ]: any}
+
+---
+
+
+#### Properties <a name="Properties" id="Properties"></a>
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#cdk-ssm-documents.HardCodedResourceType.Initializer.parameter.value">value</a></code> | <code><a href="#cdk-ssm-documents.ResourceType">ResourceType</a></code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.HardCodedOnFailure.property.val">val</a></code> | <code>any</code> | *No description.* |
 
 ---
 
-##### `value`<sup>Required</sup> <a name="value" id="cdk-ssm-documents.HardCodedResourceType.Initializer.parameter.value"></a>
+##### `val`<sup>Required</sup> <a name="val" id="cdk-ssm-documents.HardCodedOnFailure.property.val"></a>
 
-- *Type:* <a href="#cdk-ssm-documents.ResourceType">ResourceType</a>
+```typescript
+public readonly val: any;
+```
+
+- *Type:* any
 
 ---
+
+#### Constants <a name="Constants" id="Constants"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#cdk-ssm-documents.HardCodedOnFailure.property.DELETE">DELETE</a></code> | <code><a href="#cdk-ssm-documents.HardCodedOnFailure">HardCodedOnFailure</a></code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.HardCodedOnFailure.property.DO_NOTHING">DO_NOTHING</a></code> | <code><a href="#cdk-ssm-documents.HardCodedOnFailure">HardCodedOnFailure</a></code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.HardCodedOnFailure.property.ROLLBACK">ROLLBACK</a></code> | <code><a href="#cdk-ssm-documents.HardCodedOnFailure">HardCodedOnFailure</a></code> | *No description.* |
+
+---
+
+##### `DELETE`<sup>Required</sup> <a name="DELETE" id="cdk-ssm-documents.HardCodedOnFailure.property.DELETE"></a>
+
+```typescript
+public readonly DELETE: HardCodedOnFailure;
+```
+
+- *Type:* <a href="#cdk-ssm-documents.HardCodedOnFailure">HardCodedOnFailure</a>
+
+---
+
+##### `DO_NOTHING`<sup>Required</sup> <a name="DO_NOTHING" id="cdk-ssm-documents.HardCodedOnFailure.property.DO_NOTHING"></a>
+
+```typescript
+public readonly DO_NOTHING: HardCodedOnFailure;
+```
+
+- *Type:* <a href="#cdk-ssm-documents.HardCodedOnFailure">HardCodedOnFailure</a>
+
+---
+
+##### `ROLLBACK`<sup>Required</sup> <a name="ROLLBACK" id="cdk-ssm-documents.HardCodedOnFailure.property.ROLLBACK"></a>
+
+```typescript
+public readonly ROLLBACK: HardCodedOnFailure;
+```
+
+- *Type:* <a href="#cdk-ssm-documents.HardCodedOnFailure">HardCodedOnFailure</a>
+
+---
+
+### HardCodedPackageName <a name="HardCodedPackageName" id="cdk-ssm-documents.HardCodedPackageName"></a>
+
+- *Implements:* <a href="#cdk-ssm-documents.IPackageNameVariable">IPackageNameVariable</a>
+
+#### Methods <a name="Methods" id="Methods"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#cdk-ssm-documents.HardCodedPackageName.print">print</a></code> | Prints the variable in a way that SSM understands. |
+| <code><a href="#cdk-ssm-documents.HardCodedPackageName.requiredInputs">requiredInputs</a></code> | The inputs that are required for determining the value of this variable. |
+| <code><a href="#cdk-ssm-documents.HardCodedPackageName.resolve">resolve</a></code> | Given the execution inputs, return the resolved value of this variable. |
+| <code><a href="#cdk-ssm-documents.HardCodedPackageName.toJSON">toJSON</a></code> | JSON.stringify(variable) will implicitly invoke this variable. |
+| <code><a href="#cdk-ssm-documents.HardCodedPackageName.resolveToString">resolveToString</a></code> | Given the execution inputs, return the resolved value of this variable. |
+
+---
+
+##### `print` <a name="print" id="cdk-ssm-documents.HardCodedPackageName.print"></a>
+
+```typescript
+public print(): any
+```
+
+Prints the variable in a way that SSM understands.
+
+This is typically in the form of {{Variable}} or the value.
+
+##### `requiredInputs` <a name="requiredInputs" id="cdk-ssm-documents.HardCodedPackageName.requiredInputs"></a>
+
+```typescript
+public requiredInputs(): string[]
+```
+
+The inputs that are required for determining the value of this variable.
+
+In the case of a single variable string, this will return a single value.
+
+##### `resolve` <a name="resolve" id="cdk-ssm-documents.HardCodedPackageName.resolve"></a>
+
+```typescript
+public resolve(_inputs: {[ key: string ]: any}): any
+```
+
+Given the execution inputs, return the resolved value of this variable.
+
+###### `_inputs`<sup>Required</sup> <a name="_inputs" id="cdk-ssm-documents.HardCodedPackageName.resolve.parameter._inputs"></a>
+
+- *Type:* {[ key: string ]: any}
+
+---
+
+##### `toJSON` <a name="toJSON" id="cdk-ssm-documents.HardCodedPackageName.toJSON"></a>
+
+```typescript
+public toJSON(): any
+```
+
+JSON.stringify(variable) will implicitly invoke this variable.
+
+##### `resolveToString` <a name="resolveToString" id="cdk-ssm-documents.HardCodedPackageName.resolveToString"></a>
+
+```typescript
+public resolveToString(inputs: {[ key: string ]: any}): string
+```
+
+Given the execution inputs, return the resolved value of this variable.
+
+###### `inputs`<sup>Required</sup> <a name="inputs" id="cdk-ssm-documents.HardCodedPackageName.resolveToString.parameter.inputs"></a>
+
+- *Type:* {[ key: string ]: any}
+
+---
+
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#cdk-ssm-documents.HardCodedPackageName.property.val">val</a></code> | <code>any</code> | *No description.* |
+
+---
+
+##### `val`<sup>Required</sup> <a name="val" id="cdk-ssm-documents.HardCodedPackageName.property.val"></a>
+
+```typescript
+public readonly val: any;
+```
+
+- *Type:* any
+
+---
+
+#### Constants <a name="Constants" id="Constants"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#cdk-ssm-documents.HardCodedPackageName.property.AMAZON_CLOUD_WATCH_AGENT">AMAZON_CLOUD_WATCH_AGENT</a></code> | <code><a href="#cdk-ssm-documents.HardCodedPackageName">HardCodedPackageName</a></code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.HardCodedPackageName.property.AWS_ENA_NETWORK_DRIVER">AWS_ENA_NETWORK_DRIVER</a></code> | <code><a href="#cdk-ssm-documents.HardCodedPackageName">HardCodedPackageName</a></code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.HardCodedPackageName.property.AWS_SUPPORT_EC2_RESCUE">AWS_SUPPORT_EC2_RESCUE</a></code> | <code><a href="#cdk-ssm-documents.HardCodedPackageName">HardCodedPackageName</a></code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.HardCodedPackageName.property.AWS_VSS_COMPONENTS">AWS_VSS_COMPONENTS</a></code> | <code><a href="#cdk-ssm-documents.HardCodedPackageName">HardCodedPackageName</a></code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.HardCodedPackageName.property.AWSNVME">AWSNVME</a></code> | <code><a href="#cdk-ssm-documents.HardCodedPackageName">HardCodedPackageName</a></code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.HardCodedPackageName.property.AWSPV_DRIVER">AWSPV_DRIVER</a></code> | <code><a href="#cdk-ssm-documents.HardCodedPackageName">HardCodedPackageName</a></code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.HardCodedPackageName.property.CODE_DEPLOY_AGENT">CODE_DEPLOY_AGENT</a></code> | <code><a href="#cdk-ssm-documents.HardCodedPackageName">HardCodedPackageName</a></code> | *No description.* |
+
+---
+
+##### `AMAZON_CLOUD_WATCH_AGENT`<sup>Required</sup> <a name="AMAZON_CLOUD_WATCH_AGENT" id="cdk-ssm-documents.HardCodedPackageName.property.AMAZON_CLOUD_WATCH_AGENT"></a>
+
+```typescript
+public readonly AMAZON_CLOUD_WATCH_AGENT: HardCodedPackageName;
+```
+
+- *Type:* <a href="#cdk-ssm-documents.HardCodedPackageName">HardCodedPackageName</a>
+
+---
+
+##### `AWS_ENA_NETWORK_DRIVER`<sup>Required</sup> <a name="AWS_ENA_NETWORK_DRIVER" id="cdk-ssm-documents.HardCodedPackageName.property.AWS_ENA_NETWORK_DRIVER"></a>
+
+```typescript
+public readonly AWS_ENA_NETWORK_DRIVER: HardCodedPackageName;
+```
+
+- *Type:* <a href="#cdk-ssm-documents.HardCodedPackageName">HardCodedPackageName</a>
+
+---
+
+##### `AWS_SUPPORT_EC2_RESCUE`<sup>Required</sup> <a name="AWS_SUPPORT_EC2_RESCUE" id="cdk-ssm-documents.HardCodedPackageName.property.AWS_SUPPORT_EC2_RESCUE"></a>
+
+```typescript
+public readonly AWS_SUPPORT_EC2_RESCUE: HardCodedPackageName;
+```
+
+- *Type:* <a href="#cdk-ssm-documents.HardCodedPackageName">HardCodedPackageName</a>
+
+---
+
+##### `AWS_VSS_COMPONENTS`<sup>Required</sup> <a name="AWS_VSS_COMPONENTS" id="cdk-ssm-documents.HardCodedPackageName.property.AWS_VSS_COMPONENTS"></a>
+
+```typescript
+public readonly AWS_VSS_COMPONENTS: HardCodedPackageName;
+```
+
+- *Type:* <a href="#cdk-ssm-documents.HardCodedPackageName">HardCodedPackageName</a>
+
+---
+
+##### `AWSNVME`<sup>Required</sup> <a name="AWSNVME" id="cdk-ssm-documents.HardCodedPackageName.property.AWSNVME"></a>
+
+```typescript
+public readonly AWSNVME: HardCodedPackageName;
+```
+
+- *Type:* <a href="#cdk-ssm-documents.HardCodedPackageName">HardCodedPackageName</a>
+
+---
+
+##### `AWSPV_DRIVER`<sup>Required</sup> <a name="AWSPV_DRIVER" id="cdk-ssm-documents.HardCodedPackageName.property.AWSPV_DRIVER"></a>
+
+```typescript
+public readonly AWSPV_DRIVER: HardCodedPackageName;
+```
+
+- *Type:* <a href="#cdk-ssm-documents.HardCodedPackageName">HardCodedPackageName</a>
+
+---
+
+##### `CODE_DEPLOY_AGENT`<sup>Required</sup> <a name="CODE_DEPLOY_AGENT" id="cdk-ssm-documents.HardCodedPackageName.property.CODE_DEPLOY_AGENT"></a>
+
+```typescript
+public readonly CODE_DEPLOY_AGENT: HardCodedPackageName;
+```
+
+- *Type:* <a href="#cdk-ssm-documents.HardCodedPackageName">HardCodedPackageName</a>
+
+---
+
+### HardCodedResourceType <a name="HardCodedResourceType" id="cdk-ssm-documents.HardCodedResourceType"></a>
+
+- *Implements:* <a href="#cdk-ssm-documents.IResourceTypeVariable">IResourceTypeVariable</a>
 
 #### Methods <a name="Methods" id="Methods"></a>
 
@@ -22706,8 +23705,8 @@ new HardCodedResourceType(value: ResourceType)
 | <code><a href="#cdk-ssm-documents.HardCodedResourceType.print">print</a></code> | Prints the variable in a way that SSM understands. |
 | <code><a href="#cdk-ssm-documents.HardCodedResourceType.requiredInputs">requiredInputs</a></code> | The inputs that are required for determining the value of this variable. |
 | <code><a href="#cdk-ssm-documents.HardCodedResourceType.resolve">resolve</a></code> | Given the execution inputs, return the resolved value of this variable. |
-| <code><a href="#cdk-ssm-documents.HardCodedResourceType.resolveToEnum">resolveToEnum</a></code> | Given the execution inputs, return the resolved value of this variable. |
 | <code><a href="#cdk-ssm-documents.HardCodedResourceType.toJSON">toJSON</a></code> | JSON.stringify(variable) will implicitly invoke this variable. |
+| <code><a href="#cdk-ssm-documents.HardCodedResourceType.resolveToString">resolveToString</a></code> | Given the execution inputs, return the resolved value of this variable. |
 
 ---
 
@@ -22745,20 +23744,6 @@ Given the execution inputs, return the resolved value of this variable.
 
 ---
 
-##### `resolveToEnum` <a name="resolveToEnum" id="cdk-ssm-documents.HardCodedResourceType.resolveToEnum"></a>
-
-```typescript
-public resolveToEnum(_inputs: {[ key: string ]: any}): any
-```
-
-Given the execution inputs, return the resolved value of this variable.
-
-###### `_inputs`<sup>Required</sup> <a name="_inputs" id="cdk-ssm-documents.HardCodedResourceType.resolveToEnum.parameter._inputs"></a>
-
-- *Type:* {[ key: string ]: any}
-
----
-
 ##### `toJSON` <a name="toJSON" id="cdk-ssm-documents.HardCodedResourceType.toJSON"></a>
 
 ```typescript
@@ -22767,8 +23752,89 @@ public toJSON(): any
 
 JSON.stringify(variable) will implicitly invoke this variable.
 
+##### `resolveToString` <a name="resolveToString" id="cdk-ssm-documents.HardCodedResourceType.resolveToString"></a>
+
+```typescript
+public resolveToString(inputs: {[ key: string ]: any}): string
+```
+
+Given the execution inputs, return the resolved value of this variable.
+
+###### `inputs`<sup>Required</sup> <a name="inputs" id="cdk-ssm-documents.HardCodedResourceType.resolveToString.parameter.inputs"></a>
+
+- *Type:* {[ key: string ]: any}
+
+---
 
 
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#cdk-ssm-documents.HardCodedResourceType.property.val">val</a></code> | <code>any</code> | *No description.* |
+
+---
+
+##### `val`<sup>Required</sup> <a name="val" id="cdk-ssm-documents.HardCodedResourceType.property.val"></a>
+
+```typescript
+public readonly val: any;
+```
+
+- *Type:* any
+
+---
+
+#### Constants <a name="Constants" id="Constants"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#cdk-ssm-documents.HardCodedResourceType.property.EC2">EC2</a></code> | <code><a href="#cdk-ssm-documents.HardCodedResourceType">HardCodedResourceType</a></code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.HardCodedResourceType.property.MAINTENANCE_WINDOW">MAINTENANCE_WINDOW</a></code> | <code><a href="#cdk-ssm-documents.HardCodedResourceType">HardCodedResourceType</a></code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.HardCodedResourceType.property.MANAGED_INSTANCE">MANAGED_INSTANCE</a></code> | <code><a href="#cdk-ssm-documents.HardCodedResourceType">HardCodedResourceType</a></code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.HardCodedResourceType.property.PARAMETER">PARAMETER</a></code> | <code><a href="#cdk-ssm-documents.HardCodedResourceType">HardCodedResourceType</a></code> | *No description.* |
+
+---
+
+##### `EC2`<sup>Required</sup> <a name="EC2" id="cdk-ssm-documents.HardCodedResourceType.property.EC2"></a>
+
+```typescript
+public readonly EC2: HardCodedResourceType;
+```
+
+- *Type:* <a href="#cdk-ssm-documents.HardCodedResourceType">HardCodedResourceType</a>
+
+---
+
+##### `MAINTENANCE_WINDOW`<sup>Required</sup> <a name="MAINTENANCE_WINDOW" id="cdk-ssm-documents.HardCodedResourceType.property.MAINTENANCE_WINDOW"></a>
+
+```typescript
+public readonly MAINTENANCE_WINDOW: HardCodedResourceType;
+```
+
+- *Type:* <a href="#cdk-ssm-documents.HardCodedResourceType">HardCodedResourceType</a>
+
+---
+
+##### `MANAGED_INSTANCE`<sup>Required</sup> <a name="MANAGED_INSTANCE" id="cdk-ssm-documents.HardCodedResourceType.property.MANAGED_INSTANCE"></a>
+
+```typescript
+public readonly MANAGED_INSTANCE: HardCodedResourceType;
+```
+
+- *Type:* <a href="#cdk-ssm-documents.HardCodedResourceType">HardCodedResourceType</a>
+
+---
+
+##### `PARAMETER`<sup>Required</sup> <a name="PARAMETER" id="cdk-ssm-documents.HardCodedResourceType.property.PARAMETER"></a>
+
+```typescript
+public readonly PARAMETER: HardCodedResourceType;
+```
+
+- *Type:* <a href="#cdk-ssm-documents.HardCodedResourceType">HardCodedResourceType</a>
+
+---
 
 ### HardCodedString <a name="HardCodedString" id="cdk-ssm-documents.HardCodedString"></a>
 
@@ -23211,6 +24277,129 @@ public readonly val: any;
 ```
 
 - *Type:* any
+
+---
+
+
+### InstallationTypeVariable <a name="InstallationTypeVariable" id="cdk-ssm-documents.InstallationTypeVariable"></a>
+
+- *Implements:* <a href="#cdk-ssm-documents.IInstallationTypeVariable">IInstallationTypeVariable</a>
+
+#### Initializers <a name="Initializers" id="cdk-ssm-documents.InstallationTypeVariable.Initializer"></a>
+
+```typescript
+import { InstallationTypeVariable } from 'cdk-ssm-documents'
+
+new InstallationTypeVariable(reference: string)
+```
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#cdk-ssm-documents.InstallationTypeVariable.Initializer.parameter.reference">reference</a></code> | <code>string</code> | *No description.* |
+
+---
+
+##### `reference`<sup>Required</sup> <a name="reference" id="cdk-ssm-documents.InstallationTypeVariable.Initializer.parameter.reference"></a>
+
+- *Type:* string
+
+---
+
+#### Methods <a name="Methods" id="Methods"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#cdk-ssm-documents.InstallationTypeVariable.print">print</a></code> | Prints the variable in a way that SSM understands. |
+| <code><a href="#cdk-ssm-documents.InstallationTypeVariable.requiredInputs">requiredInputs</a></code> | The inputs that are required for determining the value of this variable. |
+| <code><a href="#cdk-ssm-documents.InstallationTypeVariable.resolve">resolve</a></code> | Given the execution inputs, return the resolved value of this variable. |
+| <code><a href="#cdk-ssm-documents.InstallationTypeVariable.toJSON">toJSON</a></code> | JSON.stringify(variable) will implicitly invoke this variable. |
+| <code><a href="#cdk-ssm-documents.InstallationTypeVariable.resolveToString">resolveToString</a></code> | Given the execution inputs, return the resolved value of this variable. |
+
+---
+
+##### `print` <a name="print" id="cdk-ssm-documents.InstallationTypeVariable.print"></a>
+
+```typescript
+public print(): any
+```
+
+Prints the variable in a way that SSM understands.
+
+This is typically in the form of {{Variable}} or the value.
+
+##### `requiredInputs` <a name="requiredInputs" id="cdk-ssm-documents.InstallationTypeVariable.requiredInputs"></a>
+
+```typescript
+public requiredInputs(): string[]
+```
+
+The inputs that are required for determining the value of this variable.
+
+In the case of a single variable string, this will return a single value.
+
+##### `resolve` <a name="resolve" id="cdk-ssm-documents.InstallationTypeVariable.resolve"></a>
+
+```typescript
+public resolve(inputs: {[ key: string ]: any}): any
+```
+
+Given the execution inputs, return the resolved value of this variable.
+
+###### `inputs`<sup>Required</sup> <a name="inputs" id="cdk-ssm-documents.InstallationTypeVariable.resolve.parameter.inputs"></a>
+
+- *Type:* {[ key: string ]: any}
+
+---
+
+##### `toJSON` <a name="toJSON" id="cdk-ssm-documents.InstallationTypeVariable.toJSON"></a>
+
+```typescript
+public toJSON(): any
+```
+
+JSON.stringify(variable) will implicitly invoke this variable.
+
+##### `resolveToString` <a name="resolveToString" id="cdk-ssm-documents.InstallationTypeVariable.resolveToString"></a>
+
+```typescript
+public resolveToString(inputs: {[ key: string ]: any}): string
+```
+
+Given the execution inputs, return the resolved value of this variable.
+
+###### `inputs`<sup>Required</sup> <a name="inputs" id="cdk-ssm-documents.InstallationTypeVariable.resolveToString.parameter.inputs"></a>
+
+- *Type:* {[ key: string ]: any}
+
+---
+
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#cdk-ssm-documents.InstallationTypeVariable.property.reference">reference</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.InstallationTypeVariable.property.validValues">validValues</a></code> | <code>string[]</code> | *No description.* |
+
+---
+
+##### `reference`<sup>Required</sup> <a name="reference" id="cdk-ssm-documents.InstallationTypeVariable.property.reference"></a>
+
+```typescript
+public readonly reference: string;
+```
+
+- *Type:* string
+
+---
+
+##### `validValues`<sup>Required</sup> <a name="validValues" id="cdk-ssm-documents.InstallationTypeVariable.property.validValues"></a>
+
+```typescript
+public readonly validValues: string[];
+```
+
+- *Type:* string[]
 
 ---
 
@@ -23877,7 +25066,7 @@ public readonly reference: string;
 
 ### OnFailureVariable <a name="OnFailureVariable" id="cdk-ssm-documents.OnFailureVariable"></a>
 
-OnFailure reference value.
+- *Implements:* <a href="#cdk-ssm-documents.IOnFailureVariable">IOnFailureVariable</a>
 
 #### Initializers <a name="Initializers" id="cdk-ssm-documents.OnFailureVariable.Initializer"></a>
 
@@ -23907,7 +25096,7 @@ new OnFailureVariable(reference: string)
 | <code><a href="#cdk-ssm-documents.OnFailureVariable.requiredInputs">requiredInputs</a></code> | The inputs that are required for determining the value of this variable. |
 | <code><a href="#cdk-ssm-documents.OnFailureVariable.resolve">resolve</a></code> | Given the execution inputs, return the resolved value of this variable. |
 | <code><a href="#cdk-ssm-documents.OnFailureVariable.toJSON">toJSON</a></code> | JSON.stringify(variable) will implicitly invoke this variable. |
-| <code><a href="#cdk-ssm-documents.OnFailureVariable.resolveToEnum">resolveToEnum</a></code> | Given the execution inputs, return the resolved value of this variable. |
+| <code><a href="#cdk-ssm-documents.OnFailureVariable.resolveToString">resolveToString</a></code> | Given the execution inputs, return the resolved value of this variable. |
 
 ---
 
@@ -23953,15 +25142,15 @@ public toJSON(): any
 
 JSON.stringify(variable) will implicitly invoke this variable.
 
-##### `resolveToEnum` <a name="resolveToEnum" id="cdk-ssm-documents.OnFailureVariable.resolveToEnum"></a>
+##### `resolveToString` <a name="resolveToString" id="cdk-ssm-documents.OnFailureVariable.resolveToString"></a>
 
 ```typescript
-public resolveToEnum(inputs: {[ key: string ]: any}): any
+public resolveToString(inputs: {[ key: string ]: any}): string
 ```
 
 Given the execution inputs, return the resolved value of this variable.
 
-###### `inputs`<sup>Required</sup> <a name="inputs" id="cdk-ssm-documents.OnFailureVariable.resolveToEnum.parameter.inputs"></a>
+###### `inputs`<sup>Required</sup> <a name="inputs" id="cdk-ssm-documents.OnFailureVariable.resolveToString.parameter.inputs"></a>
 
 - *Type:* {[ key: string ]: any}
 
@@ -23973,6 +25162,7 @@ Given the execution inputs, return the resolved value of this variable.
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
 | <code><a href="#cdk-ssm-documents.OnFailureVariable.property.reference">reference</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.OnFailureVariable.property.validValues">validValues</a></code> | <code>string[]</code> | *No description.* |
 
 ---
 
@@ -23983,6 +25173,16 @@ public readonly reference: string;
 ```
 
 - *Type:* string
+
+---
+
+##### `validValues`<sup>Required</sup> <a name="validValues" id="cdk-ssm-documents.OnFailureVariable.property.validValues"></a>
+
+```typescript
+public readonly validValues: string[];
+```
+
+- *Type:* string[]
 
 ---
 
@@ -24105,6 +25305,129 @@ public readonly STRING_TO_OPERATION: {[ key: string ]: Operation};
 - *Type:* {[ key: string ]: <a href="#cdk-ssm-documents.Operation">Operation</a>}
 
 ---
+
+### PackageNameVariable <a name="PackageNameVariable" id="cdk-ssm-documents.PackageNameVariable"></a>
+
+- *Implements:* <a href="#cdk-ssm-documents.IPackageNameVariable">IPackageNameVariable</a>
+
+#### Initializers <a name="Initializers" id="cdk-ssm-documents.PackageNameVariable.Initializer"></a>
+
+```typescript
+import { PackageNameVariable } from 'cdk-ssm-documents'
+
+new PackageNameVariable(reference: string)
+```
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#cdk-ssm-documents.PackageNameVariable.Initializer.parameter.reference">reference</a></code> | <code>string</code> | *No description.* |
+
+---
+
+##### `reference`<sup>Required</sup> <a name="reference" id="cdk-ssm-documents.PackageNameVariable.Initializer.parameter.reference"></a>
+
+- *Type:* string
+
+---
+
+#### Methods <a name="Methods" id="Methods"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#cdk-ssm-documents.PackageNameVariable.print">print</a></code> | Prints the variable in a way that SSM understands. |
+| <code><a href="#cdk-ssm-documents.PackageNameVariable.requiredInputs">requiredInputs</a></code> | The inputs that are required for determining the value of this variable. |
+| <code><a href="#cdk-ssm-documents.PackageNameVariable.resolve">resolve</a></code> | Given the execution inputs, return the resolved value of this variable. |
+| <code><a href="#cdk-ssm-documents.PackageNameVariable.toJSON">toJSON</a></code> | JSON.stringify(variable) will implicitly invoke this variable. |
+| <code><a href="#cdk-ssm-documents.PackageNameVariable.resolveToString">resolveToString</a></code> | Given the execution inputs, return the resolved value of this variable. |
+
+---
+
+##### `print` <a name="print" id="cdk-ssm-documents.PackageNameVariable.print"></a>
+
+```typescript
+public print(): any
+```
+
+Prints the variable in a way that SSM understands.
+
+This is typically in the form of {{Variable}} or the value.
+
+##### `requiredInputs` <a name="requiredInputs" id="cdk-ssm-documents.PackageNameVariable.requiredInputs"></a>
+
+```typescript
+public requiredInputs(): string[]
+```
+
+The inputs that are required for determining the value of this variable.
+
+In the case of a single variable string, this will return a single value.
+
+##### `resolve` <a name="resolve" id="cdk-ssm-documents.PackageNameVariable.resolve"></a>
+
+```typescript
+public resolve(inputs: {[ key: string ]: any}): any
+```
+
+Given the execution inputs, return the resolved value of this variable.
+
+###### `inputs`<sup>Required</sup> <a name="inputs" id="cdk-ssm-documents.PackageNameVariable.resolve.parameter.inputs"></a>
+
+- *Type:* {[ key: string ]: any}
+
+---
+
+##### `toJSON` <a name="toJSON" id="cdk-ssm-documents.PackageNameVariable.toJSON"></a>
+
+```typescript
+public toJSON(): any
+```
+
+JSON.stringify(variable) will implicitly invoke this variable.
+
+##### `resolveToString` <a name="resolveToString" id="cdk-ssm-documents.PackageNameVariable.resolveToString"></a>
+
+```typescript
+public resolveToString(inputs: {[ key: string ]: any}): string
+```
+
+Given the execution inputs, return the resolved value of this variable.
+
+###### `inputs`<sup>Required</sup> <a name="inputs" id="cdk-ssm-documents.PackageNameVariable.resolveToString.parameter.inputs"></a>
+
+- *Type:* {[ key: string ]: any}
+
+---
+
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#cdk-ssm-documents.PackageNameVariable.property.reference">reference</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.PackageNameVariable.property.validValues">validValues</a></code> | <code>string[]</code> | *No description.* |
+
+---
+
+##### `reference`<sup>Required</sup> <a name="reference" id="cdk-ssm-documents.PackageNameVariable.property.reference"></a>
+
+```typescript
+public readonly reference: string;
+```
+
+- *Type:* string
+
+---
+
+##### `validValues`<sup>Required</sup> <a name="validValues" id="cdk-ssm-documents.PackageNameVariable.property.validValues"></a>
+
+```typescript
+public readonly validValues: string[];
+```
+
+- *Type:* string[]
+
+---
+
 
 ### PauseImpl <a name="PauseImpl" id="cdk-ssm-documents.PauseImpl"></a>
 
@@ -24356,7 +25679,7 @@ Invoke AWS with the provided invocation request.
 
 ### ResourceTypeVariable <a name="ResourceTypeVariable" id="cdk-ssm-documents.ResourceTypeVariable"></a>
 
-A resource type variable reference.
+- *Implements:* <a href="#cdk-ssm-documents.IResourceTypeVariable">IResourceTypeVariable</a>
 
 #### Initializers <a name="Initializers" id="cdk-ssm-documents.ResourceTypeVariable.Initializer"></a>
 
@@ -24386,7 +25709,7 @@ new ResourceTypeVariable(reference: string)
 | <code><a href="#cdk-ssm-documents.ResourceTypeVariable.requiredInputs">requiredInputs</a></code> | The inputs that are required for determining the value of this variable. |
 | <code><a href="#cdk-ssm-documents.ResourceTypeVariable.resolve">resolve</a></code> | Given the execution inputs, return the resolved value of this variable. |
 | <code><a href="#cdk-ssm-documents.ResourceTypeVariable.toJSON">toJSON</a></code> | JSON.stringify(variable) will implicitly invoke this variable. |
-| <code><a href="#cdk-ssm-documents.ResourceTypeVariable.resolveToEnum">resolveToEnum</a></code> | Given the execution inputs, return the resolved value of this variable. |
+| <code><a href="#cdk-ssm-documents.ResourceTypeVariable.resolveToString">resolveToString</a></code> | Given the execution inputs, return the resolved value of this variable. |
 
 ---
 
@@ -24432,15 +25755,15 @@ public toJSON(): any
 
 JSON.stringify(variable) will implicitly invoke this variable.
 
-##### `resolveToEnum` <a name="resolveToEnum" id="cdk-ssm-documents.ResourceTypeVariable.resolveToEnum"></a>
+##### `resolveToString` <a name="resolveToString" id="cdk-ssm-documents.ResourceTypeVariable.resolveToString"></a>
 
 ```typescript
-public resolveToEnum(inputs: {[ key: string ]: any}): any
+public resolveToString(inputs: {[ key: string ]: any}): string
 ```
 
 Given the execution inputs, return the resolved value of this variable.
 
-###### `inputs`<sup>Required</sup> <a name="inputs" id="cdk-ssm-documents.ResourceTypeVariable.resolveToEnum.parameter.inputs"></a>
+###### `inputs`<sup>Required</sup> <a name="inputs" id="cdk-ssm-documents.ResourceTypeVariable.resolveToString.parameter.inputs"></a>
 
 - *Type:* {[ key: string ]: any}
 
@@ -24452,6 +25775,7 @@ Given the execution inputs, return the resolved value of this variable.
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
 | <code><a href="#cdk-ssm-documents.ResourceTypeVariable.property.reference">reference</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.ResourceTypeVariable.property.validValues">validValues</a></code> | <code>string[]</code> | *No description.* |
 
 ---
 
@@ -24462,6 +25786,16 @@ public readonly reference: string;
 ```
 
 - *Type:* string
+
+---
+
+##### `validValues`<sup>Required</sup> <a name="validValues" id="cdk-ssm-documents.ResourceTypeVariable.property.validValues"></a>
+
+```typescript
+public readonly validValues: string[];
+```
+
+- *Type:* string[]
 
 ---
 
@@ -25167,6 +26501,14 @@ Wraps @aws-cdk/assert SynthUtils.synthesize(stack). Synthesizes the stack provid
 
 ## Protocols <a name="Protocols" id="Protocols"></a>
 
+### IActionVariable <a name="IActionVariable" id="cdk-ssm-documents.IActionVariable"></a>
+
+- *Extends:* <a href="#cdk-ssm-documents.IStringVariable">IStringVariable</a>
+
+- *Implemented By:* <a href="#cdk-ssm-documents.ActionVariable">ActionVariable</a>, <a href="#cdk-ssm-documents.HardCodedAction">HardCodedAction</a>, <a href="#cdk-ssm-documents.IActionVariable">IActionVariable</a>
+
+
+
 ### IApproveHook <a name="IApproveHook" id="cdk-ssm-documents.IApproveHook"></a>
 
 - *Implemented By:* <a href="#cdk-ssm-documents.ApproveImpl">ApproveImpl</a>, <a href="#cdk-ssm-documents.MockApprove">MockApprove</a>, <a href="#cdk-ssm-documents.IApproveHook">IApproveHook</a>
@@ -25289,7 +26631,7 @@ are the execution inputs.
 
 ### ICommandComponent <a name="ICommandComponent" id="cdk-ssm-documents.ICommandComponent"></a>
 
-- *Implemented By:* <a href="#cdk-ssm-documents.CommandStep">CommandStep</a>, <a href="#cdk-ssm-documents.CompositeCommandStep">CompositeCommandStep</a>, <a href="#cdk-ssm-documents.PsModuleStep">PsModuleStep</a>, <a href="#cdk-ssm-documents.RunPowerShellScriptStep">RunPowerShellScriptStep</a>, <a href="#cdk-ssm-documents.RunShellScriptStep">RunShellScriptStep</a>, <a href="#cdk-ssm-documents.SoftwareInventoryStep">SoftwareInventoryStep</a>, <a href="#cdk-ssm-documents.UpdateAgentStep">UpdateAgentStep</a>, <a href="#cdk-ssm-documents.UpdateSSMAgentStep">UpdateSSMAgentStep</a>, <a href="#cdk-ssm-documents.ICommandComponent">ICommandComponent</a>
+- *Implemented By:* <a href="#cdk-ssm-documents.CommandStep">CommandStep</a>, <a href="#cdk-ssm-documents.CompositeCommandStep">CompositeCommandStep</a>, <a href="#cdk-ssm-documents.ConfigurePackageStep">ConfigurePackageStep</a>, <a href="#cdk-ssm-documents.PsModuleStep">PsModuleStep</a>, <a href="#cdk-ssm-documents.RunPowerShellScriptStep">RunPowerShellScriptStep</a>, <a href="#cdk-ssm-documents.RunShellScriptStep">RunShellScriptStep</a>, <a href="#cdk-ssm-documents.SoftwareInventoryStep">SoftwareInventoryStep</a>, <a href="#cdk-ssm-documents.UpdateAgentStep">UpdateAgentStep</a>, <a href="#cdk-ssm-documents.UpdateSSMAgentStep">UpdateSSMAgentStep</a>, <a href="#cdk-ssm-documents.ICommandComponent">ICommandComponent</a>
 
 #### Methods <a name="Methods" id="Methods"></a>
 
@@ -25312,37 +26654,20 @@ public addToDocument(doc: CommandDocumentBuilder): void
 ---
 
 
-### IEnumVariable <a name="IEnumVariable" id="cdk-ssm-documents.IEnumVariable"></a>
+### IDesiredStateVariable <a name="IDesiredStateVariable" id="cdk-ssm-documents.IDesiredStateVariable"></a>
 
-- *Extends:* <a href="#cdk-ssm-documents.IGenericVariable">IGenericVariable</a>
+- *Extends:* <a href="#cdk-ssm-documents.IStringVariable">IStringVariable</a>
 
-- *Implemented By:* <a href="#cdk-ssm-documents.DesiredStateVariable">DesiredStateVariable</a>, <a href="#cdk-ssm-documents.DocumentHashTypeVariable">DocumentHashTypeVariable</a>, <a href="#cdk-ssm-documents.EnumVariable">EnumVariable</a>, <a href="#cdk-ssm-documents.HardCodedDesiredState">HardCodedDesiredState</a>, <a href="#cdk-ssm-documents.HardCodedDocumentHashType">HardCodedDocumentHashType</a>, <a href="#cdk-ssm-documents.HardCodedEnum">HardCodedEnum</a>, <a href="#cdk-ssm-documents.HardCodedOnFailure">HardCodedOnFailure</a>, <a href="#cdk-ssm-documents.HardCodedResourceType">HardCodedResourceType</a>, <a href="#cdk-ssm-documents.OnFailureVariable">OnFailureVariable</a>, <a href="#cdk-ssm-documents.ResourceTypeVariable">ResourceTypeVariable</a>, <a href="#cdk-ssm-documents.IEnumVariable">IEnumVariable</a>
+- *Implemented By:* <a href="#cdk-ssm-documents.DesiredStateVariable">DesiredStateVariable</a>, <a href="#cdk-ssm-documents.HardCodedDesiredState">HardCodedDesiredState</a>, <a href="#cdk-ssm-documents.IDesiredStateVariable">IDesiredStateVariable</a>
 
-An enum variable.
 
-#### Methods <a name="Methods" id="Methods"></a>
 
-| **Name** | **Description** |
-| --- | --- |
-| <code><a href="#cdk-ssm-documents.IEnumVariable.resolveToEnum">resolveToEnum</a></code> | Given the execution inputs, return the resolved value of this variable. |
+### IDocumentHashTypeVariable <a name="IDocumentHashTypeVariable" id="cdk-ssm-documents.IDocumentHashTypeVariable"></a>
 
----
+- *Extends:* <a href="#cdk-ssm-documents.IStringVariable">IStringVariable</a>
 
-##### `resolveToEnum` <a name="resolveToEnum" id="cdk-ssm-documents.IEnumVariable.resolveToEnum"></a>
+- *Implemented By:* <a href="#cdk-ssm-documents.DocumentHashTypeVariable">DocumentHashTypeVariable</a>, <a href="#cdk-ssm-documents.HardCodedDocumentHashType">HardCodedDocumentHashType</a>, <a href="#cdk-ssm-documents.IDocumentHashTypeVariable">IDocumentHashTypeVariable</a>
 
-```typescript
-public resolveToEnum(inputs: {[ key: string ]: any}): any
-```
-
-Given the execution inputs, return the resolved value of this variable.
-
-###### `inputs`<sup>Required</sup> <a name="inputs" id="cdk-ssm-documents.IEnumVariable.resolveToEnum.parameter.inputs"></a>
-
-- *Type:* {[ key: string ]: any}
-
-are the execution inputs.
-
----
 
 
 ### IEnvironment <a name="IEnvironment" id="cdk-ssm-documents.IEnvironment"></a>
@@ -25377,7 +26702,7 @@ public run(command: string): string
 
 ### IGenericVariable <a name="IGenericVariable" id="cdk-ssm-documents.IGenericVariable"></a>
 
-- *Implemented By:* <a href="#cdk-ssm-documents.BooleanVariable">BooleanVariable</a>, <a href="#cdk-ssm-documents.DesiredStateVariable">DesiredStateVariable</a>, <a href="#cdk-ssm-documents.DictFormat">DictFormat</a>, <a href="#cdk-ssm-documents.DocumentHashTypeVariable">DocumentHashTypeVariable</a>, <a href="#cdk-ssm-documents.EnumVariable">EnumVariable</a>, <a href="#cdk-ssm-documents.GenericVariable">GenericVariable</a>, <a href="#cdk-ssm-documents.HardCodedBoolean">HardCodedBoolean</a>, <a href="#cdk-ssm-documents.HardCodedDesiredState">HardCodedDesiredState</a>, <a href="#cdk-ssm-documents.HardCodedDocumentHashType">HardCodedDocumentHashType</a>, <a href="#cdk-ssm-documents.HardCodedEnum">HardCodedEnum</a>, <a href="#cdk-ssm-documents.HardCodedMapList">HardCodedMapList</a>, <a href="#cdk-ssm-documents.HardCodedNumber">HardCodedNumber</a>, <a href="#cdk-ssm-documents.HardCodedOnFailure">HardCodedOnFailure</a>, <a href="#cdk-ssm-documents.HardCodedResourceType">HardCodedResourceType</a>, <a href="#cdk-ssm-documents.HardCodedString">HardCodedString</a>, <a href="#cdk-ssm-documents.HardCodedStringList">HardCodedStringList</a>, <a href="#cdk-ssm-documents.HardCodedStringMap">HardCodedStringMap</a>, <a href="#cdk-ssm-documents.HardCodedValueBase">HardCodedValueBase</a>, <a href="#cdk-ssm-documents.MapListVariable">MapListVariable</a>, <a href="#cdk-ssm-documents.NumberVariable">NumberVariable</a>, <a href="#cdk-ssm-documents.OnFailureVariable">OnFailureVariable</a>, <a href="#cdk-ssm-documents.ResourceTypeVariable">ResourceTypeVariable</a>, <a href="#cdk-ssm-documents.StringFormat">StringFormat</a>, <a href="#cdk-ssm-documents.StringListVariable">StringListVariable</a>, <a href="#cdk-ssm-documents.StringMapVariable">StringMapVariable</a>, <a href="#cdk-ssm-documents.StringVariable">StringVariable</a>, <a href="#cdk-ssm-documents.IBooleanVariable">IBooleanVariable</a>, <a href="#cdk-ssm-documents.IEnumVariable">IEnumVariable</a>, <a href="#cdk-ssm-documents.IGenericVariable">IGenericVariable</a>, <a href="#cdk-ssm-documents.IMapListVariable">IMapListVariable</a>, <a href="#cdk-ssm-documents.INumberVariable">INumberVariable</a>, <a href="#cdk-ssm-documents.IStringListVariable">IStringListVariable</a>, <a href="#cdk-ssm-documents.IStringMapVariable">IStringMapVariable</a>, <a href="#cdk-ssm-documents.IStringVariable">IStringVariable</a>
+- *Implemented By:* <a href="#cdk-ssm-documents.ActionVariable">ActionVariable</a>, <a href="#cdk-ssm-documents.BooleanVariable">BooleanVariable</a>, <a href="#cdk-ssm-documents.DesiredStateVariable">DesiredStateVariable</a>, <a href="#cdk-ssm-documents.DictFormat">DictFormat</a>, <a href="#cdk-ssm-documents.DocumentHashTypeVariable">DocumentHashTypeVariable</a>, <a href="#cdk-ssm-documents.GenericVariable">GenericVariable</a>, <a href="#cdk-ssm-documents.HardCodedAction">HardCodedAction</a>, <a href="#cdk-ssm-documents.HardCodedBoolean">HardCodedBoolean</a>, <a href="#cdk-ssm-documents.HardCodedDesiredState">HardCodedDesiredState</a>, <a href="#cdk-ssm-documents.HardCodedDocumentHashType">HardCodedDocumentHashType</a>, <a href="#cdk-ssm-documents.HardCodedInstallationType">HardCodedInstallationType</a>, <a href="#cdk-ssm-documents.HardCodedMapList">HardCodedMapList</a>, <a href="#cdk-ssm-documents.HardCodedNumber">HardCodedNumber</a>, <a href="#cdk-ssm-documents.HardCodedOnFailure">HardCodedOnFailure</a>, <a href="#cdk-ssm-documents.HardCodedPackageName">HardCodedPackageName</a>, <a href="#cdk-ssm-documents.HardCodedResourceType">HardCodedResourceType</a>, <a href="#cdk-ssm-documents.HardCodedString">HardCodedString</a>, <a href="#cdk-ssm-documents.HardCodedStringList">HardCodedStringList</a>, <a href="#cdk-ssm-documents.HardCodedStringMap">HardCodedStringMap</a>, <a href="#cdk-ssm-documents.HardCodedValueBase">HardCodedValueBase</a>, <a href="#cdk-ssm-documents.InstallationTypeVariable">InstallationTypeVariable</a>, <a href="#cdk-ssm-documents.MapListVariable">MapListVariable</a>, <a href="#cdk-ssm-documents.NumberVariable">NumberVariable</a>, <a href="#cdk-ssm-documents.OnFailureVariable">OnFailureVariable</a>, <a href="#cdk-ssm-documents.PackageNameVariable">PackageNameVariable</a>, <a href="#cdk-ssm-documents.ResourceTypeVariable">ResourceTypeVariable</a>, <a href="#cdk-ssm-documents.StringFormat">StringFormat</a>, <a href="#cdk-ssm-documents.StringListVariable">StringListVariable</a>, <a href="#cdk-ssm-documents.StringMapVariable">StringMapVariable</a>, <a href="#cdk-ssm-documents.StringVariable">StringVariable</a>, <a href="#cdk-ssm-documents.IActionVariable">IActionVariable</a>, <a href="#cdk-ssm-documents.IBooleanVariable">IBooleanVariable</a>, <a href="#cdk-ssm-documents.IDesiredStateVariable">IDesiredStateVariable</a>, <a href="#cdk-ssm-documents.IDocumentHashTypeVariable">IDocumentHashTypeVariable</a>, <a href="#cdk-ssm-documents.IGenericVariable">IGenericVariable</a>, <a href="#cdk-ssm-documents.IInstallationTypeVariable">IInstallationTypeVariable</a>, <a href="#cdk-ssm-documents.IMapListVariable">IMapListVariable</a>, <a href="#cdk-ssm-documents.INumberVariable">INumberVariable</a>, <a href="#cdk-ssm-documents.IOnFailureVariable">IOnFailureVariable</a>, <a href="#cdk-ssm-documents.IPackageNameVariable">IPackageNameVariable</a>, <a href="#cdk-ssm-documents.IResourceTypeVariable">IResourceTypeVariable</a>, <a href="#cdk-ssm-documents.IStringListVariable">IStringListVariable</a>, <a href="#cdk-ssm-documents.IStringMapVariable">IStringMapVariable</a>, <a href="#cdk-ssm-documents.IStringVariable">IStringVariable</a>
 
 Variables hold references to a value.
 
@@ -25447,6 +26772,14 @@ public toJSON(): any
 ```
 
 JSON.stringify(variable) will implicitly invoke this variable.
+
+
+### IInstallationTypeVariable <a name="IInstallationTypeVariable" id="cdk-ssm-documents.IInstallationTypeVariable"></a>
+
+- *Extends:* <a href="#cdk-ssm-documents.IStringVariable">IStringVariable</a>
+
+- *Implemented By:* <a href="#cdk-ssm-documents.HardCodedInstallationType">HardCodedInstallationType</a>, <a href="#cdk-ssm-documents.InstallationTypeVariable">InstallationTypeVariable</a>, <a href="#cdk-ssm-documents.IInstallationTypeVariable">IInstallationTypeVariable</a>
+
 
 
 ### IMapListVariable <a name="IMapListVariable" id="cdk-ssm-documents.IMapListVariable"></a>
@@ -25540,6 +26873,22 @@ public accept(value: {[ key: string ]: any}): void
 ---
 
 
+### IOnFailureVariable <a name="IOnFailureVariable" id="cdk-ssm-documents.IOnFailureVariable"></a>
+
+- *Extends:* <a href="#cdk-ssm-documents.IStringVariable">IStringVariable</a>
+
+- *Implemented By:* <a href="#cdk-ssm-documents.HardCodedOnFailure">HardCodedOnFailure</a>, <a href="#cdk-ssm-documents.OnFailureVariable">OnFailureVariable</a>, <a href="#cdk-ssm-documents.IOnFailureVariable">IOnFailureVariable</a>
+
+
+
+### IPackageNameVariable <a name="IPackageNameVariable" id="cdk-ssm-documents.IPackageNameVariable"></a>
+
+- *Extends:* <a href="#cdk-ssm-documents.IStringVariable">IStringVariable</a>
+
+- *Implemented By:* <a href="#cdk-ssm-documents.HardCodedPackageName">HardCodedPackageName</a>, <a href="#cdk-ssm-documents.PackageNameVariable">PackageNameVariable</a>, <a href="#cdk-ssm-documents.IPackageNameVariable">IPackageNameVariable</a>
+
+
+
 ### IParameterResolver <a name="IParameterResolver" id="cdk-ssm-documents.IParameterResolver"></a>
 
 - *Implemented By:* <a href="#cdk-ssm-documents.IParameterResolver">IParameterResolver</a>
@@ -25588,6 +26937,14 @@ This can be used to provide a hook for pausing implementation for PauseStep.
 ```typescript
 public pause(): void
 ```
+
+
+### IResourceTypeVariable <a name="IResourceTypeVariable" id="cdk-ssm-documents.IResourceTypeVariable"></a>
+
+- *Extends:* <a href="#cdk-ssm-documents.IStringVariable">IStringVariable</a>
+
+- *Implemented By:* <a href="#cdk-ssm-documents.HardCodedResourceType">HardCodedResourceType</a>, <a href="#cdk-ssm-documents.ResourceTypeVariable">ResourceTypeVariable</a>, <a href="#cdk-ssm-documents.IResourceTypeVariable">IResourceTypeVariable</a>
+
 
 
 ### IRunCommandHook <a name="IRunCommandHook" id="cdk-ssm-documents.IRunCommandHook"></a>
@@ -25716,7 +27073,7 @@ are the execution inputs.
 
 - *Extends:* <a href="#cdk-ssm-documents.IGenericVariable">IGenericVariable</a>
 
-- *Implemented By:* <a href="#cdk-ssm-documents.DictFormat">DictFormat</a>, <a href="#cdk-ssm-documents.HardCodedString">HardCodedString</a>, <a href="#cdk-ssm-documents.StringFormat">StringFormat</a>, <a href="#cdk-ssm-documents.StringVariable">StringVariable</a>, <a href="#cdk-ssm-documents.IStringVariable">IStringVariable</a>
+- *Implemented By:* <a href="#cdk-ssm-documents.ActionVariable">ActionVariable</a>, <a href="#cdk-ssm-documents.DesiredStateVariable">DesiredStateVariable</a>, <a href="#cdk-ssm-documents.DictFormat">DictFormat</a>, <a href="#cdk-ssm-documents.DocumentHashTypeVariable">DocumentHashTypeVariable</a>, <a href="#cdk-ssm-documents.HardCodedAction">HardCodedAction</a>, <a href="#cdk-ssm-documents.HardCodedDesiredState">HardCodedDesiredState</a>, <a href="#cdk-ssm-documents.HardCodedDocumentHashType">HardCodedDocumentHashType</a>, <a href="#cdk-ssm-documents.HardCodedInstallationType">HardCodedInstallationType</a>, <a href="#cdk-ssm-documents.HardCodedOnFailure">HardCodedOnFailure</a>, <a href="#cdk-ssm-documents.HardCodedPackageName">HardCodedPackageName</a>, <a href="#cdk-ssm-documents.HardCodedResourceType">HardCodedResourceType</a>, <a href="#cdk-ssm-documents.HardCodedString">HardCodedString</a>, <a href="#cdk-ssm-documents.InstallationTypeVariable">InstallationTypeVariable</a>, <a href="#cdk-ssm-documents.OnFailureVariable">OnFailureVariable</a>, <a href="#cdk-ssm-documents.PackageNameVariable">PackageNameVariable</a>, <a href="#cdk-ssm-documents.ResourceTypeVariable">ResourceTypeVariable</a>, <a href="#cdk-ssm-documents.StringFormat">StringFormat</a>, <a href="#cdk-ssm-documents.StringVariable">StringVariable</a>, <a href="#cdk-ssm-documents.IActionVariable">IActionVariable</a>, <a href="#cdk-ssm-documents.IDesiredStateVariable">IDesiredStateVariable</a>, <a href="#cdk-ssm-documents.IDocumentHashTypeVariable">IDocumentHashTypeVariable</a>, <a href="#cdk-ssm-documents.IInstallationTypeVariable">IInstallationTypeVariable</a>, <a href="#cdk-ssm-documents.IOnFailureVariable">IOnFailureVariable</a>, <a href="#cdk-ssm-documents.IPackageNameVariable">IPackageNameVariable</a>, <a href="#cdk-ssm-documents.IResourceTypeVariable">IResourceTypeVariable</a>, <a href="#cdk-ssm-documents.IStringVariable">IStringVariable</a>
 
 A string variable.
 
@@ -25815,33 +27172,6 @@ DataTypes as supported by SSM Documents.
 ---
 
 
-### DesiredState <a name="DesiredState" id="cdk-ssm-documents.DesiredState"></a>
-
-#### Members <a name="Members" id="Members"></a>
-
-| **Name** | **Description** |
-| --- | --- |
-| <code><a href="#cdk-ssm-documents.DesiredState.RUNNING">RUNNING</a></code> | *No description.* |
-| <code><a href="#cdk-ssm-documents.DesiredState.STOPPED">STOPPED</a></code> | *No description.* |
-| <code><a href="#cdk-ssm-documents.DesiredState.TERMINATED">TERMINATED</a></code> | *No description.* |
-
----
-
-##### `RUNNING` <a name="RUNNING" id="cdk-ssm-documents.DesiredState.RUNNING"></a>
-
----
-
-
-##### `STOPPED` <a name="STOPPED" id="cdk-ssm-documents.DesiredState.STOPPED"></a>
-
----
-
-
-##### `TERMINATED` <a name="TERMINATED" id="cdk-ssm-documents.DesiredState.TERMINATED"></a>
-
----
-
-
 ### DocumentFormat <a name="DocumentFormat" id="cdk-ssm-documents.DocumentFormat"></a>
 
 #### Members <a name="Members" id="Members"></a>
@@ -25859,58 +27189,6 @@ DataTypes as supported by SSM Documents.
 
 
 ##### `YAML` <a name="YAML" id="cdk-ssm-documents.DocumentFormat.YAML"></a>
-
----
-
-
-### DocumentHashType <a name="DocumentHashType" id="cdk-ssm-documents.DocumentHashType"></a>
-
-Type of document hash.
-
-#### Members <a name="Members" id="Members"></a>
-
-| **Name** | **Description** |
-| --- | --- |
-| <code><a href="#cdk-ssm-documents.DocumentHashType.SHA256">SHA256</a></code> | *No description.* |
-| <code><a href="#cdk-ssm-documents.DocumentHashType.SHA1">SHA1</a></code> | *No description.* |
-
----
-
-##### `SHA256` <a name="SHA256" id="cdk-ssm-documents.DocumentHashType.SHA256"></a>
-
----
-
-
-##### `SHA1` <a name="SHA1" id="cdk-ssm-documents.DocumentHashType.SHA1"></a>
-
----
-
-
-### OnFailure <a name="OnFailure" id="cdk-ssm-documents.OnFailure"></a>
-
-Values for CreateStackStep's OnFailure property.
-
-#### Members <a name="Members" id="Members"></a>
-
-| **Name** | **Description** |
-| --- | --- |
-| <code><a href="#cdk-ssm-documents.OnFailure.DO_NOTHING">DO_NOTHING</a></code> | *No description.* |
-| <code><a href="#cdk-ssm-documents.OnFailure.ROLLBACK">ROLLBACK</a></code> | *No description.* |
-| <code><a href="#cdk-ssm-documents.OnFailure.DELETE">DELETE</a></code> | *No description.* |
-
----
-
-##### `DO_NOTHING` <a name="DO_NOTHING" id="cdk-ssm-documents.OnFailure.DO_NOTHING"></a>
-
----
-
-
-##### `ROLLBACK` <a name="ROLLBACK" id="cdk-ssm-documents.OnFailure.ROLLBACK"></a>
-
----
-
-
-##### `DELETE` <a name="DELETE" id="cdk-ssm-documents.OnFailure.DELETE"></a>
 
 ---
 
@@ -26023,39 +27301,6 @@ That allows customers to validate their CommandDocument against a given platform
 
 
 ##### `MAC_OS` <a name="MAC_OS" id="cdk-ssm-documents.Platform.MAC_OS"></a>
-
----
-
-
-### ResourceType <a name="ResourceType" id="cdk-ssm-documents.ResourceType"></a>
-
-#### Members <a name="Members" id="Members"></a>
-
-| **Name** | **Description** |
-| --- | --- |
-| <code><a href="#cdk-ssm-documents.ResourceType.EC2">EC2</a></code> | *No description.* |
-| <code><a href="#cdk-ssm-documents.ResourceType.MAINTENANCE_INSTANCE">MAINTENANCE_INSTANCE</a></code> | *No description.* |
-| <code><a href="#cdk-ssm-documents.ResourceType.MAINTENANCE_WINDOW">MAINTENANCE_WINDOW</a></code> | *No description.* |
-| <code><a href="#cdk-ssm-documents.ResourceType.PARAMETER">PARAMETER</a></code> | *No description.* |
-
----
-
-##### `EC2` <a name="EC2" id="cdk-ssm-documents.ResourceType.EC2"></a>
-
----
-
-
-##### `MAINTENANCE_INSTANCE` <a name="MAINTENANCE_INSTANCE" id="cdk-ssm-documents.ResourceType.MAINTENANCE_INSTANCE"></a>
-
----
-
-
-##### `MAINTENANCE_WINDOW` <a name="MAINTENANCE_WINDOW" id="cdk-ssm-documents.ResourceType.MAINTENANCE_WINDOW"></a>
-
----
-
-
-##### `PARAMETER` <a name="PARAMETER" id="cdk-ssm-documents.ResourceType.PARAMETER"></a>
 
 ---
 
