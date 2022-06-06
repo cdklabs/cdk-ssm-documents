@@ -9401,7 +9401,7 @@ new RunDocumentStep(scope: Construct, id: string, props: RunDocumentStepProps)
 | **Name** | **Description** |
 | --- | --- |
 | <code><a href="#cdk-ssm-documents.RunDocumentStep.toString">toString</a></code> | Returns a string representation of this construct. |
-| <code><a href="#cdk-ssm-documents.RunDocumentStep.listInputs">listInputs</a></code> | Inputs required for this command include documentType then documentPath and documentParameters if provided. |
+| <code><a href="#cdk-ssm-documents.RunDocumentStep.listInputs">listInputs</a></code> | Lists the inputs that are required for this step. |
 | <code><a href="#cdk-ssm-documents.RunDocumentStep.listOutputs">listOutputs</a></code> | RunCommand Steps do not have outputs. |
 | <code><a href="#cdk-ssm-documents.RunDocumentStep.toSsmEntry">toSsmEntry</a></code> | Converts this step into an object to prepare for yaml/json representation of this step. |
 | <code><a href="#cdk-ssm-documents.RunDocumentStep.addToDocument">addToDocument</a></code> | *No description.* |
@@ -9423,7 +9423,7 @@ Returns a string representation of this construct.
 public listInputs(): string[]
 ```
 
-Inputs required for this command include documentType then documentPath and documentParameters if provided.
+Lists the inputs that are required for this step.
 
 ##### `listOutputs` <a name="listOutputs" id="cdk-ssm-documents.RunDocumentStep.listOutputs"></a>
 
@@ -9503,7 +9503,7 @@ Any object.
 | <code><a href="#cdk-ssm-documents.RunDocumentStep.property.precondition">precondition</a></code> | <code><a href="#cdk-ssm-documents.Precondition">Precondition</a></code> | *No description.* |
 | <code><a href="#cdk-ssm-documents.RunDocumentStep.property.allStepsInExecution">allStepsInExecution</a></code> | <code><a href="#cdk-ssm-documents.CommandStep">CommandStep</a>[]</code> | *No description.* |
 | <code><a href="#cdk-ssm-documents.RunDocumentStep.property.nextStep">nextStep</a></code> | <code><a href="#cdk-ssm-documents.CommandStep">CommandStep</a></code> | *No description.* |
-| <code><a href="#cdk-ssm-documents.RunDocumentStep.property.stepDocument">stepDocument</a></code> | <code><a href="#cdk-ssm-documents.ICommandStepDocument">ICommandStepDocument</a></code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.RunDocumentStep.property.stepDocument">stepDocument</a></code> | <code><a href="#cdk-ssm-documents.IRunDocumentLocation">IRunDocumentLocation</a></code> | *No description.* |
 | <code><a href="#cdk-ssm-documents.RunDocumentStep.property.documentParameters">documentParameters</a></code> | <code><a href="#cdk-ssm-documents.IStringMapVariable">IStringMapVariable</a></code> | *No description.* |
 
 ---
@@ -9653,10 +9653,10 @@ public readonly nextStep: CommandStep;
 ##### `stepDocument`<sup>Required</sup> <a name="stepDocument" id="cdk-ssm-documents.RunDocumentStep.property.stepDocument"></a>
 
 ```typescript
-public readonly stepDocument: ICommandStepDocument;
+public readonly stepDocument: IRunDocumentLocation;
 ```
 
-- *Type:* <a href="#cdk-ssm-documents.ICommandStepDocument">ICommandStepDocument</a>
+- *Type:* <a href="#cdk-ssm-documents.IRunDocumentLocation">IRunDocumentLocation</a>
 
 ---
 
@@ -11210,7 +11210,6 @@ public readonly DEFAULT_TIMEOUT: number;
 
 ---
 
-<<<<<<< HEAD
 ### SoftwareInventoryStep <a name="SoftwareInventoryStep" id="cdk-ssm-documents.SoftwareInventoryStep"></a>
 
 AutomationStep implemenation for aws:softwareInventory https://docs.aws.amazon.com/systems-manager/latest/userguide/ssm-plugins.html#aws-softwareinventory.
@@ -11612,8 +11611,6 @@ public readonly windowsUpdates: IStringVariable;
 ---
 
 
-=======
->>>>>>> d963d72 (tests)
 ### SsmDocument <a name="SsmDocument" id="cdk-ssm-documents.SsmDocument"></a>
 
 #### Initializers <a name="Initializers" id="cdk-ssm-documents.SsmDocument.Initializer"></a>
@@ -12379,7 +12376,6 @@ public readonly builder: AutomationDocumentBuilder;
 ---
 
 
-<<<<<<< HEAD
 ### UpdateAgentStep <a name="UpdateAgentStep" id="cdk-ssm-documents.UpdateAgentStep"></a>
 
 AutomationStep implemenation for aws:UpdateAgent https://docs.aws.amazon.com/systems-manager/latest/userguide/ssm-plugins.html#aws-updateagent.
@@ -13050,8 +13046,6 @@ public readonly targetVersion: IStringVariable;
 ---
 
 
-=======
->>>>>>> d963d72 (tests)
 ### WaitForResourceStep <a name="WaitForResourceStep" id="cdk-ssm-documents.WaitForResourceStep"></a>
 
 AutomationStep impl for aws:waitForAwsResourceProperty https://docs.aws.amazon.com/systems-manager/latest/userguide/automation-action-waitForAwsResourceProperty.html.
@@ -19693,7 +19687,7 @@ const runDocumentStepProps: RunDocumentStepProps = { ... }
 | <code><a href="#cdk-ssm-documents.RunDocumentStepProps.property.markSuccessAndExitOnFailure">markSuccessAndExitOnFailure</a></code> | <code>boolean</code> | *No description.* |
 | <code><a href="#cdk-ssm-documents.RunDocumentStepProps.property.onCancel">onCancel</a></code> | <code><a href="#cdk-ssm-documents.Step">Step</a></code> | (Optional) Step to jump to in the event that this step is cancelled. |
 | <code><a href="#cdk-ssm-documents.RunDocumentStepProps.property.precondition">precondition</a></code> | <code><a href="#cdk-ssm-documents.Precondition">Precondition</a></code> | (Optional) A precondition to test before execution occurrs. |
-| <code><a href="#cdk-ssm-documents.RunDocumentStepProps.property.stepDocument">stepDocument</a></code> | <code><a href="#cdk-ssm-documents.ICommandStepDocument">ICommandStepDocument</a></code> | Document info containing document type and document path. |
+| <code><a href="#cdk-ssm-documents.RunDocumentStepProps.property.stepDocument">stepDocument</a></code> | <code><a href="#cdk-ssm-documents.IRunDocumentLocation">IRunDocumentLocation</a></code> | Document info containing document type and document path. |
 | <code><a href="#cdk-ssm-documents.RunDocumentStepProps.property.documentParameters">documentParameters</a></code> | <code><a href="#cdk-ssm-documents.IStringMapVariable">IStringMapVariable</a></code> | Parameters for the document. |
 
 ---
@@ -19834,10 +19828,10 @@ When the precondition isn't met, the command step isn't executed.
 ##### `stepDocument`<sup>Required</sup> <a name="stepDocument" id="cdk-ssm-documents.RunDocumentStepProps.property.stepDocument"></a>
 
 ```typescript
-public readonly stepDocument: ICommandStepDocument;
+public readonly stepDocument: IRunDocumentLocation;
 ```
 
-- *Type:* <a href="#cdk-ssm-documents.ICommandStepDocument">ICommandStepDocument</a>
+- *Type:* <a href="#cdk-ssm-documents.IRunDocumentLocation">IRunDocumentLocation</a>
 
 Document info containing document type and document path.
 
@@ -20971,7 +20965,6 @@ This will be used in the SSM doc as well as how long to indicate sleep to the sl
 
 ---
 
-<<<<<<< HEAD
 ### SoftwareInventoryStepProps <a name="SoftwareInventoryStepProps" id="cdk-ssm-documents.SoftwareInventoryStepProps"></a>
 
 Properties of SoftwareInventory step.
@@ -21266,8 +21259,6 @@ public readonly windowsUpdates: IStringVariable;
 
 ---
 
-=======
->>>>>>> d963d72 (tests)
 ### SsmDocumentProps <a name="SsmDocumentProps" id="cdk-ssm-documents.SsmDocumentProps"></a>
 
 #### Initializer <a name="Initializer" id="cdk-ssm-documents.SsmDocumentProps.Initializer"></a>
@@ -21524,7 +21515,6 @@ public readonly outputObserver: IObserver;
 
 ---
 
-<<<<<<< HEAD
 ### UpdateAgentStepProps <a name="UpdateAgentStepProps" id="cdk-ssm-documents.UpdateAgentStepProps"></a>
 
 Properties UpdateAgent step.
@@ -21987,8 +21977,6 @@ If not specified, the agent will be updated to the latest version.
 
 ---
 
-=======
->>>>>>> d963d72 (tests)
 ### WaitForResourceStepProps <a name="WaitForResourceStepProps" id="cdk-ssm-documents.WaitForResourceStepProps"></a>
 
 #### Initializer <a name="Initializer" id="cdk-ssm-documents.WaitForResourceStepProps.Initializer"></a>
@@ -25398,67 +25386,58 @@ public readonly validValues: string[];
 ---
 
 
-### LocalCommandStepDocument <a name="LocalCommandStepDocument" id="cdk-ssm-documents.LocalCommandStepDocument"></a>
+### LocalRunDocument <a name="LocalRunDocument" id="cdk-ssm-documents.LocalRunDocument"></a>
 
-- *Implements:* <a href="#cdk-ssm-documents.ICommandStepDocument">ICommandStepDocument</a>
+- *Implements:* <a href="#cdk-ssm-documents.IRunDocumentLocation">IRunDocumentLocation</a>
 
-#### Initializers <a name="Initializers" id="cdk-ssm-documents.LocalCommandStepDocument.Initializer"></a>
+#### Initializers <a name="Initializers" id="cdk-ssm-documents.LocalRunDocument.Initializer"></a>
 
 ```typescript
-import { LocalCommandStepDocument } from 'cdk-ssm-documents'
+import { LocalRunDocument } from 'cdk-ssm-documents'
 
-new LocalCommandStepDocument(path: IStringVariable)
+new LocalRunDocument(documentPath: IStringVariable)
 ```
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#cdk-ssm-documents.LocalCommandStepDocument.Initializer.parameter.path">path</a></code> | <code><a href="#cdk-ssm-documents.IStringVariable">IStringVariable</a></code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.LocalRunDocument.Initializer.parameter.documentPath">documentPath</a></code> | <code><a href="#cdk-ssm-documents.IStringVariable">IStringVariable</a></code> | *No description.* |
 
 ---
 
-##### `path`<sup>Required</sup> <a name="path" id="cdk-ssm-documents.LocalCommandStepDocument.Initializer.parameter.path"></a>
+##### `documentPath`<sup>Required</sup> <a name="documentPath" id="cdk-ssm-documents.LocalRunDocument.Initializer.parameter.documentPath"></a>
 
 - *Type:* <a href="#cdk-ssm-documents.IStringVariable">IStringVariable</a>
 
 ---
 
-#### Methods <a name="Methods" id="Methods"></a>
-
-| **Name** | **Description** |
-| --- | --- |
-| <code><a href="#cdk-ssm-documents.LocalCommandStepDocument.pathGet">pathGet</a></code> | *No description.* |
-| <code><a href="#cdk-ssm-documents.LocalCommandStepDocument.typeGet">typeGet</a></code> | *No description.* |
-
----
-
-##### `pathGet` <a name="pathGet" id="cdk-ssm-documents.LocalCommandStepDocument.pathGet"></a>
-
-```typescript
-public pathGet(): IStringVariable
-```
-
-##### `typeGet` <a name="typeGet" id="cdk-ssm-documents.LocalCommandStepDocument.typeGet"></a>
-
-```typescript
-public typeGet(): string
-```
 
 
 #### Properties <a name="Properties" id="Properties"></a>
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#cdk-ssm-documents.LocalCommandStepDocument.property.path">path</a></code> | <code><a href="#cdk-ssm-documents.IStringVariable">IStringVariable</a></code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.LocalRunDocument.property.location">location</a></code> | <code><a href="#cdk-ssm-documents.IStringVariable">IStringVariable</a></code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.LocalRunDocument.property.type">type</a></code> | <code>string</code> | *No description.* |
 
 ---
 
-##### `path`<sup>Required</sup> <a name="path" id="cdk-ssm-documents.LocalCommandStepDocument.property.path"></a>
+##### `location`<sup>Required</sup> <a name="location" id="cdk-ssm-documents.LocalRunDocument.property.location"></a>
 
 ```typescript
-public readonly path: IStringVariable;
+public readonly location: IStringVariable;
 ```
 
 - *Type:* <a href="#cdk-ssm-documents.IStringVariable">IStringVariable</a>
+
+---
+
+##### `type`<sup>Required</sup> <a name="type" id="cdk-ssm-documents.LocalRunDocument.property.type"></a>
+
+```typescript
+public readonly type: string;
+```
+
+- *Type:* string
 
 ---
 
@@ -26903,67 +26882,58 @@ Synchronously sleeps for duration specified in millis.
 
 
 
-### SsmCommandStepDocument <a name="SsmCommandStepDocument" id="cdk-ssm-documents.SsmCommandStepDocument"></a>
+### SsmRunDocument <a name="SsmRunDocument" id="cdk-ssm-documents.SsmRunDocument"></a>
 
-- *Implements:* <a href="#cdk-ssm-documents.ICommandStepDocument">ICommandStepDocument</a>
+- *Implements:* <a href="#cdk-ssm-documents.IRunDocumentLocation">IRunDocumentLocation</a>
 
-#### Initializers <a name="Initializers" id="cdk-ssm-documents.SsmCommandStepDocument.Initializer"></a>
+#### Initializers <a name="Initializers" id="cdk-ssm-documents.SsmRunDocument.Initializer"></a>
 
 ```typescript
-import { SsmCommandStepDocument } from 'cdk-ssm-documents'
+import { SsmRunDocument } from 'cdk-ssm-documents'
 
-new SsmCommandStepDocument(documentName: IStringVariable)
+new SsmRunDocument(documentName: IStringVariable)
 ```
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#cdk-ssm-documents.SsmCommandStepDocument.Initializer.parameter.documentName">documentName</a></code> | <code><a href="#cdk-ssm-documents.IStringVariable">IStringVariable</a></code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.SsmRunDocument.Initializer.parameter.documentName">documentName</a></code> | <code><a href="#cdk-ssm-documents.IStringVariable">IStringVariable</a></code> | *No description.* |
 
 ---
 
-##### `documentName`<sup>Required</sup> <a name="documentName" id="cdk-ssm-documents.SsmCommandStepDocument.Initializer.parameter.documentName"></a>
+##### `documentName`<sup>Required</sup> <a name="documentName" id="cdk-ssm-documents.SsmRunDocument.Initializer.parameter.documentName"></a>
 
 - *Type:* <a href="#cdk-ssm-documents.IStringVariable">IStringVariable</a>
 
 ---
 
-#### Methods <a name="Methods" id="Methods"></a>
-
-| **Name** | **Description** |
-| --- | --- |
-| <code><a href="#cdk-ssm-documents.SsmCommandStepDocument.pathGet">pathGet</a></code> | *No description.* |
-| <code><a href="#cdk-ssm-documents.SsmCommandStepDocument.typeGet">typeGet</a></code> | *No description.* |
-
----
-
-##### `pathGet` <a name="pathGet" id="cdk-ssm-documents.SsmCommandStepDocument.pathGet"></a>
-
-```typescript
-public pathGet(): IStringVariable
-```
-
-##### `typeGet` <a name="typeGet" id="cdk-ssm-documents.SsmCommandStepDocument.typeGet"></a>
-
-```typescript
-public typeGet(): string
-```
 
 
 #### Properties <a name="Properties" id="Properties"></a>
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#cdk-ssm-documents.SsmCommandStepDocument.property.documentName">documentName</a></code> | <code><a href="#cdk-ssm-documents.IStringVariable">IStringVariable</a></code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.SsmRunDocument.property.location">location</a></code> | <code><a href="#cdk-ssm-documents.IStringVariable">IStringVariable</a></code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.SsmRunDocument.property.type">type</a></code> | <code>string</code> | *No description.* |
 
 ---
 
-##### `documentName`<sup>Required</sup> <a name="documentName" id="cdk-ssm-documents.SsmCommandStepDocument.property.documentName"></a>
+##### `location`<sup>Required</sup> <a name="location" id="cdk-ssm-documents.SsmRunDocument.property.location"></a>
 
 ```typescript
-public readonly documentName: IStringVariable;
+public readonly location: IStringVariable;
 ```
 
 - *Type:* <a href="#cdk-ssm-documents.IStringVariable">IStringVariable</a>
+
+---
+
+##### `type`<sup>Required</sup> <a name="type" id="cdk-ssm-documents.SsmRunDocument.property.type"></a>
+
+```typescript
+public readonly type: string;
+```
+
+- *Type:* string
 
 ---
 
@@ -27755,15 +27725,7 @@ are the execution inputs.
 
 ### ICommandComponent <a name="ICommandComponent" id="cdk-ssm-documents.ICommandComponent"></a>
 
-<<<<<<< HEAD
-- *Implemented By:* <a href="#cdk-ssm-documents.CommandStep">CommandStep</a>, <a href="#cdk-ssm-documents.CompositeCommandStep">CompositeCommandStep</a>, <a href="#cdk-ssm-documents.ConfigureDockerStep">ConfigureDockerStep</a>, <a href="#cdk-ssm-documents.ConfigurePackageStep">ConfigurePackageStep</a>, <a href="#cdk-ssm-documents.PsModuleStep">PsModuleStep</a>, <a href="#cdk-ssm-documents.RunPowerShellScriptStep">RunPowerShellScriptStep</a>, <a href="#cdk-ssm-documents.RunShellScriptStep">RunShellScriptStep</a>, <a href="#cdk-ssm-documents.SoftwareInventoryStep">SoftwareInventoryStep</a>, <a href="#cdk-ssm-documents.UpdateAgentStep">UpdateAgentStep</a>, <a href="#cdk-ssm-documents.UpdateSSMAgentStep">UpdateSSMAgentStep</a>, <a href="#cdk-ssm-documents.ICommandComponent">ICommandComponent</a>
-=======
-<<<<<<< HEAD
-- *Implemented By:* <a href="#cdk-ssm-documents.CommandStep">CommandStep</a>, <a href="#cdk-ssm-documents.CompositeCommandStep">CompositeCommandStep</a>, <a href="#cdk-ssm-documents.PsModuleStep">PsModuleStep</a>, <a href="#cdk-ssm-documents.RunPowerShellScriptStep">RunPowerShellScriptStep</a>, <a href="#cdk-ssm-documents.RunShellScriptStep">RunShellScriptStep</a>, <a href="#cdk-ssm-documents.SoftwareInventoryStep">SoftwareInventoryStep</a>, <a href="#cdk-ssm-documents.UpdateAgentStep">UpdateAgentStep</a>, <a href="#cdk-ssm-documents.UpdateSSMAgentStep">UpdateSSMAgentStep</a>, <a href="#cdk-ssm-documents.ICommandComponent">ICommandComponent</a>
-=======
-- *Implemented By:* <a href="#cdk-ssm-documents.CommandStep">CommandStep</a>, <a href="#cdk-ssm-documents.CompositeCommandStep">CompositeCommandStep</a>, <a href="#cdk-ssm-documents.PsModuleStep">PsModuleStep</a>, <a href="#cdk-ssm-documents.RunDocumentStep">RunDocumentStep</a>, <a href="#cdk-ssm-documents.RunPowerShellScriptStep">RunPowerShellScriptStep</a>, <a href="#cdk-ssm-documents.RunShellScriptStep">RunShellScriptStep</a>, <a href="#cdk-ssm-documents.ICommandComponent">ICommandComponent</a>
->>>>>>> d963d72 (tests)
->>>>>>> d5b77e1 (feat: Implement RunDocument plugin)
+- *Implemented By:* <a href="#cdk-ssm-documents.CommandStep">CommandStep</a>, <a href="#cdk-ssm-documents.CompositeCommandStep">CompositeCommandStep</a>, <a href="#cdk-ssm-documents.ConfigureDockerStep">ConfigureDockerStep</a>, <a href="#cdk-ssm-documents.ConfigurePackageStep">ConfigurePackageStep</a>, <a href="#cdk-ssm-documents.PsModuleStep">PsModuleStep</a>, <a href="#cdk-ssm-documents.RunDocumentStep">RunDocumentStep</a>, <a href="#cdk-ssm-documents.RunPowerShellScriptStep">RunPowerShellScriptStep</a>, <a href="#cdk-ssm-documents.RunShellScriptStep">RunShellScriptStep</a>, <a href="#cdk-ssm-documents.SoftwareInventoryStep">SoftwareInventoryStep</a>, <a href="#cdk-ssm-documents.UpdateAgentStep">UpdateAgentStep</a>, <a href="#cdk-ssm-documents.UpdateSSMAgentStep">UpdateSSMAgentStep</a>, <a href="#cdk-ssm-documents.ICommandComponent">ICommandComponent</a>
 
 #### Methods <a name="Methods" id="Methods"></a>
 
@@ -27786,49 +27748,7 @@ public addToDocument(doc: CommandDocumentBuilder): void
 ---
 
 
-<<<<<<< HEAD
 ### IDesiredStateVariable <a name="IDesiredStateVariable" id="cdk-ssm-documents.IDesiredStateVariable"></a>
-=======
-### ICommandStepDocument <a name="ICommandStepDocument" id="cdk-ssm-documents.ICommandStepDocument"></a>
-
-- *Implemented By:* <a href="#cdk-ssm-documents.LocalCommandStepDocument">LocalCommandStepDocument</a>, <a href="#cdk-ssm-documents.SsmCommandStepDocument">SsmCommandStepDocument</a>, <a href="#cdk-ssm-documents.ICommandStepDocument">ICommandStepDocument</a>
-
-#### Methods <a name="Methods" id="Methods"></a>
-
-| **Name** | **Description** |
-| --- | --- |
-| <code><a href="#cdk-ssm-documents.ICommandStepDocument.pathGet">pathGet</a></code> | *No description.* |
-| <code><a href="#cdk-ssm-documents.ICommandStepDocument.typeGet">typeGet</a></code> | *No description.* |
-
----
-
-##### `pathGet` <a name="pathGet" id="cdk-ssm-documents.ICommandStepDocument.pathGet"></a>
-
-```typescript
-public pathGet(): IStringVariable
-```
-
-##### `typeGet` <a name="typeGet" id="cdk-ssm-documents.ICommandStepDocument.typeGet"></a>
-
-```typescript
-public typeGet(): string
-```
-
-
-### IEnumVariable <a name="IEnumVariable" id="cdk-ssm-documents.IEnumVariable"></a>
-
-- *Extends:* <a href="#cdk-ssm-documents.IGenericVariable">IGenericVariable</a>
-
-- *Implemented By:* <a href="#cdk-ssm-documents.DesiredStateVariable">DesiredStateVariable</a>, <a href="#cdk-ssm-documents.DocumentHashTypeVariable">DocumentHashTypeVariable</a>, <a href="#cdk-ssm-documents.EnumVariable">EnumVariable</a>, <a href="#cdk-ssm-documents.HardCodedDesiredState">HardCodedDesiredState</a>, <a href="#cdk-ssm-documents.HardCodedDocumentHashType">HardCodedDocumentHashType</a>, <a href="#cdk-ssm-documents.HardCodedEnum">HardCodedEnum</a>, <a href="#cdk-ssm-documents.HardCodedOnFailure">HardCodedOnFailure</a>, <a href="#cdk-ssm-documents.HardCodedResourceType">HardCodedResourceType</a>, <a href="#cdk-ssm-documents.OnFailureVariable">OnFailureVariable</a>, <a href="#cdk-ssm-documents.ResourceTypeVariable">ResourceTypeVariable</a>, <a href="#cdk-ssm-documents.IEnumVariable">IEnumVariable</a>
-
-An enum variable.
-
-#### Methods <a name="Methods" id="Methods"></a>
-
-| **Name** | **Description** |
-| --- | --- |
-| <code><a href="#cdk-ssm-documents.IEnumVariable.resolveToEnum">resolveToEnum</a></code> | Given the execution inputs, return the resolved value of this variable. |
->>>>>>> d5b77e1 (feat: Implement RunDocument plugin)
 
 - *Extends:* <a href="#cdk-ssm-documents.IStringVariable">IStringVariable</a>
 
@@ -28149,6 +28069,40 @@ Simulate the aws:runCommand.
 
 ---
 
+
+### IRunDocumentLocation <a name="IRunDocumentLocation" id="cdk-ssm-documents.IRunDocumentLocation"></a>
+
+- *Implemented By:* <a href="#cdk-ssm-documents.LocalRunDocument">LocalRunDocument</a>, <a href="#cdk-ssm-documents.SsmRunDocument">SsmRunDocument</a>, <a href="#cdk-ssm-documents.IRunDocumentLocation">IRunDocumentLocation</a>
+
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#cdk-ssm-documents.IRunDocumentLocation.property.location">location</a></code> | <code><a href="#cdk-ssm-documents.IStringVariable">IStringVariable</a></code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.IRunDocumentLocation.property.type">type</a></code> | <code>string</code> | *No description.* |
+
+---
+
+##### `location`<sup>Required</sup> <a name="location" id="cdk-ssm-documents.IRunDocumentLocation.property.location"></a>
+
+```typescript
+public readonly location: IStringVariable;
+```
+
+- *Type:* <a href="#cdk-ssm-documents.IStringVariable">IStringVariable</a>
+
+---
+
+##### `type`<sup>Required</sup> <a name="type" id="cdk-ssm-documents.IRunDocumentLocation.property.type"></a>
+
+```typescript
+public readonly type: string;
+```
+
+- *Type:* string
+
+---
 
 ### ISleepHook <a name="ISleepHook" id="cdk-ssm-documents.ISleepHook"></a>
 
