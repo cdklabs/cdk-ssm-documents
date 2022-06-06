@@ -22,6 +22,10 @@ export interface IStringListVariable extends IGenericVariable {
  * Used when not dependent on step inputs.
  */
 export class HardCodedStringList extends HardCodedValueBase<string[]> implements IStringListVariable {
+  public static of(val: string[]): HardCodedStringList {
+    return new HardCodedStringList(val);
+  }
+
   resolveToStringList(inputs: Record<string, any>): NullableStringList {
     return this.resolve(inputs);
   }
@@ -36,6 +40,10 @@ export class HardCodedStringList extends HardCodedValueBase<string[]> implements
  * Used to resolve the value from step inputs.
  */
 export class StringListVariable extends GenericVariable implements IStringListVariable {
+  public static of(reference: string): StringListVariable {
+    return new StringListVariable(reference);
+  }
+
   resolveToStringList(inputs: Record<string, any>): NullableStringList {
     return this.resolve(inputs);
   }

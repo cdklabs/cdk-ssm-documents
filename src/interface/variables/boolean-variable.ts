@@ -21,6 +21,9 @@ export interface IBooleanVariable extends IGenericVariable {
  * Used when not dependent on step inputs.
  */
 export class HardCodedBoolean extends HardCodedValueBase<boolean> implements IBooleanVariable {
+  public static readonly TRUE: HardCodedBoolean = new HardCodedBoolean(true);
+  public static readonly FALSE: HardCodedBoolean = new HardCodedBoolean(false);
+
   resolveToBoolean(inputs: Record<string, any>): NullableBoolean {
     return this.resolve(inputs);
   }
@@ -35,6 +38,10 @@ export class HardCodedBoolean extends HardCodedValueBase<boolean> implements IBo
  * Used to resolve the value from step inputs.
  */
 export class BooleanVariable extends GenericVariable implements IBooleanVariable {
+  public static of(reference: string): BooleanVariable {
+    return new BooleanVariable(reference);
+  }
+
   resolveToBoolean(inputs: Record<string, any>): NullableBoolean {
     return this.resolve(inputs);
   }

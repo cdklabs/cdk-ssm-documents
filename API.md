@@ -5928,6 +5928,341 @@ public readonly DEFAULT_TIMEOUT: number;
 
 ---
 
+### DomainJoinStep <a name="DomainJoinStep" id="cdk-ssm-documents.DomainJoinStep"></a>
+
+CommandStep implemenation for aws:softwareInventory https://docs.aws.amazon.com/systems-manager/latest/userguide/ssm-plugins.html#aws-domainJoin.
+
+#### Initializers <a name="Initializers" id="cdk-ssm-documents.DomainJoinStep.Initializer"></a>
+
+```typescript
+import { DomainJoinStep } from 'cdk-ssm-documents'
+
+new DomainJoinStep(scope: Construct, id: string, props: DomainJoinStepProps)
+```
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#cdk-ssm-documents.DomainJoinStep.Initializer.parameter.scope">scope</a></code> | <code>constructs.Construct</code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.DomainJoinStep.Initializer.parameter.id">id</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.DomainJoinStep.Initializer.parameter.props">props</a></code> | <code><a href="#cdk-ssm-documents.DomainJoinStepProps">DomainJoinStepProps</a></code> | *No description.* |
+
+---
+
+##### `scope`<sup>Required</sup> <a name="scope" id="cdk-ssm-documents.DomainJoinStep.Initializer.parameter.scope"></a>
+
+- *Type:* constructs.Construct
+
+---
+
+##### `id`<sup>Required</sup> <a name="id" id="cdk-ssm-documents.DomainJoinStep.Initializer.parameter.id"></a>
+
+- *Type:* string
+
+---
+
+##### `props`<sup>Required</sup> <a name="props" id="cdk-ssm-documents.DomainJoinStep.Initializer.parameter.props"></a>
+
+- *Type:* <a href="#cdk-ssm-documents.DomainJoinStepProps">DomainJoinStepProps</a>
+
+---
+
+#### Methods <a name="Methods" id="Methods"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#cdk-ssm-documents.DomainJoinStep.toString">toString</a></code> | Returns a string representation of this construct. |
+| <code><a href="#cdk-ssm-documents.DomainJoinStep.listInputs">listInputs</a></code> | All Inputs for this command are optional. |
+| <code><a href="#cdk-ssm-documents.DomainJoinStep.listOutputs">listOutputs</a></code> | RunCommand Steps do not have outputs. |
+| <code><a href="#cdk-ssm-documents.DomainJoinStep.toSsmEntry">toSsmEntry</a></code> | Converts this step into an object to prepare for yaml/json representation of this step. |
+| <code><a href="#cdk-ssm-documents.DomainJoinStep.addToDocument">addToDocument</a></code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.DomainJoinStep.variables">variables</a></code> | *No description.* |
+
+---
+
+##### `toString` <a name="toString" id="cdk-ssm-documents.DomainJoinStep.toString"></a>
+
+```typescript
+public toString(): string
+```
+
+Returns a string representation of this construct.
+
+##### `listInputs` <a name="listInputs" id="cdk-ssm-documents.DomainJoinStep.listInputs"></a>
+
+```typescript
+public listInputs(): string[]
+```
+
+All Inputs for this command are optional.
+
+##### `listOutputs` <a name="listOutputs" id="cdk-ssm-documents.DomainJoinStep.listOutputs"></a>
+
+```typescript
+public listOutputs(): Output[]
+```
+
+RunCommand Steps do not have outputs.
+
+##### `toSsmEntry` <a name="toSsmEntry" id="cdk-ssm-documents.DomainJoinStep.toSsmEntry"></a>
+
+```typescript
+public toSsmEntry(): {[ key: string ]: any}
+```
+
+Converts this step into an object to prepare for yaml/json representation of this step.
+
+##### `addToDocument` <a name="addToDocument" id="cdk-ssm-documents.DomainJoinStep.addToDocument"></a>
+
+```typescript
+public addToDocument(doc: CommandDocumentBuilder): void
+```
+
+###### `doc`<sup>Required</sup> <a name="doc" id="cdk-ssm-documents.DomainJoinStep.addToDocument.parameter.doc"></a>
+
+- *Type:* <a href="#cdk-ssm-documents.CommandDocumentBuilder">CommandDocumentBuilder</a>
+
+---
+
+##### `variables` <a name="variables" id="cdk-ssm-documents.DomainJoinStep.variables"></a>
+
+```typescript
+public variables(): {[ key: string ]: any}
+```
+
+#### Static Functions <a name="Static Functions" id="Static Functions"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#cdk-ssm-documents.DomainJoinStep.isConstruct">isConstruct</a></code> | Checks if `x` is a construct. |
+
+---
+
+##### ~~`isConstruct`~~ <a name="isConstruct" id="cdk-ssm-documents.DomainJoinStep.isConstruct"></a>
+
+```typescript
+import { DomainJoinStep } from 'cdk-ssm-documents'
+
+DomainJoinStep.isConstruct(x: any)
+```
+
+Checks if `x` is a construct.
+
+###### `x`<sup>Required</sup> <a name="x" id="cdk-ssm-documents.DomainJoinStep.isConstruct.parameter.x"></a>
+
+- *Type:* any
+
+Any object.
+
+---
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#cdk-ssm-documents.DomainJoinStep.property.node">node</a></code> | <code>constructs.Node</code> | The tree node. |
+| <code><a href="#cdk-ssm-documents.DomainJoinStep.property.action">action</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.DomainJoinStep.property.inputObserver">inputObserver</a></code> | <code><a href="#cdk-ssm-documents.IObserver">IObserver</a></code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.DomainJoinStep.property.name">name</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.DomainJoinStep.property.outputObserver">outputObserver</a></code> | <code><a href="#cdk-ssm-documents.IObserver">IObserver</a></code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.DomainJoinStep.property.description">description</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.DomainJoinStep.property.exitOnFailure">exitOnFailure</a></code> | <code>boolean</code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.DomainJoinStep.property.exitOnSuccess">exitOnSuccess</a></code> | <code>boolean</code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.DomainJoinStep.property.finallyStep">finallyStep</a></code> | <code>boolean</code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.DomainJoinStep.property.markSuccessAndExitOnFailure">markSuccessAndExitOnFailure</a></code> | <code>boolean</code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.DomainJoinStep.property.platforms">platforms</a></code> | <code><a href="#cdk-ssm-documents.Platform">Platform</a>[]</code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.DomainJoinStep.property.precondition">precondition</a></code> | <code><a href="#cdk-ssm-documents.Precondition">Precondition</a></code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.DomainJoinStep.property.allStepsInExecution">allStepsInExecution</a></code> | <code><a href="#cdk-ssm-documents.CommandStep">CommandStep</a>[]</code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.DomainJoinStep.property.nextStep">nextStep</a></code> | <code><a href="#cdk-ssm-documents.CommandStep">CommandStep</a></code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.DomainJoinStep.property.directoryId">directoryId</a></code> | <code><a href="#cdk-ssm-documents.IStringVariable">IStringVariable</a></code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.DomainJoinStep.property.directoryName">directoryName</a></code> | <code><a href="#cdk-ssm-documents.IStringVariable">IStringVariable</a></code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.DomainJoinStep.property.directoryOU">directoryOU</a></code> | <code><a href="#cdk-ssm-documents.IStringVariable">IStringVariable</a></code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.DomainJoinStep.property.dnsIpAddresses">dnsIpAddresses</a></code> | <code><a href="#cdk-ssm-documents.IStringListVariable">IStringListVariable</a></code> | *No description.* |
+
+---
+
+##### `node`<sup>Required</sup> <a name="node" id="cdk-ssm-documents.DomainJoinStep.property.node"></a>
+
+```typescript
+public readonly node: Node;
+```
+
+- *Type:* constructs.Node
+
+The tree node.
+
+---
+
+##### `action`<sup>Required</sup> <a name="action" id="cdk-ssm-documents.DomainJoinStep.property.action"></a>
+
+```typescript
+public readonly action: string;
+```
+
+- *Type:* string
+
+---
+
+##### `inputObserver`<sup>Required</sup> <a name="inputObserver" id="cdk-ssm-documents.DomainJoinStep.property.inputObserver"></a>
+
+```typescript
+public readonly inputObserver: IObserver;
+```
+
+- *Type:* <a href="#cdk-ssm-documents.IObserver">IObserver</a>
+
+---
+
+##### `name`<sup>Required</sup> <a name="name" id="cdk-ssm-documents.DomainJoinStep.property.name"></a>
+
+```typescript
+public readonly name: string;
+```
+
+- *Type:* string
+
+---
+
+##### `outputObserver`<sup>Required</sup> <a name="outputObserver" id="cdk-ssm-documents.DomainJoinStep.property.outputObserver"></a>
+
+```typescript
+public readonly outputObserver: IObserver;
+```
+
+- *Type:* <a href="#cdk-ssm-documents.IObserver">IObserver</a>
+
+---
+
+##### `description`<sup>Optional</sup> <a name="description" id="cdk-ssm-documents.DomainJoinStep.property.description"></a>
+
+```typescript
+public readonly description: string;
+```
+
+- *Type:* string
+
+---
+
+##### `exitOnFailure`<sup>Required</sup> <a name="exitOnFailure" id="cdk-ssm-documents.DomainJoinStep.property.exitOnFailure"></a>
+
+```typescript
+public readonly exitOnFailure: boolean;
+```
+
+- *Type:* boolean
+
+---
+
+##### `exitOnSuccess`<sup>Required</sup> <a name="exitOnSuccess" id="cdk-ssm-documents.DomainJoinStep.property.exitOnSuccess"></a>
+
+```typescript
+public readonly exitOnSuccess: boolean;
+```
+
+- *Type:* boolean
+
+---
+
+##### `finallyStep`<sup>Required</sup> <a name="finallyStep" id="cdk-ssm-documents.DomainJoinStep.property.finallyStep"></a>
+
+```typescript
+public readonly finallyStep: boolean;
+```
+
+- *Type:* boolean
+
+---
+
+##### `markSuccessAndExitOnFailure`<sup>Required</sup> <a name="markSuccessAndExitOnFailure" id="cdk-ssm-documents.DomainJoinStep.property.markSuccessAndExitOnFailure"></a>
+
+```typescript
+public readonly markSuccessAndExitOnFailure: boolean;
+```
+
+- *Type:* boolean
+
+---
+
+##### `platforms`<sup>Required</sup> <a name="platforms" id="cdk-ssm-documents.DomainJoinStep.property.platforms"></a>
+
+```typescript
+public readonly platforms: Platform[];
+```
+
+- *Type:* <a href="#cdk-ssm-documents.Platform">Platform</a>[]
+
+---
+
+##### `precondition`<sup>Optional</sup> <a name="precondition" id="cdk-ssm-documents.DomainJoinStep.property.precondition"></a>
+
+```typescript
+public readonly precondition: Precondition;
+```
+
+- *Type:* <a href="#cdk-ssm-documents.Precondition">Precondition</a>
+
+---
+
+##### `allStepsInExecution`<sup>Optional</sup> <a name="allStepsInExecution" id="cdk-ssm-documents.DomainJoinStep.property.allStepsInExecution"></a>
+
+```typescript
+public readonly allStepsInExecution: CommandStep[];
+```
+
+- *Type:* <a href="#cdk-ssm-documents.CommandStep">CommandStep</a>[]
+
+---
+
+##### `nextStep`<sup>Optional</sup> <a name="nextStep" id="cdk-ssm-documents.DomainJoinStep.property.nextStep"></a>
+
+```typescript
+public readonly nextStep: CommandStep;
+```
+
+- *Type:* <a href="#cdk-ssm-documents.CommandStep">CommandStep</a>
+
+---
+
+##### `directoryId`<sup>Required</sup> <a name="directoryId" id="cdk-ssm-documents.DomainJoinStep.property.directoryId"></a>
+
+```typescript
+public readonly directoryId: IStringVariable;
+```
+
+- *Type:* <a href="#cdk-ssm-documents.IStringVariable">IStringVariable</a>
+
+---
+
+##### `directoryName`<sup>Required</sup> <a name="directoryName" id="cdk-ssm-documents.DomainJoinStep.property.directoryName"></a>
+
+```typescript
+public readonly directoryName: IStringVariable;
+```
+
+- *Type:* <a href="#cdk-ssm-documents.IStringVariable">IStringVariable</a>
+
+---
+
+##### `directoryOU`<sup>Optional</sup> <a name="directoryOU" id="cdk-ssm-documents.DomainJoinStep.property.directoryOU"></a>
+
+```typescript
+public readonly directoryOU: IStringVariable;
+```
+
+- *Type:* <a href="#cdk-ssm-documents.IStringVariable">IStringVariable</a>
+
+---
+
+##### `dnsIpAddresses`<sup>Optional</sup> <a name="dnsIpAddresses" id="cdk-ssm-documents.DomainJoinStep.property.dnsIpAddresses"></a>
+
+```typescript
+public readonly dnsIpAddresses: IStringListVariable;
+```
+
+- *Type:* <a href="#cdk-ssm-documents.IStringListVariable">IStringListVariable</a>
+
+---
+
+
 ### ExecuteScriptStep <a name="ExecuteScriptStep" id="cdk-ssm-documents.ExecuteScriptStep"></a>
 
 AutomationStep implementation for aws:executeScript https://docs.aws.amazon.com/systems-manager/latest/userguide/automation-action-executeScript.html.
@@ -9358,6 +9693,407 @@ public readonly DEFAULT_TIMEOUT: number;
 
 ---
 
+### RunDockerActionStep <a name="RunDockerActionStep" id="cdk-ssm-documents.RunDockerActionStep"></a>
+
+CommandStep implementation for aws:runDockerAction https://docs.aws.amazon.com/systems-manager/latest/userguide/ssm-plugins.html#aws-rundockeraction.
+
+#### Initializers <a name="Initializers" id="cdk-ssm-documents.RunDockerActionStep.Initializer"></a>
+
+```typescript
+import { RunDockerActionStep } from 'cdk-ssm-documents'
+
+new RunDockerActionStep(scope: Construct, id: string, props: RunDockerActionStepProps)
+```
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#cdk-ssm-documents.RunDockerActionStep.Initializer.parameter.scope">scope</a></code> | <code>constructs.Construct</code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.RunDockerActionStep.Initializer.parameter.id">id</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.RunDockerActionStep.Initializer.parameter.props">props</a></code> | <code><a href="#cdk-ssm-documents.RunDockerActionStepProps">RunDockerActionStepProps</a></code> | *No description.* |
+
+---
+
+##### `scope`<sup>Required</sup> <a name="scope" id="cdk-ssm-documents.RunDockerActionStep.Initializer.parameter.scope"></a>
+
+- *Type:* constructs.Construct
+
+---
+
+##### `id`<sup>Required</sup> <a name="id" id="cdk-ssm-documents.RunDockerActionStep.Initializer.parameter.id"></a>
+
+- *Type:* string
+
+---
+
+##### `props`<sup>Required</sup> <a name="props" id="cdk-ssm-documents.RunDockerActionStep.Initializer.parameter.props"></a>
+
+- *Type:* <a href="#cdk-ssm-documents.RunDockerActionStepProps">RunDockerActionStepProps</a>
+
+---
+
+#### Methods <a name="Methods" id="Methods"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#cdk-ssm-documents.RunDockerActionStep.toString">toString</a></code> | Returns a string representation of this construct. |
+| <code><a href="#cdk-ssm-documents.RunDockerActionStep.listInputs">listInputs</a></code> | Lists the inputs that are required for this step. |
+| <code><a href="#cdk-ssm-documents.RunDockerActionStep.listOutputs">listOutputs</a></code> | RunCommand Steps do not have outputs. |
+| <code><a href="#cdk-ssm-documents.RunDockerActionStep.toSsmEntry">toSsmEntry</a></code> | Converts this step into an object to prepare for yaml/json representation of this step. |
+| <code><a href="#cdk-ssm-documents.RunDockerActionStep.addToDocument">addToDocument</a></code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.RunDockerActionStep.variables">variables</a></code> | *No description.* |
+
+---
+
+##### `toString` <a name="toString" id="cdk-ssm-documents.RunDockerActionStep.toString"></a>
+
+```typescript
+public toString(): string
+```
+
+Returns a string representation of this construct.
+
+##### `listInputs` <a name="listInputs" id="cdk-ssm-documents.RunDockerActionStep.listInputs"></a>
+
+```typescript
+public listInputs(): string[]
+```
+
+Lists the inputs that are required for this step.
+
+##### `listOutputs` <a name="listOutputs" id="cdk-ssm-documents.RunDockerActionStep.listOutputs"></a>
+
+```typescript
+public listOutputs(): Output[]
+```
+
+RunCommand Steps do not have outputs.
+
+##### `toSsmEntry` <a name="toSsmEntry" id="cdk-ssm-documents.RunDockerActionStep.toSsmEntry"></a>
+
+```typescript
+public toSsmEntry(): {[ key: string ]: any}
+```
+
+Converts this step into an object to prepare for yaml/json representation of this step.
+
+##### `addToDocument` <a name="addToDocument" id="cdk-ssm-documents.RunDockerActionStep.addToDocument"></a>
+
+```typescript
+public addToDocument(doc: CommandDocumentBuilder): void
+```
+
+###### `doc`<sup>Required</sup> <a name="doc" id="cdk-ssm-documents.RunDockerActionStep.addToDocument.parameter.doc"></a>
+
+- *Type:* <a href="#cdk-ssm-documents.CommandDocumentBuilder">CommandDocumentBuilder</a>
+
+---
+
+##### `variables` <a name="variables" id="cdk-ssm-documents.RunDockerActionStep.variables"></a>
+
+```typescript
+public variables(): {[ key: string ]: any}
+```
+
+#### Static Functions <a name="Static Functions" id="Static Functions"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#cdk-ssm-documents.RunDockerActionStep.isConstruct">isConstruct</a></code> | Checks if `x` is a construct. |
+
+---
+
+##### ~~`isConstruct`~~ <a name="isConstruct" id="cdk-ssm-documents.RunDockerActionStep.isConstruct"></a>
+
+```typescript
+import { RunDockerActionStep } from 'cdk-ssm-documents'
+
+RunDockerActionStep.isConstruct(x: any)
+```
+
+Checks if `x` is a construct.
+
+###### `x`<sup>Required</sup> <a name="x" id="cdk-ssm-documents.RunDockerActionStep.isConstruct.parameter.x"></a>
+
+- *Type:* any
+
+Any object.
+
+---
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#cdk-ssm-documents.RunDockerActionStep.property.node">node</a></code> | <code>constructs.Node</code> | The tree node. |
+| <code><a href="#cdk-ssm-documents.RunDockerActionStep.property.action">action</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.RunDockerActionStep.property.inputObserver">inputObserver</a></code> | <code><a href="#cdk-ssm-documents.IObserver">IObserver</a></code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.RunDockerActionStep.property.name">name</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.RunDockerActionStep.property.outputObserver">outputObserver</a></code> | <code><a href="#cdk-ssm-documents.IObserver">IObserver</a></code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.RunDockerActionStep.property.description">description</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.RunDockerActionStep.property.exitOnFailure">exitOnFailure</a></code> | <code>boolean</code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.RunDockerActionStep.property.exitOnSuccess">exitOnSuccess</a></code> | <code>boolean</code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.RunDockerActionStep.property.finallyStep">finallyStep</a></code> | <code>boolean</code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.RunDockerActionStep.property.markSuccessAndExitOnFailure">markSuccessAndExitOnFailure</a></code> | <code>boolean</code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.RunDockerActionStep.property.platforms">platforms</a></code> | <code><a href="#cdk-ssm-documents.Platform">Platform</a>[]</code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.RunDockerActionStep.property.precondition">precondition</a></code> | <code><a href="#cdk-ssm-documents.Precondition">Precondition</a></code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.RunDockerActionStep.property.allStepsInExecution">allStepsInExecution</a></code> | <code><a href="#cdk-ssm-documents.CommandStep">CommandStep</a>[]</code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.RunDockerActionStep.property.nextStep">nextStep</a></code> | <code><a href="#cdk-ssm-documents.CommandStep">CommandStep</a></code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.RunDockerActionStep.property.dockerAction">dockerAction</a></code> | <code><a href="#cdk-ssm-documents.IStringVariable">IStringVariable</a></code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.RunDockerActionStep.property.cmd">cmd</a></code> | <code><a href="#cdk-ssm-documents.IStringVariable">IStringVariable</a></code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.RunDockerActionStep.property.container">container</a></code> | <code><a href="#cdk-ssm-documents.IStringVariable">IStringVariable</a></code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.RunDockerActionStep.property.cpuShares">cpuShares</a></code> | <code><a href="#cdk-ssm-documents.IStringVariable">IStringVariable</a></code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.RunDockerActionStep.property.env">env</a></code> | <code><a href="#cdk-ssm-documents.IStringVariable">IStringVariable</a></code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.RunDockerActionStep.property.image">image</a></code> | <code><a href="#cdk-ssm-documents.IStringVariable">IStringVariable</a></code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.RunDockerActionStep.property.memory">memory</a></code> | <code><a href="#cdk-ssm-documents.IStringVariable">IStringVariable</a></code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.RunDockerActionStep.property.publish">publish</a></code> | <code><a href="#cdk-ssm-documents.IStringVariable">IStringVariable</a></code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.RunDockerActionStep.property.user">user</a></code> | <code><a href="#cdk-ssm-documents.IStringVariable">IStringVariable</a></code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.RunDockerActionStep.property.volume">volume</a></code> | <code><a href="#cdk-ssm-documents.IStringListVariable">IStringListVariable</a></code> | *No description.* |
+
+---
+
+##### `node`<sup>Required</sup> <a name="node" id="cdk-ssm-documents.RunDockerActionStep.property.node"></a>
+
+```typescript
+public readonly node: Node;
+```
+
+- *Type:* constructs.Node
+
+The tree node.
+
+---
+
+##### `action`<sup>Required</sup> <a name="action" id="cdk-ssm-documents.RunDockerActionStep.property.action"></a>
+
+```typescript
+public readonly action: string;
+```
+
+- *Type:* string
+
+---
+
+##### `inputObserver`<sup>Required</sup> <a name="inputObserver" id="cdk-ssm-documents.RunDockerActionStep.property.inputObserver"></a>
+
+```typescript
+public readonly inputObserver: IObserver;
+```
+
+- *Type:* <a href="#cdk-ssm-documents.IObserver">IObserver</a>
+
+---
+
+##### `name`<sup>Required</sup> <a name="name" id="cdk-ssm-documents.RunDockerActionStep.property.name"></a>
+
+```typescript
+public readonly name: string;
+```
+
+- *Type:* string
+
+---
+
+##### `outputObserver`<sup>Required</sup> <a name="outputObserver" id="cdk-ssm-documents.RunDockerActionStep.property.outputObserver"></a>
+
+```typescript
+public readonly outputObserver: IObserver;
+```
+
+- *Type:* <a href="#cdk-ssm-documents.IObserver">IObserver</a>
+
+---
+
+##### `description`<sup>Optional</sup> <a name="description" id="cdk-ssm-documents.RunDockerActionStep.property.description"></a>
+
+```typescript
+public readonly description: string;
+```
+
+- *Type:* string
+
+---
+
+##### `exitOnFailure`<sup>Required</sup> <a name="exitOnFailure" id="cdk-ssm-documents.RunDockerActionStep.property.exitOnFailure"></a>
+
+```typescript
+public readonly exitOnFailure: boolean;
+```
+
+- *Type:* boolean
+
+---
+
+##### `exitOnSuccess`<sup>Required</sup> <a name="exitOnSuccess" id="cdk-ssm-documents.RunDockerActionStep.property.exitOnSuccess"></a>
+
+```typescript
+public readonly exitOnSuccess: boolean;
+```
+
+- *Type:* boolean
+
+---
+
+##### `finallyStep`<sup>Required</sup> <a name="finallyStep" id="cdk-ssm-documents.RunDockerActionStep.property.finallyStep"></a>
+
+```typescript
+public readonly finallyStep: boolean;
+```
+
+- *Type:* boolean
+
+---
+
+##### `markSuccessAndExitOnFailure`<sup>Required</sup> <a name="markSuccessAndExitOnFailure" id="cdk-ssm-documents.RunDockerActionStep.property.markSuccessAndExitOnFailure"></a>
+
+```typescript
+public readonly markSuccessAndExitOnFailure: boolean;
+```
+
+- *Type:* boolean
+
+---
+
+##### `platforms`<sup>Required</sup> <a name="platforms" id="cdk-ssm-documents.RunDockerActionStep.property.platforms"></a>
+
+```typescript
+public readonly platforms: Platform[];
+```
+
+- *Type:* <a href="#cdk-ssm-documents.Platform">Platform</a>[]
+
+---
+
+##### `precondition`<sup>Optional</sup> <a name="precondition" id="cdk-ssm-documents.RunDockerActionStep.property.precondition"></a>
+
+```typescript
+public readonly precondition: Precondition;
+```
+
+- *Type:* <a href="#cdk-ssm-documents.Precondition">Precondition</a>
+
+---
+
+##### `allStepsInExecution`<sup>Optional</sup> <a name="allStepsInExecution" id="cdk-ssm-documents.RunDockerActionStep.property.allStepsInExecution"></a>
+
+```typescript
+public readonly allStepsInExecution: CommandStep[];
+```
+
+- *Type:* <a href="#cdk-ssm-documents.CommandStep">CommandStep</a>[]
+
+---
+
+##### `nextStep`<sup>Optional</sup> <a name="nextStep" id="cdk-ssm-documents.RunDockerActionStep.property.nextStep"></a>
+
+```typescript
+public readonly nextStep: CommandStep;
+```
+
+- *Type:* <a href="#cdk-ssm-documents.CommandStep">CommandStep</a>
+
+---
+
+##### `dockerAction`<sup>Required</sup> <a name="dockerAction" id="cdk-ssm-documents.RunDockerActionStep.property.dockerAction"></a>
+
+```typescript
+public readonly dockerAction: IStringVariable;
+```
+
+- *Type:* <a href="#cdk-ssm-documents.IStringVariable">IStringVariable</a>
+
+---
+
+##### `cmd`<sup>Optional</sup> <a name="cmd" id="cdk-ssm-documents.RunDockerActionStep.property.cmd"></a>
+
+```typescript
+public readonly cmd: IStringVariable;
+```
+
+- *Type:* <a href="#cdk-ssm-documents.IStringVariable">IStringVariable</a>
+
+---
+
+##### `container`<sup>Optional</sup> <a name="container" id="cdk-ssm-documents.RunDockerActionStep.property.container"></a>
+
+```typescript
+public readonly container: IStringVariable;
+```
+
+- *Type:* <a href="#cdk-ssm-documents.IStringVariable">IStringVariable</a>
+
+---
+
+##### `cpuShares`<sup>Optional</sup> <a name="cpuShares" id="cdk-ssm-documents.RunDockerActionStep.property.cpuShares"></a>
+
+```typescript
+public readonly cpuShares: IStringVariable;
+```
+
+- *Type:* <a href="#cdk-ssm-documents.IStringVariable">IStringVariable</a>
+
+---
+
+##### `env`<sup>Optional</sup> <a name="env" id="cdk-ssm-documents.RunDockerActionStep.property.env"></a>
+
+```typescript
+public readonly env: IStringVariable;
+```
+
+- *Type:* <a href="#cdk-ssm-documents.IStringVariable">IStringVariable</a>
+
+---
+
+##### `image`<sup>Optional</sup> <a name="image" id="cdk-ssm-documents.RunDockerActionStep.property.image"></a>
+
+```typescript
+public readonly image: IStringVariable;
+```
+
+- *Type:* <a href="#cdk-ssm-documents.IStringVariable">IStringVariable</a>
+
+---
+
+##### `memory`<sup>Optional</sup> <a name="memory" id="cdk-ssm-documents.RunDockerActionStep.property.memory"></a>
+
+```typescript
+public readonly memory: IStringVariable;
+```
+
+- *Type:* <a href="#cdk-ssm-documents.IStringVariable">IStringVariable</a>
+
+---
+
+##### `publish`<sup>Optional</sup> <a name="publish" id="cdk-ssm-documents.RunDockerActionStep.property.publish"></a>
+
+```typescript
+public readonly publish: IStringVariable;
+```
+
+- *Type:* <a href="#cdk-ssm-documents.IStringVariable">IStringVariable</a>
+
+---
+
+##### `user`<sup>Optional</sup> <a name="user" id="cdk-ssm-documents.RunDockerActionStep.property.user"></a>
+
+```typescript
+public readonly user: IStringVariable;
+```
+
+- *Type:* <a href="#cdk-ssm-documents.IStringVariable">IStringVariable</a>
+
+---
+
+##### `volume`<sup>Optional</sup> <a name="volume" id="cdk-ssm-documents.RunDockerActionStep.property.volume"></a>
+
+```typescript
+public readonly volume: IStringListVariable;
+```
+
+- *Type:* <a href="#cdk-ssm-documents.IStringListVariable">IStringListVariable</a>
+
+---
+
+
 ### RunDocumentStep <a name="RunDocumentStep" id="cdk-ssm-documents.RunDocumentStep"></a>
 
 CommandStep implementation for aws:runDocument https://docs.aws.amazon.com/systems-manager/latest/userguide/ssm-plugins.html#aws-rundocument.
@@ -12378,7 +13114,7 @@ public readonly builder: AutomationDocumentBuilder;
 
 ### UpdateAgentStep <a name="UpdateAgentStep" id="cdk-ssm-documents.UpdateAgentStep"></a>
 
-AutomationStep implemenation for aws:UpdateAgent https://docs.aws.amazon.com/systems-manager/latest/userguide/ssm-plugins.html#aws-updateagent.
+CommandStep implementation for aws:UpdateAgent https://docs.aws.amazon.com/systems-manager/latest/userguide/ssm-plugins.html#aws-updateagent.
 
 #### Initializers <a name="Initializers" id="cdk-ssm-documents.UpdateAgentStep.Initializer"></a>
 
@@ -17541,6 +18277,248 @@ public readonly documentOutputs: string[];
 
 ---
 
+### DomainJoinStepProps <a name="DomainJoinStepProps" id="cdk-ssm-documents.DomainJoinStepProps"></a>
+
+Properties of DomainJoin step.
+
+#### Initializer <a name="Initializer" id="cdk-ssm-documents.DomainJoinStepProps.Initializer"></a>
+
+```typescript
+import { DomainJoinStepProps } from 'cdk-ssm-documents'
+
+const domainJoinStepProps: DomainJoinStepProps = { ... }
+```
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#cdk-ssm-documents.DomainJoinStepProps.property.description">description</a></code> | <code>string</code> | (Optional) description of the current step. |
+| <code><a href="#cdk-ssm-documents.DomainJoinStepProps.property.inputObserver">inputObserver</a></code> | <code><a href="#cdk-ssm-documents.IObserver">IObserver</a></code> | (Optional) Allows for observing the input to steps as they run. |
+| <code><a href="#cdk-ssm-documents.DomainJoinStepProps.property.name">name</a></code> | <code>string</code> | (Optional) Name of the current step. |
+| <code><a href="#cdk-ssm-documents.DomainJoinStepProps.property.outputObserver">outputObserver</a></code> | <code><a href="#cdk-ssm-documents.IObserver">IObserver</a></code> | (Optional) Allows for observing the output of steps as they run. |
+| <code><a href="#cdk-ssm-documents.DomainJoinStepProps.property.exitOnFailure">exitOnFailure</a></code> | <code>boolean</code> | (Optional) Whether to exit the document execution after failed execution of this step. |
+| <code><a href="#cdk-ssm-documents.DomainJoinStepProps.property.exitOnSuccess">exitOnSuccess</a></code> | <code>boolean</code> | (Optional) Whether to exit the document execution after successful execution of this step. |
+| <code><a href="#cdk-ssm-documents.DomainJoinStepProps.property.finallyStep">finallyStep</a></code> | <code>boolean</code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.DomainJoinStepProps.property.markSuccessAndExitOnFailure">markSuccessAndExitOnFailure</a></code> | <code>boolean</code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.DomainJoinStepProps.property.onCancel">onCancel</a></code> | <code><a href="#cdk-ssm-documents.Step">Step</a></code> | (Optional) Step to jump to in the event that this step is cancelled. |
+| <code><a href="#cdk-ssm-documents.DomainJoinStepProps.property.precondition">precondition</a></code> | <code><a href="#cdk-ssm-documents.Precondition">Precondition</a></code> | (Optional) A precondition to test before execution occurrs. |
+| <code><a href="#cdk-ssm-documents.DomainJoinStepProps.property.directoryId">directoryId</a></code> | <code><a href="#cdk-ssm-documents.IStringVariable">IStringVariable</a></code> | The ID of the directory. |
+| <code><a href="#cdk-ssm-documents.DomainJoinStepProps.property.directoryName">directoryName</a></code> | <code><a href="#cdk-ssm-documents.IStringVariable">IStringVariable</a></code> | The name of the domain. |
+| <code><a href="#cdk-ssm-documents.DomainJoinStepProps.property.dnsIpAddresses">dnsIpAddresses</a></code> | <code><a href="#cdk-ssm-documents.IStringListVariable">IStringListVariable</a></code> | The IP addresses of the DNS servers. |
+| <code><a href="#cdk-ssm-documents.DomainJoinStepProps.property.directoryOU">directoryOU</a></code> | <code><a href="#cdk-ssm-documents.IStringVariable">IStringVariable</a></code> | (Optional) The organizational unit (OU). |
+
+---
+
+##### `description`<sup>Optional</sup> <a name="description" id="cdk-ssm-documents.DomainJoinStepProps.property.description"></a>
+
+```typescript
+public readonly description: string;
+```
+
+- *Type:* string
+- *Default:* undefined
+
+(Optional) description of the current step.
+
+---
+
+##### `inputObserver`<sup>Optional</sup> <a name="inputObserver" id="cdk-ssm-documents.DomainJoinStepProps.property.inputObserver"></a>
+
+```typescript
+public readonly inputObserver: IObserver;
+```
+
+- *Type:* <a href="#cdk-ssm-documents.IObserver">IObserver</a>
+- *Default:* NoopObserver
+
+(Optional) Allows for observing the input to steps as they run.
+
+---
+
+##### `name`<sup>Optional</sup> <a name="name" id="cdk-ssm-documents.DomainJoinStepProps.property.name"></a>
+
+```typescript
+public readonly name: string;
+```
+
+- *Type:* string
+
+(Optional) Name of the current step.
+
+The name will be prepended onto all of the outputs emitted from this step.
+This name will also be used to reference this step in logs.
+Defaults to the id of the CDK node.
+
+---
+
+##### `outputObserver`<sup>Optional</sup> <a name="outputObserver" id="cdk-ssm-documents.DomainJoinStepProps.property.outputObserver"></a>
+
+```typescript
+public readonly outputObserver: IObserver;
+```
+
+- *Type:* <a href="#cdk-ssm-documents.IObserver">IObserver</a>
+- *Default:* NoopObserver
+
+(Optional) Allows for observing the output of steps as they run.
+
+---
+
+##### `exitOnFailure`<sup>Optional</sup> <a name="exitOnFailure" id="cdk-ssm-documents.DomainJoinStepProps.property.exitOnFailure"></a>
+
+```typescript
+public readonly exitOnFailure: boolean;
+```
+
+- *Type:* boolean
+- *Default:* false
+
+(Optional) Whether to exit the document execution after failed execution of this step.
+
+Finally step will be run.
+
+---
+
+##### `exitOnSuccess`<sup>Optional</sup> <a name="exitOnSuccess" id="cdk-ssm-documents.DomainJoinStepProps.property.exitOnSuccess"></a>
+
+```typescript
+public readonly exitOnSuccess: boolean;
+```
+
+- *Type:* boolean
+- *Default:* false
+
+(Optional) Whether to exit the document execution after successful execution of this step.
+
+Finally step will be run.
+
+---
+
+##### `finallyStep`<sup>Optional</sup> <a name="finallyStep" id="cdk-ssm-documents.DomainJoinStepProps.property.finallyStep"></a>
+
+```typescript
+public readonly finallyStep: boolean;
+```
+
+- *Type:* boolean
+
+---
+
+##### `markSuccessAndExitOnFailure`<sup>Optional</sup> <a name="markSuccessAndExitOnFailure" id="cdk-ssm-documents.DomainJoinStepProps.property.markSuccessAndExitOnFailure"></a>
+
+```typescript
+public readonly markSuccessAndExitOnFailure: boolean;
+```
+
+- *Type:* boolean
+
+---
+
+##### `onCancel`<sup>Optional</sup> <a name="onCancel" id="cdk-ssm-documents.DomainJoinStepProps.property.onCancel"></a>
+
+```typescript
+public readonly onCancel: Step;
+```
+
+- *Type:* <a href="#cdk-ssm-documents.Step">Step</a>
+- *Default:* undefined
+
+(Optional) Step to jump to in the event that this step is cancelled.
+
+---
+
+##### `precondition`<sup>Optional</sup> <a name="precondition" id="cdk-ssm-documents.DomainJoinStepProps.property.precondition"></a>
+
+```typescript
+public readonly precondition: Precondition;
+```
+
+- *Type:* <a href="#cdk-ssm-documents.Precondition">Precondition</a>
+- *Default:* undefined
+
+(Optional) A precondition to test before execution occurrs.
+
+When the precondition isn't met, the command step isn't executed.
+
+---
+
+##### `directoryId`<sup>Required</sup> <a name="directoryId" id="cdk-ssm-documents.DomainJoinStepProps.property.directoryId"></a>
+
+```typescript
+public readonly directoryId: IStringVariable;
+```
+
+- *Type:* <a href="#cdk-ssm-documents.IStringVariable">IStringVariable</a>
+
+The ID of the directory.
+
+---
+
+*Example*
+
+```typescript
+"d-1234567890"
+```
+
+
+##### `directoryName`<sup>Required</sup> <a name="directoryName" id="cdk-ssm-documents.DomainJoinStepProps.property.directoryName"></a>
+
+```typescript
+public readonly directoryName: IStringVariable;
+```
+
+- *Type:* <a href="#cdk-ssm-documents.IStringVariable">IStringVariable</a>
+
+The name of the domain.
+
+---
+
+*Example*
+
+```typescript
+"example.com"
+```
+
+
+##### `dnsIpAddresses`<sup>Required</sup> <a name="dnsIpAddresses" id="cdk-ssm-documents.DomainJoinStepProps.property.dnsIpAddresses"></a>
+
+```typescript
+public readonly dnsIpAddresses: IStringListVariable;
+```
+
+- *Type:* <a href="#cdk-ssm-documents.IStringListVariable">IStringListVariable</a>
+
+The IP addresses of the DNS servers.
+
+---
+
+*Example*
+
+```typescript
+["198.51.100.1","198.51.100.2"]
+```
+
+
+##### `directoryOU`<sup>Optional</sup> <a name="directoryOU" id="cdk-ssm-documents.DomainJoinStepProps.property.directoryOU"></a>
+
+```typescript
+public readonly directoryOU: IStringVariable;
+```
+
+- *Type:* <a href="#cdk-ssm-documents.IStringVariable">IStringVariable</a>
+
+(Optional) The organizational unit (OU).
+
+---
+
+*Example*
+
+```typescript
+"OU=test,DC=example,DC=com"
+```
+
+
 ### ExecuteScriptStepProps <a name="ExecuteScriptStepProps" id="cdk-ssm-documents.ExecuteScriptStepProps"></a>
 
 Properties for ExecuteScriptStep.
@@ -19661,6 +20639,276 @@ public readonly serviceRoleArn: IStringVariable;
 
 ---
 
+### RunDockerActionStepProps <a name="RunDockerActionStepProps" id="cdk-ssm-documents.RunDockerActionStepProps"></a>
+
+#### Initializer <a name="Initializer" id="cdk-ssm-documents.RunDockerActionStepProps.Initializer"></a>
+
+```typescript
+import { RunDockerActionStepProps } from 'cdk-ssm-documents'
+
+const runDockerActionStepProps: RunDockerActionStepProps = { ... }
+```
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#cdk-ssm-documents.RunDockerActionStepProps.property.description">description</a></code> | <code>string</code> | (Optional) description of the current step. |
+| <code><a href="#cdk-ssm-documents.RunDockerActionStepProps.property.inputObserver">inputObserver</a></code> | <code><a href="#cdk-ssm-documents.IObserver">IObserver</a></code> | (Optional) Allows for observing the input to steps as they run. |
+| <code><a href="#cdk-ssm-documents.RunDockerActionStepProps.property.name">name</a></code> | <code>string</code> | (Optional) Name of the current step. |
+| <code><a href="#cdk-ssm-documents.RunDockerActionStepProps.property.outputObserver">outputObserver</a></code> | <code><a href="#cdk-ssm-documents.IObserver">IObserver</a></code> | (Optional) Allows for observing the output of steps as they run. |
+| <code><a href="#cdk-ssm-documents.RunDockerActionStepProps.property.exitOnFailure">exitOnFailure</a></code> | <code>boolean</code> | (Optional) Whether to exit the document execution after failed execution of this step. |
+| <code><a href="#cdk-ssm-documents.RunDockerActionStepProps.property.exitOnSuccess">exitOnSuccess</a></code> | <code>boolean</code> | (Optional) Whether to exit the document execution after successful execution of this step. |
+| <code><a href="#cdk-ssm-documents.RunDockerActionStepProps.property.finallyStep">finallyStep</a></code> | <code>boolean</code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.RunDockerActionStepProps.property.markSuccessAndExitOnFailure">markSuccessAndExitOnFailure</a></code> | <code>boolean</code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.RunDockerActionStepProps.property.onCancel">onCancel</a></code> | <code><a href="#cdk-ssm-documents.Step">Step</a></code> | (Optional) Step to jump to in the event that this step is cancelled. |
+| <code><a href="#cdk-ssm-documents.RunDockerActionStepProps.property.precondition">precondition</a></code> | <code><a href="#cdk-ssm-documents.Precondition">Precondition</a></code> | (Optional) A precondition to test before execution occurrs. |
+| <code><a href="#cdk-ssm-documents.RunDockerActionStepProps.property.action">action</a></code> | <code><a href="#cdk-ssm-documents.IStringVariable">IStringVariable</a></code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.RunDockerActionStepProps.property.cmd">cmd</a></code> | <code><a href="#cdk-ssm-documents.IStringVariable">IStringVariable</a></code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.RunDockerActionStepProps.property.container">container</a></code> | <code><a href="#cdk-ssm-documents.IStringVariable">IStringVariable</a></code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.RunDockerActionStepProps.property.cpuShares">cpuShares</a></code> | <code><a href="#cdk-ssm-documents.IStringVariable">IStringVariable</a></code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.RunDockerActionStepProps.property.env">env</a></code> | <code><a href="#cdk-ssm-documents.IStringVariable">IStringVariable</a></code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.RunDockerActionStepProps.property.image">image</a></code> | <code><a href="#cdk-ssm-documents.IStringVariable">IStringVariable</a></code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.RunDockerActionStepProps.property.memory">memory</a></code> | <code><a href="#cdk-ssm-documents.IStringVariable">IStringVariable</a></code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.RunDockerActionStepProps.property.publish">publish</a></code> | <code><a href="#cdk-ssm-documents.IStringVariable">IStringVariable</a></code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.RunDockerActionStepProps.property.user">user</a></code> | <code><a href="#cdk-ssm-documents.IStringVariable">IStringVariable</a></code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.RunDockerActionStepProps.property.volume">volume</a></code> | <code><a href="#cdk-ssm-documents.IStringListVariable">IStringListVariable</a></code> | *No description.* |
+
+---
+
+##### `description`<sup>Optional</sup> <a name="description" id="cdk-ssm-documents.RunDockerActionStepProps.property.description"></a>
+
+```typescript
+public readonly description: string;
+```
+
+- *Type:* string
+- *Default:* undefined
+
+(Optional) description of the current step.
+
+---
+
+##### `inputObserver`<sup>Optional</sup> <a name="inputObserver" id="cdk-ssm-documents.RunDockerActionStepProps.property.inputObserver"></a>
+
+```typescript
+public readonly inputObserver: IObserver;
+```
+
+- *Type:* <a href="#cdk-ssm-documents.IObserver">IObserver</a>
+- *Default:* NoopObserver
+
+(Optional) Allows for observing the input to steps as they run.
+
+---
+
+##### `name`<sup>Optional</sup> <a name="name" id="cdk-ssm-documents.RunDockerActionStepProps.property.name"></a>
+
+```typescript
+public readonly name: string;
+```
+
+- *Type:* string
+
+(Optional) Name of the current step.
+
+The name will be prepended onto all of the outputs emitted from this step.
+This name will also be used to reference this step in logs.
+Defaults to the id of the CDK node.
+
+---
+
+##### `outputObserver`<sup>Optional</sup> <a name="outputObserver" id="cdk-ssm-documents.RunDockerActionStepProps.property.outputObserver"></a>
+
+```typescript
+public readonly outputObserver: IObserver;
+```
+
+- *Type:* <a href="#cdk-ssm-documents.IObserver">IObserver</a>
+- *Default:* NoopObserver
+
+(Optional) Allows for observing the output of steps as they run.
+
+---
+
+##### `exitOnFailure`<sup>Optional</sup> <a name="exitOnFailure" id="cdk-ssm-documents.RunDockerActionStepProps.property.exitOnFailure"></a>
+
+```typescript
+public readonly exitOnFailure: boolean;
+```
+
+- *Type:* boolean
+- *Default:* false
+
+(Optional) Whether to exit the document execution after failed execution of this step.
+
+Finally step will be run.
+
+---
+
+##### `exitOnSuccess`<sup>Optional</sup> <a name="exitOnSuccess" id="cdk-ssm-documents.RunDockerActionStepProps.property.exitOnSuccess"></a>
+
+```typescript
+public readonly exitOnSuccess: boolean;
+```
+
+- *Type:* boolean
+- *Default:* false
+
+(Optional) Whether to exit the document execution after successful execution of this step.
+
+Finally step will be run.
+
+---
+
+##### `finallyStep`<sup>Optional</sup> <a name="finallyStep" id="cdk-ssm-documents.RunDockerActionStepProps.property.finallyStep"></a>
+
+```typescript
+public readonly finallyStep: boolean;
+```
+
+- *Type:* boolean
+
+---
+
+##### `markSuccessAndExitOnFailure`<sup>Optional</sup> <a name="markSuccessAndExitOnFailure" id="cdk-ssm-documents.RunDockerActionStepProps.property.markSuccessAndExitOnFailure"></a>
+
+```typescript
+public readonly markSuccessAndExitOnFailure: boolean;
+```
+
+- *Type:* boolean
+
+---
+
+##### `onCancel`<sup>Optional</sup> <a name="onCancel" id="cdk-ssm-documents.RunDockerActionStepProps.property.onCancel"></a>
+
+```typescript
+public readonly onCancel: Step;
+```
+
+- *Type:* <a href="#cdk-ssm-documents.Step">Step</a>
+- *Default:* undefined
+
+(Optional) Step to jump to in the event that this step is cancelled.
+
+---
+
+##### `precondition`<sup>Optional</sup> <a name="precondition" id="cdk-ssm-documents.RunDockerActionStepProps.property.precondition"></a>
+
+```typescript
+public readonly precondition: Precondition;
+```
+
+- *Type:* <a href="#cdk-ssm-documents.Precondition">Precondition</a>
+- *Default:* undefined
+
+(Optional) A precondition to test before execution occurrs.
+
+When the precondition isn't met, the command step isn't executed.
+
+---
+
+##### `action`<sup>Required</sup> <a name="action" id="cdk-ssm-documents.RunDockerActionStepProps.property.action"></a>
+
+```typescript
+public readonly action: IStringVariable;
+```
+
+- *Type:* <a href="#cdk-ssm-documents.IStringVariable">IStringVariable</a>
+
+---
+
+##### `cmd`<sup>Optional</sup> <a name="cmd" id="cdk-ssm-documents.RunDockerActionStepProps.property.cmd"></a>
+
+```typescript
+public readonly cmd: IStringVariable;
+```
+
+- *Type:* <a href="#cdk-ssm-documents.IStringVariable">IStringVariable</a>
+
+---
+
+##### `container`<sup>Optional</sup> <a name="container" id="cdk-ssm-documents.RunDockerActionStepProps.property.container"></a>
+
+```typescript
+public readonly container: IStringVariable;
+```
+
+- *Type:* <a href="#cdk-ssm-documents.IStringVariable">IStringVariable</a>
+
+---
+
+##### `cpuShares`<sup>Optional</sup> <a name="cpuShares" id="cdk-ssm-documents.RunDockerActionStepProps.property.cpuShares"></a>
+
+```typescript
+public readonly cpuShares: IStringVariable;
+```
+
+- *Type:* <a href="#cdk-ssm-documents.IStringVariable">IStringVariable</a>
+
+---
+
+##### `env`<sup>Optional</sup> <a name="env" id="cdk-ssm-documents.RunDockerActionStepProps.property.env"></a>
+
+```typescript
+public readonly env: IStringVariable;
+```
+
+- *Type:* <a href="#cdk-ssm-documents.IStringVariable">IStringVariable</a>
+
+---
+
+##### `image`<sup>Optional</sup> <a name="image" id="cdk-ssm-documents.RunDockerActionStepProps.property.image"></a>
+
+```typescript
+public readonly image: IStringVariable;
+```
+
+- *Type:* <a href="#cdk-ssm-documents.IStringVariable">IStringVariable</a>
+
+---
+
+##### `memory`<sup>Optional</sup> <a name="memory" id="cdk-ssm-documents.RunDockerActionStepProps.property.memory"></a>
+
+```typescript
+public readonly memory: IStringVariable;
+```
+
+- *Type:* <a href="#cdk-ssm-documents.IStringVariable">IStringVariable</a>
+
+---
+
+##### `publish`<sup>Optional</sup> <a name="publish" id="cdk-ssm-documents.RunDockerActionStepProps.property.publish"></a>
+
+```typescript
+public readonly publish: IStringVariable;
+```
+
+- *Type:* <a href="#cdk-ssm-documents.IStringVariable">IStringVariable</a>
+
+---
+
+##### `user`<sup>Optional</sup> <a name="user" id="cdk-ssm-documents.RunDockerActionStepProps.property.user"></a>
+
+```typescript
+public readonly user: IStringVariable;
+```
+
+- *Type:* <a href="#cdk-ssm-documents.IStringVariable">IStringVariable</a>
+
+---
+
+##### `volume`<sup>Optional</sup> <a name="volume" id="cdk-ssm-documents.RunDockerActionStepProps.property.volume"></a>
+
+```typescript
+public readonly volume: IStringListVariable;
+```
+
+- *Type:* <a href="#cdk-ssm-documents.IStringListVariable">IStringListVariable</a>
+
+---
+
 ### RunDocumentStepProps <a name="RunDocumentStepProps" id="cdk-ssm-documents.RunDocumentStepProps"></a>
 
 Properties for Run Document step.
@@ -21542,8 +22790,9 @@ const updateAgentStepProps: UpdateAgentStepProps = { ... }
 | <code><a href="#cdk-ssm-documents.UpdateAgentStepProps.property.onCancel">onCancel</a></code> | <code><a href="#cdk-ssm-documents.Step">Step</a></code> | (Optional) Step to jump to in the event that this step is cancelled. |
 | <code><a href="#cdk-ssm-documents.UpdateAgentStepProps.property.precondition">precondition</a></code> | <code><a href="#cdk-ssm-documents.Precondition">Precondition</a></code> | (Optional) A precondition to test before execution occurrs. |
 | <code><a href="#cdk-ssm-documents.UpdateAgentStepProps.property.agentName">agentName</a></code> | <code><a href="#cdk-ssm-documents.IStringVariable">IStringVariable</a></code> | EC2Config. |
-| <code><a href="#cdk-ssm-documents.UpdateAgentStepProps.property.source">source</a></code> | <code><a href="#cdk-ssm-documents.IStringVariable">IStringVariable</a></code> | The location where Systems Manager copies the version of EC2Config to install. |
 | <code><a href="#cdk-ssm-documents.UpdateAgentStepProps.property.allowDowngrade">allowDowngrade</a></code> | <code><a href="#cdk-ssm-documents.IBooleanVariable">IBooleanVariable</a></code> | Allow the EC2Config service to be downgraded to an earlier version. |
+| <code><a href="#cdk-ssm-documents.UpdateAgentStepProps.property.source">source</a></code> | <code><a href="#cdk-ssm-documents.IStringVariable">IStringVariable</a></code> | Must use one and only one of source or sourceRegion. |
+| <code><a href="#cdk-ssm-documents.UpdateAgentStepProps.property.sourceRegion">sourceRegion</a></code> | <code>string</code> | Must use one and only one of source or sourceRegion. |
 | <code><a href="#cdk-ssm-documents.UpdateAgentStepProps.property.targetVersion">targetVersion</a></code> | <code><a href="#cdk-ssm-documents.IStringVariable">IStringVariable</a></code> | A specific version of the EC2Config service to install. |
 
 ---
@@ -21681,31 +22930,18 @@ When the precondition isn't met, the command step isn't executed.
 
 ---
 
-##### `agentName`<sup>Required</sup> <a name="agentName" id="cdk-ssm-documents.UpdateAgentStepProps.property.agentName"></a>
+##### `agentName`<sup>Optional</sup> <a name="agentName" id="cdk-ssm-documents.UpdateAgentStepProps.property.agentName"></a>
 
 ```typescript
 public readonly agentName: IStringVariable;
 ```
 
 - *Type:* <a href="#cdk-ssm-documents.IStringVariable">IStringVariable</a>
+- *Default:* EC2Config
 
 EC2Config.
 
 This is the name of the agent that runs the EC2Config service.
-
----
-
-##### `source`<sup>Required</sup> <a name="source" id="cdk-ssm-documents.UpdateAgentStepProps.property.source"></a>
-
-```typescript
-public readonly source: IStringVariable;
-```
-
-- *Type:* <a href="#cdk-ssm-documents.IStringVariable">IStringVariable</a>
-
-The location where Systems Manager copies the version of EC2Config to install.
-
-You can't change this location.
 
 ---
 
@@ -21721,6 +22957,35 @@ Allow the EC2Config service to be downgraded to an earlier version.
 
 If set to false, the service can be upgraded to newer versions only (default).
 If set to true, specify the earlier version.
+
+---
+
+##### `source`<sup>Optional</sup> <a name="source" id="cdk-ssm-documents.UpdateAgentStepProps.property.source"></a>
+
+```typescript
+public readonly source: IStringVariable;
+```
+
+- *Type:* <a href="#cdk-ssm-documents.IStringVariable">IStringVariable</a>
+
+Must use one and only one of source or sourceRegion.
+
+The location where Systems Manager copies the version of EC2Config to install. You can't change this location.
+
+---
+
+##### `sourceRegion`<sup>Optional</sup> <a name="sourceRegion" id="cdk-ssm-documents.UpdateAgentStepProps.property.sourceRegion"></a>
+
+```typescript
+public readonly sourceRegion: string;
+```
+
+- *Type:* string
+
+Must use one and only one of source or sourceRegion.
+
+If source is provided it will be used as is.
+If sourceRegion is provided it will populate source with https://s3.{sourceRegion}.amazonaws.com/aws-ssm-{sourceRegion}/manifest.json
 
 ---
 
@@ -21766,7 +23031,7 @@ const updateSSMAgentStepProps: UpdateSSMAgentStepProps = { ... }
 | <code><a href="#cdk-ssm-documents.UpdateSSMAgentStepProps.property.precondition">precondition</a></code> | <code><a href="#cdk-ssm-documents.Precondition">Precondition</a></code> | (Optional) A precondition to test before execution occurrs. |
 | <code><a href="#cdk-ssm-documents.UpdateSSMAgentStepProps.property.allowDowngrade">allowDowngrade</a></code> | <code><a href="#cdk-ssm-documents.IBooleanVariable">IBooleanVariable</a></code> | Allow the SSM Agent to be downgraded to an earlier version. |
 | <code><a href="#cdk-ssm-documents.UpdateSSMAgentStepProps.property.agentName">agentName</a></code> | <code><a href="#cdk-ssm-documents.IStringVariable">IStringVariable</a></code> | amazon-ssm-agent. |
-| <code><a href="#cdk-ssm-documents.UpdateSSMAgentStepProps.property.source">source</a></code> | <code><a href="#cdk-ssm-documents.IStringVariable">IStringVariable</a></code> | The location where Systems Manager copies the SSM Agent version to install. |
+| <code><a href="#cdk-ssm-documents.UpdateSSMAgentStepProps.property.source">source</a></code> | <code><a href="#cdk-ssm-documents.IStringVariable">IStringVariable</a></code> | Must use one and only one of source or sourceRegion. |
 | <code><a href="#cdk-ssm-documents.UpdateSSMAgentStepProps.property.sourceRegion">sourceRegion</a></code> | <code>string</code> | Must use one and only one of source or sourceRegion. |
 | <code><a href="#cdk-ssm-documents.UpdateSSMAgentStepProps.property.targetVersion">targetVersion</a></code> | <code><a href="#cdk-ssm-documents.IStringVariable">IStringVariable</a></code> | A specific version of SSM Agent to install. |
 
@@ -21942,9 +23207,9 @@ public readonly source: IStringVariable;
 
 - *Type:* <a href="#cdk-ssm-documents.IStringVariable">IStringVariable</a>
 
-The location where Systems Manager copies the SSM Agent version to install.
+Must use one and only one of source or sourceRegion.
 
-You can't change this location.
+The location where Systems Manager copies the SSM Agent version to install. You can't change this location.
 
 ---
 
@@ -22351,6 +23616,27 @@ Given the execution inputs, return the resolved value of this variable.
 
 ---
 
+#### Static Functions <a name="Static Functions" id="Static Functions"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#cdk-ssm-documents.ActionVariable.of">of</a></code> | *No description.* |
+
+---
+
+##### `of` <a name="of" id="cdk-ssm-documents.ActionVariable.of"></a>
+
+```typescript
+import { ActionVariable } from 'cdk-ssm-documents'
+
+ActionVariable.of(reference: string)
+```
+
+###### `reference`<sup>Required</sup> <a name="reference" id="cdk-ssm-documents.ActionVariable.of.parameter.reference"></a>
+
+- *Type:* string
+
+---
 
 #### Properties <a name="Properties" id="Properties"></a>
 
@@ -22677,6 +23963,27 @@ Given the execution inputs, return the resolved value of this variable.
 
 ---
 
+#### Static Functions <a name="Static Functions" id="Static Functions"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#cdk-ssm-documents.BooleanVariable.of">of</a></code> | *No description.* |
+
+---
+
+##### `of` <a name="of" id="cdk-ssm-documents.BooleanVariable.of"></a>
+
+```typescript
+import { BooleanVariable } from 'cdk-ssm-documents'
+
+BooleanVariable.of(reference: string)
+```
+
+###### `reference`<sup>Required</sup> <a name="reference" id="cdk-ssm-documents.BooleanVariable.of.parameter.reference"></a>
+
+- *Type:* string
+
+---
 
 #### Properties <a name="Properties" id="Properties"></a>
 
@@ -23046,6 +24353,27 @@ Given the execution inputs, return the resolved value of this variable.
 
 ---
 
+#### Static Functions <a name="Static Functions" id="Static Functions"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#cdk-ssm-documents.DesiredStateVariable.of">of</a></code> | *No description.* |
+
+---
+
+##### `of` <a name="of" id="cdk-ssm-documents.DesiredStateVariable.of"></a>
+
+```typescript
+import { DesiredStateVariable } from 'cdk-ssm-documents'
+
+DesiredStateVariable.of(reference: string)
+```
+
+###### `reference`<sup>Required</sup> <a name="reference" id="cdk-ssm-documents.DesiredStateVariable.of.parameter.reference"></a>
+
+- *Type:* string
+
+---
 
 #### Properties <a name="Properties" id="Properties"></a>
 
@@ -23398,6 +24726,27 @@ Given the execution inputs, return the resolved value of this variable.
 
 ---
 
+#### Static Functions <a name="Static Functions" id="Static Functions"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#cdk-ssm-documents.DocumentHashTypeVariable.of">of</a></code> | *No description.* |
+
+---
+
+##### `of` <a name="of" id="cdk-ssm-documents.DocumentHashTypeVariable.of"></a>
+
+```typescript
+import { DocumentHashTypeVariable } from 'cdk-ssm-documents'
+
+DocumentHashTypeVariable.of(reference: string)
+```
+
+###### `reference`<sup>Required</sup> <a name="reference" id="cdk-ssm-documents.DocumentHashTypeVariable.of.parameter.reference"></a>
+
+- *Type:* string
+
+---
 
 #### Properties <a name="Properties" id="Properties"></a>
 
@@ -23603,6 +24952,27 @@ Given the execution inputs, return the resolved value of this variable.
 
 ---
 
+#### Static Functions <a name="Static Functions" id="Static Functions"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#cdk-ssm-documents.HardCodedAction.of">of</a></code> | *No description.* |
+
+---
+
+##### `of` <a name="of" id="cdk-ssm-documents.HardCodedAction.of"></a>
+
+```typescript
+import { HardCodedAction } from 'cdk-ssm-documents'
+
+HardCodedAction.of(val: string)
+```
+
+###### `val`<sup>Required</sup> <a name="val" id="cdk-ssm-documents.HardCodedAction.of.parameter.val"></a>
+
+- *Type:* string
+
+---
 
 #### Properties <a name="Properties" id="Properties"></a>
 
@@ -23766,6 +25136,34 @@ public readonly val: any;
 
 ---
 
+#### Constants <a name="Constants" id="Constants"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#cdk-ssm-documents.HardCodedBoolean.property.FALSE">FALSE</a></code> | <code><a href="#cdk-ssm-documents.HardCodedBoolean">HardCodedBoolean</a></code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.HardCodedBoolean.property.TRUE">TRUE</a></code> | <code><a href="#cdk-ssm-documents.HardCodedBoolean">HardCodedBoolean</a></code> | *No description.* |
+
+---
+
+##### `FALSE`<sup>Required</sup> <a name="FALSE" id="cdk-ssm-documents.HardCodedBoolean.property.FALSE"></a>
+
+```typescript
+public readonly FALSE: HardCodedBoolean;
+```
+
+- *Type:* <a href="#cdk-ssm-documents.HardCodedBoolean">HardCodedBoolean</a>
+
+---
+
+##### `TRUE`<sup>Required</sup> <a name="TRUE" id="cdk-ssm-documents.HardCodedBoolean.property.TRUE"></a>
+
+```typescript
+public readonly TRUE: HardCodedBoolean;
+```
+
+- *Type:* <a href="#cdk-ssm-documents.HardCodedBoolean">HardCodedBoolean</a>
+
+---
 
 ### HardCodedDesiredState <a name="HardCodedDesiredState" id="cdk-ssm-documents.HardCodedDesiredState"></a>
 
@@ -23839,6 +25237,27 @@ Given the execution inputs, return the resolved value of this variable.
 
 ---
 
+#### Static Functions <a name="Static Functions" id="Static Functions"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#cdk-ssm-documents.HardCodedDesiredState.of">of</a></code> | *No description.* |
+
+---
+
+##### `of` <a name="of" id="cdk-ssm-documents.HardCodedDesiredState.of"></a>
+
+```typescript
+import { HardCodedDesiredState } from 'cdk-ssm-documents'
+
+HardCodedDesiredState.of(val: string)
+```
+
+###### `val`<sup>Required</sup> <a name="val" id="cdk-ssm-documents.HardCodedDesiredState.of.parameter.val"></a>
+
+- *Type:* string
+
+---
 
 #### Properties <a name="Properties" id="Properties"></a>
 
@@ -23970,6 +25389,27 @@ Given the execution inputs, return the resolved value of this variable.
 
 ---
 
+#### Static Functions <a name="Static Functions" id="Static Functions"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#cdk-ssm-documents.HardCodedDocumentHashType.of">of</a></code> | *No description.* |
+
+---
+
+##### `of` <a name="of" id="cdk-ssm-documents.HardCodedDocumentHashType.of"></a>
+
+```typescript
+import { HardCodedDocumentHashType } from 'cdk-ssm-documents'
+
+HardCodedDocumentHashType.of(val: string)
+```
+
+###### `val`<sup>Required</sup> <a name="val" id="cdk-ssm-documents.HardCodedDocumentHashType.of.parameter.val"></a>
+
+- *Type:* string
+
+---
 
 #### Properties <a name="Properties" id="Properties"></a>
 
@@ -24090,6 +25530,27 @@ Given the execution inputs, return the resolved value of this variable.
 
 ---
 
+#### Static Functions <a name="Static Functions" id="Static Functions"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#cdk-ssm-documents.HardCodedInstallationType.of">of</a></code> | *No description.* |
+
+---
+
+##### `of` <a name="of" id="cdk-ssm-documents.HardCodedInstallationType.of"></a>
+
+```typescript
+import { HardCodedInstallationType } from 'cdk-ssm-documents'
+
+HardCodedInstallationType.of(val: string)
+```
+
+###### `val`<sup>Required</sup> <a name="val" id="cdk-ssm-documents.HardCodedInstallationType.of.parameter.val"></a>
+
+- *Type:* string
+
+---
 
 #### Properties <a name="Properties" id="Properties"></a>
 
@@ -24234,6 +25695,27 @@ Given the execution inputs, return the resolved value of this variable.
 
 ---
 
+#### Static Functions <a name="Static Functions" id="Static Functions"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#cdk-ssm-documents.HardCodedMapList.of">of</a></code> | *No description.* |
+
+---
+
+##### `of` <a name="of" id="cdk-ssm-documents.HardCodedMapList.of"></a>
+
+```typescript
+import { HardCodedMapList } from 'cdk-ssm-documents'
+
+HardCodedMapList.of(val: {[ key: string ]: any}[])
+```
+
+###### `val`<sup>Required</sup> <a name="val" id="cdk-ssm-documents.HardCodedMapList.of.parameter.val"></a>
+
+- *Type:* {[ key: string ]: any}[]
+
+---
 
 #### Properties <a name="Properties" id="Properties"></a>
 
@@ -24350,6 +25832,27 @@ Given the execution inputs, return the resolved value of this variable.
 
 ---
 
+#### Static Functions <a name="Static Functions" id="Static Functions"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#cdk-ssm-documents.HardCodedNumber.of">of</a></code> | *No description.* |
+
+---
+
+##### `of` <a name="of" id="cdk-ssm-documents.HardCodedNumber.of"></a>
+
+```typescript
+import { HardCodedNumber } from 'cdk-ssm-documents'
+
+HardCodedNumber.of(val: number)
+```
+
+###### `val`<sup>Required</sup> <a name="val" id="cdk-ssm-documents.HardCodedNumber.of.parameter.val"></a>
+
+- *Type:* number
+
+---
 
 #### Properties <a name="Properties" id="Properties"></a>
 
@@ -24442,6 +25945,27 @@ Given the execution inputs, return the resolved value of this variable.
 
 ---
 
+#### Static Functions <a name="Static Functions" id="Static Functions"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#cdk-ssm-documents.HardCodedOnFailure.of">of</a></code> | *No description.* |
+
+---
+
+##### `of` <a name="of" id="cdk-ssm-documents.HardCodedOnFailure.of"></a>
+
+```typescript
+import { HardCodedOnFailure } from 'cdk-ssm-documents'
+
+HardCodedOnFailure.of(val: string)
+```
+
+###### `val`<sup>Required</sup> <a name="val" id="cdk-ssm-documents.HardCodedOnFailure.of.parameter.val"></a>
+
+- *Type:* string
+
+---
 
 #### Properties <a name="Properties" id="Properties"></a>
 
@@ -24573,6 +26097,27 @@ Given the execution inputs, return the resolved value of this variable.
 
 ---
 
+#### Static Functions <a name="Static Functions" id="Static Functions"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#cdk-ssm-documents.HardCodedPackageName.of">of</a></code> | *No description.* |
+
+---
+
+##### `of` <a name="of" id="cdk-ssm-documents.HardCodedPackageName.of"></a>
+
+```typescript
+import { HardCodedPackageName } from 'cdk-ssm-documents'
+
+HardCodedPackageName.of(val: string)
+```
+
+###### `val`<sup>Required</sup> <a name="val" id="cdk-ssm-documents.HardCodedPackageName.of.parameter.val"></a>
+
+- *Type:* string
+
+---
 
 #### Properties <a name="Properties" id="Properties"></a>
 
@@ -24748,6 +26293,27 @@ Given the execution inputs, return the resolved value of this variable.
 
 ---
 
+#### Static Functions <a name="Static Functions" id="Static Functions"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#cdk-ssm-documents.HardCodedResourceType.of">of</a></code> | *No description.* |
+
+---
+
+##### `of` <a name="of" id="cdk-ssm-documents.HardCodedResourceType.of"></a>
+
+```typescript
+import { HardCodedResourceType } from 'cdk-ssm-documents'
+
+HardCodedResourceType.of(val: string)
+```
+
+###### `val`<sup>Required</sup> <a name="val" id="cdk-ssm-documents.HardCodedResourceType.of.parameter.val"></a>
+
+- *Type:* string
+
+---
 
 #### Properties <a name="Properties" id="Properties"></a>
 
@@ -24914,6 +26480,27 @@ Given the execution inputs, return the resolved value of this variable.
 
 ---
 
+#### Static Functions <a name="Static Functions" id="Static Functions"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#cdk-ssm-documents.HardCodedString.of">of</a></code> | *No description.* |
+
+---
+
+##### `of` <a name="of" id="cdk-ssm-documents.HardCodedString.of"></a>
+
+```typescript
+import { HardCodedString } from 'cdk-ssm-documents'
+
+HardCodedString.of(val: string)
+```
+
+###### `val`<sup>Required</sup> <a name="val" id="cdk-ssm-documents.HardCodedString.of.parameter.val"></a>
+
+- *Type:* string
+
+---
 
 #### Properties <a name="Properties" id="Properties"></a>
 
@@ -25030,6 +26617,27 @@ Given the execution inputs, return the resolved value of this variable.
 
 ---
 
+#### Static Functions <a name="Static Functions" id="Static Functions"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#cdk-ssm-documents.HardCodedStringList.of">of</a></code> | *No description.* |
+
+---
+
+##### `of` <a name="of" id="cdk-ssm-documents.HardCodedStringList.of"></a>
+
+```typescript
+import { HardCodedStringList } from 'cdk-ssm-documents'
+
+HardCodedStringList.of(val: string[])
+```
+
+###### `val`<sup>Required</sup> <a name="val" id="cdk-ssm-documents.HardCodedStringList.of.parameter.val"></a>
+
+- *Type:* string[]
+
+---
 
 #### Properties <a name="Properties" id="Properties"></a>
 
@@ -25146,6 +26754,27 @@ Given the execution inputs, return the resolved value of this variable.
 
 ---
 
+#### Static Functions <a name="Static Functions" id="Static Functions"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#cdk-ssm-documents.HardCodedStringMap.of">of</a></code> | *No description.* |
+
+---
+
+##### `of` <a name="of" id="cdk-ssm-documents.HardCodedStringMap.of"></a>
+
+```typescript
+import { HardCodedStringMap } from 'cdk-ssm-documents'
+
+HardCodedStringMap.of(val: {[ key: string ]: any})
+```
+
+###### `val`<sup>Required</sup> <a name="val" id="cdk-ssm-documents.HardCodedStringMap.of.parameter.val"></a>
+
+- *Type:* {[ key: string ]: any}
+
+---
 
 #### Properties <a name="Properties" id="Properties"></a>
 
@@ -25355,6 +26984,27 @@ Given the execution inputs, return the resolved value of this variable.
 
 ---
 
+#### Static Functions <a name="Static Functions" id="Static Functions"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#cdk-ssm-documents.InstallationTypeVariable.of">of</a></code> | *No description.* |
+
+---
+
+##### `of` <a name="of" id="cdk-ssm-documents.InstallationTypeVariable.of"></a>
+
+```typescript
+import { InstallationTypeVariable } from 'cdk-ssm-documents'
+
+InstallationTypeVariable.of(reference: string)
+```
+
+###### `reference`<sup>Required</sup> <a name="reference" id="cdk-ssm-documents.InstallationTypeVariable.of.parameter.reference"></a>
+
+- *Type:* string
+
+---
 
 #### Properties <a name="Properties" id="Properties"></a>
 
@@ -25580,6 +27230,27 @@ Given the execution inputs, return the resolved value of this variable.
 
 ---
 
+#### Static Functions <a name="Static Functions" id="Static Functions"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#cdk-ssm-documents.MapListVariable.of">of</a></code> | *No description.* |
+
+---
+
+##### `of` <a name="of" id="cdk-ssm-documents.MapListVariable.of"></a>
+
+```typescript
+import { MapListVariable } from 'cdk-ssm-documents'
+
+MapListVariable.of(reference: string)
+```
+
+###### `reference`<sup>Required</sup> <a name="reference" id="cdk-ssm-documents.MapListVariable.of.parameter.reference"></a>
+
+- *Type:* string
+
+---
 
 #### Properties <a name="Properties" id="Properties"></a>
 
@@ -26082,6 +27753,27 @@ Given the execution inputs, return the resolved value of this variable.
 
 ---
 
+#### Static Functions <a name="Static Functions" id="Static Functions"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#cdk-ssm-documents.NumberVariable.of">of</a></code> | *No description.* |
+
+---
+
+##### `of` <a name="of" id="cdk-ssm-documents.NumberVariable.of"></a>
+
+```typescript
+import { NumberVariable } from 'cdk-ssm-documents'
+
+NumberVariable.of(reference: string)
+```
+
+###### `reference`<sup>Required</sup> <a name="reference" id="cdk-ssm-documents.NumberVariable.of.parameter.reference"></a>
+
+- *Type:* string
+
+---
 
 #### Properties <a name="Properties" id="Properties"></a>
 
@@ -26194,6 +27886,27 @@ Given the execution inputs, return the resolved value of this variable.
 
 ---
 
+#### Static Functions <a name="Static Functions" id="Static Functions"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#cdk-ssm-documents.OnFailureVariable.of">of</a></code> | *No description.* |
+
+---
+
+##### `of` <a name="of" id="cdk-ssm-documents.OnFailureVariable.of"></a>
+
+```typescript
+import { OnFailureVariable } from 'cdk-ssm-documents'
+
+OnFailureVariable.of(reference: string)
+```
+
+###### `reference`<sup>Required</sup> <a name="reference" id="cdk-ssm-documents.OnFailureVariable.of.parameter.reference"></a>
+
+- *Type:* string
+
+---
 
 #### Properties <a name="Properties" id="Properties"></a>
 
@@ -26436,6 +28149,27 @@ Given the execution inputs, return the resolved value of this variable.
 
 ---
 
+#### Static Functions <a name="Static Functions" id="Static Functions"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#cdk-ssm-documents.PackageNameVariable.of">of</a></code> | *No description.* |
+
+---
+
+##### `of` <a name="of" id="cdk-ssm-documents.PackageNameVariable.of"></a>
+
+```typescript
+import { PackageNameVariable } from 'cdk-ssm-documents'
+
+PackageNameVariable.of(reference: string)
+```
+
+###### `reference`<sup>Required</sup> <a name="reference" id="cdk-ssm-documents.PackageNameVariable.of.parameter.reference"></a>
+
+- *Type:* string
+
+---
 
 #### Properties <a name="Properties" id="Properties"></a>
 
@@ -26807,6 +28541,27 @@ Given the execution inputs, return the resolved value of this variable.
 
 ---
 
+#### Static Functions <a name="Static Functions" id="Static Functions"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#cdk-ssm-documents.ResourceTypeVariable.of">of</a></code> | *No description.* |
+
+---
+
+##### `of` <a name="of" id="cdk-ssm-documents.ResourceTypeVariable.of"></a>
+
+```typescript
+import { ResourceTypeVariable } from 'cdk-ssm-documents'
+
+ResourceTypeVariable.of(reference: string)
+```
+
+###### `reference`<sup>Required</sup> <a name="reference" id="cdk-ssm-documents.ResourceTypeVariable.of.parameter.reference"></a>
+
+- *Type:* string
+
+---
 
 #### Properties <a name="Properties" id="Properties"></a>
 
@@ -27297,6 +29052,27 @@ Given the execution inputs, return the resolved value of this variable.
 
 ---
 
+#### Static Functions <a name="Static Functions" id="Static Functions"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#cdk-ssm-documents.StringListVariable.of">of</a></code> | *No description.* |
+
+---
+
+##### `of` <a name="of" id="cdk-ssm-documents.StringListVariable.of"></a>
+
+```typescript
+import { StringListVariable } from 'cdk-ssm-documents'
+
+StringListVariable.of(reference: string)
+```
+
+###### `reference`<sup>Required</sup> <a name="reference" id="cdk-ssm-documents.StringListVariable.of.parameter.reference"></a>
+
+- *Type:* string
+
+---
 
 #### Properties <a name="Properties" id="Properties"></a>
 
@@ -27413,6 +29189,27 @@ Given the execution inputs, return the resolved value of this variable.
 
 ---
 
+#### Static Functions <a name="Static Functions" id="Static Functions"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#cdk-ssm-documents.StringMapVariable.of">of</a></code> | *No description.* |
+
+---
+
+##### `of` <a name="of" id="cdk-ssm-documents.StringMapVariable.of"></a>
+
+```typescript
+import { StringMapVariable } from 'cdk-ssm-documents'
+
+StringMapVariable.of(reference: string)
+```
+
+###### `reference`<sup>Required</sup> <a name="reference" id="cdk-ssm-documents.StringMapVariable.of.parameter.reference"></a>
+
+- *Type:* string
+
+---
 
 #### Properties <a name="Properties" id="Properties"></a>
 
@@ -27529,6 +29326,27 @@ Given the execution inputs, return the resolved value of this variable.
 
 ---
 
+#### Static Functions <a name="Static Functions" id="Static Functions"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#cdk-ssm-documents.StringVariable.of">of</a></code> | *No description.* |
+
+---
+
+##### `of` <a name="of" id="cdk-ssm-documents.StringVariable.of"></a>
+
+```typescript
+import { StringVariable } from 'cdk-ssm-documents'
+
+StringVariable.of(reference: string)
+```
+
+###### `reference`<sup>Required</sup> <a name="reference" id="cdk-ssm-documents.StringVariable.of.parameter.reference"></a>
+
+- *Type:* string
+
+---
 
 #### Properties <a name="Properties" id="Properties"></a>
 
@@ -27725,7 +29543,7 @@ are the execution inputs.
 
 ### ICommandComponent <a name="ICommandComponent" id="cdk-ssm-documents.ICommandComponent"></a>
 
-- *Implemented By:* <a href="#cdk-ssm-documents.CommandStep">CommandStep</a>, <a href="#cdk-ssm-documents.CompositeCommandStep">CompositeCommandStep</a>, <a href="#cdk-ssm-documents.ConfigureDockerStep">ConfigureDockerStep</a>, <a href="#cdk-ssm-documents.ConfigurePackageStep">ConfigurePackageStep</a>, <a href="#cdk-ssm-documents.PsModuleStep">PsModuleStep</a>, <a href="#cdk-ssm-documents.RunDocumentStep">RunDocumentStep</a>, <a href="#cdk-ssm-documents.RunPowerShellScriptStep">RunPowerShellScriptStep</a>, <a href="#cdk-ssm-documents.RunShellScriptStep">RunShellScriptStep</a>, <a href="#cdk-ssm-documents.SoftwareInventoryStep">SoftwareInventoryStep</a>, <a href="#cdk-ssm-documents.UpdateAgentStep">UpdateAgentStep</a>, <a href="#cdk-ssm-documents.UpdateSSMAgentStep">UpdateSSMAgentStep</a>, <a href="#cdk-ssm-documents.ICommandComponent">ICommandComponent</a>
+- *Implemented By:* <a href="#cdk-ssm-documents.CommandStep">CommandStep</a>, <a href="#cdk-ssm-documents.CompositeCommandStep">CompositeCommandStep</a>, <a href="#cdk-ssm-documents.ConfigureDockerStep">ConfigureDockerStep</a>, <a href="#cdk-ssm-documents.ConfigurePackageStep">ConfigurePackageStep</a>, <a href="#cdk-ssm-documents.DomainJoinStep">DomainJoinStep</a>, <a href="#cdk-ssm-documents.PsModuleStep">PsModuleStep</a>, <a href="#cdk-ssm-documents.RunDockerActionStep">RunDockerActionStep</a>, <a href="#cdk-ssm-documents.RunDocumentStep">RunDocumentStep</a>, <a href="#cdk-ssm-documents.RunPowerShellScriptStep">RunPowerShellScriptStep</a>, <a href="#cdk-ssm-documents.RunShellScriptStep">RunShellScriptStep</a>, <a href="#cdk-ssm-documents.SoftwareInventoryStep">SoftwareInventoryStep</a>, <a href="#cdk-ssm-documents.UpdateAgentStep">UpdateAgentStep</a>, <a href="#cdk-ssm-documents.UpdateSSMAgentStep">UpdateSSMAgentStep</a>, <a href="#cdk-ssm-documents.ICommandComponent">ICommandComponent</a>
 
 #### Methods <a name="Methods" id="Methods"></a>
 

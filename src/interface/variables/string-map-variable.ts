@@ -21,6 +21,10 @@ export interface IStringMapVariable extends IGenericVariable {
  * Used when not dependent on step inputs.
  */
 export class HardCodedStringMap extends HardCodedValueBase<Record<string, any>> implements IStringMapVariable {
+  public static of(val: Record<string, any>): HardCodedStringMap {
+    return new HardCodedStringMap(val);
+  }
+
   resolveToStringMap(inputs: Record<string, any>): NullableStringMap {
     return this.resolve(inputs);
   }
@@ -35,6 +39,10 @@ export class HardCodedStringMap extends HardCodedValueBase<Record<string, any>> 
  * Used to resolve the value from step inputs.
  */
 export class StringMapVariable extends GenericVariable implements IStringMapVariable {
+  public static of(reference: string): StringMapVariable {
+    return new StringMapVariable(reference);
+  }
+
   resolveToStringMap(inputs: Record<string, any>): NullableStringMap {
     return this.resolve(inputs);
   }
