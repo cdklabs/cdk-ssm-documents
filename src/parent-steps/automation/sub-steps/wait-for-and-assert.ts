@@ -1,9 +1,9 @@
+import { Stack } from 'aws-cdk-lib';
 import { ResponseCode } from '../../../domain/response-code';
 import { StackStatus } from '../../../domain/stack-status';
 import { WaitForAndAssertResource, WaitForAndAssertResourceProps } from '../../../patterns/automation/wait-for-and-assert-resource';
 import { SimulationProps } from '../../../simulation/simulation';
 import { simulatePattern } from '../../../utils/simulate-pattern';
-import { Stack } from 'aws-cdk-lib';
 
 /**
  * Wait for and assert on an EC2 resource value

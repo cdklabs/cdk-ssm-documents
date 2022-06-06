@@ -1,11 +1,11 @@
 import { Construct } from 'constructs';
+import { ICommandComponent } from '../construct/document-component';
+import { CommandDocumentBuilder } from '../document/document-builder';
 import { Output } from '../domain/output';
 import { Platform } from '../domain/platform';
 import { Precondition } from '../domain/precondition';
 import { StringVariable } from '../interface/variables/string-variable';
 import { Step, StepProps } from './step';
-import { ICommandComponent } from '../construct/document-component';
-import { CommandDocumentBuilder } from '../document/document-builder';
 
 export interface CommandStepProps extends StepProps {
 

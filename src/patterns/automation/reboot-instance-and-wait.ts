@@ -1,9 +1,9 @@
 import { Construct } from 'constructs';
+import { AutomationDocumentBuilder } from '../../document/document-builder';
 import { IStringVariable } from '../../interface/variables/string-variable';
 import { AwsApiStep } from '../../parent-steps/automation/aws-api-step';
 import { WaitForResourceStep } from '../../parent-steps/automation/wait-for-resource-step';
 import { CompositeAutomationStep } from './composite-step';
-import { AutomationDocumentBuilder } from '../../document/document-builder';
 
 export class RebootInstanceAndWait extends CompositeAutomationStep {
 

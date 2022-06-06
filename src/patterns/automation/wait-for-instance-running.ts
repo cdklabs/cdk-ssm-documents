@@ -1,8 +1,8 @@
 import { Construct } from 'constructs';
-import { IAwsInvoker } from '../../interface/aws-invoker';
-import { WaitForAndAssertResource } from './wait-for-and-assert-resource';
-import { CompositeAutomationStep } from './composite-step';
 import { AutomationDocumentBuilder } from '../../document/document-builder';
+import { IAwsInvoker } from '../../interface/aws-invoker';
+import { CompositeAutomationStep } from './composite-step';
+import { WaitForAndAssertResource } from './wait-for-and-assert-resource';
 
 /**
  * Properties of WaitForInstanceRunning

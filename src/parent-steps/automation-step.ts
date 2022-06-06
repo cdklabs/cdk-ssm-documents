@@ -1,10 +1,10 @@
 import { Construct } from 'constructs';
 import { StringVariable } from '..';
+import { IAutomationComponent } from '../construct/document-component';
+import { AutomationDocumentBuilder } from '../document/document-builder';
 import { DataType } from '../domain/data-type';
 import { Output } from '../domain/output';
 import { Step, StepProps } from './step';
-import { AutomationDocumentBuilder } from '../document/document-builder';
-import { IAutomationComponent } from '../construct/document-component';
 
 export interface AutomationStepProps extends StepProps {
 
