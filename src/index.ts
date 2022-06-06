@@ -15,6 +15,10 @@ export * from './domain/simulation-result';
 export * from './domain/operation';
 export * from './domain/precondition';
 
+export * from './domain/enum/install-action';
+export * from './domain/enum/installation-type';
+export * from './domain/enum/package-name';
+
 export * from './construct/document-component';
 export * from './construct/synth-utils';
 
@@ -73,4 +77,3 @@ export { INumberVariable, HardCodedNumber, NumberVariable } from './interface/va
 export { IMapListVariable, HardCodedMapList, MapListVariable } from './interface/variables/map-list-variable';
 export { IStringMapVariable, HardCodedStringMap, StringMapVariable } from './interface/variables/string-map-variable';
 export { IStringVariable, HardCodedString, StringVariable, StringFormat, DictFormat } from './interface/variables/string-variable';
-export { IEnumVariable, EnumVariable, HardCodedEnum } from './interface/variables/enum-variable';

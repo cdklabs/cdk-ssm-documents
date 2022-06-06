@@ -1,7 +1,6 @@
 import { Stack } from 'aws-cdk-lib';
 import { ResponseCode } from '../../domain/response-code';
 import { IAwsInvoker } from '../../interface/aws-invoker';
-import { HardCodedEnum, EnumVariable } from '../../interface/variables/enum-variable';
 import { NullableStringList } from '../../interface/variables/string-list-variable';
 import { IGenericVariable } from '../../interface/variables/variable';
 import { AutomationStepProps } from '../../parent-steps/automation-step';
@@ -25,30 +24,6 @@ export interface ChangeInstanceStateSimulationProps extends AutomationStepProps 
 
 }
 
-export enum DesiredState {
-  RUNNING = 'running',
-  STOPPED = 'stopped',
-  TERMINATED = 'terminated',
-}
-
-/**
- * A desired state variable reference.
- */
-export class DesiredStateVariable extends EnumVariable<typeof DesiredState> {
-  constructor(reference: string) {
-    super(reference, DesiredState);
-  }
-}
-
-/**
- * A hard coded desired state.
- */
-export class HardCodedDesiredState extends HardCodedEnum<typeof DesiredState> {
-  constructor(value: DesiredState) {
-    super(value, DesiredState);
-  }
-}
-
 /**
  * AutomationStep implemenation for aws:changeInstanceState
  * https://docs.aws.amazon.com/systems-manager/latest/userguide/automation-action-changestate.html
@@ -67,7 +42,7 @@ export class ChangeInstanceStateSimulation extends AutomationSimulationBase {
 
   public executeStep(inputs: Record<string, any>): Record<string, any> {
     const checkStateOnly = this.changeInstanceStateStep.checkStateOnly?.resolveToBoolean(inputs) ?? false;
-    const desiredState = this.changeInstanceStateStep.desiredState.resolveToEnum(inputs);
+    const desiredState = this.changeInstanceStateStep.desiredState.resolveToString(inputs);
 
     if (!checkStateOnly) {
       console.log(`ChangeInstanceState: Setting instances state to ${desiredState}`);
@@ -80,13 +55,13 @@ export class ChangeInstanceStateSimulation extends AutomationSimulationBase {
     return {};
   }
 
-  private changeInstanceState(desiredState: DesiredState, inputs: Record<string, any>): void {
+  private changeInstanceState(desiredState: string, inputs: Record<string, any>): void {
     switch (desiredState) {
-      case DesiredState.RUNNING:
+      case 'running':
         return this.changeInstanceStateToRunning(inputs);
-      case DesiredState.STOPPED:
+      case 'stopped':
         return this.changeInstanceStateToStopped(inputs);
-      case DesiredState.TERMINATED:
+      case 'terminated':
         return this.changeInstanceStateToTerminated(inputs);
       default:
         throw new Error(`Desired state: ${desiredState} is not an end-state to change to.`);
@@ -126,14 +101,14 @@ export class ChangeInstanceStateSimulation extends AutomationSimulationBase {
     }
   }
 
-  private waitForInstanceState(desiredState: DesiredState, inputs: Record<string, any>): void {
+  private waitForInstanceState(desiredState: string, inputs: Record<string, any>): void {
     const instanceIds = this.changeInstanceStateStep.instanceIds.resolveToStringList(inputs);
     switch (desiredState) {
-      case DesiredState.RUNNING:
+      case 'running':
         return this.waitForStateRunningAndStatusOk(instanceIds);
-      case DesiredState.STOPPED:
+      case 'stopped':
         return this.waitForStateStopped(instanceIds);
-      case DesiredState.TERMINATED:
+      case 'terminated':
         return this.waitForStateTerminated(instanceIds);
       default:
         throw new Error(`Desired state: ${desiredState} is not an end-state to wait for.`);

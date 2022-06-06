@@ -1,33 +1,23 @@
-import { EnumVariable, HardCodedEnum } from '../../interface/variables/enum-variable';
+import { assertString, HardCodedString, IStringVariable, StringVariable } from '../../interface/variables/string-variable';
 
-/**
- * The type of installation to perform.
- * If you specify Uninstall and reinstall, the package is completely uninstalled, and then reinstalled.
- * The application is unavailable until the reinstallation is complete.
- * If you specify In-place update,
- * only new or changed files are added to the existing installation according you instructions you provide in an update script.
- * The application remains available throughout the update process.
- * The In-place update option isn't supported for AWS-published packages.
- * Uninstall and reinstall is the default value.
- */
-export enum InstallationType {
-  UNINSTALL_AND_REINSTALL = 'Uninstall and reinstall',
-  IN_PLACE_UPDATE = 'In-place update',
+export interface IInstallationTypeVariable extends IStringVariable {
 }
 
-/**
- * InstallationType variable
- */
-export class InstallationTypeVariable extends EnumVariable<typeof InstallationType> {
-  constructor(reference: string) {
-    super(reference, InstallationType);
+export class HardCodedInstallationType extends HardCodedString implements IInstallationTypeVariable {
+  public static readonly UNINSTALL_AND_REINSTALL = new HardCodedInstallationType('Uninstall and reinstall');
+  public static readonly IN_PLACE_UPDATE = new HardCodedInstallationType('In-place update');
+  private constructor(val: string) {
+    super(val);
   }
 }
-/**
- * A hard coded InstallationType.
- */
-export class HardCodedInstallationType extends HardCodedEnum<typeof InstallationType> {
-  constructor(value: InstallationType) {
-    super(value, InstallationType);
+
+export class InstallationTypeVariable extends StringVariable implements IInstallationTypeVariable {
+  readonly validValues = ['Uninstall and reinstall', 'In-place update'];
+
+  protected assertType(value: any): void {
+    assertString(value);
+    if (!this.validValues.includes(value)) {
+      throw new Error(`${value} is not a valid enum value`);
+    }
   }
 }

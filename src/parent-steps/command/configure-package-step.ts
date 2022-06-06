@@ -1,9 +1,8 @@
 import { Construct } from 'constructs';
-import { Action } from '../../domain/enum/install-action';
-import { InstallationType } from '../../domain/enum/installation-type';
-import { PackageName } from '../../domain/enum/package-name';
+import { IActionVariable } from '../../domain/enum/install-action';
+import { IInstallationTypeVariable } from '../../domain/enum/installation-type';
+import { IPackageNameVariable } from '../../domain/enum/package-name';
 import { Platform } from '../../domain/platform';
-import { IEnumVariable } from '../../interface/variables/enum-variable';
 import { IStringMapVariable } from '../../interface/variables/string-map-variable';
 import { IStringVariable } from '../../interface/variables/string-variable';
 import { CommandStep, CommandStepProps } from '../command-step';
@@ -16,12 +15,12 @@ export interface ConfigurePackageStepProps extends CommandStepProps {
   /**
    * The name of the AWS package to install or uninstall.
    */
-  readonly packageName: IEnumVariable<typeof PackageName>;
+  readonly packageName: IPackageNameVariable;
 
   /**
    * Install or uninstall a package.
    */
-  readonly packageAction: IEnumVariable<typeof Action>;
+  readonly packageAction: IActionVariable;
 
   /**
    * The type of installation to perform. If you specify Uninstall and reinstall, the package is completely uninstalled, and then reinstalled.
@@ -30,7 +29,7 @@ export interface ConfigurePackageStepProps extends CommandStepProps {
    * The application remains available throughout the update process.
    * The In-place update option isn't supported for AWS-published packages. Uninstall and reinstall is the default value.
    */
-  readonly installationType?: IEnumVariable<typeof InstallationType>;
+  readonly installationType?: IInstallationTypeVariable;
 
   /**
    * The additional parameters to provide to your install, uninstall, or update scripts. Each parameter must be prefixed with SSM_.
@@ -58,9 +57,9 @@ export interface ConfigurePackageStepProps extends CommandStepProps {
  */
 export class ConfigurePackageStep extends CommandStep {
 
-  readonly packageName: IEnumVariable<typeof PackageName>;
-  readonly packageAction: IEnumVariable<typeof Action>;
-  readonly installationType?: IEnumVariable<typeof InstallationType>;
+  readonly packageName: IPackageNameVariable;
+  readonly packageAction: IActionVariable;
+  readonly installationType?: IInstallationTypeVariable;
   readonly additionalArguments?: IStringMapVariable;
   readonly version?: IStringVariable;
 

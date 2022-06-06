@@ -1,6 +1,6 @@
 import { strict as assert } from 'assert';
 import { Stack } from 'aws-cdk-lib';
-import { DocumentHashType, HardCodedDocumentHashType, HardCodedNumber, HardCodedString, HardCodedStringList, HardCodedStringMap, IRunCommandHook, ResponseCode, RunCommandOutputs, RunCommandProps, RunCommandStep } from '../../../lib';
+import { HardCodedDocumentHashType, HardCodedNumber, HardCodedString, HardCodedStringList, HardCodedStringMap, IRunCommandHook, ResponseCode, RunCommandOutputs, RunCommandProps, RunCommandStep } from '../../../lib';
 import { AutomationStepSimulation } from '../../../lib/simulation/automation-step-simulation';
 
 describe('RunCommandStep', () => {
@@ -15,7 +15,7 @@ describe('RunCommandStep', () => {
             cloudWatchOutputConfig: { b: 1 },
             comment: 'comment',
             documentHash: 'hash',
-            documentHashType: DocumentHashType.SHA256,
+            documentHashType: 'Sha256',
             notificationConfig: { c: 1 },
             outputS3BucketName: 'name',
             outputS3KeyPrefix: 'prefix',
@@ -40,7 +40,7 @@ describe('RunCommandStep', () => {
         cloudWatchOutputConfig: new HardCodedStringMap({ b: 1 }),
         comment: new HardCodedString('comment'),
         documentHash: new HardCodedString('hash'),
-        documentHashType: new HardCodedDocumentHashType(DocumentHashType.SHA256),
+        documentHashType: HardCodedDocumentHashType.SHA256,
         notificationConfig: new HardCodedStringMap({ c: 1 }),
         outputS3BucketName: new HardCodedString('name'),
         outputS3KeyPrefix: new HardCodedString('prefix'),
@@ -71,7 +71,7 @@ describe('RunCommandStep', () => {
         cloudWatchOutputConfig: new HardCodedStringMap({ b: 1 }),
         comment: new HardCodedString('comment'),
         documentHash: new HardCodedString('hash'),
-        documentHashType: new HardCodedDocumentHashType(DocumentHashType.SHA256),
+        documentHashType: HardCodedDocumentHashType.SHA256,
         notificationConfig: new HardCodedStringMap({ c: 1 }),
         outputS3BucketName: new HardCodedString('name'),
         outputS3KeyPrefix: new HardCodedString('prefix'),

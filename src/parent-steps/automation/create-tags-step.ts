@@ -1,8 +1,8 @@
 import { Construct } from 'constructs';
 import { Output } from '../../domain/output';
-import { EnumVariable, HardCodedEnum, IEnumVariable } from '../../interface/variables/enum-variable';
 import { IMapListVariable } from '../../interface/variables/map-list-variable';
 import { IStringListVariable } from '../../interface/variables/string-list-variable';
+import { assertString, HardCodedString, IStringVariable, StringVariable } from '../../interface/variables/string-variable';
 import { IGenericVariable } from '../../interface/variables/variable';
 import { pruneAndTransformRecord } from '../../utils/prune-and-transform-record';
 import { AutomationStep, AutomationStepProps } from '../automation-step';
@@ -26,33 +26,33 @@ export interface CreateTagsStepProps extends AutomationStepProps {
    * Valid values: EC2 | ManagedInstance | MaintenanceWindow | Parameter
    * @default EC2
    */
-  readonly resourceType?: IEnumVariable<typeof ResourceType>;
+  readonly resourceType?: IResourceTypeVariable;
 }
 
-export enum ResourceType {
-  EC2,
-  MAINTENANCE_INSTANCE = 'ManagedInstance',
-  MAINTENANCE_WINDOW = 'MaintenanceWindow',
-  PARAMETER = 'Parameter',
+export interface IResourceTypeVariable extends IStringVariable {
 }
 
-/**
- * A resource type variable reference.
- */
-export class ResourceTypeVariable extends EnumVariable<typeof ResourceType> {
-  constructor(reference: string) {
-    super(reference, ResourceType);
+export class HardCodedResourceType extends HardCodedString implements IResourceTypeVariable {
+  public static readonly EC2 = new HardCodedResourceType('EC2');
+  public static readonly MANAGED_INSTANCE = new HardCodedResourceType('ManagedInstance');
+  public static readonly MAINTENANCE_WINDOW = new HardCodedResourceType('MaintenanceWindow');
+  public static readonly PARAMETER = new HardCodedResourceType('Parameter');
+  private constructor(val: string) {
+    super(val);
   }
 }
 
-/**
- * A hard coded resource type.
- */
-export class HardCodedResourceType extends HardCodedEnum<typeof ResourceType> {
-  constructor(value: ResourceType) {
-    super(value, ResourceType);
+export class ResourceTypeVariable extends StringVariable implements IResourceTypeVariable {
+  readonly validValues = ['EC2', 'ManagedInstance', 'MaintenanceWindow', 'Parameter'];
+
+  protected assertType(value: any): void {
+    assertString(value);
+    if (!this.validValues.includes(value)) {
+      throw new Error(`${value} is not a valid enum value`);
+    }
   }
 }
+
 
 /**
  * AutomationStep implemenation for aws:createTags
@@ -62,7 +62,7 @@ export class CreateTagsStep extends AutomationStep {
   readonly action = 'aws:createTags';
   readonly resourceIds: IStringListVariable;
   readonly tags: IMapListVariable;
-  readonly resourceType?: IEnumVariable<typeof ResourceType>;
+  readonly resourceType?: IResourceTypeVariable;
 
   constructor(scope: Construct, id: string, props: CreateTagsStepProps) {
     super(scope, id, props);

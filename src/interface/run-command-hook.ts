@@ -64,7 +64,7 @@ export interface RunCommandProps {
   /**
      * (Optional) The type of the hash.
      */
-  readonly documentHashType?: DocumentHashType;
+  readonly documentHashType?: string;
 
   /**
      * (Optional) The configurations for sending notifications.
@@ -100,14 +100,6 @@ export interface RunCommandProps {
      * (Optional) The maximum errors.
      */
   readonly maxErrors?: number;
-}
-
-/**
- * Type of document hash
- */
-export enum DocumentHashType {
-  SHA256 = 'Sha256',
-  SHA1 = 'Sha1',
 }
 
 /**

@@ -1,36 +1,28 @@
-import { EnumVariable, HardCodedEnum } from '../../interface/variables/enum-variable';
+import { assertString, HardCodedString, IStringVariable, StringVariable } from '../../interface/variables/string-variable';
 
-/**
- * Available AWS packages for Windows Server include the following:
- * AWSPVDriver, AWSNVMe, AwsEnaNetworkDriver, AwsVssComponents, AmazonCloudWatchAgent, CodeDeployAgent, and AWSSupport-EC2Rescue.
- *
- * Available AWS packages for Linux operating systems include the following:
- * AmazonCloudWatchAgent, CodeDeployAgent, and AWSSupport-EC2Rescue.
- */
-export enum PackageName {
-  AWSPV_DRIVER = 'AWSPVDriver',
-  AWSNVME = 'AWSNVMe',
-  AWS_ENA_NETWORK_DRIVER = 'AwsEnaNetworkDriver',
-  AWS_VSS_COMPONENTS = 'AwsVssComponents',
-  AWS_CLOUD_WATCH_AGENT = 'AmazonCloudWatchAgent',
-  CODE_DEPLOY_AGENT = 'CodeDeployAgent',
-  AWS_SUPPORT_EC2_RESCUE = 'AWSSupport-EC2Rescue',
+export interface IPackageNameVariable extends IStringVariable {
 }
 
-/**
- * PackageName variable
- */
-export class PackageNameVariable extends EnumVariable<typeof PackageName> {
-  constructor(reference: string) {
-    super(reference, PackageName);
+export class HardCodedPackageName extends HardCodedString implements IPackageNameVariable {
+  public static readonly AWSPV_DRIVER = new HardCodedPackageName('AWSPVDriver');
+  public static readonly AWSNVME = new HardCodedPackageName('AWSNVMe');
+  public static readonly AWS_ENA_NETWORK_DRIVER = new HardCodedPackageName('AwsEnaNetworkDriver');
+  public static readonly AWS_VSS_COMPONENTS = new HardCodedPackageName('AwsVssComponents');
+  public static readonly AMAZON_CLOUD_WATCH_AGENT = new HardCodedPackageName('AmazonCloudWatchAgent');
+  public static readonly CODE_DEPLOY_AGENT = new HardCodedPackageName('CodeDeployAgent');
+  public static readonly AWS_SUPPORT_EC2_RESCUE = new HardCodedPackageName('AWSSupport-EC2Rescue');
+  private constructor(val: string) {
+    super(val);
   }
 }
 
-/**
- * A hard coded PackageName.
- */
-export class HardCodedPackageName extends HardCodedEnum<typeof PackageName> {
-  constructor(value: PackageName) {
-    super(value, PackageName);
+export class PackageNameVariable extends StringVariable implements IPackageNameVariable {
+  readonly validValues = ['AWSPVDriver', 'AWSNVMe', 'AwsEnaNetworkDriver', 'AwsVssComponents', 'AmazonCloudWatchAgent', 'CodeDeployAgent', 'AWSSupport-EC2Rescue'];
+
+  protected assertType(value: any): void {
+    assertString(value);
+    if (!this.validValues.includes(value)) {
+      throw new Error(`${value} is not a valid enum value`);
+    }
   }
 }

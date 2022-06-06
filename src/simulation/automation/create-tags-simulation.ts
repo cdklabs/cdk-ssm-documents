@@ -3,7 +3,6 @@ import { DataTypeEnum } from '../../domain/data-type';
 import { ResponseCode } from '../../domain/response-code';
 import { IAwsInvoker } from '../../interface/aws-invoker';
 import { ISleepHook } from '../../interface/sleep-hook';
-import { EnumVariable, HardCodedEnum } from '../../interface/variables/enum-variable';
 import { AwsApiStep } from '../../parent-steps/automation/aws-api-step';
 import { CreateTagsStep } from '../../parent-steps/automation/create-tags-step';
 import { SleepStep } from '../../parent-steps/automation/sleep-step';
@@ -26,31 +25,6 @@ export interface CreateTagsSimulationProps {
      * @default SleeperImpl
      */
   readonly sleepHook: ISleepHook;
-}
-
-export enum ResourceType {
-  EC2,
-  MAINTENANCE_INSTANCE = 'ManagedInstance',
-  MAINTENANCE_WINDOW = 'MaintenanceWindow',
-  PARAMETER = 'Parameter',
-}
-
-/**
- * A resource type variable reference.
- */
-export class ResourceTypeVariable extends EnumVariable<typeof ResourceType> {
-  constructor(reference: string) {
-    super(reference, ResourceType);
-  }
-}
-
-/**
- * A hard coded resource type.
- */
-export class HardCodedResourceType extends HardCodedEnum<typeof ResourceType> {
-  constructor(value: ResourceType) {
-    super(value, ResourceType);
-  }
 }
 
 interface Ec2TagFilter {
@@ -85,14 +59,14 @@ export class CreateTagsSimulation extends AutomationSimulationBase {
   }
 
   public executeStep(inputs: Record<string, any>): Record<string, any> {
-    const resourceType = this.createTagsStep.resourceType?.resolveToEnum(inputs) ?? ResourceType.EC2;
+    const resourceType = this.createTagsStep.resourceType?.resolveToString(inputs) ?? 'EC2';
     switch (resourceType) {
-      case ResourceType.EC2:
+      case 'EC2':
         this.createEc2Tags(inputs);
         break;
-      case ResourceType.MAINTENANCE_INSTANCE:
-      case ResourceType.MAINTENANCE_WINDOW:
-      case ResourceType.PARAMETER:
+      case 'ManagedInstance':
+      case 'MaintenanceWindow':
+      case 'Parameter':
         this.createSsmTags(resourceType, inputs);
         break;
       default:

@@ -5,7 +5,6 @@ import { ResponseCode } from '../../domain/response-code';
 import { StackStatus } from '../../domain/stack-status';
 import { IAwsInvoker } from '../../interface/aws-invoker';
 import { ISleepHook } from '../../interface/sleep-hook';
-import { EnumVariable, HardCodedEnum } from '../../interface/variables/enum-variable';
 import { HardCodedString, IStringVariable } from '../../interface/variables/string-variable';
 import { AwsApiStep } from '../../parent-steps/automation/aws-api-step';
 import { CreateStackStep } from '../../parent-steps/automation/create-stack-step';
@@ -43,33 +42,6 @@ export interface BodyOrUrlProp {
      * Whether the body or URL was provided
      */
   readonly propType: BodyOrUrlType;
-}
-
-/**
- * Values for CreateStackStep's OnFailure property
- */
-export enum OnFailure {
-  DO_NOTHING,
-  ROLLBACK,
-  DELETE,
-}
-
-/**
- * Hard coded OnFailure value
- */
-export class HardCodedOnFailure extends HardCodedEnum<typeof OnFailure> {
-  constructor(value: OnFailure) {
-    super(value, OnFailure);
-  }
-}
-
-/**
- * OnFailure reference value
- */
-export class OnFailureVariable extends EnumVariable<typeof OnFailure> {
-  constructor(reference: string) {
-    super(reference, OnFailure);
-  }
 }
 
 /**

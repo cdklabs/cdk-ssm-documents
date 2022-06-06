@@ -1,25 +1,6 @@
-import { DocumentHashType, IRunCommandHook, RunCommandProps } from '../../interface/run-command-hook';
-import { EnumVariable, HardCodedEnum } from '../../interface/variables/enum-variable';
+import { IRunCommandHook, RunCommandProps } from '../../interface/run-command-hook';
 import { RunCommandStep } from '../../parent-steps/automation/run-command-step';
 import { AutomationSimulationBase } from './automation-simulation-base';
-
-/**
- * Hard coded document hash type
- */
-export class HardCodedDocumentHashType extends HardCodedEnum<typeof DocumentHashType> {
-  constructor(value: DocumentHashType) {
-    super(value, DocumentHashType);
-  }
-}
-
-/**
- * Reference to document hash type
- */
-export class DocumentHashTypeVariable extends EnumVariable<typeof DocumentHashType> {
-  constructor(reference: string) {
-    super(reference, DocumentHashType);
-  }
-}
 
 /**
  * Properties for RunCommandStep

@@ -1,6 +1,6 @@
 import { strict as assert } from 'assert';
 import { Stack } from 'aws-cdk-lib';
-import { BodyOrUrlType, CreateStackStep, CreateStackStepProps, HardCodedMapList, HardCodedNumber, HardCodedOnFailure, HardCodedString, HardCodedStringList, MockAwsInvoker, MockSleep, OnFailure, ResponseCode } from '../../../lib';
+import { BodyOrUrlType, CreateStackStep, CreateStackStepProps, HardCodedMapList, HardCodedNumber, HardCodedOnFailure, HardCodedString, HardCodedStringList, MockAwsInvoker, MockSleep, ResponseCode } from '../../../lib';
 import { AutomationStepSimulation } from '../../../lib/simulation/automation-step-simulation';
 
 describe('CreateStackStep', () => {
@@ -37,7 +37,7 @@ describe('CreateStackStep', () => {
           value: new HardCodedString('template body'),
           propType: BodyOrUrlType.BODY,
         },
-        onStackFailure: new HardCodedOnFailure(OnFailure.DELETE),
+        onStackFailure: HardCodedOnFailure.DELETE,
       });
 
       const result = new AutomationStepSimulation(step, { awsInvoker: mockInvoker, sleepHook: mockSleep }).invoke({});
@@ -75,7 +75,7 @@ describe('CreateStackStep', () => {
           propType: BodyOrUrlType.URL,
         },
         resourceTypes: new HardCodedStringList(['type1']),
-        onStackFailure: new HardCodedOnFailure(OnFailure.DO_NOTHING),
+        onStackFailure: HardCodedOnFailure.DO_NOTHING,
         capabilities: new HardCodedStringList(['Capability']),
         clientRequestToken: new HardCodedString('request token'),
         notificationARNs: new HardCodedStringList(['arn']),

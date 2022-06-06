@@ -1,24 +1,23 @@
-import { EnumVariable, HardCodedEnum } from '../../interface/variables/enum-variable';
+import { assertString, HardCodedString, IStringVariable, StringVariable } from '../../interface/variables/string-variable';
 
-export enum Action {
-  INSTALL = 'Install',
-  UNINSTALL = 'Uninstall',
+export interface IActionVariable extends IStringVariable {
 }
 
-/**
- * Action variable
- */
-export class ActionVariable extends EnumVariable<typeof Action> {
-  constructor(value: string) {
-    super(value, Action);
+export class HardCodedAction extends HardCodedString implements IActionVariable {
+  public static readonly INSTALL = new HardCodedAction('Install');
+  public static readonly UNINSTALL = new HardCodedAction('Uninstall');
+  private constructor(val: string) {
+    super(val);
   }
 }
 
-/**
- * A hard coded Action.
- */
-export class HardCodedAction extends HardCodedEnum<typeof Action> {
-  constructor(value: Action) {
-    super(value, Action);
+export class ActionVariable extends StringVariable implements IActionVariable {
+  readonly validValues = ['Install', 'Uninstall'];
+
+  protected assertType(value: any): void {
+    assertString(value);
+    if (!this.validValues.includes(value)) {
+      throw new Error(`${value} is not a valid enum value`);
+    }
   }
 }
