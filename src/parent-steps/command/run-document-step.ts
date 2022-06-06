@@ -10,7 +10,8 @@ import { CommandStep, CommandStepProps } from '../command-step';
 export interface RunDocumentStepProps extends CommandStepProps {
 
   /**
-   * Document info containing document type and document path. Can be of type LocalCommandStepDocument or SsmCommandStepDocument
+   * Document info containing document type and document path.
+   * Can be of type LocalRunDocument or SsmRunDocument.
    */
   readonly stepDocument: IRunDocumentLocation;
 
@@ -22,7 +23,7 @@ export interface RunDocumentStepProps extends CommandStepProps {
 }
 
 /**
- * AutomationStep implemenation for aws:runDocument
+ * CommandStep implementation for aws:runDocument
  * https://docs.aws.amazon.com/systems-manager/latest/userguide/ssm-plugins.html#aws-rundocument
  */
 export class RunDocumentStep extends CommandStep {

@@ -9360,7 +9360,7 @@ public readonly DEFAULT_TIMEOUT: number;
 
 ### RunDocumentStep <a name="RunDocumentStep" id="cdk-ssm-documents.RunDocumentStep"></a>
 
-AutomationStep implemenation for aws:runDocument https://docs.aws.amazon.com/systems-manager/latest/userguide/ssm-plugins.html#aws-rundocument.
+CommandStep implementation for aws:runDocument https://docs.aws.amazon.com/systems-manager/latest/userguide/ssm-plugins.html#aws-rundocument.
 
 #### Initializers <a name="Initializers" id="cdk-ssm-documents.RunDocumentStep.Initializer"></a>
 
@@ -19835,7 +19835,7 @@ public readonly stepDocument: IRunDocumentLocation;
 
 Document info containing document type and document path.
 
-Can be of type LocalCommandStepDocument or SsmCommandStepDocument
+Can be of type LocalRunDocument or SsmRunDocument.
 
 ---
 
