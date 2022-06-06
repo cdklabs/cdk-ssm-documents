@@ -23,6 +23,7 @@ jobs:
         run: yarn install --check-files
       - name: build
         run: npx projen build
+      - id: eslint
       - id: self_mutation
         name: Find mutations
         run: |-

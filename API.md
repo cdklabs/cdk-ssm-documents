@@ -3082,7 +3082,7 @@ The tree node.
 
 ### ConfigurePackageStep <a name="ConfigurePackageStep" id="cdk-ssm-documents.ConfigurePackageStep"></a>
 
-AutomationStep implemenation for aws:configurePackage https://docs.aws.amazon.com/systems-manager/latest/userguide/ssm-plugins.html#aws-updateagent.
+CommandStep implemenation for aws:configurePackage https://docs.aws.amazon.com/systems-manager/latest/userguide/ssm-plugins.html#aws-configurepackage.
 
 #### Initializers <a name="Initializers" id="cdk-ssm-documents.ConfigurePackageStep.Initializer"></a>
 
@@ -3225,10 +3225,10 @@ Any object.
 | <code><a href="#cdk-ssm-documents.ConfigurePackageStep.property.precondition">precondition</a></code> | <code><a href="#cdk-ssm-documents.Precondition">Precondition</a></code> | *No description.* |
 | <code><a href="#cdk-ssm-documents.ConfigurePackageStep.property.allStepsInExecution">allStepsInExecution</a></code> | <code><a href="#cdk-ssm-documents.CommandStep">CommandStep</a>[]</code> | *No description.* |
 | <code><a href="#cdk-ssm-documents.ConfigurePackageStep.property.nextStep">nextStep</a></code> | <code><a href="#cdk-ssm-documents.CommandStep">CommandStep</a></code> | *No description.* |
-| <code><a href="#cdk-ssm-documents.ConfigurePackageStep.property.packageAction">packageAction</a></code> | <code><a href="#cdk-ssm-documents.IStringVariable">IStringVariable</a></code> | *No description.* |
-| <code><a href="#cdk-ssm-documents.ConfigurePackageStep.property.packageName">packageName</a></code> | <code><a href="#cdk-ssm-documents.IStringVariable">IStringVariable</a></code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.ConfigurePackageStep.property.packageAction">packageAction</a></code> | <code><a href="#cdk-ssm-documents.IEnumVariable">IEnumVariable</a></code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.ConfigurePackageStep.property.packageName">packageName</a></code> | <code><a href="#cdk-ssm-documents.IEnumVariable">IEnumVariable</a></code> | *No description.* |
 | <code><a href="#cdk-ssm-documents.ConfigurePackageStep.property.additionalArguments">additionalArguments</a></code> | <code><a href="#cdk-ssm-documents.IStringMapVariable">IStringMapVariable</a></code> | *No description.* |
-| <code><a href="#cdk-ssm-documents.ConfigurePackageStep.property.installationType">installationType</a></code> | <code><a href="#cdk-ssm-documents.IStringVariable">IStringVariable</a></code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.ConfigurePackageStep.property.installationType">installationType</a></code> | <code><a href="#cdk-ssm-documents.IEnumVariable">IEnumVariable</a></code> | *No description.* |
 | <code><a href="#cdk-ssm-documents.ConfigurePackageStep.property.version">version</a></code> | <code><a href="#cdk-ssm-documents.IStringVariable">IStringVariable</a></code> | *No description.* |
 
 ---
@@ -3378,20 +3378,20 @@ public readonly nextStep: CommandStep;
 ##### `packageAction`<sup>Required</sup> <a name="packageAction" id="cdk-ssm-documents.ConfigurePackageStep.property.packageAction"></a>
 
 ```typescript
-public readonly packageAction: IStringVariable;
+public readonly packageAction: IEnumVariable;
 ```
 
-- *Type:* <a href="#cdk-ssm-documents.IStringVariable">IStringVariable</a>
+- *Type:* <a href="#cdk-ssm-documents.IEnumVariable">IEnumVariable</a>
 
 ---
 
 ##### `packageName`<sup>Required</sup> <a name="packageName" id="cdk-ssm-documents.ConfigurePackageStep.property.packageName"></a>
 
 ```typescript
-public readonly packageName: IStringVariable;
+public readonly packageName: IEnumVariable;
 ```
 
-- *Type:* <a href="#cdk-ssm-documents.IStringVariable">IStringVariable</a>
+- *Type:* <a href="#cdk-ssm-documents.IEnumVariable">IEnumVariable</a>
 
 ---
 
@@ -3408,10 +3408,10 @@ public readonly additionalArguments: IStringMapVariable;
 ##### `installationType`<sup>Optional</sup> <a name="installationType" id="cdk-ssm-documents.ConfigurePackageStep.property.installationType"></a>
 
 ```typescript
-public readonly installationType: IStringVariable;
+public readonly installationType: IEnumVariable;
 ```
 
-- *Type:* <a href="#cdk-ssm-documents.IStringVariable">IStringVariable</a>
+- *Type:* <a href="#cdk-ssm-documents.IEnumVariable">IEnumVariable</a>
 
 ---
 
@@ -15054,10 +15054,10 @@ const configurePackageStepProps: ConfigurePackageStepProps = { ... }
 | <code><a href="#cdk-ssm-documents.ConfigurePackageStepProps.property.markSuccessAndExitOnFailure">markSuccessAndExitOnFailure</a></code> | <code>boolean</code> | *No description.* |
 | <code><a href="#cdk-ssm-documents.ConfigurePackageStepProps.property.onCancel">onCancel</a></code> | <code><a href="#cdk-ssm-documents.Step">Step</a></code> | (Optional) Step to jump to in the event that this step is cancelled. |
 | <code><a href="#cdk-ssm-documents.ConfigurePackageStepProps.property.precondition">precondition</a></code> | <code><a href="#cdk-ssm-documents.Precondition">Precondition</a></code> | (Optional) A precondition to test before execution occurrs. |
-| <code><a href="#cdk-ssm-documents.ConfigurePackageStepProps.property.packageAction">packageAction</a></code> | <code><a href="#cdk-ssm-documents.IStringVariable">IStringVariable</a></code> | Install or uninstall a package. |
-| <code><a href="#cdk-ssm-documents.ConfigurePackageStepProps.property.packageName">packageName</a></code> | <code><a href="#cdk-ssm-documents.IStringVariable">IStringVariable</a></code> | The name of the AWS package to install or uninstall. |
+| <code><a href="#cdk-ssm-documents.ConfigurePackageStepProps.property.packageAction">packageAction</a></code> | <code><a href="#cdk-ssm-documents.IEnumVariable">IEnumVariable</a></code> | Install or uninstall a package. |
+| <code><a href="#cdk-ssm-documents.ConfigurePackageStepProps.property.packageName">packageName</a></code> | <code><a href="#cdk-ssm-documents.IEnumVariable">IEnumVariable</a></code> | The name of the AWS package to install or uninstall. |
 | <code><a href="#cdk-ssm-documents.ConfigurePackageStepProps.property.additionalArguments">additionalArguments</a></code> | <code><a href="#cdk-ssm-documents.IStringMapVariable">IStringMapVariable</a></code> | The additional parameters to provide to your install, uninstall, or update scripts. |
-| <code><a href="#cdk-ssm-documents.ConfigurePackageStepProps.property.installationType">installationType</a></code> | <code><a href="#cdk-ssm-documents.IStringVariable">IStringVariable</a></code> | The type of installation to perform. |
+| <code><a href="#cdk-ssm-documents.ConfigurePackageStepProps.property.installationType">installationType</a></code> | <code><a href="#cdk-ssm-documents.IEnumVariable">IEnumVariable</a></code> | The type of installation to perform. |
 | <code><a href="#cdk-ssm-documents.ConfigurePackageStepProps.property.version">version</a></code> | <code><a href="#cdk-ssm-documents.IStringVariable">IStringVariable</a></code> | A specific version of the package to install or uninstall. |
 
 ---
@@ -15198,10 +15198,10 @@ When the precondition isn't met, the command step isn't executed.
 ##### `packageAction`<sup>Required</sup> <a name="packageAction" id="cdk-ssm-documents.ConfigurePackageStepProps.property.packageAction"></a>
 
 ```typescript
-public readonly packageAction: IStringVariable;
+public readonly packageAction: IEnumVariable;
 ```
 
-- *Type:* <a href="#cdk-ssm-documents.IStringVariable">IStringVariable</a>
+- *Type:* <a href="#cdk-ssm-documents.IEnumVariable">IEnumVariable</a>
 
 Install or uninstall a package.
 
@@ -15210,14 +15210,12 @@ Install or uninstall a package.
 ##### `packageName`<sup>Required</sup> <a name="packageName" id="cdk-ssm-documents.ConfigurePackageStepProps.property.packageName"></a>
 
 ```typescript
-public readonly packageName: IStringVariable;
+public readonly packageName: IEnumVariable;
 ```
 
-- *Type:* <a href="#cdk-ssm-documents.IStringVariable">IStringVariable</a>
+- *Type:* <a href="#cdk-ssm-documents.IEnumVariable">IEnumVariable</a>
 
 The name of the AWS package to install or uninstall.
-
-Available packages include the following: AWSPVDriver, AwsEnaNetworkDriver, AwsVssComponents, and AmazonCloudWatchAgent.
 
 ---
 
@@ -15244,10 +15242,10 @@ This limit includes all of the keys and values you define.
 ##### `installationType`<sup>Optional</sup> <a name="installationType" id="cdk-ssm-documents.ConfigurePackageStepProps.property.installationType"></a>
 
 ```typescript
-public readonly installationType: IStringVariable;
+public readonly installationType: IEnumVariable;
 ```
 
-- *Type:* <a href="#cdk-ssm-documents.IStringVariable">IStringVariable</a>
+- *Type:* <a href="#cdk-ssm-documents.IEnumVariable">IEnumVariable</a>
 
 The type of installation to perform.
 
@@ -25882,7 +25880,7 @@ are the execution inputs.
 
 ### ICommandComponent <a name="ICommandComponent" id="cdk-ssm-documents.ICommandComponent"></a>
 
-- *Implemented By:* <a href="#cdk-ssm-documents.CommandStep">CommandStep</a>, <a href="#cdk-ssm-documents.CompositeCommandStep">CompositeCommandStep</a>, <a href="#cdk-ssm-documents.PsModuleStep">PsModuleStep</a>, <a href="#cdk-ssm-documents.RunPowerShellScriptStep">RunPowerShellScriptStep</a>, <a href="#cdk-ssm-documents.RunShellScriptStep">RunShellScriptStep</a>, <a href="#cdk-ssm-documents.SoftwareInventoryStep">SoftwareInventoryStep</a>, <a href="#cdk-ssm-documents.UpdateAgentStep">UpdateAgentStep</a>, <a href="#cdk-ssm-documents.UpdateSSMAgentStep">UpdateSSMAgentStep</a>, <a href="#cdk-ssm-documents.ICommandComponent">ICommandComponent</a>
+- *Implemented By:* <a href="#cdk-ssm-documents.CommandStep">CommandStep</a>, <a href="#cdk-ssm-documents.CompositeCommandStep">CompositeCommandStep</a>, <a href="#cdk-ssm-documents.ConfigurePackageStep">ConfigurePackageStep</a>, <a href="#cdk-ssm-documents.PsModuleStep">PsModuleStep</a>, <a href="#cdk-ssm-documents.RunPowerShellScriptStep">RunPowerShellScriptStep</a>, <a href="#cdk-ssm-documents.RunShellScriptStep">RunShellScriptStep</a>, <a href="#cdk-ssm-documents.SoftwareInventoryStep">SoftwareInventoryStep</a>, <a href="#cdk-ssm-documents.UpdateAgentStep">UpdateAgentStep</a>, <a href="#cdk-ssm-documents.UpdateSSMAgentStep">UpdateSSMAgentStep</a>, <a href="#cdk-ssm-documents.ICommandComponent">ICommandComponent</a>
 
 #### Methods <a name="Methods" id="Methods"></a>
 
