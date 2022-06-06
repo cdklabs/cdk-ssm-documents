@@ -1,7 +1,7 @@
 import { Construct } from 'constructs';
+import { IActionVariable } from '../../domain/enum/install-action';
 import { Platform } from '../../domain/platform';
 import { CommandStep, CommandStepProps } from '../command-step';
-import { IActionVariable } from '../../domain/enum/install-action';
 
 /**
  * Properties for ConfigureDocker step

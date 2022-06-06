@@ -21,6 +21,10 @@ export interface INumberVariable extends IGenericVariable {
  * Used when not dependent on step inputs.
  */
 export class HardCodedNumber extends HardCodedValueBase<number> implements INumberVariable {
+  public static of(val: number): HardCodedNumber {
+    return new HardCodedNumber(val);
+  }
+
   resolveToNumber(inputs: Record<string, any>): NullableNumber {
     return this.resolve(inputs);
   }
@@ -35,6 +39,10 @@ export class HardCodedNumber extends HardCodedValueBase<number> implements INumb
  * Used to resolve the value from step inputs.
  */
 export class NumberVariable extends GenericVariable implements INumberVariable {
+  public static of(reference: string): NumberVariable {
+    return new NumberVariable(reference);
+  }
+
   resolveToNumber(inputs: Record<string, any>): NullableNumber {
     return this.resolve(inputs);
   }

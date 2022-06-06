@@ -22,6 +22,10 @@ export interface IMapListVariable extends IGenericVariable {
  * Used when not dependent on step inputs.
  */
 export class HardCodedMapList extends HardCodedValueBase<Record<string, any>[]> implements IMapListVariable {
+  public static of(val: Record<string, any>[]): HardCodedMapList {
+    return new HardCodedMapList(val);
+  }
+
   resolveToMapList(inputs: Record<string, any>): NullableMapList {
     return this.resolve(inputs);
   }
@@ -36,6 +40,10 @@ export class HardCodedMapList extends HardCodedValueBase<Record<string, any>[]> 
  * Used to resolve the value from step inputs.
  */
 export class MapListVariable extends GenericVariable implements IMapListVariable {
+  public static of(reference: string): MapListVariable {
+    return new MapListVariable(reference);
+  }
+
   resolveToMapList(inputs: Record<string, any>): NullableMapList {
     return this.resolve(inputs);
   }

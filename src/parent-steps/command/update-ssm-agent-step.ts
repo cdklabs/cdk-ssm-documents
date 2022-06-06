@@ -21,12 +21,14 @@ export interface UpdateSSMAgentStepProps extends CommandStepProps {
   readonly allowDowngrade: IBooleanVariable;
 
   /**
-     * The location where Systems Manager copies the SSM Agent version to install. You can't change this location.
+   * Must use one and only one of source or sourceRegion.
+   * The location where Systems Manager copies the SSM Agent version to install. You can't change this location.
      */
   readonly source?: IStringVariable;
 
   /**
-     * Must use one and only one of source or sourceRegion. If source is provided it will be used as is.
+     * Must use one and only one of source or sourceRegion.
+   * If source is provided it will be used as is.
      * If sourceRegion is provided it will populate source with https://s3.{sourceRegion}.amazonaws.com/aws-ssm-{sourceRegion}/manifest.json
      */
   readonly sourceRegion?: string;

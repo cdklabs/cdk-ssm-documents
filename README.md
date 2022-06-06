@@ -2,7 +2,7 @@
 This library provides a utility implement SSM Documents using code. The SSM Document objects can be used to print the document to YAML/JSON and allows you to simulate a document execution locally.
 
 ## Problem Statement
-Writing SSM Docuemnts is cumbersome because interacting with the JSON or YAML documents provides little compile time support for errors. While the SSM UI provides a rich experience for creating documents, the SSM UI provides no ability to reuse steps across documents.
+Writing SSM documents is cumbersome because interacting with the JSON or YAML documents provides little compile time support for errors. While the SSM UI provides a rich experience for creating documents, the SSM UI provides no ability to reuse steps across documents.
 
 Testing documents can only be performed by running the SSM Execution which is time-consuming. There is also no way to mock results in SSM Execution so developers are forced to create the necessary infrastructure in the AWS account prior to executing the SSM Document.
 
@@ -11,6 +11,7 @@ Exceptions are at times difficult to find or understand from the SSM Execution b
 ## Solution
 
 This library provides a high level abstraction of the SSM Documents where each step as well as the document itself are objects. The properties required for construction of these objects correspond to the settings applicable them making them intuitive to create.
+You can use this library to simulate your document locally before deploying to SSM.
 
 The library is implemented using JSII and can therefore be exported to other JSII supported languages (Java, Python).
 
