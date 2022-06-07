@@ -2,6 +2,341 @@
 
 ## Constructs <a name="Constructs" id="Constructs"></a>
 
+### ApplicationsStep <a name="ApplicationsStep" id="cdk-ssm-documents.ApplicationsStep"></a>
+
+CommandStep implemenation for aws:applications https://docs.aws.amazon.com/systems-manager/latest/userguide/ssm-plugins.html#aws-applications.
+
+#### Initializers <a name="Initializers" id="cdk-ssm-documents.ApplicationsStep.Initializer"></a>
+
+```typescript
+import { ApplicationsStep } from 'cdk-ssm-documents'
+
+new ApplicationsStep(scope: Construct, id: string, props: ApplicationsStepProps)
+```
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#cdk-ssm-documents.ApplicationsStep.Initializer.parameter.scope">scope</a></code> | <code>constructs.Construct</code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.ApplicationsStep.Initializer.parameter.id">id</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.ApplicationsStep.Initializer.parameter.props">props</a></code> | <code><a href="#cdk-ssm-documents.ApplicationsStepProps">ApplicationsStepProps</a></code> | *No description.* |
+
+---
+
+##### `scope`<sup>Required</sup> <a name="scope" id="cdk-ssm-documents.ApplicationsStep.Initializer.parameter.scope"></a>
+
+- *Type:* constructs.Construct
+
+---
+
+##### `id`<sup>Required</sup> <a name="id" id="cdk-ssm-documents.ApplicationsStep.Initializer.parameter.id"></a>
+
+- *Type:* string
+
+---
+
+##### `props`<sup>Required</sup> <a name="props" id="cdk-ssm-documents.ApplicationsStep.Initializer.parameter.props"></a>
+
+- *Type:* <a href="#cdk-ssm-documents.ApplicationsStepProps">ApplicationsStepProps</a>
+
+---
+
+#### Methods <a name="Methods" id="Methods"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#cdk-ssm-documents.ApplicationsStep.toString">toString</a></code> | Returns a string representation of this construct. |
+| <code><a href="#cdk-ssm-documents.ApplicationsStep.listInputs">listInputs</a></code> | Lists the inputs that are required for this step. |
+| <code><a href="#cdk-ssm-documents.ApplicationsStep.listOutputs">listOutputs</a></code> | RunCommand Steps do not have outputs. |
+| <code><a href="#cdk-ssm-documents.ApplicationsStep.toSsmEntry">toSsmEntry</a></code> | Converts this step into an object to prepare for yaml/json representation of this step. |
+| <code><a href="#cdk-ssm-documents.ApplicationsStep.addToDocument">addToDocument</a></code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.ApplicationsStep.variables">variables</a></code> | *No description.* |
+
+---
+
+##### `toString` <a name="toString" id="cdk-ssm-documents.ApplicationsStep.toString"></a>
+
+```typescript
+public toString(): string
+```
+
+Returns a string representation of this construct.
+
+##### `listInputs` <a name="listInputs" id="cdk-ssm-documents.ApplicationsStep.listInputs"></a>
+
+```typescript
+public listInputs(): string[]
+```
+
+Lists the inputs that are required for this step.
+
+##### `listOutputs` <a name="listOutputs" id="cdk-ssm-documents.ApplicationsStep.listOutputs"></a>
+
+```typescript
+public listOutputs(): Output[]
+```
+
+RunCommand Steps do not have outputs.
+
+##### `toSsmEntry` <a name="toSsmEntry" id="cdk-ssm-documents.ApplicationsStep.toSsmEntry"></a>
+
+```typescript
+public toSsmEntry(): {[ key: string ]: any}
+```
+
+Converts this step into an object to prepare for yaml/json representation of this step.
+
+##### `addToDocument` <a name="addToDocument" id="cdk-ssm-documents.ApplicationsStep.addToDocument"></a>
+
+```typescript
+public addToDocument(doc: CommandDocumentBuilder): void
+```
+
+###### `doc`<sup>Required</sup> <a name="doc" id="cdk-ssm-documents.ApplicationsStep.addToDocument.parameter.doc"></a>
+
+- *Type:* <a href="#cdk-ssm-documents.CommandDocumentBuilder">CommandDocumentBuilder</a>
+
+---
+
+##### `variables` <a name="variables" id="cdk-ssm-documents.ApplicationsStep.variables"></a>
+
+```typescript
+public variables(): {[ key: string ]: any}
+```
+
+#### Static Functions <a name="Static Functions" id="Static Functions"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#cdk-ssm-documents.ApplicationsStep.isConstruct">isConstruct</a></code> | Checks if `x` is a construct. |
+
+---
+
+##### ~~`isConstruct`~~ <a name="isConstruct" id="cdk-ssm-documents.ApplicationsStep.isConstruct"></a>
+
+```typescript
+import { ApplicationsStep } from 'cdk-ssm-documents'
+
+ApplicationsStep.isConstruct(x: any)
+```
+
+Checks if `x` is a construct.
+
+###### `x`<sup>Required</sup> <a name="x" id="cdk-ssm-documents.ApplicationsStep.isConstruct.parameter.x"></a>
+
+- *Type:* any
+
+Any object.
+
+---
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#cdk-ssm-documents.ApplicationsStep.property.node">node</a></code> | <code>constructs.Node</code> | The tree node. |
+| <code><a href="#cdk-ssm-documents.ApplicationsStep.property.action">action</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.ApplicationsStep.property.inputObserver">inputObserver</a></code> | <code><a href="#cdk-ssm-documents.IObserver">IObserver</a></code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.ApplicationsStep.property.name">name</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.ApplicationsStep.property.outputObserver">outputObserver</a></code> | <code><a href="#cdk-ssm-documents.IObserver">IObserver</a></code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.ApplicationsStep.property.description">description</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.ApplicationsStep.property.exitOnFailure">exitOnFailure</a></code> | <code>boolean</code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.ApplicationsStep.property.exitOnSuccess">exitOnSuccess</a></code> | <code>boolean</code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.ApplicationsStep.property.finallyStep">finallyStep</a></code> | <code>boolean</code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.ApplicationsStep.property.markSuccessAndExitOnFailure">markSuccessAndExitOnFailure</a></code> | <code>boolean</code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.ApplicationsStep.property.platforms">platforms</a></code> | <code><a href="#cdk-ssm-documents.Platform">Platform</a>[]</code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.ApplicationsStep.property.precondition">precondition</a></code> | <code><a href="#cdk-ssm-documents.Precondition">Precondition</a></code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.ApplicationsStep.property.allStepsInExecution">allStepsInExecution</a></code> | <code><a href="#cdk-ssm-documents.CommandStep">CommandStep</a>[]</code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.ApplicationsStep.property.nextStep">nextStep</a></code> | <code><a href="#cdk-ssm-documents.CommandStep">CommandStep</a></code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.ApplicationsStep.property.installAction">installAction</a></code> | <code><a href="#cdk-ssm-documents.IInstallUninstallRepairVariable">IInstallUninstallRepairVariable</a></code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.ApplicationsStep.property.source">source</a></code> | <code><a href="#cdk-ssm-documents.IStringVariable">IStringVariable</a></code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.ApplicationsStep.property.parameters">parameters</a></code> | <code><a href="#cdk-ssm-documents.IStringVariable">IStringVariable</a></code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.ApplicationsStep.property.sourceHash">sourceHash</a></code> | <code><a href="#cdk-ssm-documents.IStringVariable">IStringVariable</a></code> | *No description.* |
+
+---
+
+##### `node`<sup>Required</sup> <a name="node" id="cdk-ssm-documents.ApplicationsStep.property.node"></a>
+
+```typescript
+public readonly node: Node;
+```
+
+- *Type:* constructs.Node
+
+The tree node.
+
+---
+
+##### `action`<sup>Required</sup> <a name="action" id="cdk-ssm-documents.ApplicationsStep.property.action"></a>
+
+```typescript
+public readonly action: string;
+```
+
+- *Type:* string
+
+---
+
+##### `inputObserver`<sup>Required</sup> <a name="inputObserver" id="cdk-ssm-documents.ApplicationsStep.property.inputObserver"></a>
+
+```typescript
+public readonly inputObserver: IObserver;
+```
+
+- *Type:* <a href="#cdk-ssm-documents.IObserver">IObserver</a>
+
+---
+
+##### `name`<sup>Required</sup> <a name="name" id="cdk-ssm-documents.ApplicationsStep.property.name"></a>
+
+```typescript
+public readonly name: string;
+```
+
+- *Type:* string
+
+---
+
+##### `outputObserver`<sup>Required</sup> <a name="outputObserver" id="cdk-ssm-documents.ApplicationsStep.property.outputObserver"></a>
+
+```typescript
+public readonly outputObserver: IObserver;
+```
+
+- *Type:* <a href="#cdk-ssm-documents.IObserver">IObserver</a>
+
+---
+
+##### `description`<sup>Optional</sup> <a name="description" id="cdk-ssm-documents.ApplicationsStep.property.description"></a>
+
+```typescript
+public readonly description: string;
+```
+
+- *Type:* string
+
+---
+
+##### `exitOnFailure`<sup>Required</sup> <a name="exitOnFailure" id="cdk-ssm-documents.ApplicationsStep.property.exitOnFailure"></a>
+
+```typescript
+public readonly exitOnFailure: boolean;
+```
+
+- *Type:* boolean
+
+---
+
+##### `exitOnSuccess`<sup>Required</sup> <a name="exitOnSuccess" id="cdk-ssm-documents.ApplicationsStep.property.exitOnSuccess"></a>
+
+```typescript
+public readonly exitOnSuccess: boolean;
+```
+
+- *Type:* boolean
+
+---
+
+##### `finallyStep`<sup>Required</sup> <a name="finallyStep" id="cdk-ssm-documents.ApplicationsStep.property.finallyStep"></a>
+
+```typescript
+public readonly finallyStep: boolean;
+```
+
+- *Type:* boolean
+
+---
+
+##### `markSuccessAndExitOnFailure`<sup>Required</sup> <a name="markSuccessAndExitOnFailure" id="cdk-ssm-documents.ApplicationsStep.property.markSuccessAndExitOnFailure"></a>
+
+```typescript
+public readonly markSuccessAndExitOnFailure: boolean;
+```
+
+- *Type:* boolean
+
+---
+
+##### `platforms`<sup>Required</sup> <a name="platforms" id="cdk-ssm-documents.ApplicationsStep.property.platforms"></a>
+
+```typescript
+public readonly platforms: Platform[];
+```
+
+- *Type:* <a href="#cdk-ssm-documents.Platform">Platform</a>[]
+
+---
+
+##### `precondition`<sup>Optional</sup> <a name="precondition" id="cdk-ssm-documents.ApplicationsStep.property.precondition"></a>
+
+```typescript
+public readonly precondition: Precondition;
+```
+
+- *Type:* <a href="#cdk-ssm-documents.Precondition">Precondition</a>
+
+---
+
+##### `allStepsInExecution`<sup>Optional</sup> <a name="allStepsInExecution" id="cdk-ssm-documents.ApplicationsStep.property.allStepsInExecution"></a>
+
+```typescript
+public readonly allStepsInExecution: CommandStep[];
+```
+
+- *Type:* <a href="#cdk-ssm-documents.CommandStep">CommandStep</a>[]
+
+---
+
+##### `nextStep`<sup>Optional</sup> <a name="nextStep" id="cdk-ssm-documents.ApplicationsStep.property.nextStep"></a>
+
+```typescript
+public readonly nextStep: CommandStep;
+```
+
+- *Type:* <a href="#cdk-ssm-documents.CommandStep">CommandStep</a>
+
+---
+
+##### `installAction`<sup>Required</sup> <a name="installAction" id="cdk-ssm-documents.ApplicationsStep.property.installAction"></a>
+
+```typescript
+public readonly installAction: IInstallUninstallRepairVariable;
+```
+
+- *Type:* <a href="#cdk-ssm-documents.IInstallUninstallRepairVariable">IInstallUninstallRepairVariable</a>
+
+---
+
+##### `source`<sup>Required</sup> <a name="source" id="cdk-ssm-documents.ApplicationsStep.property.source"></a>
+
+```typescript
+public readonly source: IStringVariable;
+```
+
+- *Type:* <a href="#cdk-ssm-documents.IStringVariable">IStringVariable</a>
+
+---
+
+##### `parameters`<sup>Optional</sup> <a name="parameters" id="cdk-ssm-documents.ApplicationsStep.property.parameters"></a>
+
+```typescript
+public readonly parameters: IStringVariable;
+```
+
+- *Type:* <a href="#cdk-ssm-documents.IStringVariable">IStringVariable</a>
+
+---
+
+##### `sourceHash`<sup>Optional</sup> <a name="sourceHash" id="cdk-ssm-documents.ApplicationsStep.property.sourceHash"></a>
+
+```typescript
+public readonly sourceHash: IStringVariable;
+```
+
+- *Type:* <a href="#cdk-ssm-documents.IStringVariable">IStringVariable</a>
+
+---
+
+
 ### ApproveStep <a name="ApproveStep" id="cdk-ssm-documents.ApproveStep"></a>
 
 AutomationStep implementation for aws:approve https://docs.aws.amazon.com/systems-manager/latest/userguide/automation-action-approve.html.
@@ -6575,6 +6910,424 @@ public readonly destinationPath: IStringVariable;
 
 ---
 
+
+### ExecuteAutomationStep <a name="ExecuteAutomationStep" id="cdk-ssm-documents.ExecuteAutomationStep"></a>
+
+AutomationStep implementation for aws:executeAutomation https://docs.aws.amazon.com/systems-manager/latest/userguide/automation-action-executeAutomation.html.
+
+#### Initializers <a name="Initializers" id="cdk-ssm-documents.ExecuteAutomationStep.Initializer"></a>
+
+```typescript
+import { ExecuteAutomationStep } from 'cdk-ssm-documents'
+
+new ExecuteAutomationStep(scope: Construct, id: string, props: ExecuteAutomationStepProps)
+```
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#cdk-ssm-documents.ExecuteAutomationStep.Initializer.parameter.scope">scope</a></code> | <code>constructs.Construct</code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.ExecuteAutomationStep.Initializer.parameter.id">id</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.ExecuteAutomationStep.Initializer.parameter.props">props</a></code> | <code><a href="#cdk-ssm-documents.ExecuteAutomationStepProps">ExecuteAutomationStepProps</a></code> | *No description.* |
+
+---
+
+##### `scope`<sup>Required</sup> <a name="scope" id="cdk-ssm-documents.ExecuteAutomationStep.Initializer.parameter.scope"></a>
+
+- *Type:* constructs.Construct
+
+---
+
+##### `id`<sup>Required</sup> <a name="id" id="cdk-ssm-documents.ExecuteAutomationStep.Initializer.parameter.id"></a>
+
+- *Type:* string
+
+---
+
+##### `props`<sup>Required</sup> <a name="props" id="cdk-ssm-documents.ExecuteAutomationStep.Initializer.parameter.props"></a>
+
+- *Type:* <a href="#cdk-ssm-documents.ExecuteAutomationStepProps">ExecuteAutomationStepProps</a>
+
+---
+
+#### Methods <a name="Methods" id="Methods"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#cdk-ssm-documents.ExecuteAutomationStep.toString">toString</a></code> | Returns a string representation of this construct. |
+| <code><a href="#cdk-ssm-documents.ExecuteAutomationStep.listInputs">listInputs</a></code> | Lists the inputs that are required for this step. |
+| <code><a href="#cdk-ssm-documents.ExecuteAutomationStep.listOutputs">listOutputs</a></code> | Lists the outputs that will be returned from this step. |
+| <code><a href="#cdk-ssm-documents.ExecuteAutomationStep.toSsmEntry">toSsmEntry</a></code> | Converts this step into an object to prepare for yaml/json representation of this step. |
+| <code><a href="#cdk-ssm-documents.ExecuteAutomationStep.addToDocument">addToDocument</a></code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.ExecuteAutomationStep.variables">variables</a></code> | *No description.* |
+
+---
+
+##### `toString` <a name="toString" id="cdk-ssm-documents.ExecuteAutomationStep.toString"></a>
+
+```typescript
+public toString(): string
+```
+
+Returns a string representation of this construct.
+
+##### `listInputs` <a name="listInputs" id="cdk-ssm-documents.ExecuteAutomationStep.listInputs"></a>
+
+```typescript
+public listInputs(): string[]
+```
+
+Lists the inputs that are required for this step.
+
+##### `listOutputs` <a name="listOutputs" id="cdk-ssm-documents.ExecuteAutomationStep.listOutputs"></a>
+
+```typescript
+public listOutputs(): Output[]
+```
+
+Lists the outputs that will be returned from this step.
+
+##### `toSsmEntry` <a name="toSsmEntry" id="cdk-ssm-documents.ExecuteAutomationStep.toSsmEntry"></a>
+
+```typescript
+public toSsmEntry(): {[ key: string ]: any}
+```
+
+Converts this step into an object to prepare for yaml/json representation of this step.
+
+##### `addToDocument` <a name="addToDocument" id="cdk-ssm-documents.ExecuteAutomationStep.addToDocument"></a>
+
+```typescript
+public addToDocument(doc: AutomationDocumentBuilder): void
+```
+
+###### `doc`<sup>Required</sup> <a name="doc" id="cdk-ssm-documents.ExecuteAutomationStep.addToDocument.parameter.doc"></a>
+
+- *Type:* <a href="#cdk-ssm-documents.AutomationDocumentBuilder">AutomationDocumentBuilder</a>
+
+---
+
+##### `variables` <a name="variables" id="cdk-ssm-documents.ExecuteAutomationStep.variables"></a>
+
+```typescript
+public variables(): {[ key: string ]: any}
+```
+
+#### Static Functions <a name="Static Functions" id="Static Functions"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#cdk-ssm-documents.ExecuteAutomationStep.isConstruct">isConstruct</a></code> | Checks if `x` is a construct. |
+
+---
+
+##### ~~`isConstruct`~~ <a name="isConstruct" id="cdk-ssm-documents.ExecuteAutomationStep.isConstruct"></a>
+
+```typescript
+import { ExecuteAutomationStep } from 'cdk-ssm-documents'
+
+ExecuteAutomationStep.isConstruct(x: any)
+```
+
+Checks if `x` is a construct.
+
+###### `x`<sup>Required</sup> <a name="x" id="cdk-ssm-documents.ExecuteAutomationStep.isConstruct.parameter.x"></a>
+
+- *Type:* any
+
+Any object.
+
+---
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#cdk-ssm-documents.ExecuteAutomationStep.property.node">node</a></code> | <code>constructs.Node</code> | The tree node. |
+| <code><a href="#cdk-ssm-documents.ExecuteAutomationStep.property.action">action</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.ExecuteAutomationStep.property.inputObserver">inputObserver</a></code> | <code><a href="#cdk-ssm-documents.IObserver">IObserver</a></code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.ExecuteAutomationStep.property.name">name</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.ExecuteAutomationStep.property.outputObserver">outputObserver</a></code> | <code><a href="#cdk-ssm-documents.IObserver">IObserver</a></code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.ExecuteAutomationStep.property.description">description</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.ExecuteAutomationStep.property.isEnd">isEnd</a></code> | <code>boolean</code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.ExecuteAutomationStep.property.maxAttempts">maxAttempts</a></code> | <code>number</code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.ExecuteAutomationStep.property.timeoutSeconds">timeoutSeconds</a></code> | <code>number</code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.ExecuteAutomationStep.property.onCancel">onCancel</a></code> | <code><a href="#cdk-ssm-documents.AutomationStep">AutomationStep</a></code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.ExecuteAutomationStep.property.onFailure">onFailure</a></code> | <code><a href="#cdk-ssm-documents.AutomationStep">AutomationStep</a></code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.ExecuteAutomationStep.property.allStepsInExecution">allStepsInExecution</a></code> | <code><a href="#cdk-ssm-documents.AutomationStep">AutomationStep</a>[]</code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.ExecuteAutomationStep.property.nextStep">nextStep</a></code> | <code><a href="#cdk-ssm-documents.AutomationStep">AutomationStep</a></code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.ExecuteAutomationStep.property.documentName">documentName</a></code> | <code><a href="#cdk-ssm-documents.IStringVariable">IStringVariable</a></code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.ExecuteAutomationStep.property.documentVersion">documentVersion</a></code> | <code><a href="#cdk-ssm-documents.IStringVariable">IStringVariable</a></code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.ExecuteAutomationStep.property.maxConcurrency">maxConcurrency</a></code> | <code><a href="#cdk-ssm-documents.IStringVariable">IStringVariable</a></code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.ExecuteAutomationStep.property.maxErrors">maxErrors</a></code> | <code><a href="#cdk-ssm-documents.IStringVariable">IStringVariable</a></code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.ExecuteAutomationStep.property.runtimeParameters">runtimeParameters</a></code> | <code><a href="#cdk-ssm-documents.IStringMapVariable">IStringMapVariable</a></code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.ExecuteAutomationStep.property.tags">tags</a></code> | <code><a href="#cdk-ssm-documents.IMapListVariable">IMapListVariable</a></code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.ExecuteAutomationStep.property.targetLocations">targetLocations</a></code> | <code><a href="#cdk-ssm-documents.IMapListVariable">IMapListVariable</a></code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.ExecuteAutomationStep.property.targetMaps">targetMaps</a></code> | <code><a href="#cdk-ssm-documents.IMapListVariable">IMapListVariable</a></code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.ExecuteAutomationStep.property.targetParameterName">targetParameterName</a></code> | <code><a href="#cdk-ssm-documents.IStringVariable">IStringVariable</a></code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.ExecuteAutomationStep.property.targets">targets</a></code> | <code><a href="#cdk-ssm-documents.IMapListVariable">IMapListVariable</a></code> | *No description.* |
+
+---
+
+##### `node`<sup>Required</sup> <a name="node" id="cdk-ssm-documents.ExecuteAutomationStep.property.node"></a>
+
+```typescript
+public readonly node: Node;
+```
+
+- *Type:* constructs.Node
+
+The tree node.
+
+---
+
+##### `action`<sup>Required</sup> <a name="action" id="cdk-ssm-documents.ExecuteAutomationStep.property.action"></a>
+
+```typescript
+public readonly action: string;
+```
+
+- *Type:* string
+
+---
+
+##### `inputObserver`<sup>Required</sup> <a name="inputObserver" id="cdk-ssm-documents.ExecuteAutomationStep.property.inputObserver"></a>
+
+```typescript
+public readonly inputObserver: IObserver;
+```
+
+- *Type:* <a href="#cdk-ssm-documents.IObserver">IObserver</a>
+
+---
+
+##### `name`<sup>Required</sup> <a name="name" id="cdk-ssm-documents.ExecuteAutomationStep.property.name"></a>
+
+```typescript
+public readonly name: string;
+```
+
+- *Type:* string
+
+---
+
+##### `outputObserver`<sup>Required</sup> <a name="outputObserver" id="cdk-ssm-documents.ExecuteAutomationStep.property.outputObserver"></a>
+
+```typescript
+public readonly outputObserver: IObserver;
+```
+
+- *Type:* <a href="#cdk-ssm-documents.IObserver">IObserver</a>
+
+---
+
+##### `description`<sup>Optional</sup> <a name="description" id="cdk-ssm-documents.ExecuteAutomationStep.property.description"></a>
+
+```typescript
+public readonly description: string;
+```
+
+- *Type:* string
+
+---
+
+##### `isEnd`<sup>Required</sup> <a name="isEnd" id="cdk-ssm-documents.ExecuteAutomationStep.property.isEnd"></a>
+
+```typescript
+public readonly isEnd: boolean;
+```
+
+- *Type:* boolean
+
+---
+
+##### `maxAttempts`<sup>Required</sup> <a name="maxAttempts" id="cdk-ssm-documents.ExecuteAutomationStep.property.maxAttempts"></a>
+
+```typescript
+public readonly maxAttempts: number;
+```
+
+- *Type:* number
+
+---
+
+##### `timeoutSeconds`<sup>Required</sup> <a name="timeoutSeconds" id="cdk-ssm-documents.ExecuteAutomationStep.property.timeoutSeconds"></a>
+
+```typescript
+public readonly timeoutSeconds: number;
+```
+
+- *Type:* number
+
+---
+
+##### `onCancel`<sup>Optional</sup> <a name="onCancel" id="cdk-ssm-documents.ExecuteAutomationStep.property.onCancel"></a>
+
+```typescript
+public readonly onCancel: AutomationStep;
+```
+
+- *Type:* <a href="#cdk-ssm-documents.AutomationStep">AutomationStep</a>
+
+---
+
+##### `onFailure`<sup>Optional</sup> <a name="onFailure" id="cdk-ssm-documents.ExecuteAutomationStep.property.onFailure"></a>
+
+```typescript
+public readonly onFailure: AutomationStep;
+```
+
+- *Type:* <a href="#cdk-ssm-documents.AutomationStep">AutomationStep</a>
+
+---
+
+##### `allStepsInExecution`<sup>Optional</sup> <a name="allStepsInExecution" id="cdk-ssm-documents.ExecuteAutomationStep.property.allStepsInExecution"></a>
+
+```typescript
+public readonly allStepsInExecution: AutomationStep[];
+```
+
+- *Type:* <a href="#cdk-ssm-documents.AutomationStep">AutomationStep</a>[]
+
+---
+
+##### `nextStep`<sup>Optional</sup> <a name="nextStep" id="cdk-ssm-documents.ExecuteAutomationStep.property.nextStep"></a>
+
+```typescript
+public readonly nextStep: AutomationStep;
+```
+
+- *Type:* <a href="#cdk-ssm-documents.AutomationStep">AutomationStep</a>
+
+---
+
+##### `documentName`<sup>Required</sup> <a name="documentName" id="cdk-ssm-documents.ExecuteAutomationStep.property.documentName"></a>
+
+```typescript
+public readonly documentName: IStringVariable;
+```
+
+- *Type:* <a href="#cdk-ssm-documents.IStringVariable">IStringVariable</a>
+
+---
+
+##### `documentVersion`<sup>Optional</sup> <a name="documentVersion" id="cdk-ssm-documents.ExecuteAutomationStep.property.documentVersion"></a>
+
+```typescript
+public readonly documentVersion: IStringVariable;
+```
+
+- *Type:* <a href="#cdk-ssm-documents.IStringVariable">IStringVariable</a>
+
+---
+
+##### `maxConcurrency`<sup>Optional</sup> <a name="maxConcurrency" id="cdk-ssm-documents.ExecuteAutomationStep.property.maxConcurrency"></a>
+
+```typescript
+public readonly maxConcurrency: IStringVariable;
+```
+
+- *Type:* <a href="#cdk-ssm-documents.IStringVariable">IStringVariable</a>
+
+---
+
+##### `maxErrors`<sup>Optional</sup> <a name="maxErrors" id="cdk-ssm-documents.ExecuteAutomationStep.property.maxErrors"></a>
+
+```typescript
+public readonly maxErrors: IStringVariable;
+```
+
+- *Type:* <a href="#cdk-ssm-documents.IStringVariable">IStringVariable</a>
+
+---
+
+##### `runtimeParameters`<sup>Optional</sup> <a name="runtimeParameters" id="cdk-ssm-documents.ExecuteAutomationStep.property.runtimeParameters"></a>
+
+```typescript
+public readonly runtimeParameters: IStringMapVariable;
+```
+
+- *Type:* <a href="#cdk-ssm-documents.IStringMapVariable">IStringMapVariable</a>
+
+---
+
+##### `tags`<sup>Optional</sup> <a name="tags" id="cdk-ssm-documents.ExecuteAutomationStep.property.tags"></a>
+
+```typescript
+public readonly tags: IMapListVariable;
+```
+
+- *Type:* <a href="#cdk-ssm-documents.IMapListVariable">IMapListVariable</a>
+
+---
+
+##### `targetLocations`<sup>Optional</sup> <a name="targetLocations" id="cdk-ssm-documents.ExecuteAutomationStep.property.targetLocations"></a>
+
+```typescript
+public readonly targetLocations: IMapListVariable;
+```
+
+- *Type:* <a href="#cdk-ssm-documents.IMapListVariable">IMapListVariable</a>
+
+---
+
+##### `targetMaps`<sup>Optional</sup> <a name="targetMaps" id="cdk-ssm-documents.ExecuteAutomationStep.property.targetMaps"></a>
+
+```typescript
+public readonly targetMaps: IMapListVariable;
+```
+
+- *Type:* <a href="#cdk-ssm-documents.IMapListVariable">IMapListVariable</a>
+
+---
+
+##### `targetParameterName`<sup>Optional</sup> <a name="targetParameterName" id="cdk-ssm-documents.ExecuteAutomationStep.property.targetParameterName"></a>
+
+```typescript
+public readonly targetParameterName: IStringVariable;
+```
+
+- *Type:* <a href="#cdk-ssm-documents.IStringVariable">IStringVariable</a>
+
+---
+
+##### `targets`<sup>Optional</sup> <a name="targets" id="cdk-ssm-documents.ExecuteAutomationStep.property.targets"></a>
+
+```typescript
+public readonly targets: IMapListVariable;
+```
+
+- *Type:* <a href="#cdk-ssm-documents.IMapListVariable">IMapListVariable</a>
+
+---
+
+#### Constants <a name="Constants" id="Constants"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#cdk-ssm-documents.ExecuteAutomationStep.property.DEFAULT_MAX_ATTEMPTS">DEFAULT_MAX_ATTEMPTS</a></code> | <code>number</code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.ExecuteAutomationStep.property.DEFAULT_TIMEOUT">DEFAULT_TIMEOUT</a></code> | <code>number</code> | *No description.* |
+
+---
+
+##### `DEFAULT_MAX_ATTEMPTS`<sup>Required</sup> <a name="DEFAULT_MAX_ATTEMPTS" id="cdk-ssm-documents.ExecuteAutomationStep.property.DEFAULT_MAX_ATTEMPTS"></a>
+
+```typescript
+public readonly DEFAULT_MAX_ATTEMPTS: number;
+```
+
+- *Type:* number
+
+---
+
+##### `DEFAULT_TIMEOUT`<sup>Required</sup> <a name="DEFAULT_TIMEOUT" id="cdk-ssm-documents.ExecuteAutomationStep.property.DEFAULT_TIMEOUT"></a>
+
+```typescript
+public readonly DEFAULT_TIMEOUT: number;
+```
+
+- *Type:* number
+
+---
 
 ### ExecuteScriptStep <a name="ExecuteScriptStep" id="cdk-ssm-documents.ExecuteScriptStep"></a>
 
@@ -14532,6 +15285,210 @@ public readonly sleepHook: ISleepHook;
 
 ---
 
+### ApplicationsStepProps <a name="ApplicationsStepProps" id="cdk-ssm-documents.ApplicationsStepProps"></a>
+
+#### Initializer <a name="Initializer" id="cdk-ssm-documents.ApplicationsStepProps.Initializer"></a>
+
+```typescript
+import { ApplicationsStepProps } from 'cdk-ssm-documents'
+
+const applicationsStepProps: ApplicationsStepProps = { ... }
+```
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#cdk-ssm-documents.ApplicationsStepProps.property.description">description</a></code> | <code>string</code> | (Optional) description of the current step. |
+| <code><a href="#cdk-ssm-documents.ApplicationsStepProps.property.inputObserver">inputObserver</a></code> | <code><a href="#cdk-ssm-documents.IObserver">IObserver</a></code> | (Optional) Allows for observing the input to steps as they run. |
+| <code><a href="#cdk-ssm-documents.ApplicationsStepProps.property.name">name</a></code> | <code>string</code> | (Optional) Name of the current step. |
+| <code><a href="#cdk-ssm-documents.ApplicationsStepProps.property.outputObserver">outputObserver</a></code> | <code><a href="#cdk-ssm-documents.IObserver">IObserver</a></code> | (Optional) Allows for observing the output of steps as they run. |
+| <code><a href="#cdk-ssm-documents.ApplicationsStepProps.property.exitOnFailure">exitOnFailure</a></code> | <code>boolean</code> | (Optional) Whether to exit the document execution after failed execution of this step. |
+| <code><a href="#cdk-ssm-documents.ApplicationsStepProps.property.exitOnSuccess">exitOnSuccess</a></code> | <code>boolean</code> | (Optional) Whether to exit the document execution after successful execution of this step. |
+| <code><a href="#cdk-ssm-documents.ApplicationsStepProps.property.finallyStep">finallyStep</a></code> | <code>boolean</code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.ApplicationsStepProps.property.markSuccessAndExitOnFailure">markSuccessAndExitOnFailure</a></code> | <code>boolean</code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.ApplicationsStepProps.property.onCancel">onCancel</a></code> | <code><a href="#cdk-ssm-documents.Step">Step</a></code> | (Optional) Step to jump to in the event that this step is cancelled. |
+| <code><a href="#cdk-ssm-documents.ApplicationsStepProps.property.precondition">precondition</a></code> | <code><a href="#cdk-ssm-documents.Precondition">Precondition</a></code> | (Optional) A precondition to test before execution occurrs. |
+| <code><a href="#cdk-ssm-documents.ApplicationsStepProps.property.action">action</a></code> | <code><a href="#cdk-ssm-documents.IInstallUninstallRepairVariable">IInstallUninstallRepairVariable</a></code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.ApplicationsStepProps.property.source">source</a></code> | <code><a href="#cdk-ssm-documents.IStringVariable">IStringVariable</a></code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.ApplicationsStepProps.property.parameters">parameters</a></code> | <code><a href="#cdk-ssm-documents.IStringVariable">IStringVariable</a></code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.ApplicationsStepProps.property.sourceHash">sourceHash</a></code> | <code><a href="#cdk-ssm-documents.IStringVariable">IStringVariable</a></code> | *No description.* |
+
+---
+
+##### `description`<sup>Optional</sup> <a name="description" id="cdk-ssm-documents.ApplicationsStepProps.property.description"></a>
+
+```typescript
+public readonly description: string;
+```
+
+- *Type:* string
+- *Default:* undefined
+
+(Optional) description of the current step.
+
+---
+
+##### `inputObserver`<sup>Optional</sup> <a name="inputObserver" id="cdk-ssm-documents.ApplicationsStepProps.property.inputObserver"></a>
+
+```typescript
+public readonly inputObserver: IObserver;
+```
+
+- *Type:* <a href="#cdk-ssm-documents.IObserver">IObserver</a>
+- *Default:* NoopObserver
+
+(Optional) Allows for observing the input to steps as they run.
+
+---
+
+##### `name`<sup>Optional</sup> <a name="name" id="cdk-ssm-documents.ApplicationsStepProps.property.name"></a>
+
+```typescript
+public readonly name: string;
+```
+
+- *Type:* string
+
+(Optional) Name of the current step.
+
+The name will be prepended onto all of the outputs emitted from this step.
+This name will also be used to reference this step in logs.
+Defaults to the id of the CDK node.
+
+---
+
+##### `outputObserver`<sup>Optional</sup> <a name="outputObserver" id="cdk-ssm-documents.ApplicationsStepProps.property.outputObserver"></a>
+
+```typescript
+public readonly outputObserver: IObserver;
+```
+
+- *Type:* <a href="#cdk-ssm-documents.IObserver">IObserver</a>
+- *Default:* NoopObserver
+
+(Optional) Allows for observing the output of steps as they run.
+
+---
+
+##### `exitOnFailure`<sup>Optional</sup> <a name="exitOnFailure" id="cdk-ssm-documents.ApplicationsStepProps.property.exitOnFailure"></a>
+
+```typescript
+public readonly exitOnFailure: boolean;
+```
+
+- *Type:* boolean
+- *Default:* false
+
+(Optional) Whether to exit the document execution after failed execution of this step.
+
+Finally step will be run.
+
+---
+
+##### `exitOnSuccess`<sup>Optional</sup> <a name="exitOnSuccess" id="cdk-ssm-documents.ApplicationsStepProps.property.exitOnSuccess"></a>
+
+```typescript
+public readonly exitOnSuccess: boolean;
+```
+
+- *Type:* boolean
+- *Default:* false
+
+(Optional) Whether to exit the document execution after successful execution of this step.
+
+Finally step will be run.
+
+---
+
+##### `finallyStep`<sup>Optional</sup> <a name="finallyStep" id="cdk-ssm-documents.ApplicationsStepProps.property.finallyStep"></a>
+
+```typescript
+public readonly finallyStep: boolean;
+```
+
+- *Type:* boolean
+
+---
+
+##### `markSuccessAndExitOnFailure`<sup>Optional</sup> <a name="markSuccessAndExitOnFailure" id="cdk-ssm-documents.ApplicationsStepProps.property.markSuccessAndExitOnFailure"></a>
+
+```typescript
+public readonly markSuccessAndExitOnFailure: boolean;
+```
+
+- *Type:* boolean
+
+---
+
+##### `onCancel`<sup>Optional</sup> <a name="onCancel" id="cdk-ssm-documents.ApplicationsStepProps.property.onCancel"></a>
+
+```typescript
+public readonly onCancel: Step;
+```
+
+- *Type:* <a href="#cdk-ssm-documents.Step">Step</a>
+- *Default:* undefined
+
+(Optional) Step to jump to in the event that this step is cancelled.
+
+---
+
+##### `precondition`<sup>Optional</sup> <a name="precondition" id="cdk-ssm-documents.ApplicationsStepProps.property.precondition"></a>
+
+```typescript
+public readonly precondition: Precondition;
+```
+
+- *Type:* <a href="#cdk-ssm-documents.Precondition">Precondition</a>
+- *Default:* undefined
+
+(Optional) A precondition to test before execution occurrs.
+
+When the precondition isn't met, the command step isn't executed.
+
+---
+
+##### `action`<sup>Required</sup> <a name="action" id="cdk-ssm-documents.ApplicationsStepProps.property.action"></a>
+
+```typescript
+public readonly action: IInstallUninstallRepairVariable;
+```
+
+- *Type:* <a href="#cdk-ssm-documents.IInstallUninstallRepairVariable">IInstallUninstallRepairVariable</a>
+
+---
+
+##### `source`<sup>Required</sup> <a name="source" id="cdk-ssm-documents.ApplicationsStepProps.property.source"></a>
+
+```typescript
+public readonly source: IStringVariable;
+```
+
+- *Type:* <a href="#cdk-ssm-documents.IStringVariable">IStringVariable</a>
+
+---
+
+##### `parameters`<sup>Optional</sup> <a name="parameters" id="cdk-ssm-documents.ApplicationsStepProps.property.parameters"></a>
+
+```typescript
+public readonly parameters: IStringVariable;
+```
+
+- *Type:* <a href="#cdk-ssm-documents.IStringVariable">IStringVariable</a>
+
+---
+
+##### `sourceHash`<sup>Optional</sup> <a name="sourceHash" id="cdk-ssm-documents.ApplicationsStepProps.property.sourceHash"></a>
+
+```typescript
+public readonly sourceHash: IStringVariable;
+```
+
+- *Type:* <a href="#cdk-ssm-documents.IStringVariable">IStringVariable</a>
+
+---
+
 ### ApproveStepProps <a name="ApproveStepProps" id="cdk-ssm-documents.ApproveStepProps"></a>
 
 Properties for ApproveStep.
@@ -19023,6 +19980,264 @@ public readonly destinationPath: IStringVariable;
 (Optional) An optional local path on the instance where you want to download the file.
 
 If you don't specify a path, the content is downloaded to a path relative to your command ID.
+
+---
+
+### ExecuteAutomationStepProps <a name="ExecuteAutomationStepProps" id="cdk-ssm-documents.ExecuteAutomationStepProps"></a>
+
+#### Initializer <a name="Initializer" id="cdk-ssm-documents.ExecuteAutomationStepProps.Initializer"></a>
+
+```typescript
+import { ExecuteAutomationStepProps } from 'cdk-ssm-documents'
+
+const executeAutomationStepProps: ExecuteAutomationStepProps = { ... }
+```
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#cdk-ssm-documents.ExecuteAutomationStepProps.property.description">description</a></code> | <code>string</code> | (Optional) description of the current step. |
+| <code><a href="#cdk-ssm-documents.ExecuteAutomationStepProps.property.inputObserver">inputObserver</a></code> | <code><a href="#cdk-ssm-documents.IObserver">IObserver</a></code> | (Optional) Allows for observing the input to steps as they run. |
+| <code><a href="#cdk-ssm-documents.ExecuteAutomationStepProps.property.name">name</a></code> | <code>string</code> | (Optional) Name of the current step. |
+| <code><a href="#cdk-ssm-documents.ExecuteAutomationStepProps.property.outputObserver">outputObserver</a></code> | <code><a href="#cdk-ssm-documents.IObserver">IObserver</a></code> | (Optional) Allows for observing the output of steps as they run. |
+| <code><a href="#cdk-ssm-documents.ExecuteAutomationStepProps.property.isEnd">isEnd</a></code> | <code>boolean</code> | Whether to stop document execution after this step. |
+| <code><a href="#cdk-ssm-documents.ExecuteAutomationStepProps.property.maxAttempts">maxAttempts</a></code> | <code>number</code> | (Optional) max attempts to run this step if there are failures. |
+| <code><a href="#cdk-ssm-documents.ExecuteAutomationStepProps.property.onCancel">onCancel</a></code> | <code><a href="#cdk-ssm-documents.AutomationStep">AutomationStep</a></code> | (Optional) Step to jump to in the event that this step is cancelled. |
+| <code><a href="#cdk-ssm-documents.ExecuteAutomationStepProps.property.onFailure">onFailure</a></code> | <code><a href="#cdk-ssm-documents.AutomationStep">AutomationStep</a></code> | (Optional) Step to jump to in the event that this step fails. |
+| <code><a href="#cdk-ssm-documents.ExecuteAutomationStepProps.property.timeoutSeconds">timeoutSeconds</a></code> | <code>number</code> | (Optional) timeout seconds to run this step. |
+| <code><a href="#cdk-ssm-documents.ExecuteAutomationStepProps.property.documentName">documentName</a></code> | <code><a href="#cdk-ssm-documents.IStringVariable">IStringVariable</a></code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.ExecuteAutomationStepProps.property.documentVersion">documentVersion</a></code> | <code><a href="#cdk-ssm-documents.IStringVariable">IStringVariable</a></code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.ExecuteAutomationStepProps.property.maxConcurrency">maxConcurrency</a></code> | <code><a href="#cdk-ssm-documents.IStringVariable">IStringVariable</a></code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.ExecuteAutomationStepProps.property.maxErrors">maxErrors</a></code> | <code><a href="#cdk-ssm-documents.IStringVariable">IStringVariable</a></code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.ExecuteAutomationStepProps.property.runtimeParameters">runtimeParameters</a></code> | <code><a href="#cdk-ssm-documents.IStringMapVariable">IStringMapVariable</a></code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.ExecuteAutomationStepProps.property.tags">tags</a></code> | <code><a href="#cdk-ssm-documents.IMapListVariable">IMapListVariable</a></code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.ExecuteAutomationStepProps.property.targetLocations">targetLocations</a></code> | <code><a href="#cdk-ssm-documents.IMapListVariable">IMapListVariable</a></code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.ExecuteAutomationStepProps.property.targetMaps">targetMaps</a></code> | <code><a href="#cdk-ssm-documents.IMapListVariable">IMapListVariable</a></code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.ExecuteAutomationStepProps.property.targetParameterName">targetParameterName</a></code> | <code><a href="#cdk-ssm-documents.IStringVariable">IStringVariable</a></code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.ExecuteAutomationStepProps.property.targets">targets</a></code> | <code><a href="#cdk-ssm-documents.IMapListVariable">IMapListVariable</a></code> | *No description.* |
+
+---
+
+##### `description`<sup>Optional</sup> <a name="description" id="cdk-ssm-documents.ExecuteAutomationStepProps.property.description"></a>
+
+```typescript
+public readonly description: string;
+```
+
+- *Type:* string
+- *Default:* undefined
+
+(Optional) description of the current step.
+
+---
+
+##### `inputObserver`<sup>Optional</sup> <a name="inputObserver" id="cdk-ssm-documents.ExecuteAutomationStepProps.property.inputObserver"></a>
+
+```typescript
+public readonly inputObserver: IObserver;
+```
+
+- *Type:* <a href="#cdk-ssm-documents.IObserver">IObserver</a>
+- *Default:* NoopObserver
+
+(Optional) Allows for observing the input to steps as they run.
+
+---
+
+##### `name`<sup>Optional</sup> <a name="name" id="cdk-ssm-documents.ExecuteAutomationStepProps.property.name"></a>
+
+```typescript
+public readonly name: string;
+```
+
+- *Type:* string
+
+(Optional) Name of the current step.
+
+The name will be prepended onto all of the outputs emitted from this step.
+This name will also be used to reference this step in logs.
+Defaults to the id of the CDK node.
+
+---
+
+##### `outputObserver`<sup>Optional</sup> <a name="outputObserver" id="cdk-ssm-documents.ExecuteAutomationStepProps.property.outputObserver"></a>
+
+```typescript
+public readonly outputObserver: IObserver;
+```
+
+- *Type:* <a href="#cdk-ssm-documents.IObserver">IObserver</a>
+- *Default:* NoopObserver
+
+(Optional) Allows for observing the output of steps as they run.
+
+---
+
+##### `isEnd`<sup>Optional</sup> <a name="isEnd" id="cdk-ssm-documents.ExecuteAutomationStepProps.property.isEnd"></a>
+
+```typescript
+public readonly isEnd: boolean;
+```
+
+- *Type:* boolean
+- *Default:* false
+
+Whether to stop document execution after this step.
+
+---
+
+##### `maxAttempts`<sup>Optional</sup> <a name="maxAttempts" id="cdk-ssm-documents.ExecuteAutomationStepProps.property.maxAttempts"></a>
+
+```typescript
+public readonly maxAttempts: number;
+```
+
+- *Type:* number
+- *Default:* Step.DEFAULT_MAX_ATTEMPTS
+
+(Optional) max attempts to run this step if there are failures.
+
+---
+
+##### `onCancel`<sup>Optional</sup> <a name="onCancel" id="cdk-ssm-documents.ExecuteAutomationStepProps.property.onCancel"></a>
+
+```typescript
+public readonly onCancel: AutomationStep;
+```
+
+- *Type:* <a href="#cdk-ssm-documents.AutomationStep">AutomationStep</a>
+- *Default:* undefined
+
+(Optional) Step to jump to in the event that this step is cancelled.
+
+---
+
+##### `onFailure`<sup>Optional</sup> <a name="onFailure" id="cdk-ssm-documents.ExecuteAutomationStepProps.property.onFailure"></a>
+
+```typescript
+public readonly onFailure: AutomationStep;
+```
+
+- *Type:* <a href="#cdk-ssm-documents.AutomationStep">AutomationStep</a>
+- *Default:* undefined
+
+(Optional) Step to jump to in the event that this step fails.
+
+---
+
+##### `timeoutSeconds`<sup>Optional</sup> <a name="timeoutSeconds" id="cdk-ssm-documents.ExecuteAutomationStepProps.property.timeoutSeconds"></a>
+
+```typescript
+public readonly timeoutSeconds: number;
+```
+
+- *Type:* number
+- *Default:* Step.DEFAULT_TIMEOUT
+
+(Optional) timeout seconds to run this step.
+
+In a simulation run, this will only be encorced after-the-fact but execution will not be stopped mid-step.
+
+---
+
+##### `documentName`<sup>Required</sup> <a name="documentName" id="cdk-ssm-documents.ExecuteAutomationStepProps.property.documentName"></a>
+
+```typescript
+public readonly documentName: IStringVariable;
+```
+
+- *Type:* <a href="#cdk-ssm-documents.IStringVariable">IStringVariable</a>
+
+---
+
+##### `documentVersion`<sup>Optional</sup> <a name="documentVersion" id="cdk-ssm-documents.ExecuteAutomationStepProps.property.documentVersion"></a>
+
+```typescript
+public readonly documentVersion: IStringVariable;
+```
+
+- *Type:* <a href="#cdk-ssm-documents.IStringVariable">IStringVariable</a>
+
+---
+
+##### `maxConcurrency`<sup>Optional</sup> <a name="maxConcurrency" id="cdk-ssm-documents.ExecuteAutomationStepProps.property.maxConcurrency"></a>
+
+```typescript
+public readonly maxConcurrency: IStringVariable;
+```
+
+- *Type:* <a href="#cdk-ssm-documents.IStringVariable">IStringVariable</a>
+
+---
+
+##### `maxErrors`<sup>Optional</sup> <a name="maxErrors" id="cdk-ssm-documents.ExecuteAutomationStepProps.property.maxErrors"></a>
+
+```typescript
+public readonly maxErrors: IStringVariable;
+```
+
+- *Type:* <a href="#cdk-ssm-documents.IStringVariable">IStringVariable</a>
+
+---
+
+##### `runtimeParameters`<sup>Optional</sup> <a name="runtimeParameters" id="cdk-ssm-documents.ExecuteAutomationStepProps.property.runtimeParameters"></a>
+
+```typescript
+public readonly runtimeParameters: IStringMapVariable;
+```
+
+- *Type:* <a href="#cdk-ssm-documents.IStringMapVariable">IStringMapVariable</a>
+
+---
+
+##### `tags`<sup>Optional</sup> <a name="tags" id="cdk-ssm-documents.ExecuteAutomationStepProps.property.tags"></a>
+
+```typescript
+public readonly tags: IMapListVariable;
+```
+
+- *Type:* <a href="#cdk-ssm-documents.IMapListVariable">IMapListVariable</a>
+
+---
+
+##### `targetLocations`<sup>Optional</sup> <a name="targetLocations" id="cdk-ssm-documents.ExecuteAutomationStepProps.property.targetLocations"></a>
+
+```typescript
+public readonly targetLocations: IMapListVariable;
+```
+
+- *Type:* <a href="#cdk-ssm-documents.IMapListVariable">IMapListVariable</a>
+
+---
+
+##### `targetMaps`<sup>Optional</sup> <a name="targetMaps" id="cdk-ssm-documents.ExecuteAutomationStepProps.property.targetMaps"></a>
+
+```typescript
+public readonly targetMaps: IMapListVariable;
+```
+
+- *Type:* <a href="#cdk-ssm-documents.IMapListVariable">IMapListVariable</a>
+
+---
+
+##### `targetParameterName`<sup>Optional</sup> <a name="targetParameterName" id="cdk-ssm-documents.ExecuteAutomationStepProps.property.targetParameterName"></a>
+
+```typescript
+public readonly targetParameterName: IStringVariable;
+```
+
+- *Type:* <a href="#cdk-ssm-documents.IStringVariable">IStringVariable</a>
+
+---
+
+##### `targets`<sup>Optional</sup> <a name="targets" id="cdk-ssm-documents.ExecuteAutomationStepProps.property.targets"></a>
+
+```typescript
+public readonly targets: IMapListVariable;
+```
+
+- *Type:* <a href="#cdk-ssm-documents.IMapListVariable">IMapListVariable</a>
 
 ---
 
@@ -27029,6 +28244,158 @@ public readonly UNINSTALL_AND_REINSTALL: HardCodedInstallationType;
 
 ---
 
+### HardCodedInstallUninstallRepair <a name="HardCodedInstallUninstallRepair" id="cdk-ssm-documents.HardCodedInstallUninstallRepair"></a>
+
+- *Implements:* <a href="#cdk-ssm-documents.IInstallUninstallRepairVariable">IInstallUninstallRepairVariable</a>
+
+#### Methods <a name="Methods" id="Methods"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#cdk-ssm-documents.HardCodedInstallUninstallRepair.print">print</a></code> | Prints the variable in a way that SSM understands. |
+| <code><a href="#cdk-ssm-documents.HardCodedInstallUninstallRepair.requiredInputs">requiredInputs</a></code> | The inputs that are required for determining the value of this variable. |
+| <code><a href="#cdk-ssm-documents.HardCodedInstallUninstallRepair.resolve">resolve</a></code> | Given the execution inputs, return the resolved value of this variable. |
+| <code><a href="#cdk-ssm-documents.HardCodedInstallUninstallRepair.toJSON">toJSON</a></code> | JSON.stringify(variable) will implicitly invoke this variable. |
+| <code><a href="#cdk-ssm-documents.HardCodedInstallUninstallRepair.resolveToString">resolveToString</a></code> | Given the execution inputs, return the resolved value of this variable. |
+
+---
+
+##### `print` <a name="print" id="cdk-ssm-documents.HardCodedInstallUninstallRepair.print"></a>
+
+```typescript
+public print(): any
+```
+
+Prints the variable in a way that SSM understands.
+
+This is typically in the form of {{Variable}} or the value.
+
+##### `requiredInputs` <a name="requiredInputs" id="cdk-ssm-documents.HardCodedInstallUninstallRepair.requiredInputs"></a>
+
+```typescript
+public requiredInputs(): string[]
+```
+
+The inputs that are required for determining the value of this variable.
+
+In the case of a single variable string, this will return a single value.
+
+##### `resolve` <a name="resolve" id="cdk-ssm-documents.HardCodedInstallUninstallRepair.resolve"></a>
+
+```typescript
+public resolve(_inputs: {[ key: string ]: any}): any
+```
+
+Given the execution inputs, return the resolved value of this variable.
+
+###### `_inputs`<sup>Required</sup> <a name="_inputs" id="cdk-ssm-documents.HardCodedInstallUninstallRepair.resolve.parameter._inputs"></a>
+
+- *Type:* {[ key: string ]: any}
+
+---
+
+##### `toJSON` <a name="toJSON" id="cdk-ssm-documents.HardCodedInstallUninstallRepair.toJSON"></a>
+
+```typescript
+public toJSON(): any
+```
+
+JSON.stringify(variable) will implicitly invoke this variable.
+
+##### `resolveToString` <a name="resolveToString" id="cdk-ssm-documents.HardCodedInstallUninstallRepair.resolveToString"></a>
+
+```typescript
+public resolveToString(inputs: {[ key: string ]: any}): string
+```
+
+Given the execution inputs, return the resolved value of this variable.
+
+###### `inputs`<sup>Required</sup> <a name="inputs" id="cdk-ssm-documents.HardCodedInstallUninstallRepair.resolveToString.parameter.inputs"></a>
+
+- *Type:* {[ key: string ]: any}
+
+---
+
+#### Static Functions <a name="Static Functions" id="Static Functions"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#cdk-ssm-documents.HardCodedInstallUninstallRepair.of">of</a></code> | *No description.* |
+
+---
+
+##### `of` <a name="of" id="cdk-ssm-documents.HardCodedInstallUninstallRepair.of"></a>
+
+```typescript
+import { HardCodedInstallUninstallRepair } from 'cdk-ssm-documents'
+
+HardCodedInstallUninstallRepair.of(val: string)
+```
+
+###### `val`<sup>Required</sup> <a name="val" id="cdk-ssm-documents.HardCodedInstallUninstallRepair.of.parameter.val"></a>
+
+- *Type:* string
+
+---
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#cdk-ssm-documents.HardCodedInstallUninstallRepair.property.val">val</a></code> | <code>any</code> | *No description.* |
+
+---
+
+##### `val`<sup>Required</sup> <a name="val" id="cdk-ssm-documents.HardCodedInstallUninstallRepair.property.val"></a>
+
+```typescript
+public readonly val: any;
+```
+
+- *Type:* any
+
+---
+
+#### Constants <a name="Constants" id="Constants"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#cdk-ssm-documents.HardCodedInstallUninstallRepair.property.INSTALL">INSTALL</a></code> | <code><a href="#cdk-ssm-documents.HardCodedInstallUninstallRepair">HardCodedInstallUninstallRepair</a></code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.HardCodedInstallUninstallRepair.property.REPAIR">REPAIR</a></code> | <code><a href="#cdk-ssm-documents.HardCodedInstallUninstallRepair">HardCodedInstallUninstallRepair</a></code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.HardCodedInstallUninstallRepair.property.UNINSTALL">UNINSTALL</a></code> | <code><a href="#cdk-ssm-documents.HardCodedInstallUninstallRepair">HardCodedInstallUninstallRepair</a></code> | *No description.* |
+
+---
+
+##### `INSTALL`<sup>Required</sup> <a name="INSTALL" id="cdk-ssm-documents.HardCodedInstallUninstallRepair.property.INSTALL"></a>
+
+```typescript
+public readonly INSTALL: HardCodedInstallUninstallRepair;
+```
+
+- *Type:* <a href="#cdk-ssm-documents.HardCodedInstallUninstallRepair">HardCodedInstallUninstallRepair</a>
+
+---
+
+##### `REPAIR`<sup>Required</sup> <a name="REPAIR" id="cdk-ssm-documents.HardCodedInstallUninstallRepair.property.REPAIR"></a>
+
+```typescript
+public readonly REPAIR: HardCodedInstallUninstallRepair;
+```
+
+- *Type:* <a href="#cdk-ssm-documents.HardCodedInstallUninstallRepair">HardCodedInstallUninstallRepair</a>
+
+---
+
+##### `UNINSTALL`<sup>Required</sup> <a name="UNINSTALL" id="cdk-ssm-documents.HardCodedInstallUninstallRepair.property.UNINSTALL"></a>
+
+```typescript
+public readonly UNINSTALL: HardCodedInstallUninstallRepair;
+```
+
+- *Type:* <a href="#cdk-ssm-documents.HardCodedInstallUninstallRepair">HardCodedInstallUninstallRepair</a>
+
+---
+
 ### HardCodedMapList <a name="HardCodedMapList" id="cdk-ssm-documents.HardCodedMapList"></a>
 
 - *Implements:* <a href="#cdk-ssm-documents.IMapListVariable">IMapListVariable</a>
@@ -28704,6 +30071,150 @@ public readonly reference: string;
 ---
 
 ##### `validValues`<sup>Required</sup> <a name="validValues" id="cdk-ssm-documents.InstallationTypeVariable.property.validValues"></a>
+
+```typescript
+public readonly validValues: string[];
+```
+
+- *Type:* string[]
+
+---
+
+
+### InstallUninstallRepairVariable <a name="InstallUninstallRepairVariable" id="cdk-ssm-documents.InstallUninstallRepairVariable"></a>
+
+- *Implements:* <a href="#cdk-ssm-documents.IInstallUninstallRepairVariable">IInstallUninstallRepairVariable</a>
+
+#### Initializers <a name="Initializers" id="cdk-ssm-documents.InstallUninstallRepairVariable.Initializer"></a>
+
+```typescript
+import { InstallUninstallRepairVariable } from 'cdk-ssm-documents'
+
+new InstallUninstallRepairVariable(reference: string)
+```
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#cdk-ssm-documents.InstallUninstallRepairVariable.Initializer.parameter.reference">reference</a></code> | <code>string</code> | *No description.* |
+
+---
+
+##### `reference`<sup>Required</sup> <a name="reference" id="cdk-ssm-documents.InstallUninstallRepairVariable.Initializer.parameter.reference"></a>
+
+- *Type:* string
+
+---
+
+#### Methods <a name="Methods" id="Methods"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#cdk-ssm-documents.InstallUninstallRepairVariable.print">print</a></code> | Prints the variable in a way that SSM understands. |
+| <code><a href="#cdk-ssm-documents.InstallUninstallRepairVariable.requiredInputs">requiredInputs</a></code> | The inputs that are required for determining the value of this variable. |
+| <code><a href="#cdk-ssm-documents.InstallUninstallRepairVariable.resolve">resolve</a></code> | Given the execution inputs, return the resolved value of this variable. |
+| <code><a href="#cdk-ssm-documents.InstallUninstallRepairVariable.toJSON">toJSON</a></code> | JSON.stringify(variable) will implicitly invoke this variable. |
+| <code><a href="#cdk-ssm-documents.InstallUninstallRepairVariable.resolveToString">resolveToString</a></code> | Given the execution inputs, return the resolved value of this variable. |
+
+---
+
+##### `print` <a name="print" id="cdk-ssm-documents.InstallUninstallRepairVariable.print"></a>
+
+```typescript
+public print(): any
+```
+
+Prints the variable in a way that SSM understands.
+
+This is typically in the form of {{Variable}} or the value.
+
+##### `requiredInputs` <a name="requiredInputs" id="cdk-ssm-documents.InstallUninstallRepairVariable.requiredInputs"></a>
+
+```typescript
+public requiredInputs(): string[]
+```
+
+The inputs that are required for determining the value of this variable.
+
+In the case of a single variable string, this will return a single value.
+
+##### `resolve` <a name="resolve" id="cdk-ssm-documents.InstallUninstallRepairVariable.resolve"></a>
+
+```typescript
+public resolve(inputs: {[ key: string ]: any}): any
+```
+
+Given the execution inputs, return the resolved value of this variable.
+
+###### `inputs`<sup>Required</sup> <a name="inputs" id="cdk-ssm-documents.InstallUninstallRepairVariable.resolve.parameter.inputs"></a>
+
+- *Type:* {[ key: string ]: any}
+
+---
+
+##### `toJSON` <a name="toJSON" id="cdk-ssm-documents.InstallUninstallRepairVariable.toJSON"></a>
+
+```typescript
+public toJSON(): any
+```
+
+JSON.stringify(variable) will implicitly invoke this variable.
+
+##### `resolveToString` <a name="resolveToString" id="cdk-ssm-documents.InstallUninstallRepairVariable.resolveToString"></a>
+
+```typescript
+public resolveToString(inputs: {[ key: string ]: any}): string
+```
+
+Given the execution inputs, return the resolved value of this variable.
+
+###### `inputs`<sup>Required</sup> <a name="inputs" id="cdk-ssm-documents.InstallUninstallRepairVariable.resolveToString.parameter.inputs"></a>
+
+- *Type:* {[ key: string ]: any}
+
+---
+
+#### Static Functions <a name="Static Functions" id="Static Functions"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#cdk-ssm-documents.InstallUninstallRepairVariable.of">of</a></code> | *No description.* |
+
+---
+
+##### `of` <a name="of" id="cdk-ssm-documents.InstallUninstallRepairVariable.of"></a>
+
+```typescript
+import { InstallUninstallRepairVariable } from 'cdk-ssm-documents'
+
+InstallUninstallRepairVariable.of(reference: string)
+```
+
+###### `reference`<sup>Required</sup> <a name="reference" id="cdk-ssm-documents.InstallUninstallRepairVariable.of.parameter.reference"></a>
+
+- *Type:* string
+
+---
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#cdk-ssm-documents.InstallUninstallRepairVariable.property.reference">reference</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.InstallUninstallRepairVariable.property.validValues">validValues</a></code> | <code>string[]</code> | *No description.* |
+
+---
+
+##### `reference`<sup>Required</sup> <a name="reference" id="cdk-ssm-documents.InstallUninstallRepairVariable.property.reference"></a>
+
+```typescript
+public readonly reference: string;
+```
+
+- *Type:* string
+
+---
+
+##### `validValues`<sup>Required</sup> <a name="validValues" id="cdk-ssm-documents.InstallUninstallRepairVariable.property.validValues"></a>
 
 ```typescript
 public readonly validValues: string[];
@@ -32081,7 +33592,7 @@ Ask for approval.
 
 ### IAutomationComponent <a name="IAutomationComponent" id="cdk-ssm-documents.IAutomationComponent"></a>
 
-- *Implemented By:* <a href="#cdk-ssm-documents.ApproveStep">ApproveStep</a>, <a href="#cdk-ssm-documents.AssertAwsResourceStep">AssertAwsResourceStep</a>, <a href="#cdk-ssm-documents.AutomationStep">AutomationStep</a>, <a href="#cdk-ssm-documents.AwsApiStep">AwsApiStep</a>, <a href="#cdk-ssm-documents.BranchStep">BranchStep</a>, <a href="#cdk-ssm-documents.ChangeInstanceStateStep">ChangeInstanceStateStep</a>, <a href="#cdk-ssm-documents.CompositeAutomationStep">CompositeAutomationStep</a>, <a href="#cdk-ssm-documents.CopyImageStep">CopyImageStep</a>, <a href="#cdk-ssm-documents.CreateImageStep">CreateImageStep</a>, <a href="#cdk-ssm-documents.CreateStackStep">CreateStackStep</a>, <a href="#cdk-ssm-documents.CreateTagsStep">CreateTagsStep</a>, <a href="#cdk-ssm-documents.DeleteImageStep">DeleteImageStep</a>, <a href="#cdk-ssm-documents.DeleteStackStep">DeleteStackStep</a>, <a href="#cdk-ssm-documents.ExecuteScriptStep">ExecuteScriptStep</a>, <a href="#cdk-ssm-documents.ExecuteStateMachineStep">ExecuteStateMachineStep</a>, <a href="#cdk-ssm-documents.InvokeLambdaFunctionStep">InvokeLambdaFunctionStep</a>, <a href="#cdk-ssm-documents.InvokeWebhookStep">InvokeWebhookStep</a>, <a href="#cdk-ssm-documents.PauseStep">PauseStep</a>, <a href="#cdk-ssm-documents.RebootInstanceAndWait">RebootInstanceAndWait</a>, <a href="#cdk-ssm-documents.RunCommandStep">RunCommandStep</a>, <a href="#cdk-ssm-documents.RunInstanceStep">RunInstanceStep</a>, <a href="#cdk-ssm-documents.SleepStep">SleepStep</a>, <a href="#cdk-ssm-documents.StringStep">StringStep</a>, <a href="#cdk-ssm-documents.WaitForResourceStep">WaitForResourceStep</a>, <a href="#cdk-ssm-documents.IAutomationComponent">IAutomationComponent</a>
+- *Implemented By:* <a href="#cdk-ssm-documents.ApproveStep">ApproveStep</a>, <a href="#cdk-ssm-documents.AssertAwsResourceStep">AssertAwsResourceStep</a>, <a href="#cdk-ssm-documents.AutomationStep">AutomationStep</a>, <a href="#cdk-ssm-documents.AwsApiStep">AwsApiStep</a>, <a href="#cdk-ssm-documents.BranchStep">BranchStep</a>, <a href="#cdk-ssm-documents.ChangeInstanceStateStep">ChangeInstanceStateStep</a>, <a href="#cdk-ssm-documents.CompositeAutomationStep">CompositeAutomationStep</a>, <a href="#cdk-ssm-documents.CopyImageStep">CopyImageStep</a>, <a href="#cdk-ssm-documents.CreateImageStep">CreateImageStep</a>, <a href="#cdk-ssm-documents.CreateStackStep">CreateStackStep</a>, <a href="#cdk-ssm-documents.CreateTagsStep">CreateTagsStep</a>, <a href="#cdk-ssm-documents.DeleteImageStep">DeleteImageStep</a>, <a href="#cdk-ssm-documents.DeleteStackStep">DeleteStackStep</a>, <a href="#cdk-ssm-documents.ExecuteAutomationStep">ExecuteAutomationStep</a>, <a href="#cdk-ssm-documents.ExecuteScriptStep">ExecuteScriptStep</a>, <a href="#cdk-ssm-documents.ExecuteStateMachineStep">ExecuteStateMachineStep</a>, <a href="#cdk-ssm-documents.InvokeLambdaFunctionStep">InvokeLambdaFunctionStep</a>, <a href="#cdk-ssm-documents.InvokeWebhookStep">InvokeWebhookStep</a>, <a href="#cdk-ssm-documents.PauseStep">PauseStep</a>, <a href="#cdk-ssm-documents.RebootInstanceAndWait">RebootInstanceAndWait</a>, <a href="#cdk-ssm-documents.RunCommandStep">RunCommandStep</a>, <a href="#cdk-ssm-documents.RunInstanceStep">RunInstanceStep</a>, <a href="#cdk-ssm-documents.SleepStep">SleepStep</a>, <a href="#cdk-ssm-documents.StringStep">StringStep</a>, <a href="#cdk-ssm-documents.WaitForResourceStep">WaitForResourceStep</a>, <a href="#cdk-ssm-documents.IAutomationComponent">IAutomationComponent</a>
 
 #### Methods <a name="Methods" id="Methods"></a>
 
@@ -32172,7 +33683,7 @@ are the execution inputs.
 
 ### ICommandComponent <a name="ICommandComponent" id="cdk-ssm-documents.ICommandComponent"></a>
 
-- *Implemented By:* <a href="#cdk-ssm-documents.CommandStep">CommandStep</a>, <a href="#cdk-ssm-documents.CompositeCommandStep">CompositeCommandStep</a>, <a href="#cdk-ssm-documents.ConfigureDockerStep">ConfigureDockerStep</a>, <a href="#cdk-ssm-documents.ConfigurePackageStep">ConfigurePackageStep</a>, <a href="#cdk-ssm-documents.DomainJoinStep">DomainJoinStep</a>, <a href="#cdk-ssm-documents.DownloadContentStep">DownloadContentStep</a>, <a href="#cdk-ssm-documents.PsModuleStep">PsModuleStep</a>, <a href="#cdk-ssm-documents.RunDockerActionStep">RunDockerActionStep</a>, <a href="#cdk-ssm-documents.RunDocumentStep">RunDocumentStep</a>, <a href="#cdk-ssm-documents.RunPowerShellScriptStep">RunPowerShellScriptStep</a>, <a href="#cdk-ssm-documents.RunShellScriptStep">RunShellScriptStep</a>, <a href="#cdk-ssm-documents.SoftwareInventoryStep">SoftwareInventoryStep</a>, <a href="#cdk-ssm-documents.UpdateAgentStep">UpdateAgentStep</a>, <a href="#cdk-ssm-documents.UpdateSSMAgentStep">UpdateSSMAgentStep</a>, <a href="#cdk-ssm-documents.ICommandComponent">ICommandComponent</a>
+- *Implemented By:* <a href="#cdk-ssm-documents.ApplicationsStep">ApplicationsStep</a>, <a href="#cdk-ssm-documents.CommandStep">CommandStep</a>, <a href="#cdk-ssm-documents.CompositeCommandStep">CompositeCommandStep</a>, <a href="#cdk-ssm-documents.ConfigureDockerStep">ConfigureDockerStep</a>, <a href="#cdk-ssm-documents.ConfigurePackageStep">ConfigurePackageStep</a>, <a href="#cdk-ssm-documents.DomainJoinStep">DomainJoinStep</a>, <a href="#cdk-ssm-documents.DownloadContentStep">DownloadContentStep</a>, <a href="#cdk-ssm-documents.PsModuleStep">PsModuleStep</a>, <a href="#cdk-ssm-documents.RunDockerActionStep">RunDockerActionStep</a>, <a href="#cdk-ssm-documents.RunDocumentStep">RunDocumentStep</a>, <a href="#cdk-ssm-documents.RunPowerShellScriptStep">RunPowerShellScriptStep</a>, <a href="#cdk-ssm-documents.RunShellScriptStep">RunShellScriptStep</a>, <a href="#cdk-ssm-documents.SoftwareInventoryStep">SoftwareInventoryStep</a>, <a href="#cdk-ssm-documents.UpdateAgentStep">UpdateAgentStep</a>, <a href="#cdk-ssm-documents.UpdateSSMAgentStep">UpdateSSMAgentStep</a>, <a href="#cdk-ssm-documents.ICommandComponent">ICommandComponent</a>
 
 #### Methods <a name="Methods" id="Methods"></a>
 
@@ -32286,7 +33797,7 @@ public run(command: string): string
 
 ### IGenericVariable <a name="IGenericVariable" id="cdk-ssm-documents.IGenericVariable"></a>
 
-- *Implemented By:* <a href="#cdk-ssm-documents.ActionVariable">ActionVariable</a>, <a href="#cdk-ssm-documents.BooleanVariable">BooleanVariable</a>, <a href="#cdk-ssm-documents.DesiredStateVariable">DesiredStateVariable</a>, <a href="#cdk-ssm-documents.DictFormat">DictFormat</a>, <a href="#cdk-ssm-documents.DocumentHashTypeVariable">DocumentHashTypeVariable</a>, <a href="#cdk-ssm-documents.GenericVariable">GenericVariable</a>, <a href="#cdk-ssm-documents.HardCodedAction">HardCodedAction</a>, <a href="#cdk-ssm-documents.HardCodedBoolean">HardCodedBoolean</a>, <a href="#cdk-ssm-documents.HardCodedDesiredState">HardCodedDesiredState</a>, <a href="#cdk-ssm-documents.HardCodedDocumentHashType">HardCodedDocumentHashType</a>, <a href="#cdk-ssm-documents.HardCodedInstallationType">HardCodedInstallationType</a>, <a href="#cdk-ssm-documents.HardCodedMapList">HardCodedMapList</a>, <a href="#cdk-ssm-documents.HardCodedNumber">HardCodedNumber</a>, <a href="#cdk-ssm-documents.HardCodedOnFailure">HardCodedOnFailure</a>, <a href="#cdk-ssm-documents.HardCodedPackageName">HardCodedPackageName</a>, <a href="#cdk-ssm-documents.HardCodedResourceType">HardCodedResourceType</a>, <a href="#cdk-ssm-documents.HardCodedSecureVariable">HardCodedSecureVariable</a>, <a href="#cdk-ssm-documents.HardCodedString">HardCodedString</a>, <a href="#cdk-ssm-documents.HardCodedStringList">HardCodedStringList</a>, <a href="#cdk-ssm-documents.HardCodedStringMap">HardCodedStringMap</a>, <a href="#cdk-ssm-documents.HardCodedValueBase">HardCodedValueBase</a>, <a href="#cdk-ssm-documents.InstallationTypeVariable">InstallationTypeVariable</a>, <a href="#cdk-ssm-documents.MapListVariable">MapListVariable</a>, <a href="#cdk-ssm-documents.NonSecureVariable">NonSecureVariable</a>, <a href="#cdk-ssm-documents.NumberVariable">NumberVariable</a>, <a href="#cdk-ssm-documents.OnFailureVariable">OnFailureVariable</a>, <a href="#cdk-ssm-documents.PackageNameVariable">PackageNameVariable</a>, <a href="#cdk-ssm-documents.ResourceTypeVariable">ResourceTypeVariable</a>, <a href="#cdk-ssm-documents.SecureVariable">SecureVariable</a>, <a href="#cdk-ssm-documents.SsmSecureVariable">SsmSecureVariable</a>, <a href="#cdk-ssm-documents.StringFormat">StringFormat</a>, <a href="#cdk-ssm-documents.StringListVariable">StringListVariable</a>, <a href="#cdk-ssm-documents.StringMapVariable">StringMapVariable</a>, <a href="#cdk-ssm-documents.StringVariable">StringVariable</a>, <a href="#cdk-ssm-documents.IActionVariable">IActionVariable</a>, <a href="#cdk-ssm-documents.IBooleanVariable">IBooleanVariable</a>, <a href="#cdk-ssm-documents.IDesiredStateVariable">IDesiredStateVariable</a>, <a href="#cdk-ssm-documents.IDocumentHashTypeVariable">IDocumentHashTypeVariable</a>, <a href="#cdk-ssm-documents.IGenericVariable">IGenericVariable</a>, <a href="#cdk-ssm-documents.IInstallationTypeVariable">IInstallationTypeVariable</a>, <a href="#cdk-ssm-documents.IMapListVariable">IMapListVariable</a>, <a href="#cdk-ssm-documents.INumberVariable">INumberVariable</a>, <a href="#cdk-ssm-documents.IOnFailureVariable">IOnFailureVariable</a>, <a href="#cdk-ssm-documents.IPackageNameVariable">IPackageNameVariable</a>, <a href="#cdk-ssm-documents.IResourceTypeVariable">IResourceTypeVariable</a>, <a href="#cdk-ssm-documents.IStringListVariable">IStringListVariable</a>, <a href="#cdk-ssm-documents.IStringMapVariable">IStringMapVariable</a>, <a href="#cdk-ssm-documents.IStringVariable">IStringVariable</a>
+- *Implemented By:* <a href="#cdk-ssm-documents.ActionVariable">ActionVariable</a>, <a href="#cdk-ssm-documents.BooleanVariable">BooleanVariable</a>, <a href="#cdk-ssm-documents.DesiredStateVariable">DesiredStateVariable</a>, <a href="#cdk-ssm-documents.DictFormat">DictFormat</a>, <a href="#cdk-ssm-documents.DocumentHashTypeVariable">DocumentHashTypeVariable</a>, <a href="#cdk-ssm-documents.GenericVariable">GenericVariable</a>, <a href="#cdk-ssm-documents.HardCodedAction">HardCodedAction</a>, <a href="#cdk-ssm-documents.HardCodedBoolean">HardCodedBoolean</a>, <a href="#cdk-ssm-documents.HardCodedDesiredState">HardCodedDesiredState</a>, <a href="#cdk-ssm-documents.HardCodedDocumentHashType">HardCodedDocumentHashType</a>, <a href="#cdk-ssm-documents.HardCodedInstallUninstallRepair">HardCodedInstallUninstallRepair</a>, <a href="#cdk-ssm-documents.HardCodedInstallationType">HardCodedInstallationType</a>, <a href="#cdk-ssm-documents.HardCodedMapList">HardCodedMapList</a>, <a href="#cdk-ssm-documents.HardCodedNumber">HardCodedNumber</a>, <a href="#cdk-ssm-documents.HardCodedOnFailure">HardCodedOnFailure</a>, <a href="#cdk-ssm-documents.HardCodedPackageName">HardCodedPackageName</a>, <a href="#cdk-ssm-documents.HardCodedResourceType">HardCodedResourceType</a>, <a href="#cdk-ssm-documents.HardCodedSecureVariable">HardCodedSecureVariable</a>, <a href="#cdk-ssm-documents.HardCodedString">HardCodedString</a>, <a href="#cdk-ssm-documents.HardCodedStringList">HardCodedStringList</a>, <a href="#cdk-ssm-documents.HardCodedStringMap">HardCodedStringMap</a>, <a href="#cdk-ssm-documents.HardCodedValueBase">HardCodedValueBase</a>, <a href="#cdk-ssm-documents.InstallUninstallRepairVariable">InstallUninstallRepairVariable</a>, <a href="#cdk-ssm-documents.InstallationTypeVariable">InstallationTypeVariable</a>, <a href="#cdk-ssm-documents.MapListVariable">MapListVariable</a>, <a href="#cdk-ssm-documents.NonSecureVariable">NonSecureVariable</a>, <a href="#cdk-ssm-documents.NumberVariable">NumberVariable</a>, <a href="#cdk-ssm-documents.OnFailureVariable">OnFailureVariable</a>, <a href="#cdk-ssm-documents.PackageNameVariable">PackageNameVariable</a>, <a href="#cdk-ssm-documents.ResourceTypeVariable">ResourceTypeVariable</a>, <a href="#cdk-ssm-documents.SecureVariable">SecureVariable</a>, <a href="#cdk-ssm-documents.SsmSecureVariable">SsmSecureVariable</a>, <a href="#cdk-ssm-documents.StringFormat">StringFormat</a>, <a href="#cdk-ssm-documents.StringListVariable">StringListVariable</a>, <a href="#cdk-ssm-documents.StringMapVariable">StringMapVariable</a>, <a href="#cdk-ssm-documents.StringVariable">StringVariable</a>, <a href="#cdk-ssm-documents.IActionVariable">IActionVariable</a>, <a href="#cdk-ssm-documents.IBooleanVariable">IBooleanVariable</a>, <a href="#cdk-ssm-documents.IDesiredStateVariable">IDesiredStateVariable</a>, <a href="#cdk-ssm-documents.IDocumentHashTypeVariable">IDocumentHashTypeVariable</a>, <a href="#cdk-ssm-documents.IGenericVariable">IGenericVariable</a>, <a href="#cdk-ssm-documents.IInstallUninstallRepairVariable">IInstallUninstallRepairVariable</a>, <a href="#cdk-ssm-documents.IInstallationTypeVariable">IInstallationTypeVariable</a>, <a href="#cdk-ssm-documents.IMapListVariable">IMapListVariable</a>, <a href="#cdk-ssm-documents.INumberVariable">INumberVariable</a>, <a href="#cdk-ssm-documents.IOnFailureVariable">IOnFailureVariable</a>, <a href="#cdk-ssm-documents.IPackageNameVariable">IPackageNameVariable</a>, <a href="#cdk-ssm-documents.IResourceTypeVariable">IResourceTypeVariable</a>, <a href="#cdk-ssm-documents.IStringListVariable">IStringListVariable</a>, <a href="#cdk-ssm-documents.IStringMapVariable">IStringMapVariable</a>, <a href="#cdk-ssm-documents.IStringVariable">IStringVariable</a>
 
 Variables hold references to a value.
 
@@ -32363,6 +33874,14 @@ JSON.stringify(variable) will implicitly invoke this variable.
 - *Extends:* <a href="#cdk-ssm-documents.IStringVariable">IStringVariable</a>
 
 - *Implemented By:* <a href="#cdk-ssm-documents.HardCodedInstallationType">HardCodedInstallationType</a>, <a href="#cdk-ssm-documents.InstallationTypeVariable">InstallationTypeVariable</a>, <a href="#cdk-ssm-documents.IInstallationTypeVariable">IInstallationTypeVariable</a>
+
+
+
+### IInstallUninstallRepairVariable <a name="IInstallUninstallRepairVariable" id="cdk-ssm-documents.IInstallUninstallRepairVariable"></a>
+
+- *Extends:* <a href="#cdk-ssm-documents.IStringVariable">IStringVariable</a>
+
+- *Implemented By:* <a href="#cdk-ssm-documents.HardCodedInstallUninstallRepair">HardCodedInstallUninstallRepair</a>, <a href="#cdk-ssm-documents.InstallUninstallRepairVariable">InstallUninstallRepairVariable</a>, <a href="#cdk-ssm-documents.IInstallUninstallRepairVariable">IInstallUninstallRepairVariable</a>
 
 
 
@@ -32691,7 +34210,7 @@ are the execution inputs.
 
 - *Extends:* <a href="#cdk-ssm-documents.IGenericVariable">IGenericVariable</a>
 
-- *Implemented By:* <a href="#cdk-ssm-documents.ActionVariable">ActionVariable</a>, <a href="#cdk-ssm-documents.DesiredStateVariable">DesiredStateVariable</a>, <a href="#cdk-ssm-documents.DictFormat">DictFormat</a>, <a href="#cdk-ssm-documents.DocumentHashTypeVariable">DocumentHashTypeVariable</a>, <a href="#cdk-ssm-documents.HardCodedAction">HardCodedAction</a>, <a href="#cdk-ssm-documents.HardCodedDesiredState">HardCodedDesiredState</a>, <a href="#cdk-ssm-documents.HardCodedDocumentHashType">HardCodedDocumentHashType</a>, <a href="#cdk-ssm-documents.HardCodedInstallationType">HardCodedInstallationType</a>, <a href="#cdk-ssm-documents.HardCodedOnFailure">HardCodedOnFailure</a>, <a href="#cdk-ssm-documents.HardCodedPackageName">HardCodedPackageName</a>, <a href="#cdk-ssm-documents.HardCodedResourceType">HardCodedResourceType</a>, <a href="#cdk-ssm-documents.HardCodedString">HardCodedString</a>, <a href="#cdk-ssm-documents.InstallationTypeVariable">InstallationTypeVariable</a>, <a href="#cdk-ssm-documents.OnFailureVariable">OnFailureVariable</a>, <a href="#cdk-ssm-documents.PackageNameVariable">PackageNameVariable</a>, <a href="#cdk-ssm-documents.ResourceTypeVariable">ResourceTypeVariable</a>, <a href="#cdk-ssm-documents.StringFormat">StringFormat</a>, <a href="#cdk-ssm-documents.StringVariable">StringVariable</a>, <a href="#cdk-ssm-documents.IActionVariable">IActionVariable</a>, <a href="#cdk-ssm-documents.IDesiredStateVariable">IDesiredStateVariable</a>, <a href="#cdk-ssm-documents.IDocumentHashTypeVariable">IDocumentHashTypeVariable</a>, <a href="#cdk-ssm-documents.IInstallationTypeVariable">IInstallationTypeVariable</a>, <a href="#cdk-ssm-documents.IOnFailureVariable">IOnFailureVariable</a>, <a href="#cdk-ssm-documents.IPackageNameVariable">IPackageNameVariable</a>, <a href="#cdk-ssm-documents.IResourceTypeVariable">IResourceTypeVariable</a>, <a href="#cdk-ssm-documents.IStringVariable">IStringVariable</a>
+- *Implemented By:* <a href="#cdk-ssm-documents.ActionVariable">ActionVariable</a>, <a href="#cdk-ssm-documents.DesiredStateVariable">DesiredStateVariable</a>, <a href="#cdk-ssm-documents.DictFormat">DictFormat</a>, <a href="#cdk-ssm-documents.DocumentHashTypeVariable">DocumentHashTypeVariable</a>, <a href="#cdk-ssm-documents.HardCodedAction">HardCodedAction</a>, <a href="#cdk-ssm-documents.HardCodedDesiredState">HardCodedDesiredState</a>, <a href="#cdk-ssm-documents.HardCodedDocumentHashType">HardCodedDocumentHashType</a>, <a href="#cdk-ssm-documents.HardCodedInstallUninstallRepair">HardCodedInstallUninstallRepair</a>, <a href="#cdk-ssm-documents.HardCodedInstallationType">HardCodedInstallationType</a>, <a href="#cdk-ssm-documents.HardCodedOnFailure">HardCodedOnFailure</a>, <a href="#cdk-ssm-documents.HardCodedPackageName">HardCodedPackageName</a>, <a href="#cdk-ssm-documents.HardCodedResourceType">HardCodedResourceType</a>, <a href="#cdk-ssm-documents.HardCodedString">HardCodedString</a>, <a href="#cdk-ssm-documents.InstallUninstallRepairVariable">InstallUninstallRepairVariable</a>, <a href="#cdk-ssm-documents.InstallationTypeVariable">InstallationTypeVariable</a>, <a href="#cdk-ssm-documents.OnFailureVariable">OnFailureVariable</a>, <a href="#cdk-ssm-documents.PackageNameVariable">PackageNameVariable</a>, <a href="#cdk-ssm-documents.ResourceTypeVariable">ResourceTypeVariable</a>, <a href="#cdk-ssm-documents.StringFormat">StringFormat</a>, <a href="#cdk-ssm-documents.StringVariable">StringVariable</a>, <a href="#cdk-ssm-documents.IActionVariable">IActionVariable</a>, <a href="#cdk-ssm-documents.IDesiredStateVariable">IDesiredStateVariable</a>, <a href="#cdk-ssm-documents.IDocumentHashTypeVariable">IDocumentHashTypeVariable</a>, <a href="#cdk-ssm-documents.IInstallUninstallRepairVariable">IInstallUninstallRepairVariable</a>, <a href="#cdk-ssm-documents.IInstallationTypeVariable">IInstallationTypeVariable</a>, <a href="#cdk-ssm-documents.IOnFailureVariable">IOnFailureVariable</a>, <a href="#cdk-ssm-documents.IPackageNameVariable">IPackageNameVariable</a>, <a href="#cdk-ssm-documents.IResourceTypeVariable">IResourceTypeVariable</a>, <a href="#cdk-ssm-documents.IStringVariable">IStringVariable</a>
 
 A string variable.
 

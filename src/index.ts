@@ -18,6 +18,7 @@ export * from './domain/precondition';
 export * from './domain/enum/install-action';
 export * from './domain/enum/installation-type';
 export * from './domain/enum/package-name';
+export * from './domain/enum/install-uninstall-repair';
 
 export * from './construct/document-component';
 export * from './construct/synth-utils';
@@ -46,6 +47,7 @@ export * from './parent-steps/automation/invoke-lambda-function-step';
 export * from './parent-steps/automation/create-image-step';
 export * from './parent-steps/automation/copy-image-step';
 export * from './parent-steps/automation/change-instance-state-step';
+export * from './parent-steps/automation/execute-automation-step';
 
 export * from './parent-steps/command/run-powershell-script-step';
 export * from './parent-steps/command/run-shell-script-step';
@@ -59,6 +61,7 @@ export * from './parent-steps/command/run-document-step';
 export * from './parent-steps/command/run-docker-action-step';
 export * from './parent-steps/command/domain-join-step';
 export * from './parent-steps/command/download-content-step';
+export * from './parent-steps/command/applications-step';
 
 export * from './patterns/automation/reboot-instance-and-wait';
 export * from './patterns/automation/string-step';
