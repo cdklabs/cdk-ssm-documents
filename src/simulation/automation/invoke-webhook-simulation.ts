@@ -3,36 +3,6 @@ import { InvokeWebhookStep } from '../../parent-steps/automation/invoke-webhook-
 import { AutomationSimulationBase } from './automation-simulation-base';
 
 /**
- * Response from IWebhook.Invoke
- */
-export interface InvokeWebhookResult {
-  /**
-     * The text received from the webhook provider response.
-     */
-  readonly response: string;
-
-  /**
-     * The HTTP status code received from the webhook provider response.
-     */
-  readonly responseCode: number;
-}
-
-/**
- * The properties for IWebhook.Invoke
- */
-export interface InvokeWebhookProps {
-  /**
-     * The name of the Automation integration. For example, exampleIntegration. The integration you specify must already exist.
-     */
-  readonly integrationName: string;
-
-  /**
-     * (Optional) The payload you want to send when your webhook integration is invoked.
-     */
-  readonly body?: string;
-}
-
-/**
  * Properties for InvokeWebhookStep
  */
 export interface InvokeWebhookSimulationProps {

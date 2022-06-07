@@ -7,42 +7,13 @@ import { IAwsInvoker } from '../../interface/aws-invoker';
 import { ISleepHook } from '../../interface/sleep-hook';
 import { HardCodedString, IStringVariable } from '../../interface/variables/string-variable';
 import { AwsApiStep } from '../../parent-steps/automation/aws-api-step';
-import { CreateStackStep } from '../../parent-steps/automation/create-stack-step';
+import { CreateStackStep, IParameterResolver } from '../../parent-steps/automation/create-stack-step';
 import { DeleteStackStep } from '../../parent-steps/automation/delete-stack-step';
 import { SleepStep } from '../../parent-steps/automation/sleep-step';
 import { waitForAndAssertStackStatus } from '../../parent-steps/automation/sub-steps/wait-for-and-assert';
 import { pruneAndTransformRecord } from '../../utils/prune-and-transform-record';
 import { AutomationStepSimulation } from '../automation-step-simulation';
 import { AutomationSimulationBase } from './automation-simulation-base';
-
-/**
- * Resolver for secure strings in Parameters
- */
-export interface IParameterResolver {
-  /**
-     * Resolve the token to its value
-     */
-  resolve(input: string): string;
-}
-
-export enum BodyOrUrlType {
-  BODY, URL
-}
-
-/**
- * Allow passing in a body or URL version of the property value
- */
-export interface BodyOrUrlProp {
-  /**
-     * Body or URL string
-     */
-  readonly value: IStringVariable;
-
-  /**
-     * Whether the body or URL was provided
-     */
-  readonly propType: BodyOrUrlType;
-}
 
 /**
  * Properties for CreateStackStep

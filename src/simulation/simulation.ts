@@ -14,7 +14,7 @@ import { IPauseHook } from '../interface/pause-hook';
 import { IRunCommandHook } from '../interface/run-command-hook';
 import { ISleepHook } from '../interface/sleep-hook';
 import { IWebhook } from '../interface/webhook';
-import { IParameterResolver } from './automation/create-stack-simulation';
+import { IParameterResolver } from '../parent-steps/automation/create-stack-step';
 import { AutomationSimulation } from './document/automation-simulation';
 import { CommandSimulation } from './document/command-simulation';
 

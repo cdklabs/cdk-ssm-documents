@@ -15489,6 +15489,41 @@ public readonly sourceHash: IStringVariable;
 
 ---
 
+### ApproveSimulationProps <a name="ApproveSimulationProps" id="cdk-ssm-documents.ApproveSimulationProps"></a>
+
+Properties for ApproveStep.
+
+#### Initializer <a name="Initializer" id="cdk-ssm-documents.ApproveSimulationProps.Initializer"></a>
+
+```typescript
+import { ApproveSimulationProps } from 'cdk-ssm-documents'
+
+const approveSimulationProps: ApproveSimulationProps = { ... }
+```
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#cdk-ssm-documents.ApproveSimulationProps.property.approveHook">approveHook</a></code> | <code><a href="#cdk-ssm-documents.IApproveHook">IApproveHook</a></code> | (Optional) Approve hook to be called to pause the execution. |
+
+---
+
+##### `approveHook`<sup>Required</sup> <a name="approveHook" id="cdk-ssm-documents.ApproveSimulationProps.property.approveHook"></a>
+
+```typescript
+public readonly approveHook: IApproveHook;
+```
+
+- *Type:* <a href="#cdk-ssm-documents.IApproveHook">IApproveHook</a>
+- *Default:* ApproveHook instance. ApproveHook may not work in exported JSII languages. Override interface as needed.
+
+(Optional) Approve hook to be called to pause the execution.
+
+To mock this implementation either inject an instance of IApproveHook or use the provided MockApprove class.
+
+---
+
 ### ApproveStepProps <a name="ApproveStepProps" id="cdk-ssm-documents.ApproveStepProps"></a>
 
 Properties for ApproveStep.
@@ -16152,6 +16187,155 @@ public readonly versionName: string;
 
 ---
 
+### AutomationSimulationProps <a name="AutomationSimulationProps" id="cdk-ssm-documents.AutomationSimulationProps"></a>
+
+#### Initializer <a name="Initializer" id="cdk-ssm-documents.AutomationSimulationProps.Initializer"></a>
+
+```typescript
+import { AutomationSimulationProps } from 'cdk-ssm-documents'
+
+const automationSimulationProps: AutomationSimulationProps = { ... }
+```
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#cdk-ssm-documents.AutomationSimulationProps.property.approveHook">approveHook</a></code> | <code><a href="#cdk-ssm-documents.IApproveHook">IApproveHook</a></code> | (Optional) Approve hook to be called to pause the execution. |
+| <code><a href="#cdk-ssm-documents.AutomationSimulationProps.property.awsInvoker">awsInvoker</a></code> | <code><a href="#cdk-ssm-documents.IAwsInvoker">IAwsInvoker</a></code> | (Optional) Use this as a hook to inject an alternate IAwsInvoker (for mocking the AWS API call). |
+| <code><a href="#cdk-ssm-documents.AutomationSimulationProps.property.inputObserver">inputObserver</a></code> | <code><a href="#cdk-ssm-documents.IObserver">IObserver</a></code> | (Optional) Allows for observing the input to steps as they run. |
+| <code><a href="#cdk-ssm-documents.AutomationSimulationProps.property.outputObserver">outputObserver</a></code> | <code><a href="#cdk-ssm-documents.IObserver">IObserver</a></code> | (Optional) Allows for observing the output of steps as they run. |
+| <code><a href="#cdk-ssm-documents.AutomationSimulationProps.property.parameterResolver">parameterResolver</a></code> | <code><a href="#cdk-ssm-documents.IParameterResolver">IParameterResolver</a></code> | (Optional) Resolver for secure strings in parameters. |
+| <code><a href="#cdk-ssm-documents.AutomationSimulationProps.property.pauseHook">pauseHook</a></code> | <code><a href="#cdk-ssm-documents.IPauseHook">IPauseHook</a></code> | (Optional) Pause hook to be called to pause the execution. |
+| <code><a href="#cdk-ssm-documents.AutomationSimulationProps.property.runCommandHook">runCommandHook</a></code> | <code><a href="#cdk-ssm-documents.IRunCommandHook">IRunCommandHook</a></code> | Hook for simulating aws:runCommand. |
+| <code><a href="#cdk-ssm-documents.AutomationSimulationProps.property.sleepHook">sleepHook</a></code> | <code><a href="#cdk-ssm-documents.ISleepHook">ISleepHook</a></code> | (Optional) Hook to inject alternate ISleeper (to mock the sleep between failed invocations). |
+| <code><a href="#cdk-ssm-documents.AutomationSimulationProps.property.webhook">webhook</a></code> | <code><a href="#cdk-ssm-documents.IWebhook">IWebhook</a></code> | (Optional) Hook for simulating aws:invokeWebhook. |
+
+---
+
+##### `approveHook`<sup>Optional</sup> <a name="approveHook" id="cdk-ssm-documents.AutomationSimulationProps.property.approveHook"></a>
+
+```typescript
+public readonly approveHook: IApproveHook;
+```
+
+- *Type:* <a href="#cdk-ssm-documents.IApproveHook">IApproveHook</a>
+- *Default:* ApproveHook instance. ApproveHook may not work in exported JSII languages. Override interface as needed.
+
+(Optional) Approve hook to be called to pause the execution.
+
+To mock this implementation either inject an instance of IApproveHook or use the provided MockApprove class.
+
+---
+
+##### `awsInvoker`<sup>Optional</sup> <a name="awsInvoker" id="cdk-ssm-documents.AutomationSimulationProps.property.awsInvoker"></a>
+
+```typescript
+public readonly awsInvoker: IAwsInvoker;
+```
+
+- *Type:* <a href="#cdk-ssm-documents.IAwsInvoker">IAwsInvoker</a>
+- *Default:* will perform a real invocation of the JavaScript AWS SDK using ReflectiveAwsInvoker class.
+
+(Optional) Use this as a hook to inject an alternate IAwsInvoker (for mocking the AWS API call).
+
+---
+
+##### `inputObserver`<sup>Optional</sup> <a name="inputObserver" id="cdk-ssm-documents.AutomationSimulationProps.property.inputObserver"></a>
+
+```typescript
+public readonly inputObserver: IObserver;
+```
+
+- *Type:* <a href="#cdk-ssm-documents.IObserver">IObserver</a>
+- *Default:* NoopObserver
+
+(Optional) Allows for observing the input to steps as they run.
+
+---
+
+##### `outputObserver`<sup>Optional</sup> <a name="outputObserver" id="cdk-ssm-documents.AutomationSimulationProps.property.outputObserver"></a>
+
+```typescript
+public readonly outputObserver: IObserver;
+```
+
+- *Type:* <a href="#cdk-ssm-documents.IObserver">IObserver</a>
+- *Default:* NoopObserver
+
+(Optional) Allows for observing the output of steps as they run.
+
+---
+
+##### `parameterResolver`<sup>Optional</sup> <a name="parameterResolver" id="cdk-ssm-documents.AutomationSimulationProps.property.parameterResolver"></a>
+
+```typescript
+public readonly parameterResolver: IParameterResolver;
+```
+
+- *Type:* <a href="#cdk-ssm-documents.IParameterResolver">IParameterResolver</a>
+- *Default:* Treats parameters as literal
+
+(Optional) Resolver for secure strings in parameters.
+
+Required to simulate if using tokens in parameters input.
+
+---
+
+##### `pauseHook`<sup>Optional</sup> <a name="pauseHook" id="cdk-ssm-documents.AutomationSimulationProps.property.pauseHook"></a>
+
+```typescript
+public readonly pauseHook: IPauseHook;
+```
+
+- *Type:* <a href="#cdk-ssm-documents.IPauseHook">IPauseHook</a>
+- *Default:* PauseHook instance. PauseHook may not work in exported JSII languages. Override interface as needed.
+
+(Optional) Pause hook to be called to pause the execution.
+
+To mock this implemenation either inject an instance of IPauseHook or use the provided MockPause class.
+
+---
+
+##### `runCommandHook`<sup>Optional</sup> <a name="runCommandHook" id="cdk-ssm-documents.AutomationSimulationProps.property.runCommandHook"></a>
+
+```typescript
+public readonly runCommandHook: IRunCommandHook;
+```
+
+- *Type:* <a href="#cdk-ssm-documents.IRunCommandHook">IRunCommandHook</a>
+- *Default:* Uses AWS API to execute the document remotely.
+
+Hook for simulating aws:runCommand.
+
+---
+
+##### `sleepHook`<sup>Optional</sup> <a name="sleepHook" id="cdk-ssm-documents.AutomationSimulationProps.property.sleepHook"></a>
+
+```typescript
+public readonly sleepHook: ISleepHook;
+```
+
+- *Type:* <a href="#cdk-ssm-documents.ISleepHook">ISleepHook</a>
+- *Default:* really perform sleep using SleeperImpl class.
+
+(Optional) Hook to inject alternate ISleeper (to mock the sleep between failed invocations).
+
+---
+
+##### `webhook`<sup>Optional</sup> <a name="webhook" id="cdk-ssm-documents.AutomationSimulationProps.property.webhook"></a>
+
+```typescript
+public readonly webhook: IWebhook;
+```
+
+- *Type:* <a href="#cdk-ssm-documents.IWebhook">IWebhook</a>
+- *Default:* Returns 204 with an empty response
+
+(Optional) Hook for simulating aws:invokeWebhook.
+
+---
+
 ### AutomationStepProps <a name="AutomationStepProps" id="cdk-ssm-documents.AutomationStepProps"></a>
 
 #### Initializer <a name="Initializer" id="cdk-ssm-documents.AutomationStepProps.Initializer"></a>
@@ -16789,6 +16973,37 @@ describeInstances
 ```
 
 
+### AwsInvocationSimulationProps <a name="AwsInvocationSimulationProps" id="cdk-ssm-documents.AwsInvocationSimulationProps"></a>
+
+#### Initializer <a name="Initializer" id="cdk-ssm-documents.AwsInvocationSimulationProps.Initializer"></a>
+
+```typescript
+import { AwsInvocationSimulationProps } from 'cdk-ssm-documents'
+
+const awsInvocationSimulationProps: AwsInvocationSimulationProps = { ... }
+```
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#cdk-ssm-documents.AwsInvocationSimulationProps.property.awsInvoker">awsInvoker</a></code> | <code><a href="#cdk-ssm-documents.IAwsInvoker">IAwsInvoker</a></code> | (Optional) Use this as a hook to inject an alternate IAwsInvoker (for mocking the AWS API call). |
+
+---
+
+##### `awsInvoker`<sup>Required</sup> <a name="awsInvoker" id="cdk-ssm-documents.AwsInvocationSimulationProps.property.awsInvoker"></a>
+
+```typescript
+public readonly awsInvoker: IAwsInvoker;
+```
+
+- *Type:* <a href="#cdk-ssm-documents.IAwsInvoker">IAwsInvoker</a>
+- *Default:* will perform a real invocation of the JavaScript AWS SDK using ReflectiveAwsInvoker class.
+
+(Optional) Use this as a hook to inject an alternate IAwsInvoker (for mocking the AWS API call).
+
+---
+
 ### BodyOrUrlProp <a name="BodyOrUrlProp" id="cdk-ssm-documents.BodyOrUrlProp"></a>
 
 Allow passing in a body or URL version of the property value.
@@ -17008,6 +17223,170 @@ public readonly defaultStepName: string;
 - *Default:* undefined - the next step in the chain will be invoked. See AWS Documentation for branch below.
 
 (Optional) default step in all of the choices evaluate to false.
+
+---
+
+### ChangeInstanceStateSimulationProps <a name="ChangeInstanceStateSimulationProps" id="cdk-ssm-documents.ChangeInstanceStateSimulationProps"></a>
+
+Properties for ChangeInstanceStateStep.
+
+#### Initializer <a name="Initializer" id="cdk-ssm-documents.ChangeInstanceStateSimulationProps.Initializer"></a>
+
+```typescript
+import { ChangeInstanceStateSimulationProps } from 'cdk-ssm-documents'
+
+const changeInstanceStateSimulationProps: ChangeInstanceStateSimulationProps = { ... }
+```
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#cdk-ssm-documents.ChangeInstanceStateSimulationProps.property.description">description</a></code> | <code>string</code> | (Optional) description of the current step. |
+| <code><a href="#cdk-ssm-documents.ChangeInstanceStateSimulationProps.property.inputObserver">inputObserver</a></code> | <code><a href="#cdk-ssm-documents.IObserver">IObserver</a></code> | (Optional) Allows for observing the input to steps as they run. |
+| <code><a href="#cdk-ssm-documents.ChangeInstanceStateSimulationProps.property.name">name</a></code> | <code>string</code> | (Optional) Name of the current step. |
+| <code><a href="#cdk-ssm-documents.ChangeInstanceStateSimulationProps.property.outputObserver">outputObserver</a></code> | <code><a href="#cdk-ssm-documents.IObserver">IObserver</a></code> | (Optional) Allows for observing the output of steps as they run. |
+| <code><a href="#cdk-ssm-documents.ChangeInstanceStateSimulationProps.property.isEnd">isEnd</a></code> | <code>boolean</code> | Whether to stop document execution after this step. |
+| <code><a href="#cdk-ssm-documents.ChangeInstanceStateSimulationProps.property.maxAttempts">maxAttempts</a></code> | <code>number</code> | (Optional) max attempts to run this step if there are failures. |
+| <code><a href="#cdk-ssm-documents.ChangeInstanceStateSimulationProps.property.onCancel">onCancel</a></code> | <code><a href="#cdk-ssm-documents.AutomationStep">AutomationStep</a></code> | (Optional) Step to jump to in the event that this step is cancelled. |
+| <code><a href="#cdk-ssm-documents.ChangeInstanceStateSimulationProps.property.onFailure">onFailure</a></code> | <code><a href="#cdk-ssm-documents.AutomationStep">AutomationStep</a></code> | (Optional) Step to jump to in the event that this step fails. |
+| <code><a href="#cdk-ssm-documents.ChangeInstanceStateSimulationProps.property.timeoutSeconds">timeoutSeconds</a></code> | <code>number</code> | (Optional) timeout seconds to run this step. |
+| <code><a href="#cdk-ssm-documents.ChangeInstanceStateSimulationProps.property.awsInvoker">awsInvoker</a></code> | <code><a href="#cdk-ssm-documents.IAwsInvoker">IAwsInvoker</a></code> | (Optional) Use this as a hook to inject an alternate IAwsInvoker (for mocking the AWS API call). |
+
+---
+
+##### `description`<sup>Optional</sup> <a name="description" id="cdk-ssm-documents.ChangeInstanceStateSimulationProps.property.description"></a>
+
+```typescript
+public readonly description: string;
+```
+
+- *Type:* string
+- *Default:* undefined
+
+(Optional) description of the current step.
+
+---
+
+##### `inputObserver`<sup>Optional</sup> <a name="inputObserver" id="cdk-ssm-documents.ChangeInstanceStateSimulationProps.property.inputObserver"></a>
+
+```typescript
+public readonly inputObserver: IObserver;
+```
+
+- *Type:* <a href="#cdk-ssm-documents.IObserver">IObserver</a>
+- *Default:* NoopObserver
+
+(Optional) Allows for observing the input to steps as they run.
+
+---
+
+##### `name`<sup>Optional</sup> <a name="name" id="cdk-ssm-documents.ChangeInstanceStateSimulationProps.property.name"></a>
+
+```typescript
+public readonly name: string;
+```
+
+- *Type:* string
+
+(Optional) Name of the current step.
+
+The name will be prepended onto all of the outputs emitted from this step.
+This name will also be used to reference this step in logs.
+Defaults to the id of the CDK node.
+
+---
+
+##### `outputObserver`<sup>Optional</sup> <a name="outputObserver" id="cdk-ssm-documents.ChangeInstanceStateSimulationProps.property.outputObserver"></a>
+
+```typescript
+public readonly outputObserver: IObserver;
+```
+
+- *Type:* <a href="#cdk-ssm-documents.IObserver">IObserver</a>
+- *Default:* NoopObserver
+
+(Optional) Allows for observing the output of steps as they run.
+
+---
+
+##### `isEnd`<sup>Optional</sup> <a name="isEnd" id="cdk-ssm-documents.ChangeInstanceStateSimulationProps.property.isEnd"></a>
+
+```typescript
+public readonly isEnd: boolean;
+```
+
+- *Type:* boolean
+- *Default:* false
+
+Whether to stop document execution after this step.
+
+---
+
+##### `maxAttempts`<sup>Optional</sup> <a name="maxAttempts" id="cdk-ssm-documents.ChangeInstanceStateSimulationProps.property.maxAttempts"></a>
+
+```typescript
+public readonly maxAttempts: number;
+```
+
+- *Type:* number
+- *Default:* Step.DEFAULT_MAX_ATTEMPTS
+
+(Optional) max attempts to run this step if there are failures.
+
+---
+
+##### `onCancel`<sup>Optional</sup> <a name="onCancel" id="cdk-ssm-documents.ChangeInstanceStateSimulationProps.property.onCancel"></a>
+
+```typescript
+public readonly onCancel: AutomationStep;
+```
+
+- *Type:* <a href="#cdk-ssm-documents.AutomationStep">AutomationStep</a>
+- *Default:* undefined
+
+(Optional) Step to jump to in the event that this step is cancelled.
+
+---
+
+##### `onFailure`<sup>Optional</sup> <a name="onFailure" id="cdk-ssm-documents.ChangeInstanceStateSimulationProps.property.onFailure"></a>
+
+```typescript
+public readonly onFailure: AutomationStep;
+```
+
+- *Type:* <a href="#cdk-ssm-documents.AutomationStep">AutomationStep</a>
+- *Default:* undefined
+
+(Optional) Step to jump to in the event that this step fails.
+
+---
+
+##### `timeoutSeconds`<sup>Optional</sup> <a name="timeoutSeconds" id="cdk-ssm-documents.ChangeInstanceStateSimulationProps.property.timeoutSeconds"></a>
+
+```typescript
+public readonly timeoutSeconds: number;
+```
+
+- *Type:* number
+- *Default:* Step.DEFAULT_TIMEOUT
+
+(Optional) timeout seconds to run this step.
+
+In a simulation run, this will only be encorced after-the-fact but execution will not be stopped mid-step.
+
+---
+
+##### `awsInvoker`<sup>Required</sup> <a name="awsInvoker" id="cdk-ssm-documents.ChangeInstanceStateSimulationProps.property.awsInvoker"></a>
+
+```typescript
+public readonly awsInvoker: IAwsInvoker;
+```
+
+- *Type:* <a href="#cdk-ssm-documents.IAwsInvoker">IAwsInvoker</a>
+- *Default:* will perform a real invocation of the JavaScript AWS SDK using ReflectiveAwsInvoker class.
+
+(Optional) Use this as a hook to inject an alternate IAwsInvoker (for mocking the AWS API call).
 
 ---
 
@@ -17486,6 +17865,54 @@ public readonly versionName: string;
 `AWS::SSM::Document.VersionName`.
 
 > [http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-document.html#cfn-ssm-document-versionname](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-document.html#cfn-ssm-document-versionname)
+
+---
+
+### CommandSimulationProps <a name="CommandSimulationProps" id="cdk-ssm-documents.CommandSimulationProps"></a>
+
+#### Initializer <a name="Initializer" id="cdk-ssm-documents.CommandSimulationProps.Initializer"></a>
+
+```typescript
+import { CommandSimulationProps } from 'cdk-ssm-documents'
+
+const commandSimulationProps: CommandSimulationProps = { ... }
+```
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#cdk-ssm-documents.CommandSimulationProps.property.simulationPlatform">simulationPlatform</a></code> | <code><a href="#cdk-ssm-documents.Platform">Platform</a></code> | The Platform used in executing the command step. |
+| <code><a href="#cdk-ssm-documents.CommandSimulationProps.property.environment">environment</a></code> | <code><a href="#cdk-ssm-documents.IEnvironment">IEnvironment</a></code> | (Optional) Specify here the environment in which to execute the scripts. |
+
+---
+
+##### `simulationPlatform`<sup>Required</sup> <a name="simulationPlatform" id="cdk-ssm-documents.CommandSimulationProps.property.simulationPlatform"></a>
+
+```typescript
+public readonly simulationPlatform: Platform;
+```
+
+- *Type:* <a href="#cdk-ssm-documents.Platform">Platform</a>
+
+The Platform used in executing the command step.
+
+---
+
+##### `environment`<sup>Optional</sup> <a name="environment" id="cdk-ssm-documents.CommandSimulationProps.property.environment"></a>
+
+```typescript
+public readonly environment: IEnvironment;
+```
+
+- *Type:* <a href="#cdk-ssm-documents.IEnvironment">IEnvironment</a>
+- *Default:* LoggingEnvironment
+
+(Optional) Specify here the environment in which to execute the scripts.
+
+Use the DockerEnvironment to execute the commands inside the docker.
+You can alternatively use the LoggingEnvironment which simply logs the commands
+or MockEnvironment which saves them for validation.
 
 ---
 
@@ -18530,6 +18957,71 @@ If you don't want the instance to run after you create an AMI from it, first use
 
 ---
 
+### CreateStackSimulationProps <a name="CreateStackSimulationProps" id="cdk-ssm-documents.CreateStackSimulationProps"></a>
+
+Properties for CreateStackStep.
+
+#### Initializer <a name="Initializer" id="cdk-ssm-documents.CreateStackSimulationProps.Initializer"></a>
+
+```typescript
+import { CreateStackSimulationProps } from 'cdk-ssm-documents'
+
+const createStackSimulationProps: CreateStackSimulationProps = { ... }
+```
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#cdk-ssm-documents.CreateStackSimulationProps.property.awsInvoker">awsInvoker</a></code> | <code><a href="#cdk-ssm-documents.IAwsInvoker">IAwsInvoker</a></code> | (Optional) Use this as a hook to inject an alternate IAwsInvoker (for mocking the AWS API call). |
+| <code><a href="#cdk-ssm-documents.CreateStackSimulationProps.property.parameterResolver">parameterResolver</a></code> | <code><a href="#cdk-ssm-documents.IParameterResolver">IParameterResolver</a></code> | (Optional) Resolver for secure strings in parameters. |
+| <code><a href="#cdk-ssm-documents.CreateStackSimulationProps.property.sleepHook">sleepHook</a></code> | <code><a href="#cdk-ssm-documents.ISleepHook">ISleepHook</a></code> | (Optional) Whether to really perform a pause of the runtime. |
+
+---
+
+##### `awsInvoker`<sup>Required</sup> <a name="awsInvoker" id="cdk-ssm-documents.CreateStackSimulationProps.property.awsInvoker"></a>
+
+```typescript
+public readonly awsInvoker: IAwsInvoker;
+```
+
+- *Type:* <a href="#cdk-ssm-documents.IAwsInvoker">IAwsInvoker</a>
+- *Default:* will perform a real invocation of the JavaScript AWS SDK using ReflectiveAwsInvoker class.
+
+(Optional) Use this as a hook to inject an alternate IAwsInvoker (for mocking the AWS API call).
+
+---
+
+##### `parameterResolver`<sup>Required</sup> <a name="parameterResolver" id="cdk-ssm-documents.CreateStackSimulationProps.property.parameterResolver"></a>
+
+```typescript
+public readonly parameterResolver: IParameterResolver;
+```
+
+- *Type:* <a href="#cdk-ssm-documents.IParameterResolver">IParameterResolver</a>
+- *Default:* Treats parameters as literal
+
+(Optional) Resolver for secure strings in parameters.
+
+Required to simulate if using tokens in parameters input.
+
+---
+
+##### `sleepHook`<sup>Required</sup> <a name="sleepHook" id="cdk-ssm-documents.CreateStackSimulationProps.property.sleepHook"></a>
+
+```typescript
+public readonly sleepHook: ISleepHook;
+```
+
+- *Type:* <a href="#cdk-ssm-documents.ISleepHook">ISleepHook</a>
+- *Default:* SleeperImpl
+
+(Optional) Whether to really perform a pause of the runtime.
+
+To override sleep behavior, inject an ISleepHook impl or use the provided MockSleep class.
+
+---
+
 ### CreateStackStepProps <a name="CreateStackStepProps" id="cdk-ssm-documents.CreateStackStepProps"></a>
 
 Properties for CreateStackStep.
@@ -18868,6 +19360,55 @@ If DisableRollback isn't set or is set to false, the stack will be rolled back.
 
 ---
 
+### CreateTagsSimulationProps <a name="CreateTagsSimulationProps" id="cdk-ssm-documents.CreateTagsSimulationProps"></a>
+
+Properties for CreateTagStep.
+
+#### Initializer <a name="Initializer" id="cdk-ssm-documents.CreateTagsSimulationProps.Initializer"></a>
+
+```typescript
+import { CreateTagsSimulationProps } from 'cdk-ssm-documents'
+
+const createTagsSimulationProps: CreateTagsSimulationProps = { ... }
+```
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#cdk-ssm-documents.CreateTagsSimulationProps.property.awsInvoker">awsInvoker</a></code> | <code><a href="#cdk-ssm-documents.IAwsInvoker">IAwsInvoker</a></code> | (Optional) Use this as a hook to inject an alternate IAwsInvoker (for mocking the AWS API call). |
+| <code><a href="#cdk-ssm-documents.CreateTagsSimulationProps.property.sleepHook">sleepHook</a></code> | <code><a href="#cdk-ssm-documents.ISleepHook">ISleepHook</a></code> | (Optional) Whether to really perform a pause of the runtime. |
+
+---
+
+##### `awsInvoker`<sup>Required</sup> <a name="awsInvoker" id="cdk-ssm-documents.CreateTagsSimulationProps.property.awsInvoker"></a>
+
+```typescript
+public readonly awsInvoker: IAwsInvoker;
+```
+
+- *Type:* <a href="#cdk-ssm-documents.IAwsInvoker">IAwsInvoker</a>
+- *Default:* will perform a real invocation of the JavaScript AWS SDK using ReflectiveAwsInvoker class.
+
+(Optional) Use this as a hook to inject an alternate IAwsInvoker (for mocking the AWS API call).
+
+---
+
+##### `sleepHook`<sup>Required</sup> <a name="sleepHook" id="cdk-ssm-documents.CreateTagsSimulationProps.property.sleepHook"></a>
+
+```typescript
+public readonly sleepHook: ISleepHook;
+```
+
+- *Type:* <a href="#cdk-ssm-documents.ISleepHook">ISleepHook</a>
+- *Default:* SleeperImpl
+
+(Optional) Whether to really perform a pause of the runtime.
+
+To override sleep behavior, inject an ISleepHook impl or use the provided MockSleep class.
+
+---
+
 ### CreateTagsStepProps <a name="CreateTagsStepProps" id="cdk-ssm-documents.CreateTagsStepProps"></a>
 
 Properties for CreateTagStep.
@@ -19059,6 +19600,55 @@ public readonly resourceType: IResourceTypeVariable;
 (Optional) The type of resource(s) to be tagged.
 
 Valid values: EC2 | ManagedInstance | MaintenanceWindow | Parameter
+
+---
+
+### DeleteImageSimulationProps <a name="DeleteImageSimulationProps" id="cdk-ssm-documents.DeleteImageSimulationProps"></a>
+
+Properties for DeleteImageStep.
+
+#### Initializer <a name="Initializer" id="cdk-ssm-documents.DeleteImageSimulationProps.Initializer"></a>
+
+```typescript
+import { DeleteImageSimulationProps } from 'cdk-ssm-documents'
+
+const deleteImageSimulationProps: DeleteImageSimulationProps = { ... }
+```
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#cdk-ssm-documents.DeleteImageSimulationProps.property.awsInvoker">awsInvoker</a></code> | <code><a href="#cdk-ssm-documents.IAwsInvoker">IAwsInvoker</a></code> | (Optional) Use this as a hook to inject an alternate IAwsInvoker (for mocking the AWS API call). |
+| <code><a href="#cdk-ssm-documents.DeleteImageSimulationProps.property.sleepHook">sleepHook</a></code> | <code><a href="#cdk-ssm-documents.ISleepHook">ISleepHook</a></code> | (Optional) Whether to really perform a pause of the runtime. |
+
+---
+
+##### `awsInvoker`<sup>Optional</sup> <a name="awsInvoker" id="cdk-ssm-documents.DeleteImageSimulationProps.property.awsInvoker"></a>
+
+```typescript
+public readonly awsInvoker: IAwsInvoker;
+```
+
+- *Type:* <a href="#cdk-ssm-documents.IAwsInvoker">IAwsInvoker</a>
+- *Default:* will perform a real invocation of the JavaScript AWS SDK using ReflectiveAwsInvoker class.
+
+(Optional) Use this as a hook to inject an alternate IAwsInvoker (for mocking the AWS API call).
+
+---
+
+##### `sleepHook`<sup>Optional</sup> <a name="sleepHook" id="cdk-ssm-documents.DeleteImageSimulationProps.property.sleepHook"></a>
+
+```typescript
+public readonly sleepHook: ISleepHook;
+```
+
+- *Type:* <a href="#cdk-ssm-documents.ISleepHook">ISleepHook</a>
+- *Default:* SleeperImpl
+
+(Optional) Whether to really perform a pause of the runtime.
+
+To override sleep behavior, inject an ISleepHook impl or use the provided MockSleep class.
 
 ---
 
@@ -19980,6 +20570,41 @@ public readonly destinationPath: IStringVariable;
 (Optional) An optional local path on the instance where you want to download the file.
 
 If you don't specify a path, the content is downloaded to a path relative to your command ID.
+
+---
+
+### EnvironmentProps <a name="EnvironmentProps" id="cdk-ssm-documents.EnvironmentProps"></a>
+
+#### Initializer <a name="Initializer" id="cdk-ssm-documents.EnvironmentProps.Initializer"></a>
+
+```typescript
+import { EnvironmentProps } from 'cdk-ssm-documents'
+
+const environmentProps: EnvironmentProps = { ... }
+```
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#cdk-ssm-documents.EnvironmentProps.property.environment">environment</a></code> | <code><a href="#cdk-ssm-documents.IEnvironment">IEnvironment</a></code> | (Optional) Specify here the environment in which to execute the scripts. |
+
+---
+
+##### `environment`<sup>Required</sup> <a name="environment" id="cdk-ssm-documents.EnvironmentProps.property.environment"></a>
+
+```typescript
+public readonly environment: IEnvironment;
+```
+
+- *Type:* <a href="#cdk-ssm-documents.IEnvironment">IEnvironment</a>
+- *Default:* LoggingEnvironment
+
+(Optional) Specify here the environment in which to execute the scripts.
+
+Use the DockerEnvironment to execute the commands inside the docker.
+You can alternatively use the LoggingEnvironment which simply logs the commands
+or MockEnvironment which saves them for validation.
 
 ---
 
@@ -21509,6 +22134,39 @@ The HTTP status code received from the webhook provider response.
 
 ---
 
+### InvokeWebhookSimulationProps <a name="InvokeWebhookSimulationProps" id="cdk-ssm-documents.InvokeWebhookSimulationProps"></a>
+
+Properties for InvokeWebhookStep.
+
+#### Initializer <a name="Initializer" id="cdk-ssm-documents.InvokeWebhookSimulationProps.Initializer"></a>
+
+```typescript
+import { InvokeWebhookSimulationProps } from 'cdk-ssm-documents'
+
+const invokeWebhookSimulationProps: InvokeWebhookSimulationProps = { ... }
+```
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#cdk-ssm-documents.InvokeWebhookSimulationProps.property.webhook">webhook</a></code> | <code><a href="#cdk-ssm-documents.IWebhook">IWebhook</a></code> | (Optional) Hook for simulating aws:invokeWebhook. |
+
+---
+
+##### `webhook`<sup>Required</sup> <a name="webhook" id="cdk-ssm-documents.InvokeWebhookSimulationProps.property.webhook"></a>
+
+```typescript
+public readonly webhook: IWebhook;
+```
+
+- *Type:* <a href="#cdk-ssm-documents.IWebhook">IWebhook</a>
+- *Default:* Returns 204 with an empty response
+
+(Optional) Hook for simulating aws:invokeWebhook.
+
+---
+
 ### InvokeWebhookStepProps <a name="InvokeWebhookStepProps" id="cdk-ssm-documents.InvokeWebhookStepProps"></a>
 
 Properties for InvokeWebhookStep.
@@ -21746,6 +22404,41 @@ public readonly selector: string;
 - *Type:* string
 
 Json selector for locating the value in the json step response.
+
+---
+
+### PauseSimulationProps <a name="PauseSimulationProps" id="cdk-ssm-documents.PauseSimulationProps"></a>
+
+Properties for PauseStep.
+
+#### Initializer <a name="Initializer" id="cdk-ssm-documents.PauseSimulationProps.Initializer"></a>
+
+```typescript
+import { PauseSimulationProps } from 'cdk-ssm-documents'
+
+const pauseSimulationProps: PauseSimulationProps = { ... }
+```
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#cdk-ssm-documents.PauseSimulationProps.property.pauseHook">pauseHook</a></code> | <code><a href="#cdk-ssm-documents.IPauseHook">IPauseHook</a></code> | (Optional) Pause hook to be called to pause the execution. |
+
+---
+
+##### `pauseHook`<sup>Required</sup> <a name="pauseHook" id="cdk-ssm-documents.PauseSimulationProps.property.pauseHook"></a>
+
+```typescript
+public readonly pauseHook: IPauseHook;
+```
+
+- *Type:* <a href="#cdk-ssm-documents.IPauseHook">IPauseHook</a>
+- *Default:* PauseHook instance. PauseHook may not work in exported JSII languages. Override interface as needed.
+
+(Optional) Pause hook to be called to pause the execution.
+
+To mock this implementation either inject an instance of IPauseHook or use the provided MockPause class.
 
 ---
 
@@ -22038,6 +22731,165 @@ public readonly workingDirectory: IStringVariable;
 
 ---
 
+### RequiredAutomationSimulationProps <a name="RequiredAutomationSimulationProps" id="cdk-ssm-documents.RequiredAutomationSimulationProps"></a>
+
+The same interface as AutomationSimulationProps but all fields are required.
+
+#### Initializer <a name="Initializer" id="cdk-ssm-documents.RequiredAutomationSimulationProps.Initializer"></a>
+
+```typescript
+import { RequiredAutomationSimulationProps } from 'cdk-ssm-documents'
+
+const requiredAutomationSimulationProps: RequiredAutomationSimulationProps = { ... }
+```
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#cdk-ssm-documents.RequiredAutomationSimulationProps.property.approveHook">approveHook</a></code> | <code><a href="#cdk-ssm-documents.IApproveHook">IApproveHook</a></code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.RequiredAutomationSimulationProps.property.awsInvoker">awsInvoker</a></code> | <code><a href="#cdk-ssm-documents.IAwsInvoker">IAwsInvoker</a></code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.RequiredAutomationSimulationProps.property.inputObserver">inputObserver</a></code> | <code><a href="#cdk-ssm-documents.IObserver">IObserver</a></code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.RequiredAutomationSimulationProps.property.outputObserver">outputObserver</a></code> | <code><a href="#cdk-ssm-documents.IObserver">IObserver</a></code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.RequiredAutomationSimulationProps.property.parameterResolver">parameterResolver</a></code> | <code><a href="#cdk-ssm-documents.IParameterResolver">IParameterResolver</a></code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.RequiredAutomationSimulationProps.property.pauseHook">pauseHook</a></code> | <code><a href="#cdk-ssm-documents.IPauseHook">IPauseHook</a></code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.RequiredAutomationSimulationProps.property.runCommandHook">runCommandHook</a></code> | <code><a href="#cdk-ssm-documents.IRunCommandHook">IRunCommandHook</a></code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.RequiredAutomationSimulationProps.property.sleepHook">sleepHook</a></code> | <code><a href="#cdk-ssm-documents.ISleepHook">ISleepHook</a></code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.RequiredAutomationSimulationProps.property.webhook">webhook</a></code> | <code><a href="#cdk-ssm-documents.IWebhook">IWebhook</a></code> | *No description.* |
+
+---
+
+##### `approveHook`<sup>Required</sup> <a name="approveHook" id="cdk-ssm-documents.RequiredAutomationSimulationProps.property.approveHook"></a>
+
+```typescript
+public readonly approveHook: IApproveHook;
+```
+
+- *Type:* <a href="#cdk-ssm-documents.IApproveHook">IApproveHook</a>
+
+---
+
+##### `awsInvoker`<sup>Required</sup> <a name="awsInvoker" id="cdk-ssm-documents.RequiredAutomationSimulationProps.property.awsInvoker"></a>
+
+```typescript
+public readonly awsInvoker: IAwsInvoker;
+```
+
+- *Type:* <a href="#cdk-ssm-documents.IAwsInvoker">IAwsInvoker</a>
+
+---
+
+##### `inputObserver`<sup>Required</sup> <a name="inputObserver" id="cdk-ssm-documents.RequiredAutomationSimulationProps.property.inputObserver"></a>
+
+```typescript
+public readonly inputObserver: IObserver;
+```
+
+- *Type:* <a href="#cdk-ssm-documents.IObserver">IObserver</a>
+
+---
+
+##### `outputObserver`<sup>Required</sup> <a name="outputObserver" id="cdk-ssm-documents.RequiredAutomationSimulationProps.property.outputObserver"></a>
+
+```typescript
+public readonly outputObserver: IObserver;
+```
+
+- *Type:* <a href="#cdk-ssm-documents.IObserver">IObserver</a>
+
+---
+
+##### `parameterResolver`<sup>Required</sup> <a name="parameterResolver" id="cdk-ssm-documents.RequiredAutomationSimulationProps.property.parameterResolver"></a>
+
+```typescript
+public readonly parameterResolver: IParameterResolver;
+```
+
+- *Type:* <a href="#cdk-ssm-documents.IParameterResolver">IParameterResolver</a>
+
+---
+
+##### `pauseHook`<sup>Required</sup> <a name="pauseHook" id="cdk-ssm-documents.RequiredAutomationSimulationProps.property.pauseHook"></a>
+
+```typescript
+public readonly pauseHook: IPauseHook;
+```
+
+- *Type:* <a href="#cdk-ssm-documents.IPauseHook">IPauseHook</a>
+
+---
+
+##### `runCommandHook`<sup>Required</sup> <a name="runCommandHook" id="cdk-ssm-documents.RequiredAutomationSimulationProps.property.runCommandHook"></a>
+
+```typescript
+public readonly runCommandHook: IRunCommandHook;
+```
+
+- *Type:* <a href="#cdk-ssm-documents.IRunCommandHook">IRunCommandHook</a>
+
+---
+
+##### `sleepHook`<sup>Required</sup> <a name="sleepHook" id="cdk-ssm-documents.RequiredAutomationSimulationProps.property.sleepHook"></a>
+
+```typescript
+public readonly sleepHook: ISleepHook;
+```
+
+- *Type:* <a href="#cdk-ssm-documents.ISleepHook">ISleepHook</a>
+
+---
+
+##### `webhook`<sup>Required</sup> <a name="webhook" id="cdk-ssm-documents.RequiredAutomationSimulationProps.property.webhook"></a>
+
+```typescript
+public readonly webhook: IWebhook;
+```
+
+- *Type:* <a href="#cdk-ssm-documents.IWebhook">IWebhook</a>
+
+---
+
+### RequiredCommandSimulationProps <a name="RequiredCommandSimulationProps" id="cdk-ssm-documents.RequiredCommandSimulationProps"></a>
+
+The same interface as CommandSimulationProps but all fields are required.
+
+#### Initializer <a name="Initializer" id="cdk-ssm-documents.RequiredCommandSimulationProps.Initializer"></a>
+
+```typescript
+import { RequiredCommandSimulationProps } from 'cdk-ssm-documents'
+
+const requiredCommandSimulationProps: RequiredCommandSimulationProps = { ... }
+```
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#cdk-ssm-documents.RequiredCommandSimulationProps.property.environment">environment</a></code> | <code><a href="#cdk-ssm-documents.IEnvironment">IEnvironment</a></code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.RequiredCommandSimulationProps.property.simulationPlatform">simulationPlatform</a></code> | <code><a href="#cdk-ssm-documents.Platform">Platform</a></code> | *No description.* |
+
+---
+
+##### `environment`<sup>Required</sup> <a name="environment" id="cdk-ssm-documents.RequiredCommandSimulationProps.property.environment"></a>
+
+```typescript
+public readonly environment: IEnvironment;
+```
+
+- *Type:* <a href="#cdk-ssm-documents.IEnvironment">IEnvironment</a>
+
+---
+
+##### `simulationPlatform`<sup>Required</sup> <a name="simulationPlatform" id="cdk-ssm-documents.RequiredCommandSimulationProps.property.simulationPlatform"></a>
+
+```typescript
+public readonly simulationPlatform: Platform;
+```
+
+- *Type:* <a href="#cdk-ssm-documents.Platform">Platform</a>
+
+---
+
 ### RunCommandOutputs <a name="RunCommandOutputs" id="cdk-ssm-documents.RunCommandOutputs"></a>
 
 Outputs for aws:runCommand.
@@ -22317,6 +23169,39 @@ public readonly timeoutSeconds: number;
 (Optional) The amount of time in seconds to wait for a command to deliver to the AWS Systems Manager SSM Agent on an instance.
 
 If the command isn't received by the SSM Agent on the instance before the value specified is reached, then the status of the command changes to Delivery Timed Out.
+
+---
+
+### RunCommandSimulationProps <a name="RunCommandSimulationProps" id="cdk-ssm-documents.RunCommandSimulationProps"></a>
+
+Properties for RunCommandStep.
+
+#### Initializer <a name="Initializer" id="cdk-ssm-documents.RunCommandSimulationProps.Initializer"></a>
+
+```typescript
+import { RunCommandSimulationProps } from 'cdk-ssm-documents'
+
+const runCommandSimulationProps: RunCommandSimulationProps = { ... }
+```
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#cdk-ssm-documents.RunCommandSimulationProps.property.runCommandHook">runCommandHook</a></code> | <code><a href="#cdk-ssm-documents.IRunCommandHook">IRunCommandHook</a></code> | Hook for simulating aws:runCommand. |
+
+---
+
+##### `runCommandHook`<sup>Required</sup> <a name="runCommandHook" id="cdk-ssm-documents.RunCommandSimulationProps.property.runCommandHook"></a>
+
+```typescript
+public readonly runCommandHook: IRunCommandHook;
+```
+
+- *Type:* <a href="#cdk-ssm-documents.IRunCommandHook">IRunCommandHook</a>
+- *Default:* Uses AWS API to execute the document remotely.
+
+Hook for simulating aws:runCommand.
 
 ---
 
@@ -24027,6 +24912,146 @@ The URL to the file or directory you want to download.
 
 ---
 
+### SimulationProps <a name="SimulationProps" id="cdk-ssm-documents.SimulationProps"></a>
+
+Universe of Automation and Command simulation props.
+
+#### Initializer <a name="Initializer" id="cdk-ssm-documents.SimulationProps.Initializer"></a>
+
+```typescript
+import { SimulationProps } from 'cdk-ssm-documents'
+
+const simulationProps: SimulationProps = { ... }
+```
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#cdk-ssm-documents.SimulationProps.property.approveHook">approveHook</a></code> | <code><a href="#cdk-ssm-documents.IApproveHook">IApproveHook</a></code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.SimulationProps.property.awsInvoker">awsInvoker</a></code> | <code><a href="#cdk-ssm-documents.IAwsInvoker">IAwsInvoker</a></code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.SimulationProps.property.environment">environment</a></code> | <code><a href="#cdk-ssm-documents.IEnvironment">IEnvironment</a></code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.SimulationProps.property.inputObserver">inputObserver</a></code> | <code><a href="#cdk-ssm-documents.IObserver">IObserver</a></code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.SimulationProps.property.outputObserver">outputObserver</a></code> | <code><a href="#cdk-ssm-documents.IObserver">IObserver</a></code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.SimulationProps.property.parameterResolver">parameterResolver</a></code> | <code><a href="#cdk-ssm-documents.IParameterResolver">IParameterResolver</a></code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.SimulationProps.property.pauseHook">pauseHook</a></code> | <code><a href="#cdk-ssm-documents.IPauseHook">IPauseHook</a></code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.SimulationProps.property.runCommandHook">runCommandHook</a></code> | <code><a href="#cdk-ssm-documents.IRunCommandHook">IRunCommandHook</a></code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.SimulationProps.property.simulationPlatform">simulationPlatform</a></code> | <code><a href="#cdk-ssm-documents.Platform">Platform</a></code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.SimulationProps.property.sleepHook">sleepHook</a></code> | <code><a href="#cdk-ssm-documents.ISleepHook">ISleepHook</a></code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.SimulationProps.property.webhook">webhook</a></code> | <code><a href="#cdk-ssm-documents.IWebhook">IWebhook</a></code> | *No description.* |
+
+---
+
+##### `approveHook`<sup>Optional</sup> <a name="approveHook" id="cdk-ssm-documents.SimulationProps.property.approveHook"></a>
+
+```typescript
+public readonly approveHook: IApproveHook;
+```
+
+- *Type:* <a href="#cdk-ssm-documents.IApproveHook">IApproveHook</a>
+
+---
+
+##### `awsInvoker`<sup>Optional</sup> <a name="awsInvoker" id="cdk-ssm-documents.SimulationProps.property.awsInvoker"></a>
+
+```typescript
+public readonly awsInvoker: IAwsInvoker;
+```
+
+- *Type:* <a href="#cdk-ssm-documents.IAwsInvoker">IAwsInvoker</a>
+
+---
+
+##### `environment`<sup>Optional</sup> <a name="environment" id="cdk-ssm-documents.SimulationProps.property.environment"></a>
+
+```typescript
+public readonly environment: IEnvironment;
+```
+
+- *Type:* <a href="#cdk-ssm-documents.IEnvironment">IEnvironment</a>
+
+---
+
+##### `inputObserver`<sup>Optional</sup> <a name="inputObserver" id="cdk-ssm-documents.SimulationProps.property.inputObserver"></a>
+
+```typescript
+public readonly inputObserver: IObserver;
+```
+
+- *Type:* <a href="#cdk-ssm-documents.IObserver">IObserver</a>
+
+---
+
+##### `outputObserver`<sup>Optional</sup> <a name="outputObserver" id="cdk-ssm-documents.SimulationProps.property.outputObserver"></a>
+
+```typescript
+public readonly outputObserver: IObserver;
+```
+
+- *Type:* <a href="#cdk-ssm-documents.IObserver">IObserver</a>
+
+---
+
+##### `parameterResolver`<sup>Optional</sup> <a name="parameterResolver" id="cdk-ssm-documents.SimulationProps.property.parameterResolver"></a>
+
+```typescript
+public readonly parameterResolver: IParameterResolver;
+```
+
+- *Type:* <a href="#cdk-ssm-documents.IParameterResolver">IParameterResolver</a>
+
+---
+
+##### `pauseHook`<sup>Optional</sup> <a name="pauseHook" id="cdk-ssm-documents.SimulationProps.property.pauseHook"></a>
+
+```typescript
+public readonly pauseHook: IPauseHook;
+```
+
+- *Type:* <a href="#cdk-ssm-documents.IPauseHook">IPauseHook</a>
+
+---
+
+##### `runCommandHook`<sup>Optional</sup> <a name="runCommandHook" id="cdk-ssm-documents.SimulationProps.property.runCommandHook"></a>
+
+```typescript
+public readonly runCommandHook: IRunCommandHook;
+```
+
+- *Type:* <a href="#cdk-ssm-documents.IRunCommandHook">IRunCommandHook</a>
+
+---
+
+##### `simulationPlatform`<sup>Optional</sup> <a name="simulationPlatform" id="cdk-ssm-documents.SimulationProps.property.simulationPlatform"></a>
+
+```typescript
+public readonly simulationPlatform: Platform;
+```
+
+- *Type:* <a href="#cdk-ssm-documents.Platform">Platform</a>
+
+---
+
+##### `sleepHook`<sup>Optional</sup> <a name="sleepHook" id="cdk-ssm-documents.SimulationProps.property.sleepHook"></a>
+
+```typescript
+public readonly sleepHook: ISleepHook;
+```
+
+- *Type:* <a href="#cdk-ssm-documents.ISleepHook">ISleepHook</a>
+
+---
+
+##### `webhook`<sup>Optional</sup> <a name="webhook" id="cdk-ssm-documents.SimulationProps.property.webhook"></a>
+
+```typescript
+public readonly webhook: IWebhook;
+```
+
+- *Type:* <a href="#cdk-ssm-documents.IWebhook">IWebhook</a>
+
+---
+
 ### SimulationResult <a name="SimulationResult" id="cdk-ssm-documents.SimulationResult"></a>
 
 Response object returned from steps.
@@ -24099,6 +25124,41 @@ public readonly stackTrace: string;
 - *Type:* string
 
 undefined if responseCode is SUCCESS.
+
+---
+
+### SleepSimulationProps <a name="SleepSimulationProps" id="cdk-ssm-documents.SleepSimulationProps"></a>
+
+Properties for sleep step.
+
+#### Initializer <a name="Initializer" id="cdk-ssm-documents.SleepSimulationProps.Initializer"></a>
+
+```typescript
+import { SleepSimulationProps } from 'cdk-ssm-documents'
+
+const sleepSimulationProps: SleepSimulationProps = { ... }
+```
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#cdk-ssm-documents.SleepSimulationProps.property.sleepHook">sleepHook</a></code> | <code><a href="#cdk-ssm-documents.ISleepHook">ISleepHook</a></code> | (Optional) Whether to really perform a pause of the runtime. |
+
+---
+
+##### `sleepHook`<sup>Required</sup> <a name="sleepHook" id="cdk-ssm-documents.SleepSimulationProps.property.sleepHook"></a>
+
+```typescript
+public readonly sleepHook: ISleepHook;
+```
+
+- *Type:* <a href="#cdk-ssm-documents.ISleepHook">ISleepHook</a>
+- *Default:* SleeperImpl
+
+(Optional) Whether to really perform a pause of the runtime.
+
+To override sleep behavior, inject an ISleepHook impl or use the provided MockSleep class.
 
 ---
 
@@ -25332,6 +26392,51 @@ If not specified, the agent will be updated to the latest version.
 
 ---
 
+### WaitForResourceSimulationProps <a name="WaitForResourceSimulationProps" id="cdk-ssm-documents.WaitForResourceSimulationProps"></a>
+
+#### Initializer <a name="Initializer" id="cdk-ssm-documents.WaitForResourceSimulationProps.Initializer"></a>
+
+```typescript
+import { WaitForResourceSimulationProps } from 'cdk-ssm-documents'
+
+const waitForResourceSimulationProps: WaitForResourceSimulationProps = { ... }
+```
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#cdk-ssm-documents.WaitForResourceSimulationProps.property.awsInvoker">awsInvoker</a></code> | <code><a href="#cdk-ssm-documents.IAwsInvoker">IAwsInvoker</a></code> | (Optional) Use this as a hook to inject an alternate IAwsInvoker (for mocking the AWS API call). |
+| <code><a href="#cdk-ssm-documents.WaitForResourceSimulationProps.property.sleepHook">sleepHook</a></code> | <code><a href="#cdk-ssm-documents.ISleepHook">ISleepHook</a></code> | (Optional) Hook to inject alternate ISleeper (to mock the sleep between failed invocations). |
+
+---
+
+##### `awsInvoker`<sup>Required</sup> <a name="awsInvoker" id="cdk-ssm-documents.WaitForResourceSimulationProps.property.awsInvoker"></a>
+
+```typescript
+public readonly awsInvoker: IAwsInvoker;
+```
+
+- *Type:* <a href="#cdk-ssm-documents.IAwsInvoker">IAwsInvoker</a>
+- *Default:* will perform a real invocation of the JavaScript AWS SDK using ReflectiveAwsInvoker class.
+
+(Optional) Use this as a hook to inject an alternate IAwsInvoker (for mocking the AWS API call).
+
+---
+
+##### `sleepHook`<sup>Required</sup> <a name="sleepHook" id="cdk-ssm-documents.WaitForResourceSimulationProps.property.sleepHook"></a>
+
+```typescript
+public readonly sleepHook: ISleepHook;
+```
+
+- *Type:* <a href="#cdk-ssm-documents.ISleepHook">ISleepHook</a>
+- *Default:* really perform sleep using SleeperImpl class.
+
+(Optional) Hook to inject alternate ISleeper (to mock the sleep between failed invocations).
+
+---
+
 ### WaitForResourceStepProps <a name="WaitForResourceStepProps" id="cdk-ssm-documents.WaitForResourceStepProps"></a>
 
 #### Initializer <a name="Initializer" id="cdk-ssm-documents.WaitForResourceStepProps.Initializer"></a>
@@ -25902,6 +27007,103 @@ Ask for approval.
 
 
 
+### ApproveSimulation <a name="ApproveSimulation" id="cdk-ssm-documents.ApproveSimulation"></a>
+
+AutomationStep implementation for aws:approve https://docs.aws.amazon.com/systems-manager/latest/userguide/automation-action-approve.html.
+
+#### Initializers <a name="Initializers" id="cdk-ssm-documents.ApproveSimulation.Initializer"></a>
+
+```typescript
+import { ApproveSimulation } from 'cdk-ssm-documents'
+
+new ApproveSimulation(step: ApproveStep, props: ApproveSimulationProps)
+```
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#cdk-ssm-documents.ApproveSimulation.Initializer.parameter.step">step</a></code> | <code><a href="#cdk-ssm-documents.ApproveStep">ApproveStep</a></code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.ApproveSimulation.Initializer.parameter.props">props</a></code> | <code><a href="#cdk-ssm-documents.ApproveSimulationProps">ApproveSimulationProps</a></code> | *No description.* |
+
+---
+
+##### `step`<sup>Required</sup> <a name="step" id="cdk-ssm-documents.ApproveSimulation.Initializer.parameter.step"></a>
+
+- *Type:* <a href="#cdk-ssm-documents.ApproveStep">ApproveStep</a>
+
+---
+
+##### `props`<sup>Required</sup> <a name="props" id="cdk-ssm-documents.ApproveSimulation.Initializer.parameter.props"></a>
+
+- *Type:* <a href="#cdk-ssm-documents.ApproveSimulationProps">ApproveSimulationProps</a>
+
+---
+
+#### Methods <a name="Methods" id="Methods"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#cdk-ssm-documents.ApproveSimulation.executeStep">executeStep</a></code> | May perform a real approval ask based on the params used during instance creation. |
+| <code><a href="#cdk-ssm-documents.ApproveSimulation.nextStep">nextStep</a></code> | *No description.* |
+
+---
+
+##### `executeStep` <a name="executeStep" id="cdk-ssm-documents.ApproveSimulation.executeStep"></a>
+
+```typescript
+public executeStep(inputs: {[ key: string ]: any}): {[ key: string ]: any}
+```
+
+May perform a real approval ask based on the params used during instance creation.
+
+###### `inputs`<sup>Required</sup> <a name="inputs" id="cdk-ssm-documents.ApproveSimulation.executeStep.parameter.inputs"></a>
+
+- *Type:* {[ key: string ]: any}
+
+---
+
+##### `nextStep` <a name="nextStep" id="cdk-ssm-documents.ApproveSimulation.nextStep"></a>
+
+```typescript
+public nextStep(_inputs: {[ key: string ]: any}): AutomationStep
+```
+
+###### `_inputs`<sup>Required</sup> <a name="_inputs" id="cdk-ssm-documents.ApproveSimulation.nextStep.parameter._inputs"></a>
+
+- *Type:* {[ key: string ]: any}
+
+---
+
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#cdk-ssm-documents.ApproveSimulation.property.action">action</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.ApproveSimulation.property.approveHook">approveHook</a></code> | <code><a href="#cdk-ssm-documents.IApproveHook">IApproveHook</a></code> | *No description.* |
+
+---
+
+##### `action`<sup>Required</sup> <a name="action" id="cdk-ssm-documents.ApproveSimulation.property.action"></a>
+
+```typescript
+public readonly action: string;
+```
+
+- *Type:* string
+
+---
+
+##### `approveHook`<sup>Required</sup> <a name="approveHook" id="cdk-ssm-documents.ApproveSimulation.property.approveHook"></a>
+
+```typescript
+public readonly approveHook: IApproveHook;
+```
+
+- *Type:* <a href="#cdk-ssm-documents.IApproveHook">IApproveHook</a>
+
+---
+
+
 ### ArnDoc <a name="ArnDoc" id="cdk-ssm-documents.ArnDoc"></a>
 
 #### Initializers <a name="Initializers" id="cdk-ssm-documents.ArnDoc.Initializer"></a>
@@ -26003,6 +27205,96 @@ public readonly arn: IStringVariable;
 ```
 
 - *Type:* <a href="#cdk-ssm-documents.IStringVariable">IStringVariable</a>
+
+---
+
+
+### AssertAwsResourceSimulation <a name="AssertAwsResourceSimulation" id="cdk-ssm-documents.AssertAwsResourceSimulation"></a>
+
+AutomationStep implementation of aws:assertAwsResourceProperty.
+
+https://docs.aws.amazon.com/systems-manager/latest/userguide/automation-action-assertAwsResourceProperty.html
+
+#### Initializers <a name="Initializers" id="cdk-ssm-documents.AssertAwsResourceSimulation.Initializer"></a>
+
+```typescript
+import { AssertAwsResourceSimulation } from 'cdk-ssm-documents'
+
+new AssertAwsResourceSimulation(step: AssertAwsResourceStep, props: AwsInvocationSimulationProps)
+```
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#cdk-ssm-documents.AssertAwsResourceSimulation.Initializer.parameter.step">step</a></code> | <code><a href="#cdk-ssm-documents.AssertAwsResourceStep">AssertAwsResourceStep</a></code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.AssertAwsResourceSimulation.Initializer.parameter.props">props</a></code> | <code><a href="#cdk-ssm-documents.AwsInvocationSimulationProps">AwsInvocationSimulationProps</a></code> | *No description.* |
+
+---
+
+##### `step`<sup>Required</sup> <a name="step" id="cdk-ssm-documents.AssertAwsResourceSimulation.Initializer.parameter.step"></a>
+
+- *Type:* <a href="#cdk-ssm-documents.AssertAwsResourceStep">AssertAwsResourceStep</a>
+
+---
+
+##### `props`<sup>Required</sup> <a name="props" id="cdk-ssm-documents.AssertAwsResourceSimulation.Initializer.parameter.props"></a>
+
+- *Type:* <a href="#cdk-ssm-documents.AwsInvocationSimulationProps">AwsInvocationSimulationProps</a>
+
+---
+
+#### Methods <a name="Methods" id="Methods"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#cdk-ssm-documents.AssertAwsResourceSimulation.executeStep">executeStep</a></code> | If the value found matches one of the desiredValues, then this function returns. |
+| <code><a href="#cdk-ssm-documents.AssertAwsResourceSimulation.nextStep">nextStep</a></code> | *No description.* |
+
+---
+
+##### `executeStep` <a name="executeStep" id="cdk-ssm-documents.AssertAwsResourceSimulation.executeStep"></a>
+
+```typescript
+public executeStep(inputs: {[ key: string ]: any}): {[ key: string ]: any}
+```
+
+If the value found matches one of the desiredValues, then this function returns.
+
+Otherwise it throws.
+
+###### `inputs`<sup>Required</sup> <a name="inputs" id="cdk-ssm-documents.AssertAwsResourceSimulation.executeStep.parameter.inputs"></a>
+
+- *Type:* {[ key: string ]: any}
+
+---
+
+##### `nextStep` <a name="nextStep" id="cdk-ssm-documents.AssertAwsResourceSimulation.nextStep"></a>
+
+```typescript
+public nextStep(_inputs: {[ key: string ]: any}): AutomationStep
+```
+
+###### `_inputs`<sup>Required</sup> <a name="_inputs" id="cdk-ssm-documents.AssertAwsResourceSimulation.nextStep.parameter._inputs"></a>
+
+- *Type:* {[ key: string ]: any}
+
+---
+
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#cdk-ssm-documents.AssertAwsResourceSimulation.property.action">action</a></code> | <code>string</code> | *No description.* |
+
+---
+
+##### `action`<sup>Required</sup> <a name="action" id="cdk-ssm-documents.AssertAwsResourceSimulation.property.action"></a>
+
+```typescript
+public readonly action: string;
+```
+
+- *Type:* string
 
 ---
 
@@ -26158,6 +27450,317 @@ public readonly steps: AutomationStep[];
 ---
 
 
+### AutomationSimulation <a name="AutomationSimulation" id="cdk-ssm-documents.AutomationSimulation"></a>
+
+#### Initializers <a name="Initializers" id="cdk-ssm-documents.AutomationSimulation.Initializer"></a>
+
+```typescript
+import { AutomationSimulation } from 'cdk-ssm-documents'
+
+new AutomationSimulation(automationDocument: AutomationDocument, props: SimulationProps)
+```
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#cdk-ssm-documents.AutomationSimulation.Initializer.parameter.automationDocument">automationDocument</a></code> | <code><a href="#cdk-ssm-documents.AutomationDocument">AutomationDocument</a></code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.AutomationSimulation.Initializer.parameter.props">props</a></code> | <code><a href="#cdk-ssm-documents.SimulationProps">SimulationProps</a></code> | *No description.* |
+
+---
+
+##### `automationDocument`<sup>Required</sup> <a name="automationDocument" id="cdk-ssm-documents.AutomationSimulation.Initializer.parameter.automationDocument"></a>
+
+- *Type:* <a href="#cdk-ssm-documents.AutomationDocument">AutomationDocument</a>
+
+---
+
+##### `props`<sup>Required</sup> <a name="props" id="cdk-ssm-documents.AutomationSimulation.Initializer.parameter.props"></a>
+
+- *Type:* <a href="#cdk-ssm-documents.SimulationProps">SimulationProps</a>
+
+---
+
+#### Methods <a name="Methods" id="Methods"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#cdk-ssm-documents.AutomationSimulation.start">start</a></code> | Starts the execution of the steps by invoking the first step. |
+
+---
+
+##### `start` <a name="start" id="cdk-ssm-documents.AutomationSimulation.start"></a>
+
+```typescript
+public start(inputs: {[ key: string ]: any}): SimulationResult
+```
+
+Starts the execution of the steps by invoking the first step.
+
+The subsequent steps will be invoked by the steps themselves.
+
+###### `inputs`<sup>Required</sup> <a name="inputs" id="cdk-ssm-documents.AutomationSimulation.start.parameter.inputs"></a>
+
+- *Type:* {[ key: string ]: any}
+
+all of the inputs necessary for the document to execute.
+
+---
+
+
+
+
+### AutomationSimulationBase <a name="AutomationSimulationBase" id="cdk-ssm-documents.AutomationSimulationBase"></a>
+
+#### Initializers <a name="Initializers" id="cdk-ssm-documents.AutomationSimulationBase.Initializer"></a>
+
+```typescript
+import { AutomationSimulationBase } from 'cdk-ssm-documents'
+
+new AutomationSimulationBase(step: AutomationStep)
+```
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#cdk-ssm-documents.AutomationSimulationBase.Initializer.parameter.step">step</a></code> | <code><a href="#cdk-ssm-documents.AutomationStep">AutomationStep</a></code> | *No description.* |
+
+---
+
+##### `step`<sup>Required</sup> <a name="step" id="cdk-ssm-documents.AutomationSimulationBase.Initializer.parameter.step"></a>
+
+- *Type:* <a href="#cdk-ssm-documents.AutomationStep">AutomationStep</a>
+
+---
+
+#### Methods <a name="Methods" id="Methods"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#cdk-ssm-documents.AutomationSimulationBase.executeStep">executeStep</a></code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.AutomationSimulationBase.nextStep">nextStep</a></code> | *No description.* |
+
+---
+
+##### `executeStep` <a name="executeStep" id="cdk-ssm-documents.AutomationSimulationBase.executeStep"></a>
+
+```typescript
+public executeStep(inputs: {[ key: string ]: any}): {[ key: string ]: any}
+```
+
+###### `inputs`<sup>Required</sup> <a name="inputs" id="cdk-ssm-documents.AutomationSimulationBase.executeStep.parameter.inputs"></a>
+
+- *Type:* {[ key: string ]: any}
+
+---
+
+##### `nextStep` <a name="nextStep" id="cdk-ssm-documents.AutomationSimulationBase.nextStep"></a>
+
+```typescript
+public nextStep(_inputs: {[ key: string ]: any}): AutomationStep
+```
+
+###### `_inputs`<sup>Required</sup> <a name="_inputs" id="cdk-ssm-documents.AutomationSimulationBase.nextStep.parameter._inputs"></a>
+
+- *Type:* {[ key: string ]: any}
+
+---
+
+
+
+
+### AutomationStepSimulation <a name="AutomationStepSimulation" id="cdk-ssm-documents.AutomationStepSimulation"></a>
+
+#### Initializers <a name="Initializers" id="cdk-ssm-documents.AutomationStepSimulation.Initializer"></a>
+
+```typescript
+import { AutomationStepSimulation } from 'cdk-ssm-documents'
+
+new AutomationStepSimulation(step: AutomationStep, props: AutomationSimulationProps)
+```
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#cdk-ssm-documents.AutomationStepSimulation.Initializer.parameter.step">step</a></code> | <code><a href="#cdk-ssm-documents.AutomationStep">AutomationStep</a></code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.AutomationStepSimulation.Initializer.parameter.props">props</a></code> | <code><a href="#cdk-ssm-documents.AutomationSimulationProps">AutomationSimulationProps</a></code> | *No description.* |
+
+---
+
+##### `step`<sup>Required</sup> <a name="step" id="cdk-ssm-documents.AutomationStepSimulation.Initializer.parameter.step"></a>
+
+- *Type:* <a href="#cdk-ssm-documents.AutomationStep">AutomationStep</a>
+
+---
+
+##### `props`<sup>Required</sup> <a name="props" id="cdk-ssm-documents.AutomationStepSimulation.Initializer.parameter.props"></a>
+
+- *Type:* <a href="#cdk-ssm-documents.AutomationSimulationProps">AutomationSimulationProps</a>
+
+---
+
+#### Methods <a name="Methods" id="Methods"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#cdk-ssm-documents.AutomationStepSimulation.invoke">invoke</a></code> | Invokes the current step on the input and will return a SimulationResult. |
+
+---
+
+##### `invoke` <a name="invoke" id="cdk-ssm-documents.AutomationStepSimulation.invoke"></a>
+
+```typescript
+public invoke(inputs: {[ key: string ]: any}): SimulationResult
+```
+
+Invokes the current step on the input and will return a SimulationResult.
+
+###### `inputs`<sup>Required</sup> <a name="inputs" id="cdk-ssm-documents.AutomationStepSimulation.invoke.parameter.inputs"></a>
+
+- *Type:* {[ key: string ]: any}
+
+must contain all of the inputs declared by the current step.
+
+---
+
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#cdk-ssm-documents.AutomationStepSimulation.property.props">props</a></code> | <code><a href="#cdk-ssm-documents.RequiredAutomationSimulationProps">RequiredAutomationSimulationProps</a></code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.AutomationStepSimulation.property.step">step</a></code> | <code><a href="#cdk-ssm-documents.AutomationStep">AutomationStep</a></code> | *No description.* |
+
+---
+
+##### `props`<sup>Required</sup> <a name="props" id="cdk-ssm-documents.AutomationStepSimulation.property.props"></a>
+
+```typescript
+public readonly props: RequiredAutomationSimulationProps;
+```
+
+- *Type:* <a href="#cdk-ssm-documents.RequiredAutomationSimulationProps">RequiredAutomationSimulationProps</a>
+
+---
+
+##### `step`<sup>Required</sup> <a name="step" id="cdk-ssm-documents.AutomationStepSimulation.property.step"></a>
+
+```typescript
+public readonly step: AutomationStep;
+```
+
+- *Type:* <a href="#cdk-ssm-documents.AutomationStep">AutomationStep</a>
+
+---
+
+
+### AwsApiSimulation <a name="AwsApiSimulation" id="cdk-ssm-documents.AwsApiSimulation"></a>
+
+AutomationStep implementation of aws:executeAwsApi.
+
+#### Initializers <a name="Initializers" id="cdk-ssm-documents.AwsApiSimulation.Initializer"></a>
+
+```typescript
+import { AwsApiSimulation } from 'cdk-ssm-documents'
+
+new AwsApiSimulation(step: AwsApiStep, props: AwsInvocationSimulationProps)
+```
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#cdk-ssm-documents.AwsApiSimulation.Initializer.parameter.step">step</a></code> | <code><a href="#cdk-ssm-documents.AwsApiStep">AwsApiStep</a></code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.AwsApiSimulation.Initializer.parameter.props">props</a></code> | <code><a href="#cdk-ssm-documents.AwsInvocationSimulationProps">AwsInvocationSimulationProps</a></code> | *No description.* |
+
+---
+
+##### `step`<sup>Required</sup> <a name="step" id="cdk-ssm-documents.AwsApiSimulation.Initializer.parameter.step"></a>
+
+- *Type:* <a href="#cdk-ssm-documents.AwsApiStep">AwsApiStep</a>
+
+---
+
+##### `props`<sup>Required</sup> <a name="props" id="cdk-ssm-documents.AwsApiSimulation.Initializer.parameter.props"></a>
+
+- *Type:* <a href="#cdk-ssm-documents.AwsInvocationSimulationProps">AwsInvocationSimulationProps</a>
+
+---
+
+#### Methods <a name="Methods" id="Methods"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#cdk-ssm-documents.AwsApiSimulation.executeStep">executeStep</a></code> | Invokes the specified service (param) with the specified api (param) with the specified apiParams (param). |
+| <code><a href="#cdk-ssm-documents.AwsApiSimulation.nextStep">nextStep</a></code> | *No description.* |
+
+---
+
+##### `executeStep` <a name="executeStep" id="cdk-ssm-documents.AwsApiSimulation.executeStep"></a>
+
+```typescript
+public executeStep(inputs: {[ key: string ]: any}): {[ key: string ]: any}
+```
+
+Invokes the specified service (param) with the specified api (param) with the specified apiParams (param).
+
+This call will be invoked synchronously.
+The input variables in apiParams (param) specified using "{{INPUT}}" syntax will be replaced with the inputs.
+
+###### `inputs`<sup>Required</sup> <a name="inputs" id="cdk-ssm-documents.AwsApiSimulation.executeStep.parameter.inputs"></a>
+
+- *Type:* {[ key: string ]: any}
+
+---
+
+##### `nextStep` <a name="nextStep" id="cdk-ssm-documents.AwsApiSimulation.nextStep"></a>
+
+```typescript
+public nextStep(_inputs: {[ key: string ]: any}): AutomationStep
+```
+
+###### `_inputs`<sup>Required</sup> <a name="_inputs" id="cdk-ssm-documents.AwsApiSimulation.nextStep.parameter._inputs"></a>
+
+- *Type:* {[ key: string ]: any}
+
+---
+
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#cdk-ssm-documents.AwsApiSimulation.property.action">action</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.AwsApiSimulation.property.awsApiStep">awsApiStep</a></code> | <code><a href="#cdk-ssm-documents.AwsApiStep">AwsApiStep</a></code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.AwsApiSimulation.property.awsInvoker">awsInvoker</a></code> | <code><a href="#cdk-ssm-documents.IAwsInvoker">IAwsInvoker</a></code> | *No description.* |
+
+---
+
+##### `action`<sup>Required</sup> <a name="action" id="cdk-ssm-documents.AwsApiSimulation.property.action"></a>
+
+```typescript
+public readonly action: string;
+```
+
+- *Type:* string
+
+---
+
+##### `awsApiStep`<sup>Required</sup> <a name="awsApiStep" id="cdk-ssm-documents.AwsApiSimulation.property.awsApiStep"></a>
+
+```typescript
+public readonly awsApiStep: AwsApiStep;
+```
+
+- *Type:* <a href="#cdk-ssm-documents.AwsApiStep">AwsApiStep</a>
+
+---
+
+##### `awsInvoker`<sup>Required</sup> <a name="awsInvoker" id="cdk-ssm-documents.AwsApiSimulation.property.awsInvoker"></a>
+
+```typescript
+public readonly awsInvoker: IAwsInvoker;
+```
+
+- *Type:* <a href="#cdk-ssm-documents.IAwsInvoker">IAwsInvoker</a>
+
+---
+
+
 ### BooleanVariable <a name="BooleanVariable" id="cdk-ssm-documents.BooleanVariable"></a>
 
 - *Implements:* <a href="#cdk-ssm-documents.IBooleanVariable">IBooleanVariable</a>
@@ -26288,6 +27891,175 @@ BooleanVariable.of(reference: string)
 
 ```typescript
 public readonly reference: string;
+```
+
+- *Type:* string
+
+---
+
+
+### BranchSimulation <a name="BranchSimulation" id="cdk-ssm-documents.BranchSimulation"></a>
+
+AutomationStep implementation of aws:branch https://docs.aws.amazon.com/systems-manager/latest/userguide/automation-action-branch.html.
+
+#### Initializers <a name="Initializers" id="cdk-ssm-documents.BranchSimulation.Initializer"></a>
+
+```typescript
+import { BranchSimulation } from 'cdk-ssm-documents'
+
+new BranchSimulation(step: BranchStep)
+```
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#cdk-ssm-documents.BranchSimulation.Initializer.parameter.step">step</a></code> | <code><a href="#cdk-ssm-documents.BranchStep">BranchStep</a></code> | *No description.* |
+
+---
+
+##### `step`<sup>Required</sup> <a name="step" id="cdk-ssm-documents.BranchSimulation.Initializer.parameter.step"></a>
+
+- *Type:* <a href="#cdk-ssm-documents.BranchStep">BranchStep</a>
+
+---
+
+#### Methods <a name="Methods" id="Methods"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#cdk-ssm-documents.BranchSimulation.executeStep">executeStep</a></code> | noop. |
+| <code><a href="#cdk-ssm-documents.BranchSimulation.nextStep">nextStep</a></code> | Overrides invoke because control flow of execution is different than standard steps. |
+
+---
+
+##### `executeStep` <a name="executeStep" id="cdk-ssm-documents.BranchSimulation.executeStep"></a>
+
+```typescript
+public executeStep(_inputs: {[ key: string ]: any}): {[ key: string ]: any}
+```
+
+noop.
+
+The logic performed in the branch branchStep happens in the invoke() function.
+
+###### `_inputs`<sup>Required</sup> <a name="_inputs" id="cdk-ssm-documents.BranchSimulation.executeStep.parameter._inputs"></a>
+
+- *Type:* {[ key: string ]: any}
+
+---
+
+##### `nextStep` <a name="nextStep" id="cdk-ssm-documents.BranchSimulation.nextStep"></a>
+
+```typescript
+public nextStep(inputs: {[ key: string ]: any}): AutomationStep
+```
+
+Overrides invoke because control flow of execution is different than standard steps.
+
+Will traverse the choices until one evaluated to true; will skip to that choice.
+
+###### `inputs`<sup>Required</sup> <a name="inputs" id="cdk-ssm-documents.BranchSimulation.nextStep.parameter.inputs"></a>
+
+- *Type:* {[ key: string ]: any}
+
+---
+
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#cdk-ssm-documents.BranchSimulation.property.action">action</a></code> | <code>string</code> | *No description.* |
+
+---
+
+##### `action`<sup>Required</sup> <a name="action" id="cdk-ssm-documents.BranchSimulation.property.action"></a>
+
+```typescript
+public readonly action: string;
+```
+
+- *Type:* string
+
+---
+
+
+### ChangeInstanceStateSimulation <a name="ChangeInstanceStateSimulation" id="cdk-ssm-documents.ChangeInstanceStateSimulation"></a>
+
+AutomationStep implemenation for aws:changeInstanceState https://docs.aws.amazon.com/systems-manager/latest/userguide/automation-action-changestate.html.
+
+#### Initializers <a name="Initializers" id="cdk-ssm-documents.ChangeInstanceStateSimulation.Initializer"></a>
+
+```typescript
+import { ChangeInstanceStateSimulation } from 'cdk-ssm-documents'
+
+new ChangeInstanceStateSimulation(step: ChangeInstanceStateStep, props: AwsInvocationSimulationProps)
+```
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#cdk-ssm-documents.ChangeInstanceStateSimulation.Initializer.parameter.step">step</a></code> | <code><a href="#cdk-ssm-documents.ChangeInstanceStateStep">ChangeInstanceStateStep</a></code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.ChangeInstanceStateSimulation.Initializer.parameter.props">props</a></code> | <code><a href="#cdk-ssm-documents.AwsInvocationSimulationProps">AwsInvocationSimulationProps</a></code> | *No description.* |
+
+---
+
+##### `step`<sup>Required</sup> <a name="step" id="cdk-ssm-documents.ChangeInstanceStateSimulation.Initializer.parameter.step"></a>
+
+- *Type:* <a href="#cdk-ssm-documents.ChangeInstanceStateStep">ChangeInstanceStateStep</a>
+
+---
+
+##### `props`<sup>Required</sup> <a name="props" id="cdk-ssm-documents.ChangeInstanceStateSimulation.Initializer.parameter.props"></a>
+
+- *Type:* <a href="#cdk-ssm-documents.AwsInvocationSimulationProps">AwsInvocationSimulationProps</a>
+
+---
+
+#### Methods <a name="Methods" id="Methods"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#cdk-ssm-documents.ChangeInstanceStateSimulation.executeStep">executeStep</a></code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.ChangeInstanceStateSimulation.nextStep">nextStep</a></code> | *No description.* |
+
+---
+
+##### `executeStep` <a name="executeStep" id="cdk-ssm-documents.ChangeInstanceStateSimulation.executeStep"></a>
+
+```typescript
+public executeStep(inputs: {[ key: string ]: any}): {[ key: string ]: any}
+```
+
+###### `inputs`<sup>Required</sup> <a name="inputs" id="cdk-ssm-documents.ChangeInstanceStateSimulation.executeStep.parameter.inputs"></a>
+
+- *Type:* {[ key: string ]: any}
+
+---
+
+##### `nextStep` <a name="nextStep" id="cdk-ssm-documents.ChangeInstanceStateSimulation.nextStep"></a>
+
+```typescript
+public nextStep(_inputs: {[ key: string ]: any}): AutomationStep
+```
+
+###### `_inputs`<sup>Required</sup> <a name="_inputs" id="cdk-ssm-documents.ChangeInstanceStateSimulation.nextStep.parameter._inputs"></a>
+
+- *Type:* {[ key: string ]: any}
+
+---
+
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#cdk-ssm-documents.ChangeInstanceStateSimulation.property.action">action</a></code> | <code>string</code> | *No description.* |
+
+---
+
+##### `action`<sup>Required</sup> <a name="action" id="cdk-ssm-documents.ChangeInstanceStateSimulation.property.action"></a>
+
+```typescript
+public readonly action: string;
 ```
 
 - *Type:* string
@@ -26458,6 +28230,516 @@ public readonly steps: CommandStep[];
 ---
 
 
+### CommandSimulation <a name="CommandSimulation" id="cdk-ssm-documents.CommandSimulation"></a>
+
+#### Initializers <a name="Initializers" id="cdk-ssm-documents.CommandSimulation.Initializer"></a>
+
+```typescript
+import { CommandSimulation } from 'cdk-ssm-documents'
+
+new CommandSimulation(commandDocument: CommandDocument, props: SimulationProps)
+```
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#cdk-ssm-documents.CommandSimulation.Initializer.parameter.commandDocument">commandDocument</a></code> | <code><a href="#cdk-ssm-documents.CommandDocument">CommandDocument</a></code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.CommandSimulation.Initializer.parameter.props">props</a></code> | <code><a href="#cdk-ssm-documents.SimulationProps">SimulationProps</a></code> | *No description.* |
+
+---
+
+##### `commandDocument`<sup>Required</sup> <a name="commandDocument" id="cdk-ssm-documents.CommandSimulation.Initializer.parameter.commandDocument"></a>
+
+- *Type:* <a href="#cdk-ssm-documents.CommandDocument">CommandDocument</a>
+
+---
+
+##### `props`<sup>Required</sup> <a name="props" id="cdk-ssm-documents.CommandSimulation.Initializer.parameter.props"></a>
+
+- *Type:* <a href="#cdk-ssm-documents.SimulationProps">SimulationProps</a>
+
+---
+
+#### Methods <a name="Methods" id="Methods"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#cdk-ssm-documents.CommandSimulation.start">start</a></code> | *No description.* |
+
+---
+
+##### `start` <a name="start" id="cdk-ssm-documents.CommandSimulation.start"></a>
+
+```typescript
+public start(inputs: {[ key: string ]: any}): SimulationResult
+```
+
+###### `inputs`<sup>Required</sup> <a name="inputs" id="cdk-ssm-documents.CommandSimulation.start.parameter.inputs"></a>
+
+- *Type:* {[ key: string ]: any}
+
+---
+
+
+
+
+### CommandSimulationBase <a name="CommandSimulationBase" id="cdk-ssm-documents.CommandSimulationBase"></a>
+
+#### Initializers <a name="Initializers" id="cdk-ssm-documents.CommandSimulationBase.Initializer"></a>
+
+```typescript
+import { CommandSimulationBase } from 'cdk-ssm-documents'
+
+new CommandSimulationBase()
+```
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+
+---
+
+#### Methods <a name="Methods" id="Methods"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#cdk-ssm-documents.CommandSimulationBase.executeStep">executeStep</a></code> | *No description.* |
+
+---
+
+##### `executeStep` <a name="executeStep" id="cdk-ssm-documents.CommandSimulationBase.executeStep"></a>
+
+```typescript
+public executeStep(inputs: {[ key: string ]: any}): void
+```
+
+###### `inputs`<sup>Required</sup> <a name="inputs" id="cdk-ssm-documents.CommandSimulationBase.executeStep.parameter.inputs"></a>
+
+- *Type:* {[ key: string ]: any}
+
+---
+
+
+
+
+### CommandStepSimulation <a name="CommandStepSimulation" id="cdk-ssm-documents.CommandStepSimulation"></a>
+
+#### Initializers <a name="Initializers" id="cdk-ssm-documents.CommandStepSimulation.Initializer"></a>
+
+```typescript
+import { CommandStepSimulation } from 'cdk-ssm-documents'
+
+new CommandStepSimulation(step: CommandStep, props: CommandSimulationProps)
+```
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#cdk-ssm-documents.CommandStepSimulation.Initializer.parameter.step">step</a></code> | <code><a href="#cdk-ssm-documents.CommandStep">CommandStep</a></code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.CommandStepSimulation.Initializer.parameter.props">props</a></code> | <code><a href="#cdk-ssm-documents.CommandSimulationProps">CommandSimulationProps</a></code> | *No description.* |
+
+---
+
+##### `step`<sup>Required</sup> <a name="step" id="cdk-ssm-documents.CommandStepSimulation.Initializer.parameter.step"></a>
+
+- *Type:* <a href="#cdk-ssm-documents.CommandStep">CommandStep</a>
+
+---
+
+##### `props`<sup>Required</sup> <a name="props" id="cdk-ssm-documents.CommandStepSimulation.Initializer.parameter.props"></a>
+
+- *Type:* <a href="#cdk-ssm-documents.CommandSimulationProps">CommandSimulationProps</a>
+
+---
+
+#### Methods <a name="Methods" id="Methods"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#cdk-ssm-documents.CommandStepSimulation.invoke">invoke</a></code> | Invokes the current step on the input and will return a SimulationResult. |
+
+---
+
+##### `invoke` <a name="invoke" id="cdk-ssm-documents.CommandStepSimulation.invoke"></a>
+
+```typescript
+public invoke(inputs: {[ key: string ]: any}): SimulationResult
+```
+
+Invokes the current step on the input and will return a SimulationResult.
+
+###### `inputs`<sup>Required</sup> <a name="inputs" id="cdk-ssm-documents.CommandStepSimulation.invoke.parameter.inputs"></a>
+
+- *Type:* {[ key: string ]: any}
+
+must contain all of the inputs declared by the current step.
+
+---
+
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#cdk-ssm-documents.CommandStepSimulation.property.props">props</a></code> | <code><a href="#cdk-ssm-documents.RequiredCommandSimulationProps">RequiredCommandSimulationProps</a></code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.CommandStepSimulation.property.step">step</a></code> | <code><a href="#cdk-ssm-documents.CommandStep">CommandStep</a></code> | *No description.* |
+
+---
+
+##### `props`<sup>Required</sup> <a name="props" id="cdk-ssm-documents.CommandStepSimulation.property.props"></a>
+
+```typescript
+public readonly props: RequiredCommandSimulationProps;
+```
+
+- *Type:* <a href="#cdk-ssm-documents.RequiredCommandSimulationProps">RequiredCommandSimulationProps</a>
+
+---
+
+##### `step`<sup>Required</sup> <a name="step" id="cdk-ssm-documents.CommandStepSimulation.property.step"></a>
+
+```typescript
+public readonly step: CommandStep;
+```
+
+- *Type:* <a href="#cdk-ssm-documents.CommandStep">CommandStep</a>
+
+---
+
+
+### CopyImageSimulation <a name="CopyImageSimulation" id="cdk-ssm-documents.CopyImageSimulation"></a>
+
+AutomationStep implemenation for aws:copyImage https://docs.aws.amazon.com/systems-manager/latest/userguide/automation-action-copyimage.html.
+
+#### Initializers <a name="Initializers" id="cdk-ssm-documents.CopyImageSimulation.Initializer"></a>
+
+```typescript
+import { CopyImageSimulation } from 'cdk-ssm-documents'
+
+new CopyImageSimulation(step: CopyImageStep, props: AwsInvocationSimulationProps)
+```
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#cdk-ssm-documents.CopyImageSimulation.Initializer.parameter.step">step</a></code> | <code><a href="#cdk-ssm-documents.CopyImageStep">CopyImageStep</a></code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.CopyImageSimulation.Initializer.parameter.props">props</a></code> | <code><a href="#cdk-ssm-documents.AwsInvocationSimulationProps">AwsInvocationSimulationProps</a></code> | *No description.* |
+
+---
+
+##### `step`<sup>Required</sup> <a name="step" id="cdk-ssm-documents.CopyImageSimulation.Initializer.parameter.step"></a>
+
+- *Type:* <a href="#cdk-ssm-documents.CopyImageStep">CopyImageStep</a>
+
+---
+
+##### `props`<sup>Required</sup> <a name="props" id="cdk-ssm-documents.CopyImageSimulation.Initializer.parameter.props"></a>
+
+- *Type:* <a href="#cdk-ssm-documents.AwsInvocationSimulationProps">AwsInvocationSimulationProps</a>
+
+---
+
+#### Methods <a name="Methods" id="Methods"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#cdk-ssm-documents.CopyImageSimulation.executeStep">executeStep</a></code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.CopyImageSimulation.nextStep">nextStep</a></code> | *No description.* |
+
+---
+
+##### `executeStep` <a name="executeStep" id="cdk-ssm-documents.CopyImageSimulation.executeStep"></a>
+
+```typescript
+public executeStep(inputs: {[ key: string ]: any}): {[ key: string ]: any}
+```
+
+###### `inputs`<sup>Required</sup> <a name="inputs" id="cdk-ssm-documents.CopyImageSimulation.executeStep.parameter.inputs"></a>
+
+- *Type:* {[ key: string ]: any}
+
+---
+
+##### `nextStep` <a name="nextStep" id="cdk-ssm-documents.CopyImageSimulation.nextStep"></a>
+
+```typescript
+public nextStep(_inputs: {[ key: string ]: any}): AutomationStep
+```
+
+###### `_inputs`<sup>Required</sup> <a name="_inputs" id="cdk-ssm-documents.CopyImageSimulation.nextStep.parameter._inputs"></a>
+
+- *Type:* {[ key: string ]: any}
+
+---
+
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#cdk-ssm-documents.CopyImageSimulation.property.action">action</a></code> | <code>string</code> | *No description.* |
+
+---
+
+##### `action`<sup>Required</sup> <a name="action" id="cdk-ssm-documents.CopyImageSimulation.property.action"></a>
+
+```typescript
+public readonly action: string;
+```
+
+- *Type:* string
+
+---
+
+
+### CreateImageSimulation <a name="CreateImageSimulation" id="cdk-ssm-documents.CreateImageSimulation"></a>
+
+AutomationStep implemenation for aws:createImage https://docs.aws.amazon.com/systems-manager/latest/userguide/automation-action-create.html.
+
+#### Initializers <a name="Initializers" id="cdk-ssm-documents.CreateImageSimulation.Initializer"></a>
+
+```typescript
+import { CreateImageSimulation } from 'cdk-ssm-documents'
+
+new CreateImageSimulation(step: CreateImageStep, props: AwsInvocationSimulationProps)
+```
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#cdk-ssm-documents.CreateImageSimulation.Initializer.parameter.step">step</a></code> | <code><a href="#cdk-ssm-documents.CreateImageStep">CreateImageStep</a></code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.CreateImageSimulation.Initializer.parameter.props">props</a></code> | <code><a href="#cdk-ssm-documents.AwsInvocationSimulationProps">AwsInvocationSimulationProps</a></code> | *No description.* |
+
+---
+
+##### `step`<sup>Required</sup> <a name="step" id="cdk-ssm-documents.CreateImageSimulation.Initializer.parameter.step"></a>
+
+- *Type:* <a href="#cdk-ssm-documents.CreateImageStep">CreateImageStep</a>
+
+---
+
+##### `props`<sup>Required</sup> <a name="props" id="cdk-ssm-documents.CreateImageSimulation.Initializer.parameter.props"></a>
+
+- *Type:* <a href="#cdk-ssm-documents.AwsInvocationSimulationProps">AwsInvocationSimulationProps</a>
+
+---
+
+#### Methods <a name="Methods" id="Methods"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#cdk-ssm-documents.CreateImageSimulation.executeStep">executeStep</a></code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.CreateImageSimulation.nextStep">nextStep</a></code> | *No description.* |
+
+---
+
+##### `executeStep` <a name="executeStep" id="cdk-ssm-documents.CreateImageSimulation.executeStep"></a>
+
+```typescript
+public executeStep(inputs: {[ key: string ]: any}): {[ key: string ]: any}
+```
+
+###### `inputs`<sup>Required</sup> <a name="inputs" id="cdk-ssm-documents.CreateImageSimulation.executeStep.parameter.inputs"></a>
+
+- *Type:* {[ key: string ]: any}
+
+---
+
+##### `nextStep` <a name="nextStep" id="cdk-ssm-documents.CreateImageSimulation.nextStep"></a>
+
+```typescript
+public nextStep(_inputs: {[ key: string ]: any}): AutomationStep
+```
+
+###### `_inputs`<sup>Required</sup> <a name="_inputs" id="cdk-ssm-documents.CreateImageSimulation.nextStep.parameter._inputs"></a>
+
+- *Type:* {[ key: string ]: any}
+
+---
+
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#cdk-ssm-documents.CreateImageSimulation.property.action">action</a></code> | <code>string</code> | *No description.* |
+
+---
+
+##### `action`<sup>Required</sup> <a name="action" id="cdk-ssm-documents.CreateImageSimulation.property.action"></a>
+
+```typescript
+public readonly action: string;
+```
+
+- *Type:* string
+
+---
+
+
+### CreateStackSimulation <a name="CreateStackSimulation" id="cdk-ssm-documents.CreateStackSimulation"></a>
+
+AutomationStep implementation for aws:createStack https://docs.aws.amazon.com/systems-manager/latest/userguide/automation-action-createstack.html.
+
+#### Initializers <a name="Initializers" id="cdk-ssm-documents.CreateStackSimulation.Initializer"></a>
+
+```typescript
+import { CreateStackSimulation } from 'cdk-ssm-documents'
+
+new CreateStackSimulation(step: CreateStackStep, props: CreateStackSimulationProps)
+```
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#cdk-ssm-documents.CreateStackSimulation.Initializer.parameter.step">step</a></code> | <code><a href="#cdk-ssm-documents.CreateStackStep">CreateStackStep</a></code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.CreateStackSimulation.Initializer.parameter.props">props</a></code> | <code><a href="#cdk-ssm-documents.CreateStackSimulationProps">CreateStackSimulationProps</a></code> | *No description.* |
+
+---
+
+##### `step`<sup>Required</sup> <a name="step" id="cdk-ssm-documents.CreateStackSimulation.Initializer.parameter.step"></a>
+
+- *Type:* <a href="#cdk-ssm-documents.CreateStackStep">CreateStackStep</a>
+
+---
+
+##### `props`<sup>Required</sup> <a name="props" id="cdk-ssm-documents.CreateStackSimulation.Initializer.parameter.props"></a>
+
+- *Type:* <a href="#cdk-ssm-documents.CreateStackSimulationProps">CreateStackSimulationProps</a>
+
+---
+
+#### Methods <a name="Methods" id="Methods"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#cdk-ssm-documents.CreateStackSimulation.executeStep">executeStep</a></code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.CreateStackSimulation.nextStep">nextStep</a></code> | *No description.* |
+
+---
+
+##### `executeStep` <a name="executeStep" id="cdk-ssm-documents.CreateStackSimulation.executeStep"></a>
+
+```typescript
+public executeStep(inputs: {[ key: string ]: any}): {[ key: string ]: any}
+```
+
+###### `inputs`<sup>Required</sup> <a name="inputs" id="cdk-ssm-documents.CreateStackSimulation.executeStep.parameter.inputs"></a>
+
+- *Type:* {[ key: string ]: any}
+
+---
+
+##### `nextStep` <a name="nextStep" id="cdk-ssm-documents.CreateStackSimulation.nextStep"></a>
+
+```typescript
+public nextStep(_inputs: {[ key: string ]: any}): AutomationStep
+```
+
+###### `_inputs`<sup>Required</sup> <a name="_inputs" id="cdk-ssm-documents.CreateStackSimulation.nextStep.parameter._inputs"></a>
+
+- *Type:* {[ key: string ]: any}
+
+---
+
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#cdk-ssm-documents.CreateStackSimulation.property.action">action</a></code> | <code>string</code> | *No description.* |
+
+---
+
+##### `action`<sup>Required</sup> <a name="action" id="cdk-ssm-documents.CreateStackSimulation.property.action"></a>
+
+```typescript
+public readonly action: string;
+```
+
+- *Type:* string
+
+---
+
+
+### CreateTagsSimulation <a name="CreateTagsSimulation" id="cdk-ssm-documents.CreateTagsSimulation"></a>
+
+AutomationStep implemenation for aws:createTags https://docs.aws.amazon.com/systems-manager/latest/userguide/automation-action-createtag.html.
+
+#### Initializers <a name="Initializers" id="cdk-ssm-documents.CreateTagsSimulation.Initializer"></a>
+
+```typescript
+import { CreateTagsSimulation } from 'cdk-ssm-documents'
+
+new CreateTagsSimulation(step: CreateTagsStep, props: CreateTagsSimulationProps)
+```
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#cdk-ssm-documents.CreateTagsSimulation.Initializer.parameter.step">step</a></code> | <code><a href="#cdk-ssm-documents.CreateTagsStep">CreateTagsStep</a></code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.CreateTagsSimulation.Initializer.parameter.props">props</a></code> | <code><a href="#cdk-ssm-documents.CreateTagsSimulationProps">CreateTagsSimulationProps</a></code> | *No description.* |
+
+---
+
+##### `step`<sup>Required</sup> <a name="step" id="cdk-ssm-documents.CreateTagsSimulation.Initializer.parameter.step"></a>
+
+- *Type:* <a href="#cdk-ssm-documents.CreateTagsStep">CreateTagsStep</a>
+
+---
+
+##### `props`<sup>Required</sup> <a name="props" id="cdk-ssm-documents.CreateTagsSimulation.Initializer.parameter.props"></a>
+
+- *Type:* <a href="#cdk-ssm-documents.CreateTagsSimulationProps">CreateTagsSimulationProps</a>
+
+---
+
+#### Methods <a name="Methods" id="Methods"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#cdk-ssm-documents.CreateTagsSimulation.executeStep">executeStep</a></code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.CreateTagsSimulation.nextStep">nextStep</a></code> | *No description.* |
+
+---
+
+##### `executeStep` <a name="executeStep" id="cdk-ssm-documents.CreateTagsSimulation.executeStep"></a>
+
+```typescript
+public executeStep(inputs: {[ key: string ]: any}): {[ key: string ]: any}
+```
+
+###### `inputs`<sup>Required</sup> <a name="inputs" id="cdk-ssm-documents.CreateTagsSimulation.executeStep.parameter.inputs"></a>
+
+- *Type:* {[ key: string ]: any}
+
+---
+
+##### `nextStep` <a name="nextStep" id="cdk-ssm-documents.CreateTagsSimulation.nextStep"></a>
+
+```typescript
+public nextStep(_inputs: {[ key: string ]: any}): AutomationStep
+```
+
+###### `_inputs`<sup>Required</sup> <a name="_inputs" id="cdk-ssm-documents.CreateTagsSimulation.nextStep.parameter._inputs"></a>
+
+- *Type:* {[ key: string ]: any}
+
+---
+
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#cdk-ssm-documents.CreateTagsSimulation.property.action">action</a></code> | <code>string</code> | *No description.* |
+
+---
+
+##### `action`<sup>Required</sup> <a name="action" id="cdk-ssm-documents.CreateTagsSimulation.property.action"></a>
+
+```typescript
+public readonly action: string;
+```
+
+- *Type:* string
+
+---
+
+
 ### DataType <a name="DataType" id="cdk-ssm-documents.DataType"></a>
 
 JSII does not allow functions or constants declared in an enum class directly.
@@ -26548,6 +28830,174 @@ public readonly dataTypeEnum: DataTypeEnum;
 ```
 
 - *Type:* <a href="#cdk-ssm-documents.DataTypeEnum">DataTypeEnum</a>
+
+---
+
+
+### DeleteImageSimulation <a name="DeleteImageSimulation" id="cdk-ssm-documents.DeleteImageSimulation"></a>
+
+AutomationStep implementation for aws:deleteImage https://docs.aws.amazon.com/systems-manager/latest/userguide/automation-action-delete.html.
+
+#### Initializers <a name="Initializers" id="cdk-ssm-documents.DeleteImageSimulation.Initializer"></a>
+
+```typescript
+import { DeleteImageSimulation } from 'cdk-ssm-documents'
+
+new DeleteImageSimulation(step: DeleteImageStep, props: DeleteImageSimulationProps)
+```
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#cdk-ssm-documents.DeleteImageSimulation.Initializer.parameter.step">step</a></code> | <code><a href="#cdk-ssm-documents.DeleteImageStep">DeleteImageStep</a></code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.DeleteImageSimulation.Initializer.parameter.props">props</a></code> | <code><a href="#cdk-ssm-documents.DeleteImageSimulationProps">DeleteImageSimulationProps</a></code> | *No description.* |
+
+---
+
+##### `step`<sup>Required</sup> <a name="step" id="cdk-ssm-documents.DeleteImageSimulation.Initializer.parameter.step"></a>
+
+- *Type:* <a href="#cdk-ssm-documents.DeleteImageStep">DeleteImageStep</a>
+
+---
+
+##### `props`<sup>Required</sup> <a name="props" id="cdk-ssm-documents.DeleteImageSimulation.Initializer.parameter.props"></a>
+
+- *Type:* <a href="#cdk-ssm-documents.DeleteImageSimulationProps">DeleteImageSimulationProps</a>
+
+---
+
+#### Methods <a name="Methods" id="Methods"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#cdk-ssm-documents.DeleteImageSimulation.executeStep">executeStep</a></code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.DeleteImageSimulation.nextStep">nextStep</a></code> | *No description.* |
+
+---
+
+##### `executeStep` <a name="executeStep" id="cdk-ssm-documents.DeleteImageSimulation.executeStep"></a>
+
+```typescript
+public executeStep(inputs: {[ key: string ]: any}): {[ key: string ]: any}
+```
+
+###### `inputs`<sup>Required</sup> <a name="inputs" id="cdk-ssm-documents.DeleteImageSimulation.executeStep.parameter.inputs"></a>
+
+- *Type:* {[ key: string ]: any}
+
+---
+
+##### `nextStep` <a name="nextStep" id="cdk-ssm-documents.DeleteImageSimulation.nextStep"></a>
+
+```typescript
+public nextStep(_inputs: {[ key: string ]: any}): AutomationStep
+```
+
+###### `_inputs`<sup>Required</sup> <a name="_inputs" id="cdk-ssm-documents.DeleteImageSimulation.nextStep.parameter._inputs"></a>
+
+- *Type:* {[ key: string ]: any}
+
+---
+
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#cdk-ssm-documents.DeleteImageSimulation.property.action">action</a></code> | <code>string</code> | *No description.* |
+
+---
+
+##### `action`<sup>Required</sup> <a name="action" id="cdk-ssm-documents.DeleteImageSimulation.property.action"></a>
+
+```typescript
+public readonly action: string;
+```
+
+- *Type:* string
+
+---
+
+
+### DeleteStackSimulation <a name="DeleteStackSimulation" id="cdk-ssm-documents.DeleteStackSimulation"></a>
+
+AutomationStep implemenation for aws:deleteStack https://docs.aws.amazon.com/systems-manager/latest/userguide/automation-action-deletestack.html.
+
+#### Initializers <a name="Initializers" id="cdk-ssm-documents.DeleteStackSimulation.Initializer"></a>
+
+```typescript
+import { DeleteStackSimulation } from 'cdk-ssm-documents'
+
+new DeleteStackSimulation(step: DeleteStackStep, props: AwsInvocationSimulationProps)
+```
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#cdk-ssm-documents.DeleteStackSimulation.Initializer.parameter.step">step</a></code> | <code><a href="#cdk-ssm-documents.DeleteStackStep">DeleteStackStep</a></code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.DeleteStackSimulation.Initializer.parameter.props">props</a></code> | <code><a href="#cdk-ssm-documents.AwsInvocationSimulationProps">AwsInvocationSimulationProps</a></code> | *No description.* |
+
+---
+
+##### `step`<sup>Required</sup> <a name="step" id="cdk-ssm-documents.DeleteStackSimulation.Initializer.parameter.step"></a>
+
+- *Type:* <a href="#cdk-ssm-documents.DeleteStackStep">DeleteStackStep</a>
+
+---
+
+##### `props`<sup>Required</sup> <a name="props" id="cdk-ssm-documents.DeleteStackSimulation.Initializer.parameter.props"></a>
+
+- *Type:* <a href="#cdk-ssm-documents.AwsInvocationSimulationProps">AwsInvocationSimulationProps</a>
+
+---
+
+#### Methods <a name="Methods" id="Methods"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#cdk-ssm-documents.DeleteStackSimulation.executeStep">executeStep</a></code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.DeleteStackSimulation.nextStep">nextStep</a></code> | *No description.* |
+
+---
+
+##### `executeStep` <a name="executeStep" id="cdk-ssm-documents.DeleteStackSimulation.executeStep"></a>
+
+```typescript
+public executeStep(inputs: {[ key: string ]: any}): {[ key: string ]: any}
+```
+
+###### `inputs`<sup>Required</sup> <a name="inputs" id="cdk-ssm-documents.DeleteStackSimulation.executeStep.parameter.inputs"></a>
+
+- *Type:* {[ key: string ]: any}
+
+---
+
+##### `nextStep` <a name="nextStep" id="cdk-ssm-documents.DeleteStackSimulation.nextStep"></a>
+
+```typescript
+public nextStep(_inputs: {[ key: string ]: any}): AutomationStep
+```
+
+###### `_inputs`<sup>Required</sup> <a name="_inputs" id="cdk-ssm-documents.DeleteStackSimulation.nextStep.parameter._inputs"></a>
+
+- *Type:* {[ key: string ]: any}
+
+---
+
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#cdk-ssm-documents.DeleteStackSimulation.property.action">action</a></code> | <code>string</code> | *No description.* |
+
+---
+
+##### `action`<sup>Required</sup> <a name="action" id="cdk-ssm-documents.DeleteStackSimulation.property.action"></a>
+
+```typescript
+public readonly action: string;
+```
+
+- *Type:* string
 
 ---
 
@@ -27148,6 +29598,205 @@ DocumentSource.fromName(name: IStringVariable, version?: IStringVariable)
 
 ---
 
+
+
+### ExecuteScriptSimulation <a name="ExecuteScriptSimulation" id="cdk-ssm-documents.ExecuteScriptSimulation"></a>
+
+AutomationStep implementation for aws:executeScript https://docs.aws.amazon.com/systems-manager/latest/userguide/automation-action-executeScript.html.
+
+#### Initializers <a name="Initializers" id="cdk-ssm-documents.ExecuteScriptSimulation.Initializer"></a>
+
+```typescript
+import { ExecuteScriptSimulation } from 'cdk-ssm-documents'
+
+new ExecuteScriptSimulation(step: ExecuteScriptStep)
+```
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#cdk-ssm-documents.ExecuteScriptSimulation.Initializer.parameter.step">step</a></code> | <code><a href="#cdk-ssm-documents.ExecuteScriptStep">ExecuteScriptStep</a></code> | *No description.* |
+
+---
+
+##### `step`<sup>Required</sup> <a name="step" id="cdk-ssm-documents.ExecuteScriptSimulation.Initializer.parameter.step"></a>
+
+- *Type:* <a href="#cdk-ssm-documents.ExecuteScriptStep">ExecuteScriptStep</a>
+
+---
+
+#### Methods <a name="Methods" id="Methods"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#cdk-ssm-documents.ExecuteScriptSimulation.executeStep">executeStep</a></code> | Runs the simulation. |
+| <code><a href="#cdk-ssm-documents.ExecuteScriptSimulation.nextStep">nextStep</a></code> | *No description.* |
+
+---
+
+##### `executeStep` <a name="executeStep" id="cdk-ssm-documents.ExecuteScriptSimulation.executeStep"></a>
+
+```typescript
+public executeStep(inputs: {[ key: string ]: any}): {[ key: string ]: any}
+```
+
+Runs the simulation.
+
+Nests returned object into a "Payload" key to mimic SSM behavior.
+Switch by language and execute code based on specified language.
+
+###### `inputs`<sup>Required</sup> <a name="inputs" id="cdk-ssm-documents.ExecuteScriptSimulation.executeStep.parameter.inputs"></a>
+
+- *Type:* {[ key: string ]: any}
+
+---
+
+##### `nextStep` <a name="nextStep" id="cdk-ssm-documents.ExecuteScriptSimulation.nextStep"></a>
+
+```typescript
+public nextStep(_inputs: {[ key: string ]: any}): AutomationStep
+```
+
+###### `_inputs`<sup>Required</sup> <a name="_inputs" id="cdk-ssm-documents.ExecuteScriptSimulation.nextStep.parameter._inputs"></a>
+
+- *Type:* {[ key: string ]: any}
+
+---
+
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#cdk-ssm-documents.ExecuteScriptSimulation.property.action">action</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.ExecuteScriptSimulation.property.executeScriptStep">executeScriptStep</a></code> | <code><a href="#cdk-ssm-documents.ExecuteScriptStep">ExecuteScriptStep</a></code> | *No description.* |
+
+---
+
+##### `action`<sup>Required</sup> <a name="action" id="cdk-ssm-documents.ExecuteScriptSimulation.property.action"></a>
+
+```typescript
+public readonly action: string;
+```
+
+- *Type:* string
+
+---
+
+##### `executeScriptStep`<sup>Required</sup> <a name="executeScriptStep" id="cdk-ssm-documents.ExecuteScriptSimulation.property.executeScriptStep"></a>
+
+```typescript
+public readonly executeScriptStep: ExecuteScriptStep;
+```
+
+- *Type:* <a href="#cdk-ssm-documents.ExecuteScriptStep">ExecuteScriptStep</a>
+
+---
+
+
+### ExecuteStateMachineSimulation <a name="ExecuteStateMachineSimulation" id="cdk-ssm-documents.ExecuteStateMachineSimulation"></a>
+
+AutomationStep implementation of [aws:executeStateMachine](https://docs.aws.amazon.com/systems-manager/latest/userguide/automation-action-executeStateMachine.html).
+
+#### Initializers <a name="Initializers" id="cdk-ssm-documents.ExecuteStateMachineSimulation.Initializer"></a>
+
+```typescript
+import { ExecuteStateMachineSimulation } from 'cdk-ssm-documents'
+
+new ExecuteStateMachineSimulation(step: ExecuteStateMachineStep, props: AwsInvocationSimulationProps)
+```
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#cdk-ssm-documents.ExecuteStateMachineSimulation.Initializer.parameter.step">step</a></code> | <code><a href="#cdk-ssm-documents.ExecuteStateMachineStep">ExecuteStateMachineStep</a></code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.ExecuteStateMachineSimulation.Initializer.parameter.props">props</a></code> | <code><a href="#cdk-ssm-documents.AwsInvocationSimulationProps">AwsInvocationSimulationProps</a></code> | *No description.* |
+
+---
+
+##### `step`<sup>Required</sup> <a name="step" id="cdk-ssm-documents.ExecuteStateMachineSimulation.Initializer.parameter.step"></a>
+
+- *Type:* <a href="#cdk-ssm-documents.ExecuteStateMachineStep">ExecuteStateMachineStep</a>
+
+---
+
+##### `props`<sup>Required</sup> <a name="props" id="cdk-ssm-documents.ExecuteStateMachineSimulation.Initializer.parameter.props"></a>
+
+- *Type:* <a href="#cdk-ssm-documents.AwsInvocationSimulationProps">AwsInvocationSimulationProps</a>
+
+---
+
+#### Methods <a name="Methods" id="Methods"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#cdk-ssm-documents.ExecuteStateMachineSimulation.executeStep">executeStep</a></code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.ExecuteStateMachineSimulation.nextStep">nextStep</a></code> | *No description.* |
+
+---
+
+##### `executeStep` <a name="executeStep" id="cdk-ssm-documents.ExecuteStateMachineSimulation.executeStep"></a>
+
+```typescript
+public executeStep(inputs: {[ key: string ]: any}): {[ key: string ]: any}
+```
+
+###### `inputs`<sup>Required</sup> <a name="inputs" id="cdk-ssm-documents.ExecuteStateMachineSimulation.executeStep.parameter.inputs"></a>
+
+- *Type:* {[ key: string ]: any}
+
+---
+
+##### `nextStep` <a name="nextStep" id="cdk-ssm-documents.ExecuteStateMachineSimulation.nextStep"></a>
+
+```typescript
+public nextStep(_inputs: {[ key: string ]: any}): AutomationStep
+```
+
+###### `_inputs`<sup>Required</sup> <a name="_inputs" id="cdk-ssm-documents.ExecuteStateMachineSimulation.nextStep.parameter._inputs"></a>
+
+- *Type:* {[ key: string ]: any}
+
+---
+
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#cdk-ssm-documents.ExecuteStateMachineSimulation.property.action">action</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.ExecuteStateMachineSimulation.property.executeStateMachineStep">executeStateMachineStep</a></code> | <code><a href="#cdk-ssm-documents.ExecuteStateMachineStep">ExecuteStateMachineStep</a></code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.ExecuteStateMachineSimulation.property.props">props</a></code> | <code><a href="#cdk-ssm-documents.AwsInvocationSimulationProps">AwsInvocationSimulationProps</a></code> | *No description.* |
+
+---
+
+##### `action`<sup>Required</sup> <a name="action" id="cdk-ssm-documents.ExecuteStateMachineSimulation.property.action"></a>
+
+```typescript
+public readonly action: string;
+```
+
+- *Type:* string
+
+---
+
+##### `executeStateMachineStep`<sup>Required</sup> <a name="executeStateMachineStep" id="cdk-ssm-documents.ExecuteStateMachineSimulation.property.executeStateMachineStep"></a>
+
+```typescript
+public readonly executeStateMachineStep: ExecuteStateMachineStep;
+```
+
+- *Type:* <a href="#cdk-ssm-documents.ExecuteStateMachineStep">ExecuteStateMachineStep</a>
+
+---
+
+##### `props`<sup>Required</sup> <a name="props" id="cdk-ssm-documents.ExecuteStateMachineSimulation.property.props"></a>
+
+```typescript
+public readonly props: AwsInvocationSimulationProps;
+```
+
+- *Type:* <a href="#cdk-ssm-documents.AwsInvocationSimulationProps">AwsInvocationSimulationProps</a>
+
+---
 
 
 ### GenericVariable <a name="GenericVariable" id="cdk-ssm-documents.GenericVariable"></a>
@@ -30225,6 +32874,174 @@ public readonly validValues: string[];
 ---
 
 
+### InvokeLambdaFunctionSimulation <a name="InvokeLambdaFunctionSimulation" id="cdk-ssm-documents.InvokeLambdaFunctionSimulation"></a>
+
+AutomationStep implemenation for aws:invokeLambdaFunction https://docs.aws.amazon.com/systems-manager/latest/userguide/automation-action-lamb.html.
+
+#### Initializers <a name="Initializers" id="cdk-ssm-documents.InvokeLambdaFunctionSimulation.Initializer"></a>
+
+```typescript
+import { InvokeLambdaFunctionSimulation } from 'cdk-ssm-documents'
+
+new InvokeLambdaFunctionSimulation(step: InvokeLambdaFunctionStep, props: AwsInvocationSimulationProps)
+```
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#cdk-ssm-documents.InvokeLambdaFunctionSimulation.Initializer.parameter.step">step</a></code> | <code><a href="#cdk-ssm-documents.InvokeLambdaFunctionStep">InvokeLambdaFunctionStep</a></code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.InvokeLambdaFunctionSimulation.Initializer.parameter.props">props</a></code> | <code><a href="#cdk-ssm-documents.AwsInvocationSimulationProps">AwsInvocationSimulationProps</a></code> | *No description.* |
+
+---
+
+##### `step`<sup>Required</sup> <a name="step" id="cdk-ssm-documents.InvokeLambdaFunctionSimulation.Initializer.parameter.step"></a>
+
+- *Type:* <a href="#cdk-ssm-documents.InvokeLambdaFunctionStep">InvokeLambdaFunctionStep</a>
+
+---
+
+##### `props`<sup>Required</sup> <a name="props" id="cdk-ssm-documents.InvokeLambdaFunctionSimulation.Initializer.parameter.props"></a>
+
+- *Type:* <a href="#cdk-ssm-documents.AwsInvocationSimulationProps">AwsInvocationSimulationProps</a>
+
+---
+
+#### Methods <a name="Methods" id="Methods"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#cdk-ssm-documents.InvokeLambdaFunctionSimulation.executeStep">executeStep</a></code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.InvokeLambdaFunctionSimulation.nextStep">nextStep</a></code> | *No description.* |
+
+---
+
+##### `executeStep` <a name="executeStep" id="cdk-ssm-documents.InvokeLambdaFunctionSimulation.executeStep"></a>
+
+```typescript
+public executeStep(inputs: {[ key: string ]: any}): {[ key: string ]: any}
+```
+
+###### `inputs`<sup>Required</sup> <a name="inputs" id="cdk-ssm-documents.InvokeLambdaFunctionSimulation.executeStep.parameter.inputs"></a>
+
+- *Type:* {[ key: string ]: any}
+
+---
+
+##### `nextStep` <a name="nextStep" id="cdk-ssm-documents.InvokeLambdaFunctionSimulation.nextStep"></a>
+
+```typescript
+public nextStep(_inputs: {[ key: string ]: any}): AutomationStep
+```
+
+###### `_inputs`<sup>Required</sup> <a name="_inputs" id="cdk-ssm-documents.InvokeLambdaFunctionSimulation.nextStep.parameter._inputs"></a>
+
+- *Type:* {[ key: string ]: any}
+
+---
+
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#cdk-ssm-documents.InvokeLambdaFunctionSimulation.property.action">action</a></code> | <code>string</code> | *No description.* |
+
+---
+
+##### `action`<sup>Required</sup> <a name="action" id="cdk-ssm-documents.InvokeLambdaFunctionSimulation.property.action"></a>
+
+```typescript
+public readonly action: string;
+```
+
+- *Type:* string
+
+---
+
+
+### InvokeWebhookSimulation <a name="InvokeWebhookSimulation" id="cdk-ssm-documents.InvokeWebhookSimulation"></a>
+
+AutomationStep implementation for [aws:invokeWebhook](https://docs.aws.amazon.com/systems-manager/latest/userguide/invoke-webhook.html).
+
+#### Initializers <a name="Initializers" id="cdk-ssm-documents.InvokeWebhookSimulation.Initializer"></a>
+
+```typescript
+import { InvokeWebhookSimulation } from 'cdk-ssm-documents'
+
+new InvokeWebhookSimulation(step: InvokeWebhookStep, props: InvokeWebhookSimulationProps)
+```
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#cdk-ssm-documents.InvokeWebhookSimulation.Initializer.parameter.step">step</a></code> | <code><a href="#cdk-ssm-documents.InvokeWebhookStep">InvokeWebhookStep</a></code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.InvokeWebhookSimulation.Initializer.parameter.props">props</a></code> | <code><a href="#cdk-ssm-documents.InvokeWebhookSimulationProps">InvokeWebhookSimulationProps</a></code> | *No description.* |
+
+---
+
+##### `step`<sup>Required</sup> <a name="step" id="cdk-ssm-documents.InvokeWebhookSimulation.Initializer.parameter.step"></a>
+
+- *Type:* <a href="#cdk-ssm-documents.InvokeWebhookStep">InvokeWebhookStep</a>
+
+---
+
+##### `props`<sup>Required</sup> <a name="props" id="cdk-ssm-documents.InvokeWebhookSimulation.Initializer.parameter.props"></a>
+
+- *Type:* <a href="#cdk-ssm-documents.InvokeWebhookSimulationProps">InvokeWebhookSimulationProps</a>
+
+---
+
+#### Methods <a name="Methods" id="Methods"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#cdk-ssm-documents.InvokeWebhookSimulation.executeStep">executeStep</a></code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.InvokeWebhookSimulation.nextStep">nextStep</a></code> | *No description.* |
+
+---
+
+##### `executeStep` <a name="executeStep" id="cdk-ssm-documents.InvokeWebhookSimulation.executeStep"></a>
+
+```typescript
+public executeStep(inputs: {[ key: string ]: any}): {[ key: string ]: any}
+```
+
+###### `inputs`<sup>Required</sup> <a name="inputs" id="cdk-ssm-documents.InvokeWebhookSimulation.executeStep.parameter.inputs"></a>
+
+- *Type:* {[ key: string ]: any}
+
+---
+
+##### `nextStep` <a name="nextStep" id="cdk-ssm-documents.InvokeWebhookSimulation.nextStep"></a>
+
+```typescript
+public nextStep(_inputs: {[ key: string ]: any}): AutomationStep
+```
+
+###### `_inputs`<sup>Required</sup> <a name="_inputs" id="cdk-ssm-documents.InvokeWebhookSimulation.nextStep.parameter._inputs"></a>
+
+- *Type:* {[ key: string ]: any}
+
+---
+
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#cdk-ssm-documents.InvokeWebhookSimulation.property.action">action</a></code> | <code>string</code> | *No description.* |
+
+---
+
+##### `action`<sup>Required</sup> <a name="action" id="cdk-ssm-documents.InvokeWebhookSimulation.property.action"></a>
+
+```typescript
+public readonly action: string;
+```
+
+- *Type:* string
+
+---
+
+
 ### LocalRunDocument <a name="LocalRunDocument" id="cdk-ssm-documents.LocalRunDocument"></a>
 
 - *Implements:* <a href="#cdk-ssm-documents.IRunDocumentLocation">IRunDocumentLocation</a>
@@ -31798,6 +34615,92 @@ public pause(): void
 
 
 
+### PauseSimulation <a name="PauseSimulation" id="cdk-ssm-documents.PauseSimulation"></a>
+
+AutomationStep implementation for aws:pause https://docs.aws.amazon.com/systems-manager/latest/userguide/automation-action-pause.html.
+
+#### Initializers <a name="Initializers" id="cdk-ssm-documents.PauseSimulation.Initializer"></a>
+
+```typescript
+import { PauseSimulation } from 'cdk-ssm-documents'
+
+new PauseSimulation(step: PauseStep, props: PauseSimulationProps)
+```
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#cdk-ssm-documents.PauseSimulation.Initializer.parameter.step">step</a></code> | <code><a href="#cdk-ssm-documents.PauseStep">PauseStep</a></code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.PauseSimulation.Initializer.parameter.props">props</a></code> | <code><a href="#cdk-ssm-documents.PauseSimulationProps">PauseSimulationProps</a></code> | *No description.* |
+
+---
+
+##### `step`<sup>Required</sup> <a name="step" id="cdk-ssm-documents.PauseSimulation.Initializer.parameter.step"></a>
+
+- *Type:* <a href="#cdk-ssm-documents.PauseStep">PauseStep</a>
+
+---
+
+##### `props`<sup>Required</sup> <a name="props" id="cdk-ssm-documents.PauseSimulation.Initializer.parameter.props"></a>
+
+- *Type:* <a href="#cdk-ssm-documents.PauseSimulationProps">PauseSimulationProps</a>
+
+---
+
+#### Methods <a name="Methods" id="Methods"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#cdk-ssm-documents.PauseSimulation.executeStep">executeStep</a></code> | May perform a real pause based on the params used during instance creation. |
+| <code><a href="#cdk-ssm-documents.PauseSimulation.nextStep">nextStep</a></code> | *No description.* |
+
+---
+
+##### `executeStep` <a name="executeStep" id="cdk-ssm-documents.PauseSimulation.executeStep"></a>
+
+```typescript
+public executeStep(_inputs: {[ key: string ]: any}): {[ key: string ]: any}
+```
+
+May perform a real pause based on the params used during instance creation.
+
+###### `_inputs`<sup>Required</sup> <a name="_inputs" id="cdk-ssm-documents.PauseSimulation.executeStep.parameter._inputs"></a>
+
+- *Type:* {[ key: string ]: any}
+
+---
+
+##### `nextStep` <a name="nextStep" id="cdk-ssm-documents.PauseSimulation.nextStep"></a>
+
+```typescript
+public nextStep(_inputs: {[ key: string ]: any}): AutomationStep
+```
+
+###### `_inputs`<sup>Required</sup> <a name="_inputs" id="cdk-ssm-documents.PauseSimulation.nextStep.parameter._inputs"></a>
+
+- *Type:* {[ key: string ]: any}
+
+---
+
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#cdk-ssm-documents.PauseSimulation.property.action">action</a></code> | <code>string</code> | *No description.* |
+
+---
+
+##### `action`<sup>Required</sup> <a name="action" id="cdk-ssm-documents.PauseSimulation.property.action"></a>
+
+```typescript
+public readonly action: string;
+```
+
+- *Type:* string
+
+---
+
+
 ### Platforms <a name="Platforms" id="cdk-ssm-documents.Platforms"></a>
 
 
@@ -31960,6 +34863,60 @@ public readonly INJECTED_PLAYFORM_TYPE_KEY: string;
 - *Type:* string
 
 ---
+
+### PsModuleSimulation <a name="PsModuleSimulation" id="cdk-ssm-documents.PsModuleSimulation"></a>
+
+#### Initializers <a name="Initializers" id="cdk-ssm-documents.PsModuleSimulation.Initializer"></a>
+
+```typescript
+import { PsModuleSimulation } from 'cdk-ssm-documents'
+
+new PsModuleSimulation(step: PsModuleStep, props: EnvironmentProps)
+```
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#cdk-ssm-documents.PsModuleSimulation.Initializer.parameter.step">step</a></code> | <code><a href="#cdk-ssm-documents.PsModuleStep">PsModuleStep</a></code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.PsModuleSimulation.Initializer.parameter.props">props</a></code> | <code><a href="#cdk-ssm-documents.EnvironmentProps">EnvironmentProps</a></code> | *No description.* |
+
+---
+
+##### `step`<sup>Required</sup> <a name="step" id="cdk-ssm-documents.PsModuleSimulation.Initializer.parameter.step"></a>
+
+- *Type:* <a href="#cdk-ssm-documents.PsModuleStep">PsModuleStep</a>
+
+---
+
+##### `props`<sup>Required</sup> <a name="props" id="cdk-ssm-documents.PsModuleSimulation.Initializer.parameter.props"></a>
+
+- *Type:* <a href="#cdk-ssm-documents.EnvironmentProps">EnvironmentProps</a>
+
+---
+
+#### Methods <a name="Methods" id="Methods"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#cdk-ssm-documents.PsModuleSimulation.executeStep">executeStep</a></code> | Installs the module specified by source then runs the specified commands. |
+
+---
+
+##### `executeStep` <a name="executeStep" id="cdk-ssm-documents.PsModuleSimulation.executeStep"></a>
+
+```typescript
+public executeStep(inputs: {[ key: string ]: any}): void
+```
+
+Installs the module specified by source then runs the specified commands.
+
+###### `inputs`<sup>Required</sup> <a name="inputs" id="cdk-ssm-documents.PsModuleSimulation.executeStep.parameter.inputs"></a>
+
+- *Type:* {[ key: string ]: any}
+
+---
+
+
+
 
 ### ReflectiveAwsInvoker <a name="ReflectiveAwsInvoker" id="cdk-ssm-documents.ReflectiveAwsInvoker"></a>
 
@@ -32149,6 +35106,284 @@ public readonly validValues: string[];
 - *Type:* string[]
 
 ---
+
+
+### RunCommandSimulation <a name="RunCommandSimulation" id="cdk-ssm-documents.RunCommandSimulation"></a>
+
+AutomationStep implementation of [aws:runCommand](https://docs.aws.amazon.com/systems-manager/latest/userguide/automation-action-runcommand.html).
+
+#### Initializers <a name="Initializers" id="cdk-ssm-documents.RunCommandSimulation.Initializer"></a>
+
+```typescript
+import { RunCommandSimulation } from 'cdk-ssm-documents'
+
+new RunCommandSimulation(step: RunCommandStep, props: RunCommandSimulationProps)
+```
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#cdk-ssm-documents.RunCommandSimulation.Initializer.parameter.step">step</a></code> | <code><a href="#cdk-ssm-documents.RunCommandStep">RunCommandStep</a></code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.RunCommandSimulation.Initializer.parameter.props">props</a></code> | <code><a href="#cdk-ssm-documents.RunCommandSimulationProps">RunCommandSimulationProps</a></code> | *No description.* |
+
+---
+
+##### `step`<sup>Required</sup> <a name="step" id="cdk-ssm-documents.RunCommandSimulation.Initializer.parameter.step"></a>
+
+- *Type:* <a href="#cdk-ssm-documents.RunCommandStep">RunCommandStep</a>
+
+---
+
+##### `props`<sup>Required</sup> <a name="props" id="cdk-ssm-documents.RunCommandSimulation.Initializer.parameter.props"></a>
+
+- *Type:* <a href="#cdk-ssm-documents.RunCommandSimulationProps">RunCommandSimulationProps</a>
+
+---
+
+#### Methods <a name="Methods" id="Methods"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#cdk-ssm-documents.RunCommandSimulation.executeStep">executeStep</a></code> | May perform a real approval ask based on the params used during instance creation. |
+| <code><a href="#cdk-ssm-documents.RunCommandSimulation.nextStep">nextStep</a></code> | *No description.* |
+
+---
+
+##### `executeStep` <a name="executeStep" id="cdk-ssm-documents.RunCommandSimulation.executeStep"></a>
+
+```typescript
+public executeStep(inputs: {[ key: string ]: any}): {[ key: string ]: any}
+```
+
+May perform a real approval ask based on the params used during instance creation.
+
+###### `inputs`<sup>Required</sup> <a name="inputs" id="cdk-ssm-documents.RunCommandSimulation.executeStep.parameter.inputs"></a>
+
+- *Type:* {[ key: string ]: any}
+
+---
+
+##### `nextStep` <a name="nextStep" id="cdk-ssm-documents.RunCommandSimulation.nextStep"></a>
+
+```typescript
+public nextStep(_inputs: {[ key: string ]: any}): AutomationStep
+```
+
+###### `_inputs`<sup>Required</sup> <a name="_inputs" id="cdk-ssm-documents.RunCommandSimulation.nextStep.parameter._inputs"></a>
+
+- *Type:* {[ key: string ]: any}
+
+---
+
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#cdk-ssm-documents.RunCommandSimulation.property.action">action</a></code> | <code>string</code> | *No description.* |
+
+---
+
+##### `action`<sup>Required</sup> <a name="action" id="cdk-ssm-documents.RunCommandSimulation.property.action"></a>
+
+```typescript
+public readonly action: string;
+```
+
+- *Type:* string
+
+---
+
+
+### RunInstanceSimulation <a name="RunInstanceSimulation" id="cdk-ssm-documents.RunInstanceSimulation"></a>
+
+AutomationStep implemenation for aws:runInstance https://docs.aws.amazon.com/systems-manager/latest/userguide/automation-action-runinstance.html.
+
+#### Initializers <a name="Initializers" id="cdk-ssm-documents.RunInstanceSimulation.Initializer"></a>
+
+```typescript
+import { RunInstanceSimulation } from 'cdk-ssm-documents'
+
+new RunInstanceSimulation(step: RunInstanceStep, props: AwsInvocationSimulationProps)
+```
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#cdk-ssm-documents.RunInstanceSimulation.Initializer.parameter.step">step</a></code> | <code><a href="#cdk-ssm-documents.RunInstanceStep">RunInstanceStep</a></code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.RunInstanceSimulation.Initializer.parameter.props">props</a></code> | <code><a href="#cdk-ssm-documents.AwsInvocationSimulationProps">AwsInvocationSimulationProps</a></code> | *No description.* |
+
+---
+
+##### `step`<sup>Required</sup> <a name="step" id="cdk-ssm-documents.RunInstanceSimulation.Initializer.parameter.step"></a>
+
+- *Type:* <a href="#cdk-ssm-documents.RunInstanceStep">RunInstanceStep</a>
+
+---
+
+##### `props`<sup>Required</sup> <a name="props" id="cdk-ssm-documents.RunInstanceSimulation.Initializer.parameter.props"></a>
+
+- *Type:* <a href="#cdk-ssm-documents.AwsInvocationSimulationProps">AwsInvocationSimulationProps</a>
+
+---
+
+#### Methods <a name="Methods" id="Methods"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#cdk-ssm-documents.RunInstanceSimulation.executeStep">executeStep</a></code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.RunInstanceSimulation.nextStep">nextStep</a></code> | *No description.* |
+
+---
+
+##### `executeStep` <a name="executeStep" id="cdk-ssm-documents.RunInstanceSimulation.executeStep"></a>
+
+```typescript
+public executeStep(inputs: {[ key: string ]: any}): {[ key: string ]: any}
+```
+
+###### `inputs`<sup>Required</sup> <a name="inputs" id="cdk-ssm-documents.RunInstanceSimulation.executeStep.parameter.inputs"></a>
+
+- *Type:* {[ key: string ]: any}
+
+---
+
+##### `nextStep` <a name="nextStep" id="cdk-ssm-documents.RunInstanceSimulation.nextStep"></a>
+
+```typescript
+public nextStep(_inputs: {[ key: string ]: any}): AutomationStep
+```
+
+###### `_inputs`<sup>Required</sup> <a name="_inputs" id="cdk-ssm-documents.RunInstanceSimulation.nextStep.parameter._inputs"></a>
+
+- *Type:* {[ key: string ]: any}
+
+---
+
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#cdk-ssm-documents.RunInstanceSimulation.property.action">action</a></code> | <code>string</code> | *No description.* |
+
+---
+
+##### `action`<sup>Required</sup> <a name="action" id="cdk-ssm-documents.RunInstanceSimulation.property.action"></a>
+
+```typescript
+public readonly action: string;
+```
+
+- *Type:* string
+
+---
+
+
+### RunPowerShellScriptSimulation <a name="RunPowerShellScriptSimulation" id="cdk-ssm-documents.RunPowerShellScriptSimulation"></a>
+
+#### Initializers <a name="Initializers" id="cdk-ssm-documents.RunPowerShellScriptSimulation.Initializer"></a>
+
+```typescript
+import { RunPowerShellScriptSimulation } from 'cdk-ssm-documents'
+
+new RunPowerShellScriptSimulation(step: RunPowerShellScriptStep, props: EnvironmentProps)
+```
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#cdk-ssm-documents.RunPowerShellScriptSimulation.Initializer.parameter.step">step</a></code> | <code><a href="#cdk-ssm-documents.RunPowerShellScriptStep">RunPowerShellScriptStep</a></code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.RunPowerShellScriptSimulation.Initializer.parameter.props">props</a></code> | <code><a href="#cdk-ssm-documents.EnvironmentProps">EnvironmentProps</a></code> | *No description.* |
+
+---
+
+##### `step`<sup>Required</sup> <a name="step" id="cdk-ssm-documents.RunPowerShellScriptSimulation.Initializer.parameter.step"></a>
+
+- *Type:* <a href="#cdk-ssm-documents.RunPowerShellScriptStep">RunPowerShellScriptStep</a>
+
+---
+
+##### `props`<sup>Required</sup> <a name="props" id="cdk-ssm-documents.RunPowerShellScriptSimulation.Initializer.parameter.props"></a>
+
+- *Type:* <a href="#cdk-ssm-documents.EnvironmentProps">EnvironmentProps</a>
+
+---
+
+#### Methods <a name="Methods" id="Methods"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#cdk-ssm-documents.RunPowerShellScriptSimulation.executeStep">executeStep</a></code> | Executes the runCommands against the environment provided in the constructor. |
+
+---
+
+##### `executeStep` <a name="executeStep" id="cdk-ssm-documents.RunPowerShellScriptSimulation.executeStep"></a>
+
+```typescript
+public executeStep(inputs: {[ key: string ]: any}): void
+```
+
+Executes the runCommands against the environment provided in the constructor.
+
+###### `inputs`<sup>Required</sup> <a name="inputs" id="cdk-ssm-documents.RunPowerShellScriptSimulation.executeStep.parameter.inputs"></a>
+
+- *Type:* {[ key: string ]: any}
+
+---
+
+
+
+
+### RunShellScriptSimulation <a name="RunShellScriptSimulation" id="cdk-ssm-documents.RunShellScriptSimulation"></a>
+
+#### Initializers <a name="Initializers" id="cdk-ssm-documents.RunShellScriptSimulation.Initializer"></a>
+
+```typescript
+import { RunShellScriptSimulation } from 'cdk-ssm-documents'
+
+new RunShellScriptSimulation(step: RunShellScriptStep, props: EnvironmentProps)
+```
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#cdk-ssm-documents.RunShellScriptSimulation.Initializer.parameter.step">step</a></code> | <code><a href="#cdk-ssm-documents.RunShellScriptStep">RunShellScriptStep</a></code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.RunShellScriptSimulation.Initializer.parameter.props">props</a></code> | <code><a href="#cdk-ssm-documents.EnvironmentProps">EnvironmentProps</a></code> | *No description.* |
+
+---
+
+##### `step`<sup>Required</sup> <a name="step" id="cdk-ssm-documents.RunShellScriptSimulation.Initializer.parameter.step"></a>
+
+- *Type:* <a href="#cdk-ssm-documents.RunShellScriptStep">RunShellScriptStep</a>
+
+---
+
+##### `props`<sup>Required</sup> <a name="props" id="cdk-ssm-documents.RunShellScriptSimulation.Initializer.parameter.props"></a>
+
+- *Type:* <a href="#cdk-ssm-documents.EnvironmentProps">EnvironmentProps</a>
+
+---
+
+#### Methods <a name="Methods" id="Methods"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#cdk-ssm-documents.RunShellScriptSimulation.executeStep">executeStep</a></code> | Executes the runCommands against the environment provided in the constructor. |
+
+---
+
+##### `executeStep` <a name="executeStep" id="cdk-ssm-documents.RunShellScriptSimulation.executeStep"></a>
+
+```typescript
+public executeStep(inputs: {[ key: string ]: any}): void
+```
+
+Executes the runCommands against the environment provided in the constructor.
+
+###### `inputs`<sup>Required</sup> <a name="inputs" id="cdk-ssm-documents.RunShellScriptSimulation.executeStep.parameter.inputs"></a>
+
+- *Type:* {[ key: string ]: any}
+
+---
+
+
 
 
 ### S3Content <a name="S3Content" id="cdk-ssm-documents.S3Content"></a>
@@ -32355,6 +35590,116 @@ SecureVariable.ofValue(value: string)
 
 
 
+### Simulation <a name="Simulation" id="cdk-ssm-documents.Simulation"></a>
+
+#### Methods <a name="Methods" id="Methods"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#cdk-ssm-documents.Simulation.simulate">simulate</a></code> | Synthesize before calling this function! You can use this to Synthesize: SynthUtils.synthesize(stack); |
+
+---
+
+##### `simulate` <a name="simulate" id="cdk-ssm-documents.Simulation.simulate"></a>
+
+```typescript
+public simulate(inputs: {[ key: string ]: any}): DocumentResult
+```
+
+Synthesize before calling this function! You can use this to Synthesize: SynthUtils.synthesize(stack);
+
+Executes the SSM Document in simulation mode.
+This method DOES NOT result in invocation of SSM APIs.
+Rather, all steps are executed locally and mimic the behavior of SSM.
+If any inputs are not provided in this function, the specified defaults for the inputs will be used.
+
+###### `inputs`<sup>Required</sup> <a name="inputs" id="cdk-ssm-documents.Simulation.simulate.parameter.inputs"></a>
+
+- *Type:* {[ key: string ]: any}
+
+the inputs to feed into the simulated execution.
+
+---
+
+#### Static Functions <a name="Static Functions" id="Static Functions"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#cdk-ssm-documents.Simulation.ofAutomation">ofAutomation</a></code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.Simulation.ofCommand">ofCommand</a></code> | *No description.* |
+
+---
+
+##### `ofAutomation` <a name="ofAutomation" id="cdk-ssm-documents.Simulation.ofAutomation"></a>
+
+```typescript
+import { Simulation } from 'cdk-ssm-documents'
+
+Simulation.ofAutomation(document: AutomationDocument, props: AutomationSimulationProps)
+```
+
+###### `document`<sup>Required</sup> <a name="document" id="cdk-ssm-documents.Simulation.ofAutomation.parameter.document"></a>
+
+- *Type:* <a href="#cdk-ssm-documents.AutomationDocument">AutomationDocument</a>
+
+---
+
+###### `props`<sup>Required</sup> <a name="props" id="cdk-ssm-documents.Simulation.ofAutomation.parameter.props"></a>
+
+- *Type:* <a href="#cdk-ssm-documents.AutomationSimulationProps">AutomationSimulationProps</a>
+
+---
+
+##### `ofCommand` <a name="ofCommand" id="cdk-ssm-documents.Simulation.ofCommand"></a>
+
+```typescript
+import { Simulation } from 'cdk-ssm-documents'
+
+Simulation.ofCommand(document: CommandDocument, props: CommandSimulationProps)
+```
+
+###### `document`<sup>Required</sup> <a name="document" id="cdk-ssm-documents.Simulation.ofCommand.parameter.document"></a>
+
+- *Type:* <a href="#cdk-ssm-documents.CommandDocument">CommandDocument</a>
+
+---
+
+###### `props`<sup>Required</sup> <a name="props" id="cdk-ssm-documents.Simulation.ofCommand.parameter.props"></a>
+
+- *Type:* <a href="#cdk-ssm-documents.CommandSimulationProps">CommandSimulationProps</a>
+
+---
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#cdk-ssm-documents.Simulation.property.document">document</a></code> | <code><a href="#cdk-ssm-documents.SsmDocument">SsmDocument</a></code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.Simulation.property.props">props</a></code> | <code><a href="#cdk-ssm-documents.SimulationProps">SimulationProps</a></code> | *No description.* |
+
+---
+
+##### `document`<sup>Required</sup> <a name="document" id="cdk-ssm-documents.Simulation.property.document"></a>
+
+```typescript
+public readonly document: SsmDocument;
+```
+
+- *Type:* <a href="#cdk-ssm-documents.SsmDocument">SsmDocument</a>
+
+---
+
+##### `props`<sup>Required</sup> <a name="props" id="cdk-ssm-documents.Simulation.property.props"></a>
+
+```typescript
+public readonly props: SimulationProps;
+```
+
+- *Type:* <a href="#cdk-ssm-documents.SimulationProps">SimulationProps</a>
+
+---
+
+
 ### SleepImpl <a name="SleepImpl" id="cdk-ssm-documents.SleepImpl"></a>
 
 - *Implements:* <a href="#cdk-ssm-documents.ISleepHook">ISleepHook</a>
@@ -32397,6 +35742,90 @@ Synchronously sleeps for duration specified in millis.
 ---
 
 
+
+
+### SleepSimulation <a name="SleepSimulation" id="cdk-ssm-documents.SleepSimulation"></a>
+
+AutomationStep implemenation for aws:sleep https://docs.aws.amazon.com/systems-manager/latest/userguide/automation-action-sleep.html.
+
+#### Initializers <a name="Initializers" id="cdk-ssm-documents.SleepSimulation.Initializer"></a>
+
+```typescript
+import { SleepSimulation } from 'cdk-ssm-documents'
+
+new SleepSimulation(step: SleepStep, props: SleepSimulationProps)
+```
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#cdk-ssm-documents.SleepSimulation.Initializer.parameter.step">step</a></code> | <code><a href="#cdk-ssm-documents.SleepStep">SleepStep</a></code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.SleepSimulation.Initializer.parameter.props">props</a></code> | <code><a href="#cdk-ssm-documents.SleepSimulationProps">SleepSimulationProps</a></code> | *No description.* |
+
+---
+
+##### `step`<sup>Required</sup> <a name="step" id="cdk-ssm-documents.SleepSimulation.Initializer.parameter.step"></a>
+
+- *Type:* <a href="#cdk-ssm-documents.SleepStep">SleepStep</a>
+
+---
+
+##### `props`<sup>Required</sup> <a name="props" id="cdk-ssm-documents.SleepSimulation.Initializer.parameter.props"></a>
+
+- *Type:* <a href="#cdk-ssm-documents.SleepSimulationProps">SleepSimulationProps</a>
+
+---
+
+#### Methods <a name="Methods" id="Methods"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#cdk-ssm-documents.SleepSimulation.executeStep">executeStep</a></code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.SleepSimulation.nextStep">nextStep</a></code> | *No description.* |
+
+---
+
+##### `executeStep` <a name="executeStep" id="cdk-ssm-documents.SleepSimulation.executeStep"></a>
+
+```typescript
+public executeStep(_inputs: {[ key: string ]: any}): {[ key: string ]: any}
+```
+
+###### `_inputs`<sup>Required</sup> <a name="_inputs" id="cdk-ssm-documents.SleepSimulation.executeStep.parameter._inputs"></a>
+
+- *Type:* {[ key: string ]: any}
+
+---
+
+##### `nextStep` <a name="nextStep" id="cdk-ssm-documents.SleepSimulation.nextStep"></a>
+
+```typescript
+public nextStep(_inputs: {[ key: string ]: any}): AutomationStep
+```
+
+###### `_inputs`<sup>Required</sup> <a name="_inputs" id="cdk-ssm-documents.SleepSimulation.nextStep.parameter._inputs"></a>
+
+- *Type:* {[ key: string ]: any}
+
+---
+
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#cdk-ssm-documents.SleepSimulation.property.action">action</a></code> | <code>string</code> | *No description.* |
+
+---
+
+##### `action`<sup>Required</sup> <a name="action" id="cdk-ssm-documents.SleepSimulation.property.action"></a>
+
+```typescript
+public readonly action: string;
+```
+
+- *Type:* string
+
+---
 
 
 ### SSMDocumentContent <a name="SSMDocumentContent" id="cdk-ssm-documents.SSMDocumentContent"></a>
@@ -33551,6 +36980,136 @@ public readonly userName: SecureVariable;
 ---
 
 
+### WaitForResourceSimulation <a name="WaitForResourceSimulation" id="cdk-ssm-documents.WaitForResourceSimulation"></a>
+
+AutomationStep impl for aws:waitForAwsResourceProperty https://docs.aws.amazon.com/systems-manager/latest/userguide/automation-action-waitForAwsResourceProperty.html.
+
+#### Initializers <a name="Initializers" id="cdk-ssm-documents.WaitForResourceSimulation.Initializer"></a>
+
+```typescript
+import { WaitForResourceSimulation } from 'cdk-ssm-documents'
+
+new WaitForResourceSimulation(step: WaitForResourceStep, props: WaitForResourceSimulationProps)
+```
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#cdk-ssm-documents.WaitForResourceSimulation.Initializer.parameter.step">step</a></code> | <code><a href="#cdk-ssm-documents.WaitForResourceStep">WaitForResourceStep</a></code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.WaitForResourceSimulation.Initializer.parameter.props">props</a></code> | <code><a href="#cdk-ssm-documents.WaitForResourceSimulationProps">WaitForResourceSimulationProps</a></code> | *No description.* |
+
+---
+
+##### `step`<sup>Required</sup> <a name="step" id="cdk-ssm-documents.WaitForResourceSimulation.Initializer.parameter.step"></a>
+
+- *Type:* <a href="#cdk-ssm-documents.WaitForResourceStep">WaitForResourceStep</a>
+
+---
+
+##### `props`<sup>Required</sup> <a name="props" id="cdk-ssm-documents.WaitForResourceSimulation.Initializer.parameter.props"></a>
+
+- *Type:* <a href="#cdk-ssm-documents.WaitForResourceSimulationProps">WaitForResourceSimulationProps</a>
+
+---
+
+#### Methods <a name="Methods" id="Methods"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#cdk-ssm-documents.WaitForResourceSimulation.executeStep">executeStep</a></code> | As is the case in an SSM Automation execution, this will continue to sleep/execute until desired value is found. |
+| <code><a href="#cdk-ssm-documents.WaitForResourceSimulation.nextStep">nextStep</a></code> | *No description.* |
+
+---
+
+##### `executeStep` <a name="executeStep" id="cdk-ssm-documents.WaitForResourceSimulation.executeStep"></a>
+
+```typescript
+public executeStep(inputs: {[ key: string ]: any}): {[ key: string ]: any}
+```
+
+As is the case in an SSM Automation execution, this will continue to sleep/execute until desired value is found.
+
+This function will throw if the timeoutSeconds is exceeded and the desired value is still not received from AWS.
+
+###### `inputs`<sup>Required</sup> <a name="inputs" id="cdk-ssm-documents.WaitForResourceSimulation.executeStep.parameter.inputs"></a>
+
+- *Type:* {[ key: string ]: any}
+
+---
+
+##### `nextStep` <a name="nextStep" id="cdk-ssm-documents.WaitForResourceSimulation.nextStep"></a>
+
+```typescript
+public nextStep(_inputs: {[ key: string ]: any}): AutomationStep
+```
+
+###### `_inputs`<sup>Required</sup> <a name="_inputs" id="cdk-ssm-documents.WaitForResourceSimulation.nextStep.parameter._inputs"></a>
+
+- *Type:* {[ key: string ]: any}
+
+---
+
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#cdk-ssm-documents.WaitForResourceSimulation.property.action">action</a></code> | <code>string</code> | *No description.* |
+
+---
+
+##### `action`<sup>Required</sup> <a name="action" id="cdk-ssm-documents.WaitForResourceSimulation.property.action"></a>
+
+```typescript
+public readonly action: string;
+```
+
+- *Type:* string
+
+---
+
+
+### WebhookImpl <a name="WebhookImpl" id="cdk-ssm-documents.WebhookImpl"></a>
+
+- *Implements:* <a href="#cdk-ssm-documents.IWebhook">IWebhook</a>
+
+#### Initializers <a name="Initializers" id="cdk-ssm-documents.WebhookImpl.Initializer"></a>
+
+```typescript
+import { WebhookImpl } from 'cdk-ssm-documents'
+
+new WebhookImpl()
+```
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+
+---
+
+#### Methods <a name="Methods" id="Methods"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#cdk-ssm-documents.WebhookImpl.invoke">invoke</a></code> | Invoke the web hook. |
+
+---
+
+##### `invoke` <a name="invoke" id="cdk-ssm-documents.WebhookImpl.invoke"></a>
+
+```typescript
+public invoke(_props: InvokeWebhookProps): InvokeWebhookResult
+```
+
+Invoke the web hook.
+
+###### `_props`<sup>Required</sup> <a name="_props" id="cdk-ssm-documents.WebhookImpl.invoke.parameter._props"></a>
+
+- *Type:* <a href="#cdk-ssm-documents.InvokeWebhookProps">InvokeWebhookProps</a>
+
+---
+
+
+
+
 ## Protocols <a name="Protocols" id="Protocols"></a>
 
 ### IActionVariable <a name="IActionVariable" id="cdk-ssm-documents.IActionVariable"></a>
@@ -34235,6 +37794,35 @@ Given the execution inputs, return the resolved value of this variable.
 - *Type:* {[ key: string ]: any}
 
 are the execution inputs.
+
+---
+
+
+### IWebhook <a name="IWebhook" id="cdk-ssm-documents.IWebhook"></a>
+
+- *Implemented By:* <a href="#cdk-ssm-documents.WebhookImpl">WebhookImpl</a>, <a href="#cdk-ssm-documents.IWebhook">IWebhook</a>
+
+Hook for simulating aws:invokeWebhook.
+
+#### Methods <a name="Methods" id="Methods"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#cdk-ssm-documents.IWebhook.invoke">invoke</a></code> | Invoke the web hook. |
+
+---
+
+##### `invoke` <a name="invoke" id="cdk-ssm-documents.IWebhook.invoke"></a>
+
+```typescript
+public invoke(props: InvokeWebhookProps): InvokeWebhookResult
+```
+
+Invoke the web hook.
+
+###### `props`<sup>Required</sup> <a name="props" id="cdk-ssm-documents.IWebhook.invoke.parameter.props"></a>
+
+- *Type:* <a href="#cdk-ssm-documents.InvokeWebhookProps">InvokeWebhookProps</a>
 
 ---
 
