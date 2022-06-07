@@ -58,6 +58,7 @@ export * from './parent-steps/command/configure-docker-step';
 export * from './parent-steps/command/run-document-step';
 export * from './parent-steps/command/run-docker-action-step';
 export * from './parent-steps/command/domain-join-step';
+export * from './parent-steps/command/download-content-step';
 
 export * from './patterns/automation/reboot-instance-and-wait';
 export * from './patterns/automation/string-step';
@@ -76,9 +77,13 @@ export * from './interface/pause-hook';
 export * from './interface/sleep-hook';
 export * from './interface/variables/variable';
 export * from './interface/run-document-location';
-export { IStringListVariable, HardCodedStringList, StringListVariable } from './interface/variables/string-list-variable';
-export { IBooleanVariable, HardCodedBoolean, BooleanVariable } from './interface/variables/boolean-variable';
-export { INumberVariable, HardCodedNumber, NumberVariable } from './interface/variables/number-variable';
-export { IMapListVariable, HardCodedMapList, MapListVariable } from './interface/variables/map-list-variable';
-export { IStringMapVariable, HardCodedStringMap, StringMapVariable } from './interface/variables/string-map-variable';
-export { IStringVariable, HardCodedString, StringVariable, StringFormat, DictFormat } from './interface/variables/string-variable';
+export * from './interface/downloadable-content';
+export * from './interface/auth-method';
+
+export * from './interface/variables/string-list-variable';
+export * from './interface/variables/boolean-variable';
+export * from './interface/variables/number-variable';
+export * from './interface/variables/map-list-variable';
+export * from './interface/variables/string-map-variable';
+export * from './interface/variables/string-variable';
+export * from './interface/variables/secure-string-variable';
