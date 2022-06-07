@@ -1,145 +1,119 @@
-import {DownloadContentStep} from "../../../lib/parent-steps/command/download-content-step";
-import * as DC from "../../../lib/interface/download-content"
-
-const assert = require('assert');
-import {
-    HardCodedString,
-    MockEnvironment,
-    DockerEnvironment,
-    ResponseCode,
-    StringFormat,
-    StringVariable
-} from '../../../lib';
+import { strict as assert } from 'assert';
 import { Stack } from 'aws-cdk-lib';
+import {
+  DocumentSource,
+  GitContent,
+  GitHubContent,
+  HardCodedString, HttpContent, S3Content, SecureVariable, SSMDocumentContent, StringVariable,
+} from '../../../lib';
+import { DownloadContentStep, HardCodedBoolean } from '../../../src';
 
 describe('DownloadContent', function() {
-    describe('#invokeS3()', function() {
-        it('Plays substituted commands against provided env', function() {
-            //const mockEnv = new MockEnvironment()
-            const mockEnv = DockerEnvironment.fromContainer("743cec2b3918e2be61cd7deec0b6d9a76cb54e472ad8d91e33f1d84a9e22cb08");
-            let content = BuildDownloadContent(DC.SourceType.S3)
-            const step = new DownloadContentStep(new Stack(), "S3Download", {
-                environment: mockEnv,
-                sourceType: DC.SourceType.S3,
-                sourceInfo: content,
-                destinationPath: new StringFormat("%s", [new StringVariable("MyVar")])
-            });
-
-            const res = step.invoke({MyVar: "/mnt"});
-            assert.equal(res.responseCode, ResponseCode.SUCCESS);
-        });
+  describe('#toSsmEntry()', function() {
+    it('Builds GitHub as per SSM Document', function() {
+      const step = new DownloadContentStep(new Stack(), 'MyDownload', {
+        downloadableContent: new GitHubContent({
+          owner: HardCodedString.of('myOwner'),
+          repository: HardCodedString.of('repo'),
+          path: HardCodedString.of('path'),
+          tokenInfo: SecureVariable.ofSecureToken('somethingSecure'),
+        }),
+        destinationPath: HardCodedString.of('destPath'),
+      });
+      assert.deepEqual(JSON.parse(JSON.stringify(step.toSsmEntry())), {
+        action: 'aws:downloadContent',
+        inputs: {
+          sourceInfo: {
+            owner: 'myOwner',
+            path: 'path',
+            repository: 'repo',
+            tokenInfo: '{{ssm-secure:somethingSecure}}',
+          },
+          sourceType: 'GitHub',
+          destinationPath: 'destPath',
+        },
+        name: 'MyDownload',
+      });
     });
-    describe('#invokeSSM()', function() {
-        it('Plays substituted commands against provided env', function() {
-            //const mockEnv = new MockEnvironment()
-            const mockEnv = DockerEnvironment.fromContainer("743cec2b3918e2be61cd7deec0b6d9a76cb54e472ad8d91e33f1d84a9e22cb08");
-            let content = BuildDownloadContent(DC.SourceType.SSMDOCUMENT)
-            const step = new DownloadContentStep(new Stack(), "SSMDownload", {
-                environment: mockEnv,
-                sourceType: DC.SourceType.SSMDOCUMENT,
-                sourceInfo: content,
-                destinationPath: new StringFormat("%s", [new StringVariable("MyVar")])
-            });
-
-            const res = step.invoke({MyVar: "/mnt"});
-            assert.equal(res.responseCode, ResponseCode.SUCCESS);
-        });
+    it('Builds Git as per SSM Document', function() {
+      const step = new DownloadContentStep(new Stack(), 'MyDownload', {
+        downloadableContent: new GitContent({
+          repository: HardCodedString.of('repo'),
+          skipHostKeyChecking: HardCodedBoolean.TRUE,
+          privateSshKey: SecureVariable.ofSecureToken('secure'),
+        }),
+        destinationPath: HardCodedString.of('destPath'),
+      });
+      assert.deepEqual(JSON.parse(JSON.stringify(step.toSsmEntry())), {
+        action: 'aws:downloadContent',
+        inputs: {
+          destinationPath: 'destPath',
+          sourceInfo: {
+            privateSSHKey: '{{ssm-secure:secure}}',
+            repository: 'repo',
+            skipHostKeyChecking: true,
+          },
+          sourceType: 'Git',
+        },
+        name: 'MyDownload',
+      });
     });
-    describe('#invokeHTTP()', function() {
-        it('Plays substituted commands against provided env', function() {
-            const mockEnv = DockerEnvironment.fromContainer("743cec2b3918e2be61cd7deec0b6d9a76cb54e472ad8d91e33f1d84a9e22cb08");
-            let content = BuildDownloadContent(DC.SourceType.HTTP)
-            const step = new DownloadContentStep(new Stack(), "HTTPDownload", {
-                environment: mockEnv,
-                sourceType: DC.SourceType.HTTP,
-                sourceInfo: content,
-                destinationPath: new StringFormat("%s", [new StringVariable("MyVar")])
-            });
-
-            const res = step.invoke({MyVar: "/mnt"});
-            assert.equal(res.responseCode, ResponseCode.SUCCESS);
-        });
+    it('Builds S3 as per SSM Document', function() {
+      const step = new DownloadContentStep(new Stack(), 'MyDownload', {
+        downloadableContent: new S3Content({
+          path: StringVariable.of('myRef'),
+        }),
+        destinationPath: HardCodedString.of('destPath'),
+      });
+      assert.deepEqual(JSON.parse(JSON.stringify(step.toSsmEntry())), {
+        action: 'aws:downloadContent',
+        inputs: {
+          destinationPath: 'destPath',
+          sourceInfo: {
+            path: '{{myRef}}',
+          },
+          sourceType: 'S3',
+        },
+        name: 'MyDownload',
+      });
     });
-    describe('#invokeGitHub()', function() {
-        it('Plays substituted commands against provided env', function() {
-            const mockEnv = DockerEnvironment.fromContainer("743cec2b3918e2be61cd7deec0b6d9a76cb54e472ad8d91e33f1d84a9e22cb08");
-            let content = BuildDownloadContent(DC.SourceType.GITHUB)
-            const step = new DownloadContentStep(new Stack(), "GitHubDownload", {
-                environment: mockEnv,
-                sourceType: DC.SourceType.GITHUB,
-                sourceInfo: content,
-                destinationPath: new StringFormat("%s", [new StringVariable("MyVar")])
-            });
-
-            const res = step.invoke({MyVar: "/mnt"});
-            assert.equal(res.responseCode, ResponseCode.SUCCESS);
-        });
+    it('Builds SSM as per SSM Document', function() {
+      const step = new DownloadContentStep(new Stack(), 'MyDownload', {
+        downloadableContent: new SSMDocumentContent({
+          documentSource: DocumentSource.fromName(StringVariable.of('name'), StringVariable.of('version')),
+        }),
+        destinationPath: HardCodedString.of('destPath'),
+      });
+      assert.deepEqual(JSON.parse(JSON.stringify(step.toSsmEntry())), {
+        action: 'aws:downloadContent',
+        inputs: {
+          destinationPath: 'destPath',
+          sourceInfo: {
+            Name: '{{name}}:{{version}}',
+          },
+          sourceType: 'SSMDocument',
+        },
+        name: 'MyDownload',
+      });
     });
-    describe('#toSsmEntry()', function() {
-        it('Builds entry as per SSM Document', function() {
-            const mockEnv = new MockEnvironment()
-            let content = BuildDownloadContent(DC.SourceType.S3)
-            const step = new DownloadContentStep(new Stack(), "S3Download", {
-                environment: mockEnv,
-                sourceType: DC.SourceType.S3,
-                sourceInfo: content,
-                destinationPath: new StringFormat("some %s string", [new StringVariable("MyVar")])
-
-            });
-            step.toSsmEntry();
-
-        });
+    it('Builds HTTP as per SSM Document', function() {
+      const step = new DownloadContentStep(new Stack(), 'MyDownload', {
+        downloadableContent: new HttpContent({
+          url: HardCodedString.of('myUrl'),
+        }),
+        destinationPath: HardCodedString.of('destPath'),
+      });
+      assert.deepEqual(JSON.parse(JSON.stringify(step.toSsmEntry())), {
+        action: 'aws:downloadContent',
+        inputs: {
+          destinationPath: 'destPath',
+          sourceInfo: {
+            url: 'myUrl',
+          },
+          sourceType: 'HTTP',
+        },
+        name: 'MyDownload',
+      });
     });
+  });
 });
-
- function BuildDownloadContent (sourceType: DC.SourceType):DC.IDownloadableContent {
-     switch (sourceType){
-         case DC.SourceType.GIT : {
-             return BuildGitContent();
-         }
-         case DC.SourceType.GITHUB :{
-             return BuildGitHubContent();
-         }
-         case DC.SourceType.HTTP : {
-             return BuildHTTPContent();
-         }
-         case DC.SourceType.S3 : {
-             return BuildS3Content();
-         }
-         default : {
-             return BuildSSMDocumentContent();
-         }
-     }
- }
-
- function BuildGitContent () : DC.IGitContent {
-    return new DC.GitContent({
-       repository: new HardCodedString("repository")
-    });
- }
-
-function BuildGitHubContent () : DC.IGitHubContent {
-     return new DC.GitHubContent({
-       owner: new HardCodedString("JamesNK"),
-       repository: new HardCodedString("NewtonSoft.Json"),
-        path: new HardCodedString("Src/Newtonsoft.Json/Bson"),
-        tokenInfo: new HardCodedString("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"),
-    });
-}
-
-function BuildHTTPContent () : DC.IHTTPContent {
-     return new DC.HTTPContent({
-        url:new HardCodedString("https://unsplash.com/photos/AaEQmoufHLk/download?force=true")
-     });
-
-}
-
-function BuildS3Content () : DC.IS3Content {
-    return new DC.S3Content({path: new HardCodedString("s3://downloadcontenttest/test/test.txt")});
-}
-
-function BuildSSMDocumentContent () : DC.ISSMDocumentContent {
-    return new DC.SSMDocumentContent({docInfo: new DC.NameDoc("AWS-ASGEnterStandby","1")});
-}
-
-

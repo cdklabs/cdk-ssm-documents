@@ -6263,6 +6263,319 @@ public readonly dnsIpAddresses: IStringListVariable;
 ---
 
 
+### DownloadContentStep <a name="DownloadContentStep" id="cdk-ssm-documents.DownloadContentStep"></a>
+
+AutomationStep implemenation for aws:downloadContent https://docs.aws.amazon.com/systems-manager/latest/userguide/ssm-plugins.html#aws-downloadContent.
+
+#### Initializers <a name="Initializers" id="cdk-ssm-documents.DownloadContentStep.Initializer"></a>
+
+```typescript
+import { DownloadContentStep } from 'cdk-ssm-documents'
+
+new DownloadContentStep(scope: Construct, id: string, props: DownloadContentStepProps)
+```
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#cdk-ssm-documents.DownloadContentStep.Initializer.parameter.scope">scope</a></code> | <code>constructs.Construct</code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.DownloadContentStep.Initializer.parameter.id">id</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.DownloadContentStep.Initializer.parameter.props">props</a></code> | <code><a href="#cdk-ssm-documents.DownloadContentStepProps">DownloadContentStepProps</a></code> | *No description.* |
+
+---
+
+##### `scope`<sup>Required</sup> <a name="scope" id="cdk-ssm-documents.DownloadContentStep.Initializer.parameter.scope"></a>
+
+- *Type:* constructs.Construct
+
+---
+
+##### `id`<sup>Required</sup> <a name="id" id="cdk-ssm-documents.DownloadContentStep.Initializer.parameter.id"></a>
+
+- *Type:* string
+
+---
+
+##### `props`<sup>Required</sup> <a name="props" id="cdk-ssm-documents.DownloadContentStep.Initializer.parameter.props"></a>
+
+- *Type:* <a href="#cdk-ssm-documents.DownloadContentStepProps">DownloadContentStepProps</a>
+
+---
+
+#### Methods <a name="Methods" id="Methods"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#cdk-ssm-documents.DownloadContentStep.toString">toString</a></code> | Returns a string representation of this construct. |
+| <code><a href="#cdk-ssm-documents.DownloadContentStep.listInputs">listInputs</a></code> | Inputs required for this command includes both the sourceType and sourceInfo variables and  destinationPath if provided. |
+| <code><a href="#cdk-ssm-documents.DownloadContentStep.listOutputs">listOutputs</a></code> | RunCommand Steps do not have outputs. |
+| <code><a href="#cdk-ssm-documents.DownloadContentStep.toSsmEntry">toSsmEntry</a></code> | Converts this step into an object to prepare for yaml/json representation of this step. |
+| <code><a href="#cdk-ssm-documents.DownloadContentStep.addToDocument">addToDocument</a></code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.DownloadContentStep.variables">variables</a></code> | *No description.* |
+
+---
+
+##### `toString` <a name="toString" id="cdk-ssm-documents.DownloadContentStep.toString"></a>
+
+```typescript
+public toString(): string
+```
+
+Returns a string representation of this construct.
+
+##### `listInputs` <a name="listInputs" id="cdk-ssm-documents.DownloadContentStep.listInputs"></a>
+
+```typescript
+public listInputs(): string[]
+```
+
+Inputs required for this command includes both the sourceType and sourceInfo variables and  destinationPath if provided.
+
+##### `listOutputs` <a name="listOutputs" id="cdk-ssm-documents.DownloadContentStep.listOutputs"></a>
+
+```typescript
+public listOutputs(): Output[]
+```
+
+RunCommand Steps do not have outputs.
+
+##### `toSsmEntry` <a name="toSsmEntry" id="cdk-ssm-documents.DownloadContentStep.toSsmEntry"></a>
+
+```typescript
+public toSsmEntry(): {[ key: string ]: any}
+```
+
+Converts this step into an object to prepare for yaml/json representation of this step.
+
+##### `addToDocument` <a name="addToDocument" id="cdk-ssm-documents.DownloadContentStep.addToDocument"></a>
+
+```typescript
+public addToDocument(doc: CommandDocumentBuilder): void
+```
+
+###### `doc`<sup>Required</sup> <a name="doc" id="cdk-ssm-documents.DownloadContentStep.addToDocument.parameter.doc"></a>
+
+- *Type:* <a href="#cdk-ssm-documents.CommandDocumentBuilder">CommandDocumentBuilder</a>
+
+---
+
+##### `variables` <a name="variables" id="cdk-ssm-documents.DownloadContentStep.variables"></a>
+
+```typescript
+public variables(): {[ key: string ]: any}
+```
+
+#### Static Functions <a name="Static Functions" id="Static Functions"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#cdk-ssm-documents.DownloadContentStep.isConstruct">isConstruct</a></code> | Checks if `x` is a construct. |
+
+---
+
+##### ~~`isConstruct`~~ <a name="isConstruct" id="cdk-ssm-documents.DownloadContentStep.isConstruct"></a>
+
+```typescript
+import { DownloadContentStep } from 'cdk-ssm-documents'
+
+DownloadContentStep.isConstruct(x: any)
+```
+
+Checks if `x` is a construct.
+
+###### `x`<sup>Required</sup> <a name="x" id="cdk-ssm-documents.DownloadContentStep.isConstruct.parameter.x"></a>
+
+- *Type:* any
+
+Any object.
+
+---
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#cdk-ssm-documents.DownloadContentStep.property.node">node</a></code> | <code>constructs.Node</code> | The tree node. |
+| <code><a href="#cdk-ssm-documents.DownloadContentStep.property.action">action</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.DownloadContentStep.property.inputObserver">inputObserver</a></code> | <code><a href="#cdk-ssm-documents.IObserver">IObserver</a></code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.DownloadContentStep.property.name">name</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.DownloadContentStep.property.outputObserver">outputObserver</a></code> | <code><a href="#cdk-ssm-documents.IObserver">IObserver</a></code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.DownloadContentStep.property.description">description</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.DownloadContentStep.property.exitOnFailure">exitOnFailure</a></code> | <code>boolean</code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.DownloadContentStep.property.exitOnSuccess">exitOnSuccess</a></code> | <code>boolean</code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.DownloadContentStep.property.finallyStep">finallyStep</a></code> | <code>boolean</code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.DownloadContentStep.property.markSuccessAndExitOnFailure">markSuccessAndExitOnFailure</a></code> | <code>boolean</code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.DownloadContentStep.property.platforms">platforms</a></code> | <code><a href="#cdk-ssm-documents.Platform">Platform</a>[]</code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.DownloadContentStep.property.precondition">precondition</a></code> | <code><a href="#cdk-ssm-documents.Precondition">Precondition</a></code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.DownloadContentStep.property.allStepsInExecution">allStepsInExecution</a></code> | <code><a href="#cdk-ssm-documents.CommandStep">CommandStep</a>[]</code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.DownloadContentStep.property.nextStep">nextStep</a></code> | <code><a href="#cdk-ssm-documents.CommandStep">CommandStep</a></code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.DownloadContentStep.property.downloadableContent">downloadableContent</a></code> | <code><a href="#cdk-ssm-documents.IDownloadableContent">IDownloadableContent</a></code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.DownloadContentStep.property.destinationPath">destinationPath</a></code> | <code><a href="#cdk-ssm-documents.IStringVariable">IStringVariable</a></code> | *No description.* |
+
+---
+
+##### `node`<sup>Required</sup> <a name="node" id="cdk-ssm-documents.DownloadContentStep.property.node"></a>
+
+```typescript
+public readonly node: Node;
+```
+
+- *Type:* constructs.Node
+
+The tree node.
+
+---
+
+##### `action`<sup>Required</sup> <a name="action" id="cdk-ssm-documents.DownloadContentStep.property.action"></a>
+
+```typescript
+public readonly action: string;
+```
+
+- *Type:* string
+
+---
+
+##### `inputObserver`<sup>Required</sup> <a name="inputObserver" id="cdk-ssm-documents.DownloadContentStep.property.inputObserver"></a>
+
+```typescript
+public readonly inputObserver: IObserver;
+```
+
+- *Type:* <a href="#cdk-ssm-documents.IObserver">IObserver</a>
+
+---
+
+##### `name`<sup>Required</sup> <a name="name" id="cdk-ssm-documents.DownloadContentStep.property.name"></a>
+
+```typescript
+public readonly name: string;
+```
+
+- *Type:* string
+
+---
+
+##### `outputObserver`<sup>Required</sup> <a name="outputObserver" id="cdk-ssm-documents.DownloadContentStep.property.outputObserver"></a>
+
+```typescript
+public readonly outputObserver: IObserver;
+```
+
+- *Type:* <a href="#cdk-ssm-documents.IObserver">IObserver</a>
+
+---
+
+##### `description`<sup>Optional</sup> <a name="description" id="cdk-ssm-documents.DownloadContentStep.property.description"></a>
+
+```typescript
+public readonly description: string;
+```
+
+- *Type:* string
+
+---
+
+##### `exitOnFailure`<sup>Required</sup> <a name="exitOnFailure" id="cdk-ssm-documents.DownloadContentStep.property.exitOnFailure"></a>
+
+```typescript
+public readonly exitOnFailure: boolean;
+```
+
+- *Type:* boolean
+
+---
+
+##### `exitOnSuccess`<sup>Required</sup> <a name="exitOnSuccess" id="cdk-ssm-documents.DownloadContentStep.property.exitOnSuccess"></a>
+
+```typescript
+public readonly exitOnSuccess: boolean;
+```
+
+- *Type:* boolean
+
+---
+
+##### `finallyStep`<sup>Required</sup> <a name="finallyStep" id="cdk-ssm-documents.DownloadContentStep.property.finallyStep"></a>
+
+```typescript
+public readonly finallyStep: boolean;
+```
+
+- *Type:* boolean
+
+---
+
+##### `markSuccessAndExitOnFailure`<sup>Required</sup> <a name="markSuccessAndExitOnFailure" id="cdk-ssm-documents.DownloadContentStep.property.markSuccessAndExitOnFailure"></a>
+
+```typescript
+public readonly markSuccessAndExitOnFailure: boolean;
+```
+
+- *Type:* boolean
+
+---
+
+##### `platforms`<sup>Required</sup> <a name="platforms" id="cdk-ssm-documents.DownloadContentStep.property.platforms"></a>
+
+```typescript
+public readonly platforms: Platform[];
+```
+
+- *Type:* <a href="#cdk-ssm-documents.Platform">Platform</a>[]
+
+---
+
+##### `precondition`<sup>Optional</sup> <a name="precondition" id="cdk-ssm-documents.DownloadContentStep.property.precondition"></a>
+
+```typescript
+public readonly precondition: Precondition;
+```
+
+- *Type:* <a href="#cdk-ssm-documents.Precondition">Precondition</a>
+
+---
+
+##### `allStepsInExecution`<sup>Optional</sup> <a name="allStepsInExecution" id="cdk-ssm-documents.DownloadContentStep.property.allStepsInExecution"></a>
+
+```typescript
+public readonly allStepsInExecution: CommandStep[];
+```
+
+- *Type:* <a href="#cdk-ssm-documents.CommandStep">CommandStep</a>[]
+
+---
+
+##### `nextStep`<sup>Optional</sup> <a name="nextStep" id="cdk-ssm-documents.DownloadContentStep.property.nextStep"></a>
+
+```typescript
+public readonly nextStep: CommandStep;
+```
+
+- *Type:* <a href="#cdk-ssm-documents.CommandStep">CommandStep</a>
+
+---
+
+##### `downloadableContent`<sup>Required</sup> <a name="downloadableContent" id="cdk-ssm-documents.DownloadContentStep.property.downloadableContent"></a>
+
+```typescript
+public readonly downloadableContent: IDownloadableContent;
+```
+
+- *Type:* <a href="#cdk-ssm-documents.IDownloadableContent">IDownloadableContent</a>
+
+---
+
+##### `destinationPath`<sup>Optional</sup> <a name="destinationPath" id="cdk-ssm-documents.DownloadContentStep.property.destinationPath"></a>
+
+```typescript
+public readonly destinationPath: IStringVariable;
+```
+
+- *Type:* <a href="#cdk-ssm-documents.IStringVariable">IStringVariable</a>
+
+---
+
+
 ### ExecuteScriptStep <a name="ExecuteScriptStep" id="cdk-ssm-documents.ExecuteScriptStep"></a>
 
 AutomationStep implementation for aws:executeScript https://docs.aws.amazon.com/systems-manager/latest/userguide/automation-action-executeScript.html.
@@ -15985,7 +16298,7 @@ const choiceProps: ChoiceProps = { ... }
 | <code><a href="#cdk-ssm-documents.ChoiceProps.property.constant">constant</a></code> | <code>any</code> | (Required) the constant to test against the inputToTest. |
 | <code><a href="#cdk-ssm-documents.ChoiceProps.property.jumpToStepName">jumpToStepName</a></code> | <code>string</code> | A step to jump to if this choice is evaluated to true. |
 | <code><a href="#cdk-ssm-documents.ChoiceProps.property.operation">operation</a></code> | <code><a href="#cdk-ssm-documents.Operation">Operation</a></code> | (Required) The operation used to compare the inputToTest with the constant. |
-| <code><a href="#cdk-ssm-documents.ChoiceProps.property.variable">variable</a></code> | <code><a href="#cdk-ssm-documents.IBooleanVariable">IBooleanVariable</a> \| <a href="#cdk-ssm-documents.INumberVariable">INumberVariable</a> \| <a href="#cdk-ssm-documents.IStringVariable">IStringVariable</a></code> | (Required) the input used to test using the operation with the constant. |
+| <code><a href="#cdk-ssm-documents.ChoiceProps.property.variable">variable</a></code> | <code><a href="#cdk-ssm-documents.IStringVariable">IStringVariable</a> \| <a href="#cdk-ssm-documents.INumberVariable">INumberVariable</a> \| <a href="#cdk-ssm-documents.IBooleanVariable">IBooleanVariable</a></code> | (Required) the input used to test using the operation with the constant. |
 
 ---
 
@@ -16030,10 +16343,10 @@ public readonly operation: Operation;
 ##### `variable`<sup>Required</sup> <a name="variable" id="cdk-ssm-documents.ChoiceProps.property.variable"></a>
 
 ```typescript
-public readonly variable: IBooleanVariable | INumberVariable | IStringVariable;
+public readonly variable: IStringVariable | INumberVariable | IBooleanVariable;
 ```
 
-- *Type:* <a href="#cdk-ssm-documents.IBooleanVariable">IBooleanVariable</a> | <a href="#cdk-ssm-documents.INumberVariable">INumberVariable</a> | <a href="#cdk-ssm-documents.IStringVariable">IStringVariable</a>
+- *Type:* <a href="#cdk-ssm-documents.IStringVariable">IStringVariable</a> | <a href="#cdk-ssm-documents.INumberVariable">INumberVariable</a> | <a href="#cdk-ssm-documents.IBooleanVariable">IBooleanVariable</a>
 
 (Required) the input used to test using the operation with the constant.
 
@@ -18519,6 +18832,200 @@ public readonly directoryOU: IStringVariable;
 ```
 
 
+### DownloadContentStepProps <a name="DownloadContentStepProps" id="cdk-ssm-documents.DownloadContentStepProps"></a>
+
+Properties.json for ps Module step.
+
+#### Initializer <a name="Initializer" id="cdk-ssm-documents.DownloadContentStepProps.Initializer"></a>
+
+```typescript
+import { DownloadContentStepProps } from 'cdk-ssm-documents'
+
+const downloadContentStepProps: DownloadContentStepProps = { ... }
+```
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#cdk-ssm-documents.DownloadContentStepProps.property.description">description</a></code> | <code>string</code> | (Optional) description of the current step. |
+| <code><a href="#cdk-ssm-documents.DownloadContentStepProps.property.inputObserver">inputObserver</a></code> | <code><a href="#cdk-ssm-documents.IObserver">IObserver</a></code> | (Optional) Allows for observing the input to steps as they run. |
+| <code><a href="#cdk-ssm-documents.DownloadContentStepProps.property.name">name</a></code> | <code>string</code> | (Optional) Name of the current step. |
+| <code><a href="#cdk-ssm-documents.DownloadContentStepProps.property.outputObserver">outputObserver</a></code> | <code><a href="#cdk-ssm-documents.IObserver">IObserver</a></code> | (Optional) Allows for observing the output of steps as they run. |
+| <code><a href="#cdk-ssm-documents.DownloadContentStepProps.property.exitOnFailure">exitOnFailure</a></code> | <code>boolean</code> | (Optional) Whether to exit the document execution after failed execution of this step. |
+| <code><a href="#cdk-ssm-documents.DownloadContentStepProps.property.exitOnSuccess">exitOnSuccess</a></code> | <code>boolean</code> | (Optional) Whether to exit the document execution after successful execution of this step. |
+| <code><a href="#cdk-ssm-documents.DownloadContentStepProps.property.finallyStep">finallyStep</a></code> | <code>boolean</code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.DownloadContentStepProps.property.markSuccessAndExitOnFailure">markSuccessAndExitOnFailure</a></code> | <code>boolean</code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.DownloadContentStepProps.property.onCancel">onCancel</a></code> | <code><a href="#cdk-ssm-documents.Step">Step</a></code> | (Optional) Step to jump to in the event that this step is cancelled. |
+| <code><a href="#cdk-ssm-documents.DownloadContentStepProps.property.precondition">precondition</a></code> | <code><a href="#cdk-ssm-documents.Precondition">Precondition</a></code> | (Optional) A precondition to test before execution occurrs. |
+| <code><a href="#cdk-ssm-documents.DownloadContentStepProps.property.downloadableContent">downloadableContent</a></code> | <code><a href="#cdk-ssm-documents.IDownloadableContent">IDownloadableContent</a></code> | The information required to retrieve the content from the required source. |
+| <code><a href="#cdk-ssm-documents.DownloadContentStepProps.property.destinationPath">destinationPath</a></code> | <code><a href="#cdk-ssm-documents.IStringVariable">IStringVariable</a></code> | (Optional) An optional local path on the instance where you want to download the file. |
+
+---
+
+##### `description`<sup>Optional</sup> <a name="description" id="cdk-ssm-documents.DownloadContentStepProps.property.description"></a>
+
+```typescript
+public readonly description: string;
+```
+
+- *Type:* string
+- *Default:* undefined
+
+(Optional) description of the current step.
+
+---
+
+##### `inputObserver`<sup>Optional</sup> <a name="inputObserver" id="cdk-ssm-documents.DownloadContentStepProps.property.inputObserver"></a>
+
+```typescript
+public readonly inputObserver: IObserver;
+```
+
+- *Type:* <a href="#cdk-ssm-documents.IObserver">IObserver</a>
+- *Default:* NoopObserver
+
+(Optional) Allows for observing the input to steps as they run.
+
+---
+
+##### `name`<sup>Optional</sup> <a name="name" id="cdk-ssm-documents.DownloadContentStepProps.property.name"></a>
+
+```typescript
+public readonly name: string;
+```
+
+- *Type:* string
+
+(Optional) Name of the current step.
+
+The name will be prepended onto all of the outputs emitted from this step.
+This name will also be used to reference this step in logs.
+Defaults to the id of the CDK node.
+
+---
+
+##### `outputObserver`<sup>Optional</sup> <a name="outputObserver" id="cdk-ssm-documents.DownloadContentStepProps.property.outputObserver"></a>
+
+```typescript
+public readonly outputObserver: IObserver;
+```
+
+- *Type:* <a href="#cdk-ssm-documents.IObserver">IObserver</a>
+- *Default:* NoopObserver
+
+(Optional) Allows for observing the output of steps as they run.
+
+---
+
+##### `exitOnFailure`<sup>Optional</sup> <a name="exitOnFailure" id="cdk-ssm-documents.DownloadContentStepProps.property.exitOnFailure"></a>
+
+```typescript
+public readonly exitOnFailure: boolean;
+```
+
+- *Type:* boolean
+- *Default:* false
+
+(Optional) Whether to exit the document execution after failed execution of this step.
+
+Finally step will be run.
+
+---
+
+##### `exitOnSuccess`<sup>Optional</sup> <a name="exitOnSuccess" id="cdk-ssm-documents.DownloadContentStepProps.property.exitOnSuccess"></a>
+
+```typescript
+public readonly exitOnSuccess: boolean;
+```
+
+- *Type:* boolean
+- *Default:* false
+
+(Optional) Whether to exit the document execution after successful execution of this step.
+
+Finally step will be run.
+
+---
+
+##### `finallyStep`<sup>Optional</sup> <a name="finallyStep" id="cdk-ssm-documents.DownloadContentStepProps.property.finallyStep"></a>
+
+```typescript
+public readonly finallyStep: boolean;
+```
+
+- *Type:* boolean
+
+---
+
+##### `markSuccessAndExitOnFailure`<sup>Optional</sup> <a name="markSuccessAndExitOnFailure" id="cdk-ssm-documents.DownloadContentStepProps.property.markSuccessAndExitOnFailure"></a>
+
+```typescript
+public readonly markSuccessAndExitOnFailure: boolean;
+```
+
+- *Type:* boolean
+
+---
+
+##### `onCancel`<sup>Optional</sup> <a name="onCancel" id="cdk-ssm-documents.DownloadContentStepProps.property.onCancel"></a>
+
+```typescript
+public readonly onCancel: Step;
+```
+
+- *Type:* <a href="#cdk-ssm-documents.Step">Step</a>
+- *Default:* undefined
+
+(Optional) Step to jump to in the event that this step is cancelled.
+
+---
+
+##### `precondition`<sup>Optional</sup> <a name="precondition" id="cdk-ssm-documents.DownloadContentStepProps.property.precondition"></a>
+
+```typescript
+public readonly precondition: Precondition;
+```
+
+- *Type:* <a href="#cdk-ssm-documents.Precondition">Precondition</a>
+- *Default:* undefined
+
+(Optional) A precondition to test before execution occurrs.
+
+When the precondition isn't met, the command step isn't executed.
+
+---
+
+##### `downloadableContent`<sup>Required</sup> <a name="downloadableContent" id="cdk-ssm-documents.DownloadContentStepProps.property.downloadableContent"></a>
+
+```typescript
+public readonly downloadableContent: IDownloadableContent;
+```
+
+- *Type:* <a href="#cdk-ssm-documents.IDownloadableContent">IDownloadableContent</a>
+
+The information required to retrieve the content from the required source.
+
+This is a dictionary whose format changes based on the sourceType
+See the aws documentation for more info
+https://docs.aws.amazon.com/systems-manager/latest/userguide/ssm-plugins.html#aws-downloadContent
+
+---
+
+##### `destinationPath`<sup>Optional</sup> <a name="destinationPath" id="cdk-ssm-documents.DownloadContentStepProps.property.destinationPath"></a>
+
+```typescript
+public readonly destinationPath: IStringVariable;
+```
+
+- *Type:* <a href="#cdk-ssm-documents.IStringVariable">IStringVariable</a>
+
+(Optional) An optional local path on the instance where you want to download the file.
+
+If you don't specify a path, the content is downloaded to a path relative to your command ID.
+
+---
+
 ### ExecuteScriptStepProps <a name="ExecuteScriptStepProps" id="cdk-ssm-documents.ExecuteScriptStepProps"></a>
 
 Properties for ExecuteScriptStep.
@@ -18946,6 +19453,307 @@ public readonly input: IStringVariable;
 - *Type:* <a href="#cdk-ssm-documents.IStringVariable">IStringVariable</a>
 
 (Optional) A string that contains the JSON input data for the execution.
+
+---
+
+### GitContentProps <a name="GitContentProps" id="cdk-ssm-documents.GitContentProps"></a>
+
+Properties for sourceType Git.
+
+#### Initializer <a name="Initializer" id="cdk-ssm-documents.GitContentProps.Initializer"></a>
+
+```typescript
+import { GitContentProps } from 'cdk-ssm-documents'
+
+const gitContentProps: GitContentProps = { ... }
+```
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#cdk-ssm-documents.GitContentProps.property.repository">repository</a></code> | <code><a href="#cdk-ssm-documents.IStringVariable">IStringVariable</a></code> | The Git repository URL to the file or directory you want to download. |
+| <code><a href="#cdk-ssm-documents.GitContentProps.property.branch">branch</a></code> | <code>string</code> | The default is master. |
+| <code><a href="#cdk-ssm-documents.GitContentProps.property.commitId">commitId</a></code> | <code>string</code> | The default is head. |
+| <code><a href="#cdk-ssm-documents.GitContentProps.property.password">password</a></code> | <code><a href="#cdk-ssm-documents.SecureVariable">SecureVariable</a></code> | The password to use when connecting to the repository you specify using HTTP. |
+| <code><a href="#cdk-ssm-documents.GitContentProps.property.privateSshKey">privateSshKey</a></code> | <code><a href="#cdk-ssm-documents.SecureVariable">SecureVariable</a></code> | The SSH key to use when connecting to the repository you specify. |
+| <code><a href="#cdk-ssm-documents.GitContentProps.property.skipHostKeyChecking">skipHostKeyChecking</a></code> | <code><a href="#cdk-ssm-documents.IBooleanVariable">IBooleanVariable</a></code> | Determines the value of the StrictHostKeyChecking option when connecting to the repository you specify. |
+| <code><a href="#cdk-ssm-documents.GitContentProps.property.userName">userName</a></code> | <code><a href="#cdk-ssm-documents.SecureVariable">SecureVariable</a></code> | The username to use when connecting to the repository you specify using HTTP. |
+
+---
+
+##### `repository`<sup>Required</sup> <a name="repository" id="cdk-ssm-documents.GitContentProps.property.repository"></a>
+
+```typescript
+public readonly repository: IStringVariable;
+```
+
+- *Type:* <a href="#cdk-ssm-documents.IStringVariable">IStringVariable</a>
+
+The Git repository URL to the file or directory you want to download.
+
+---
+
+##### `branch`<sup>Optional</sup> <a name="branch" id="cdk-ssm-documents.GitContentProps.property.branch"></a>
+
+```typescript
+public readonly branch: string;
+```
+
+- *Type:* string
+
+The default is master.
+
+branch parameter is required only if your SSM document is stored in a branch other than master.
+Supply either commitId or branch (or neither).
+
+---
+
+*Example*
+
+```typescript
+main
+```
+
+
+##### `commitId`<sup>Optional</sup> <a name="commitId" id="cdk-ssm-documents.GitContentProps.property.commitId"></a>
+
+```typescript
+public readonly commitId: string;
+```
+
+- *Type:* string
+
+The default is head.
+
+To use the version of your SSM document in a commit other than the latest, specify the full commit ID.
+For example: "bbc1ddb94...b76d3bEXAMPLE".
+Supply either commitId or branch (or neither).
+
+---
+
+##### `password`<sup>Optional</sup> <a name="password" id="cdk-ssm-documents.GitContentProps.property.password"></a>
+
+```typescript
+public readonly password: SecureVariable;
+```
+
+- *Type:* <a href="#cdk-ssm-documents.SecureVariable">SecureVariable</a>
+
+The password to use when connecting to the repository you specify using HTTP.
+
+---
+
+##### `privateSshKey`<sup>Optional</sup> <a name="privateSshKey" id="cdk-ssm-documents.GitContentProps.property.privateSshKey"></a>
+
+```typescript
+public readonly privateSshKey: SecureVariable;
+```
+
+- *Type:* <a href="#cdk-ssm-documents.SecureVariable">SecureVariable</a>
+
+The SSH key to use when connecting to the repository you specify.
+
+---
+
+##### `skipHostKeyChecking`<sup>Optional</sup> <a name="skipHostKeyChecking" id="cdk-ssm-documents.GitContentProps.property.skipHostKeyChecking"></a>
+
+```typescript
+public readonly skipHostKeyChecking: IBooleanVariable;
+```
+
+- *Type:* <a href="#cdk-ssm-documents.IBooleanVariable">IBooleanVariable</a>
+
+Determines the value of the StrictHostKeyChecking option when connecting to the repository you specify.
+
+The default value is false.
+
+---
+
+##### `userName`<sup>Optional</sup> <a name="userName" id="cdk-ssm-documents.GitContentProps.property.userName"></a>
+
+```typescript
+public readonly userName: SecureVariable;
+```
+
+- *Type:* <a href="#cdk-ssm-documents.SecureVariable">SecureVariable</a>
+
+The username to use when connecting to the repository you specify using HTTP.
+
+---
+
+### GitHubContentProps <a name="GitHubContentProps" id="cdk-ssm-documents.GitHubContentProps"></a>
+
+Properties for sourceType GitHub.
+
+#### Initializer <a name="Initializer" id="cdk-ssm-documents.GitHubContentProps.Initializer"></a>
+
+```typescript
+import { GitHubContentProps } from 'cdk-ssm-documents'
+
+const gitHubContentProps: GitHubContentProps = { ... }
+```
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#cdk-ssm-documents.GitHubContentProps.property.owner">owner</a></code> | <code><a href="#cdk-ssm-documents.IStringVariable">IStringVariable</a></code> | The repository owner. |
+| <code><a href="#cdk-ssm-documents.GitHubContentProps.property.path">path</a></code> | <code><a href="#cdk-ssm-documents.IStringVariable">IStringVariable</a></code> | The path to the file or directory you want to download. |
+| <code><a href="#cdk-ssm-documents.GitHubContentProps.property.repository">repository</a></code> | <code><a href="#cdk-ssm-documents.IStringVariable">IStringVariable</a></code> | The name of the repository. |
+| <code><a href="#cdk-ssm-documents.GitHubContentProps.property.tokenInfo">tokenInfo</a></code> | <code><a href="#cdk-ssm-documents.SecureVariable">SecureVariable</a></code> | The Systems Manager parameter (a SecureString parameter) where you store your GitHub access token information. |
+| <code><a href="#cdk-ssm-documents.GitHubContentProps.property.branch">branch</a></code> | <code>string</code> | The default is master. |
+| <code><a href="#cdk-ssm-documents.GitHubContentProps.property.commitId">commitId</a></code> | <code>string</code> | The default is head. |
+
+---
+
+##### `owner`<sup>Required</sup> <a name="owner" id="cdk-ssm-documents.GitHubContentProps.property.owner"></a>
+
+```typescript
+public readonly owner: IStringVariable;
+```
+
+- *Type:* <a href="#cdk-ssm-documents.IStringVariable">IStringVariable</a>
+
+The repository owner.
+
+---
+
+##### `path`<sup>Required</sup> <a name="path" id="cdk-ssm-documents.GitHubContentProps.property.path"></a>
+
+```typescript
+public readonly path: IStringVariable;
+```
+
+- *Type:* <a href="#cdk-ssm-documents.IStringVariable">IStringVariable</a>
+
+The path to the file or directory you want to download.
+
+---
+
+##### `repository`<sup>Required</sup> <a name="repository" id="cdk-ssm-documents.GitHubContentProps.property.repository"></a>
+
+```typescript
+public readonly repository: IStringVariable;
+```
+
+- *Type:* <a href="#cdk-ssm-documents.IStringVariable">IStringVariable</a>
+
+The name of the repository.
+
+---
+
+##### `tokenInfo`<sup>Required</sup> <a name="tokenInfo" id="cdk-ssm-documents.GitHubContentProps.property.tokenInfo"></a>
+
+```typescript
+public readonly tokenInfo: SecureVariable;
+```
+
+- *Type:* <a href="#cdk-ssm-documents.SecureVariable">SecureVariable</a>
+
+The Systems Manager parameter (a SecureString parameter) where you store your GitHub access token information.
+
+---
+
+##### `branch`<sup>Optional</sup> <a name="branch" id="cdk-ssm-documents.GitHubContentProps.property.branch"></a>
+
+```typescript
+public readonly branch: string;
+```
+
+- *Type:* string
+
+The default is master.
+
+branch parameter is required only if your SSM document is stored in a branch other than master.
+Supply either commitId or branch (or neither).
+
+---
+
+*Example*
+
+```typescript
+main
+```
+
+
+##### `commitId`<sup>Optional</sup> <a name="commitId" id="cdk-ssm-documents.GitHubContentProps.property.commitId"></a>
+
+```typescript
+public readonly commitId: string;
+```
+
+- *Type:* string
+
+The default is head.
+
+To use the version of your SSM document in a commit other than the latest, specify the full commit ID.
+For example: "bbc1ddb94...b76d3bEXAMPLE".
+Supply either commitId or branch (or neither).
+
+---
+
+### HttpContentProps <a name="HttpContentProps" id="cdk-ssm-documents.HttpContentProps"></a>
+
+Properties for sourceType HTTP.
+
+#### Initializer <a name="Initializer" id="cdk-ssm-documents.HttpContentProps.Initializer"></a>
+
+```typescript
+import { HttpContentProps } from 'cdk-ssm-documents'
+
+const httpContentProps: HttpContentProps = { ... }
+```
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#cdk-ssm-documents.HttpContentProps.property.url">url</a></code> | <code><a href="#cdk-ssm-documents.IStringVariable">IStringVariable</a></code> | The URL to the file or directory you want to download. |
+| <code><a href="#cdk-ssm-documents.HttpContentProps.property.allowInsecureDownload">allowInsecureDownload</a></code> | <code><a href="#cdk-ssm-documents.IBooleanVariable">IBooleanVariable</a></code> | Determines whether a download can be performed over a connection that isn't encrypted with Secure Socket Layer (SSL) or Transport Layer Security (TLS). |
+| <code><a href="#cdk-ssm-documents.HttpContentProps.property.authMethod">authMethod</a></code> | <code><a href="#cdk-ssm-documents.AuthMethod">AuthMethod</a></code> | Determines whether a username and password are used for authentication when connecting to the url you specify. |
+
+---
+
+##### `url`<sup>Required</sup> <a name="url" id="cdk-ssm-documents.HttpContentProps.property.url"></a>
+
+```typescript
+public readonly url: IStringVariable;
+```
+
+- *Type:* <a href="#cdk-ssm-documents.IStringVariable">IStringVariable</a>
+
+The URL to the file or directory you want to download.
+
+---
+
+##### `allowInsecureDownload`<sup>Optional</sup> <a name="allowInsecureDownload" id="cdk-ssm-documents.HttpContentProps.property.allowInsecureDownload"></a>
+
+```typescript
+public readonly allowInsecureDownload: IBooleanVariable;
+```
+
+- *Type:* <a href="#cdk-ssm-documents.IBooleanVariable">IBooleanVariable</a>
+
+Determines whether a download can be performed over a connection that isn't encrypted with Secure Socket Layer (SSL) or Transport Layer Security (TLS).
+
+The default value is false. We don't recommend performing downloads without encryption. If you choose to do so, you assume all associated risks.
+Security is a shared responsibility between AWS and you. This is described as the shared responsibility model. To learn more, see the shared responsibility model.
+
+---
+
+##### `authMethod`<sup>Optional</sup> <a name="authMethod" id="cdk-ssm-documents.HttpContentProps.property.authMethod"></a>
+
+```typescript
+public readonly authMethod: AuthMethod;
+```
+
+- *Type:* <a href="#cdk-ssm-documents.AuthMethod">AuthMethod</a>
+
+Determines whether a username and password are used for authentication when connecting to the url you specify.
+
+If you specify Basic or Digest, you must provide values for the username and password parameters.
+To use the Digest method, SSM Agent version 3.0.1181.0 or later must be installed on your instance. The Digest method supports MD5 and SHA256 encryption.
 
 ---
 
@@ -21972,6 +22780,38 @@ public readonly workingDirectory: IStringVariable;
 
 ---
 
+### S3ContentProps <a name="S3ContentProps" id="cdk-ssm-documents.S3ContentProps"></a>
+
+Properties.json for sourceType GitHub.
+
+#### Initializer <a name="Initializer" id="cdk-ssm-documents.S3ContentProps.Initializer"></a>
+
+```typescript
+import { S3ContentProps } from 'cdk-ssm-documents'
+
+const s3ContentProps: S3ContentProps = { ... }
+```
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#cdk-ssm-documents.S3ContentProps.property.path">path</a></code> | <code><a href="#cdk-ssm-documents.IStringVariable">IStringVariable</a></code> | The URL to the file or directory you want to download. |
+
+---
+
+##### `path`<sup>Required</sup> <a name="path" id="cdk-ssm-documents.S3ContentProps.property.path"></a>
+
+```typescript
+public readonly path: IStringVariable;
+```
+
+- *Type:* <a href="#cdk-ssm-documents.IStringVariable">IStringVariable</a>
+
+The URL to the file or directory you want to download.
+
+---
+
 ### SimulationResult <a name="SimulationResult" id="cdk-ssm-documents.SimulationResult"></a>
 
 Response object returned from steps.
@@ -22504,6 +23344,41 @@ public readonly windowsUpdates: IStringVariable;
 - *Type:* <a href="#cdk-ssm-documents.IStringVariable">IStringVariable</a>
 
 (Optional) Collect metadata for all Windows updates.
+
+---
+
+### SsmDocumentContentProps <a name="SsmDocumentContentProps" id="cdk-ssm-documents.SsmDocumentContentProps"></a>
+
+Properties.json for sourceType SsmDocument.
+
+#### Initializer <a name="Initializer" id="cdk-ssm-documents.SsmDocumentContentProps.Initializer"></a>
+
+```typescript
+import { SsmDocumentContentProps } from 'cdk-ssm-documents'
+
+const ssmDocumentContentProps: SsmDocumentContentProps = { ... }
+```
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#cdk-ssm-documents.SsmDocumentContentProps.property.documentSource">documentSource</a></code> | <code><a href="#cdk-ssm-documents.DocumentSource">DocumentSource</a></code> | specify one of the following The name and version of the document in the following format: name:version. |
+
+---
+
+##### `documentSource`<sup>Required</sup> <a name="documentSource" id="cdk-ssm-documents.SsmDocumentContentProps.property.documentSource"></a>
+
+```typescript
+public readonly documentSource: DocumentSource;
+```
+
+- *Type:* <a href="#cdk-ssm-documents.DocumentSource">DocumentSource</a>
+
+specify one of the following The name and version of the document in the following format: name:version.
+
+Version is optional.
+or The ARN for the document in the following format: arn:aws:ssm:region:account_id:document/document_name
 
 ---
 
@@ -23812,6 +24687,207 @@ Ask for approval.
 
 
 
+### ArnDoc <a name="ArnDoc" id="cdk-ssm-documents.ArnDoc"></a>
+
+#### Initializers <a name="Initializers" id="cdk-ssm-documents.ArnDoc.Initializer"></a>
+
+```typescript
+import { ArnDoc } from 'cdk-ssm-documents'
+
+new ArnDoc(arn: IStringVariable)
+```
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#cdk-ssm-documents.ArnDoc.Initializer.parameter.arn">arn</a></code> | <code><a href="#cdk-ssm-documents.IStringVariable">IStringVariable</a></code> | *No description.* |
+
+---
+
+##### `arn`<sup>Required</sup> <a name="arn" id="cdk-ssm-documents.ArnDoc.Initializer.parameter.arn"></a>
+
+- *Type:* <a href="#cdk-ssm-documents.IStringVariable">IStringVariable</a>
+
+---
+
+#### Methods <a name="Methods" id="Methods"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#cdk-ssm-documents.ArnDoc.formatRequest">formatRequest</a></code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.ArnDoc.requiredInputs">requiredInputs</a></code> | *No description.* |
+
+---
+
+##### `formatRequest` <a name="formatRequest" id="cdk-ssm-documents.ArnDoc.formatRequest"></a>
+
+```typescript
+public formatRequest(): {[ key: string ]: any}
+```
+
+##### `requiredInputs` <a name="requiredInputs" id="cdk-ssm-documents.ArnDoc.requiredInputs"></a>
+
+```typescript
+public requiredInputs(): string[]
+```
+
+#### Static Functions <a name="Static Functions" id="Static Functions"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#cdk-ssm-documents.ArnDoc.fromArn">fromArn</a></code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.ArnDoc.fromName">fromName</a></code> | *No description.* |
+
+---
+
+##### `fromArn` <a name="fromArn" id="cdk-ssm-documents.ArnDoc.fromArn"></a>
+
+```typescript
+import { ArnDoc } from 'cdk-ssm-documents'
+
+ArnDoc.fromArn(arn: IStringVariable)
+```
+
+###### `arn`<sup>Required</sup> <a name="arn" id="cdk-ssm-documents.ArnDoc.fromArn.parameter.arn"></a>
+
+- *Type:* <a href="#cdk-ssm-documents.IStringVariable">IStringVariable</a>
+
+---
+
+##### `fromName` <a name="fromName" id="cdk-ssm-documents.ArnDoc.fromName"></a>
+
+```typescript
+import { ArnDoc } from 'cdk-ssm-documents'
+
+ArnDoc.fromName(name: IStringVariable, version?: IStringVariable)
+```
+
+###### `name`<sup>Required</sup> <a name="name" id="cdk-ssm-documents.ArnDoc.fromName.parameter.name"></a>
+
+- *Type:* <a href="#cdk-ssm-documents.IStringVariable">IStringVariable</a>
+
+---
+
+###### `version`<sup>Optional</sup> <a name="version" id="cdk-ssm-documents.ArnDoc.fromName.parameter.version"></a>
+
+- *Type:* <a href="#cdk-ssm-documents.IStringVariable">IStringVariable</a>
+
+---
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#cdk-ssm-documents.ArnDoc.property.arn">arn</a></code> | <code><a href="#cdk-ssm-documents.IStringVariable">IStringVariable</a></code> | *No description.* |
+
+---
+
+##### `arn`<sup>Required</sup> <a name="arn" id="cdk-ssm-documents.ArnDoc.property.arn"></a>
+
+```typescript
+public readonly arn: IStringVariable;
+```
+
+- *Type:* <a href="#cdk-ssm-documents.IStringVariable">IStringVariable</a>
+
+---
+
+
+### AuthMethod <a name="AuthMethod" id="cdk-ssm-documents.AuthMethod"></a>
+
+#### Initializers <a name="Initializers" id="cdk-ssm-documents.AuthMethod.Initializer"></a>
+
+```typescript
+import { AuthMethod } from 'cdk-ssm-documents'
+
+new AuthMethod()
+```
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+
+---
+
+#### Methods <a name="Methods" id="Methods"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#cdk-ssm-documents.AuthMethod.requiredInputs">requiredInputs</a></code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.AuthMethod.toEntry">toEntry</a></code> | *No description.* |
+
+---
+
+##### `requiredInputs` <a name="requiredInputs" id="cdk-ssm-documents.AuthMethod.requiredInputs"></a>
+
+```typescript
+public requiredInputs(): string[]
+```
+
+##### `toEntry` <a name="toEntry" id="cdk-ssm-documents.AuthMethod.toEntry"></a>
+
+```typescript
+public toEntry(): {[ key: string ]: any}
+```
+
+#### Static Functions <a name="Static Functions" id="Static Functions"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#cdk-ssm-documents.AuthMethod.ofBasic">ofBasic</a></code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.AuthMethod.ofDigest">ofDigest</a></code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.AuthMethod.ofNone">ofNone</a></code> | *No description.* |
+
+---
+
+##### `ofBasic` <a name="ofBasic" id="cdk-ssm-documents.AuthMethod.ofBasic"></a>
+
+```typescript
+import { AuthMethod } from 'cdk-ssm-documents'
+
+AuthMethod.ofBasic(userName: SecureVariable, password: SecureVariable)
+```
+
+###### `userName`<sup>Required</sup> <a name="userName" id="cdk-ssm-documents.AuthMethod.ofBasic.parameter.userName"></a>
+
+- *Type:* <a href="#cdk-ssm-documents.SecureVariable">SecureVariable</a>
+
+---
+
+###### `password`<sup>Required</sup> <a name="password" id="cdk-ssm-documents.AuthMethod.ofBasic.parameter.password"></a>
+
+- *Type:* <a href="#cdk-ssm-documents.SecureVariable">SecureVariable</a>
+
+---
+
+##### `ofDigest` <a name="ofDigest" id="cdk-ssm-documents.AuthMethod.ofDigest"></a>
+
+```typescript
+import { AuthMethod } from 'cdk-ssm-documents'
+
+AuthMethod.ofDigest(userName: SecureVariable, password: SecureVariable)
+```
+
+###### `userName`<sup>Required</sup> <a name="userName" id="cdk-ssm-documents.AuthMethod.ofDigest.parameter.userName"></a>
+
+- *Type:* <a href="#cdk-ssm-documents.SecureVariable">SecureVariable</a>
+
+---
+
+###### `password`<sup>Required</sup> <a name="password" id="cdk-ssm-documents.AuthMethod.ofDigest.parameter.password"></a>
+
+- *Type:* <a href="#cdk-ssm-documents.SecureVariable">SecureVariable</a>
+
+---
+
+##### `ofNone` <a name="ofNone" id="cdk-ssm-documents.AuthMethod.ofNone"></a>
+
+```typescript
+import { AuthMethod } from 'cdk-ssm-documents'
+
+AuthMethod.ofNone()
+```
+
+
+
 ### AutomationDocumentBuilder <a name="AutomationDocumentBuilder" id="cdk-ssm-documents.AutomationDocumentBuilder"></a>
 
 #### Initializers <a name="Initializers" id="cdk-ssm-documents.AutomationDocumentBuilder.Initializer"></a>
@@ -24067,7 +25143,7 @@ The value keyed on the inputToTest will be tested against the declared constant 
 | <code><a href="#cdk-ssm-documents.Choice.property.constant">constant</a></code> | <code>any</code> | *No description.* |
 | <code><a href="#cdk-ssm-documents.Choice.property.jumpToStepName">jumpToStepName</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#cdk-ssm-documents.Choice.property.operation">operation</a></code> | <code><a href="#cdk-ssm-documents.Operation">Operation</a></code> | *No description.* |
-| <code><a href="#cdk-ssm-documents.Choice.property.variable">variable</a></code> | <code><a href="#cdk-ssm-documents.IBooleanVariable">IBooleanVariable</a> \| <a href="#cdk-ssm-documents.INumberVariable">INumberVariable</a> \| <a href="#cdk-ssm-documents.IStringVariable">IStringVariable</a></code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.Choice.property.variable">variable</a></code> | <code><a href="#cdk-ssm-documents.IStringVariable">IStringVariable</a> \| <a href="#cdk-ssm-documents.INumberVariable">INumberVariable</a> \| <a href="#cdk-ssm-documents.IBooleanVariable">IBooleanVariable</a></code> | *No description.* |
 
 ---
 
@@ -24104,10 +25180,10 @@ public readonly operation: Operation;
 ##### `variable`<sup>Required</sup> <a name="variable" id="cdk-ssm-documents.Choice.property.variable"></a>
 
 ```typescript
-public readonly variable: IBooleanVariable | INumberVariable | IStringVariable;
+public readonly variable: IStringVariable | INumberVariable | IBooleanVariable;
 ```
 
-- *Type:* <a href="#cdk-ssm-documents.IBooleanVariable">IBooleanVariable</a> | <a href="#cdk-ssm-documents.INumberVariable">INumberVariable</a> | <a href="#cdk-ssm-documents.IStringVariable">IStringVariable</a>
+- *Type:* <a href="#cdk-ssm-documents.IStringVariable">IStringVariable</a> | <a href="#cdk-ssm-documents.INumberVariable">INumberVariable</a> | <a href="#cdk-ssm-documents.IBooleanVariable">IBooleanVariable</a>
 
 ---
 
@@ -24778,6 +25854,87 @@ public readonly validValues: string[];
 ---
 
 
+### DocumentSource <a name="DocumentSource" id="cdk-ssm-documents.DocumentSource"></a>
+
+#### Initializers <a name="Initializers" id="cdk-ssm-documents.DocumentSource.Initializer"></a>
+
+```typescript
+import { DocumentSource } from 'cdk-ssm-documents'
+
+new DocumentSource()
+```
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+
+---
+
+#### Methods <a name="Methods" id="Methods"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#cdk-ssm-documents.DocumentSource.formatRequest">formatRequest</a></code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.DocumentSource.requiredInputs">requiredInputs</a></code> | *No description.* |
+
+---
+
+##### `formatRequest` <a name="formatRequest" id="cdk-ssm-documents.DocumentSource.formatRequest"></a>
+
+```typescript
+public formatRequest(): {[ key: string ]: any}
+```
+
+##### `requiredInputs` <a name="requiredInputs" id="cdk-ssm-documents.DocumentSource.requiredInputs"></a>
+
+```typescript
+public requiredInputs(): string[]
+```
+
+#### Static Functions <a name="Static Functions" id="Static Functions"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#cdk-ssm-documents.DocumentSource.fromArn">fromArn</a></code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.DocumentSource.fromName">fromName</a></code> | *No description.* |
+
+---
+
+##### `fromArn` <a name="fromArn" id="cdk-ssm-documents.DocumentSource.fromArn"></a>
+
+```typescript
+import { DocumentSource } from 'cdk-ssm-documents'
+
+DocumentSource.fromArn(arn: IStringVariable)
+```
+
+###### `arn`<sup>Required</sup> <a name="arn" id="cdk-ssm-documents.DocumentSource.fromArn.parameter.arn"></a>
+
+- *Type:* <a href="#cdk-ssm-documents.IStringVariable">IStringVariable</a>
+
+---
+
+##### `fromName` <a name="fromName" id="cdk-ssm-documents.DocumentSource.fromName"></a>
+
+```typescript
+import { DocumentSource } from 'cdk-ssm-documents'
+
+DocumentSource.fromName(name: IStringVariable, version?: IStringVariable)
+```
+
+###### `name`<sup>Required</sup> <a name="name" id="cdk-ssm-documents.DocumentSource.fromName.parameter.name"></a>
+
+- *Type:* <a href="#cdk-ssm-documents.IStringVariable">IStringVariable</a>
+
+---
+
+###### `version`<sup>Optional</sup> <a name="version" id="cdk-ssm-documents.DocumentSource.fromName.parameter.version"></a>
+
+- *Type:* <a href="#cdk-ssm-documents.IStringVariable">IStringVariable</a>
+
+---
+
+
+
 ### GenericVariable <a name="GenericVariable" id="cdk-ssm-documents.GenericVariable"></a>
 
 - *Implements:* <a href="#cdk-ssm-documents.IGenericVariable">IGenericVariable</a>
@@ -24873,6 +26030,279 @@ JSON.stringify(variable) will implicitly invoke this variable.
 
 ```typescript
 public readonly reference: string;
+```
+
+- *Type:* string
+
+---
+
+
+### GitContent <a name="GitContent" id="cdk-ssm-documents.GitContent"></a>
+
+- *Implements:* <a href="#cdk-ssm-documents.IDownloadableContent">IDownloadableContent</a>
+
+#### Initializers <a name="Initializers" id="cdk-ssm-documents.GitContent.Initializer"></a>
+
+```typescript
+import { GitContent } from 'cdk-ssm-documents'
+
+new GitContent(props: GitContentProps)
+```
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#cdk-ssm-documents.GitContent.Initializer.parameter.props">props</a></code> | <code><a href="#cdk-ssm-documents.GitContentProps">GitContentProps</a></code> | *No description.* |
+
+---
+
+##### `props`<sup>Required</sup> <a name="props" id="cdk-ssm-documents.GitContent.Initializer.parameter.props"></a>
+
+- *Type:* <a href="#cdk-ssm-documents.GitContentProps">GitContentProps</a>
+
+---
+
+#### Methods <a name="Methods" id="Methods"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#cdk-ssm-documents.GitContent.formatSourceInfo">formatSourceInfo</a></code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.GitContent.requiredInputs">requiredInputs</a></code> | *No description.* |
+
+---
+
+##### `formatSourceInfo` <a name="formatSourceInfo" id="cdk-ssm-documents.GitContent.formatSourceInfo"></a>
+
+```typescript
+public formatSourceInfo(): {[ key: string ]: any}
+```
+
+##### `requiredInputs` <a name="requiredInputs" id="cdk-ssm-documents.GitContent.requiredInputs"></a>
+
+```typescript
+public requiredInputs(): string[]
+```
+
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#cdk-ssm-documents.GitContent.property.repository">repository</a></code> | <code><a href="#cdk-ssm-documents.IStringVariable">IStringVariable</a></code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.GitContent.property.sourceType">sourceType</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.GitContent.property.branch">branch</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.GitContent.property.commitId">commitId</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.GitContent.property.password">password</a></code> | <code><a href="#cdk-ssm-documents.SecureVariable">SecureVariable</a></code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.GitContent.property.privateSshKey">privateSshKey</a></code> | <code><a href="#cdk-ssm-documents.SecureVariable">SecureVariable</a></code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.GitContent.property.skipHostKeyChecking">skipHostKeyChecking</a></code> | <code><a href="#cdk-ssm-documents.IBooleanVariable">IBooleanVariable</a></code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.GitContent.property.userName">userName</a></code> | <code><a href="#cdk-ssm-documents.SecureVariable">SecureVariable</a></code> | *No description.* |
+
+---
+
+##### `repository`<sup>Required</sup> <a name="repository" id="cdk-ssm-documents.GitContent.property.repository"></a>
+
+```typescript
+public readonly repository: IStringVariable;
+```
+
+- *Type:* <a href="#cdk-ssm-documents.IStringVariable">IStringVariable</a>
+
+---
+
+##### `sourceType`<sup>Required</sup> <a name="sourceType" id="cdk-ssm-documents.GitContent.property.sourceType"></a>
+
+```typescript
+public readonly sourceType: string;
+```
+
+- *Type:* string
+
+---
+
+##### `branch`<sup>Optional</sup> <a name="branch" id="cdk-ssm-documents.GitContent.property.branch"></a>
+
+```typescript
+public readonly branch: string;
+```
+
+- *Type:* string
+
+---
+
+##### `commitId`<sup>Optional</sup> <a name="commitId" id="cdk-ssm-documents.GitContent.property.commitId"></a>
+
+```typescript
+public readonly commitId: string;
+```
+
+- *Type:* string
+
+---
+
+##### `password`<sup>Optional</sup> <a name="password" id="cdk-ssm-documents.GitContent.property.password"></a>
+
+```typescript
+public readonly password: SecureVariable;
+```
+
+- *Type:* <a href="#cdk-ssm-documents.SecureVariable">SecureVariable</a>
+
+---
+
+##### `privateSshKey`<sup>Optional</sup> <a name="privateSshKey" id="cdk-ssm-documents.GitContent.property.privateSshKey"></a>
+
+```typescript
+public readonly privateSshKey: SecureVariable;
+```
+
+- *Type:* <a href="#cdk-ssm-documents.SecureVariable">SecureVariable</a>
+
+---
+
+##### `skipHostKeyChecking`<sup>Optional</sup> <a name="skipHostKeyChecking" id="cdk-ssm-documents.GitContent.property.skipHostKeyChecking"></a>
+
+```typescript
+public readonly skipHostKeyChecking: IBooleanVariable;
+```
+
+- *Type:* <a href="#cdk-ssm-documents.IBooleanVariable">IBooleanVariable</a>
+
+---
+
+##### `userName`<sup>Optional</sup> <a name="userName" id="cdk-ssm-documents.GitContent.property.userName"></a>
+
+```typescript
+public readonly userName: SecureVariable;
+```
+
+- *Type:* <a href="#cdk-ssm-documents.SecureVariable">SecureVariable</a>
+
+---
+
+
+### GitHubContent <a name="GitHubContent" id="cdk-ssm-documents.GitHubContent"></a>
+
+- *Implements:* <a href="#cdk-ssm-documents.IDownloadableContent">IDownloadableContent</a>
+
+#### Initializers <a name="Initializers" id="cdk-ssm-documents.GitHubContent.Initializer"></a>
+
+```typescript
+import { GitHubContent } from 'cdk-ssm-documents'
+
+new GitHubContent(props: GitHubContentProps)
+```
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#cdk-ssm-documents.GitHubContent.Initializer.parameter.props">props</a></code> | <code><a href="#cdk-ssm-documents.GitHubContentProps">GitHubContentProps</a></code> | *No description.* |
+
+---
+
+##### `props`<sup>Required</sup> <a name="props" id="cdk-ssm-documents.GitHubContent.Initializer.parameter.props"></a>
+
+- *Type:* <a href="#cdk-ssm-documents.GitHubContentProps">GitHubContentProps</a>
+
+---
+
+#### Methods <a name="Methods" id="Methods"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#cdk-ssm-documents.GitHubContent.formatSourceInfo">formatSourceInfo</a></code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.GitHubContent.requiredInputs">requiredInputs</a></code> | *No description.* |
+
+---
+
+##### `formatSourceInfo` <a name="formatSourceInfo" id="cdk-ssm-documents.GitHubContent.formatSourceInfo"></a>
+
+```typescript
+public formatSourceInfo(): {[ key: string ]: any}
+```
+
+##### `requiredInputs` <a name="requiredInputs" id="cdk-ssm-documents.GitHubContent.requiredInputs"></a>
+
+```typescript
+public requiredInputs(): string[]
+```
+
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#cdk-ssm-documents.GitHubContent.property.owner">owner</a></code> | <code><a href="#cdk-ssm-documents.IStringVariable">IStringVariable</a></code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.GitHubContent.property.path">path</a></code> | <code><a href="#cdk-ssm-documents.IStringVariable">IStringVariable</a></code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.GitHubContent.property.repository">repository</a></code> | <code><a href="#cdk-ssm-documents.IStringVariable">IStringVariable</a></code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.GitHubContent.property.sourceType">sourceType</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.GitHubContent.property.tokenInfo">tokenInfo</a></code> | <code><a href="#cdk-ssm-documents.SecureVariable">SecureVariable</a></code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.GitHubContent.property.branch">branch</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.GitHubContent.property.commitId">commitId</a></code> | <code>string</code> | *No description.* |
+
+---
+
+##### `owner`<sup>Required</sup> <a name="owner" id="cdk-ssm-documents.GitHubContent.property.owner"></a>
+
+```typescript
+public readonly owner: IStringVariable;
+```
+
+- *Type:* <a href="#cdk-ssm-documents.IStringVariable">IStringVariable</a>
+
+---
+
+##### `path`<sup>Required</sup> <a name="path" id="cdk-ssm-documents.GitHubContent.property.path"></a>
+
+```typescript
+public readonly path: IStringVariable;
+```
+
+- *Type:* <a href="#cdk-ssm-documents.IStringVariable">IStringVariable</a>
+
+---
+
+##### `repository`<sup>Required</sup> <a name="repository" id="cdk-ssm-documents.GitHubContent.property.repository"></a>
+
+```typescript
+public readonly repository: IStringVariable;
+```
+
+- *Type:* <a href="#cdk-ssm-documents.IStringVariable">IStringVariable</a>
+
+---
+
+##### `sourceType`<sup>Required</sup> <a name="sourceType" id="cdk-ssm-documents.GitHubContent.property.sourceType"></a>
+
+```typescript
+public readonly sourceType: string;
+```
+
+- *Type:* string
+
+---
+
+##### `tokenInfo`<sup>Required</sup> <a name="tokenInfo" id="cdk-ssm-documents.GitHubContent.property.tokenInfo"></a>
+
+```typescript
+public readonly tokenInfo: SecureVariable;
+```
+
+- *Type:* <a href="#cdk-ssm-documents.SecureVariable">SecureVariable</a>
+
+---
+
+##### `branch`<sup>Optional</sup> <a name="branch" id="cdk-ssm-documents.GitHubContent.property.branch"></a>
+
+```typescript
+public readonly branch: string;
+```
+
+- *Type:* string
+
+---
+
+##### `commitId`<sup>Optional</sup> <a name="commitId" id="cdk-ssm-documents.GitHubContent.property.commitId"></a>
+
+```typescript
+public readonly commitId: string;
 ```
 
 - *Type:* string
@@ -26384,6 +27814,156 @@ public readonly PARAMETER: HardCodedResourceType;
 
 ---
 
+### HardCodedSecureVariable <a name="HardCodedSecureVariable" id="cdk-ssm-documents.HardCodedSecureVariable"></a>
+
+A hard-coded string variable.
+
+Used when not dependent on step inputs.
+
+#### Initializers <a name="Initializers" id="cdk-ssm-documents.HardCodedSecureVariable.Initializer"></a>
+
+```typescript
+import { HardCodedSecureVariable } from 'cdk-ssm-documents'
+
+new HardCodedSecureVariable(val: string)
+```
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#cdk-ssm-documents.HardCodedSecureVariable.Initializer.parameter.val">val</a></code> | <code>string</code> | *No description.* |
+
+---
+
+##### `val`<sup>Required</sup> <a name="val" id="cdk-ssm-documents.HardCodedSecureVariable.Initializer.parameter.val"></a>
+
+- *Type:* string
+
+---
+
+#### Methods <a name="Methods" id="Methods"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#cdk-ssm-documents.HardCodedSecureVariable.print">print</a></code> | Prints the variable in a way that SSM understands. |
+| <code><a href="#cdk-ssm-documents.HardCodedSecureVariable.requiredInputs">requiredInputs</a></code> | The inputs that are required for determining the value of this variable. |
+| <code><a href="#cdk-ssm-documents.HardCodedSecureVariable.resolve">resolve</a></code> | Given the execution inputs, return the resolved value of this variable. |
+| <code><a href="#cdk-ssm-documents.HardCodedSecureVariable.toJSON">toJSON</a></code> | JSON.stringify(variable) will implicitly invoke this variable. |
+
+---
+
+##### `print` <a name="print" id="cdk-ssm-documents.HardCodedSecureVariable.print"></a>
+
+```typescript
+public print(): any
+```
+
+Prints the variable in a way that SSM understands.
+
+This is typically in the form of {{Variable}} or the value.
+
+##### `requiredInputs` <a name="requiredInputs" id="cdk-ssm-documents.HardCodedSecureVariable.requiredInputs"></a>
+
+```typescript
+public requiredInputs(): string[]
+```
+
+The inputs that are required for determining the value of this variable.
+
+In the case of a single variable string, this will return a single value.
+
+##### `resolve` <a name="resolve" id="cdk-ssm-documents.HardCodedSecureVariable.resolve"></a>
+
+```typescript
+public resolve(_inputs: {[ key: string ]: any}): any
+```
+
+Given the execution inputs, return the resolved value of this variable.
+
+###### `_inputs`<sup>Required</sup> <a name="_inputs" id="cdk-ssm-documents.HardCodedSecureVariable.resolve.parameter._inputs"></a>
+
+- *Type:* {[ key: string ]: any}
+
+---
+
+##### `toJSON` <a name="toJSON" id="cdk-ssm-documents.HardCodedSecureVariable.toJSON"></a>
+
+```typescript
+public toJSON(): any
+```
+
+JSON.stringify(variable) will implicitly invoke this variable.
+
+#### Static Functions <a name="Static Functions" id="Static Functions"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#cdk-ssm-documents.HardCodedSecureVariable.ofParameter">ofParameter</a></code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.HardCodedSecureVariable.ofSecureToken">ofSecureToken</a></code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.HardCodedSecureVariable.ofValue">ofValue</a></code> | *No description.* |
+
+---
+
+##### `ofParameter` <a name="ofParameter" id="cdk-ssm-documents.HardCodedSecureVariable.ofParameter"></a>
+
+```typescript
+import { HardCodedSecureVariable } from 'cdk-ssm-documents'
+
+HardCodedSecureVariable.ofParameter(reference: string)
+```
+
+###### `reference`<sup>Required</sup> <a name="reference" id="cdk-ssm-documents.HardCodedSecureVariable.ofParameter.parameter.reference"></a>
+
+- *Type:* string
+
+---
+
+##### `ofSecureToken` <a name="ofSecureToken" id="cdk-ssm-documents.HardCodedSecureVariable.ofSecureToken"></a>
+
+```typescript
+import { HardCodedSecureVariable } from 'cdk-ssm-documents'
+
+HardCodedSecureVariable.ofSecureToken(secureToken: string)
+```
+
+###### `secureToken`<sup>Required</sup> <a name="secureToken" id="cdk-ssm-documents.HardCodedSecureVariable.ofSecureToken.parameter.secureToken"></a>
+
+- *Type:* string
+
+---
+
+##### `ofValue` <a name="ofValue" id="cdk-ssm-documents.HardCodedSecureVariable.ofValue"></a>
+
+```typescript
+import { HardCodedSecureVariable } from 'cdk-ssm-documents'
+
+HardCodedSecureVariable.ofValue(value: string)
+```
+
+###### `value`<sup>Required</sup> <a name="value" id="cdk-ssm-documents.HardCodedSecureVariable.ofValue.parameter.value"></a>
+
+- *Type:* string
+
+---
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#cdk-ssm-documents.HardCodedSecureVariable.property.val">val</a></code> | <code>string</code> | *No description.* |
+
+---
+
+##### `val`<sup>Required</sup> <a name="val" id="cdk-ssm-documents.HardCodedSecureVariable.property.val"></a>
+
+```typescript
+public readonly val: string;
+```
+
+- *Type:* string
+
+---
+
+
 ### HardCodedString <a name="HardCodedString" id="cdk-ssm-documents.HardCodedString"></a>
 
 - *Implements:* <a href="#cdk-ssm-documents.IStringVariable">IStringVariable</a>
@@ -26888,6 +28468,104 @@ public readonly val: any;
 ```
 
 - *Type:* any
+
+---
+
+
+### HttpContent <a name="HttpContent" id="cdk-ssm-documents.HttpContent"></a>
+
+- *Implements:* <a href="#cdk-ssm-documents.IDownloadableContent">IDownloadableContent</a>
+
+#### Initializers <a name="Initializers" id="cdk-ssm-documents.HttpContent.Initializer"></a>
+
+```typescript
+import { HttpContent } from 'cdk-ssm-documents'
+
+new HttpContent(props: HttpContentProps)
+```
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#cdk-ssm-documents.HttpContent.Initializer.parameter.props">props</a></code> | <code><a href="#cdk-ssm-documents.HttpContentProps">HttpContentProps</a></code> | *No description.* |
+
+---
+
+##### `props`<sup>Required</sup> <a name="props" id="cdk-ssm-documents.HttpContent.Initializer.parameter.props"></a>
+
+- *Type:* <a href="#cdk-ssm-documents.HttpContentProps">HttpContentProps</a>
+
+---
+
+#### Methods <a name="Methods" id="Methods"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#cdk-ssm-documents.HttpContent.formatSourceInfo">formatSourceInfo</a></code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.HttpContent.requiredInputs">requiredInputs</a></code> | *No description.* |
+
+---
+
+##### `formatSourceInfo` <a name="formatSourceInfo" id="cdk-ssm-documents.HttpContent.formatSourceInfo"></a>
+
+```typescript
+public formatSourceInfo(): {[ key: string ]: any}
+```
+
+##### `requiredInputs` <a name="requiredInputs" id="cdk-ssm-documents.HttpContent.requiredInputs"></a>
+
+```typescript
+public requiredInputs(): string[]
+```
+
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#cdk-ssm-documents.HttpContent.property.sourceType">sourceType</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.HttpContent.property.url">url</a></code> | <code><a href="#cdk-ssm-documents.IStringVariable">IStringVariable</a></code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.HttpContent.property.allowInsecureDownload">allowInsecureDownload</a></code> | <code><a href="#cdk-ssm-documents.IBooleanVariable">IBooleanVariable</a></code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.HttpContent.property.authMethod">authMethod</a></code> | <code><a href="#cdk-ssm-documents.AuthMethod">AuthMethod</a></code> | *No description.* |
+
+---
+
+##### `sourceType`<sup>Required</sup> <a name="sourceType" id="cdk-ssm-documents.HttpContent.property.sourceType"></a>
+
+```typescript
+public readonly sourceType: string;
+```
+
+- *Type:* string
+
+---
+
+##### `url`<sup>Required</sup> <a name="url" id="cdk-ssm-documents.HttpContent.property.url"></a>
+
+```typescript
+public readonly url: IStringVariable;
+```
+
+- *Type:* <a href="#cdk-ssm-documents.IStringVariable">IStringVariable</a>
+
+---
+
+##### `allowInsecureDownload`<sup>Optional</sup> <a name="allowInsecureDownload" id="cdk-ssm-documents.HttpContent.property.allowInsecureDownload"></a>
+
+```typescript
+public readonly allowInsecureDownload: IBooleanVariable;
+```
+
+- *Type:* <a href="#cdk-ssm-documents.IBooleanVariable">IBooleanVariable</a>
+
+---
+
+##### `authMethod`<sup>Optional</sup> <a name="authMethod" id="cdk-ssm-documents.HttpContent.property.authMethod"></a>
+
+```typescript
+public readonly authMethod: AuthMethod;
+```
+
+- *Type:* <a href="#cdk-ssm-documents.AuthMethod">AuthMethod</a>
 
 ---
 
@@ -27613,6 +29291,375 @@ public readonly sleepMilliInvocations: number[];
 ```
 
 - *Type:* number[]
+
+---
+
+
+### NameDoc <a name="NameDoc" id="cdk-ssm-documents.NameDoc"></a>
+
+#### Initializers <a name="Initializers" id="cdk-ssm-documents.NameDoc.Initializer"></a>
+
+```typescript
+import { NameDoc } from 'cdk-ssm-documents'
+
+new NameDoc(name: IStringVariable, version?: IStringVariable)
+```
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#cdk-ssm-documents.NameDoc.Initializer.parameter.name">name</a></code> | <code><a href="#cdk-ssm-documents.IStringVariable">IStringVariable</a></code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.NameDoc.Initializer.parameter.version">version</a></code> | <code><a href="#cdk-ssm-documents.IStringVariable">IStringVariable</a></code> | *No description.* |
+
+---
+
+##### `name`<sup>Required</sup> <a name="name" id="cdk-ssm-documents.NameDoc.Initializer.parameter.name"></a>
+
+- *Type:* <a href="#cdk-ssm-documents.IStringVariable">IStringVariable</a>
+
+---
+
+##### `version`<sup>Optional</sup> <a name="version" id="cdk-ssm-documents.NameDoc.Initializer.parameter.version"></a>
+
+- *Type:* <a href="#cdk-ssm-documents.IStringVariable">IStringVariable</a>
+
+---
+
+#### Methods <a name="Methods" id="Methods"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#cdk-ssm-documents.NameDoc.formatRequest">formatRequest</a></code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.NameDoc.requiredInputs">requiredInputs</a></code> | *No description.* |
+
+---
+
+##### `formatRequest` <a name="formatRequest" id="cdk-ssm-documents.NameDoc.formatRequest"></a>
+
+```typescript
+public formatRequest(): {[ key: string ]: any}
+```
+
+##### `requiredInputs` <a name="requiredInputs" id="cdk-ssm-documents.NameDoc.requiredInputs"></a>
+
+```typescript
+public requiredInputs(): string[]
+```
+
+#### Static Functions <a name="Static Functions" id="Static Functions"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#cdk-ssm-documents.NameDoc.fromArn">fromArn</a></code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.NameDoc.fromName">fromName</a></code> | *No description.* |
+
+---
+
+##### `fromArn` <a name="fromArn" id="cdk-ssm-documents.NameDoc.fromArn"></a>
+
+```typescript
+import { NameDoc } from 'cdk-ssm-documents'
+
+NameDoc.fromArn(arn: IStringVariable)
+```
+
+###### `arn`<sup>Required</sup> <a name="arn" id="cdk-ssm-documents.NameDoc.fromArn.parameter.arn"></a>
+
+- *Type:* <a href="#cdk-ssm-documents.IStringVariable">IStringVariable</a>
+
+---
+
+##### `fromName` <a name="fromName" id="cdk-ssm-documents.NameDoc.fromName"></a>
+
+```typescript
+import { NameDoc } from 'cdk-ssm-documents'
+
+NameDoc.fromName(name: IStringVariable, version?: IStringVariable)
+```
+
+###### `name`<sup>Required</sup> <a name="name" id="cdk-ssm-documents.NameDoc.fromName.parameter.name"></a>
+
+- *Type:* <a href="#cdk-ssm-documents.IStringVariable">IStringVariable</a>
+
+---
+
+###### `version`<sup>Optional</sup> <a name="version" id="cdk-ssm-documents.NameDoc.fromName.parameter.version"></a>
+
+- *Type:* <a href="#cdk-ssm-documents.IStringVariable">IStringVariable</a>
+
+---
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#cdk-ssm-documents.NameDoc.property.name">name</a></code> | <code><a href="#cdk-ssm-documents.IStringVariable">IStringVariable</a></code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.NameDoc.property.version">version</a></code> | <code><a href="#cdk-ssm-documents.IStringVariable">IStringVariable</a></code> | *No description.* |
+
+---
+
+##### `name`<sup>Required</sup> <a name="name" id="cdk-ssm-documents.NameDoc.property.name"></a>
+
+```typescript
+public readonly name: IStringVariable;
+```
+
+- *Type:* <a href="#cdk-ssm-documents.IStringVariable">IStringVariable</a>
+
+---
+
+##### `version`<sup>Optional</sup> <a name="version" id="cdk-ssm-documents.NameDoc.property.version"></a>
+
+```typescript
+public readonly version: IStringVariable;
+```
+
+- *Type:* <a href="#cdk-ssm-documents.IStringVariable">IStringVariable</a>
+
+---
+
+
+### NoAuthMethod <a name="NoAuthMethod" id="cdk-ssm-documents.NoAuthMethod"></a>
+
+#### Initializers <a name="Initializers" id="cdk-ssm-documents.NoAuthMethod.Initializer"></a>
+
+```typescript
+import { NoAuthMethod } from 'cdk-ssm-documents'
+
+new NoAuthMethod()
+```
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+
+---
+
+#### Methods <a name="Methods" id="Methods"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#cdk-ssm-documents.NoAuthMethod.requiredInputs">requiredInputs</a></code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.NoAuthMethod.toEntry">toEntry</a></code> | *No description.* |
+
+---
+
+##### `requiredInputs` <a name="requiredInputs" id="cdk-ssm-documents.NoAuthMethod.requiredInputs"></a>
+
+```typescript
+public requiredInputs(): string[]
+```
+
+##### `toEntry` <a name="toEntry" id="cdk-ssm-documents.NoAuthMethod.toEntry"></a>
+
+```typescript
+public toEntry(): {[ key: string ]: any}
+```
+
+#### Static Functions <a name="Static Functions" id="Static Functions"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#cdk-ssm-documents.NoAuthMethod.ofBasic">ofBasic</a></code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.NoAuthMethod.ofDigest">ofDigest</a></code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.NoAuthMethod.ofNone">ofNone</a></code> | *No description.* |
+
+---
+
+##### `ofBasic` <a name="ofBasic" id="cdk-ssm-documents.NoAuthMethod.ofBasic"></a>
+
+```typescript
+import { NoAuthMethod } from 'cdk-ssm-documents'
+
+NoAuthMethod.ofBasic(userName: SecureVariable, password: SecureVariable)
+```
+
+###### `userName`<sup>Required</sup> <a name="userName" id="cdk-ssm-documents.NoAuthMethod.ofBasic.parameter.userName"></a>
+
+- *Type:* <a href="#cdk-ssm-documents.SecureVariable">SecureVariable</a>
+
+---
+
+###### `password`<sup>Required</sup> <a name="password" id="cdk-ssm-documents.NoAuthMethod.ofBasic.parameter.password"></a>
+
+- *Type:* <a href="#cdk-ssm-documents.SecureVariable">SecureVariable</a>
+
+---
+
+##### `ofDigest` <a name="ofDigest" id="cdk-ssm-documents.NoAuthMethod.ofDigest"></a>
+
+```typescript
+import { NoAuthMethod } from 'cdk-ssm-documents'
+
+NoAuthMethod.ofDigest(userName: SecureVariable, password: SecureVariable)
+```
+
+###### `userName`<sup>Required</sup> <a name="userName" id="cdk-ssm-documents.NoAuthMethod.ofDigest.parameter.userName"></a>
+
+- *Type:* <a href="#cdk-ssm-documents.SecureVariable">SecureVariable</a>
+
+---
+
+###### `password`<sup>Required</sup> <a name="password" id="cdk-ssm-documents.NoAuthMethod.ofDigest.parameter.password"></a>
+
+- *Type:* <a href="#cdk-ssm-documents.SecureVariable">SecureVariable</a>
+
+---
+
+##### `ofNone` <a name="ofNone" id="cdk-ssm-documents.NoAuthMethod.ofNone"></a>
+
+```typescript
+import { NoAuthMethod } from 'cdk-ssm-documents'
+
+NoAuthMethod.ofNone()
+```
+
+
+
+### NonSecureVariable <a name="NonSecureVariable" id="cdk-ssm-documents.NonSecureVariable"></a>
+
+A string variable reference.
+
+Used to resolve the value from step inputs.
+
+#### Initializers <a name="Initializers" id="cdk-ssm-documents.NonSecureVariable.Initializer"></a>
+
+```typescript
+import { NonSecureVariable } from 'cdk-ssm-documents'
+
+new NonSecureVariable(reference: string)
+```
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#cdk-ssm-documents.NonSecureVariable.Initializer.parameter.reference">reference</a></code> | <code>string</code> | *No description.* |
+
+---
+
+##### `reference`<sup>Required</sup> <a name="reference" id="cdk-ssm-documents.NonSecureVariable.Initializer.parameter.reference"></a>
+
+- *Type:* string
+
+---
+
+#### Methods <a name="Methods" id="Methods"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#cdk-ssm-documents.NonSecureVariable.print">print</a></code> | Prints the variable in a way that SSM understands. |
+| <code><a href="#cdk-ssm-documents.NonSecureVariable.requiredInputs">requiredInputs</a></code> | The inputs that are required for determining the value of this variable. |
+| <code><a href="#cdk-ssm-documents.NonSecureVariable.resolve">resolve</a></code> | Given the execution inputs, return the resolved value of this variable. |
+| <code><a href="#cdk-ssm-documents.NonSecureVariable.toJSON">toJSON</a></code> | JSON.stringify(variable) will implicitly invoke this variable. |
+
+---
+
+##### `print` <a name="print" id="cdk-ssm-documents.NonSecureVariable.print"></a>
+
+```typescript
+public print(): any
+```
+
+Prints the variable in a way that SSM understands.
+
+This is typically in the form of {{Variable}} or the value.
+
+##### `requiredInputs` <a name="requiredInputs" id="cdk-ssm-documents.NonSecureVariable.requiredInputs"></a>
+
+```typescript
+public requiredInputs(): string[]
+```
+
+The inputs that are required for determining the value of this variable.
+
+In the case of a single variable string, this will return a single value.
+
+##### `resolve` <a name="resolve" id="cdk-ssm-documents.NonSecureVariable.resolve"></a>
+
+```typescript
+public resolve(inputs: {[ key: string ]: any}): any
+```
+
+Given the execution inputs, return the resolved value of this variable.
+
+###### `inputs`<sup>Required</sup> <a name="inputs" id="cdk-ssm-documents.NonSecureVariable.resolve.parameter.inputs"></a>
+
+- *Type:* {[ key: string ]: any}
+
+---
+
+##### `toJSON` <a name="toJSON" id="cdk-ssm-documents.NonSecureVariable.toJSON"></a>
+
+```typescript
+public toJSON(): any
+```
+
+JSON.stringify(variable) will implicitly invoke this variable.
+
+#### Static Functions <a name="Static Functions" id="Static Functions"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#cdk-ssm-documents.NonSecureVariable.ofParameter">ofParameter</a></code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.NonSecureVariable.ofSecureToken">ofSecureToken</a></code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.NonSecureVariable.ofValue">ofValue</a></code> | *No description.* |
+
+---
+
+##### `ofParameter` <a name="ofParameter" id="cdk-ssm-documents.NonSecureVariable.ofParameter"></a>
+
+```typescript
+import { NonSecureVariable } from 'cdk-ssm-documents'
+
+NonSecureVariable.ofParameter(reference: string)
+```
+
+###### `reference`<sup>Required</sup> <a name="reference" id="cdk-ssm-documents.NonSecureVariable.ofParameter.parameter.reference"></a>
+
+- *Type:* string
+
+---
+
+##### `ofSecureToken` <a name="ofSecureToken" id="cdk-ssm-documents.NonSecureVariable.ofSecureToken"></a>
+
+```typescript
+import { NonSecureVariable } from 'cdk-ssm-documents'
+
+NonSecureVariable.ofSecureToken(secureToken: string)
+```
+
+###### `secureToken`<sup>Required</sup> <a name="secureToken" id="cdk-ssm-documents.NonSecureVariable.ofSecureToken.parameter.secureToken"></a>
+
+- *Type:* string
+
+---
+
+##### `ofValue` <a name="ofValue" id="cdk-ssm-documents.NonSecureVariable.ofValue"></a>
+
+```typescript
+import { NonSecureVariable } from 'cdk-ssm-documents'
+
+NonSecureVariable.ofValue(value: string)
+```
+
+###### `value`<sup>Required</sup> <a name="value" id="cdk-ssm-documents.NonSecureVariable.ofValue.parameter.value"></a>
+
+- *Type:* string
+
+---
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#cdk-ssm-documents.NonSecureVariable.property.reference">reference</a></code> | <code>string</code> | *No description.* |
+
+---
+
+##### `reference`<sup>Required</sup> <a name="reference" id="cdk-ssm-documents.NonSecureVariable.property.reference"></a>
+
+```typescript
+public readonly reference: string;
+```
+
+- *Type:* string
 
 ---
 
@@ -28593,6 +30640,210 @@ public readonly validValues: string[];
 ---
 
 
+### S3Content <a name="S3Content" id="cdk-ssm-documents.S3Content"></a>
+
+- *Implements:* <a href="#cdk-ssm-documents.IDownloadableContent">IDownloadableContent</a>
+
+#### Initializers <a name="Initializers" id="cdk-ssm-documents.S3Content.Initializer"></a>
+
+```typescript
+import { S3Content } from 'cdk-ssm-documents'
+
+new S3Content(props: S3ContentProps)
+```
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#cdk-ssm-documents.S3Content.Initializer.parameter.props">props</a></code> | <code><a href="#cdk-ssm-documents.S3ContentProps">S3ContentProps</a></code> | *No description.* |
+
+---
+
+##### `props`<sup>Required</sup> <a name="props" id="cdk-ssm-documents.S3Content.Initializer.parameter.props"></a>
+
+- *Type:* <a href="#cdk-ssm-documents.S3ContentProps">S3ContentProps</a>
+
+---
+
+#### Methods <a name="Methods" id="Methods"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#cdk-ssm-documents.S3Content.formatSourceInfo">formatSourceInfo</a></code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.S3Content.requiredInputs">requiredInputs</a></code> | *No description.* |
+
+---
+
+##### `formatSourceInfo` <a name="formatSourceInfo" id="cdk-ssm-documents.S3Content.formatSourceInfo"></a>
+
+```typescript
+public formatSourceInfo(): {[ key: string ]: any}
+```
+
+##### `requiredInputs` <a name="requiredInputs" id="cdk-ssm-documents.S3Content.requiredInputs"></a>
+
+```typescript
+public requiredInputs(): string[]
+```
+
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#cdk-ssm-documents.S3Content.property.path">path</a></code> | <code><a href="#cdk-ssm-documents.IStringVariable">IStringVariable</a></code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.S3Content.property.sourceType">sourceType</a></code> | <code>string</code> | *No description.* |
+
+---
+
+##### `path`<sup>Required</sup> <a name="path" id="cdk-ssm-documents.S3Content.property.path"></a>
+
+```typescript
+public readonly path: IStringVariable;
+```
+
+- *Type:* <a href="#cdk-ssm-documents.IStringVariable">IStringVariable</a>
+
+---
+
+##### `sourceType`<sup>Required</sup> <a name="sourceType" id="cdk-ssm-documents.S3Content.property.sourceType"></a>
+
+```typescript
+public readonly sourceType: string;
+```
+
+- *Type:* string
+
+---
+
+
+### SecureVariable <a name="SecureVariable" id="cdk-ssm-documents.SecureVariable"></a>
+
+- *Implements:* <a href="#cdk-ssm-documents.IGenericVariable">IGenericVariable</a>
+
+A secure string variable.
+
+Only supported by Command documents (only supported in downloadContent plugin).
+
+#### Initializers <a name="Initializers" id="cdk-ssm-documents.SecureVariable.Initializer"></a>
+
+```typescript
+import { SecureVariable } from 'cdk-ssm-documents'
+
+new SecureVariable()
+```
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+
+---
+
+#### Methods <a name="Methods" id="Methods"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#cdk-ssm-documents.SecureVariable.print">print</a></code> | Prints the variable in a way that SSM understands. |
+| <code><a href="#cdk-ssm-documents.SecureVariable.requiredInputs">requiredInputs</a></code> | The inputs that are required for determining the value of this variable. |
+| <code><a href="#cdk-ssm-documents.SecureVariable.resolve">resolve</a></code> | Given the execution inputs, return the resolved value of this variable. |
+| <code><a href="#cdk-ssm-documents.SecureVariable.toJSON">toJSON</a></code> | JSON.stringify(variable) will implicitly invoke this variable. |
+
+---
+
+##### `print` <a name="print" id="cdk-ssm-documents.SecureVariable.print"></a>
+
+```typescript
+public print(): any
+```
+
+Prints the variable in a way that SSM understands.
+
+This is typically in the form of {{Variable}} or the value.
+
+##### `requiredInputs` <a name="requiredInputs" id="cdk-ssm-documents.SecureVariable.requiredInputs"></a>
+
+```typescript
+public requiredInputs(): string[]
+```
+
+The inputs that are required for determining the value of this variable.
+
+In the case of a single variable string, this will return a single value.
+
+##### `resolve` <a name="resolve" id="cdk-ssm-documents.SecureVariable.resolve"></a>
+
+```typescript
+public resolve(inputs: {[ key: string ]: any}): any
+```
+
+Given the execution inputs, return the resolved value of this variable.
+
+###### `inputs`<sup>Required</sup> <a name="inputs" id="cdk-ssm-documents.SecureVariable.resolve.parameter.inputs"></a>
+
+- *Type:* {[ key: string ]: any}
+
+---
+
+##### `toJSON` <a name="toJSON" id="cdk-ssm-documents.SecureVariable.toJSON"></a>
+
+```typescript
+public toJSON(): any
+```
+
+JSON.stringify(variable) will implicitly invoke this variable.
+
+#### Static Functions <a name="Static Functions" id="Static Functions"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#cdk-ssm-documents.SecureVariable.ofParameter">ofParameter</a></code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.SecureVariable.ofSecureToken">ofSecureToken</a></code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.SecureVariable.ofValue">ofValue</a></code> | *No description.* |
+
+---
+
+##### `ofParameter` <a name="ofParameter" id="cdk-ssm-documents.SecureVariable.ofParameter"></a>
+
+```typescript
+import { SecureVariable } from 'cdk-ssm-documents'
+
+SecureVariable.ofParameter(reference: string)
+```
+
+###### `reference`<sup>Required</sup> <a name="reference" id="cdk-ssm-documents.SecureVariable.ofParameter.parameter.reference"></a>
+
+- *Type:* string
+
+---
+
+##### `ofSecureToken` <a name="ofSecureToken" id="cdk-ssm-documents.SecureVariable.ofSecureToken"></a>
+
+```typescript
+import { SecureVariable } from 'cdk-ssm-documents'
+
+SecureVariable.ofSecureToken(secureToken: string)
+```
+
+###### `secureToken`<sup>Required</sup> <a name="secureToken" id="cdk-ssm-documents.SecureVariable.ofSecureToken.parameter.secureToken"></a>
+
+- *Type:* string
+
+---
+
+##### `ofValue` <a name="ofValue" id="cdk-ssm-documents.SecureVariable.ofValue"></a>
+
+```typescript
+import { SecureVariable } from 'cdk-ssm-documents'
+
+SecureVariable.ofValue(value: string)
+```
+
+###### `value`<sup>Required</sup> <a name="value" id="cdk-ssm-documents.SecureVariable.ofValue.parameter.value"></a>
+
+- *Type:* string
+
+---
+
+
+
 ### SleepImpl <a name="SleepImpl" id="cdk-ssm-documents.SleepImpl"></a>
 
 - *Implements:* <a href="#cdk-ssm-documents.ISleepHook">ISleepHook</a>
@@ -28635,6 +30886,82 @@ Synchronously sleeps for duration specified in millis.
 ---
 
 
+
+
+### SSMDocumentContent <a name="SSMDocumentContent" id="cdk-ssm-documents.SSMDocumentContent"></a>
+
+- *Implements:* <a href="#cdk-ssm-documents.IDownloadableContent">IDownloadableContent</a>
+
+#### Initializers <a name="Initializers" id="cdk-ssm-documents.SSMDocumentContent.Initializer"></a>
+
+```typescript
+import { SSMDocumentContent } from 'cdk-ssm-documents'
+
+new SSMDocumentContent(props: SsmDocumentContentProps)
+```
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#cdk-ssm-documents.SSMDocumentContent.Initializer.parameter.props">props</a></code> | <code><a href="#cdk-ssm-documents.SsmDocumentContentProps">SsmDocumentContentProps</a></code> | *No description.* |
+
+---
+
+##### `props`<sup>Required</sup> <a name="props" id="cdk-ssm-documents.SSMDocumentContent.Initializer.parameter.props"></a>
+
+- *Type:* <a href="#cdk-ssm-documents.SsmDocumentContentProps">SsmDocumentContentProps</a>
+
+---
+
+#### Methods <a name="Methods" id="Methods"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#cdk-ssm-documents.SSMDocumentContent.formatSourceInfo">formatSourceInfo</a></code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.SSMDocumentContent.requiredInputs">requiredInputs</a></code> | *No description.* |
+
+---
+
+##### `formatSourceInfo` <a name="formatSourceInfo" id="cdk-ssm-documents.SSMDocumentContent.formatSourceInfo"></a>
+
+```typescript
+public formatSourceInfo(): {[ key: string ]: any}
+```
+
+##### `requiredInputs` <a name="requiredInputs" id="cdk-ssm-documents.SSMDocumentContent.requiredInputs"></a>
+
+```typescript
+public requiredInputs(): string[]
+```
+
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#cdk-ssm-documents.SSMDocumentContent.property.documentSource">documentSource</a></code> | <code><a href="#cdk-ssm-documents.DocumentSource">DocumentSource</a></code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.SSMDocumentContent.property.sourceType">sourceType</a></code> | <code>string</code> | *No description.* |
+
+---
+
+##### `documentSource`<sup>Required</sup> <a name="documentSource" id="cdk-ssm-documents.SSMDocumentContent.property.documentSource"></a>
+
+```typescript
+public readonly documentSource: DocumentSource;
+```
+
+- *Type:* <a href="#cdk-ssm-documents.DocumentSource">DocumentSource</a>
+
+---
+
+##### `sourceType`<sup>Required</sup> <a name="sourceType" id="cdk-ssm-documents.SSMDocumentContent.property.sourceType"></a>
+
+```typescript
+public readonly sourceType: string;
+```
+
+- *Type:* string
+
+---
 
 
 ### SsmRunDocument <a name="SsmRunDocument" id="cdk-ssm-documents.SsmRunDocument"></a>
@@ -28686,6 +31013,152 @@ public readonly location: IStringVariable;
 
 ```typescript
 public readonly type: string;
+```
+
+- *Type:* string
+
+---
+
+
+### SsmSecureVariable <a name="SsmSecureVariable" id="cdk-ssm-documents.SsmSecureVariable"></a>
+
+#### Initializers <a name="Initializers" id="cdk-ssm-documents.SsmSecureVariable.Initializer"></a>
+
+```typescript
+import { SsmSecureVariable } from 'cdk-ssm-documents'
+
+new SsmSecureVariable(secureToken: string)
+```
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#cdk-ssm-documents.SsmSecureVariable.Initializer.parameter.secureToken">secureToken</a></code> | <code>string</code> | *No description.* |
+
+---
+
+##### `secureToken`<sup>Required</sup> <a name="secureToken" id="cdk-ssm-documents.SsmSecureVariable.Initializer.parameter.secureToken"></a>
+
+- *Type:* string
+
+---
+
+#### Methods <a name="Methods" id="Methods"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#cdk-ssm-documents.SsmSecureVariable.print">print</a></code> | Prints the variable in a way that SSM understands. |
+| <code><a href="#cdk-ssm-documents.SsmSecureVariable.requiredInputs">requiredInputs</a></code> | The inputs that are required for determining the value of this variable. |
+| <code><a href="#cdk-ssm-documents.SsmSecureVariable.resolve">resolve</a></code> | Given the execution inputs, return the resolved value of this variable. |
+| <code><a href="#cdk-ssm-documents.SsmSecureVariable.toJSON">toJSON</a></code> | JSON.stringify(variable) will implicitly invoke this variable. |
+
+---
+
+##### `print` <a name="print" id="cdk-ssm-documents.SsmSecureVariable.print"></a>
+
+```typescript
+public print(): any
+```
+
+Prints the variable in a way that SSM understands.
+
+This is typically in the form of {{Variable}} or the value.
+
+##### `requiredInputs` <a name="requiredInputs" id="cdk-ssm-documents.SsmSecureVariable.requiredInputs"></a>
+
+```typescript
+public requiredInputs(): string[]
+```
+
+The inputs that are required for determining the value of this variable.
+
+In the case of a single variable string, this will return a single value.
+
+##### `resolve` <a name="resolve" id="cdk-ssm-documents.SsmSecureVariable.resolve"></a>
+
+```typescript
+public resolve(_inputs: {[ key: string ]: any}): any
+```
+
+Given the execution inputs, return the resolved value of this variable.
+
+###### `_inputs`<sup>Required</sup> <a name="_inputs" id="cdk-ssm-documents.SsmSecureVariable.resolve.parameter._inputs"></a>
+
+- *Type:* {[ key: string ]: any}
+
+---
+
+##### `toJSON` <a name="toJSON" id="cdk-ssm-documents.SsmSecureVariable.toJSON"></a>
+
+```typescript
+public toJSON(): any
+```
+
+JSON.stringify(variable) will implicitly invoke this variable.
+
+#### Static Functions <a name="Static Functions" id="Static Functions"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#cdk-ssm-documents.SsmSecureVariable.ofParameter">ofParameter</a></code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.SsmSecureVariable.ofSecureToken">ofSecureToken</a></code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.SsmSecureVariable.ofValue">ofValue</a></code> | *No description.* |
+
+---
+
+##### `ofParameter` <a name="ofParameter" id="cdk-ssm-documents.SsmSecureVariable.ofParameter"></a>
+
+```typescript
+import { SsmSecureVariable } from 'cdk-ssm-documents'
+
+SsmSecureVariable.ofParameter(reference: string)
+```
+
+###### `reference`<sup>Required</sup> <a name="reference" id="cdk-ssm-documents.SsmSecureVariable.ofParameter.parameter.reference"></a>
+
+- *Type:* string
+
+---
+
+##### `ofSecureToken` <a name="ofSecureToken" id="cdk-ssm-documents.SsmSecureVariable.ofSecureToken"></a>
+
+```typescript
+import { SsmSecureVariable } from 'cdk-ssm-documents'
+
+SsmSecureVariable.ofSecureToken(secureToken: string)
+```
+
+###### `secureToken`<sup>Required</sup> <a name="secureToken" id="cdk-ssm-documents.SsmSecureVariable.ofSecureToken.parameter.secureToken"></a>
+
+- *Type:* string
+
+---
+
+##### `ofValue` <a name="ofValue" id="cdk-ssm-documents.SsmSecureVariable.ofValue"></a>
+
+```typescript
+import { SsmSecureVariable } from 'cdk-ssm-documents'
+
+SsmSecureVariable.ofValue(value: string)
+```
+
+###### `value`<sup>Required</sup> <a name="value" id="cdk-ssm-documents.SsmSecureVariable.ofValue.parameter.value"></a>
+
+- *Type:* string
+
+---
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#cdk-ssm-documents.SsmSecureVariable.property.secureToken">secureToken</a></code> | <code>string</code> | *No description.* |
+
+---
+
+##### `secureToken`<sup>Required</sup> <a name="secureToken" id="cdk-ssm-documents.SsmSecureVariable.property.secureToken"></a>
+
+```typescript
+public readonly secureToken: string;
 ```
 
 - *Type:* string
@@ -29411,6 +31884,162 @@ Wraps @aws-cdk/assert SynthUtils.synthesize(stack). Synthesizes the stack provid
 
 
 
+### UsernamePasswordAuthMethod <a name="UsernamePasswordAuthMethod" id="cdk-ssm-documents.UsernamePasswordAuthMethod"></a>
+
+#### Initializers <a name="Initializers" id="cdk-ssm-documents.UsernamePasswordAuthMethod.Initializer"></a>
+
+```typescript
+import { UsernamePasswordAuthMethod } from 'cdk-ssm-documents'
+
+new UsernamePasswordAuthMethod(authMethod: string, userName: SecureVariable, password: SecureVariable)
+```
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#cdk-ssm-documents.UsernamePasswordAuthMethod.Initializer.parameter.authMethod">authMethod</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.UsernamePasswordAuthMethod.Initializer.parameter.userName">userName</a></code> | <code><a href="#cdk-ssm-documents.SecureVariable">SecureVariable</a></code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.UsernamePasswordAuthMethod.Initializer.parameter.password">password</a></code> | <code><a href="#cdk-ssm-documents.SecureVariable">SecureVariable</a></code> | *No description.* |
+
+---
+
+##### `authMethod`<sup>Required</sup> <a name="authMethod" id="cdk-ssm-documents.UsernamePasswordAuthMethod.Initializer.parameter.authMethod"></a>
+
+- *Type:* string
+
+---
+
+##### `userName`<sup>Required</sup> <a name="userName" id="cdk-ssm-documents.UsernamePasswordAuthMethod.Initializer.parameter.userName"></a>
+
+- *Type:* <a href="#cdk-ssm-documents.SecureVariable">SecureVariable</a>
+
+---
+
+##### `password`<sup>Required</sup> <a name="password" id="cdk-ssm-documents.UsernamePasswordAuthMethod.Initializer.parameter.password"></a>
+
+- *Type:* <a href="#cdk-ssm-documents.SecureVariable">SecureVariable</a>
+
+---
+
+#### Methods <a name="Methods" id="Methods"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#cdk-ssm-documents.UsernamePasswordAuthMethod.requiredInputs">requiredInputs</a></code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.UsernamePasswordAuthMethod.toEntry">toEntry</a></code> | *No description.* |
+
+---
+
+##### `requiredInputs` <a name="requiredInputs" id="cdk-ssm-documents.UsernamePasswordAuthMethod.requiredInputs"></a>
+
+```typescript
+public requiredInputs(): string[]
+```
+
+##### `toEntry` <a name="toEntry" id="cdk-ssm-documents.UsernamePasswordAuthMethod.toEntry"></a>
+
+```typescript
+public toEntry(): {[ key: string ]: any}
+```
+
+#### Static Functions <a name="Static Functions" id="Static Functions"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#cdk-ssm-documents.UsernamePasswordAuthMethod.ofBasic">ofBasic</a></code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.UsernamePasswordAuthMethod.ofDigest">ofDigest</a></code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.UsernamePasswordAuthMethod.ofNone">ofNone</a></code> | *No description.* |
+
+---
+
+##### `ofBasic` <a name="ofBasic" id="cdk-ssm-documents.UsernamePasswordAuthMethod.ofBasic"></a>
+
+```typescript
+import { UsernamePasswordAuthMethod } from 'cdk-ssm-documents'
+
+UsernamePasswordAuthMethod.ofBasic(userName: SecureVariable, password: SecureVariable)
+```
+
+###### `userName`<sup>Required</sup> <a name="userName" id="cdk-ssm-documents.UsernamePasswordAuthMethod.ofBasic.parameter.userName"></a>
+
+- *Type:* <a href="#cdk-ssm-documents.SecureVariable">SecureVariable</a>
+
+---
+
+###### `password`<sup>Required</sup> <a name="password" id="cdk-ssm-documents.UsernamePasswordAuthMethod.ofBasic.parameter.password"></a>
+
+- *Type:* <a href="#cdk-ssm-documents.SecureVariable">SecureVariable</a>
+
+---
+
+##### `ofDigest` <a name="ofDigest" id="cdk-ssm-documents.UsernamePasswordAuthMethod.ofDigest"></a>
+
+```typescript
+import { UsernamePasswordAuthMethod } from 'cdk-ssm-documents'
+
+UsernamePasswordAuthMethod.ofDigest(userName: SecureVariable, password: SecureVariable)
+```
+
+###### `userName`<sup>Required</sup> <a name="userName" id="cdk-ssm-documents.UsernamePasswordAuthMethod.ofDigest.parameter.userName"></a>
+
+- *Type:* <a href="#cdk-ssm-documents.SecureVariable">SecureVariable</a>
+
+---
+
+###### `password`<sup>Required</sup> <a name="password" id="cdk-ssm-documents.UsernamePasswordAuthMethod.ofDigest.parameter.password"></a>
+
+- *Type:* <a href="#cdk-ssm-documents.SecureVariable">SecureVariable</a>
+
+---
+
+##### `ofNone` <a name="ofNone" id="cdk-ssm-documents.UsernamePasswordAuthMethod.ofNone"></a>
+
+```typescript
+import { UsernamePasswordAuthMethod } from 'cdk-ssm-documents'
+
+UsernamePasswordAuthMethod.ofNone()
+```
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#cdk-ssm-documents.UsernamePasswordAuthMethod.property.authMethod">authMethod</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.UsernamePasswordAuthMethod.property.password">password</a></code> | <code><a href="#cdk-ssm-documents.SecureVariable">SecureVariable</a></code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.UsernamePasswordAuthMethod.property.userName">userName</a></code> | <code><a href="#cdk-ssm-documents.SecureVariable">SecureVariable</a></code> | *No description.* |
+
+---
+
+##### `authMethod`<sup>Required</sup> <a name="authMethod" id="cdk-ssm-documents.UsernamePasswordAuthMethod.property.authMethod"></a>
+
+```typescript
+public readonly authMethod: string;
+```
+
+- *Type:* string
+
+---
+
+##### `password`<sup>Required</sup> <a name="password" id="cdk-ssm-documents.UsernamePasswordAuthMethod.property.password"></a>
+
+```typescript
+public readonly password: SecureVariable;
+```
+
+- *Type:* <a href="#cdk-ssm-documents.SecureVariable">SecureVariable</a>
+
+---
+
+##### `userName`<sup>Required</sup> <a name="userName" id="cdk-ssm-documents.UsernamePasswordAuthMethod.property.userName"></a>
+
+```typescript
+public readonly userName: SecureVariable;
+```
+
+- *Type:* <a href="#cdk-ssm-documents.SecureVariable">SecureVariable</a>
+
+---
+
+
 ## Protocols <a name="Protocols" id="Protocols"></a>
 
 ### IActionVariable <a name="IActionVariable" id="cdk-ssm-documents.IActionVariable"></a>
@@ -29543,7 +32172,7 @@ are the execution inputs.
 
 ### ICommandComponent <a name="ICommandComponent" id="cdk-ssm-documents.ICommandComponent"></a>
 
-- *Implemented By:* <a href="#cdk-ssm-documents.CommandStep">CommandStep</a>, <a href="#cdk-ssm-documents.CompositeCommandStep">CompositeCommandStep</a>, <a href="#cdk-ssm-documents.ConfigureDockerStep">ConfigureDockerStep</a>, <a href="#cdk-ssm-documents.ConfigurePackageStep">ConfigurePackageStep</a>, <a href="#cdk-ssm-documents.DomainJoinStep">DomainJoinStep</a>, <a href="#cdk-ssm-documents.PsModuleStep">PsModuleStep</a>, <a href="#cdk-ssm-documents.RunDockerActionStep">RunDockerActionStep</a>, <a href="#cdk-ssm-documents.RunDocumentStep">RunDocumentStep</a>, <a href="#cdk-ssm-documents.RunPowerShellScriptStep">RunPowerShellScriptStep</a>, <a href="#cdk-ssm-documents.RunShellScriptStep">RunShellScriptStep</a>, <a href="#cdk-ssm-documents.SoftwareInventoryStep">SoftwareInventoryStep</a>, <a href="#cdk-ssm-documents.UpdateAgentStep">UpdateAgentStep</a>, <a href="#cdk-ssm-documents.UpdateSSMAgentStep">UpdateSSMAgentStep</a>, <a href="#cdk-ssm-documents.ICommandComponent">ICommandComponent</a>
+- *Implemented By:* <a href="#cdk-ssm-documents.CommandStep">CommandStep</a>, <a href="#cdk-ssm-documents.CompositeCommandStep">CompositeCommandStep</a>, <a href="#cdk-ssm-documents.ConfigureDockerStep">ConfigureDockerStep</a>, <a href="#cdk-ssm-documents.ConfigurePackageStep">ConfigurePackageStep</a>, <a href="#cdk-ssm-documents.DomainJoinStep">DomainJoinStep</a>, <a href="#cdk-ssm-documents.DownloadContentStep">DownloadContentStep</a>, <a href="#cdk-ssm-documents.PsModuleStep">PsModuleStep</a>, <a href="#cdk-ssm-documents.RunDockerActionStep">RunDockerActionStep</a>, <a href="#cdk-ssm-documents.RunDocumentStep">RunDocumentStep</a>, <a href="#cdk-ssm-documents.RunPowerShellScriptStep">RunPowerShellScriptStep</a>, <a href="#cdk-ssm-documents.RunShellScriptStep">RunShellScriptStep</a>, <a href="#cdk-ssm-documents.SoftwareInventoryStep">SoftwareInventoryStep</a>, <a href="#cdk-ssm-documents.UpdateAgentStep">UpdateAgentStep</a>, <a href="#cdk-ssm-documents.UpdateSSMAgentStep">UpdateSSMAgentStep</a>, <a href="#cdk-ssm-documents.ICommandComponent">ICommandComponent</a>
 
 #### Methods <a name="Methods" id="Methods"></a>
 
@@ -29582,6 +32211,49 @@ public addToDocument(doc: CommandDocumentBuilder): void
 
 
 
+### IDownloadableContent <a name="IDownloadableContent" id="cdk-ssm-documents.IDownloadableContent"></a>
+
+- *Implemented By:* <a href="#cdk-ssm-documents.GitContent">GitContent</a>, <a href="#cdk-ssm-documents.GitHubContent">GitHubContent</a>, <a href="#cdk-ssm-documents.HttpContent">HttpContent</a>, <a href="#cdk-ssm-documents.S3Content">S3Content</a>, <a href="#cdk-ssm-documents.SSMDocumentContent">SSMDocumentContent</a>, <a href="#cdk-ssm-documents.IDownloadableContent">IDownloadableContent</a>
+
+#### Methods <a name="Methods" id="Methods"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#cdk-ssm-documents.IDownloadableContent.formatSourceInfo">formatSourceInfo</a></code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.IDownloadableContent.requiredInputs">requiredInputs</a></code> | *No description.* |
+
+---
+
+##### `formatSourceInfo` <a name="formatSourceInfo" id="cdk-ssm-documents.IDownloadableContent.formatSourceInfo"></a>
+
+```typescript
+public formatSourceInfo(): {[ key: string ]: any}
+```
+
+##### `requiredInputs` <a name="requiredInputs" id="cdk-ssm-documents.IDownloadableContent.requiredInputs"></a>
+
+```typescript
+public requiredInputs(): string[]
+```
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#cdk-ssm-documents.IDownloadableContent.property.sourceType">sourceType</a></code> | <code>string</code> | *No description.* |
+
+---
+
+##### `sourceType`<sup>Required</sup> <a name="sourceType" id="cdk-ssm-documents.IDownloadableContent.property.sourceType"></a>
+
+```typescript
+public readonly sourceType: string;
+```
+
+- *Type:* string
+
+---
+
 ### IEnvironment <a name="IEnvironment" id="cdk-ssm-documents.IEnvironment"></a>
 
 - *Implemented By:* <a href="#cdk-ssm-documents.DockerEnvironment">DockerEnvironment</a>, <a href="#cdk-ssm-documents.LoggingEnvironment">LoggingEnvironment</a>, <a href="#cdk-ssm-documents.MockEnvironment">MockEnvironment</a>, <a href="#cdk-ssm-documents.IEnvironment">IEnvironment</a>
@@ -29614,7 +32286,7 @@ public run(command: string): string
 
 ### IGenericVariable <a name="IGenericVariable" id="cdk-ssm-documents.IGenericVariable"></a>
 
-- *Implemented By:* <a href="#cdk-ssm-documents.ActionVariable">ActionVariable</a>, <a href="#cdk-ssm-documents.BooleanVariable">BooleanVariable</a>, <a href="#cdk-ssm-documents.DesiredStateVariable">DesiredStateVariable</a>, <a href="#cdk-ssm-documents.DictFormat">DictFormat</a>, <a href="#cdk-ssm-documents.DocumentHashTypeVariable">DocumentHashTypeVariable</a>, <a href="#cdk-ssm-documents.GenericVariable">GenericVariable</a>, <a href="#cdk-ssm-documents.HardCodedAction">HardCodedAction</a>, <a href="#cdk-ssm-documents.HardCodedBoolean">HardCodedBoolean</a>, <a href="#cdk-ssm-documents.HardCodedDesiredState">HardCodedDesiredState</a>, <a href="#cdk-ssm-documents.HardCodedDocumentHashType">HardCodedDocumentHashType</a>, <a href="#cdk-ssm-documents.HardCodedInstallationType">HardCodedInstallationType</a>, <a href="#cdk-ssm-documents.HardCodedMapList">HardCodedMapList</a>, <a href="#cdk-ssm-documents.HardCodedNumber">HardCodedNumber</a>, <a href="#cdk-ssm-documents.HardCodedOnFailure">HardCodedOnFailure</a>, <a href="#cdk-ssm-documents.HardCodedPackageName">HardCodedPackageName</a>, <a href="#cdk-ssm-documents.HardCodedResourceType">HardCodedResourceType</a>, <a href="#cdk-ssm-documents.HardCodedString">HardCodedString</a>, <a href="#cdk-ssm-documents.HardCodedStringList">HardCodedStringList</a>, <a href="#cdk-ssm-documents.HardCodedStringMap">HardCodedStringMap</a>, <a href="#cdk-ssm-documents.HardCodedValueBase">HardCodedValueBase</a>, <a href="#cdk-ssm-documents.InstallationTypeVariable">InstallationTypeVariable</a>, <a href="#cdk-ssm-documents.MapListVariable">MapListVariable</a>, <a href="#cdk-ssm-documents.NumberVariable">NumberVariable</a>, <a href="#cdk-ssm-documents.OnFailureVariable">OnFailureVariable</a>, <a href="#cdk-ssm-documents.PackageNameVariable">PackageNameVariable</a>, <a href="#cdk-ssm-documents.ResourceTypeVariable">ResourceTypeVariable</a>, <a href="#cdk-ssm-documents.StringFormat">StringFormat</a>, <a href="#cdk-ssm-documents.StringListVariable">StringListVariable</a>, <a href="#cdk-ssm-documents.StringMapVariable">StringMapVariable</a>, <a href="#cdk-ssm-documents.StringVariable">StringVariable</a>, <a href="#cdk-ssm-documents.IActionVariable">IActionVariable</a>, <a href="#cdk-ssm-documents.IBooleanVariable">IBooleanVariable</a>, <a href="#cdk-ssm-documents.IDesiredStateVariable">IDesiredStateVariable</a>, <a href="#cdk-ssm-documents.IDocumentHashTypeVariable">IDocumentHashTypeVariable</a>, <a href="#cdk-ssm-documents.IGenericVariable">IGenericVariable</a>, <a href="#cdk-ssm-documents.IInstallationTypeVariable">IInstallationTypeVariable</a>, <a href="#cdk-ssm-documents.IMapListVariable">IMapListVariable</a>, <a href="#cdk-ssm-documents.INumberVariable">INumberVariable</a>, <a href="#cdk-ssm-documents.IOnFailureVariable">IOnFailureVariable</a>, <a href="#cdk-ssm-documents.IPackageNameVariable">IPackageNameVariable</a>, <a href="#cdk-ssm-documents.IResourceTypeVariable">IResourceTypeVariable</a>, <a href="#cdk-ssm-documents.IStringListVariable">IStringListVariable</a>, <a href="#cdk-ssm-documents.IStringMapVariable">IStringMapVariable</a>, <a href="#cdk-ssm-documents.IStringVariable">IStringVariable</a>
+- *Implemented By:* <a href="#cdk-ssm-documents.ActionVariable">ActionVariable</a>, <a href="#cdk-ssm-documents.BooleanVariable">BooleanVariable</a>, <a href="#cdk-ssm-documents.DesiredStateVariable">DesiredStateVariable</a>, <a href="#cdk-ssm-documents.DictFormat">DictFormat</a>, <a href="#cdk-ssm-documents.DocumentHashTypeVariable">DocumentHashTypeVariable</a>, <a href="#cdk-ssm-documents.GenericVariable">GenericVariable</a>, <a href="#cdk-ssm-documents.HardCodedAction">HardCodedAction</a>, <a href="#cdk-ssm-documents.HardCodedBoolean">HardCodedBoolean</a>, <a href="#cdk-ssm-documents.HardCodedDesiredState">HardCodedDesiredState</a>, <a href="#cdk-ssm-documents.HardCodedDocumentHashType">HardCodedDocumentHashType</a>, <a href="#cdk-ssm-documents.HardCodedInstallationType">HardCodedInstallationType</a>, <a href="#cdk-ssm-documents.HardCodedMapList">HardCodedMapList</a>, <a href="#cdk-ssm-documents.HardCodedNumber">HardCodedNumber</a>, <a href="#cdk-ssm-documents.HardCodedOnFailure">HardCodedOnFailure</a>, <a href="#cdk-ssm-documents.HardCodedPackageName">HardCodedPackageName</a>, <a href="#cdk-ssm-documents.HardCodedResourceType">HardCodedResourceType</a>, <a href="#cdk-ssm-documents.HardCodedSecureVariable">HardCodedSecureVariable</a>, <a href="#cdk-ssm-documents.HardCodedString">HardCodedString</a>, <a href="#cdk-ssm-documents.HardCodedStringList">HardCodedStringList</a>, <a href="#cdk-ssm-documents.HardCodedStringMap">HardCodedStringMap</a>, <a href="#cdk-ssm-documents.HardCodedValueBase">HardCodedValueBase</a>, <a href="#cdk-ssm-documents.InstallationTypeVariable">InstallationTypeVariable</a>, <a href="#cdk-ssm-documents.MapListVariable">MapListVariable</a>, <a href="#cdk-ssm-documents.NonSecureVariable">NonSecureVariable</a>, <a href="#cdk-ssm-documents.NumberVariable">NumberVariable</a>, <a href="#cdk-ssm-documents.OnFailureVariable">OnFailureVariable</a>, <a href="#cdk-ssm-documents.PackageNameVariable">PackageNameVariable</a>, <a href="#cdk-ssm-documents.ResourceTypeVariable">ResourceTypeVariable</a>, <a href="#cdk-ssm-documents.SecureVariable">SecureVariable</a>, <a href="#cdk-ssm-documents.SsmSecureVariable">SsmSecureVariable</a>, <a href="#cdk-ssm-documents.StringFormat">StringFormat</a>, <a href="#cdk-ssm-documents.StringListVariable">StringListVariable</a>, <a href="#cdk-ssm-documents.StringMapVariable">StringMapVariable</a>, <a href="#cdk-ssm-documents.StringVariable">StringVariable</a>, <a href="#cdk-ssm-documents.IActionVariable">IActionVariable</a>, <a href="#cdk-ssm-documents.IBooleanVariable">IBooleanVariable</a>, <a href="#cdk-ssm-documents.IDesiredStateVariable">IDesiredStateVariable</a>, <a href="#cdk-ssm-documents.IDocumentHashTypeVariable">IDocumentHashTypeVariable</a>, <a href="#cdk-ssm-documents.IGenericVariable">IGenericVariable</a>, <a href="#cdk-ssm-documents.IInstallationTypeVariable">IInstallationTypeVariable</a>, <a href="#cdk-ssm-documents.IMapListVariable">IMapListVariable</a>, <a href="#cdk-ssm-documents.INumberVariable">INumberVariable</a>, <a href="#cdk-ssm-documents.IOnFailureVariable">IOnFailureVariable</a>, <a href="#cdk-ssm-documents.IPackageNameVariable">IPackageNameVariable</a>, <a href="#cdk-ssm-documents.IResourceTypeVariable">IResourceTypeVariable</a>, <a href="#cdk-ssm-documents.IStringListVariable">IStringListVariable</a>, <a href="#cdk-ssm-documents.IStringMapVariable">IStringMapVariable</a>, <a href="#cdk-ssm-documents.IStringVariable">IStringVariable</a>
 
 Variables hold references to a value.
 

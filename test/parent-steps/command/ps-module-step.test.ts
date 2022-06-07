@@ -7,8 +7,8 @@ import {
   ResponseCode,
   StringFormat,
   StringVariable,
+  PsModuleStep,
 } from '../../../lib';
-import { PsModuleStep } from '../../../lib/parent-steps/command/ps-module-step';
 import { CommandStepSimulation } from '../../../lib/simulation/command-step-simulation';
 
 //import {DockerEnvironment} from "../../lib/interface/environment"; Uncomment if running against docker container
