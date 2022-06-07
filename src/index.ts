@@ -82,6 +82,7 @@ export * from './interface/variables/variable';
 export * from './interface/run-document-location';
 export * from './interface/downloadable-content';
 export * from './interface/auth-method';
+export * from './interface/webhook';
 
 export * from './interface/variables/string-list-variable';
 export * from './interface/variables/boolean-variable';
@@ -90,3 +91,38 @@ export * from './interface/variables/map-list-variable';
 export * from './interface/variables/string-map-variable';
 export * from './interface/variables/string-variable';
 export * from './interface/variables/secure-string-variable';
+
+export * from './simulation/simulation';
+export * from './simulation/automation-step-simulation';
+export * from './simulation/command-step-simulation';
+
+export * from './simulation/automation/wait-for-resource-simulation';
+export * from './simulation/automation/sleep-simulation';
+export * from './simulation/automation/run-instance-simulation';
+export * from './simulation/automation/run-command-simulation';
+export * from './simulation/automation/pause-simulation';
+export * from './simulation/automation/invoke-webhook-simulation';
+export * from './simulation/automation/invoke-lambda-function-simulation';
+export * from './simulation/automation/execute-state-machine-simulation';
+export * from './simulation/automation/execute-script-simulation';
+export * from './simulation/automation/delete-stack-simulation';
+export * from './simulation/automation/delete-image-simulation';
+export * from './simulation/automation/create-tags-simulation';
+export * from './simulation/automation/create-stack-simulation';
+export * from './simulation/automation/create-image-simulation';
+export * from './simulation/automation/copy-image-simulation';
+export * from './simulation/automation/change-instance-state-simulation';
+export * from './simulation/automation/branch-simulation';
+export * from './simulation/automation/aws-api-simulation';
+export * from './simulation/automation/automation-simulation-base';
+export * from './simulation/automation/assert-aws-resource-simulation';
+export * from './simulation/automation/approve-simulation';
+
+export * from './simulation/command/run-shell-script-simulation';
+export * from './simulation/command/run-powershell-script-simulation';
+export * from './simulation/command/ps-module-simulation';
+export * from './simulation/command/command-simulation-base';
+export * from './simulation/command/interface/environment-props';
+
+export * from './simulation/document/automation-simulation';
+export * from './simulation/document/command-simulation';
