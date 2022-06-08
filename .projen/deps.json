@@ -81,12 +81,12 @@
       "type": "build"
     },
     {
-      "name": "projen",
+      "name": "npm-check-updates",
+      "version": "^12",
       "type": "build"
     },
     {
-      "name": "standard-version",
-      "version": "^9",
+      "name": "projen",
       "type": "build"
     },
     {
