@@ -24,12 +24,7 @@ const project = new awscdk.AwsCdkConstructLibrary({
   ],
   peerDeps: ['constructs', 'aws-cdk-lib'],
   gitignore: ['.DS_Store'],
-  autoApproveProjenUpgrades: true,
-  autoApproveUpgrades: true,
-  autoApproveOptions: {
-    allowedUsernames: ['cdklabs-automation'],
-    secret: 'GITHUB_TOKEN',
-  },
+  depsUpgrade: false,
   devDeps: ['mocha'],
   jestOptions: {
     jestConfig: {
