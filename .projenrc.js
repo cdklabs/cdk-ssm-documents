@@ -8,7 +8,6 @@ const project = new awscdk.AwsCdkConstructLibrary({
       isolatedModules: true,
     },
   },
-  depsUpgrade: false,
   defaultReleaseBranch: 'main',
   name: 'cdk-ssm-documents',
   repositoryUrl: 'https://github.com/cdklabs/cdk-ssm-documents.git',
@@ -25,25 +24,21 @@ const project = new awscdk.AwsCdkConstructLibrary({
   ],
   peerDeps: ['constructs', 'aws-cdk-lib'],
   gitignore: ['.DS_Store'],
-  autoApproveProjenUpgrades: true,
-  autoApproveUpgrades: true,
-  autoApproveOptions: {
-    allowedUsernames: ['cdklabs-automation'],
-    secret: 'GITHUB_TOKEN',
-  },
+  depsUpgrade: false,
   devDeps: ['mocha'],
   jestOptions: {
     jestConfig: {
       maxWorkers: 4,
     },
   },
-  releaseToNpm: true,
 
-  //  publishToNuget: {
-  //    dotNetNamespace: 'Cdklabs.CdkSsmDocuments',
-  //    packageId: 'Cdklabs.CdkSsmDocuments',
-  //  },
+  // for now, until we sort some stuff out
+  release: false,
 
+  publishToNuget: {
+    dotNetNamespace: 'Cdklabs.CdkSsmDocuments',
+    packageId: 'Cdklabs.CdkSsmDocuments',
+  },
   publishToMaven: {
     javaPackage: 'io.github.cdklabs.cdkssmdocuments',
     mavenEndpoint: 'https://s01.oss.sonatype.org',
