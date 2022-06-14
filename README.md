@@ -1,26 +1,17 @@
 # SSM Document CDK
-This library provides a utility implement SSM Documents using code. The SSM Document objects can be used to print the document to YAML/JSON and allows you to simulate a document execution locally.
+This library provides a code-based utility for implementing SSM Documents. The SSM Document objects can be used to print YAML/JSON documents and to mimic document processing locally.
 
-## Problem Statement
-Writing SSM documents is cumbersome because interacting with the JSON or YAML documents provides little compile time support for errors. While the SSM UI provides a rich experience for creating documents, the SSM UI provides no ability to reuse steps across documents.
+This library abstracts SSM Documents at a high level, with each step as well as the document itself being objects. The properties needed to build these objects correlate to the settings that apply to them, making them simple to make.
+This library can be used to test your document locally before deploying it to SSM.
 
-Testing documents can only be performed by running the SSM Execution which is time-consuming. There is also no way to mock results in SSM Execution so developers are forced to create the necessary infrastructure in the AWS account prior to executing the SSM Document.
+Since the library is written in JSII, it can be exported to other languages that support JSII (Java, Python).
 
-Exceptions are at times difficult to find or understand from the SSM Execution because sometimes the underlying issue is hidden and the error that is propagated is unrelated.
-
-## Solution
-
-This library provides a high level abstraction of the SSM Documents where each step as well as the document itself are objects. The properties required for construction of these objects correspond to the settings applicable them making them intuitive to create.
-You can use this library to simulate your document locally before deploying to SSM.
-
-The library is implemented using JSII and can therefore be exported to other JSII supported languages (Java, Python).
-
-You would use this if you want:
-1. Ability to test without deploying resources or running a real SSM execution on AWS
-2. Ability to reuse steps between docs by reusing available objects
-3. Build higher level logical groupings of reusable groups of steps ("Patterns")
-4. Easy interface for creating Docs
-5. Test existing documents by importing them from a file (or string) and simulate them locally
+This is what you'd use if you wanted to:
+1. The ability to test without deploying resources or executing an actual SSM on AWS.
+2. Reusability of steps between documents by reusing existing items
+3. Create logical higher-level groupings of reusable groups of steps ("Patterns")
+4. Simple to use interface for writing documents
+5. Import existing documents from a file (or string) and mimic them locally to test them.
 
 ## Usage
 
