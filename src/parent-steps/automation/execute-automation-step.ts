@@ -111,9 +111,9 @@ export class ExecuteAutomationStep extends AutomationStep {
 
   listOutputs(): Output[] {
     return [{
-      outputType: DataTypeEnum.STRING_LIST,
+      outputType: DataTypeEnum.STRING_MAP,
       name: 'Output',
-      selector: '$.Outputs',
+      selector: '$.Output',
     },
     {
       outputType: DataTypeEnum.STRING,

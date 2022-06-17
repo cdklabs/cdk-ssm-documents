@@ -76,6 +76,7 @@ export * from './interface/environment';
 export * from './interface/observer';
 export * from './interface/approve-hook';
 export * from './interface/run-command-hook';
+export * from './interface/execute-automation-hook';
 export * from './interface/pause-hook';
 export * from './interface/sleep-hook';
 export * from './interface/variables/variable';

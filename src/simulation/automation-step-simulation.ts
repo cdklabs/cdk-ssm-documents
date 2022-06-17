@@ -1,3 +1,4 @@
+import { ApiExecuteAutomationHook, ExecuteAutomationStep, IExecuteAutomationHook } from '..';
 import { CancellationException } from '../domain/cancellation-exception';
 import { DataType, DataTypeEnum } from '../domain/data-type';
 import { NonRetriableException } from '../domain/non-retriable-exception';
@@ -44,6 +45,7 @@ import { CreateStackSimulation } from './automation/create-stack-simulation';
 import { CreateTagsSimulation } from './automation/create-tags-simulation';
 import { DeleteImageSimulation } from './automation/delete-image-simulation';
 import { DeleteStackSimulation } from './automation/delete-stack-simulation';
+import { ExecuteAutomationSimulation } from './automation/execute-automation-simulation';
 import { ExecuteScriptSimulation } from './automation/execute-script-simulation';
 import { ExecuteStateMachineSimulation } from './automation/execute-state-machine-simulation';
 import { InvokeLambdaFunctionSimulation } from './automation/invoke-lambda-function-simulation';
@@ -70,6 +72,7 @@ export interface RequiredAutomationSimulationProps {
   readonly parameterResolver: IParameterResolver;
   readonly webhook: IWebhook;
   readonly runCommandHook: IRunCommandHook;
+  readonly executeAutomationHook: IExecuteAutomationHook;
 }
 
 export class AutomationStepSimulation {
@@ -89,6 +92,7 @@ export class AutomationStepSimulation {
       parameterResolver: props.parameterResolver ?? { resolve: (x) => x },
       webhook: props.webhook ?? new WebhookImpl(),
       runCommandHook: props.runCommandHook ?? new ApiRunCommandHook(awsInvoker, sleepHook),
+      executeAutomationHook: props.executeAutomationHook ?? new ApiExecuteAutomationHook(awsInvoker, sleepHook),
     };
     this.step = step;
   }
@@ -246,6 +250,8 @@ export class AutomationStepSimulation {
         return new DeleteImageSimulation(<DeleteImageStep> this.step, this.props);
       case 'aws:deleteStack':
         return new DeleteStackSimulation(<DeleteStackStep> this.step, this.props);
+      case 'aws:executeAutomation':
+        return new ExecuteAutomationSimulation(<ExecuteAutomationStep> this.step, this.props);
       case 'aws:executeScript':
         return new ExecuteScriptSimulation(<ExecuteScriptStep> this.step);
       case 'aws:executeStateMachine':
