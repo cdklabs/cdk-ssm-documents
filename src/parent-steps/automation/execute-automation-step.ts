@@ -113,7 +113,7 @@ export class ExecuteAutomationStep extends AutomationStep {
     return [{
       outputType: DataTypeEnum.STRING_LIST,
       name: 'Output',
-      selector: '$.Outputs',
+      selector: '$.Output',
     },
     {
       outputType: DataTypeEnum.STRING,

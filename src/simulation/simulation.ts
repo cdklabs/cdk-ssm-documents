@@ -9,6 +9,7 @@ import { SimulationResult } from '../domain/simulation-result';
 import { IApproveHook } from '../interface/approve-hook';
 import { IAwsInvoker } from '../interface/aws-invoker';
 import { IEnvironment } from '../interface/environment';
+import { IExecuteAutomationHook } from '../interface/execute-automation-hook';
 import { IObserver } from '../interface/observer';
 import { IPauseHook } from '../interface/pause-hook';
 import { IRunCommandHook } from '../interface/run-command-hook';
@@ -76,6 +77,12 @@ export interface AutomationSimulationProps {
    * @default - Uses AWS API to execute the document remotely.
    */
   readonly runCommandHook?: IRunCommandHook;
+
+  /**
+   * Hook for simulating aws:executeAutomation.
+   * @default - Uses AWS API to execute the document remotely.
+   */
+  readonly executeAutomationHook?: IExecuteAutomationHook;
 }
 
 

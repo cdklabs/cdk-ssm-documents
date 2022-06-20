@@ -15246,6 +15246,45 @@ public readonly DEFAULT_TIMEOUT: number;
 
 ## Structs <a name="Structs" id="Structs"></a>
 
+### ApiExecuteAutomationProps <a name="ApiExecuteAutomationProps" id="cdk-ssm-documents.ApiExecuteAutomationProps"></a>
+
+#### Initializer <a name="Initializer" id="cdk-ssm-documents.ApiExecuteAutomationProps.Initializer"></a>
+
+```typescript
+import { ApiExecuteAutomationProps } from 'cdk-ssm-documents'
+
+const apiExecuteAutomationProps: ApiExecuteAutomationProps = { ... }
+```
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#cdk-ssm-documents.ApiExecuteAutomationProps.property.awsInvoker">awsInvoker</a></code> | <code><a href="#cdk-ssm-documents.IAwsInvoker">IAwsInvoker</a></code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.ApiExecuteAutomationProps.property.sleepHook">sleepHook</a></code> | <code><a href="#cdk-ssm-documents.ISleepHook">ISleepHook</a></code> | *No description.* |
+
+---
+
+##### `awsInvoker`<sup>Required</sup> <a name="awsInvoker" id="cdk-ssm-documents.ApiExecuteAutomationProps.property.awsInvoker"></a>
+
+```typescript
+public readonly awsInvoker: IAwsInvoker;
+```
+
+- *Type:* <a href="#cdk-ssm-documents.IAwsInvoker">IAwsInvoker</a>
+
+---
+
+##### `sleepHook`<sup>Required</sup> <a name="sleepHook" id="cdk-ssm-documents.ApiExecuteAutomationProps.property.sleepHook"></a>
+
+```typescript
+public readonly sleepHook: ISleepHook;
+```
+
+- *Type:* <a href="#cdk-ssm-documents.ISleepHook">ISleepHook</a>
+
+---
+
 ### ApiRunCommandProps <a name="ApiRunCommandProps" id="cdk-ssm-documents.ApiRunCommandProps"></a>
 
 #### Initializer <a name="Initializer" id="cdk-ssm-documents.ApiRunCommandProps.Initializer"></a>
@@ -16203,6 +16242,7 @@ const automationSimulationProps: AutomationSimulationProps = { ... }
 | --- | --- | --- |
 | <code><a href="#cdk-ssm-documents.AutomationSimulationProps.property.approveHook">approveHook</a></code> | <code><a href="#cdk-ssm-documents.IApproveHook">IApproveHook</a></code> | (Optional) Approve hook to be called to pause the execution. |
 | <code><a href="#cdk-ssm-documents.AutomationSimulationProps.property.awsInvoker">awsInvoker</a></code> | <code><a href="#cdk-ssm-documents.IAwsInvoker">IAwsInvoker</a></code> | (Optional) Use this as a hook to inject an alternate IAwsInvoker (for mocking the AWS API call). |
+| <code><a href="#cdk-ssm-documents.AutomationSimulationProps.property.executeAutomationHook">executeAutomationHook</a></code> | <code><a href="#cdk-ssm-documents.IExecuteAutomationHook">IExecuteAutomationHook</a></code> | Hook for simulating aws:executeAutomation. |
 | <code><a href="#cdk-ssm-documents.AutomationSimulationProps.property.inputObserver">inputObserver</a></code> | <code><a href="#cdk-ssm-documents.IObserver">IObserver</a></code> | (Optional) Allows for observing the input to steps as they run. |
 | <code><a href="#cdk-ssm-documents.AutomationSimulationProps.property.outputObserver">outputObserver</a></code> | <code><a href="#cdk-ssm-documents.IObserver">IObserver</a></code> | (Optional) Allows for observing the output of steps as they run. |
 | <code><a href="#cdk-ssm-documents.AutomationSimulationProps.property.parameterResolver">parameterResolver</a></code> | <code><a href="#cdk-ssm-documents.IParameterResolver">IParameterResolver</a></code> | (Optional) Resolver for secure strings in parameters. |
@@ -16238,6 +16278,19 @@ public readonly awsInvoker: IAwsInvoker;
 - *Default:* will perform a real invocation of the JavaScript AWS SDK using ReflectiveAwsInvoker class.
 
 (Optional) Use this as a hook to inject an alternate IAwsInvoker (for mocking the AWS API call).
+
+---
+
+##### `executeAutomationHook`<sup>Optional</sup> <a name="executeAutomationHook" id="cdk-ssm-documents.AutomationSimulationProps.property.executeAutomationHook"></a>
+
+```typescript
+public readonly executeAutomationHook: IExecuteAutomationHook;
+```
+
+- *Type:* <a href="#cdk-ssm-documents.IExecuteAutomationHook">IExecuteAutomationHook</a>
+- *Default:* Uses AWS API to execute the document remotely.
+
+Hook for simulating aws:executeAutomation.
 
 ---
 
@@ -20608,6 +20661,193 @@ or MockEnvironment which saves them for validation.
 
 ---
 
+### ExecuteAutomationOutputs <a name="ExecuteAutomationOutputs" id="cdk-ssm-documents.ExecuteAutomationOutputs"></a>
+
+Outputs for aws:executeAutomation.
+
+#### Initializer <a name="Initializer" id="cdk-ssm-documents.ExecuteAutomationOutputs.Initializer"></a>
+
+```typescript
+import { ExecuteAutomationOutputs } from 'cdk-ssm-documents'
+
+const executeAutomationOutputs: ExecuteAutomationOutputs = { ... }
+```
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#cdk-ssm-documents.ExecuteAutomationOutputs.property.executionId">executionId</a></code> | <code>string</code> | The ID of the secondary automation. |
+| <code><a href="#cdk-ssm-documents.ExecuteAutomationOutputs.property.status">status</a></code> | <code>string</code> | The status of the secondary automation. |
+| <code><a href="#cdk-ssm-documents.ExecuteAutomationOutputs.property.output">output</a></code> | <code>string[]</code> | The output generated by the secondary automation. |
+
+---
+
+##### `executionId`<sup>Required</sup> <a name="executionId" id="cdk-ssm-documents.ExecuteAutomationOutputs.property.executionId"></a>
+
+```typescript
+public readonly executionId: string;
+```
+
+- *Type:* string
+
+The ID of the secondary automation.
+
+---
+
+##### `status`<sup>Required</sup> <a name="status" id="cdk-ssm-documents.ExecuteAutomationOutputs.property.status"></a>
+
+```typescript
+public readonly status: string;
+```
+
+- *Type:* string
+
+The status of the secondary automation.
+
+---
+
+##### `output`<sup>Optional</sup> <a name="output" id="cdk-ssm-documents.ExecuteAutomationOutputs.property.output"></a>
+
+```typescript
+public readonly output: string[];
+```
+
+- *Type:* string[]
+
+The output generated by the secondary automation.
+
+---
+
+### ExecuteAutomationProps <a name="ExecuteAutomationProps" id="cdk-ssm-documents.ExecuteAutomationProps"></a>
+
+Inputs for aws:executeAutomation.
+
+#### Initializer <a name="Initializer" id="cdk-ssm-documents.ExecuteAutomationProps.Initializer"></a>
+
+```typescript
+import { ExecuteAutomationProps } from 'cdk-ssm-documents'
+
+const executeAutomationProps: ExecuteAutomationProps = { ... }
+```
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#cdk-ssm-documents.ExecuteAutomationProps.property.documentName">documentName</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.ExecuteAutomationProps.property.documentVersion">documentVersion</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.ExecuteAutomationProps.property.maxConcurrency">maxConcurrency</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.ExecuteAutomationProps.property.maxErrors">maxErrors</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.ExecuteAutomationProps.property.runtimeParameters">runtimeParameters</a></code> | <code>{[ key: string ]: any}</code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.ExecuteAutomationProps.property.tags">tags</a></code> | <code>{[ key: string ]: any}[]</code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.ExecuteAutomationProps.property.targetLocations">targetLocations</a></code> | <code>{[ key: string ]: any}[]</code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.ExecuteAutomationProps.property.targetMaps">targetMaps</a></code> | <code>{[ key: string ]: any}[]</code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.ExecuteAutomationProps.property.targetParameterName">targetParameterName</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.ExecuteAutomationProps.property.targets">targets</a></code> | <code>{[ key: string ]: any}[]</code> | *No description.* |
+
+---
+
+##### `documentName`<sup>Required</sup> <a name="documentName" id="cdk-ssm-documents.ExecuteAutomationProps.property.documentName"></a>
+
+```typescript
+public readonly documentName: string;
+```
+
+- *Type:* string
+
+---
+
+##### `documentVersion`<sup>Optional</sup> <a name="documentVersion" id="cdk-ssm-documents.ExecuteAutomationProps.property.documentVersion"></a>
+
+```typescript
+public readonly documentVersion: string;
+```
+
+- *Type:* string
+
+---
+
+##### `maxConcurrency`<sup>Optional</sup> <a name="maxConcurrency" id="cdk-ssm-documents.ExecuteAutomationProps.property.maxConcurrency"></a>
+
+```typescript
+public readonly maxConcurrency: string;
+```
+
+- *Type:* string
+
+---
+
+##### `maxErrors`<sup>Optional</sup> <a name="maxErrors" id="cdk-ssm-documents.ExecuteAutomationProps.property.maxErrors"></a>
+
+```typescript
+public readonly maxErrors: string;
+```
+
+- *Type:* string
+
+---
+
+##### `runtimeParameters`<sup>Optional</sup> <a name="runtimeParameters" id="cdk-ssm-documents.ExecuteAutomationProps.property.runtimeParameters"></a>
+
+```typescript
+public readonly runtimeParameters: {[ key: string ]: any};
+```
+
+- *Type:* {[ key: string ]: any}
+
+---
+
+##### `tags`<sup>Optional</sup> <a name="tags" id="cdk-ssm-documents.ExecuteAutomationProps.property.tags"></a>
+
+```typescript
+public readonly tags: {[ key: string ]: any}[];
+```
+
+- *Type:* {[ key: string ]: any}[]
+
+---
+
+##### `targetLocations`<sup>Optional</sup> <a name="targetLocations" id="cdk-ssm-documents.ExecuteAutomationProps.property.targetLocations"></a>
+
+```typescript
+public readonly targetLocations: {[ key: string ]: any}[];
+```
+
+- *Type:* {[ key: string ]: any}[]
+
+---
+
+##### `targetMaps`<sup>Optional</sup> <a name="targetMaps" id="cdk-ssm-documents.ExecuteAutomationProps.property.targetMaps"></a>
+
+```typescript
+public readonly targetMaps: {[ key: string ]: any}[];
+```
+
+- *Type:* {[ key: string ]: any}[]
+
+---
+
+##### `targetParameterName`<sup>Optional</sup> <a name="targetParameterName" id="cdk-ssm-documents.ExecuteAutomationProps.property.targetParameterName"></a>
+
+```typescript
+public readonly targetParameterName: string;
+```
+
+- *Type:* string
+
+---
+
+##### `targets`<sup>Optional</sup> <a name="targets" id="cdk-ssm-documents.ExecuteAutomationProps.property.targets"></a>
+
+```typescript
+public readonly targets: {[ key: string ]: any}[];
+```
+
+- *Type:* {[ key: string ]: any}[]
+
+---
+
 ### ExecuteAutomationStepProps <a name="ExecuteAutomationStepProps" id="cdk-ssm-documents.ExecuteAutomationStepProps"></a>
 
 #### Initializer <a name="Initializer" id="cdk-ssm-documents.ExecuteAutomationStepProps.Initializer"></a>
@@ -22749,6 +22989,7 @@ const requiredAutomationSimulationProps: RequiredAutomationSimulationProps = { .
 | --- | --- | --- |
 | <code><a href="#cdk-ssm-documents.RequiredAutomationSimulationProps.property.approveHook">approveHook</a></code> | <code><a href="#cdk-ssm-documents.IApproveHook">IApproveHook</a></code> | *No description.* |
 | <code><a href="#cdk-ssm-documents.RequiredAutomationSimulationProps.property.awsInvoker">awsInvoker</a></code> | <code><a href="#cdk-ssm-documents.IAwsInvoker">IAwsInvoker</a></code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.RequiredAutomationSimulationProps.property.executeAutomationHook">executeAutomationHook</a></code> | <code><a href="#cdk-ssm-documents.IExecuteAutomationHook">IExecuteAutomationHook</a></code> | *No description.* |
 | <code><a href="#cdk-ssm-documents.RequiredAutomationSimulationProps.property.inputObserver">inputObserver</a></code> | <code><a href="#cdk-ssm-documents.IObserver">IObserver</a></code> | *No description.* |
 | <code><a href="#cdk-ssm-documents.RequiredAutomationSimulationProps.property.outputObserver">outputObserver</a></code> | <code><a href="#cdk-ssm-documents.IObserver">IObserver</a></code> | *No description.* |
 | <code><a href="#cdk-ssm-documents.RequiredAutomationSimulationProps.property.parameterResolver">parameterResolver</a></code> | <code><a href="#cdk-ssm-documents.IParameterResolver">IParameterResolver</a></code> | *No description.* |
@@ -22776,6 +23017,16 @@ public readonly awsInvoker: IAwsInvoker;
 ```
 
 - *Type:* <a href="#cdk-ssm-documents.IAwsInvoker">IAwsInvoker</a>
+
+---
+
+##### `executeAutomationHook`<sup>Required</sup> <a name="executeAutomationHook" id="cdk-ssm-documents.RequiredAutomationSimulationProps.property.executeAutomationHook"></a>
+
+```typescript
+public readonly executeAutomationHook: IExecuteAutomationHook;
+```
+
+- *Type:* <a href="#cdk-ssm-documents.IExecuteAutomationHook">IExecuteAutomationHook</a>
 
 ---
 
@@ -26859,6 +27110,81 @@ public readonly validValues: string[];
 ```
 
 - *Type:* string[]
+
+---
+
+
+### ApiExecuteAutomationHook <a name="ApiExecuteAutomationHook" id="cdk-ssm-documents.ApiExecuteAutomationHook"></a>
+
+- *Implements:* <a href="#cdk-ssm-documents.IExecuteAutomationHook">IExecuteAutomationHook</a>
+
+ExecuteAutomation implementation using AWS API.
+
+#### Initializers <a name="Initializers" id="cdk-ssm-documents.ApiExecuteAutomationHook.Initializer"></a>
+
+```typescript
+import { ApiExecuteAutomationHook } from 'cdk-ssm-documents'
+
+new ApiExecuteAutomationHook(awsInvoker: IAwsInvoker, sleepHook: ISleepHook)
+```
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#cdk-ssm-documents.ApiExecuteAutomationHook.Initializer.parameter.awsInvoker">awsInvoker</a></code> | <code><a href="#cdk-ssm-documents.IAwsInvoker">IAwsInvoker</a></code> | *No description.* |
+| <code><a href="#cdk-ssm-documents.ApiExecuteAutomationHook.Initializer.parameter.sleepHook">sleepHook</a></code> | <code><a href="#cdk-ssm-documents.ISleepHook">ISleepHook</a></code> | *No description.* |
+
+---
+
+##### `awsInvoker`<sup>Required</sup> <a name="awsInvoker" id="cdk-ssm-documents.ApiExecuteAutomationHook.Initializer.parameter.awsInvoker"></a>
+
+- *Type:* <a href="#cdk-ssm-documents.IAwsInvoker">IAwsInvoker</a>
+
+---
+
+##### `sleepHook`<sup>Required</sup> <a name="sleepHook" id="cdk-ssm-documents.ApiExecuteAutomationHook.Initializer.parameter.sleepHook"></a>
+
+- *Type:* <a href="#cdk-ssm-documents.ISleepHook">ISleepHook</a>
+
+---
+
+#### Methods <a name="Methods" id="Methods"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#cdk-ssm-documents.ApiExecuteAutomationHook.execute">execute</a></code> | Simulate the aws:executeAutomation. |
+
+---
+
+##### `execute` <a name="execute" id="cdk-ssm-documents.ApiExecuteAutomationHook.execute"></a>
+
+```typescript
+public execute(props: ExecuteAutomationProps): ExecuteAutomationOutputs
+```
+
+Simulate the aws:executeAutomation.
+
+###### `props`<sup>Required</sup> <a name="props" id="cdk-ssm-documents.ApiExecuteAutomationHook.execute.parameter.props"></a>
+
+- *Type:* <a href="#cdk-ssm-documents.ExecuteAutomationProps">ExecuteAutomationProps</a>
+
+---
+
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#cdk-ssm-documents.ApiExecuteAutomationHook.property.props">props</a></code> | <code><a href="#cdk-ssm-documents.ApiExecuteAutomationProps">ApiExecuteAutomationProps</a></code> | *No description.* |
+
+---
+
+##### `props`<sup>Required</sup> <a name="props" id="cdk-ssm-documents.ApiExecuteAutomationHook.property.props"></a>
+
+```typescript
+public readonly props: ApiExecuteAutomationProps;
+```
+
+- *Type:* <a href="#cdk-ssm-documents.ApiExecuteAutomationProps">ApiExecuteAutomationProps</a>
 
 ---
 
@@ -37350,6 +37676,35 @@ public run(command: string): string
 ###### `command`<sup>Required</sup> <a name="command" id="cdk-ssm-documents.IEnvironment.run.parameter.command"></a>
 
 - *Type:* string
+
+---
+
+
+### IExecuteAutomationHook <a name="IExecuteAutomationHook" id="cdk-ssm-documents.IExecuteAutomationHook"></a>
+
+- *Implemented By:* <a href="#cdk-ssm-documents.ApiExecuteAutomationHook">ApiExecuteAutomationHook</a>, <a href="#cdk-ssm-documents.IExecuteAutomationHook">IExecuteAutomationHook</a>
+
+Interface for simulating aws:executeAutomation.
+
+#### Methods <a name="Methods" id="Methods"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#cdk-ssm-documents.IExecuteAutomationHook.execute">execute</a></code> | Simulate the aws:executeAutomation. |
+
+---
+
+##### `execute` <a name="execute" id="cdk-ssm-documents.IExecuteAutomationHook.execute"></a>
+
+```typescript
+public execute(props: ExecuteAutomationProps): ExecuteAutomationOutputs
+```
+
+Simulate the aws:executeAutomation.
+
+###### `props`<sup>Required</sup> <a name="props" id="cdk-ssm-documents.IExecuteAutomationHook.execute.parameter.props"></a>
+
+- *Type:* <a href="#cdk-ssm-documents.ExecuteAutomationProps">ExecuteAutomationProps</a>
 
 ---
 
