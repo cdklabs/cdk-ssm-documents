@@ -1,8 +1,8 @@
 import { strict as assert } from 'assert';
 import { Stack } from 'aws-cdk-lib';
 import { AutomationStepSimulation, HardCodedMapList, HardCodedString, HardCodedStringMap, ResponseCode, StringVariable } from '../../../lib';
-import { ExecuteAutomationStep } from '../../../lib/parent-steps/automation/execute-automation-step';
 import { ExecuteAutomationOutputs, ExecuteAutomationProps, IExecuteAutomationHook } from '../../../lib/interface/execute-automation-hook';
+import { ExecuteAutomationStep } from '../../../lib/parent-steps/automation/execute-automation-step';
 
 describe('ExecuteAutomationStep', function() {
   describe('#invoke()', () => {
@@ -15,16 +15,16 @@ describe('ExecuteAutomationStep', function() {
             maxConcurrency: '5',
             maxErrors: '5',
             runtimeParameters: { a: 1 },
-            tags: [{b: 1}],
-            targetLocations: [{c: 1}],
-            targetMaps: [{d: 1}],
+            tags: [{ b: 1 }],
+            targetLocations: [{ c: 1 }],
+            targetMaps: [{ d: 1 }],
             targetParameterName: 'name2',
-            targets: [{e: 1}],
+            targets: [{ e: 1 }],
           });
 
           return {
             status: 'status',
-            output: {a: ['{"d": 1}']},
+            output: ['{"d": 1}'],
             executionId: 'id',
           };
         },
@@ -35,11 +35,11 @@ describe('ExecuteAutomationStep', function() {
         maxConcurrency: HardCodedString.of('5'),
         maxErrors: HardCodedString.of('5'),
         runtimeParameters: HardCodedStringMap.of({ a: 1 }),
-        tags: HardCodedMapList.of([{b: 1}]),
-        targetLocations: HardCodedMapList.of([{c: 1}]),
-        targetMaps: HardCodedMapList.of([{d: 1}]),
+        tags: HardCodedMapList.of([{ b: 1 }]),
+        targetLocations: HardCodedMapList.of([{ c: 1 }]),
+        targetMaps: HardCodedMapList.of([{ d: 1 }]),
         targetParameterName: HardCodedString.of('name2'),
-        targets: HardCodedMapList.of([{e: 1}]),
+        targets: HardCodedMapList.of([{ e: 1 }]),
       });
 
       const result = new AutomationStepSimulation(step, { executeAutomationHook: mockHook }).invoke({});
@@ -47,7 +47,7 @@ describe('ExecuteAutomationStep', function() {
       assert.equal(result.responseCode, ResponseCode.SUCCESS);
       assert.deepEqual(result.outputs, {
         'execute.ExecutionId': 'id',
-        'execute.Output': {a: ['{"d": 1}']},
+        'execute.Output': ['{"d": 1}'],
         'execute.Status': 'status',
       });
     });
