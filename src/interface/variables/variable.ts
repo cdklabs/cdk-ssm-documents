@@ -55,6 +55,10 @@ export abstract class HardCodedValueBase<TValue> implements IGenericVariable {
   }
 
   protected abstract assertType(value: any): void;
+
+  toString(): string {
+    return this.print() ?? '';
+  }
 }
 
 /**
@@ -93,4 +97,8 @@ export abstract class GenericVariable implements IGenericVariable {
   }
 
   protected abstract assertType(value: any): void;
+
+  toString(): string {
+    return this.print() ?? '';
+  }
 }

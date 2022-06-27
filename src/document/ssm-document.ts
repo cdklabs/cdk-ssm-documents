@@ -101,7 +101,7 @@ export abstract class SsmDocument extends Construct {
     }
     this.props = props;
     const isYaml = this.props.documentFormat == DocumentFormat.YAML;
-    new CfnDocument(this, this.node.id + 'CfnDoc', {
+    new CfnDocument(this, 'Resource', {
       ...this.props,
       ...{
         content: Lazy.any({

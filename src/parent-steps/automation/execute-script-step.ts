@@ -2,9 +2,10 @@ import * as fs from 'fs';
 import { Construct } from 'constructs';
 import { Output } from '../../domain/output';
 import { AutomationStep, AutomationStepProps } from '../automation-step';
-
 // eslint-disable-next-line
-const tmp = require('tmp');
+const path = require('path');
+// eslint-disable-next-line
+const os = require('os');
 
 export enum ScriptLanguage {
   PYTHON
@@ -99,7 +100,9 @@ export class ExecuteScriptStep extends AutomationStep {
   }
 
   private toFile(data: string) {
-    const tempFile = tmp.fileSync().name + this.getFileSuffix();
+    const tempDir = path.join(os.tmpdir(), 'tmp' + Math.floor(Math.random() * 1000));
+    fs.mkdirSync(tempDir);
+    const tempFile = path.join(tempDir, 'execution' + this.getFileSuffix());
     fs.writeFileSync(tempFile, data);
     console.log(`Successfully wrote file to ${tempFile}`);
     return tempFile;

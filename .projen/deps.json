@@ -90,6 +90,10 @@
       "type": "build"
     },
     {
+      "name": "ts-node",
+      "type": "build"
+    },
+    {
       "name": "typescript",
       "type": "build"
     },
@@ -99,10 +103,6 @@
     },
     {
       "name": "immutable",
-      "type": "bundled"
-    },
-    {
-      "name": "iso8601-duration",
       "type": "bundled"
     },
     {
@@ -119,14 +119,6 @@
     },
     {
       "name": "synchronized-promise",
-      "type": "bundled"
-    },
-    {
-      "name": "tmp",
-      "type": "bundled"
-    },
-    {
-      "name": "ts-node",
       "type": "bundled"
     },
     {

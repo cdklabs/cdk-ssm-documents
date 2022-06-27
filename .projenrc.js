@@ -17,15 +17,12 @@ const project = new awscdk.AwsCdkConstructLibrary({
     'jsonpath',
     'python-shell',
     'js-yaml',
-    'tmp',
-    'ts-node',
-    'iso8601-duration',
     'immutable',
   ],
   peerDeps: ['constructs', 'aws-cdk-lib'],
   gitignore: ['.DS_Store'],
   depsUpgrade: false,
-  devDeps: ['mocha'],
+  devDeps: ['mocha', 'ts-node'],
   jestOptions: {
     jestConfig: {
       maxWorkers: 4,

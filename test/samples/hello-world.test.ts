@@ -14,7 +14,7 @@ describe('HelloWorld', function() {
       Template.fromStack(myStack).templateMatches(
         {
           Resources: {
-            HelloWorldHelloWorldCfnDoc936146DD: {
+            HelloWorld7964D1E8: {
               Type: 'AWS::SSM::Document',
               Properties: {
                 Content: {

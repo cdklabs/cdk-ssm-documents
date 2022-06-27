@@ -1,5 +1,4 @@
 import { Construct } from 'constructs';
-import { parse, toSeconds } from 'iso8601-duration';
 import { AutomationDocumentBuilder } from '../../document/document-builder';
 import { Choice } from '../../domain/choice';
 import { DataType } from '../../domain/data-type';
@@ -118,7 +117,7 @@ export class StringStep extends CompositeAutomationStep {
         break;
       case 'aws:sleep':
         this.automationStep = new SleepStep(this, props.name, {
-          sleepSeconds: toSeconds(parse(restParams.Duration)),
+          sleepSeconds: this.parseDurationToSeconds(restParams.Duration),
           ...sharedProps,
         });
         break;
@@ -180,4 +179,31 @@ export class StringStep extends CompositeAutomationStep {
     }
     return new HardCodedString(variable.trim());
   }
+
+  private parseDurationToSeconds(iso8601Duration: string): number {
+    // https://stackoverflow.com/a/29153059
+    const iso8601DurationRegex = /(-)?P(?:([.,\d]+)Y)?(?:([.,\d]+)M)?(?:([.,\d]+)W)?(?:([.,\d]+)D)?T(?:([.,\d]+)H)?(?:([.,\d]+)M)?(?:([.,\d]+)S)?/;
+    const matches = iso8601Duration.match(iso8601DurationRegex);
+    if (matches == undefined) {
+      throw new Error('Could not parse Duration' + iso8601Duration);
+    }
+
+    const periods = {
+      years: matches[2] === undefined ? 0 : Number.parseInt(matches[2]),
+      months: matches[3] === undefined ? 0 : Number.parseInt(matches[3]),
+      weeks: matches[4] === undefined ? 0 : Number.parseInt(matches[4]),
+      days: matches[5] === undefined ? 0 : Number.parseInt(matches[5]),
+      hours: matches[6] === undefined ? 0 : Number.parseInt(matches[6]),
+      minutes: matches[7] === undefined ? 0 : Number.parseInt(matches[7]),
+      seconds: matches[8] === undefined ? 0 : Number.parseInt(matches[8]),
+    };
+
+    return periods.seconds +
+      periods.minutes * 60 +
+      periods.hours * 60 * 60 +
+      periods.days * 60 * 60 * 24 +
+      periods.weeks * 60 * 60 * 24 * 7 +
+      periods.months * 60 * 60 * 24 * 30.5 +
+      periods.years * 60 * 60 * 24 * 365;
+  };
 }
