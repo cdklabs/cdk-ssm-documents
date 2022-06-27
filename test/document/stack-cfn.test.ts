@@ -33,7 +33,7 @@ describe('AutomationDocument', function () {
       }));
       Template.fromStack(stack).templateMatches({
         Resources: {
-          MyAutomationDocMyAutomationDocCfnDoc6CF92755: {
+          MyAutomationDocC39268E9: {
             Type: 'AWS::SSM::Document',
             Properties: {
               Content: {

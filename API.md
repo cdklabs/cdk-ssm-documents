@@ -27002,6 +27002,7 @@ new ActionVariable(reference: string)
 | <code><a href="#cdk-ssm-documents.ActionVariable.requiredInputs">requiredInputs</a></code> | The inputs that are required for determining the value of this variable. |
 | <code><a href="#cdk-ssm-documents.ActionVariable.resolve">resolve</a></code> | Given the execution inputs, return the resolved value of this variable. |
 | <code><a href="#cdk-ssm-documents.ActionVariable.toJSON">toJSON</a></code> | JSON.stringify(variable) will implicitly invoke this variable. |
+| <code><a href="#cdk-ssm-documents.ActionVariable.toString">toString</a></code> | Returns a string representation of an object. |
 | <code><a href="#cdk-ssm-documents.ActionVariable.resolveToString">resolveToString</a></code> | Given the execution inputs, return the resolved value of this variable. |
 
 ---
@@ -27047,6 +27048,14 @@ public toJSON(): any
 ```
 
 JSON.stringify(variable) will implicitly invoke this variable.
+
+##### `toString` <a name="toString" id="cdk-ssm-documents.ActionVariable.toString"></a>
+
+```typescript
+public toString(): string
+```
+
+Returns a string representation of an object.
 
 ##### `resolveToString` <a name="resolveToString" id="cdk-ssm-documents.ActionVariable.resolveToString"></a>
 
@@ -28123,6 +28132,7 @@ new BooleanVariable(reference: string)
 | <code><a href="#cdk-ssm-documents.BooleanVariable.requiredInputs">requiredInputs</a></code> | The inputs that are required for determining the value of this variable. |
 | <code><a href="#cdk-ssm-documents.BooleanVariable.resolve">resolve</a></code> | Given the execution inputs, return the resolved value of this variable. |
 | <code><a href="#cdk-ssm-documents.BooleanVariable.toJSON">toJSON</a></code> | JSON.stringify(variable) will implicitly invoke this variable. |
+| <code><a href="#cdk-ssm-documents.BooleanVariable.toString">toString</a></code> | Returns a string representation of an object. |
 | <code><a href="#cdk-ssm-documents.BooleanVariable.resolveToBoolean">resolveToBoolean</a></code> | Given the execution inputs, return the resolved value of this variable. |
 
 ---
@@ -28168,6 +28178,14 @@ public toJSON(): any
 ```
 
 JSON.stringify(variable) will implicitly invoke this variable.
+
+##### `toString` <a name="toString" id="cdk-ssm-documents.BooleanVariable.toString"></a>
+
+```typescript
+public toString(): string
+```
+
+Returns a string representation of an object.
 
 ##### `resolveToBoolean` <a name="resolveToBoolean" id="cdk-ssm-documents.BooleanVariable.resolveToBoolean"></a>
 
@@ -29360,6 +29378,7 @@ new DesiredStateVariable(reference: string)
 | <code><a href="#cdk-ssm-documents.DesiredStateVariable.requiredInputs">requiredInputs</a></code> | The inputs that are required for determining the value of this variable. |
 | <code><a href="#cdk-ssm-documents.DesiredStateVariable.resolve">resolve</a></code> | Given the execution inputs, return the resolved value of this variable. |
 | <code><a href="#cdk-ssm-documents.DesiredStateVariable.toJSON">toJSON</a></code> | JSON.stringify(variable) will implicitly invoke this variable. |
+| <code><a href="#cdk-ssm-documents.DesiredStateVariable.toString">toString</a></code> | Returns a string representation of an object. |
 | <code><a href="#cdk-ssm-documents.DesiredStateVariable.resolveToString">resolveToString</a></code> | Given the execution inputs, return the resolved value of this variable. |
 
 ---
@@ -29405,6 +29424,14 @@ public toJSON(): any
 ```
 
 JSON.stringify(variable) will implicitly invoke this variable.
+
+##### `toString` <a name="toString" id="cdk-ssm-documents.DesiredStateVariable.toString"></a>
+
+```typescript
+public toString(): string
+```
+
+Returns a string representation of an object.
 
 ##### `resolveToString` <a name="resolveToString" id="cdk-ssm-documents.DesiredStateVariable.resolveToString"></a>
 
@@ -29733,6 +29760,7 @@ new DocumentHashTypeVariable(reference: string)
 | <code><a href="#cdk-ssm-documents.DocumentHashTypeVariable.requiredInputs">requiredInputs</a></code> | The inputs that are required for determining the value of this variable. |
 | <code><a href="#cdk-ssm-documents.DocumentHashTypeVariable.resolve">resolve</a></code> | Given the execution inputs, return the resolved value of this variable. |
 | <code><a href="#cdk-ssm-documents.DocumentHashTypeVariable.toJSON">toJSON</a></code> | JSON.stringify(variable) will implicitly invoke this variable. |
+| <code><a href="#cdk-ssm-documents.DocumentHashTypeVariable.toString">toString</a></code> | Returns a string representation of an object. |
 | <code><a href="#cdk-ssm-documents.DocumentHashTypeVariable.resolveToString">resolveToString</a></code> | Given the execution inputs, return the resolved value of this variable. |
 
 ---
@@ -29778,6 +29806,14 @@ public toJSON(): any
 ```
 
 JSON.stringify(variable) will implicitly invoke this variable.
+
+##### `toString` <a name="toString" id="cdk-ssm-documents.DocumentHashTypeVariable.toString"></a>
+
+```typescript
+public toString(): string
+```
+
+Returns a string representation of an object.
 
 ##### `resolveToString` <a name="resolveToString" id="cdk-ssm-documents.DocumentHashTypeVariable.resolveToString"></a>
 
@@ -30162,6 +30198,7 @@ new GenericVariable(reference: string)
 | <code><a href="#cdk-ssm-documents.GenericVariable.requiredInputs">requiredInputs</a></code> | The inputs that are required for determining the value of this variable. |
 | <code><a href="#cdk-ssm-documents.GenericVariable.resolve">resolve</a></code> | Given the execution inputs, return the resolved value of this variable. |
 | <code><a href="#cdk-ssm-documents.GenericVariable.toJSON">toJSON</a></code> | JSON.stringify(variable) will implicitly invoke this variable. |
+| <code><a href="#cdk-ssm-documents.GenericVariable.toString">toString</a></code> | Returns a string representation of an object. |
 
 ---
 
@@ -30206,6 +30243,14 @@ public toJSON(): any
 ```
 
 JSON.stringify(variable) will implicitly invoke this variable.
+
+##### `toString` <a name="toString" id="cdk-ssm-documents.GenericVariable.toString"></a>
+
+```typescript
+public toString(): string
+```
+
+Returns a string representation of an object.
 
 
 #### Properties <a name="Properties" id="Properties"></a>
@@ -30512,6 +30557,7 @@ public readonly commitId: string;
 | <code><a href="#cdk-ssm-documents.HardCodedAction.requiredInputs">requiredInputs</a></code> | The inputs that are required for determining the value of this variable. |
 | <code><a href="#cdk-ssm-documents.HardCodedAction.resolve">resolve</a></code> | Given the execution inputs, return the resolved value of this variable. |
 | <code><a href="#cdk-ssm-documents.HardCodedAction.toJSON">toJSON</a></code> | JSON.stringify(variable) will implicitly invoke this variable. |
+| <code><a href="#cdk-ssm-documents.HardCodedAction.toString">toString</a></code> | Returns a string representation of an object. |
 | <code><a href="#cdk-ssm-documents.HardCodedAction.resolveToString">resolveToString</a></code> | Given the execution inputs, return the resolved value of this variable. |
 
 ---
@@ -30557,6 +30603,14 @@ public toJSON(): any
 ```
 
 JSON.stringify(variable) will implicitly invoke this variable.
+
+##### `toString` <a name="toString" id="cdk-ssm-documents.HardCodedAction.toString"></a>
+
+```typescript
+public toString(): string
+```
+
+Returns a string representation of an object.
 
 ##### `resolveToString` <a name="resolveToString" id="cdk-ssm-documents.HardCodedAction.resolveToString"></a>
 
@@ -30677,6 +30731,7 @@ new HardCodedBoolean(val: any)
 | <code><a href="#cdk-ssm-documents.HardCodedBoolean.requiredInputs">requiredInputs</a></code> | The inputs that are required for determining the value of this variable. |
 | <code><a href="#cdk-ssm-documents.HardCodedBoolean.resolve">resolve</a></code> | Given the execution inputs, return the resolved value of this variable. |
 | <code><a href="#cdk-ssm-documents.HardCodedBoolean.toJSON">toJSON</a></code> | JSON.stringify(variable) will implicitly invoke this variable. |
+| <code><a href="#cdk-ssm-documents.HardCodedBoolean.toString">toString</a></code> | Returns a string representation of an object. |
 | <code><a href="#cdk-ssm-documents.HardCodedBoolean.resolveToBoolean">resolveToBoolean</a></code> | Given the execution inputs, return the resolved value of this variable. |
 
 ---
@@ -30722,6 +30777,14 @@ public toJSON(): any
 ```
 
 JSON.stringify(variable) will implicitly invoke this variable.
+
+##### `toString` <a name="toString" id="cdk-ssm-documents.HardCodedBoolean.toString"></a>
+
+```typescript
+public toString(): string
+```
+
+Returns a string representation of an object.
 
 ##### `resolveToBoolean` <a name="resolveToBoolean" id="cdk-ssm-documents.HardCodedBoolean.resolveToBoolean"></a>
 
@@ -30797,6 +30860,7 @@ public readonly TRUE: HardCodedBoolean;
 | <code><a href="#cdk-ssm-documents.HardCodedDesiredState.requiredInputs">requiredInputs</a></code> | The inputs that are required for determining the value of this variable. |
 | <code><a href="#cdk-ssm-documents.HardCodedDesiredState.resolve">resolve</a></code> | Given the execution inputs, return the resolved value of this variable. |
 | <code><a href="#cdk-ssm-documents.HardCodedDesiredState.toJSON">toJSON</a></code> | JSON.stringify(variable) will implicitly invoke this variable. |
+| <code><a href="#cdk-ssm-documents.HardCodedDesiredState.toString">toString</a></code> | Returns a string representation of an object. |
 | <code><a href="#cdk-ssm-documents.HardCodedDesiredState.resolveToString">resolveToString</a></code> | Given the execution inputs, return the resolved value of this variable. |
 
 ---
@@ -30842,6 +30906,14 @@ public toJSON(): any
 ```
 
 JSON.stringify(variable) will implicitly invoke this variable.
+
+##### `toString` <a name="toString" id="cdk-ssm-documents.HardCodedDesiredState.toString"></a>
+
+```typescript
+public toString(): string
+```
+
+Returns a string representation of an object.
 
 ##### `resolveToString` <a name="resolveToString" id="cdk-ssm-documents.HardCodedDesiredState.resolveToString"></a>
 
@@ -30949,6 +31021,7 @@ public readonly TERMINATED: HardCodedDesiredState;
 | <code><a href="#cdk-ssm-documents.HardCodedDocumentHashType.requiredInputs">requiredInputs</a></code> | The inputs that are required for determining the value of this variable. |
 | <code><a href="#cdk-ssm-documents.HardCodedDocumentHashType.resolve">resolve</a></code> | Given the execution inputs, return the resolved value of this variable. |
 | <code><a href="#cdk-ssm-documents.HardCodedDocumentHashType.toJSON">toJSON</a></code> | JSON.stringify(variable) will implicitly invoke this variable. |
+| <code><a href="#cdk-ssm-documents.HardCodedDocumentHashType.toString">toString</a></code> | Returns a string representation of an object. |
 | <code><a href="#cdk-ssm-documents.HardCodedDocumentHashType.resolveToString">resolveToString</a></code> | Given the execution inputs, return the resolved value of this variable. |
 
 ---
@@ -30994,6 +31067,14 @@ public toJSON(): any
 ```
 
 JSON.stringify(variable) will implicitly invoke this variable.
+
+##### `toString` <a name="toString" id="cdk-ssm-documents.HardCodedDocumentHashType.toString"></a>
+
+```typescript
+public toString(): string
+```
+
+Returns a string representation of an object.
 
 ##### `resolveToString` <a name="resolveToString" id="cdk-ssm-documents.HardCodedDocumentHashType.resolveToString"></a>
 
@@ -31090,6 +31171,7 @@ public readonly SHA256: HardCodedDocumentHashType;
 | <code><a href="#cdk-ssm-documents.HardCodedInstallationType.requiredInputs">requiredInputs</a></code> | The inputs that are required for determining the value of this variable. |
 | <code><a href="#cdk-ssm-documents.HardCodedInstallationType.resolve">resolve</a></code> | Given the execution inputs, return the resolved value of this variable. |
 | <code><a href="#cdk-ssm-documents.HardCodedInstallationType.toJSON">toJSON</a></code> | JSON.stringify(variable) will implicitly invoke this variable. |
+| <code><a href="#cdk-ssm-documents.HardCodedInstallationType.toString">toString</a></code> | Returns a string representation of an object. |
 | <code><a href="#cdk-ssm-documents.HardCodedInstallationType.resolveToString">resolveToString</a></code> | Given the execution inputs, return the resolved value of this variable. |
 
 ---
@@ -31135,6 +31217,14 @@ public toJSON(): any
 ```
 
 JSON.stringify(variable) will implicitly invoke this variable.
+
+##### `toString` <a name="toString" id="cdk-ssm-documents.HardCodedInstallationType.toString"></a>
+
+```typescript
+public toString(): string
+```
+
+Returns a string representation of an object.
 
 ##### `resolveToString` <a name="resolveToString" id="cdk-ssm-documents.HardCodedInstallationType.resolveToString"></a>
 
@@ -31231,6 +31321,7 @@ public readonly UNINSTALL_AND_REINSTALL: HardCodedInstallationType;
 | <code><a href="#cdk-ssm-documents.HardCodedInstallUninstallRepair.requiredInputs">requiredInputs</a></code> | The inputs that are required for determining the value of this variable. |
 | <code><a href="#cdk-ssm-documents.HardCodedInstallUninstallRepair.resolve">resolve</a></code> | Given the execution inputs, return the resolved value of this variable. |
 | <code><a href="#cdk-ssm-documents.HardCodedInstallUninstallRepair.toJSON">toJSON</a></code> | JSON.stringify(variable) will implicitly invoke this variable. |
+| <code><a href="#cdk-ssm-documents.HardCodedInstallUninstallRepair.toString">toString</a></code> | Returns a string representation of an object. |
 | <code><a href="#cdk-ssm-documents.HardCodedInstallUninstallRepair.resolveToString">resolveToString</a></code> | Given the execution inputs, return the resolved value of this variable. |
 
 ---
@@ -31276,6 +31367,14 @@ public toJSON(): any
 ```
 
 JSON.stringify(variable) will implicitly invoke this variable.
+
+##### `toString` <a name="toString" id="cdk-ssm-documents.HardCodedInstallUninstallRepair.toString"></a>
+
+```typescript
+public toString(): string
+```
+
+Returns a string representation of an object.
 
 ##### `resolveToString` <a name="resolveToString" id="cdk-ssm-documents.HardCodedInstallUninstallRepair.resolveToString"></a>
 
@@ -31407,6 +31506,7 @@ new HardCodedMapList(val: any)
 | <code><a href="#cdk-ssm-documents.HardCodedMapList.requiredInputs">requiredInputs</a></code> | The inputs that are required for determining the value of this variable. |
 | <code><a href="#cdk-ssm-documents.HardCodedMapList.resolve">resolve</a></code> | Given the execution inputs, return the resolved value of this variable. |
 | <code><a href="#cdk-ssm-documents.HardCodedMapList.toJSON">toJSON</a></code> | JSON.stringify(variable) will implicitly invoke this variable. |
+| <code><a href="#cdk-ssm-documents.HardCodedMapList.toString">toString</a></code> | Returns a string representation of an object. |
 | <code><a href="#cdk-ssm-documents.HardCodedMapList.resolveToMapList">resolveToMapList</a></code> | Given the execution inputs, return the resolved value of this variable. |
 
 ---
@@ -31452,6 +31552,14 @@ public toJSON(): any
 ```
 
 JSON.stringify(variable) will implicitly invoke this variable.
+
+##### `toString` <a name="toString" id="cdk-ssm-documents.HardCodedMapList.toString"></a>
+
+```typescript
+public toString(): string
+```
+
+Returns a string representation of an object.
 
 ##### `resolveToMapList` <a name="resolveToMapList" id="cdk-ssm-documents.HardCodedMapList.resolveToMapList"></a>
 
@@ -31544,6 +31652,7 @@ new HardCodedNumber(val: any)
 | <code><a href="#cdk-ssm-documents.HardCodedNumber.requiredInputs">requiredInputs</a></code> | The inputs that are required for determining the value of this variable. |
 | <code><a href="#cdk-ssm-documents.HardCodedNumber.resolve">resolve</a></code> | Given the execution inputs, return the resolved value of this variable. |
 | <code><a href="#cdk-ssm-documents.HardCodedNumber.toJSON">toJSON</a></code> | JSON.stringify(variable) will implicitly invoke this variable. |
+| <code><a href="#cdk-ssm-documents.HardCodedNumber.toString">toString</a></code> | Returns a string representation of an object. |
 | <code><a href="#cdk-ssm-documents.HardCodedNumber.resolveToNumber">resolveToNumber</a></code> | Given the execution inputs, return the resolved value of this variable. |
 
 ---
@@ -31589,6 +31698,14 @@ public toJSON(): any
 ```
 
 JSON.stringify(variable) will implicitly invoke this variable.
+
+##### `toString` <a name="toString" id="cdk-ssm-documents.HardCodedNumber.toString"></a>
+
+```typescript
+public toString(): string
+```
+
+Returns a string representation of an object.
 
 ##### `resolveToNumber` <a name="resolveToNumber" id="cdk-ssm-documents.HardCodedNumber.resolveToNumber"></a>
 
@@ -31657,6 +31774,7 @@ public readonly val: any;
 | <code><a href="#cdk-ssm-documents.HardCodedOnFailure.requiredInputs">requiredInputs</a></code> | The inputs that are required for determining the value of this variable. |
 | <code><a href="#cdk-ssm-documents.HardCodedOnFailure.resolve">resolve</a></code> | Given the execution inputs, return the resolved value of this variable. |
 | <code><a href="#cdk-ssm-documents.HardCodedOnFailure.toJSON">toJSON</a></code> | JSON.stringify(variable) will implicitly invoke this variable. |
+| <code><a href="#cdk-ssm-documents.HardCodedOnFailure.toString">toString</a></code> | Returns a string representation of an object. |
 | <code><a href="#cdk-ssm-documents.HardCodedOnFailure.resolveToString">resolveToString</a></code> | Given the execution inputs, return the resolved value of this variable. |
 
 ---
@@ -31702,6 +31820,14 @@ public toJSON(): any
 ```
 
 JSON.stringify(variable) will implicitly invoke this variable.
+
+##### `toString` <a name="toString" id="cdk-ssm-documents.HardCodedOnFailure.toString"></a>
+
+```typescript
+public toString(): string
+```
+
+Returns a string representation of an object.
 
 ##### `resolveToString` <a name="resolveToString" id="cdk-ssm-documents.HardCodedOnFailure.resolveToString"></a>
 
@@ -31809,6 +31935,7 @@ public readonly ROLLBACK: HardCodedOnFailure;
 | <code><a href="#cdk-ssm-documents.HardCodedPackageName.requiredInputs">requiredInputs</a></code> | The inputs that are required for determining the value of this variable. |
 | <code><a href="#cdk-ssm-documents.HardCodedPackageName.resolve">resolve</a></code> | Given the execution inputs, return the resolved value of this variable. |
 | <code><a href="#cdk-ssm-documents.HardCodedPackageName.toJSON">toJSON</a></code> | JSON.stringify(variable) will implicitly invoke this variable. |
+| <code><a href="#cdk-ssm-documents.HardCodedPackageName.toString">toString</a></code> | Returns a string representation of an object. |
 | <code><a href="#cdk-ssm-documents.HardCodedPackageName.resolveToString">resolveToString</a></code> | Given the execution inputs, return the resolved value of this variable. |
 
 ---
@@ -31854,6 +31981,14 @@ public toJSON(): any
 ```
 
 JSON.stringify(variable) will implicitly invoke this variable.
+
+##### `toString` <a name="toString" id="cdk-ssm-documents.HardCodedPackageName.toString"></a>
+
+```typescript
+public toString(): string
+```
+
+Returns a string representation of an object.
 
 ##### `resolveToString` <a name="resolveToString" id="cdk-ssm-documents.HardCodedPackageName.resolveToString"></a>
 
@@ -32005,6 +32140,7 @@ public readonly CODE_DEPLOY_AGENT: HardCodedPackageName;
 | <code><a href="#cdk-ssm-documents.HardCodedResourceType.requiredInputs">requiredInputs</a></code> | The inputs that are required for determining the value of this variable. |
 | <code><a href="#cdk-ssm-documents.HardCodedResourceType.resolve">resolve</a></code> | Given the execution inputs, return the resolved value of this variable. |
 | <code><a href="#cdk-ssm-documents.HardCodedResourceType.toJSON">toJSON</a></code> | JSON.stringify(variable) will implicitly invoke this variable. |
+| <code><a href="#cdk-ssm-documents.HardCodedResourceType.toString">toString</a></code> | Returns a string representation of an object. |
 | <code><a href="#cdk-ssm-documents.HardCodedResourceType.resolveToString">resolveToString</a></code> | Given the execution inputs, return the resolved value of this variable. |
 
 ---
@@ -32050,6 +32186,14 @@ public toJSON(): any
 ```
 
 JSON.stringify(variable) will implicitly invoke this variable.
+
+##### `toString` <a name="toString" id="cdk-ssm-documents.HardCodedResourceType.toString"></a>
+
+```typescript
+public toString(): string
+```
+
+Returns a string representation of an object.
 
 ##### `resolveToString` <a name="resolveToString" id="cdk-ssm-documents.HardCodedResourceType.resolveToString"></a>
 
@@ -32342,6 +32486,7 @@ new HardCodedString(val: any)
 | <code><a href="#cdk-ssm-documents.HardCodedString.requiredInputs">requiredInputs</a></code> | The inputs that are required for determining the value of this variable. |
 | <code><a href="#cdk-ssm-documents.HardCodedString.resolve">resolve</a></code> | Given the execution inputs, return the resolved value of this variable. |
 | <code><a href="#cdk-ssm-documents.HardCodedString.toJSON">toJSON</a></code> | JSON.stringify(variable) will implicitly invoke this variable. |
+| <code><a href="#cdk-ssm-documents.HardCodedString.toString">toString</a></code> | Returns a string representation of an object. |
 | <code><a href="#cdk-ssm-documents.HardCodedString.resolveToString">resolveToString</a></code> | Given the execution inputs, return the resolved value of this variable. |
 
 ---
@@ -32387,6 +32532,14 @@ public toJSON(): any
 ```
 
 JSON.stringify(variable) will implicitly invoke this variable.
+
+##### `toString` <a name="toString" id="cdk-ssm-documents.HardCodedString.toString"></a>
+
+```typescript
+public toString(): string
+```
+
+Returns a string representation of an object.
 
 ##### `resolveToString` <a name="resolveToString" id="cdk-ssm-documents.HardCodedString.resolveToString"></a>
 
@@ -32479,6 +32632,7 @@ new HardCodedStringList(val: any)
 | <code><a href="#cdk-ssm-documents.HardCodedStringList.requiredInputs">requiredInputs</a></code> | The inputs that are required for determining the value of this variable. |
 | <code><a href="#cdk-ssm-documents.HardCodedStringList.resolve">resolve</a></code> | Given the execution inputs, return the resolved value of this variable. |
 | <code><a href="#cdk-ssm-documents.HardCodedStringList.toJSON">toJSON</a></code> | JSON.stringify(variable) will implicitly invoke this variable. |
+| <code><a href="#cdk-ssm-documents.HardCodedStringList.toString">toString</a></code> | Returns a string representation of an object. |
 | <code><a href="#cdk-ssm-documents.HardCodedStringList.resolveToStringList">resolveToStringList</a></code> | Given the execution inputs, return the resolved value of this variable. |
 
 ---
@@ -32524,6 +32678,14 @@ public toJSON(): any
 ```
 
 JSON.stringify(variable) will implicitly invoke this variable.
+
+##### `toString` <a name="toString" id="cdk-ssm-documents.HardCodedStringList.toString"></a>
+
+```typescript
+public toString(): string
+```
+
+Returns a string representation of an object.
 
 ##### `resolveToStringList` <a name="resolveToStringList" id="cdk-ssm-documents.HardCodedStringList.resolveToStringList"></a>
 
@@ -32616,6 +32778,7 @@ new HardCodedStringMap(val: any)
 | <code><a href="#cdk-ssm-documents.HardCodedStringMap.requiredInputs">requiredInputs</a></code> | The inputs that are required for determining the value of this variable. |
 | <code><a href="#cdk-ssm-documents.HardCodedStringMap.resolve">resolve</a></code> | Given the execution inputs, return the resolved value of this variable. |
 | <code><a href="#cdk-ssm-documents.HardCodedStringMap.toJSON">toJSON</a></code> | JSON.stringify(variable) will implicitly invoke this variable. |
+| <code><a href="#cdk-ssm-documents.HardCodedStringMap.toString">toString</a></code> | Returns a string representation of an object. |
 | <code><a href="#cdk-ssm-documents.HardCodedStringMap.resolveToStringMap">resolveToStringMap</a></code> | Given the execution inputs, return the resolved value of this variable. |
 
 ---
@@ -32661,6 +32824,14 @@ public toJSON(): any
 ```
 
 JSON.stringify(variable) will implicitly invoke this variable.
+
+##### `toString` <a name="toString" id="cdk-ssm-documents.HardCodedStringMap.toString"></a>
+
+```typescript
+public toString(): string
+```
+
+Returns a string representation of an object.
 
 ##### `resolveToStringMap` <a name="resolveToStringMap" id="cdk-ssm-documents.HardCodedStringMap.resolveToStringMap"></a>
 
@@ -32749,6 +32920,7 @@ new HardCodedValueBase(val: any)
 | <code><a href="#cdk-ssm-documents.HardCodedValueBase.requiredInputs">requiredInputs</a></code> | The inputs that are required for determining the value of this variable. |
 | <code><a href="#cdk-ssm-documents.HardCodedValueBase.resolve">resolve</a></code> | Given the execution inputs, return the resolved value of this variable. |
 | <code><a href="#cdk-ssm-documents.HardCodedValueBase.toJSON">toJSON</a></code> | JSON.stringify(variable) will implicitly invoke this variable. |
+| <code><a href="#cdk-ssm-documents.HardCodedValueBase.toString">toString</a></code> | Returns a string representation of an object. |
 
 ---
 
@@ -32793,6 +32965,14 @@ public toJSON(): any
 ```
 
 JSON.stringify(variable) will implicitly invoke this variable.
+
+##### `toString` <a name="toString" id="cdk-ssm-documents.HardCodedValueBase.toString"></a>
+
+```typescript
+public toString(): string
+```
+
+Returns a string representation of an object.
 
 
 #### Properties <a name="Properties" id="Properties"></a>
@@ -32944,6 +33124,7 @@ new InstallationTypeVariable(reference: string)
 | <code><a href="#cdk-ssm-documents.InstallationTypeVariable.requiredInputs">requiredInputs</a></code> | The inputs that are required for determining the value of this variable. |
 | <code><a href="#cdk-ssm-documents.InstallationTypeVariable.resolve">resolve</a></code> | Given the execution inputs, return the resolved value of this variable. |
 | <code><a href="#cdk-ssm-documents.InstallationTypeVariable.toJSON">toJSON</a></code> | JSON.stringify(variable) will implicitly invoke this variable. |
+| <code><a href="#cdk-ssm-documents.InstallationTypeVariable.toString">toString</a></code> | Returns a string representation of an object. |
 | <code><a href="#cdk-ssm-documents.InstallationTypeVariable.resolveToString">resolveToString</a></code> | Given the execution inputs, return the resolved value of this variable. |
 
 ---
@@ -32989,6 +33170,14 @@ public toJSON(): any
 ```
 
 JSON.stringify(variable) will implicitly invoke this variable.
+
+##### `toString` <a name="toString" id="cdk-ssm-documents.InstallationTypeVariable.toString"></a>
+
+```typescript
+public toString(): string
+```
+
+Returns a string representation of an object.
 
 ##### `resolveToString` <a name="resolveToString" id="cdk-ssm-documents.InstallationTypeVariable.resolveToString"></a>
 
@@ -33088,6 +33277,7 @@ new InstallUninstallRepairVariable(reference: string)
 | <code><a href="#cdk-ssm-documents.InstallUninstallRepairVariable.requiredInputs">requiredInputs</a></code> | The inputs that are required for determining the value of this variable. |
 | <code><a href="#cdk-ssm-documents.InstallUninstallRepairVariable.resolve">resolve</a></code> | Given the execution inputs, return the resolved value of this variable. |
 | <code><a href="#cdk-ssm-documents.InstallUninstallRepairVariable.toJSON">toJSON</a></code> | JSON.stringify(variable) will implicitly invoke this variable. |
+| <code><a href="#cdk-ssm-documents.InstallUninstallRepairVariable.toString">toString</a></code> | Returns a string representation of an object. |
 | <code><a href="#cdk-ssm-documents.InstallUninstallRepairVariable.resolveToString">resolveToString</a></code> | Given the execution inputs, return the resolved value of this variable. |
 
 ---
@@ -33133,6 +33323,14 @@ public toJSON(): any
 ```
 
 JSON.stringify(variable) will implicitly invoke this variable.
+
+##### `toString` <a name="toString" id="cdk-ssm-documents.InstallUninstallRepairVariable.toString"></a>
+
+```typescript
+public toString(): string
+```
+
+Returns a string representation of an object.
 
 ##### `resolveToString` <a name="resolveToString" id="cdk-ssm-documents.InstallUninstallRepairVariable.resolveToString"></a>
 
@@ -33502,6 +33700,7 @@ new MapListVariable(reference: string)
 | <code><a href="#cdk-ssm-documents.MapListVariable.requiredInputs">requiredInputs</a></code> | The inputs that are required for determining the value of this variable. |
 | <code><a href="#cdk-ssm-documents.MapListVariable.resolve">resolve</a></code> | Given the execution inputs, return the resolved value of this variable. |
 | <code><a href="#cdk-ssm-documents.MapListVariable.toJSON">toJSON</a></code> | JSON.stringify(variable) will implicitly invoke this variable. |
+| <code><a href="#cdk-ssm-documents.MapListVariable.toString">toString</a></code> | Returns a string representation of an object. |
 | <code><a href="#cdk-ssm-documents.MapListVariable.resolveToMapList">resolveToMapList</a></code> | Given the execution inputs, return the resolved value of this variable. |
 
 ---
@@ -33547,6 +33746,14 @@ public toJSON(): any
 ```
 
 JSON.stringify(variable) will implicitly invoke this variable.
+
+##### `toString` <a name="toString" id="cdk-ssm-documents.MapListVariable.toString"></a>
+
+```typescript
+public toString(): string
+```
+
+Returns a string representation of an object.
 
 ##### `resolveToMapList` <a name="resolveToMapList" id="cdk-ssm-documents.MapListVariable.resolveToMapList"></a>
 
@@ -34394,6 +34601,7 @@ new NumberVariable(reference: string)
 | <code><a href="#cdk-ssm-documents.NumberVariable.requiredInputs">requiredInputs</a></code> | The inputs that are required for determining the value of this variable. |
 | <code><a href="#cdk-ssm-documents.NumberVariable.resolve">resolve</a></code> | Given the execution inputs, return the resolved value of this variable. |
 | <code><a href="#cdk-ssm-documents.NumberVariable.toJSON">toJSON</a></code> | JSON.stringify(variable) will implicitly invoke this variable. |
+| <code><a href="#cdk-ssm-documents.NumberVariable.toString">toString</a></code> | Returns a string representation of an object. |
 | <code><a href="#cdk-ssm-documents.NumberVariable.resolveToNumber">resolveToNumber</a></code> | Given the execution inputs, return the resolved value of this variable. |
 
 ---
@@ -34439,6 +34647,14 @@ public toJSON(): any
 ```
 
 JSON.stringify(variable) will implicitly invoke this variable.
+
+##### `toString` <a name="toString" id="cdk-ssm-documents.NumberVariable.toString"></a>
+
+```typescript
+public toString(): string
+```
+
+Returns a string representation of an object.
 
 ##### `resolveToNumber` <a name="resolveToNumber" id="cdk-ssm-documents.NumberVariable.resolveToNumber"></a>
 
@@ -34527,6 +34743,7 @@ new OnFailureVariable(reference: string)
 | <code><a href="#cdk-ssm-documents.OnFailureVariable.requiredInputs">requiredInputs</a></code> | The inputs that are required for determining the value of this variable. |
 | <code><a href="#cdk-ssm-documents.OnFailureVariable.resolve">resolve</a></code> | Given the execution inputs, return the resolved value of this variable. |
 | <code><a href="#cdk-ssm-documents.OnFailureVariable.toJSON">toJSON</a></code> | JSON.stringify(variable) will implicitly invoke this variable. |
+| <code><a href="#cdk-ssm-documents.OnFailureVariable.toString">toString</a></code> | Returns a string representation of an object. |
 | <code><a href="#cdk-ssm-documents.OnFailureVariable.resolveToString">resolveToString</a></code> | Given the execution inputs, return the resolved value of this variable. |
 
 ---
@@ -34572,6 +34789,14 @@ public toJSON(): any
 ```
 
 JSON.stringify(variable) will implicitly invoke this variable.
+
+##### `toString` <a name="toString" id="cdk-ssm-documents.OnFailureVariable.toString"></a>
+
+```typescript
+public toString(): string
+```
+
+Returns a string representation of an object.
 
 ##### `resolveToString` <a name="resolveToString" id="cdk-ssm-documents.OnFailureVariable.resolveToString"></a>
 
@@ -34790,6 +35015,7 @@ new PackageNameVariable(reference: string)
 | <code><a href="#cdk-ssm-documents.PackageNameVariable.requiredInputs">requiredInputs</a></code> | The inputs that are required for determining the value of this variable. |
 | <code><a href="#cdk-ssm-documents.PackageNameVariable.resolve">resolve</a></code> | Given the execution inputs, return the resolved value of this variable. |
 | <code><a href="#cdk-ssm-documents.PackageNameVariable.toJSON">toJSON</a></code> | JSON.stringify(variable) will implicitly invoke this variable. |
+| <code><a href="#cdk-ssm-documents.PackageNameVariable.toString">toString</a></code> | Returns a string representation of an object. |
 | <code><a href="#cdk-ssm-documents.PackageNameVariable.resolveToString">resolveToString</a></code> | Given the execution inputs, return the resolved value of this variable. |
 
 ---
@@ -34835,6 +35061,14 @@ public toJSON(): any
 ```
 
 JSON.stringify(variable) will implicitly invoke this variable.
+
+##### `toString` <a name="toString" id="cdk-ssm-documents.PackageNameVariable.toString"></a>
+
+```typescript
+public toString(): string
+```
+
+Returns a string representation of an object.
 
 ##### `resolveToString` <a name="resolveToString" id="cdk-ssm-documents.PackageNameVariable.resolveToString"></a>
 
@@ -35322,6 +35556,7 @@ new ResourceTypeVariable(reference: string)
 | <code><a href="#cdk-ssm-documents.ResourceTypeVariable.requiredInputs">requiredInputs</a></code> | The inputs that are required for determining the value of this variable. |
 | <code><a href="#cdk-ssm-documents.ResourceTypeVariable.resolve">resolve</a></code> | Given the execution inputs, return the resolved value of this variable. |
 | <code><a href="#cdk-ssm-documents.ResourceTypeVariable.toJSON">toJSON</a></code> | JSON.stringify(variable) will implicitly invoke this variable. |
+| <code><a href="#cdk-ssm-documents.ResourceTypeVariable.toString">toString</a></code> | Returns a string representation of an object. |
 | <code><a href="#cdk-ssm-documents.ResourceTypeVariable.resolveToString">resolveToString</a></code> | Given the execution inputs, return the resolved value of this variable. |
 
 ---
@@ -35367,6 +35602,14 @@ public toJSON(): any
 ```
 
 JSON.stringify(variable) will implicitly invoke this variable.
+
+##### `toString` <a name="toString" id="cdk-ssm-documents.ResourceTypeVariable.toString"></a>
+
+```typescript
+public toString(): string
+```
+
+Returns a string representation of an object.
 
 ##### `resolveToString` <a name="resolveToString" id="cdk-ssm-documents.ResourceTypeVariable.resolveToString"></a>
 
@@ -36731,6 +36974,7 @@ new StringListVariable(reference: string)
 | <code><a href="#cdk-ssm-documents.StringListVariable.requiredInputs">requiredInputs</a></code> | The inputs that are required for determining the value of this variable. |
 | <code><a href="#cdk-ssm-documents.StringListVariable.resolve">resolve</a></code> | Given the execution inputs, return the resolved value of this variable. |
 | <code><a href="#cdk-ssm-documents.StringListVariable.toJSON">toJSON</a></code> | JSON.stringify(variable) will implicitly invoke this variable. |
+| <code><a href="#cdk-ssm-documents.StringListVariable.toString">toString</a></code> | Returns a string representation of an object. |
 | <code><a href="#cdk-ssm-documents.StringListVariable.resolveToStringList">resolveToStringList</a></code> | Given the execution inputs, return the resolved value of this variable. |
 
 ---
@@ -36776,6 +37020,14 @@ public toJSON(): any
 ```
 
 JSON.stringify(variable) will implicitly invoke this variable.
+
+##### `toString` <a name="toString" id="cdk-ssm-documents.StringListVariable.toString"></a>
+
+```typescript
+public toString(): string
+```
+
+Returns a string representation of an object.
 
 ##### `resolveToStringList` <a name="resolveToStringList" id="cdk-ssm-documents.StringListVariable.resolveToStringList"></a>
 
@@ -36868,6 +37120,7 @@ new StringMapVariable(reference: string)
 | <code><a href="#cdk-ssm-documents.StringMapVariable.requiredInputs">requiredInputs</a></code> | The inputs that are required for determining the value of this variable. |
 | <code><a href="#cdk-ssm-documents.StringMapVariable.resolve">resolve</a></code> | Given the execution inputs, return the resolved value of this variable. |
 | <code><a href="#cdk-ssm-documents.StringMapVariable.toJSON">toJSON</a></code> | JSON.stringify(variable) will implicitly invoke this variable. |
+| <code><a href="#cdk-ssm-documents.StringMapVariable.toString">toString</a></code> | Returns a string representation of an object. |
 | <code><a href="#cdk-ssm-documents.StringMapVariable.resolveToStringMap">resolveToStringMap</a></code> | Given the execution inputs, return the resolved value of this variable. |
 
 ---
@@ -36913,6 +37166,14 @@ public toJSON(): any
 ```
 
 JSON.stringify(variable) will implicitly invoke this variable.
+
+##### `toString` <a name="toString" id="cdk-ssm-documents.StringMapVariable.toString"></a>
+
+```typescript
+public toString(): string
+```
+
+Returns a string representation of an object.
 
 ##### `resolveToStringMap` <a name="resolveToStringMap" id="cdk-ssm-documents.StringMapVariable.resolveToStringMap"></a>
 
@@ -37005,6 +37266,7 @@ new StringVariable(reference: string)
 | <code><a href="#cdk-ssm-documents.StringVariable.requiredInputs">requiredInputs</a></code> | The inputs that are required for determining the value of this variable. |
 | <code><a href="#cdk-ssm-documents.StringVariable.resolve">resolve</a></code> | Given the execution inputs, return the resolved value of this variable. |
 | <code><a href="#cdk-ssm-documents.StringVariable.toJSON">toJSON</a></code> | JSON.stringify(variable) will implicitly invoke this variable. |
+| <code><a href="#cdk-ssm-documents.StringVariable.toString">toString</a></code> | Returns a string representation of an object. |
 | <code><a href="#cdk-ssm-documents.StringVariable.resolveToString">resolveToString</a></code> | Given the execution inputs, return the resolved value of this variable. |
 
 ---
@@ -37050,6 +37312,14 @@ public toJSON(): any
 ```
 
 JSON.stringify(variable) will implicitly invoke this variable.
+
+##### `toString` <a name="toString" id="cdk-ssm-documents.StringVariable.toString"></a>
+
+```typescript
+public toString(): string
+```
+
+Returns a string representation of an object.
 
 ##### `resolveToString` <a name="resolveToString" id="cdk-ssm-documents.StringVariable.resolveToString"></a>
 
