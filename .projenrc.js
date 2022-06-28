@@ -28,9 +28,7 @@ const project = new awscdk.AwsCdkConstructLibrary({
       maxWorkers: 4,
     },
   },
-
-  // for now, until we sort some stuff out
-  release: false,
+  release: true,
 
   publishToNuget: {
     dotNetNamespace: 'Cdklabs.CdkSsmDocuments',
@@ -39,12 +37,12 @@ const project = new awscdk.AwsCdkConstructLibrary({
   publishToMaven: {
     javaPackage: 'io.github.cdklabs.cdkssmdocuments',
     mavenEndpoint: 'https://s01.oss.sonatype.org',
-    mavenArtifactId: 'cdk-ssm-document',
+    mavenArtifactId: 'cdk-ssm-documents',
     mavenGroupId: 'io.github.cdklabs',
   },
   publishToPypi: {
     distName: 'cdklabs.cdk-ssm-documents',
-    module: 'cdklabs.cdk-ssm-documents',
+    module: 'cdklabs.cdk_ssm_documents',
   },
 });
 
