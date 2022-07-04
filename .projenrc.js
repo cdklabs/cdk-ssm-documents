@@ -9,7 +9,7 @@ const project = new awscdk.AwsCdkConstructLibrary({
     },
   },
   defaultReleaseBranch: 'main',
-  name: 'cdk-ssm-documents',
+  name: '@cdklabs/cdk-ssm-documents',
   repositoryUrl: 'https://github.com/cdklabs/cdk-ssm-documents.git',
   bundledDeps: [
     'synchronized-promise',
@@ -43,8 +43,8 @@ const project = new awscdk.AwsCdkConstructLibrary({
     mavenGroupId: 'io.github.cdklabs',
   },
   publishToPypi: {
-    distName: 'cdk-ssm-documents',
-    module: 'cdk-ssm-documents',
+    distName: 'cdklabs.cdk-ssm-documents',
+    module: 'cdklabs.cdk-ssm-documents',
   },
 });
 
