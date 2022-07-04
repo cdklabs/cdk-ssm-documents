@@ -182,6 +182,10 @@ Also planned is the ability to run Command documents.
 
 Stay tuned!
 
+## Related Projects
+
+- https://github.com/udondan/cdk-ssm-document
+
 ## Security
 See [CONTRIBUTING](CONTRIBUTING.md#security-issue-notifications) for more information.
 
