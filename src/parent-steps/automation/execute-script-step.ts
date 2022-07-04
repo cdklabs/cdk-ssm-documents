@@ -100,7 +100,7 @@ export class ExecuteScriptStep extends AutomationStep {
   }
 
   private toFile(data: string) {
-    const tempDir = path.join(os.tmpdir(), 'tmp' + Math.floor(Math.random() * 1000));
+    const tempDir = path.join(os.tmpdir(), 'tmp' + new Date().getSeconds() + Math.floor(Math.random() * 1000));
     fs.mkdirSync(tempDir);
     const tempFile = path.join(tempDir, 'execution' + this.getFileSuffix());
     fs.writeFileSync(tempFile, data);
