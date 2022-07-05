@@ -73,6 +73,56 @@ import { Simulation } from './simulation';
 const myDocJson = Simulation.ofAutomation(myDoc, {}).simulate({ MyInput: "FooBar" });
 ```
 
+### Command Documents
+
+Below is an example of how to use the library to create Command documents.
+Simulation for command documents is not yet supported for all command plugins.
+You can use a Docker image/container as a playground for testing the Command document execution for the supported plugins.
+
+In this example there is a complete CDK stack. Notice that the `CommandDocument` is saved as a field so that it can be tested from the test code.
+```typescript
+export class HelloCdkStack extends Stack {
+  readonly myCommandDoc: CommandDocument;
+  constructor(scope: Construct, id: string, props?: StackProps) {
+    super(scope, id, props);
+    this.myCommandDoc = new CommandDocument(this, "MyCommandDoc", {
+      docInputs: [{
+        name: 'FirstCommand',
+        inputType: DataTypeEnum.STRING,
+      }]
+    })
+    const runScriptStep = new RunShellScriptStep(this, "MyShellScript", {
+      runCommand: [
+        StringVariable.of("FirstCommand"),
+        HardCodedString.of("mkdir asdf"),
+      ],
+    });
+    this.myCommandDoc.addStep(runScriptStep);
+  }
+}
+```
+
+Below is an example of how you would run a simulation against the above `CommandDocument`.
+
+Currently, `bash` must be available in the container or the executions against the docker will not succeed.
+
+```typescript
+test('Test command doc', () => {
+  const app = new cdk.App();
+  const stack = new HelloCdk.HelloCdkStack(app, 'MyTestStack');
+  // 1. $ docker pull amazonlinux
+  // 2. $ docker run -di amazonlinux
+  const simulation = Simulation.ofCommand(stack.myCommandDoc, {
+    simulationPlatform: Platform.LINUX,
+    environment: DockerEnvironment.fromContainer('MY_CONTAINER_ID')
+  });
+  simulation.simulate({FirstCommand: 'mkdir foobar'})
+  // 3. The document should run the first command (create 'foobar') and create file 'asdf'
+  // 4. $ docker exec -it <container name> bash
+  // 5. Ensure that 'asdf' and 'foobar' were written to /tmp
+});
+```
+
 ## Patterns (High-Level Constructs)
 
 In typical CDK style, you can assemble often used groups of steps into higher level Constructs.
