@@ -20,7 +20,7 @@ export interface AwsInvocationProps extends AutomationStepProps {
 
   /**
      * (Required) API Params to submit with the request to the api.
-     * You may include variables which will be substitued for inputs during step execution as such {{INPUT}}
+     * You may include variables which will be substitued for inputs during step execution as such {{ INPUT }}
      * @example { 'VolumeIds': ['{{ EbsDescribeInstance.VolumeId }}'] }
      */
   readonly apiParams: { [name: string]: any };
@@ -75,7 +75,7 @@ export class AwsApiStep extends AutomationStep {
   }
 
   /**
-     * Derives the inputs by parsing the apiParams to find matches for inputs in double circle braces ("{{INPUT}}").
+     * Derives the inputs by parsing the apiParams to find matches for inputs in double circle braces ("{{ INPUT }}").
      * @returns list of required inputs.
      */
   public listInputs(): string[] {

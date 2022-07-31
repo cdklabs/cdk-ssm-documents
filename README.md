@@ -30,7 +30,7 @@ export class HelloWorld extends Stack {
     const myDoc = new AutomationDocument(this, "MyDoc", {
       documentFormat: DocumentFormat.JSON,
       documentName: "MyDoc",
-      docInputs: [{name: "MyInput", defaultValue: "a", inputType: DataTypeEnum.STRING}]
+      docInputs: [Input.ofTypeString('MyInput', { defaultValue: 'a' })],
     });
 
     // Define your steps...
@@ -86,10 +86,7 @@ export class HelloCdkStack extends Stack {
   constructor(scope: Construct, id: string, props?: StackProps) {
     super(scope, id, props);
     this.myCommandDoc = new CommandDocument(this, "MyCommandDoc", {
-      docInputs: [{
-        name: 'FirstCommand',
-        inputType: DataTypeEnum.STRING,
-      }]
+      docInputs: [Input.ofTypeString('FirstCommand', { defaultValue: 'a' })],
     })
     const runScriptStep = new RunShellScriptStep(this, "MyShellScript", {
       runCommand: [

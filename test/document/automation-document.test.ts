@@ -3,15 +3,26 @@ import { resolve } from 'path';
 import { Stack } from 'aws-cdk-lib';
 import { Construct } from 'constructs';
 
-import { SynthUtils, AutomationDocument, AutomationDocumentProps, DataTypeEnum, ExecuteScriptStep, MockPause, PauseStep, ResponseCode, ScriptLanguage } from '../../lib';
-import { Simulation } from '../../lib/simulation/simulation';
+import {
+  SynthUtils,
+  AutomationDocument,
+  AutomationDocumentProps,
+  DataTypeEnum,
+  ExecuteScriptStep,
+  MockPause,
+  PauseStep,
+  ResponseCode,
+  ScriptLanguage,
+  Simulation,
+  Input,
+} from '../../lib';
 
 describe('AutomationDocument', function() {
   describe('#runSimulation()', function() {
     it('Outputs the status and results of steps', function() {
       const stack: Stack = new Stack();
       const myAutomationDoc = new AutomationDocument(stack, 'MyAutomationDoc', {
-        docInputs: [{ name: 'MyInput', defaultValue: 'a', inputType: DataTypeEnum.STRING }],
+        docInputs: [Input.ofTypeString('MyInput', { defaultValue: 'a' })],
         docOutputs: [{ name: 'MyExecuteStep.MyFuncOut', outputType: DataTypeEnum.STRING }],
         documentName: 'MyDoc',
       });
@@ -51,7 +62,7 @@ describe('AutomationDocument', function() {
       const stack = new Stack();
       const doc = new AutomationDocument(stack, 'MyAutomationDoc', {
         documentName: 'MyDoc',
-        docInputs: [{ name: 'MyInput', defaultValue: 'a', inputType: DataTypeEnum.STRING }],
+        docInputs: [Input.ofTypeString('MyInput', { defaultValue: 'a' })],
         docOutputs: [],
       });
       doc.addStep(new PauseStep(stack, 'MyPauseStep', { name: 'MyPauseStep' }));
@@ -95,7 +106,7 @@ describe('AutomationDocument', function() {
       const stack: Stack = new Stack();
       new MyAutomationDoc(stack, 'MyAutomationDoc', {
         documentName: 'MyDoc',
-        docInputs: [{ name: 'MyInput', defaultValue: 'a', inputType: DataTypeEnum.STRING }],
+        docInputs: [Input.ofTypeString('MyInput', { defaultValue: 'a' })],
         docOutputs: [{ name: 'step1.MyFuncOut', outputType: DataTypeEnum.STRING }],
       });
       assert.throws(() => {SynthUtils.synthesize(stack);});
@@ -108,7 +119,7 @@ describe('AutomationDocument', function() {
       const stack: Stack = new Stack();
       const myAutomationDoc = new AutomationDocument(stack, 'MyAutomationDoc', {
         documentName: 'MyDoc',
-        docInputs: [{ name: 'MyInput', defaultValue: 'a', inputType: DataTypeEnum.STRING }],
+        docInputs: [Input.ofTypeString('MyInput', { defaultValue: 'a' })],
       });
       myAutomationDoc.addStep(new PauseStep(stack, 'MyPauseStep', { name: 'MyPauseStep' }));
       myAutomationDoc.addStep(new ExecuteScriptStep(stack, 'MyExecuteStep', {

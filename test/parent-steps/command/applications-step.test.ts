@@ -15,8 +15,8 @@ describe('ApplicationsStep', function() {
         action: 'aws:applications',
         inputs: {
           action: 'Repair',
-          source: '{{source}}',
-          parameters: '{{param}}',
+          source: '{{ source }}',
+          parameters: '{{ param }}',
         },
         name: 'Applications',
       });

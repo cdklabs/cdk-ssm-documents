@@ -27,7 +27,7 @@ describe('DownloadContent', function() {
             owner: 'myOwner',
             path: 'path',
             repository: 'repo',
-            tokenInfo: '{{ssm-secure:somethingSecure}}',
+            tokenInfo: '{{ ssm-secure:somethingSecure }}',
           },
           sourceType: 'GitHub',
           destinationPath: 'destPath',
@@ -49,7 +49,7 @@ describe('DownloadContent', function() {
         inputs: {
           destinationPath: 'destPath',
           sourceInfo: {
-            privateSSHKey: '{{ssm-secure:secure}}',
+            privateSSHKey: '{{ ssm-secure:secure }}',
             repository: 'repo',
             skipHostKeyChecking: true,
           },
@@ -70,7 +70,7 @@ describe('DownloadContent', function() {
         inputs: {
           destinationPath: 'destPath',
           sourceInfo: {
-            path: '{{myRef}}',
+            path: '{{ myRef }}',
           },
           sourceType: 'S3',
         },
@@ -89,7 +89,7 @@ describe('DownloadContent', function() {
         inputs: {
           destinationPath: 'destPath',
           sourceInfo: {
-            Name: '{{name}}:{{version}}',
+            Name: '{{ name }}:{{ version }}',
           },
           sourceType: 'SSMDocument',
         },

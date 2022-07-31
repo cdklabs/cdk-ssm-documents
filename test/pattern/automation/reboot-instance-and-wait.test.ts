@@ -24,7 +24,7 @@ describe('RebootInstanceAndWait', function() {
               Service: 'ec2',
               Api: 'RebootInstances',
               InstanceIds: [
-                '{{InstanceId}}',
+                '{{ InstanceId }}',
               ],
             },
           },
@@ -39,7 +39,7 @@ describe('RebootInstanceAndWait', function() {
                 'running',
               ],
               InstanceIds: [
-                '{{InstanceId}}',
+                '{{ InstanceId }}',
               ],
             },
           },

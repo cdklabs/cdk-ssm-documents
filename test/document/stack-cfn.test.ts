@@ -1,13 +1,7 @@
-import { resolve } from 'path';
-import { Stack } from 'aws-cdk-lib';
-import { Template } from 'aws-cdk-lib/assertions';
-import {
-  AutomationDocument,
-  DataTypeEnum,
-  ExecuteScriptStep,
-  PauseStep,
-  ScriptLanguage,
-} from '../../lib';
+import {resolve} from 'path';
+import {Stack} from 'aws-cdk-lib';
+import {Template} from 'aws-cdk-lib/assertions';
+import {AutomationDocument, DataTypeEnum, ExecuteScriptStep, Input, PauseStep, ScriptLanguage,} from '../../lib';
 
 
 describe('AutomationDocument', function () {
@@ -16,7 +10,14 @@ describe('AutomationDocument', function () {
       const stack: Stack = new Stack();
       const doc = new AutomationDocument(stack, 'MyAutomationDoc', {
         documentName: 'MyDoc',
-        docInputs: [{ name: 'MyInput', defaultValue: 'a', inputType: DataTypeEnum.STRING }],
+        docInputs: [
+          Input.ofTypeString('MyInput', { defaultValue: 'a' }),
+          Input.ofTypeInteger('MyInt', { defaultValue: 1, allowedValues: [0, 1, 2] }),
+        ],
+        docOutputs: [{
+          name: 'step1.MyFuncOut',
+          outputType: DataTypeEnum.STRING,
+        }],
       });
       doc.addStep(new PauseStep(stack, 'MyPauseStep', { name: 'MyPauseStep' }));
       doc.addStep(new ExecuteScriptStep(stack, 'MyExecuteStep', {
@@ -44,7 +45,13 @@ describe('AutomationDocument', function () {
                     type: 'String',
                     default: 'a',
                   },
+                  MyInt: {
+                    type: 'Integer',
+                    default: 1,
+                    allowedValues: [0, 1, 2],
+                  },
                 },
+                outputs: ['step1.MyFuncOut'],
                 mainSteps: [
                   {
                     name: 'MyPauseStep',

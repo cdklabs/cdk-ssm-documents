@@ -14,6 +14,7 @@ import { PauseStep } from '../../parent-steps/automation/pause-step';
 import { SleepStep } from '../../parent-steps/automation/sleep-step';
 import { WaitForResourceStep } from '../../parent-steps/automation/wait-for-resource-step';
 import { CompositeAutomationStep } from './composite-step';
+import {ApproveStep} from "../../parent-steps/automation/approve-step";
 // eslint-disable-next-line
 const yaml = require('js-yaml');
 
@@ -134,6 +135,15 @@ export class StringStep extends CompositeAutomationStep {
         this.automationStep = new BranchStep(this, props.name, {
           choices: this.toChoices(restParams.Choices),
           defaultStepName: restParams.Default,
+          ...sharedProps,
+        });
+        break;
+      case 'aws:approve':
+        this.automationStep = new ApproveStep(this, props.name, {
+          approvers: restParams.Approvers,
+          minRequiredApprovals: restParams.MinRequiredApprovals,
+          message: restParams.Message,
+          notificationArn: restParams.NotificationArn,
           ...sharedProps,
         });
         break;

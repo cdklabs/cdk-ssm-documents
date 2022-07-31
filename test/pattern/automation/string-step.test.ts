@@ -1,7 +1,6 @@
 import * as assert from 'assert';
 import { Stack } from 'aws-cdk-lib';
-import { AutomationDocument, DataTypeEnum, StringStep } from '../../../lib';
-import { Simulation } from '../../../lib/simulation/simulation';
+import { AutomationDocument, DataTypeEnum, Input, Simulation, StringStep } from '../../../lib';
 
 
 describe('StringStep', function() {
@@ -10,7 +9,7 @@ describe('StringStep', function() {
       const stack: Stack = new Stack();
       const myAutomationDoc = new AutomationDocument(stack, 'MyAutomationDoc', {
         documentName: 'MyDoc',
-        docInputs: [{ name: 'MyInput', inputType: DataTypeEnum.STRING, defaultValue: 'bar' }],
+        docInputs: [Input.ofTypeString('MyInput', { defaultValue: 'bar' })],
         docOutputs: [{ name: 'myPython.MyOutput', outputType: DataTypeEnum.STRING }],
       });
       myAutomationDoc.addStep(StringStep.fromYaml(stack, `
@@ -26,7 +25,7 @@ describe('StringStep', function() {
                         inputs:
                           Choices:
                           - NextStep: myPython
-                            Variable: "{{MyInput}}"
+                            Variable: "{{ MyInput }}"
                             StringEquals: foo
                           Default:
                             sleep
@@ -43,7 +42,7 @@ describe('StringStep', function() {
                           Runtime: "python3.6"
                           Handler: "my_func"
                           InputPayload: 
-                            "MyInput": "{{MyInput}}"
+                            "MyInput": "{{ MyInput }}"
                           Script: >
                             def my_func(args, context):
                               return {"MyReturn": args["MyInput"] + "-suffix"}

@@ -68,7 +68,7 @@ export class NonSecureVariable extends SecureVariable {
   }
 
   print(): string | any {
-    return `{{${this.reference}}}`;
+    return `{{ ${this.reference} }}`;
   }
 
   requiredInputs(): string[] {
@@ -87,7 +87,7 @@ export class SsmSecureVariable extends SecureVariable {
   }
 
   print(): string | any {
-    return `{{ssm-secure:${this.secureToken}}}`;
+    return `{{ ssm-secure:${this.secureToken} }}`;
   }
 
   requiredInputs(): string[] {

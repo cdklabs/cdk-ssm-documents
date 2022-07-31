@@ -26,7 +26,7 @@ describe('pruneAndTransformRecord', () => {
     const actual = pruneAndTransformRecord(value, (x: any) => x.print());
 
     assertDeepEqual(actual, {
-      a: '{{variable}}',
+      a: '{{ variable }}',
       b: 'hard',
     });
   });

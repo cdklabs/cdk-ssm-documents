@@ -56,13 +56,15 @@ export class StringDocument {
     return Object.entries(parameters).map(entry => this.toDocInput(entry[0], entry[1]));
   }
 
-  private static toDocInput(inputName: string, inputData: {[name: string]: string}): Input {
-    return {
+  private static toDocInput(inputName: string, inputData: {[name: string]: any}): Input {
+    const inputType = DataType.fromDataType(inputData.type).dataTypeEnum;
+    const inputProps = {
       name: inputName,
-      inputType: DataType.fromDataType(inputData.type).dataTypeEnum,
+      inputType,
       defaultValue: inputData.default,
       ...inputData,
     };
+    return Input.ofSpecifiedType(inputType, inputName, inputProps);
   }
 
   private static toAutomationDoc(stack: Construct, id: string, params: {[name: string]: any}) {

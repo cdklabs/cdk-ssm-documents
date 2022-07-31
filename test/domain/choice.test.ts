@@ -141,7 +141,7 @@ describe('Choice', function() {
       assert.deepEqual(choice.asSsmEntry(), {
         NextStep: 'aaa',
         NumericLesserOrEquals: 4,
-        Variable: '{{myKey}}',
+        Variable: '{{ myKey }}',
       });
     });
     it('NUMERIC_LESSER_OR_EQUALS prints name correctly', function() {

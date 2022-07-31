@@ -2,9 +2,9 @@ import { EOL } from 'os';
 import { CfnTag, IResolvable, Lazy } from 'aws-cdk-lib';
 import { CfnDocument } from 'aws-cdk-lib/aws-ssm';
 import { Construct } from 'constructs';
-import { DataType } from '../domain/data-type';
 import { DocumentOutput } from '../domain/document-output';
 import { Input } from '../domain/input';
+import { StringVariable } from '../interface/variables/string-variable';
 // eslint-disable-next-line @typescript-eslint/no-require-imports
 const yaml = require('js-yaml');
 
@@ -93,7 +93,7 @@ export abstract class SsmDocument extends Construct {
     this.documentName = props.documentName ?? id;
     this.description = props.description ?? this.documentName;
     this.header = props.header;
-    this.assumeRole = props.assumeRole;
+    this.assumeRole = props.assumeRole && StringVariable.of(props.assumeRole).toString() || undefined;
     this.docOutputs = props.docOutputs ?? [];
     this.docInputs = props.docInputs ?? [];
     if (this.assumeRole && !this.docInputs.map(i => i.name).includes(this.assumeRole)) {
@@ -125,28 +125,7 @@ export abstract class SsmDocument extends Construct {
   protected formatInputs(): { [name: string]: any } {
     const ssmInputs: {[name: string]: any} = {};
     this.docInputs.forEach(inp => {
-      const nested: {[name: string]: any} = {
-        type: new DataType(inp.inputType).toSsmString(),
-      };
-      if (inp.description != undefined) {
-        nested.description = inp.description;
-      }
-      if (inp.defaultValue != undefined) {
-        nested.default = inp.defaultValue;
-      }
-      if (inp.allowedValues != undefined) {
-        nested.allowedValues = inp.allowedValues;
-      }
-      if (inp.allowedPattern != undefined) {
-        nested.allowedPattern = inp.allowedPattern;
-      }
-      if (inp.minItems != undefined) {
-        nested.minItems = inp.minItems;
-      }
-      if (inp.maxItems != undefined) {
-        nested.maxItems = inp.maxItems;
-      }
-      ssmInputs[inp.name] = nested;
+      ssmInputs[inp.name] = inp.toSsm();
     });
     return ssmInputs;
   }
