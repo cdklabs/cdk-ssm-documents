@@ -68,8 +68,8 @@ describe('DeleteStackStep', function() {
       assert.deepEqual(step.toSsmEntry(), {
         action: 'aws:deleteStack',
         inputs: {
-          ClientRequestToken: '{{MyStackVar}}{{automation:EXECUTION_ID}}',
-          StackName: '{{MyStackVar}}',
+          ClientRequestToken: '{{ MyStackVar }}{{ automation:EXECUTION_ID }}',
+          StackName: '{{ MyStackVar }}',
         },
         name: 'MyDeleteStack',
       });

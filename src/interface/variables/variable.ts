@@ -13,8 +13,8 @@ export interface IGenericVariable {
   resolve(inputs: Record<string, any>): any;
 
   /**
-     * Prints the variable in a way that SSM understands. This is typically in the form of {{Variable}} or the value.
-     * @example {{MyVariable}}
+     * Prints the variable in a way that SSM understands. This is typically in the form of {{ Variable }} or the value.
+     * @example {{ MyVariable }}
      */
   print(): string | any;
 
@@ -63,7 +63,7 @@ export abstract class HardCodedValueBase<TValue> implements IGenericVariable {
 
 /**
  * Abstraction of SSM variables.
- * Variables are printed as using this syntax: {{myVariable}}
+ * Variables are printed as using this syntax: {{ myVariable }}
  * To resolve a variable, you must supply the available inputs and the variable will resolve the value.
  */
 export abstract class GenericVariable implements IGenericVariable {
@@ -85,7 +85,7 @@ export abstract class GenericVariable implements IGenericVariable {
   }
 
   private toPlaceholder(): string {
-    return `{{${this.reference}}}`;
+    return `{{ ${this.reference} }}`;
   }
 
   requiredInputs(): string[] {

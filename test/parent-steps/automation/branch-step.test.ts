@@ -154,12 +154,12 @@ describe('BranchStep', function() {
             {
               NextStep: 'step1',
               StringEquals: 'a',
-              Variable: '{{myKey}}',
+              Variable: '{{ myKey }}',
             },
             {
               NextStep: 'step2',
               StringEquals: 'b',
-              Variable: '{{myKey}}',
+              Variable: '{{ myKey }}',
             },
           ],
           Default: 'step3',

@@ -61,7 +61,7 @@ describe('AssertAwsResourceStep', function() {
           ],
           Filter: [
             {
-              SomeFilter: '{{SomeOutput.OutKey}}',
+              SomeFilter: '{{ SomeOutput.OutKey }}',
             },
           ],
           PropertySelector: '$.Owner.DisplayName',

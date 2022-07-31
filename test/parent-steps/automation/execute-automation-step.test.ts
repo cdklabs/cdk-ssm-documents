@@ -62,7 +62,7 @@ describe('ExecuteAutomationStep', function() {
       assert.deepEqual(JSON.parse(JSON.stringify(step.toSsmEntry())), {
         action: 'aws:executeAutomation',
         inputs: {
-          DocumentName: '{{docRef}}',
+          DocumentName: '{{ docRef }}',
         },
         name: 'MyExecuteAutomation',
       });

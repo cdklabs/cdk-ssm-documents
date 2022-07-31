@@ -125,7 +125,7 @@ describe('ChangeInstanceStateStep', () => {
         action: 'aws:changeInstanceState',
         inputs: {
           InstanceIds: ['instanceIds'],
-          DesiredState: '{{desiredState}}',
+          DesiredState: '{{ desiredState }}',
           Force: false,
           AdditionalInfo: 'none',
           CheckStateOnly: true,

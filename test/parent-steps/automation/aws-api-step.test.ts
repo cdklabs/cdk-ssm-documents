@@ -87,7 +87,7 @@ describe('AwsApiStep', function() {
           Api: 'ListBuckets',
           Filter: [
             {
-              SomeFilter: '{{SomeOutput.OutKey}}',
+              SomeFilter: '{{ SomeOutput.OutKey }}',
             },
           ],
           Service: 'S3',

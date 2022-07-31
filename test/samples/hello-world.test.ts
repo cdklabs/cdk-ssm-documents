@@ -46,7 +46,7 @@ describe('HelloWorld', function() {
                     name: 'PublishToSns',
                     action: 'aws:executeAwsApi',
                     inputs: {
-                      Service: 'SNS', Api: 'publish', TargetArn: '{{SnsTopic}}', Message: '{{PrependWithGreeting.Greeting}}',
+                      Service: 'SNS', Api: 'publish', TargetArn: '{{ SnsTopic }}', Message: '{{ PrependWithGreeting.Greeting }}',
                     },
                   }],
                 },

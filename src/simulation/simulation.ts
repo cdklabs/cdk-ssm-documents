@@ -165,20 +165,11 @@ export class Simulation {
       if (matchedInput == undefined) {
         throw new Error(`Value provided to simulation {${key}:${value}} is not a supported input for this document`);
       }
-      if (!(new DataType(matchedInput.inputType).validateType(value))) {
-        throw new Error(`Value provided for ${key} was ${value} which does not match type ${matchedInput.inputType}`);
-      }
-      if (matchedInput.maxItems && Array.isArray(value) && matchedInput.maxItems < value.length) {
-        throw new Error(`Values for input ${key} were ${value} which is greater than maxItems: ${matchedInput.maxItems}`);
-      }
-      if (matchedInput.minItems && Array.isArray(value) && matchedInput.minItems > value.length) {
-        throw new Error(`Values for input ${key} were ${value} which is less than minItems: ${matchedInput.maxItems}`);
-      }
-      if (matchedInput.allowedPattern && !value.match(matchedInput.allowedPattern)) {
-        throw new Error(`Value for input ${key} was ${value} which does not match regex ${matchedInput.allowedPattern}`);
-      }
-      if (matchedInput.allowedValues && !matchedInput.allowedValues.includes(value)) {
-        throw new Error(`Value for input ${key} was ${value} which is not among allowedValues ${matchedInput.allowedValues}`);
+      try {
+        matchedInput.validate(value);
+      } catch (e) {
+        const message = (e as Error).message;
+        throw new Error(`Value provided to simulation {${key}:${value}} failed validation: ${message}`);
       }
     }
     const simulationResult = this.start(inputs);

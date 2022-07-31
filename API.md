@@ -734,7 +734,7 @@ new AssertAwsResourceStep(scope: Construct, id: string, props: AssertAwsResource
 | **Name** | **Description** |
 | --- | --- |
 | <code><a href="#@cdklabs/cdk-ssm-documents.AssertAwsResourceStep.toString">toString</a></code> | Returns a string representation of this construct. |
-| <code><a href="#@cdklabs/cdk-ssm-documents.AssertAwsResourceStep.listInputs">listInputs</a></code> | Derives the inputs by parsing the apiParams to find matches for inputs in double circle braces ("{{INPUT}}"). |
+| <code><a href="#@cdklabs/cdk-ssm-documents.AssertAwsResourceStep.listInputs">listInputs</a></code> | Derives the inputs by parsing the apiParams to find matches for inputs in double circle braces ("{{ INPUT }}"). |
 | <code><a href="#@cdklabs/cdk-ssm-documents.AssertAwsResourceStep.listOutputs">listOutputs</a></code> | There are no outputs for this step. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.AssertAwsResourceStep.toSsmEntry">toSsmEntry</a></code> | Converts this step into an object to prepare for yaml/json representation of this step. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.AssertAwsResourceStep.addToDocument">addToDocument</a></code> | *No description.* |
@@ -756,7 +756,7 @@ Returns a string representation of this construct.
 public listInputs(): string[]
 ```
 
-Derives the inputs by parsing the apiParams to find matches for inputs in double circle braces ("{{INPUT}}").
+Derives the inputs by parsing the apiParams to find matches for inputs in double circle braces ("{{ INPUT }}").
 
 ##### `listOutputs` <a name="listOutputs" id="@cdklabs/cdk-ssm-documents.AssertAwsResourceStep.listOutputs"></a>
 
@@ -1668,7 +1668,7 @@ new AwsApiStep(scope: Construct, id: string, props: AwsApiStepProps)
 | **Name** | **Description** |
 | --- | --- |
 | <code><a href="#@cdklabs/cdk-ssm-documents.AwsApiStep.toString">toString</a></code> | Returns a string representation of this construct. |
-| <code><a href="#@cdklabs/cdk-ssm-documents.AwsApiStep.listInputs">listInputs</a></code> | Derives the inputs by parsing the apiParams to find matches for inputs in double circle braces ("{{INPUT}}"). |
+| <code><a href="#@cdklabs/cdk-ssm-documents.AwsApiStep.listInputs">listInputs</a></code> | Derives the inputs by parsing the apiParams to find matches for inputs in double circle braces ("{{ INPUT }}"). |
 | <code><a href="#@cdklabs/cdk-ssm-documents.AwsApiStep.listOutputs">listOutputs</a></code> | Lists the outputs that will be returned from this step. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.AwsApiStep.toSsmEntry">toSsmEntry</a></code> | Converts this step into an object to prepare for yaml/json representation of this step. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.AwsApiStep.addToDocument">addToDocument</a></code> | *No description.* |
@@ -1690,7 +1690,7 @@ Returns a string representation of this construct.
 public listInputs(): string[]
 ```
 
-Derives the inputs by parsing the apiParams to find matches for inputs in double circle braces ("{{INPUT}}").
+Derives the inputs by parsing the apiParams to find matches for inputs in double circle braces ("{{ INPUT }}").
 
 ##### `listOutputs` <a name="listOutputs" id="@cdklabs/cdk-ssm-documents.AwsApiStep.listOutputs"></a>
 
@@ -14891,7 +14891,7 @@ new WaitForResourceStep(scope: Construct, id: string, props: WaitForResourceStep
 | **Name** | **Description** |
 | --- | --- |
 | <code><a href="#@cdklabs/cdk-ssm-documents.WaitForResourceStep.toString">toString</a></code> | Returns a string representation of this construct. |
-| <code><a href="#@cdklabs/cdk-ssm-documents.WaitForResourceStep.listInputs">listInputs</a></code> | Derives the inputs by parsing the apiParams to find matches for inputs in double circle braces ("{{INPUT}}"). |
+| <code><a href="#@cdklabs/cdk-ssm-documents.WaitForResourceStep.listInputs">listInputs</a></code> | Derives the inputs by parsing the apiParams to find matches for inputs in double circle braces ("{{ INPUT }}"). |
 | <code><a href="#@cdklabs/cdk-ssm-documents.WaitForResourceStep.listOutputs">listOutputs</a></code> | There are no outputs for this step. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.WaitForResourceStep.toSsmEntry">toSsmEntry</a></code> | Converts this step into an object to prepare for yaml/json representation of this step. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.WaitForResourceStep.addToDocument">addToDocument</a></code> | *No description.* |
@@ -14913,7 +14913,7 @@ Returns a string representation of this construct.
 public listInputs(): string[]
 ```
 
-Derives the inputs by parsing the apiParams to find matches for inputs in double circle braces ("{{INPUT}}").
+Derives the inputs by parsing the apiParams to find matches for inputs in double circle braces ("{{ INPUT }}").
 
 ##### `listOutputs` <a name="listOutputs" id="@cdklabs/cdk-ssm-documents.WaitForResourceStep.listOutputs"></a>
 
@@ -15945,7 +15945,7 @@ public readonly apiParams: {[ key: string ]: any};
 
 (Required) API Params to submit with the request to the api.
 
-You may include variables which will be substitued for inputs during step execution as such {{INPUT}}
+You may include variables which will be substitued for inputs during step execution as such {{ INPUT }}
 
 ---
 
@@ -16702,7 +16702,7 @@ public readonly apiParams: {[ key: string ]: any};
 
 (Required) API Params to submit with the request to the api.
 
-You may include variables which will be substitued for inputs during step execution as such {{INPUT}}
+You may include variables which will be substitued for inputs during step execution as such {{ INPUT }}
 
 ---
 
@@ -16951,7 +16951,7 @@ public readonly apiParams: {[ key: string ]: any};
 
 (Required) API Params to submit with the request to the api.
 
-You may include variables which will be substitued for inputs during step execution as such {{INPUT}}
+You may include variables which will be substitued for inputs during step execution as such {{ INPUT }}
 
 ---
 
@@ -17099,6 +17099,51 @@ public readonly value: IStringVariable;
 - *Type:* <a href="#@cdklabs/cdk-ssm-documents.IStringVariable">IStringVariable</a>
 
 Body or URL string.
+
+---
+
+### BooleanInputProps <a name="BooleanInputProps" id="@cdklabs/cdk-ssm-documents.BooleanInputProps"></a>
+
+#### Initializer <a name="Initializer" id="@cdklabs/cdk-ssm-documents.BooleanInputProps.Initializer"></a>
+
+```typescript
+import { BooleanInputProps } from '@cdklabs/cdk-ssm-documents'
+
+const booleanInputProps: BooleanInputProps = { ... }
+```
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#@cdklabs/cdk-ssm-documents.BooleanInputProps.property.defaultValue">defaultValue</a></code> | <code>boolean</code> | (Optional) Default value to use for this input if not specified when invoking the document. |
+| <code><a href="#@cdklabs/cdk-ssm-documents.BooleanInputProps.property.description">description</a></code> | <code>string</code> | (Optional) The description of the input. |
+
+---
+
+##### `defaultValue`<sup>Optional</sup> <a name="defaultValue" id="@cdklabs/cdk-ssm-documents.BooleanInputProps.property.defaultValue"></a>
+
+```typescript
+public readonly defaultValue: boolean;
+```
+
+- *Type:* boolean
+- *Default:* undefined
+
+(Optional) Default value to use for this input if not specified when invoking the document.
+
+---
+
+##### `description`<sup>Optional</sup> <a name="description" id="@cdklabs/cdk-ssm-documents.BooleanInputProps.property.description"></a>
+
+```typescript
+public readonly description: string;
+```
+
+- *Type:* string
+- *Default:* name
+
+(Optional) The description of the input.
 
 ---
 
@@ -18508,7 +18553,7 @@ public readonly additionalArguments: IStringMapVariable;
 The additional parameters to provide to your install, uninstall, or update scripts.
 
 Each parameter must be prefixed with SSM_.
-You can reference a Parameter Store parameter in your additional arguments by using the convention {{ssm:parameter-name}}.
+You can reference a Parameter Store parameter in your additional arguments by using the convention {{ ssm:parameter-name }}.
 To use the additional parameter in your install, uninstall, or update script,
 you must reference the parameter as an environment variable using the syntax appropriate for the operating system.
 For example, in PowerShell, you reference the SSM_arg argument as $Env:SSM_arg.
@@ -21837,37 +21882,39 @@ To use the Digest method, SSM Agent version 3.0.1181.0 or later must be installe
 
 ---
 
-### Input <a name="Input" id="@cdklabs/cdk-ssm-documents.Input"></a>
+### InputProps <a name="InputProps" id="@cdklabs/cdk-ssm-documents.InputProps"></a>
 
 Properties of inputs supported by SSM documents.
 
 These are NOT used for declaring step inputs, rather only for document inputs.
 See https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-doc-syntax.html
 
-#### Initializer <a name="Initializer" id="@cdklabs/cdk-ssm-documents.Input.Initializer"></a>
+#### Initializer <a name="Initializer" id="@cdklabs/cdk-ssm-documents.InputProps.Initializer"></a>
 
 ```typescript
-import { Input } from '@cdklabs/cdk-ssm-documents'
+import { InputProps } from '@cdklabs/cdk-ssm-documents'
 
-const input: Input = { ... }
+const inputProps: InputProps = { ... }
 ```
 
 #### Properties <a name="Properties" id="Properties"></a>
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#@cdklabs/cdk-ssm-documents.Input.property.inputType">inputType</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.DataTypeEnum">DataTypeEnum</a></code> | (Required) The DataTypeEnum of the input. |
-| <code><a href="#@cdklabs/cdk-ssm-documents.Input.property.name">name</a></code> | <code>string</code> | (Required) The name of the input by which to be referenced by steps in the document. |
-| <code><a href="#@cdklabs/cdk-ssm-documents.Input.property.allowedPattern">allowedPattern</a></code> | <code>string</code> | (Optional) Pattern that this input value must match. |
-| <code><a href="#@cdklabs/cdk-ssm-documents.Input.property.allowedValues">allowedValues</a></code> | <code>string[]</code> | (Optional) List of allowed values that this input may be. |
-| <code><a href="#@cdklabs/cdk-ssm-documents.Input.property.defaultValue">defaultValue</a></code> | <code>string</code> | (Optional) Default value to use for this input if not specified when invoking the document. |
-| <code><a href="#@cdklabs/cdk-ssm-documents.Input.property.description">description</a></code> | <code>string</code> | (Optional) The description of the input. |
-| <code><a href="#@cdklabs/cdk-ssm-documents.Input.property.maxItems">maxItems</a></code> | <code>number</code> | (Optional) Maximum number of items that this input value (list) must contain. |
-| <code><a href="#@cdklabs/cdk-ssm-documents.Input.property.minItems">minItems</a></code> | <code>number</code> | (Optional) Minimum number of items that this input value (list) must contain. |
+| <code><a href="#@cdklabs/cdk-ssm-documents.InputProps.property.inputType">inputType</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.DataTypeEnum">DataTypeEnum</a></code> | (Required) The DataTypeEnum of the input. |
+| <code><a href="#@cdklabs/cdk-ssm-documents.InputProps.property.name">name</a></code> | <code>string</code> | (Required) The name of the input by which to be referenced by steps in the document. |
+| <code><a href="#@cdklabs/cdk-ssm-documents.InputProps.property.allowedPattern">allowedPattern</a></code> | <code>string</code> | (Optional) Pattern that this input value must match. |
+| <code><a href="#@cdklabs/cdk-ssm-documents.InputProps.property.allowedValues">allowedValues</a></code> | <code>any[]</code> | (Optional) List of allowed values that this input may be. |
+| <code><a href="#@cdklabs/cdk-ssm-documents.InputProps.property.defaultValue">defaultValue</a></code> | <code>any</code> | (Optional) Default value to use for this input if not specified when invoking the document. |
+| <code><a href="#@cdklabs/cdk-ssm-documents.InputProps.property.description">description</a></code> | <code>string</code> | (Optional) The description of the input. |
+| <code><a href="#@cdklabs/cdk-ssm-documents.InputProps.property.maxChars">maxChars</a></code> | <code>number</code> | (Optional) Maximum number of chars that this input value (string) must contain. |
+| <code><a href="#@cdklabs/cdk-ssm-documents.InputProps.property.maxItems">maxItems</a></code> | <code>number</code> | (Optional) Maximum number of items that this input value (list) must contain. |
+| <code><a href="#@cdklabs/cdk-ssm-documents.InputProps.property.minChars">minChars</a></code> | <code>number</code> | (Optional) Minimum number of chars that this input value (string) must contain. |
+| <code><a href="#@cdklabs/cdk-ssm-documents.InputProps.property.minItems">minItems</a></code> | <code>number</code> | (Optional) Minimum number of items that this input value (list) must contain. |
 
 ---
 
-##### `inputType`<sup>Required</sup> <a name="inputType" id="@cdklabs/cdk-ssm-documents.Input.property.inputType"></a>
+##### `inputType`<sup>Required</sup> <a name="inputType" id="@cdklabs/cdk-ssm-documents.InputProps.property.inputType"></a>
 
 ```typescript
 public readonly inputType: DataTypeEnum;
@@ -21879,7 +21926,7 @@ public readonly inputType: DataTypeEnum;
 
 ---
 
-##### `name`<sup>Required</sup> <a name="name" id="@cdklabs/cdk-ssm-documents.Input.property.name"></a>
+##### `name`<sup>Required</sup> <a name="name" id="@cdklabs/cdk-ssm-documents.InputProps.property.name"></a>
 
 ```typescript
 public readonly name: string;
@@ -21891,7 +21938,7 @@ public readonly name: string;
 
 ---
 
-##### `allowedPattern`<sup>Optional</sup> <a name="allowedPattern" id="@cdklabs/cdk-ssm-documents.Input.property.allowedPattern"></a>
+##### `allowedPattern`<sup>Optional</sup> <a name="allowedPattern" id="@cdklabs/cdk-ssm-documents.InputProps.property.allowedPattern"></a>
 
 ```typescript
 public readonly allowedPattern: string;
@@ -21904,33 +21951,33 @@ public readonly allowedPattern: string;
 
 ---
 
-##### `allowedValues`<sup>Optional</sup> <a name="allowedValues" id="@cdklabs/cdk-ssm-documents.Input.property.allowedValues"></a>
+##### `allowedValues`<sup>Optional</sup> <a name="allowedValues" id="@cdklabs/cdk-ssm-documents.InputProps.property.allowedValues"></a>
 
 ```typescript
-public readonly allowedValues: string[];
+public readonly allowedValues: any[];
 ```
 
-- *Type:* string[]
+- *Type:* any[]
 - *Default:* undefined
 
 (Optional) List of allowed values that this input may be.
 
 ---
 
-##### `defaultValue`<sup>Optional</sup> <a name="defaultValue" id="@cdklabs/cdk-ssm-documents.Input.property.defaultValue"></a>
+##### `defaultValue`<sup>Optional</sup> <a name="defaultValue" id="@cdklabs/cdk-ssm-documents.InputProps.property.defaultValue"></a>
 
 ```typescript
-public readonly defaultValue: string;
+public readonly defaultValue: any;
 ```
 
-- *Type:* string
+- *Type:* any
 - *Default:* undefined
 
 (Optional) Default value to use for this input if not specified when invoking the document.
 
 ---
 
-##### `description`<sup>Optional</sup> <a name="description" id="@cdklabs/cdk-ssm-documents.Input.property.description"></a>
+##### `description`<sup>Optional</sup> <a name="description" id="@cdklabs/cdk-ssm-documents.InputProps.property.description"></a>
 
 ```typescript
 public readonly description: string;
@@ -21943,7 +21990,20 @@ public readonly description: string;
 
 ---
 
-##### `maxItems`<sup>Optional</sup> <a name="maxItems" id="@cdklabs/cdk-ssm-documents.Input.property.maxItems"></a>
+##### `maxChars`<sup>Optional</sup> <a name="maxChars" id="@cdklabs/cdk-ssm-documents.InputProps.property.maxChars"></a>
+
+```typescript
+public readonly maxChars: number;
+```
+
+- *Type:* number
+- *Default:* undefined
+
+(Optional) Maximum number of chars that this input value (string) must contain.
+
+---
+
+##### `maxItems`<sup>Optional</sup> <a name="maxItems" id="@cdklabs/cdk-ssm-documents.InputProps.property.maxItems"></a>
 
 ```typescript
 public readonly maxItems: number;
@@ -21956,7 +22016,20 @@ public readonly maxItems: number;
 
 ---
 
-##### `minItems`<sup>Optional</sup> <a name="minItems" id="@cdklabs/cdk-ssm-documents.Input.property.minItems"></a>
+##### `minChars`<sup>Optional</sup> <a name="minChars" id="@cdklabs/cdk-ssm-documents.InputProps.property.minChars"></a>
+
+```typescript
+public readonly minChars: number;
+```
+
+- *Type:* number
+- *Default:* undefined
+
+(Optional) Minimum number of chars that this input value (string) must contain.
+
+---
+
+##### `minItems`<sup>Optional</sup> <a name="minItems" id="@cdklabs/cdk-ssm-documents.InputProps.property.minItems"></a>
 
 ```typescript
 public readonly minItems: number;
@@ -21966,6 +22039,65 @@ public readonly minItems: number;
 - *Default:* undefined
 
 (Optional) Minimum number of items that this input value (list) must contain.
+
+---
+
+### IntegerInputProps <a name="IntegerInputProps" id="@cdklabs/cdk-ssm-documents.IntegerInputProps"></a>
+
+#### Initializer <a name="Initializer" id="@cdklabs/cdk-ssm-documents.IntegerInputProps.Initializer"></a>
+
+```typescript
+import { IntegerInputProps } from '@cdklabs/cdk-ssm-documents'
+
+const integerInputProps: IntegerInputProps = { ... }
+```
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#@cdklabs/cdk-ssm-documents.IntegerInputProps.property.allowedValues">allowedValues</a></code> | <code>number[]</code> | (Optional) List of allowed values that this input may be. |
+| <code><a href="#@cdklabs/cdk-ssm-documents.IntegerInputProps.property.defaultValue">defaultValue</a></code> | <code>number</code> | (Optional) Default value to use for this input if not specified when invoking the document. |
+| <code><a href="#@cdklabs/cdk-ssm-documents.IntegerInputProps.property.description">description</a></code> | <code>string</code> | (Optional) The description of the input. |
+
+---
+
+##### `allowedValues`<sup>Optional</sup> <a name="allowedValues" id="@cdklabs/cdk-ssm-documents.IntegerInputProps.property.allowedValues"></a>
+
+```typescript
+public readonly allowedValues: number[];
+```
+
+- *Type:* number[]
+- *Default:* undefined
+
+(Optional) List of allowed values that this input may be.
+
+---
+
+##### `defaultValue`<sup>Optional</sup> <a name="defaultValue" id="@cdklabs/cdk-ssm-documents.IntegerInputProps.property.defaultValue"></a>
+
+```typescript
+public readonly defaultValue: number;
+```
+
+- *Type:* number
+- *Default:* undefined
+
+(Optional) Default value to use for this input if not specified when invoking the document.
+
+---
+
+##### `description`<sup>Optional</sup> <a name="description" id="@cdklabs/cdk-ssm-documents.IntegerInputProps.property.description"></a>
+
+```typescript
+public readonly description: string;
+```
+
+- *Type:* string
+- *Default:* name
+
+(Optional) The description of the input.
 
 ---
 
@@ -22582,6 +22714,93 @@ public readonly body: IStringVariable;
 - *Type:* <a href="#@cdklabs/cdk-ssm-documents.IStringVariable">IStringVariable</a>
 
 (Optional) The payload you want to send when your webhook integration is invoked.
+
+---
+
+### MapListInputProps <a name="MapListInputProps" id="@cdklabs/cdk-ssm-documents.MapListInputProps"></a>
+
+#### Initializer <a name="Initializer" id="@cdklabs/cdk-ssm-documents.MapListInputProps.Initializer"></a>
+
+```typescript
+import { MapListInputProps } from '@cdklabs/cdk-ssm-documents'
+
+const mapListInputProps: MapListInputProps = { ... }
+```
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#@cdklabs/cdk-ssm-documents.MapListInputProps.property.allowedValues">allowedValues</a></code> | <code>any[]</code> | (Optional) List of allowed values that this input may be. |
+| <code><a href="#@cdklabs/cdk-ssm-documents.MapListInputProps.property.defaultValue">defaultValue</a></code> | <code>any</code> | (Optional) Default value to use for this input if not specified when invoking the document. |
+| <code><a href="#@cdklabs/cdk-ssm-documents.MapListInputProps.property.description">description</a></code> | <code>string</code> | (Optional) The description of the input. |
+| <code><a href="#@cdklabs/cdk-ssm-documents.MapListInputProps.property.maxItems">maxItems</a></code> | <code>number</code> | (Optional) Maximum number of items that this input value (list) must contain. |
+| <code><a href="#@cdklabs/cdk-ssm-documents.MapListInputProps.property.minItems">minItems</a></code> | <code>number</code> | (Optional) Minimum number of items that this input value (list) must contain. |
+
+---
+
+##### `allowedValues`<sup>Optional</sup> <a name="allowedValues" id="@cdklabs/cdk-ssm-documents.MapListInputProps.property.allowedValues"></a>
+
+```typescript
+public readonly allowedValues: any[];
+```
+
+- *Type:* any[]
+- *Default:* undefined
+
+(Optional) List of allowed values that this input may be.
+
+---
+
+##### `defaultValue`<sup>Optional</sup> <a name="defaultValue" id="@cdklabs/cdk-ssm-documents.MapListInputProps.property.defaultValue"></a>
+
+```typescript
+public readonly defaultValue: any;
+```
+
+- *Type:* any
+- *Default:* undefined
+
+(Optional) Default value to use for this input if not specified when invoking the document.
+
+---
+
+##### `description`<sup>Optional</sup> <a name="description" id="@cdklabs/cdk-ssm-documents.MapListInputProps.property.description"></a>
+
+```typescript
+public readonly description: string;
+```
+
+- *Type:* string
+- *Default:* name
+
+(Optional) The description of the input.
+
+---
+
+##### `maxItems`<sup>Optional</sup> <a name="maxItems" id="@cdklabs/cdk-ssm-documents.MapListInputProps.property.maxItems"></a>
+
+```typescript
+public readonly maxItems: number;
+```
+
+- *Type:* number
+- *Default:* undefined
+
+(Optional) Maximum number of items that this input value (list) must contain.
+
+---
+
+##### `minItems`<sup>Optional</sup> <a name="minItems" id="@cdklabs/cdk-ssm-documents.MapListInputProps.property.minItems"></a>
+
+```typescript
+public readonly minItems: number;
+```
+
+- *Type:* number
+- *Default:* undefined
+
+(Optional) Minimum number of items that this input value (list) must contain.
 
 ---
 
@@ -23269,7 +23488,7 @@ public readonly targets: string[];
 
 The instance IDs where you want the command to run. You can specify a maximum of 50 IDs.
 
-You can also use the pseudo parameter {{RESOURCE_ID}} in place of instance IDs to run the command on all instances in the target group. For more information about pseudo parameters, see [About pseudo parameters](https://docs.aws.amazon.com/systems-manager/latest/userguide/mw-cli-register-tasks-parameters.html).
+You can also use the pseudo parameter {{ RESOURCE_ID }} in place of instance IDs to run the command on all instances in the target group. For more information about pseudo parameters, see [About pseudo parameters](https://docs.aws.amazon.com/systems-manager/latest/userguide/mw-cli-register-tasks-parameters.html).
 
 Another alternative is to send commands to a fleet of instances by using the Targets parameter. The Targets parameter accepts Amazon Elastic Compute Cloud (Amazon EC2) tags. For more information about how to use the Targets parameter, see [Using targets and rate controls to send commands to a fleet](https://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html).
 
@@ -23644,7 +23863,7 @@ public readonly targets: IStringListVariable | IMapListVariable;
 
 The instance IDs where you want the command to run. You can specify a maximum of 50 IDs.
 
-You can also use the pseudo parameter {{RESOURCE_ID}} in place of instance IDs to run the command on all instances in the target group. For more information about pseudo parameters, see [About pseudo parameters](https://docs.aws.amazon.com/systems-manager/latest/userguide/mw-cli-register-tasks-parameters.html).
+You can also use the pseudo parameter {{ RESOURCE_ID }} in place of instance IDs to run the command on all instances in the target group. For more information about pseudo parameters, see [About pseudo parameters](https://docs.aws.amazon.com/systems-manager/latest/userguide/mw-cli-register-tasks-parameters.html).
 
 Another alternative is to send commands to a fleet of instances by using the Targets parameter. The Targets parameter accepts Amazon Elastic Compute Cloud (Amazon EC2) tags. For more information about how to use the Targets parameter, see [Using targets and rate controls to send commands to a fleet](https://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html).
 
@@ -26164,6 +26383,281 @@ public readonly outputObserver: IObserver;
 
 ---
 
+### StringInputProps <a name="StringInputProps" id="@cdklabs/cdk-ssm-documents.StringInputProps"></a>
+
+#### Initializer <a name="Initializer" id="@cdklabs/cdk-ssm-documents.StringInputProps.Initializer"></a>
+
+```typescript
+import { StringInputProps } from '@cdklabs/cdk-ssm-documents'
+
+const stringInputProps: StringInputProps = { ... }
+```
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#@cdklabs/cdk-ssm-documents.StringInputProps.property.allowedPattern">allowedPattern</a></code> | <code>string</code> | (Optional) Pattern that this input value must match. |
+| <code><a href="#@cdklabs/cdk-ssm-documents.StringInputProps.property.allowedValues">allowedValues</a></code> | <code>string[]</code> | (Optional) List of allowed values that this input may be. |
+| <code><a href="#@cdklabs/cdk-ssm-documents.StringInputProps.property.defaultValue">defaultValue</a></code> | <code>string</code> | (Optional) Default value to use for this input if not specified when invoking the document. |
+| <code><a href="#@cdklabs/cdk-ssm-documents.StringInputProps.property.description">description</a></code> | <code>string</code> | (Optional) The description of the input. |
+| <code><a href="#@cdklabs/cdk-ssm-documents.StringInputProps.property.maxChars">maxChars</a></code> | <code>number</code> | (Optional) Maximum number of chars that this input value (string) must contain. |
+| <code><a href="#@cdklabs/cdk-ssm-documents.StringInputProps.property.minChars">minChars</a></code> | <code>number</code> | (Optional) Minimum number of chars that this input value (string) must contain. |
+
+---
+
+##### `allowedPattern`<sup>Optional</sup> <a name="allowedPattern" id="@cdklabs/cdk-ssm-documents.StringInputProps.property.allowedPattern"></a>
+
+```typescript
+public readonly allowedPattern: string;
+```
+
+- *Type:* string
+- *Default:* undefined
+
+(Optional) Pattern that this input value must match.
+
+---
+
+##### `allowedValues`<sup>Optional</sup> <a name="allowedValues" id="@cdklabs/cdk-ssm-documents.StringInputProps.property.allowedValues"></a>
+
+```typescript
+public readonly allowedValues: string[];
+```
+
+- *Type:* string[]
+- *Default:* undefined
+
+(Optional) List of allowed values that this input may be.
+
+---
+
+##### `defaultValue`<sup>Optional</sup> <a name="defaultValue" id="@cdklabs/cdk-ssm-documents.StringInputProps.property.defaultValue"></a>
+
+```typescript
+public readonly defaultValue: string;
+```
+
+- *Type:* string
+- *Default:* undefined
+
+(Optional) Default value to use for this input if not specified when invoking the document.
+
+---
+
+##### `description`<sup>Optional</sup> <a name="description" id="@cdklabs/cdk-ssm-documents.StringInputProps.property.description"></a>
+
+```typescript
+public readonly description: string;
+```
+
+- *Type:* string
+- *Default:* name
+
+(Optional) The description of the input.
+
+---
+
+##### `maxChars`<sup>Optional</sup> <a name="maxChars" id="@cdklabs/cdk-ssm-documents.StringInputProps.property.maxChars"></a>
+
+```typescript
+public readonly maxChars: number;
+```
+
+- *Type:* number
+- *Default:* undefined
+
+(Optional) Maximum number of chars that this input value (string) must contain.
+
+---
+
+##### `minChars`<sup>Optional</sup> <a name="minChars" id="@cdklabs/cdk-ssm-documents.StringInputProps.property.minChars"></a>
+
+```typescript
+public readonly minChars: number;
+```
+
+- *Type:* number
+- *Default:* undefined
+
+(Optional) Minimum number of chars that this input value (string) must contain.
+
+---
+
+### StringListInputProps <a name="StringListInputProps" id="@cdklabs/cdk-ssm-documents.StringListInputProps"></a>
+
+#### Initializer <a name="Initializer" id="@cdklabs/cdk-ssm-documents.StringListInputProps.Initializer"></a>
+
+```typescript
+import { StringListInputProps } from '@cdklabs/cdk-ssm-documents'
+
+const stringListInputProps: StringListInputProps = { ... }
+```
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#@cdklabs/cdk-ssm-documents.StringListInputProps.property.allowedValues">allowedValues</a></code> | <code>any[]</code> | (Optional) List of allowed values that this input may be. |
+| <code><a href="#@cdklabs/cdk-ssm-documents.StringListInputProps.property.defaultValue">defaultValue</a></code> | <code>any</code> | (Optional) Default value to use for this input if not specified when invoking the document. |
+| <code><a href="#@cdklabs/cdk-ssm-documents.StringListInputProps.property.description">description</a></code> | <code>string</code> | (Optional) The description of the input. |
+| <code><a href="#@cdklabs/cdk-ssm-documents.StringListInputProps.property.maxItems">maxItems</a></code> | <code>number</code> | (Optional) Maximum number of items that this input value (list) must contain. |
+| <code><a href="#@cdklabs/cdk-ssm-documents.StringListInputProps.property.minItems">minItems</a></code> | <code>number</code> | (Optional) Minimum number of items that this input value (list) must contain. |
+
+---
+
+##### `allowedValues`<sup>Optional</sup> <a name="allowedValues" id="@cdklabs/cdk-ssm-documents.StringListInputProps.property.allowedValues"></a>
+
+```typescript
+public readonly allowedValues: any[];
+```
+
+- *Type:* any[]
+- *Default:* undefined
+
+(Optional) List of allowed values that this input may be.
+
+---
+
+##### `defaultValue`<sup>Optional</sup> <a name="defaultValue" id="@cdklabs/cdk-ssm-documents.StringListInputProps.property.defaultValue"></a>
+
+```typescript
+public readonly defaultValue: any;
+```
+
+- *Type:* any
+- *Default:* undefined
+
+(Optional) Default value to use for this input if not specified when invoking the document.
+
+---
+
+##### `description`<sup>Optional</sup> <a name="description" id="@cdklabs/cdk-ssm-documents.StringListInputProps.property.description"></a>
+
+```typescript
+public readonly description: string;
+```
+
+- *Type:* string
+- *Default:* name
+
+(Optional) The description of the input.
+
+---
+
+##### `maxItems`<sup>Optional</sup> <a name="maxItems" id="@cdklabs/cdk-ssm-documents.StringListInputProps.property.maxItems"></a>
+
+```typescript
+public readonly maxItems: number;
+```
+
+- *Type:* number
+- *Default:* undefined
+
+(Optional) Maximum number of items that this input value (list) must contain.
+
+---
+
+##### `minItems`<sup>Optional</sup> <a name="minItems" id="@cdklabs/cdk-ssm-documents.StringListInputProps.property.minItems"></a>
+
+```typescript
+public readonly minItems: number;
+```
+
+- *Type:* number
+- *Default:* undefined
+
+(Optional) Minimum number of items that this input value (list) must contain.
+
+---
+
+### StringMapInputProps <a name="StringMapInputProps" id="@cdklabs/cdk-ssm-documents.StringMapInputProps"></a>
+
+#### Initializer <a name="Initializer" id="@cdklabs/cdk-ssm-documents.StringMapInputProps.Initializer"></a>
+
+```typescript
+import { StringMapInputProps } from '@cdklabs/cdk-ssm-documents'
+
+const stringMapInputProps: StringMapInputProps = { ... }
+```
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#@cdklabs/cdk-ssm-documents.StringMapInputProps.property.allowedValues">allowedValues</a></code> | <code>any[]</code> | (Optional) List of allowed values that this input may be. |
+| <code><a href="#@cdklabs/cdk-ssm-documents.StringMapInputProps.property.defaultValue">defaultValue</a></code> | <code>any</code> | (Optional) Default value to use for this input if not specified when invoking the document. |
+| <code><a href="#@cdklabs/cdk-ssm-documents.StringMapInputProps.property.description">description</a></code> | <code>string</code> | (Optional) The description of the input. |
+| <code><a href="#@cdklabs/cdk-ssm-documents.StringMapInputProps.property.maxItems">maxItems</a></code> | <code>number</code> | (Optional) Maximum number of items that this input value (list) must contain. |
+| <code><a href="#@cdklabs/cdk-ssm-documents.StringMapInputProps.property.minItems">minItems</a></code> | <code>number</code> | (Optional) Minimum number of items that this input value (list) must contain. |
+
+---
+
+##### `allowedValues`<sup>Optional</sup> <a name="allowedValues" id="@cdklabs/cdk-ssm-documents.StringMapInputProps.property.allowedValues"></a>
+
+```typescript
+public readonly allowedValues: any[];
+```
+
+- *Type:* any[]
+- *Default:* undefined
+
+(Optional) List of allowed values that this input may be.
+
+---
+
+##### `defaultValue`<sup>Optional</sup> <a name="defaultValue" id="@cdklabs/cdk-ssm-documents.StringMapInputProps.property.defaultValue"></a>
+
+```typescript
+public readonly defaultValue: any;
+```
+
+- *Type:* any
+- *Default:* undefined
+
+(Optional) Default value to use for this input if not specified when invoking the document.
+
+---
+
+##### `description`<sup>Optional</sup> <a name="description" id="@cdklabs/cdk-ssm-documents.StringMapInputProps.property.description"></a>
+
+```typescript
+public readonly description: string;
+```
+
+- *Type:* string
+- *Default:* name
+
+(Optional) The description of the input.
+
+---
+
+##### `maxItems`<sup>Optional</sup> <a name="maxItems" id="@cdklabs/cdk-ssm-documents.StringMapInputProps.property.maxItems"></a>
+
+```typescript
+public readonly maxItems: number;
+```
+
+- *Type:* number
+- *Default:* undefined
+
+(Optional) Maximum number of items that this input value (list) must contain.
+
+---
+
+##### `minItems`<sup>Optional</sup> <a name="minItems" id="@cdklabs/cdk-ssm-documents.StringMapInputProps.property.minItems"></a>
+
+```typescript
+public readonly minItems: number;
+```
+
+- *Type:* number
+- *Default:* undefined
+
+(Optional) Minimum number of items that this input value (list) must contain.
+
+---
+
 ### UpdateAgentStepProps <a name="UpdateAgentStepProps" id="@cdklabs/cdk-ssm-documents.UpdateAgentStepProps"></a>
 
 Properties UpdateAgent step.
@@ -26853,7 +27347,7 @@ public readonly apiParams: {[ key: string ]: any};
 
 (Required) API Params to submit with the request to the api.
 
-You may include variables which will be substitued for inputs during step execution as such {{INPUT}}
+You may include variables which will be substitued for inputs during step execution as such {{ INPUT }}
 
 ---
 
@@ -27015,7 +27509,7 @@ public print(): any
 
 Prints the variable in a way that SSM understands.
 
-This is typically in the form of {{Variable}} or the value.
+This is typically in the form of {{ Variable }} or the value.
 
 ##### `requiredInputs` <a name="requiredInputs" id="@cdklabs/cdk-ssm-documents.ActionVariable.requiredInputs"></a>
 
@@ -28034,7 +28528,7 @@ public executeStep(inputs: {[ key: string ]: any}): {[ key: string ]: any}
 Invokes the specified service (param) with the specified api (param) with the specified apiParams (param).
 
 This call will be invoked synchronously.
-The input variables in apiParams (param) specified using "{{INPUT}}" syntax will be replaced with the inputs.
+The input variables in apiParams (param) specified using "{{ INPUT }}" syntax will be replaced with the inputs.
 
 ###### `inputs`<sup>Required</sup> <a name="inputs" id="@cdklabs/cdk-ssm-documents.AwsApiSimulation.executeStep.parameter.inputs"></a>
 
@@ -28145,7 +28639,7 @@ public print(): any
 
 Prints the variable in a way that SSM understands.
 
-This is typically in the form of {{Variable}} or the value.
+This is typically in the form of {{ Variable }} or the value.
 
 ##### `requiredInputs` <a name="requiredInputs" id="@cdklabs/cdk-ssm-documents.BooleanVariable.requiredInputs"></a>
 
@@ -29391,7 +29885,7 @@ public print(): any
 
 Prints the variable in a way that SSM understands.
 
-This is typically in the form of {{Variable}} or the value.
+This is typically in the form of {{ Variable }} or the value.
 
 ##### `requiredInputs` <a name="requiredInputs" id="@cdklabs/cdk-ssm-documents.DesiredStateVariable.requiredInputs"></a>
 
@@ -29544,7 +30038,7 @@ public print(): any
 
 Prints the variable in a way that SSM understands.
 
-This is typically in the form of {{Variable}} or the value.
+This is typically in the form of {{ Variable }} or the value.
 
 ##### `requiredInputs` <a name="requiredInputs" id="@cdklabs/cdk-ssm-documents.DictFormat.requiredInputs"></a>
 
@@ -29773,7 +30267,7 @@ public print(): any
 
 Prints the variable in a way that SSM understands.
 
-This is typically in the form of {{Variable}} or the value.
+This is typically in the form of {{ Variable }} or the value.
 
 ##### `requiredInputs` <a name="requiredInputs" id="@cdklabs/cdk-ssm-documents.DocumentHashTypeVariable.requiredInputs"></a>
 
@@ -30167,7 +30661,7 @@ public readonly props: AwsInvocationSimulationProps;
 
 Abstraction of SSM variables.
 
-Variables are printed as using this syntax: {{myVariable}}
+Variables are printed as using this syntax: {{ myVariable }}
 To resolve a variable, you must supply the available inputs and the variable will resolve the value.
 
 #### Initializers <a name="Initializers" id="@cdklabs/cdk-ssm-documents.GenericVariable.Initializer"></a>
@@ -30210,7 +30704,7 @@ public print(): any
 
 Prints the variable in a way that SSM understands.
 
-This is typically in the form of {{Variable}} or the value.
+This is typically in the form of {{ Variable }} or the value.
 
 ##### `requiredInputs` <a name="requiredInputs" id="@cdklabs/cdk-ssm-documents.GenericVariable.requiredInputs"></a>
 
@@ -30570,7 +31064,7 @@ public print(): any
 
 Prints the variable in a way that SSM understands.
 
-This is typically in the form of {{Variable}} or the value.
+This is typically in the form of {{ Variable }} or the value.
 
 ##### `requiredInputs` <a name="requiredInputs" id="@cdklabs/cdk-ssm-documents.HardCodedAction.requiredInputs"></a>
 
@@ -30744,7 +31238,7 @@ public print(): any
 
 Prints the variable in a way that SSM understands.
 
-This is typically in the form of {{Variable}} or the value.
+This is typically in the form of {{ Variable }} or the value.
 
 ##### `requiredInputs` <a name="requiredInputs" id="@cdklabs/cdk-ssm-documents.HardCodedBoolean.requiredInputs"></a>
 
@@ -30873,7 +31367,7 @@ public print(): any
 
 Prints the variable in a way that SSM understands.
 
-This is typically in the form of {{Variable}} or the value.
+This is typically in the form of {{ Variable }} or the value.
 
 ##### `requiredInputs` <a name="requiredInputs" id="@cdklabs/cdk-ssm-documents.HardCodedDesiredState.requiredInputs"></a>
 
@@ -31034,7 +31528,7 @@ public print(): any
 
 Prints the variable in a way that SSM understands.
 
-This is typically in the form of {{Variable}} or the value.
+This is typically in the form of {{ Variable }} or the value.
 
 ##### `requiredInputs` <a name="requiredInputs" id="@cdklabs/cdk-ssm-documents.HardCodedDocumentHashType.requiredInputs"></a>
 
@@ -31184,7 +31678,7 @@ public print(): any
 
 Prints the variable in a way that SSM understands.
 
-This is typically in the form of {{Variable}} or the value.
+This is typically in the form of {{ Variable }} or the value.
 
 ##### `requiredInputs` <a name="requiredInputs" id="@cdklabs/cdk-ssm-documents.HardCodedInstallationType.requiredInputs"></a>
 
@@ -31334,7 +31828,7 @@ public print(): any
 
 Prints the variable in a way that SSM understands.
 
-This is typically in the form of {{Variable}} or the value.
+This is typically in the form of {{ Variable }} or the value.
 
 ##### `requiredInputs` <a name="requiredInputs" id="@cdklabs/cdk-ssm-documents.HardCodedInstallUninstallRepair.requiredInputs"></a>
 
@@ -31519,7 +32013,7 @@ public print(): any
 
 Prints the variable in a way that SSM understands.
 
-This is typically in the form of {{Variable}} or the value.
+This is typically in the form of {{ Variable }} or the value.
 
 ##### `requiredInputs` <a name="requiredInputs" id="@cdklabs/cdk-ssm-documents.HardCodedMapList.requiredInputs"></a>
 
@@ -31665,7 +32159,7 @@ public print(): any
 
 Prints the variable in a way that SSM understands.
 
-This is typically in the form of {{Variable}} or the value.
+This is typically in the form of {{ Variable }} or the value.
 
 ##### `requiredInputs` <a name="requiredInputs" id="@cdklabs/cdk-ssm-documents.HardCodedNumber.requiredInputs"></a>
 
@@ -31787,7 +32281,7 @@ public print(): any
 
 Prints the variable in a way that SSM understands.
 
-This is typically in the form of {{Variable}} or the value.
+This is typically in the form of {{ Variable }} or the value.
 
 ##### `requiredInputs` <a name="requiredInputs" id="@cdklabs/cdk-ssm-documents.HardCodedOnFailure.requiredInputs"></a>
 
@@ -31948,7 +32442,7 @@ public print(): any
 
 Prints the variable in a way that SSM understands.
 
-This is typically in the form of {{Variable}} or the value.
+This is typically in the form of {{ Variable }} or the value.
 
 ##### `requiredInputs` <a name="requiredInputs" id="@cdklabs/cdk-ssm-documents.HardCodedPackageName.requiredInputs"></a>
 
@@ -32153,7 +32647,7 @@ public print(): any
 
 Prints the variable in a way that SSM understands.
 
-This is typically in the form of {{Variable}} or the value.
+This is typically in the form of {{ Variable }} or the value.
 
 ##### `requiredInputs` <a name="requiredInputs" id="@cdklabs/cdk-ssm-documents.HardCodedResourceType.requiredInputs"></a>
 
@@ -32345,7 +32839,7 @@ public print(): any
 
 Prints the variable in a way that SSM understands.
 
-This is typically in the form of {{Variable}} or the value.
+This is typically in the form of {{ Variable }} or the value.
 
 ##### `requiredInputs` <a name="requiredInputs" id="@cdklabs/cdk-ssm-documents.HardCodedSecureVariable.requiredInputs"></a>
 
@@ -32499,7 +32993,7 @@ public print(): any
 
 Prints the variable in a way that SSM understands.
 
-This is typically in the form of {{Variable}} or the value.
+This is typically in the form of {{ Variable }} or the value.
 
 ##### `requiredInputs` <a name="requiredInputs" id="@cdklabs/cdk-ssm-documents.HardCodedString.requiredInputs"></a>
 
@@ -32645,7 +33139,7 @@ public print(): any
 
 Prints the variable in a way that SSM understands.
 
-This is typically in the form of {{Variable}} or the value.
+This is typically in the form of {{ Variable }} or the value.
 
 ##### `requiredInputs` <a name="requiredInputs" id="@cdklabs/cdk-ssm-documents.HardCodedStringList.requiredInputs"></a>
 
@@ -32791,7 +33285,7 @@ public print(): any
 
 Prints the variable in a way that SSM understands.
 
-This is typically in the form of {{Variable}} or the value.
+This is typically in the form of {{ Variable }} or the value.
 
 ##### `requiredInputs` <a name="requiredInputs" id="@cdklabs/cdk-ssm-documents.HardCodedStringMap.requiredInputs"></a>
 
@@ -32932,7 +33426,7 @@ public print(): any
 
 Prints the variable in a way that SSM understands.
 
-This is typically in the form of {{Variable}} or the value.
+This is typically in the form of {{ Variable }} or the value.
 
 ##### `requiredInputs` <a name="requiredInputs" id="@cdklabs/cdk-ssm-documents.HardCodedValueBase.requiredInputs"></a>
 
@@ -33092,6 +33586,333 @@ public readonly authMethod: AuthMethod;
 ---
 
 
+### Input <a name="Input" id="@cdklabs/cdk-ssm-documents.Input"></a>
+
+#### Initializers <a name="Initializers" id="@cdklabs/cdk-ssm-documents.Input.Initializer"></a>
+
+```typescript
+import { Input } from '@cdklabs/cdk-ssm-documents'
+
+new Input(props: InputProps)
+```
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#@cdklabs/cdk-ssm-documents.Input.Initializer.parameter.props">props</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.InputProps">InputProps</a></code> | *No description.* |
+
+---
+
+##### `props`<sup>Required</sup> <a name="props" id="@cdklabs/cdk-ssm-documents.Input.Initializer.parameter.props"></a>
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.InputProps">InputProps</a>
+
+---
+
+#### Methods <a name="Methods" id="Methods"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#@cdklabs/cdk-ssm-documents.Input.toSsm">toSsm</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.Input.validate">validate</a></code> | *No description.* |
+
+---
+
+##### `toSsm` <a name="toSsm" id="@cdklabs/cdk-ssm-documents.Input.toSsm"></a>
+
+```typescript
+public toSsm(): {[ key: string ]: any}
+```
+
+##### `validate` <a name="validate" id="@cdklabs/cdk-ssm-documents.Input.validate"></a>
+
+```typescript
+public validate(value: any): void
+```
+
+###### `value`<sup>Required</sup> <a name="value" id="@cdklabs/cdk-ssm-documents.Input.validate.parameter.value"></a>
+
+- *Type:* any
+
+---
+
+#### Static Functions <a name="Static Functions" id="Static Functions"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#@cdklabs/cdk-ssm-documents.Input.ofSpecifiedType">ofSpecifiedType</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.Input.ofTypeBoolean">ofTypeBoolean</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.Input.ofTypeInteger">ofTypeInteger</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.Input.ofTypeMapList">ofTypeMapList</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.Input.ofTypeString">ofTypeString</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.Input.ofTypeStringList">ofTypeStringList</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.Input.ofTypeStringMap">ofTypeStringMap</a></code> | *No description.* |
+
+---
+
+##### `ofSpecifiedType` <a name="ofSpecifiedType" id="@cdklabs/cdk-ssm-documents.Input.ofSpecifiedType"></a>
+
+```typescript
+import { Input } from '@cdklabs/cdk-ssm-documents'
+
+Input.ofSpecifiedType(type: DataTypeEnum, inputName: string, props: InputProps)
+```
+
+###### `type`<sup>Required</sup> <a name="type" id="@cdklabs/cdk-ssm-documents.Input.ofSpecifiedType.parameter.type"></a>
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.DataTypeEnum">DataTypeEnum</a>
+
+---
+
+###### `inputName`<sup>Required</sup> <a name="inputName" id="@cdklabs/cdk-ssm-documents.Input.ofSpecifiedType.parameter.inputName"></a>
+
+- *Type:* string
+
+---
+
+###### `props`<sup>Required</sup> <a name="props" id="@cdklabs/cdk-ssm-documents.Input.ofSpecifiedType.parameter.props"></a>
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.InputProps">InputProps</a>
+
+---
+
+##### `ofTypeBoolean` <a name="ofTypeBoolean" id="@cdklabs/cdk-ssm-documents.Input.ofTypeBoolean"></a>
+
+```typescript
+import { Input } from '@cdklabs/cdk-ssm-documents'
+
+Input.ofTypeBoolean(name: string, props?: BooleanInputProps)
+```
+
+###### `name`<sup>Required</sup> <a name="name" id="@cdklabs/cdk-ssm-documents.Input.ofTypeBoolean.parameter.name"></a>
+
+- *Type:* string
+
+---
+
+###### `props`<sup>Optional</sup> <a name="props" id="@cdklabs/cdk-ssm-documents.Input.ofTypeBoolean.parameter.props"></a>
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.BooleanInputProps">BooleanInputProps</a>
+
+---
+
+##### `ofTypeInteger` <a name="ofTypeInteger" id="@cdklabs/cdk-ssm-documents.Input.ofTypeInteger"></a>
+
+```typescript
+import { Input } from '@cdklabs/cdk-ssm-documents'
+
+Input.ofTypeInteger(name: string, props?: IntegerInputProps)
+```
+
+###### `name`<sup>Required</sup> <a name="name" id="@cdklabs/cdk-ssm-documents.Input.ofTypeInteger.parameter.name"></a>
+
+- *Type:* string
+
+---
+
+###### `props`<sup>Optional</sup> <a name="props" id="@cdklabs/cdk-ssm-documents.Input.ofTypeInteger.parameter.props"></a>
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.IntegerInputProps">IntegerInputProps</a>
+
+---
+
+##### `ofTypeMapList` <a name="ofTypeMapList" id="@cdklabs/cdk-ssm-documents.Input.ofTypeMapList"></a>
+
+```typescript
+import { Input } from '@cdklabs/cdk-ssm-documents'
+
+Input.ofTypeMapList(name: string, props?: MapListInputProps)
+```
+
+###### `name`<sup>Required</sup> <a name="name" id="@cdklabs/cdk-ssm-documents.Input.ofTypeMapList.parameter.name"></a>
+
+- *Type:* string
+
+---
+
+###### `props`<sup>Optional</sup> <a name="props" id="@cdklabs/cdk-ssm-documents.Input.ofTypeMapList.parameter.props"></a>
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.MapListInputProps">MapListInputProps</a>
+
+---
+
+##### `ofTypeString` <a name="ofTypeString" id="@cdklabs/cdk-ssm-documents.Input.ofTypeString"></a>
+
+```typescript
+import { Input } from '@cdklabs/cdk-ssm-documents'
+
+Input.ofTypeString(name: string, props?: StringInputProps)
+```
+
+###### `name`<sup>Required</sup> <a name="name" id="@cdklabs/cdk-ssm-documents.Input.ofTypeString.parameter.name"></a>
+
+- *Type:* string
+
+---
+
+###### `props`<sup>Optional</sup> <a name="props" id="@cdklabs/cdk-ssm-documents.Input.ofTypeString.parameter.props"></a>
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.StringInputProps">StringInputProps</a>
+
+---
+
+##### `ofTypeStringList` <a name="ofTypeStringList" id="@cdklabs/cdk-ssm-documents.Input.ofTypeStringList"></a>
+
+```typescript
+import { Input } from '@cdklabs/cdk-ssm-documents'
+
+Input.ofTypeStringList(name: string, props?: StringListInputProps)
+```
+
+###### `name`<sup>Required</sup> <a name="name" id="@cdklabs/cdk-ssm-documents.Input.ofTypeStringList.parameter.name"></a>
+
+- *Type:* string
+
+---
+
+###### `props`<sup>Optional</sup> <a name="props" id="@cdklabs/cdk-ssm-documents.Input.ofTypeStringList.parameter.props"></a>
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.StringListInputProps">StringListInputProps</a>
+
+---
+
+##### `ofTypeStringMap` <a name="ofTypeStringMap" id="@cdklabs/cdk-ssm-documents.Input.ofTypeStringMap"></a>
+
+```typescript
+import { Input } from '@cdklabs/cdk-ssm-documents'
+
+Input.ofTypeStringMap(name: string, props?: StringMapInputProps)
+```
+
+###### `name`<sup>Required</sup> <a name="name" id="@cdklabs/cdk-ssm-documents.Input.ofTypeStringMap.parameter.name"></a>
+
+- *Type:* string
+
+---
+
+###### `props`<sup>Optional</sup> <a name="props" id="@cdklabs/cdk-ssm-documents.Input.ofTypeStringMap.parameter.props"></a>
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.StringMapInputProps">StringMapInputProps</a>
+
+---
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#@cdklabs/cdk-ssm-documents.Input.property.inputType">inputType</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.DataTypeEnum">DataTypeEnum</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.Input.property.name">name</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.Input.property.allowedPattern">allowedPattern</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.Input.property.allowedValues">allowedValues</a></code> | <code>string[]</code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.Input.property.defaultValue">defaultValue</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.Input.property.description">description</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.Input.property.maxChars">maxChars</a></code> | <code>number</code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.Input.property.maxItems">maxItems</a></code> | <code>number</code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.Input.property.minChars">minChars</a></code> | <code>number</code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.Input.property.minItems">minItems</a></code> | <code>number</code> | *No description.* |
+
+---
+
+##### `inputType`<sup>Required</sup> <a name="inputType" id="@cdklabs/cdk-ssm-documents.Input.property.inputType"></a>
+
+```typescript
+public readonly inputType: DataTypeEnum;
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.DataTypeEnum">DataTypeEnum</a>
+
+---
+
+##### `name`<sup>Required</sup> <a name="name" id="@cdklabs/cdk-ssm-documents.Input.property.name"></a>
+
+```typescript
+public readonly name: string;
+```
+
+- *Type:* string
+
+---
+
+##### `allowedPattern`<sup>Optional</sup> <a name="allowedPattern" id="@cdklabs/cdk-ssm-documents.Input.property.allowedPattern"></a>
+
+```typescript
+public readonly allowedPattern: string;
+```
+
+- *Type:* string
+
+---
+
+##### `allowedValues`<sup>Optional</sup> <a name="allowedValues" id="@cdklabs/cdk-ssm-documents.Input.property.allowedValues"></a>
+
+```typescript
+public readonly allowedValues: string[];
+```
+
+- *Type:* string[]
+
+---
+
+##### `defaultValue`<sup>Optional</sup> <a name="defaultValue" id="@cdklabs/cdk-ssm-documents.Input.property.defaultValue"></a>
+
+```typescript
+public readonly defaultValue: string;
+```
+
+- *Type:* string
+
+---
+
+##### `description`<sup>Optional</sup> <a name="description" id="@cdklabs/cdk-ssm-documents.Input.property.description"></a>
+
+```typescript
+public readonly description: string;
+```
+
+- *Type:* string
+
+---
+
+##### `maxChars`<sup>Optional</sup> <a name="maxChars" id="@cdklabs/cdk-ssm-documents.Input.property.maxChars"></a>
+
+```typescript
+public readonly maxChars: number;
+```
+
+- *Type:* number
+
+---
+
+##### `maxItems`<sup>Optional</sup> <a name="maxItems" id="@cdklabs/cdk-ssm-documents.Input.property.maxItems"></a>
+
+```typescript
+public readonly maxItems: number;
+```
+
+- *Type:* number
+
+---
+
+##### `minChars`<sup>Optional</sup> <a name="minChars" id="@cdklabs/cdk-ssm-documents.Input.property.minChars"></a>
+
+```typescript
+public readonly minChars: number;
+```
+
+- *Type:* number
+
+---
+
+##### `minItems`<sup>Optional</sup> <a name="minItems" id="@cdklabs/cdk-ssm-documents.Input.property.minItems"></a>
+
+```typescript
+public readonly minItems: number;
+```
+
+- *Type:* number
+
+---
+
+
 ### InstallationTypeVariable <a name="InstallationTypeVariable" id="@cdklabs/cdk-ssm-documents.InstallationTypeVariable"></a>
 
 - *Implements:* <a href="#@cdklabs/cdk-ssm-documents.IInstallationTypeVariable">IInstallationTypeVariable</a>
@@ -33137,7 +33958,7 @@ public print(): any
 
 Prints the variable in a way that SSM understands.
 
-This is typically in the form of {{Variable}} or the value.
+This is typically in the form of {{ Variable }} or the value.
 
 ##### `requiredInputs` <a name="requiredInputs" id="@cdklabs/cdk-ssm-documents.InstallationTypeVariable.requiredInputs"></a>
 
@@ -33290,7 +34111,7 @@ public print(): any
 
 Prints the variable in a way that SSM understands.
 
-This is typically in the form of {{Variable}} or the value.
+This is typically in the form of {{ Variable }} or the value.
 
 ##### `requiredInputs` <a name="requiredInputs" id="@cdklabs/cdk-ssm-documents.InstallUninstallRepairVariable.requiredInputs"></a>
 
@@ -33713,7 +34534,7 @@ public print(): any
 
 Prints the variable in a way that SSM understands.
 
-This is typically in the form of {{Variable}} or the value.
+This is typically in the form of {{ Variable }} or the value.
 
 ##### `requiredInputs` <a name="requiredInputs" id="@cdklabs/cdk-ssm-documents.MapListVariable.requiredInputs"></a>
 
@@ -34420,7 +35241,7 @@ public print(): any
 
 Prints the variable in a way that SSM understands.
 
-This is typically in the form of {{Variable}} or the value.
+This is typically in the form of {{ Variable }} or the value.
 
 ##### `requiredInputs` <a name="requiredInputs" id="@cdklabs/cdk-ssm-documents.NonSecureVariable.requiredInputs"></a>
 
@@ -34614,7 +35435,7 @@ public print(): any
 
 Prints the variable in a way that SSM understands.
 
-This is typically in the form of {{Variable}} or the value.
+This is typically in the form of {{ Variable }} or the value.
 
 ##### `requiredInputs` <a name="requiredInputs" id="@cdklabs/cdk-ssm-documents.NumberVariable.requiredInputs"></a>
 
@@ -34756,7 +35577,7 @@ public print(): any
 
 Prints the variable in a way that SSM understands.
 
-This is typically in the form of {{Variable}} or the value.
+This is typically in the form of {{ Variable }} or the value.
 
 ##### `requiredInputs` <a name="requiredInputs" id="@cdklabs/cdk-ssm-documents.OnFailureVariable.requiredInputs"></a>
 
@@ -35028,7 +35849,7 @@ public print(): any
 
 Prints the variable in a way that SSM understands.
 
-This is typically in the form of {{Variable}} or the value.
+This is typically in the form of {{ Variable }} or the value.
 
 ##### `requiredInputs` <a name="requiredInputs" id="@cdklabs/cdk-ssm-documents.PackageNameVariable.requiredInputs"></a>
 
@@ -35569,7 +36390,7 @@ public print(): any
 
 Prints the variable in a way that SSM understands.
 
-This is typically in the form of {{Variable}} or the value.
+This is typically in the form of {{ Variable }} or the value.
 
 ##### `requiredInputs` <a name="requiredInputs" id="@cdklabs/cdk-ssm-documents.ResourceTypeVariable.requiredInputs"></a>
 
@@ -36071,7 +36892,7 @@ public print(): any
 
 Prints the variable in a way that SSM understands.
 
-This is typically in the form of {{Variable}} or the value.
+This is typically in the form of {{ Variable }} or the value.
 
 ##### `requiredInputs` <a name="requiredInputs" id="@cdklabs/cdk-ssm-documents.SecureVariable.requiredInputs"></a>
 
@@ -36570,7 +37391,7 @@ public print(): any
 
 Prints the variable in a way that SSM understands.
 
-This is typically in the form of {{Variable}} or the value.
+This is typically in the form of {{ Variable }} or the value.
 
 ##### `requiredInputs` <a name="requiredInputs" id="@cdklabs/cdk-ssm-documents.SsmSecureVariable.requiredInputs"></a>
 
@@ -36859,7 +37680,7 @@ public print(): any
 
 Prints the variable in a way that SSM understands.
 
-This is typically in the form of {{Variable}} or the value.
+This is typically in the form of {{ Variable }} or the value.
 
 ##### `requiredInputs` <a name="requiredInputs" id="@cdklabs/cdk-ssm-documents.StringFormat.requiredInputs"></a>
 
@@ -36987,7 +37808,7 @@ public print(): any
 
 Prints the variable in a way that SSM understands.
 
-This is typically in the form of {{Variable}} or the value.
+This is typically in the form of {{ Variable }} or the value.
 
 ##### `requiredInputs` <a name="requiredInputs" id="@cdklabs/cdk-ssm-documents.StringListVariable.requiredInputs"></a>
 
@@ -37133,7 +37954,7 @@ public print(): any
 
 Prints the variable in a way that SSM understands.
 
-This is typically in the form of {{Variable}} or the value.
+This is typically in the form of {{ Variable }} or the value.
 
 ##### `requiredInputs` <a name="requiredInputs" id="@cdklabs/cdk-ssm-documents.StringMapVariable.requiredInputs"></a>
 
@@ -37279,7 +38100,7 @@ public print(): any
 
 Prints the variable in a way that SSM understands.
 
-This is typically in the form of {{Variable}} or the value.
+This is typically in the form of {{ Variable }} or the value.
 
 ##### `requiredInputs` <a name="requiredInputs" id="@cdklabs/cdk-ssm-documents.StringVariable.requiredInputs"></a>
 
@@ -38009,12 +38830,12 @@ public print(): any
 
 Prints the variable in a way that SSM understands.
 
-This is typically in the form of {{Variable}} or the value.
+This is typically in the form of {{ Variable }} or the value.
 
 *Example*
 
 ```typescript
-{{MyVariable}}
+{{ MyVariable }}
 ```
 
 

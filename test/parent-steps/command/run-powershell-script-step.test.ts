@@ -39,7 +39,7 @@ describe('RunPowerShellScriptStep', function() {
         inputs: {
           runCommand: [
             'mkdir asdf',
-            'some {{MyVar}} string',
+            'some {{ MyVar }} string',
           ],
         },
         name: 'MyShellScript',

@@ -33,7 +33,7 @@ export interface ConfigurePackageStepProps extends CommandStepProps {
 
   /**
    * The additional parameters to provide to your install, uninstall, or update scripts. Each parameter must be prefixed with SSM_.
-   * You can reference a Parameter Store parameter in your additional arguments by using the convention {{ssm:parameter-name}}.
+   * You can reference a Parameter Store parameter in your additional arguments by using the convention {{ ssm:parameter-name }}.
    * To use the additional parameter in your install, uninstall, or update script,
    * you must reference the parameter as an environment variable using the syntax appropriate for the operating system.
    * For example, in PowerShell, you reference the SSM_arg argument as $Env:SSM_arg.

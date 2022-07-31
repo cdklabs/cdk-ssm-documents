@@ -65,7 +65,7 @@ export class DeleteStackStep extends AutomationStep {
   public toSsmEntry(): { [name: string]: any } {
     const inputs: { [name: string]: any } = {
       StackName: this.stackNameVariable.print(),
-      ClientRequestToken: `${this.stackNameVariable.print()}{{automation:EXECUTION_ID}}`,
+      ClientRequestToken: `${this.stackNameVariable.print()}{{ automation:EXECUTION_ID }}`,
     };
     if (this.roleArn != undefined) {
       inputs.RoleARN = this.roleArn;

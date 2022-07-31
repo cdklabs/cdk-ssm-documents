@@ -29,7 +29,7 @@ export class AwsApiSimulation extends AutomationSimulationBase {
   /**
      * Invokes the specified service (param) with the specified api (param) with the specified apiParams (param).
      * This call will be invoked synchronously.
-     * The input variables in apiParams (param) specified using "{{INPUT}}" syntax will be replaced with the inputs.
+     * The input variables in apiParams (param) specified using "{{ INPUT }}" syntax will be replaced with the inputs.
      * @returns the AWS api response. The Output selection will take place outside of this function.
      */
   public executeStep(inputs: { [name: string]: any }): { [name: string]: any } {

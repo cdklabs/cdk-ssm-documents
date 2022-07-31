@@ -2,6 +2,7 @@ import { Stack } from 'aws-cdk-lib';
 import { Construct } from 'constructs';
 import { AutomationDocument } from '../document/automation-document';
 import { DataTypeEnum } from '../domain/data-type';
+import { Input } from '../domain/input';
 import { StringVariable } from '../interface/variables/string-variable';
 import { AwsApiStep } from '../parent-steps/automation/aws-api-step';
 import { ExecuteScriptStep, ScriptLanguage } from '../parent-steps/automation/execute-script-step';
@@ -10,15 +11,10 @@ export class HelloWorld extends Stack {
   constructor(app: Construct, id: string) {
     super(app, id);
     const doc = new AutomationDocument(this, 'HelloWorld', {
-      docInputs: [{
-        name: 'Someone',
-        inputType: DataTypeEnum.STRING,
-        allowedPattern: '[a-zA-Z]+',
-      },
-      {
-        name: 'SnsTopic',
-        inputType: DataTypeEnum.STRING,
-      }],
+      docInputs: [
+        Input.ofTypeString('Someone', { allowedPattern: '[a-zA-Z]+' }),
+        Input.ofTypeString('SnsTopic'),
+      ],
     });
 
     const greeting = new ExecuteScriptStep(this, 'PrependWithGreeting', {

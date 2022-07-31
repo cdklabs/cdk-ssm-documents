@@ -79,7 +79,7 @@ describe('PsModuleStep', function() {
                     cd /mnt ; \
                     Convertto-Yaml @{"hello"="world"} > output.txt',
           ],
-          source: '{{MyVar}}',
+          source: '{{ MyVar }}',
         },
         name: 'psModule',
       });

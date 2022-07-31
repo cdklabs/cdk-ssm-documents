@@ -125,7 +125,7 @@ describe('CreateTagsStep', () => {
         action: 'aws:createTags',
         inputs: {
           ResourceIds: ['resource id'],
-          ResourceType: '{{resourceType}}',
+          ResourceType: '{{ resourceType }}',
           Tags: [{ Key: 'key', Value: 'value' }],
         },
         name: 'createTags',

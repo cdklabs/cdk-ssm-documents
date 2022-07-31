@@ -53,7 +53,7 @@ export class AutomationDocument extends SsmDocument {
       root.assumeRole = this.assumeRole;
     }
     if (this.docOutputs.length > 0) {
-      root.outputs = this.docOutputs;
+      root.outputs = this.docOutputs.map(o => o.name);
     }
     root.mainSteps = automationSteps;
     return root;

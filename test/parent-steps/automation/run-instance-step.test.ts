@@ -200,8 +200,8 @@ describe('RunInstanceStep', function() {
         action: 'aws:runInstances',
         inputs: {
           ImageId: 'image id',
-          InstanceType: '{{string}}',
-          MinInstanceCount: '{{variable}}',
+          InstanceType: '{{ string }}',
+          MinInstanceCount: '{{ variable }}',
           MaxInstanceCount: 1,
           AdditionalInfo: 'string',
           BlockDeviceMappings: [{ a: 1 }],

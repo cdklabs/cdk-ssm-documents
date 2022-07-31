@@ -1,15 +1,16 @@
 import * as assert from 'assert';
 import { Stack } from 'aws-cdk-lib';
 import {
-  RunShellScriptStep, CommandDocument, DataTypeEnum, ResponseCode, StringFormat, StringVariable, Platform,
+  RunShellScriptStep, CommandDocument, ResponseCode, Simulation, StringFormat, StringVariable, Platform, Input,
 } from '../../lib';
-import { Simulation } from '../../lib/simulation/simulation';
 
 describe('CommandDocument', function() {
   describe('#runSimulation()', function() {
     it('Outputs the status and results of steps', function() {
       const stack: Stack = new Stack();
-      const myCommandDoc = new CommandDocument(stack, 'MyCommandDoc', { docInputs: [{ name: 'MyInput', defaultValue: 'a', inputType: DataTypeEnum.STRING }] });
+      const myCommandDoc = new CommandDocument(stack, 'MyCommandDoc', {
+        docInputs: [Input.ofTypeString('MyInput', { defaultValue: 'a' })],
+      });
 
       // First step
       myCommandDoc.addStep(new RunShellScriptStep(stack, 'MyShellScript1', {
@@ -39,7 +40,7 @@ describe('CommandDocument', function() {
     it('Document outputs only includes those outputs specified as document outputs', function() {
       const stack: Stack = new Stack();
       const myCommandDoc = new CommandDocument(stack, 'MyCommandDoc',
-        { docInputs: [{ name: 'MyInput', defaultValue: 'a', inputType: DataTypeEnum.STRING }] });
+        { docInputs: [Input.ofTypeString('MyInput', { defaultValue: 'a' })] });
       // First step
       myCommandDoc.addStep(new RunShellScriptStep(stack, 'MyShellScript1', {
         name: 'Shell1',
@@ -60,7 +61,7 @@ describe('CommandDocument', function() {
               action: 'aws:runShellScript',
               inputs: {
                 runCommand: [
-                  'echo {{MyInput}}',
+                  'echo {{ MyInput }}',
                 ],
               },
               name: 'Shell1',
@@ -69,7 +70,7 @@ describe('CommandDocument', function() {
               action: 'aws:runShellScript',
               inputs: {
                 runCommand: [
-                  'echo again {{MyInput}}',
+                  'echo again {{ MyInput }}',
                 ],
               },
               name: 'Shell2',
