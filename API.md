@@ -1209,7 +1209,7 @@ Any object.
 | <code><a href="#@cdklabs/cdk-ssm-documents.AutomationDocument.property.docOutputs">docOutputs</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.DocumentOutput">DocumentOutput</a>[]</code> | *No description.* |
 | <code><a href="#@cdklabs/cdk-ssm-documents.AutomationDocument.property.documentName">documentName</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#@cdklabs/cdk-ssm-documents.AutomationDocument.property.props">props</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.SsmDocumentProps">SsmDocumentProps</a></code> | *No description.* |
-| <code><a href="#@cdklabs/cdk-ssm-documents.AutomationDocument.property.assumeRole">assumeRole</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.AutomationDocument.property.assumeRole">assumeRole</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.IStringVariable">IStringVariable</a></code> | *No description.* |
 | <code><a href="#@cdklabs/cdk-ssm-documents.AutomationDocument.property.header">header</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#@cdklabs/cdk-ssm-documents.AutomationDocument.property.builder">builder</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AutomationDocumentBuilder">AutomationDocumentBuilder</a></code> | *No description.* |
 
@@ -1280,10 +1280,10 @@ public readonly props: SsmDocumentProps;
 ##### `assumeRole`<sup>Optional</sup> <a name="assumeRole" id="@cdklabs/cdk-ssm-documents.AutomationDocument.property.assumeRole"></a>
 
 ```typescript
-public readonly assumeRole: string;
+public readonly assumeRole: IStringVariable;
 ```
 
-- *Type:* string
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.IStringVariable">IStringVariable</a>
 
 ---
 
@@ -2811,7 +2811,7 @@ Any object.
 | <code><a href="#@cdklabs/cdk-ssm-documents.CommandDocument.property.docOutputs">docOutputs</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.DocumentOutput">DocumentOutput</a>[]</code> | *No description.* |
 | <code><a href="#@cdklabs/cdk-ssm-documents.CommandDocument.property.documentName">documentName</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#@cdklabs/cdk-ssm-documents.CommandDocument.property.props">props</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.SsmDocumentProps">SsmDocumentProps</a></code> | *No description.* |
-| <code><a href="#@cdklabs/cdk-ssm-documents.CommandDocument.property.assumeRole">assumeRole</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.CommandDocument.property.assumeRole">assumeRole</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.IStringVariable">IStringVariable</a></code> | *No description.* |
 | <code><a href="#@cdklabs/cdk-ssm-documents.CommandDocument.property.header">header</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#@cdklabs/cdk-ssm-documents.CommandDocument.property.builder">builder</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.CommandDocumentBuilder">CommandDocumentBuilder</a></code> | *No description.* |
 
@@ -2882,10 +2882,10 @@ public readonly props: SsmDocumentProps;
 ##### `assumeRole`<sup>Optional</sup> <a name="assumeRole" id="@cdklabs/cdk-ssm-documents.CommandDocument.property.assumeRole"></a>
 
 ```typescript
-public readonly assumeRole: string;
+public readonly assumeRole: IStringVariable;
 ```
 
-- *Type:* string
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.IStringVariable">IStringVariable</a>
 
 ---
 
@@ -13521,7 +13521,7 @@ Any object.
 | <code><a href="#@cdklabs/cdk-ssm-documents.SsmDocument.property.docOutputs">docOutputs</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.DocumentOutput">DocumentOutput</a>[]</code> | *No description.* |
 | <code><a href="#@cdklabs/cdk-ssm-documents.SsmDocument.property.documentName">documentName</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#@cdklabs/cdk-ssm-documents.SsmDocument.property.props">props</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.SsmDocumentProps">SsmDocumentProps</a></code> | *No description.* |
-| <code><a href="#@cdklabs/cdk-ssm-documents.SsmDocument.property.assumeRole">assumeRole</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.SsmDocument.property.assumeRole">assumeRole</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.IStringVariable">IStringVariable</a></code> | *No description.* |
 | <code><a href="#@cdklabs/cdk-ssm-documents.SsmDocument.property.header">header</a></code> | <code>string</code> | *No description.* |
 
 ---
@@ -13591,10 +13591,10 @@ public readonly props: SsmDocumentProps;
 ##### `assumeRole`<sup>Optional</sup> <a name="assumeRole" id="@cdklabs/cdk-ssm-documents.SsmDocument.property.assumeRole"></a>
 
 ```typescript
-public readonly assumeRole: string;
+public readonly assumeRole: IStringVariable;
 ```
 
-- *Type:* string
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.IStringVariable">IStringVariable</a>
 
 ---
 
@@ -14079,7 +14079,7 @@ Any object.
 | <code><a href="#@cdklabs/cdk-ssm-documents.TimedDocument.property.docOutputs">docOutputs</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.DocumentOutput">DocumentOutput</a>[]</code> | *No description.* |
 | <code><a href="#@cdklabs/cdk-ssm-documents.TimedDocument.property.documentName">documentName</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#@cdklabs/cdk-ssm-documents.TimedDocument.property.props">props</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.SsmDocumentProps">SsmDocumentProps</a></code> | *No description.* |
-| <code><a href="#@cdklabs/cdk-ssm-documents.TimedDocument.property.assumeRole">assumeRole</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.TimedDocument.property.assumeRole">assumeRole</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.IStringVariable">IStringVariable</a></code> | *No description.* |
 | <code><a href="#@cdklabs/cdk-ssm-documents.TimedDocument.property.header">header</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#@cdklabs/cdk-ssm-documents.TimedDocument.property.builder">builder</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AutomationDocumentBuilder">AutomationDocumentBuilder</a></code> | *No description.* |
 
@@ -14150,10 +14150,10 @@ public readonly props: SsmDocumentProps;
 ##### `assumeRole`<sup>Optional</sup> <a name="assumeRole" id="@cdklabs/cdk-ssm-documents.TimedDocument.property.assumeRole"></a>
 
 ```typescript
-public readonly assumeRole: string;
+public readonly assumeRole: IStringVariable;
 ```
 
-- *Type:* string
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.IStringVariable">IStringVariable</a>
 
 ---
 
@@ -16060,7 +16060,7 @@ const automationDocumentProps: AutomationDocumentProps = { ... }
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#@cdklabs/cdk-ssm-documents.AutomationDocumentProps.property.assumeRole">assumeRole</a></code> | <code>string</code> | (Optional) Assume role to use for this document. |
+| <code><a href="#@cdklabs/cdk-ssm-documents.AutomationDocumentProps.property.assumeRole">assumeRole</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.IStringVariable">IStringVariable</a></code> | (Optional) Assume role to use for this document. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.AutomationDocumentProps.property.description">description</a></code> | <code>string</code> | (Optional) Description of the document. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.AutomationDocumentProps.property.docInputs">docInputs</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.Input">Input</a>[]</code> | (Optional) Inputs required by the document. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.AutomationDocumentProps.property.docOutputs">docOutputs</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.DocumentOutput">DocumentOutput</a>[]</code> | (Optional) Outputs to be emitted from the document. |
@@ -16077,10 +16077,10 @@ const automationDocumentProps: AutomationDocumentProps = { ... }
 ##### `assumeRole`<sup>Optional</sup> <a name="assumeRole" id="@cdklabs/cdk-ssm-documents.AutomationDocumentProps.property.assumeRole"></a>
 
 ```typescript
-public readonly assumeRole: string;
+public readonly assumeRole: IStringVariable;
 ```
 
-- *Type:* string
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.IStringVariable">IStringVariable</a>
 
 (Optional) Assume role to use for this document.
 
@@ -17800,7 +17800,7 @@ const commandDocumentProps: CommandDocumentProps = { ... }
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#@cdklabs/cdk-ssm-documents.CommandDocumentProps.property.assumeRole">assumeRole</a></code> | <code>string</code> | (Optional) Assume role to use for this document. |
+| <code><a href="#@cdklabs/cdk-ssm-documents.CommandDocumentProps.property.assumeRole">assumeRole</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.IStringVariable">IStringVariable</a></code> | (Optional) Assume role to use for this document. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.CommandDocumentProps.property.description">description</a></code> | <code>string</code> | (Optional) Description of the document. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.CommandDocumentProps.property.docInputs">docInputs</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.Input">Input</a>[]</code> | (Optional) Inputs required by the document. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.CommandDocumentProps.property.docOutputs">docOutputs</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.DocumentOutput">DocumentOutput</a>[]</code> | (Optional) Outputs to be emitted from the document. |
@@ -17817,10 +17817,10 @@ const commandDocumentProps: CommandDocumentProps = { ... }
 ##### `assumeRole`<sup>Optional</sup> <a name="assumeRole" id="@cdklabs/cdk-ssm-documents.CommandDocumentProps.property.assumeRole"></a>
 
 ```typescript
-public readonly assumeRole: string;
+public readonly assumeRole: IStringVariable;
 ```
 
-- *Type:* string
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.IStringVariable">IStringVariable</a>
 
 (Optional) Assume role to use for this document.
 
@@ -26141,7 +26141,7 @@ const ssmDocumentProps: SsmDocumentProps = { ... }
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#@cdklabs/cdk-ssm-documents.SsmDocumentProps.property.assumeRole">assumeRole</a></code> | <code>string</code> | (Optional) Assume role to use for this document. |
+| <code><a href="#@cdklabs/cdk-ssm-documents.SsmDocumentProps.property.assumeRole">assumeRole</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.IStringVariable">IStringVariable</a></code> | (Optional) Assume role to use for this document. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.SsmDocumentProps.property.description">description</a></code> | <code>string</code> | (Optional) Description of the document. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.SsmDocumentProps.property.docInputs">docInputs</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.Input">Input</a>[]</code> | (Optional) Inputs required by the document. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.SsmDocumentProps.property.docOutputs">docOutputs</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.DocumentOutput">DocumentOutput</a>[]</code> | (Optional) Outputs to be emitted from the document. |
@@ -26158,10 +26158,10 @@ const ssmDocumentProps: SsmDocumentProps = { ... }
 ##### `assumeRole`<sup>Optional</sup> <a name="assumeRole" id="@cdklabs/cdk-ssm-documents.SsmDocumentProps.property.assumeRole"></a>
 
 ```typescript
-public readonly assumeRole: string;
+public readonly assumeRole: IStringVariable;
 ```
 
-- *Type:* string
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.IStringVariable">IStringVariable</a>
 
 (Optional) Assume role to use for this document.
 

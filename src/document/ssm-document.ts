@@ -4,7 +4,7 @@ import { CfnDocument } from 'aws-cdk-lib/aws-ssm';
 import { Construct } from 'constructs';
 import { DocumentOutput } from '../domain/document-output';
 import { Input } from '../domain/input';
-import { StringVariable } from '../interface/variables/string-variable';
+import {IStringVariable, StringVariable} from '../interface/variables/string-variable';
 // eslint-disable-next-line @typescript-eslint/no-require-imports
 const yaml = require('js-yaml');
 
@@ -31,7 +31,7 @@ export interface SsmDocumentProps {
      * (Optional) Assume role to use for this document.
      * If provided, this value MUST be included as one of the documentInput names.
      */
-  readonly assumeRole?: string;
+  readonly assumeRole?: IStringVariable;
   /**
      * (Optional) Outputs to be emitted from the document.
      * The outputs are placed in a StringSet called outputs (as is done in SSM).
@@ -83,7 +83,7 @@ export abstract class SsmDocument extends Construct {
   readonly documentName: string;
   readonly description: string;
   readonly header?: string;
-  readonly assumeRole?: string;
+  readonly assumeRole?: IStringVariable;
   readonly docOutputs: DocumentOutput[];
   readonly docInputs: Input[];
   readonly props: SsmDocumentProps;
@@ -93,11 +93,12 @@ export abstract class SsmDocument extends Construct {
     this.documentName = props.documentName ?? id;
     this.description = props.description ?? this.documentName;
     this.header = props.header;
-    this.assumeRole = props.assumeRole && StringVariable.of(props.assumeRole).toString() || undefined;
+    this.assumeRole = props.assumeRole;
     this.docOutputs = props.docOutputs ?? [];
     this.docInputs = props.docInputs ?? [];
-    if (this.assumeRole && !this.docInputs.map(i => i.name).includes(this.assumeRole)) {
-      throw new Error('Assume rold specified but not provided in inputs: ' + this.assumeRole);
+    if (this.assumeRole && this.assumeRole instanceof StringVariable &&
+      !this.docInputs.map(i => i.name).includes(this.assumeRole.reference)) {
+      throw new Error('Assume role specified but not provided in inputs: ' + this.assumeRole);
     }
     this.props = props;
     const isYaml = this.props.documentFormat == DocumentFormat.YAML;
