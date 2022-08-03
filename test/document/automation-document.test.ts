@@ -2,20 +2,24 @@ import * as assert from 'assert';
 import { resolve } from 'path';
 import { Stack } from 'aws-cdk-lib';
 import { Construct } from 'constructs';
-
 import {
-  SynthUtils,
   AutomationDocument,
   AutomationDocumentProps,
   DataTypeEnum,
+  DocumentFormat,
   ExecuteScriptStep,
+  Input,
   MockPause,
   PauseStep,
   ResponseCode,
   ScriptLanguage,
   Simulation,
-  Input,
+  StringVariable,
+  SynthUtils,
 } from '../../lib';
+// eslint-disable-next-line @typescript-eslint/no-require-imports
+const yaml = require('js-yaml');
+
 
 describe('AutomationDocument', function() {
   describe('#runSimulation()', function() {
@@ -114,12 +118,14 @@ describe('AutomationDocument', function() {
   });
   describe('#printAsJson()', function() {
     it('Prints an SSM Automation doc', function() {
-
-
       const stack: Stack = new Stack();
       const myAutomationDoc = new AutomationDocument(stack, 'MyAutomationDoc', {
         documentName: 'MyDoc',
-        docInputs: [Input.ofTypeString('MyInput', { defaultValue: 'a' })],
+        assumeRole: StringVariable.of('AutomationRole'),
+        docInputs: [
+          Input.ofTypeString('MyInput', { defaultValue: 'a' }),
+          Input.ofTypeString('AutomationRole'),
+        ],
       });
       myAutomationDoc.addStep(new PauseStep(stack, 'MyPauseStep', { name: 'MyPauseStep' }));
       myAutomationDoc.addStep(new ExecuteScriptStep(stack, 'MyExecuteStep', {
@@ -139,6 +145,7 @@ describe('AutomationDocument', function() {
 
       assertDeepEqual(JSON.parse(ssmJson),
         {
+          assumeRole: '{{ AutomationRole }}',
           description: 'MyDoc',
           mainSteps: [
             {
@@ -167,6 +174,80 @@ describe('AutomationDocument', function() {
             },
           ],
           parameters: {
+            AutomationRole: {
+              type: 'String',
+            },
+            MyInput: {
+              default: 'a',
+              type: 'String',
+            },
+          },
+          schemaVersion: '0.3',
+        });
+    });
+  });
+  describe('#printAsYaml()', function() {
+    it('Prints an SSM Automation doc', function() {
+      const stack: Stack = new Stack();
+      const myAutomationDoc = new AutomationDocument(stack, 'MyAutomationDoc', {
+        documentName: 'MyDoc',
+        documentFormat: DocumentFormat.YAML,
+        assumeRole: StringVariable.of('AutomationRole'),
+        docInputs: [
+          Input.ofTypeString('MyInput', { defaultValue: 'a' }),
+          Input.ofTypeString('AutomationRole'),
+        ],
+      });
+      myAutomationDoc.addStep(new PauseStep(stack, 'MyPauseStep', { name: 'MyPauseStep' }));
+      myAutomationDoc.addStep(new ExecuteScriptStep(stack, 'MyExecuteStep', {
+        name: 'step1',
+        handlerName: 'my_func',
+        language: ScriptLanguage.PYTHON,
+        fullPathToCode: resolve('test/test_file.py'),
+        outputs: [{
+          outputType: DataTypeEnum.STRING,
+          name: 'MyFuncOut',
+          selector: '$.Payload.MyReturn',
+        }],
+        inputs: ['MyInput'],
+      }));
+      SynthUtils.synthesize(stack);
+      const ssmYaml = myAutomationDoc.print();
+
+      assertDeepEqual(yaml.load(ssmYaml),
+        {
+          assumeRole: '{{ AutomationRole }}',
+          description: 'MyDoc',
+          mainSteps: [
+            {
+              action: 'aws:pause',
+              inputs: {},
+              name: 'MyPauseStep',
+            },
+            {
+              action: 'aws:executeScript',
+              inputs: {
+                Handler: 'my_func',
+                InputPayload: {
+                  MyInput: '{{ MyInput }}',
+                },
+                Runtime: 'python3.6',
+                Script: 'def my_func(args, context):\n    return {"MyReturn": args["MyInput"] + "-suffix"}\n\ndef bad_func(args, context):\n    return {"MyReturn": args["INPUT_DOES_NOT_EXIST"] + "-suffix"}\n',
+              },
+              name: 'step1',
+              outputs: [
+                {
+                  Name: 'MyFuncOut',
+                  Selector: '$.Payload.MyReturn',
+                  Type: 'String',
+                },
+              ],
+            },
+          ],
+          parameters: {
+            AutomationRole: {
+              type: 'String',
+            },
             MyInput: {
               default: 'a',
               type: 'String',
