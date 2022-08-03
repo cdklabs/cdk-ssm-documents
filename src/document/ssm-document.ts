@@ -4,7 +4,7 @@ import { CfnDocument } from 'aws-cdk-lib/aws-ssm';
 import { Construct } from 'constructs';
 import { DocumentOutput } from '../domain/document-output';
 import { Input } from '../domain/input';
-import {IStringVariable, StringVariable} from '../interface/variables/string-variable';
+import { IStringVariable, StringVariable } from '../interface/variables/string-variable';
 // eslint-disable-next-line @typescript-eslint/no-require-imports
 const yaml = require('js-yaml');
 
@@ -149,12 +149,14 @@ export abstract class SsmDocument extends Construct {
      */
   public print(): string {
     const isYaml = this.props.documentFormat == DocumentFormat.YAML;
+    // format as JSON first so that the JSON printing goes into effect
+    const doc = JSON.parse(JSON.stringify(this.buildSsmDocument()));
     if (isYaml) {
       // Prepend the document with the header if defined
-      return this.headerWithComments() + yaml.dump(this.buildSsmDocument());
+      return this.headerWithComments() + yaml.dump(doc);
     } else {
       // There is no way to provide the header comment in a json document
-      return JSON.stringify(this.buildSsmDocument());
+      return JSON.stringify(doc);
     }
   }
 
