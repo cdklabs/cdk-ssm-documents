@@ -96,7 +96,7 @@ export abstract class AutomationStep extends Step implements IAutomationComponen
       ssmDef.set('maxAttempts', this.maxAttempts);
     }
     if (this.timeoutSeconds != AutomationStep.DEFAULT_TIMEOUT) {
-      ssmDef.set('maxAttempts', this.timeoutSeconds);
+      ssmDef.set('timeoutSeconds', this.timeoutSeconds);
     }
     if (this.onCancel) {
       ssmDef.set('onCancel', 'step:' + this.onCancel.name);

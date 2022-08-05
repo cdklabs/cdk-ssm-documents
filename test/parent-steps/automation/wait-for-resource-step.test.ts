@@ -87,7 +87,7 @@ describe('WaitForResourceStep', function() {
           PropertySelector: '$.Owner.DisplayName',
           Service: 'S3',
         },
-        maxAttempts: 10,
+        timeoutSeconds: 10,
         name: 'S3List',
       });
     });
