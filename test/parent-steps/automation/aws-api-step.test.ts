@@ -72,6 +72,8 @@ describe('AwsApiStep', function() {
     it('Builds entry as per SSM Document', function() {
       const step = new AwsApiStep(new Stack(), 'id', {
         name: 'MyS3List',
+        timeoutSeconds: 9,
+        maxAttempts: 2,
         outputs: [{
           outputType: DataTypeEnum.STRING,
           name: 'DisplayName',
@@ -83,6 +85,8 @@ describe('AwsApiStep', function() {
       });
       assert.deepEqual(JSON.parse(JSON.stringify(step.toSsmEntry())), {
         action: 'aws:executeAwsApi',
+        timeoutSeconds: 9,
+        maxAttempts: 2,
         inputs: {
           Api: 'ListBuckets',
           Filter: [
