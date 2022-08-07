@@ -84,6 +84,7 @@ export * from './interface/run-document-location';
 export * from './interface/downloadable-content';
 export * from './interface/auth-method';
 export * from './interface/webhook';
+export * from './interface/on-failure';
 
 export * from './interface/variables/string-list-variable';
 export * from './interface/variables/boolean-variable';

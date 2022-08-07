@@ -5,6 +5,7 @@ import { AutomationDocumentBuilder } from '../document/document-builder';
 import { DataType } from '../domain/data-type';
 import { Output } from '../domain/output';
 import { Step, StepProps } from './step';
+import { Abort, OnCancel, OnFailure } from '../interface/on-failure';
 
 export interface AutomationStepProps extends StepProps {
 
@@ -15,16 +16,16 @@ export interface AutomationStepProps extends StepProps {
   readonly isEnd?: boolean;
 
   /**
-     * (Optional) Step to jump to in the event that this step fails.
+     * (Optional) Fallback action to take in the event that this step fails.
      * @default undefined
      */
-  readonly onFailure?: AutomationStep;
+  readonly onFailure?: OnFailure;
 
   /**
-     * (Optional) Step to jump to in the event that this step is cancelled.
+     * (Optional) Fallback action to take in the event that this step is cancelled.
      * @default undefined
      */
-  readonly onCancel?: AutomationStep;
+  readonly onCancel?: OnCancel;
 
 
   /**
@@ -56,19 +57,19 @@ export abstract class AutomationStep extends Step implements IAutomationComponen
   readonly maxAttempts: number;
   readonly timeoutSeconds: number;
   readonly isEnd: boolean;
-  readonly onFailure: AutomationStep | undefined;
-  readonly onCancel: AutomationStep | undefined;
+  readonly onFailure: OnFailure;
+  readonly onCancel: OnCancel;
 
-  nextStep: AutomationStep | undefined;
-  allStepsInExecution: AutomationStep[] | undefined;
+  nextStep?: AutomationStep;
+  allStepsInExecution?: AutomationStep[];
 
   constructor(scope: Construct, id: string, props: AutomationStepProps) {
     super(scope, id, props);
     this.maxAttempts = props.maxAttempts ?? AutomationStep.DEFAULT_MAX_ATTEMPTS;
     this.timeoutSeconds = props.timeoutSeconds ?? AutomationStep.DEFAULT_TIMEOUT;
     this.isEnd = props.isEnd ?? false;
-    this.onFailure = props.onFailure;
-    this.onCancel = props.onCancel ?? undefined;
+    this.onFailure = props.onFailure ?? new Abort();
+    this.onCancel = props.onCancel ?? new Abort();
   }
 
   public addToDocument(doc: AutomationDocumentBuilder): void {
@@ -98,11 +99,11 @@ export abstract class AutomationStep extends Step implements IAutomationComponen
     if (this.timeoutSeconds != AutomationStep.DEFAULT_TIMEOUT) {
       ssmDef.set('timeoutSeconds', this.timeoutSeconds);
     }
-    if (this.onCancel) {
-      ssmDef.set('onCancel', 'step:' + this.onCancel.name);
+    if (!(this.onCancel instanceof Abort)) {
+      ssmDef.set('onCancel', this.onCancel.toSsmValue());
     }
-    if (this.onFailure) {
-      ssmDef.set('onCancel', 'step:' + this.onFailure.name);
+    if (!(this.onFailure instanceof Abort)) {
+      ssmDef.set('onFailure', this.onFailure.toSsmValue());
     }
     const ssmDict: { [name: string]: any } = {};
     ssmDef.forEach((value, key) => {
