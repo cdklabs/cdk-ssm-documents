@@ -145,9 +145,14 @@ export class AutomationStepSimulation {
       if (error instanceof NonRetriableException) {
         throw error;
       } else if (error instanceof CancellationException) {
-        if (this.step.onCancel) {
-          console.log('Step failed: ' + this.step.name + '. Executing onCancel step ' + this.step.onCancel.name);
-          return new AutomationStepSimulation(this.step.onCancel, this.props).invoke(allInputs);
+        if (this.step.onCancel.stepToInvoke(this.step)) {
+          const onCancelStepName: string = this.step.onCancel.stepToInvoke(this.step);
+          console.log('Step cancelled: ' + this.step.name + '. Executing onCancel step ' + onCancelStepName);
+          const onCancelStep = this.step.allStepsInExecution?.filter(s => s.name == this.step.onCancel.stepToInvoke(this.step));
+          if (onCancelStep == undefined || onCancelStep.length != 1) {
+            throw new Error('Could not find cancellation step ' + onCancelStepName);
+          }
+          return new AutomationStepSimulation(onCancelStep[0], this.props).invoke(allInputs);
         } else {
           return {
             responseCode: ResponseCode.CANCELED,
@@ -156,9 +161,14 @@ export class AutomationStepSimulation {
           };
         }
       } else {
-        if (this.step.onFailure) {
-          console.log('Step failed: ' + this.step.name + '. Executing onFailure step ' + this.step.onFailure.name);
-          return new AutomationStepSimulation(this.step.onFailure, this.props).invoke(allInputs);
+        if (this.step.onFailure.stepToInvoke(this.step)) {
+          const onFailureStepName: string = this.step.onFailure.stepToInvoke(this.step);
+          console.log('Step failed: ' + this.step.name + '. Executing onFailure step ' + onFailureStepName);
+          const onFailureStep = this.step.allStepsInExecution?.filter(s => s.name == this.step.onFailure.stepToInvoke(this.step));
+          if (onFailureStep == undefined || onFailureStep.length != 1) {
+            throw new Error('Could not find onFailure step ' + onFailureStepName);
+          }
+          return new AutomationStepSimulation(onFailureStep[0], this.props).invoke(allInputs);
         } else {
           return {
             responseCode: ResponseCode.FAILED,

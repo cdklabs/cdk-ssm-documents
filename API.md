@@ -476,9 +476,9 @@ Any object.
 | <code><a href="#@cdklabs/cdk-ssm-documents.ApproveStep.property.description">description</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#@cdklabs/cdk-ssm-documents.ApproveStep.property.isEnd">isEnd</a></code> | <code>boolean</code> | *No description.* |
 | <code><a href="#@cdklabs/cdk-ssm-documents.ApproveStep.property.maxAttempts">maxAttempts</a></code> | <code>number</code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.ApproveStep.property.onCancel">onCancel</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.OnCancel">OnCancel</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.ApproveStep.property.onFailure">onFailure</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.OnFailure">OnFailure</a></code> | *No description.* |
 | <code><a href="#@cdklabs/cdk-ssm-documents.ApproveStep.property.timeoutSeconds">timeoutSeconds</a></code> | <code>number</code> | *No description.* |
-| <code><a href="#@cdklabs/cdk-ssm-documents.ApproveStep.property.onCancel">onCancel</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AutomationStep">AutomationStep</a></code> | *No description.* |
-| <code><a href="#@cdklabs/cdk-ssm-documents.ApproveStep.property.onFailure">onFailure</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AutomationStep">AutomationStep</a></code> | *No description.* |
 | <code><a href="#@cdklabs/cdk-ssm-documents.ApproveStep.property.allStepsInExecution">allStepsInExecution</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AutomationStep">AutomationStep</a>[]</code> | *No description.* |
 | <code><a href="#@cdklabs/cdk-ssm-documents.ApproveStep.property.nextStep">nextStep</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AutomationStep">AutomationStep</a></code> | *No description.* |
 | <code><a href="#@cdklabs/cdk-ssm-documents.ApproveStep.property.approvers">approvers</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.IStringListVariable">IStringListVariable</a></code> | *No description.* |
@@ -570,6 +570,26 @@ public readonly maxAttempts: number;
 
 ---
 
+##### `onCancel`<sup>Required</sup> <a name="onCancel" id="@cdklabs/cdk-ssm-documents.ApproveStep.property.onCancel"></a>
+
+```typescript
+public readonly onCancel: OnCancel;
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.OnCancel">OnCancel</a>
+
+---
+
+##### `onFailure`<sup>Required</sup> <a name="onFailure" id="@cdklabs/cdk-ssm-documents.ApproveStep.property.onFailure"></a>
+
+```typescript
+public readonly onFailure: OnFailure;
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.OnFailure">OnFailure</a>
+
+---
+
 ##### `timeoutSeconds`<sup>Required</sup> <a name="timeoutSeconds" id="@cdklabs/cdk-ssm-documents.ApproveStep.property.timeoutSeconds"></a>
 
 ```typescript
@@ -577,26 +597,6 @@ public readonly timeoutSeconds: number;
 ```
 
 - *Type:* number
-
----
-
-##### `onCancel`<sup>Optional</sup> <a name="onCancel" id="@cdklabs/cdk-ssm-documents.ApproveStep.property.onCancel"></a>
-
-```typescript
-public readonly onCancel: AutomationStep;
-```
-
-- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AutomationStep">AutomationStep</a>
-
----
-
-##### `onFailure`<sup>Optional</sup> <a name="onFailure" id="@cdklabs/cdk-ssm-documents.ApproveStep.property.onFailure"></a>
-
-```typescript
-public readonly onFailure: AutomationStep;
-```
-
-- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AutomationStep">AutomationStep</a>
 
 ---
 
@@ -830,9 +830,9 @@ Any object.
 | <code><a href="#@cdklabs/cdk-ssm-documents.AssertAwsResourceStep.property.description">description</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#@cdklabs/cdk-ssm-documents.AssertAwsResourceStep.property.isEnd">isEnd</a></code> | <code>boolean</code> | *No description.* |
 | <code><a href="#@cdklabs/cdk-ssm-documents.AssertAwsResourceStep.property.maxAttempts">maxAttempts</a></code> | <code>number</code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.AssertAwsResourceStep.property.onCancel">onCancel</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.OnCancel">OnCancel</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.AssertAwsResourceStep.property.onFailure">onFailure</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.OnFailure">OnFailure</a></code> | *No description.* |
 | <code><a href="#@cdklabs/cdk-ssm-documents.AssertAwsResourceStep.property.timeoutSeconds">timeoutSeconds</a></code> | <code>number</code> | *No description.* |
-| <code><a href="#@cdklabs/cdk-ssm-documents.AssertAwsResourceStep.property.onCancel">onCancel</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AutomationStep">AutomationStep</a></code> | *No description.* |
-| <code><a href="#@cdklabs/cdk-ssm-documents.AssertAwsResourceStep.property.onFailure">onFailure</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AutomationStep">AutomationStep</a></code> | *No description.* |
 | <code><a href="#@cdklabs/cdk-ssm-documents.AssertAwsResourceStep.property.allStepsInExecution">allStepsInExecution</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AutomationStep">AutomationStep</a>[]</code> | *No description.* |
 | <code><a href="#@cdklabs/cdk-ssm-documents.AssertAwsResourceStep.property.nextStep">nextStep</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AutomationStep">AutomationStep</a></code> | *No description.* |
 | <code><a href="#@cdklabs/cdk-ssm-documents.AssertAwsResourceStep.property.apiParams">apiParams</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.DictFormat">DictFormat</a></code> | *No description.* |
@@ -927,6 +927,26 @@ public readonly maxAttempts: number;
 
 ---
 
+##### `onCancel`<sup>Required</sup> <a name="onCancel" id="@cdklabs/cdk-ssm-documents.AssertAwsResourceStep.property.onCancel"></a>
+
+```typescript
+public readonly onCancel: OnCancel;
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.OnCancel">OnCancel</a>
+
+---
+
+##### `onFailure`<sup>Required</sup> <a name="onFailure" id="@cdklabs/cdk-ssm-documents.AssertAwsResourceStep.property.onFailure"></a>
+
+```typescript
+public readonly onFailure: OnFailure;
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.OnFailure">OnFailure</a>
+
+---
+
 ##### `timeoutSeconds`<sup>Required</sup> <a name="timeoutSeconds" id="@cdklabs/cdk-ssm-documents.AssertAwsResourceStep.property.timeoutSeconds"></a>
 
 ```typescript
@@ -934,26 +954,6 @@ public readonly timeoutSeconds: number;
 ```
 
 - *Type:* number
-
----
-
-##### `onCancel`<sup>Optional</sup> <a name="onCancel" id="@cdklabs/cdk-ssm-documents.AssertAwsResourceStep.property.onCancel"></a>
-
-```typescript
-public readonly onCancel: AutomationStep;
-```
-
-- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AutomationStep">AutomationStep</a>
-
----
-
-##### `onFailure`<sup>Optional</sup> <a name="onFailure" id="@cdklabs/cdk-ssm-documents.AssertAwsResourceStep.property.onFailure"></a>
-
-```typescript
-public readonly onFailure: AutomationStep;
-```
-
-- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AutomationStep">AutomationStep</a>
 
 ---
 
@@ -1456,9 +1456,9 @@ Any object.
 | <code><a href="#@cdklabs/cdk-ssm-documents.AutomationStep.property.description">description</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#@cdklabs/cdk-ssm-documents.AutomationStep.property.isEnd">isEnd</a></code> | <code>boolean</code> | *No description.* |
 | <code><a href="#@cdklabs/cdk-ssm-documents.AutomationStep.property.maxAttempts">maxAttempts</a></code> | <code>number</code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.AutomationStep.property.onCancel">onCancel</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.OnCancel">OnCancel</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.AutomationStep.property.onFailure">onFailure</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.OnFailure">OnFailure</a></code> | *No description.* |
 | <code><a href="#@cdklabs/cdk-ssm-documents.AutomationStep.property.timeoutSeconds">timeoutSeconds</a></code> | <code>number</code> | *No description.* |
-| <code><a href="#@cdklabs/cdk-ssm-documents.AutomationStep.property.onCancel">onCancel</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AutomationStep">AutomationStep</a></code> | *No description.* |
-| <code><a href="#@cdklabs/cdk-ssm-documents.AutomationStep.property.onFailure">onFailure</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AutomationStep">AutomationStep</a></code> | *No description.* |
 | <code><a href="#@cdklabs/cdk-ssm-documents.AutomationStep.property.allStepsInExecution">allStepsInExecution</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AutomationStep">AutomationStep</a>[]</code> | *No description.* |
 | <code><a href="#@cdklabs/cdk-ssm-documents.AutomationStep.property.nextStep">nextStep</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AutomationStep">AutomationStep</a></code> | *No description.* |
 
@@ -1546,6 +1546,26 @@ public readonly maxAttempts: number;
 
 ---
 
+##### `onCancel`<sup>Required</sup> <a name="onCancel" id="@cdklabs/cdk-ssm-documents.AutomationStep.property.onCancel"></a>
+
+```typescript
+public readonly onCancel: OnCancel;
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.OnCancel">OnCancel</a>
+
+---
+
+##### `onFailure`<sup>Required</sup> <a name="onFailure" id="@cdklabs/cdk-ssm-documents.AutomationStep.property.onFailure"></a>
+
+```typescript
+public readonly onFailure: OnFailure;
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.OnFailure">OnFailure</a>
+
+---
+
 ##### `timeoutSeconds`<sup>Required</sup> <a name="timeoutSeconds" id="@cdklabs/cdk-ssm-documents.AutomationStep.property.timeoutSeconds"></a>
 
 ```typescript
@@ -1553,26 +1573,6 @@ public readonly timeoutSeconds: number;
 ```
 
 - *Type:* number
-
----
-
-##### `onCancel`<sup>Optional</sup> <a name="onCancel" id="@cdklabs/cdk-ssm-documents.AutomationStep.property.onCancel"></a>
-
-```typescript
-public readonly onCancel: AutomationStep;
-```
-
-- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AutomationStep">AutomationStep</a>
-
----
-
-##### `onFailure`<sup>Optional</sup> <a name="onFailure" id="@cdklabs/cdk-ssm-documents.AutomationStep.property.onFailure"></a>
-
-```typescript
-public readonly onFailure: AutomationStep;
-```
-
-- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AutomationStep">AutomationStep</a>
 
 ---
 
@@ -1764,9 +1764,9 @@ Any object.
 | <code><a href="#@cdklabs/cdk-ssm-documents.AwsApiStep.property.description">description</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#@cdklabs/cdk-ssm-documents.AwsApiStep.property.isEnd">isEnd</a></code> | <code>boolean</code> | *No description.* |
 | <code><a href="#@cdklabs/cdk-ssm-documents.AwsApiStep.property.maxAttempts">maxAttempts</a></code> | <code>number</code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.AwsApiStep.property.onCancel">onCancel</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.OnCancel">OnCancel</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.AwsApiStep.property.onFailure">onFailure</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.OnFailure">OnFailure</a></code> | *No description.* |
 | <code><a href="#@cdklabs/cdk-ssm-documents.AwsApiStep.property.timeoutSeconds">timeoutSeconds</a></code> | <code>number</code> | *No description.* |
-| <code><a href="#@cdklabs/cdk-ssm-documents.AwsApiStep.property.onCancel">onCancel</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AutomationStep">AutomationStep</a></code> | *No description.* |
-| <code><a href="#@cdklabs/cdk-ssm-documents.AwsApiStep.property.onFailure">onFailure</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AutomationStep">AutomationStep</a></code> | *No description.* |
 | <code><a href="#@cdklabs/cdk-ssm-documents.AwsApiStep.property.allStepsInExecution">allStepsInExecution</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AutomationStep">AutomationStep</a>[]</code> | *No description.* |
 | <code><a href="#@cdklabs/cdk-ssm-documents.AwsApiStep.property.nextStep">nextStep</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AutomationStep">AutomationStep</a></code> | *No description.* |
 | <code><a href="#@cdklabs/cdk-ssm-documents.AwsApiStep.property.apiParams">apiParams</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.DictFormat">DictFormat</a></code> | *No description.* |
@@ -1859,6 +1859,26 @@ public readonly maxAttempts: number;
 
 ---
 
+##### `onCancel`<sup>Required</sup> <a name="onCancel" id="@cdklabs/cdk-ssm-documents.AwsApiStep.property.onCancel"></a>
+
+```typescript
+public readonly onCancel: OnCancel;
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.OnCancel">OnCancel</a>
+
+---
+
+##### `onFailure`<sup>Required</sup> <a name="onFailure" id="@cdklabs/cdk-ssm-documents.AwsApiStep.property.onFailure"></a>
+
+```typescript
+public readonly onFailure: OnFailure;
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.OnFailure">OnFailure</a>
+
+---
+
 ##### `timeoutSeconds`<sup>Required</sup> <a name="timeoutSeconds" id="@cdklabs/cdk-ssm-documents.AwsApiStep.property.timeoutSeconds"></a>
 
 ```typescript
@@ -1866,26 +1886,6 @@ public readonly timeoutSeconds: number;
 ```
 
 - *Type:* number
-
----
-
-##### `onCancel`<sup>Optional</sup> <a name="onCancel" id="@cdklabs/cdk-ssm-documents.AwsApiStep.property.onCancel"></a>
-
-```typescript
-public readonly onCancel: AutomationStep;
-```
-
-- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AutomationStep">AutomationStep</a>
-
----
-
-##### `onFailure`<sup>Optional</sup> <a name="onFailure" id="@cdklabs/cdk-ssm-documents.AwsApiStep.property.onFailure"></a>
-
-```typescript
-public readonly onFailure: AutomationStep;
-```
-
-- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AutomationStep">AutomationStep</a>
 
 ---
 
@@ -2127,9 +2127,9 @@ Any object.
 | <code><a href="#@cdklabs/cdk-ssm-documents.BranchStep.property.description">description</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#@cdklabs/cdk-ssm-documents.BranchStep.property.isEnd">isEnd</a></code> | <code>boolean</code> | *No description.* |
 | <code><a href="#@cdklabs/cdk-ssm-documents.BranchStep.property.maxAttempts">maxAttempts</a></code> | <code>number</code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.BranchStep.property.onCancel">onCancel</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.OnCancel">OnCancel</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.BranchStep.property.onFailure">onFailure</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.OnFailure">OnFailure</a></code> | *No description.* |
 | <code><a href="#@cdklabs/cdk-ssm-documents.BranchStep.property.timeoutSeconds">timeoutSeconds</a></code> | <code>number</code> | *No description.* |
-| <code><a href="#@cdklabs/cdk-ssm-documents.BranchStep.property.onCancel">onCancel</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AutomationStep">AutomationStep</a></code> | *No description.* |
-| <code><a href="#@cdklabs/cdk-ssm-documents.BranchStep.property.onFailure">onFailure</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AutomationStep">AutomationStep</a></code> | *No description.* |
 | <code><a href="#@cdklabs/cdk-ssm-documents.BranchStep.property.allStepsInExecution">allStepsInExecution</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AutomationStep">AutomationStep</a>[]</code> | *No description.* |
 | <code><a href="#@cdklabs/cdk-ssm-documents.BranchStep.property.nextStep">nextStep</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AutomationStep">AutomationStep</a></code> | *No description.* |
 | <code><a href="#@cdklabs/cdk-ssm-documents.BranchStep.property.choices">choices</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.Choice">Choice</a>[]</code> | *No description.* |
@@ -2219,6 +2219,26 @@ public readonly maxAttempts: number;
 
 ---
 
+##### `onCancel`<sup>Required</sup> <a name="onCancel" id="@cdklabs/cdk-ssm-documents.BranchStep.property.onCancel"></a>
+
+```typescript
+public readonly onCancel: OnCancel;
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.OnCancel">OnCancel</a>
+
+---
+
+##### `onFailure`<sup>Required</sup> <a name="onFailure" id="@cdklabs/cdk-ssm-documents.BranchStep.property.onFailure"></a>
+
+```typescript
+public readonly onFailure: OnFailure;
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.OnFailure">OnFailure</a>
+
+---
+
 ##### `timeoutSeconds`<sup>Required</sup> <a name="timeoutSeconds" id="@cdklabs/cdk-ssm-documents.BranchStep.property.timeoutSeconds"></a>
 
 ```typescript
@@ -2226,26 +2246,6 @@ public readonly timeoutSeconds: number;
 ```
 
 - *Type:* number
-
----
-
-##### `onCancel`<sup>Optional</sup> <a name="onCancel" id="@cdklabs/cdk-ssm-documents.BranchStep.property.onCancel"></a>
-
-```typescript
-public readonly onCancel: AutomationStep;
-```
-
-- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AutomationStep">AutomationStep</a>
-
----
-
-##### `onFailure`<sup>Optional</sup> <a name="onFailure" id="@cdklabs/cdk-ssm-documents.BranchStep.property.onFailure"></a>
-
-```typescript
-public readonly onFailure: AutomationStep;
-```
-
-- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AutomationStep">AutomationStep</a>
 
 ---
 
@@ -2457,9 +2457,9 @@ Any object.
 | <code><a href="#@cdklabs/cdk-ssm-documents.ChangeInstanceStateStep.property.description">description</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#@cdklabs/cdk-ssm-documents.ChangeInstanceStateStep.property.isEnd">isEnd</a></code> | <code>boolean</code> | *No description.* |
 | <code><a href="#@cdklabs/cdk-ssm-documents.ChangeInstanceStateStep.property.maxAttempts">maxAttempts</a></code> | <code>number</code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.ChangeInstanceStateStep.property.onCancel">onCancel</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.OnCancel">OnCancel</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.ChangeInstanceStateStep.property.onFailure">onFailure</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.OnFailure">OnFailure</a></code> | *No description.* |
 | <code><a href="#@cdklabs/cdk-ssm-documents.ChangeInstanceStateStep.property.timeoutSeconds">timeoutSeconds</a></code> | <code>number</code> | *No description.* |
-| <code><a href="#@cdklabs/cdk-ssm-documents.ChangeInstanceStateStep.property.onCancel">onCancel</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AutomationStep">AutomationStep</a></code> | *No description.* |
-| <code><a href="#@cdklabs/cdk-ssm-documents.ChangeInstanceStateStep.property.onFailure">onFailure</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AutomationStep">AutomationStep</a></code> | *No description.* |
 | <code><a href="#@cdklabs/cdk-ssm-documents.ChangeInstanceStateStep.property.allStepsInExecution">allStepsInExecution</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AutomationStep">AutomationStep</a>[]</code> | *No description.* |
 | <code><a href="#@cdklabs/cdk-ssm-documents.ChangeInstanceStateStep.property.nextStep">nextStep</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AutomationStep">AutomationStep</a></code> | *No description.* |
 | <code><a href="#@cdklabs/cdk-ssm-documents.ChangeInstanceStateStep.property.desiredState">desiredState</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.IDesiredStateVariable">IDesiredStateVariable</a></code> | *No description.* |
@@ -2552,6 +2552,26 @@ public readonly maxAttempts: number;
 
 ---
 
+##### `onCancel`<sup>Required</sup> <a name="onCancel" id="@cdklabs/cdk-ssm-documents.ChangeInstanceStateStep.property.onCancel"></a>
+
+```typescript
+public readonly onCancel: OnCancel;
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.OnCancel">OnCancel</a>
+
+---
+
+##### `onFailure`<sup>Required</sup> <a name="onFailure" id="@cdklabs/cdk-ssm-documents.ChangeInstanceStateStep.property.onFailure"></a>
+
+```typescript
+public readonly onFailure: OnFailure;
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.OnFailure">OnFailure</a>
+
+---
+
 ##### `timeoutSeconds`<sup>Required</sup> <a name="timeoutSeconds" id="@cdklabs/cdk-ssm-documents.ChangeInstanceStateStep.property.timeoutSeconds"></a>
 
 ```typescript
@@ -2559,26 +2579,6 @@ public readonly timeoutSeconds: number;
 ```
 
 - *Type:* number
-
----
-
-##### `onCancel`<sup>Optional</sup> <a name="onCancel" id="@cdklabs/cdk-ssm-documents.ChangeInstanceStateStep.property.onCancel"></a>
-
-```typescript
-public readonly onCancel: AutomationStep;
-```
-
-- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AutomationStep">AutomationStep</a>
-
----
-
-##### `onFailure`<sup>Optional</sup> <a name="onFailure" id="@cdklabs/cdk-ssm-documents.ChangeInstanceStateStep.property.onFailure"></a>
-
-```typescript
-public readonly onFailure: AutomationStep;
-```
-
-- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AutomationStep">AutomationStep</a>
 
 ---
 
@@ -4202,9 +4202,9 @@ Any object.
 | <code><a href="#@cdklabs/cdk-ssm-documents.CopyImageStep.property.description">description</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#@cdklabs/cdk-ssm-documents.CopyImageStep.property.isEnd">isEnd</a></code> | <code>boolean</code> | *No description.* |
 | <code><a href="#@cdklabs/cdk-ssm-documents.CopyImageStep.property.maxAttempts">maxAttempts</a></code> | <code>number</code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.CopyImageStep.property.onCancel">onCancel</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.OnCancel">OnCancel</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.CopyImageStep.property.onFailure">onFailure</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.OnFailure">OnFailure</a></code> | *No description.* |
 | <code><a href="#@cdklabs/cdk-ssm-documents.CopyImageStep.property.timeoutSeconds">timeoutSeconds</a></code> | <code>number</code> | *No description.* |
-| <code><a href="#@cdklabs/cdk-ssm-documents.CopyImageStep.property.onCancel">onCancel</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AutomationStep">AutomationStep</a></code> | *No description.* |
-| <code><a href="#@cdklabs/cdk-ssm-documents.CopyImageStep.property.onFailure">onFailure</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AutomationStep">AutomationStep</a></code> | *No description.* |
 | <code><a href="#@cdklabs/cdk-ssm-documents.CopyImageStep.property.allStepsInExecution">allStepsInExecution</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AutomationStep">AutomationStep</a>[]</code> | *No description.* |
 | <code><a href="#@cdklabs/cdk-ssm-documents.CopyImageStep.property.nextStep">nextStep</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AutomationStep">AutomationStep</a></code> | *No description.* |
 | <code><a href="#@cdklabs/cdk-ssm-documents.CopyImageStep.property.imageName">imageName</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.IStringVariable">IStringVariable</a></code> | *No description.* |
@@ -4299,6 +4299,26 @@ public readonly maxAttempts: number;
 
 ---
 
+##### `onCancel`<sup>Required</sup> <a name="onCancel" id="@cdklabs/cdk-ssm-documents.CopyImageStep.property.onCancel"></a>
+
+```typescript
+public readonly onCancel: OnCancel;
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.OnCancel">OnCancel</a>
+
+---
+
+##### `onFailure`<sup>Required</sup> <a name="onFailure" id="@cdklabs/cdk-ssm-documents.CopyImageStep.property.onFailure"></a>
+
+```typescript
+public readonly onFailure: OnFailure;
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.OnFailure">OnFailure</a>
+
+---
+
 ##### `timeoutSeconds`<sup>Required</sup> <a name="timeoutSeconds" id="@cdklabs/cdk-ssm-documents.CopyImageStep.property.timeoutSeconds"></a>
 
 ```typescript
@@ -4306,26 +4326,6 @@ public readonly timeoutSeconds: number;
 ```
 
 - *Type:* number
-
----
-
-##### `onCancel`<sup>Optional</sup> <a name="onCancel" id="@cdklabs/cdk-ssm-documents.CopyImageStep.property.onCancel"></a>
-
-```typescript
-public readonly onCancel: AutomationStep;
-```
-
-- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AutomationStep">AutomationStep</a>
-
----
-
-##### `onFailure`<sup>Optional</sup> <a name="onFailure" id="@cdklabs/cdk-ssm-documents.CopyImageStep.property.onFailure"></a>
-
-```typescript
-public readonly onFailure: AutomationStep;
-```
-
-- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AutomationStep">AutomationStep</a>
 
 ---
 
@@ -4587,9 +4587,9 @@ Any object.
 | <code><a href="#@cdklabs/cdk-ssm-documents.CreateImageStep.property.description">description</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#@cdklabs/cdk-ssm-documents.CreateImageStep.property.isEnd">isEnd</a></code> | <code>boolean</code> | *No description.* |
 | <code><a href="#@cdklabs/cdk-ssm-documents.CreateImageStep.property.maxAttempts">maxAttempts</a></code> | <code>number</code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.CreateImageStep.property.onCancel">onCancel</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.OnCancel">OnCancel</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.CreateImageStep.property.onFailure">onFailure</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.OnFailure">OnFailure</a></code> | *No description.* |
 | <code><a href="#@cdklabs/cdk-ssm-documents.CreateImageStep.property.timeoutSeconds">timeoutSeconds</a></code> | <code>number</code> | *No description.* |
-| <code><a href="#@cdklabs/cdk-ssm-documents.CreateImageStep.property.onCancel">onCancel</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AutomationStep">AutomationStep</a></code> | *No description.* |
-| <code><a href="#@cdklabs/cdk-ssm-documents.CreateImageStep.property.onFailure">onFailure</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AutomationStep">AutomationStep</a></code> | *No description.* |
 | <code><a href="#@cdklabs/cdk-ssm-documents.CreateImageStep.property.allStepsInExecution">allStepsInExecution</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AutomationStep">AutomationStep</a>[]</code> | *No description.* |
 | <code><a href="#@cdklabs/cdk-ssm-documents.CreateImageStep.property.nextStep">nextStep</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AutomationStep">AutomationStep</a></code> | *No description.* |
 | <code><a href="#@cdklabs/cdk-ssm-documents.CreateImageStep.property.imageName">imageName</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.IStringVariable">IStringVariable</a></code> | *No description.* |
@@ -4682,6 +4682,26 @@ public readonly maxAttempts: number;
 
 ---
 
+##### `onCancel`<sup>Required</sup> <a name="onCancel" id="@cdklabs/cdk-ssm-documents.CreateImageStep.property.onCancel"></a>
+
+```typescript
+public readonly onCancel: OnCancel;
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.OnCancel">OnCancel</a>
+
+---
+
+##### `onFailure`<sup>Required</sup> <a name="onFailure" id="@cdklabs/cdk-ssm-documents.CreateImageStep.property.onFailure"></a>
+
+```typescript
+public readonly onFailure: OnFailure;
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.OnFailure">OnFailure</a>
+
+---
+
 ##### `timeoutSeconds`<sup>Required</sup> <a name="timeoutSeconds" id="@cdklabs/cdk-ssm-documents.CreateImageStep.property.timeoutSeconds"></a>
 
 ```typescript
@@ -4689,26 +4709,6 @@ public readonly timeoutSeconds: number;
 ```
 
 - *Type:* number
-
----
-
-##### `onCancel`<sup>Optional</sup> <a name="onCancel" id="@cdklabs/cdk-ssm-documents.CreateImageStep.property.onCancel"></a>
-
-```typescript
-public readonly onCancel: AutomationStep;
-```
-
-- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AutomationStep">AutomationStep</a>
-
----
-
-##### `onFailure`<sup>Optional</sup> <a name="onFailure" id="@cdklabs/cdk-ssm-documents.CreateImageStep.property.onFailure"></a>
-
-```typescript
-public readonly onFailure: AutomationStep;
-```
-
-- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AutomationStep">AutomationStep</a>
 
 ---
 
@@ -4950,9 +4950,9 @@ Any object.
 | <code><a href="#@cdklabs/cdk-ssm-documents.CreateStackStep.property.description">description</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#@cdklabs/cdk-ssm-documents.CreateStackStep.property.isEnd">isEnd</a></code> | <code>boolean</code> | *No description.* |
 | <code><a href="#@cdklabs/cdk-ssm-documents.CreateStackStep.property.maxAttempts">maxAttempts</a></code> | <code>number</code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.CreateStackStep.property.onCancel">onCancel</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.OnCancel">OnCancel</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.CreateStackStep.property.onFailure">onFailure</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.OnFailure">OnFailure</a></code> | *No description.* |
 | <code><a href="#@cdklabs/cdk-ssm-documents.CreateStackStep.property.timeoutSeconds">timeoutSeconds</a></code> | <code>number</code> | *No description.* |
-| <code><a href="#@cdklabs/cdk-ssm-documents.CreateStackStep.property.onCancel">onCancel</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AutomationStep">AutomationStep</a></code> | *No description.* |
-| <code><a href="#@cdklabs/cdk-ssm-documents.CreateStackStep.property.onFailure">onFailure</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AutomationStep">AutomationStep</a></code> | *No description.* |
 | <code><a href="#@cdklabs/cdk-ssm-documents.CreateStackStep.property.allStepsInExecution">allStepsInExecution</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AutomationStep">AutomationStep</a>[]</code> | *No description.* |
 | <code><a href="#@cdklabs/cdk-ssm-documents.CreateStackStep.property.nextStep">nextStep</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AutomationStep">AutomationStep</a></code> | *No description.* |
 | <code><a href="#@cdklabs/cdk-ssm-documents.CreateStackStep.property.stackName">stackName</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.IStringVariable">IStringVariable</a></code> | *No description.* |
@@ -5054,6 +5054,26 @@ public readonly maxAttempts: number;
 
 ---
 
+##### `onCancel`<sup>Required</sup> <a name="onCancel" id="@cdklabs/cdk-ssm-documents.CreateStackStep.property.onCancel"></a>
+
+```typescript
+public readonly onCancel: OnCancel;
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.OnCancel">OnCancel</a>
+
+---
+
+##### `onFailure`<sup>Required</sup> <a name="onFailure" id="@cdklabs/cdk-ssm-documents.CreateStackStep.property.onFailure"></a>
+
+```typescript
+public readonly onFailure: OnFailure;
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.OnFailure">OnFailure</a>
+
+---
+
 ##### `timeoutSeconds`<sup>Required</sup> <a name="timeoutSeconds" id="@cdklabs/cdk-ssm-documents.CreateStackStep.property.timeoutSeconds"></a>
 
 ```typescript
@@ -5061,26 +5081,6 @@ public readonly timeoutSeconds: number;
 ```
 
 - *Type:* number
-
----
-
-##### `onCancel`<sup>Optional</sup> <a name="onCancel" id="@cdklabs/cdk-ssm-documents.CreateStackStep.property.onCancel"></a>
-
-```typescript
-public readonly onCancel: AutomationStep;
-```
-
-- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AutomationStep">AutomationStep</a>
-
----
-
-##### `onFailure`<sup>Optional</sup> <a name="onFailure" id="@cdklabs/cdk-ssm-documents.CreateStackStep.property.onFailure"></a>
-
-```typescript
-public readonly onFailure: AutomationStep;
-```
-
-- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AutomationStep">AutomationStep</a>
 
 ---
 
@@ -5412,9 +5412,9 @@ Any object.
 | <code><a href="#@cdklabs/cdk-ssm-documents.CreateTagsStep.property.description">description</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#@cdklabs/cdk-ssm-documents.CreateTagsStep.property.isEnd">isEnd</a></code> | <code>boolean</code> | *No description.* |
 | <code><a href="#@cdklabs/cdk-ssm-documents.CreateTagsStep.property.maxAttempts">maxAttempts</a></code> | <code>number</code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.CreateTagsStep.property.onCancel">onCancel</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.OnCancel">OnCancel</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.CreateTagsStep.property.onFailure">onFailure</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.OnFailure">OnFailure</a></code> | *No description.* |
 | <code><a href="#@cdklabs/cdk-ssm-documents.CreateTagsStep.property.timeoutSeconds">timeoutSeconds</a></code> | <code>number</code> | *No description.* |
-| <code><a href="#@cdklabs/cdk-ssm-documents.CreateTagsStep.property.onCancel">onCancel</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AutomationStep">AutomationStep</a></code> | *No description.* |
-| <code><a href="#@cdklabs/cdk-ssm-documents.CreateTagsStep.property.onFailure">onFailure</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AutomationStep">AutomationStep</a></code> | *No description.* |
 | <code><a href="#@cdklabs/cdk-ssm-documents.CreateTagsStep.property.allStepsInExecution">allStepsInExecution</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AutomationStep">AutomationStep</a>[]</code> | *No description.* |
 | <code><a href="#@cdklabs/cdk-ssm-documents.CreateTagsStep.property.nextStep">nextStep</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AutomationStep">AutomationStep</a></code> | *No description.* |
 | <code><a href="#@cdklabs/cdk-ssm-documents.CreateTagsStep.property.resourceIds">resourceIds</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.IStringListVariable">IStringListVariable</a></code> | *No description.* |
@@ -5505,6 +5505,26 @@ public readonly maxAttempts: number;
 
 ---
 
+##### `onCancel`<sup>Required</sup> <a name="onCancel" id="@cdklabs/cdk-ssm-documents.CreateTagsStep.property.onCancel"></a>
+
+```typescript
+public readonly onCancel: OnCancel;
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.OnCancel">OnCancel</a>
+
+---
+
+##### `onFailure`<sup>Required</sup> <a name="onFailure" id="@cdklabs/cdk-ssm-documents.CreateTagsStep.property.onFailure"></a>
+
+```typescript
+public readonly onFailure: OnFailure;
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.OnFailure">OnFailure</a>
+
+---
+
 ##### `timeoutSeconds`<sup>Required</sup> <a name="timeoutSeconds" id="@cdklabs/cdk-ssm-documents.CreateTagsStep.property.timeoutSeconds"></a>
 
 ```typescript
@@ -5512,26 +5532,6 @@ public readonly timeoutSeconds: number;
 ```
 
 - *Type:* number
-
----
-
-##### `onCancel`<sup>Optional</sup> <a name="onCancel" id="@cdklabs/cdk-ssm-documents.CreateTagsStep.property.onCancel"></a>
-
-```typescript
-public readonly onCancel: AutomationStep;
-```
-
-- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AutomationStep">AutomationStep</a>
-
----
-
-##### `onFailure`<sup>Optional</sup> <a name="onFailure" id="@cdklabs/cdk-ssm-documents.CreateTagsStep.property.onFailure"></a>
-
-```typescript
-public readonly onFailure: AutomationStep;
-```
-
-- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AutomationStep">AutomationStep</a>
 
 ---
 
@@ -5753,9 +5753,9 @@ Any object.
 | <code><a href="#@cdklabs/cdk-ssm-documents.DeleteImageStep.property.description">description</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#@cdklabs/cdk-ssm-documents.DeleteImageStep.property.isEnd">isEnd</a></code> | <code>boolean</code> | *No description.* |
 | <code><a href="#@cdklabs/cdk-ssm-documents.DeleteImageStep.property.maxAttempts">maxAttempts</a></code> | <code>number</code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.DeleteImageStep.property.onCancel">onCancel</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.OnCancel">OnCancel</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.DeleteImageStep.property.onFailure">onFailure</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.OnFailure">OnFailure</a></code> | *No description.* |
 | <code><a href="#@cdklabs/cdk-ssm-documents.DeleteImageStep.property.timeoutSeconds">timeoutSeconds</a></code> | <code>number</code> | *No description.* |
-| <code><a href="#@cdklabs/cdk-ssm-documents.DeleteImageStep.property.onCancel">onCancel</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AutomationStep">AutomationStep</a></code> | *No description.* |
-| <code><a href="#@cdklabs/cdk-ssm-documents.DeleteImageStep.property.onFailure">onFailure</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AutomationStep">AutomationStep</a></code> | *No description.* |
 | <code><a href="#@cdklabs/cdk-ssm-documents.DeleteImageStep.property.allStepsInExecution">allStepsInExecution</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AutomationStep">AutomationStep</a>[]</code> | *No description.* |
 | <code><a href="#@cdklabs/cdk-ssm-documents.DeleteImageStep.property.nextStep">nextStep</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AutomationStep">AutomationStep</a></code> | *No description.* |
 | <code><a href="#@cdklabs/cdk-ssm-documents.DeleteImageStep.property.imageId">imageId</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.IStringVariable">IStringVariable</a></code> | *No description.* |
@@ -5844,6 +5844,26 @@ public readonly maxAttempts: number;
 
 ---
 
+##### `onCancel`<sup>Required</sup> <a name="onCancel" id="@cdklabs/cdk-ssm-documents.DeleteImageStep.property.onCancel"></a>
+
+```typescript
+public readonly onCancel: OnCancel;
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.OnCancel">OnCancel</a>
+
+---
+
+##### `onFailure`<sup>Required</sup> <a name="onFailure" id="@cdklabs/cdk-ssm-documents.DeleteImageStep.property.onFailure"></a>
+
+```typescript
+public readonly onFailure: OnFailure;
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.OnFailure">OnFailure</a>
+
+---
+
 ##### `timeoutSeconds`<sup>Required</sup> <a name="timeoutSeconds" id="@cdklabs/cdk-ssm-documents.DeleteImageStep.property.timeoutSeconds"></a>
 
 ```typescript
@@ -5851,26 +5871,6 @@ public readonly timeoutSeconds: number;
 ```
 
 - *Type:* number
-
----
-
-##### `onCancel`<sup>Optional</sup> <a name="onCancel" id="@cdklabs/cdk-ssm-documents.DeleteImageStep.property.onCancel"></a>
-
-```typescript
-public readonly onCancel: AutomationStep;
-```
-
-- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AutomationStep">AutomationStep</a>
-
----
-
-##### `onFailure`<sup>Optional</sup> <a name="onFailure" id="@cdklabs/cdk-ssm-documents.DeleteImageStep.property.onFailure"></a>
-
-```typescript
-public readonly onFailure: AutomationStep;
-```
-
-- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AutomationStep">AutomationStep</a>
 
 ---
 
@@ -6072,9 +6072,9 @@ Any object.
 | <code><a href="#@cdklabs/cdk-ssm-documents.DeleteStackStep.property.description">description</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#@cdklabs/cdk-ssm-documents.DeleteStackStep.property.isEnd">isEnd</a></code> | <code>boolean</code> | *No description.* |
 | <code><a href="#@cdklabs/cdk-ssm-documents.DeleteStackStep.property.maxAttempts">maxAttempts</a></code> | <code>number</code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.DeleteStackStep.property.onCancel">onCancel</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.OnCancel">OnCancel</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.DeleteStackStep.property.onFailure">onFailure</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.OnFailure">OnFailure</a></code> | *No description.* |
 | <code><a href="#@cdklabs/cdk-ssm-documents.DeleteStackStep.property.timeoutSeconds">timeoutSeconds</a></code> | <code>number</code> | *No description.* |
-| <code><a href="#@cdklabs/cdk-ssm-documents.DeleteStackStep.property.onCancel">onCancel</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AutomationStep">AutomationStep</a></code> | *No description.* |
-| <code><a href="#@cdklabs/cdk-ssm-documents.DeleteStackStep.property.onFailure">onFailure</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AutomationStep">AutomationStep</a></code> | *No description.* |
 | <code><a href="#@cdklabs/cdk-ssm-documents.DeleteStackStep.property.allStepsInExecution">allStepsInExecution</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AutomationStep">AutomationStep</a>[]</code> | *No description.* |
 | <code><a href="#@cdklabs/cdk-ssm-documents.DeleteStackStep.property.nextStep">nextStep</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AutomationStep">AutomationStep</a></code> | *No description.* |
 | <code><a href="#@cdklabs/cdk-ssm-documents.DeleteStackStep.property.stackNameVariable">stackNameVariable</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.IStringVariable">IStringVariable</a></code> | *No description.* |
@@ -6164,6 +6164,26 @@ public readonly maxAttempts: number;
 
 ---
 
+##### `onCancel`<sup>Required</sup> <a name="onCancel" id="@cdklabs/cdk-ssm-documents.DeleteStackStep.property.onCancel"></a>
+
+```typescript
+public readonly onCancel: OnCancel;
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.OnCancel">OnCancel</a>
+
+---
+
+##### `onFailure`<sup>Required</sup> <a name="onFailure" id="@cdklabs/cdk-ssm-documents.DeleteStackStep.property.onFailure"></a>
+
+```typescript
+public readonly onFailure: OnFailure;
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.OnFailure">OnFailure</a>
+
+---
+
 ##### `timeoutSeconds`<sup>Required</sup> <a name="timeoutSeconds" id="@cdklabs/cdk-ssm-documents.DeleteStackStep.property.timeoutSeconds"></a>
 
 ```typescript
@@ -6171,26 +6191,6 @@ public readonly timeoutSeconds: number;
 ```
 
 - *Type:* number
-
----
-
-##### `onCancel`<sup>Optional</sup> <a name="onCancel" id="@cdklabs/cdk-ssm-documents.DeleteStackStep.property.onCancel"></a>
-
-```typescript
-public readonly onCancel: AutomationStep;
-```
-
-- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AutomationStep">AutomationStep</a>
-
----
-
-##### `onFailure`<sup>Optional</sup> <a name="onFailure" id="@cdklabs/cdk-ssm-documents.DeleteStackStep.property.onFailure"></a>
-
-```typescript
-public readonly onFailure: AutomationStep;
-```
-
-- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AutomationStep">AutomationStep</a>
 
 ---
 
@@ -7050,9 +7050,9 @@ Any object.
 | <code><a href="#@cdklabs/cdk-ssm-documents.ExecuteAutomationStep.property.description">description</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#@cdklabs/cdk-ssm-documents.ExecuteAutomationStep.property.isEnd">isEnd</a></code> | <code>boolean</code> | *No description.* |
 | <code><a href="#@cdklabs/cdk-ssm-documents.ExecuteAutomationStep.property.maxAttempts">maxAttempts</a></code> | <code>number</code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.ExecuteAutomationStep.property.onCancel">onCancel</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.OnCancel">OnCancel</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.ExecuteAutomationStep.property.onFailure">onFailure</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.OnFailure">OnFailure</a></code> | *No description.* |
 | <code><a href="#@cdklabs/cdk-ssm-documents.ExecuteAutomationStep.property.timeoutSeconds">timeoutSeconds</a></code> | <code>number</code> | *No description.* |
-| <code><a href="#@cdklabs/cdk-ssm-documents.ExecuteAutomationStep.property.onCancel">onCancel</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AutomationStep">AutomationStep</a></code> | *No description.* |
-| <code><a href="#@cdklabs/cdk-ssm-documents.ExecuteAutomationStep.property.onFailure">onFailure</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AutomationStep">AutomationStep</a></code> | *No description.* |
 | <code><a href="#@cdklabs/cdk-ssm-documents.ExecuteAutomationStep.property.allStepsInExecution">allStepsInExecution</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AutomationStep">AutomationStep</a>[]</code> | *No description.* |
 | <code><a href="#@cdklabs/cdk-ssm-documents.ExecuteAutomationStep.property.nextStep">nextStep</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AutomationStep">AutomationStep</a></code> | *No description.* |
 | <code><a href="#@cdklabs/cdk-ssm-documents.ExecuteAutomationStep.property.documentName">documentName</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.IStringVariable">IStringVariable</a></code> | *No description.* |
@@ -7150,6 +7150,26 @@ public readonly maxAttempts: number;
 
 ---
 
+##### `onCancel`<sup>Required</sup> <a name="onCancel" id="@cdklabs/cdk-ssm-documents.ExecuteAutomationStep.property.onCancel"></a>
+
+```typescript
+public readonly onCancel: OnCancel;
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.OnCancel">OnCancel</a>
+
+---
+
+##### `onFailure`<sup>Required</sup> <a name="onFailure" id="@cdklabs/cdk-ssm-documents.ExecuteAutomationStep.property.onFailure"></a>
+
+```typescript
+public readonly onFailure: OnFailure;
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.OnFailure">OnFailure</a>
+
+---
+
 ##### `timeoutSeconds`<sup>Required</sup> <a name="timeoutSeconds" id="@cdklabs/cdk-ssm-documents.ExecuteAutomationStep.property.timeoutSeconds"></a>
 
 ```typescript
@@ -7157,26 +7177,6 @@ public readonly timeoutSeconds: number;
 ```
 
 - *Type:* number
-
----
-
-##### `onCancel`<sup>Optional</sup> <a name="onCancel" id="@cdklabs/cdk-ssm-documents.ExecuteAutomationStep.property.onCancel"></a>
-
-```typescript
-public readonly onCancel: AutomationStep;
-```
-
-- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AutomationStep">AutomationStep</a>
-
----
-
-##### `onFailure`<sup>Optional</sup> <a name="onFailure" id="@cdklabs/cdk-ssm-documents.ExecuteAutomationStep.property.onFailure"></a>
-
-```typescript
-public readonly onFailure: AutomationStep;
-```
-
-- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AutomationStep">AutomationStep</a>
 
 ---
 
@@ -7483,9 +7483,9 @@ ExecuteScriptStep.getLanguage(runtime: string)
 | <code><a href="#@cdklabs/cdk-ssm-documents.ExecuteScriptStep.property.description">description</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#@cdklabs/cdk-ssm-documents.ExecuteScriptStep.property.isEnd">isEnd</a></code> | <code>boolean</code> | *No description.* |
 | <code><a href="#@cdklabs/cdk-ssm-documents.ExecuteScriptStep.property.maxAttempts">maxAttempts</a></code> | <code>number</code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.ExecuteScriptStep.property.onCancel">onCancel</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.OnCancel">OnCancel</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.ExecuteScriptStep.property.onFailure">onFailure</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.OnFailure">OnFailure</a></code> | *No description.* |
 | <code><a href="#@cdklabs/cdk-ssm-documents.ExecuteScriptStep.property.timeoutSeconds">timeoutSeconds</a></code> | <code>number</code> | *No description.* |
-| <code><a href="#@cdklabs/cdk-ssm-documents.ExecuteScriptStep.property.onCancel">onCancel</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AutomationStep">AutomationStep</a></code> | *No description.* |
-| <code><a href="#@cdklabs/cdk-ssm-documents.ExecuteScriptStep.property.onFailure">onFailure</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AutomationStep">AutomationStep</a></code> | *No description.* |
 | <code><a href="#@cdklabs/cdk-ssm-documents.ExecuteScriptStep.property.allStepsInExecution">allStepsInExecution</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AutomationStep">AutomationStep</a>[]</code> | *No description.* |
 | <code><a href="#@cdklabs/cdk-ssm-documents.ExecuteScriptStep.property.nextStep">nextStep</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AutomationStep">AutomationStep</a></code> | *No description.* |
 | <code><a href="#@cdklabs/cdk-ssm-documents.ExecuteScriptStep.property.fullPathToCode">fullPathToCode</a></code> | <code>string</code> | *No description.* |
@@ -7578,6 +7578,26 @@ public readonly maxAttempts: number;
 
 ---
 
+##### `onCancel`<sup>Required</sup> <a name="onCancel" id="@cdklabs/cdk-ssm-documents.ExecuteScriptStep.property.onCancel"></a>
+
+```typescript
+public readonly onCancel: OnCancel;
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.OnCancel">OnCancel</a>
+
+---
+
+##### `onFailure`<sup>Required</sup> <a name="onFailure" id="@cdklabs/cdk-ssm-documents.ExecuteScriptStep.property.onFailure"></a>
+
+```typescript
+public readonly onFailure: OnFailure;
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.OnFailure">OnFailure</a>
+
+---
+
 ##### `timeoutSeconds`<sup>Required</sup> <a name="timeoutSeconds" id="@cdklabs/cdk-ssm-documents.ExecuteScriptStep.property.timeoutSeconds"></a>
 
 ```typescript
@@ -7585,26 +7605,6 @@ public readonly timeoutSeconds: number;
 ```
 
 - *Type:* number
-
----
-
-##### `onCancel`<sup>Optional</sup> <a name="onCancel" id="@cdklabs/cdk-ssm-documents.ExecuteScriptStep.property.onCancel"></a>
-
-```typescript
-public readonly onCancel: AutomationStep;
-```
-
-- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AutomationStep">AutomationStep</a>
-
----
-
-##### `onFailure`<sup>Optional</sup> <a name="onFailure" id="@cdklabs/cdk-ssm-documents.ExecuteScriptStep.property.onFailure"></a>
-
-```typescript
-public readonly onFailure: AutomationStep;
-```
-
-- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AutomationStep">AutomationStep</a>
 
 ---
 
@@ -7846,9 +7846,9 @@ Any object.
 | <code><a href="#@cdklabs/cdk-ssm-documents.ExecuteStateMachineStep.property.description">description</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#@cdklabs/cdk-ssm-documents.ExecuteStateMachineStep.property.isEnd">isEnd</a></code> | <code>boolean</code> | *No description.* |
 | <code><a href="#@cdklabs/cdk-ssm-documents.ExecuteStateMachineStep.property.maxAttempts">maxAttempts</a></code> | <code>number</code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.ExecuteStateMachineStep.property.onCancel">onCancel</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.OnCancel">OnCancel</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.ExecuteStateMachineStep.property.onFailure">onFailure</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.OnFailure">OnFailure</a></code> | *No description.* |
 | <code><a href="#@cdklabs/cdk-ssm-documents.ExecuteStateMachineStep.property.timeoutSeconds">timeoutSeconds</a></code> | <code>number</code> | *No description.* |
-| <code><a href="#@cdklabs/cdk-ssm-documents.ExecuteStateMachineStep.property.onCancel">onCancel</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AutomationStep">AutomationStep</a></code> | *No description.* |
-| <code><a href="#@cdklabs/cdk-ssm-documents.ExecuteStateMachineStep.property.onFailure">onFailure</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AutomationStep">AutomationStep</a></code> | *No description.* |
 | <code><a href="#@cdklabs/cdk-ssm-documents.ExecuteStateMachineStep.property.allStepsInExecution">allStepsInExecution</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AutomationStep">AutomationStep</a>[]</code> | *No description.* |
 | <code><a href="#@cdklabs/cdk-ssm-documents.ExecuteStateMachineStep.property.nextStep">nextStep</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AutomationStep">AutomationStep</a></code> | *No description.* |
 | <code><a href="#@cdklabs/cdk-ssm-documents.ExecuteStateMachineStep.property.stateMachineArn">stateMachineArn</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.IStringVariable">IStringVariable</a></code> | *No description.* |
@@ -7939,6 +7939,26 @@ public readonly maxAttempts: number;
 
 ---
 
+##### `onCancel`<sup>Required</sup> <a name="onCancel" id="@cdklabs/cdk-ssm-documents.ExecuteStateMachineStep.property.onCancel"></a>
+
+```typescript
+public readonly onCancel: OnCancel;
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.OnCancel">OnCancel</a>
+
+---
+
+##### `onFailure`<sup>Required</sup> <a name="onFailure" id="@cdklabs/cdk-ssm-documents.ExecuteStateMachineStep.property.onFailure"></a>
+
+```typescript
+public readonly onFailure: OnFailure;
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.OnFailure">OnFailure</a>
+
+---
+
 ##### `timeoutSeconds`<sup>Required</sup> <a name="timeoutSeconds" id="@cdklabs/cdk-ssm-documents.ExecuteStateMachineStep.property.timeoutSeconds"></a>
 
 ```typescript
@@ -7946,26 +7966,6 @@ public readonly timeoutSeconds: number;
 ```
 
 - *Type:* number
-
----
-
-##### `onCancel`<sup>Optional</sup> <a name="onCancel" id="@cdklabs/cdk-ssm-documents.ExecuteStateMachineStep.property.onCancel"></a>
-
-```typescript
-public readonly onCancel: AutomationStep;
-```
-
-- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AutomationStep">AutomationStep</a>
-
----
-
-##### `onFailure`<sup>Optional</sup> <a name="onFailure" id="@cdklabs/cdk-ssm-documents.ExecuteStateMachineStep.property.onFailure"></a>
-
-```typescript
-public readonly onFailure: AutomationStep;
-```
-
-- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AutomationStep">AutomationStep</a>
 
 ---
 
@@ -8933,9 +8933,9 @@ Any object.
 | <code><a href="#@cdklabs/cdk-ssm-documents.InvokeLambdaFunctionStep.property.description">description</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#@cdklabs/cdk-ssm-documents.InvokeLambdaFunctionStep.property.isEnd">isEnd</a></code> | <code>boolean</code> | *No description.* |
 | <code><a href="#@cdklabs/cdk-ssm-documents.InvokeLambdaFunctionStep.property.maxAttempts">maxAttempts</a></code> | <code>number</code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.InvokeLambdaFunctionStep.property.onCancel">onCancel</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.OnCancel">OnCancel</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.InvokeLambdaFunctionStep.property.onFailure">onFailure</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.OnFailure">OnFailure</a></code> | *No description.* |
 | <code><a href="#@cdklabs/cdk-ssm-documents.InvokeLambdaFunctionStep.property.timeoutSeconds">timeoutSeconds</a></code> | <code>number</code> | *No description.* |
-| <code><a href="#@cdklabs/cdk-ssm-documents.InvokeLambdaFunctionStep.property.onCancel">onCancel</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AutomationStep">AutomationStep</a></code> | *No description.* |
-| <code><a href="#@cdklabs/cdk-ssm-documents.InvokeLambdaFunctionStep.property.onFailure">onFailure</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AutomationStep">AutomationStep</a></code> | *No description.* |
 | <code><a href="#@cdklabs/cdk-ssm-documents.InvokeLambdaFunctionStep.property.allStepsInExecution">allStepsInExecution</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AutomationStep">AutomationStep</a>[]</code> | *No description.* |
 | <code><a href="#@cdklabs/cdk-ssm-documents.InvokeLambdaFunctionStep.property.nextStep">nextStep</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AutomationStep">AutomationStep</a></code> | *No description.* |
 | <code><a href="#@cdklabs/cdk-ssm-documents.InvokeLambdaFunctionStep.property.functionName">functionName</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.IStringVariable">IStringVariable</a></code> | *No description.* |
@@ -9030,6 +9030,26 @@ public readonly maxAttempts: number;
 
 ---
 
+##### `onCancel`<sup>Required</sup> <a name="onCancel" id="@cdklabs/cdk-ssm-documents.InvokeLambdaFunctionStep.property.onCancel"></a>
+
+```typescript
+public readonly onCancel: OnCancel;
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.OnCancel">OnCancel</a>
+
+---
+
+##### `onFailure`<sup>Required</sup> <a name="onFailure" id="@cdklabs/cdk-ssm-documents.InvokeLambdaFunctionStep.property.onFailure"></a>
+
+```typescript
+public readonly onFailure: OnFailure;
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.OnFailure">OnFailure</a>
+
+---
+
 ##### `timeoutSeconds`<sup>Required</sup> <a name="timeoutSeconds" id="@cdklabs/cdk-ssm-documents.InvokeLambdaFunctionStep.property.timeoutSeconds"></a>
 
 ```typescript
@@ -9037,26 +9057,6 @@ public readonly timeoutSeconds: number;
 ```
 
 - *Type:* number
-
----
-
-##### `onCancel`<sup>Optional</sup> <a name="onCancel" id="@cdklabs/cdk-ssm-documents.InvokeLambdaFunctionStep.property.onCancel"></a>
-
-```typescript
-public readonly onCancel: AutomationStep;
-```
-
-- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AutomationStep">AutomationStep</a>
-
----
-
-##### `onFailure`<sup>Optional</sup> <a name="onFailure" id="@cdklabs/cdk-ssm-documents.InvokeLambdaFunctionStep.property.onFailure"></a>
-
-```typescript
-public readonly onFailure: AutomationStep;
-```
-
-- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AutomationStep">AutomationStep</a>
 
 ---
 
@@ -9318,9 +9318,9 @@ Any object.
 | <code><a href="#@cdklabs/cdk-ssm-documents.InvokeWebhookStep.property.description">description</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#@cdklabs/cdk-ssm-documents.InvokeWebhookStep.property.isEnd">isEnd</a></code> | <code>boolean</code> | *No description.* |
 | <code><a href="#@cdklabs/cdk-ssm-documents.InvokeWebhookStep.property.maxAttempts">maxAttempts</a></code> | <code>number</code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.InvokeWebhookStep.property.onCancel">onCancel</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.OnCancel">OnCancel</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.InvokeWebhookStep.property.onFailure">onFailure</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.OnFailure">OnFailure</a></code> | *No description.* |
 | <code><a href="#@cdklabs/cdk-ssm-documents.InvokeWebhookStep.property.timeoutSeconds">timeoutSeconds</a></code> | <code>number</code> | *No description.* |
-| <code><a href="#@cdklabs/cdk-ssm-documents.InvokeWebhookStep.property.onCancel">onCancel</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AutomationStep">AutomationStep</a></code> | *No description.* |
-| <code><a href="#@cdklabs/cdk-ssm-documents.InvokeWebhookStep.property.onFailure">onFailure</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AutomationStep">AutomationStep</a></code> | *No description.* |
 | <code><a href="#@cdklabs/cdk-ssm-documents.InvokeWebhookStep.property.allStepsInExecution">allStepsInExecution</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AutomationStep">AutomationStep</a>[]</code> | *No description.* |
 | <code><a href="#@cdklabs/cdk-ssm-documents.InvokeWebhookStep.property.nextStep">nextStep</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AutomationStep">AutomationStep</a></code> | *No description.* |
 | <code><a href="#@cdklabs/cdk-ssm-documents.InvokeWebhookStep.property.integrationName">integrationName</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.IStringVariable">IStringVariable</a></code> | *No description.* |
@@ -9410,6 +9410,26 @@ public readonly maxAttempts: number;
 
 ---
 
+##### `onCancel`<sup>Required</sup> <a name="onCancel" id="@cdklabs/cdk-ssm-documents.InvokeWebhookStep.property.onCancel"></a>
+
+```typescript
+public readonly onCancel: OnCancel;
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.OnCancel">OnCancel</a>
+
+---
+
+##### `onFailure`<sup>Required</sup> <a name="onFailure" id="@cdklabs/cdk-ssm-documents.InvokeWebhookStep.property.onFailure"></a>
+
+```typescript
+public readonly onFailure: OnFailure;
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.OnFailure">OnFailure</a>
+
+---
+
 ##### `timeoutSeconds`<sup>Required</sup> <a name="timeoutSeconds" id="@cdklabs/cdk-ssm-documents.InvokeWebhookStep.property.timeoutSeconds"></a>
 
 ```typescript
@@ -9417,26 +9437,6 @@ public readonly timeoutSeconds: number;
 ```
 
 - *Type:* number
-
----
-
-##### `onCancel`<sup>Optional</sup> <a name="onCancel" id="@cdklabs/cdk-ssm-documents.InvokeWebhookStep.property.onCancel"></a>
-
-```typescript
-public readonly onCancel: AutomationStep;
-```
-
-- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AutomationStep">AutomationStep</a>
-
----
-
-##### `onFailure`<sup>Optional</sup> <a name="onFailure" id="@cdklabs/cdk-ssm-documents.InvokeWebhookStep.property.onFailure"></a>
-
-```typescript
-public readonly onFailure: AutomationStep;
-```
-
-- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AutomationStep">AutomationStep</a>
 
 ---
 
@@ -9648,9 +9648,9 @@ Any object.
 | <code><a href="#@cdklabs/cdk-ssm-documents.PauseStep.property.description">description</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#@cdklabs/cdk-ssm-documents.PauseStep.property.isEnd">isEnd</a></code> | <code>boolean</code> | *No description.* |
 | <code><a href="#@cdklabs/cdk-ssm-documents.PauseStep.property.maxAttempts">maxAttempts</a></code> | <code>number</code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.PauseStep.property.onCancel">onCancel</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.OnCancel">OnCancel</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.PauseStep.property.onFailure">onFailure</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.OnFailure">OnFailure</a></code> | *No description.* |
 | <code><a href="#@cdklabs/cdk-ssm-documents.PauseStep.property.timeoutSeconds">timeoutSeconds</a></code> | <code>number</code> | *No description.* |
-| <code><a href="#@cdklabs/cdk-ssm-documents.PauseStep.property.onCancel">onCancel</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AutomationStep">AutomationStep</a></code> | *No description.* |
-| <code><a href="#@cdklabs/cdk-ssm-documents.PauseStep.property.onFailure">onFailure</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AutomationStep">AutomationStep</a></code> | *No description.* |
 | <code><a href="#@cdklabs/cdk-ssm-documents.PauseStep.property.allStepsInExecution">allStepsInExecution</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AutomationStep">AutomationStep</a>[]</code> | *No description.* |
 | <code><a href="#@cdklabs/cdk-ssm-documents.PauseStep.property.nextStep">nextStep</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AutomationStep">AutomationStep</a></code> | *No description.* |
 
@@ -9738,6 +9738,26 @@ public readonly maxAttempts: number;
 
 ---
 
+##### `onCancel`<sup>Required</sup> <a name="onCancel" id="@cdklabs/cdk-ssm-documents.PauseStep.property.onCancel"></a>
+
+```typescript
+public readonly onCancel: OnCancel;
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.OnCancel">OnCancel</a>
+
+---
+
+##### `onFailure`<sup>Required</sup> <a name="onFailure" id="@cdklabs/cdk-ssm-documents.PauseStep.property.onFailure"></a>
+
+```typescript
+public readonly onFailure: OnFailure;
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.OnFailure">OnFailure</a>
+
+---
+
 ##### `timeoutSeconds`<sup>Required</sup> <a name="timeoutSeconds" id="@cdklabs/cdk-ssm-documents.PauseStep.property.timeoutSeconds"></a>
 
 ```typescript
@@ -9745,26 +9765,6 @@ public readonly timeoutSeconds: number;
 ```
 
 - *Type:* number
-
----
-
-##### `onCancel`<sup>Optional</sup> <a name="onCancel" id="@cdklabs/cdk-ssm-documents.PauseStep.property.onCancel"></a>
-
-```typescript
-public readonly onCancel: AutomationStep;
-```
-
-- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AutomationStep">AutomationStep</a>
-
----
-
-##### `onFailure`<sup>Optional</sup> <a name="onFailure" id="@cdklabs/cdk-ssm-documents.PauseStep.property.onFailure"></a>
-
-```typescript
-public readonly onFailure: AutomationStep;
-```
-
-- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AutomationStep">AutomationStep</a>
 
 ---
 
@@ -10436,9 +10436,9 @@ Any object.
 | <code><a href="#@cdklabs/cdk-ssm-documents.RunCommandStep.property.description">description</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#@cdklabs/cdk-ssm-documents.RunCommandStep.property.isEnd">isEnd</a></code> | <code>boolean</code> | *No description.* |
 | <code><a href="#@cdklabs/cdk-ssm-documents.RunCommandStep.property.maxAttempts">maxAttempts</a></code> | <code>number</code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.RunCommandStep.property.onCancel">onCancel</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.OnCancel">OnCancel</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.RunCommandStep.property.onFailure">onFailure</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.OnFailure">OnFailure</a></code> | *No description.* |
 | <code><a href="#@cdklabs/cdk-ssm-documents.RunCommandStep.property.timeoutSeconds">timeoutSeconds</a></code> | <code>number</code> | *No description.* |
-| <code><a href="#@cdklabs/cdk-ssm-documents.RunCommandStep.property.onCancel">onCancel</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AutomationStep">AutomationStep</a></code> | *No description.* |
-| <code><a href="#@cdklabs/cdk-ssm-documents.RunCommandStep.property.onFailure">onFailure</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AutomationStep">AutomationStep</a></code> | *No description.* |
 | <code><a href="#@cdklabs/cdk-ssm-documents.RunCommandStep.property.allStepsInExecution">allStepsInExecution</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AutomationStep">AutomationStep</a>[]</code> | *No description.* |
 | <code><a href="#@cdklabs/cdk-ssm-documents.RunCommandStep.property.nextStep">nextStep</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AutomationStep">AutomationStep</a></code> | *No description.* |
 | <code><a href="#@cdklabs/cdk-ssm-documents.RunCommandStep.property.documentName">documentName</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.IStringVariable">IStringVariable</a></code> | *No description.* |
@@ -10540,6 +10540,26 @@ public readonly maxAttempts: number;
 
 ---
 
+##### `onCancel`<sup>Required</sup> <a name="onCancel" id="@cdklabs/cdk-ssm-documents.RunCommandStep.property.onCancel"></a>
+
+```typescript
+public readonly onCancel: OnCancel;
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.OnCancel">OnCancel</a>
+
+---
+
+##### `onFailure`<sup>Required</sup> <a name="onFailure" id="@cdklabs/cdk-ssm-documents.RunCommandStep.property.onFailure"></a>
+
+```typescript
+public readonly onFailure: OnFailure;
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.OnFailure">OnFailure</a>
+
+---
+
 ##### `timeoutSeconds`<sup>Required</sup> <a name="timeoutSeconds" id="@cdklabs/cdk-ssm-documents.RunCommandStep.property.timeoutSeconds"></a>
 
 ```typescript
@@ -10547,26 +10567,6 @@ public readonly timeoutSeconds: number;
 ```
 
 - *Type:* number
-
----
-
-##### `onCancel`<sup>Optional</sup> <a name="onCancel" id="@cdklabs/cdk-ssm-documents.RunCommandStep.property.onCancel"></a>
-
-```typescript
-public readonly onCancel: AutomationStep;
-```
-
-- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AutomationStep">AutomationStep</a>
-
----
-
-##### `onFailure`<sup>Optional</sup> <a name="onFailure" id="@cdklabs/cdk-ssm-documents.RunCommandStep.property.onFailure"></a>
-
-```typescript
-public readonly onFailure: AutomationStep;
-```
-
-- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AutomationStep">AutomationStep</a>
 
 ---
 
@@ -11612,9 +11612,9 @@ Any object.
 | <code><a href="#@cdklabs/cdk-ssm-documents.RunInstanceStep.property.description">description</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#@cdklabs/cdk-ssm-documents.RunInstanceStep.property.isEnd">isEnd</a></code> | <code>boolean</code> | *No description.* |
 | <code><a href="#@cdklabs/cdk-ssm-documents.RunInstanceStep.property.maxAttempts">maxAttempts</a></code> | <code>number</code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.RunInstanceStep.property.onCancel">onCancel</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.OnCancel">OnCancel</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.RunInstanceStep.property.onFailure">onFailure</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.OnFailure">OnFailure</a></code> | *No description.* |
 | <code><a href="#@cdklabs/cdk-ssm-documents.RunInstanceStep.property.timeoutSeconds">timeoutSeconds</a></code> | <code>number</code> | *No description.* |
-| <code><a href="#@cdklabs/cdk-ssm-documents.RunInstanceStep.property.onCancel">onCancel</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AutomationStep">AutomationStep</a></code> | *No description.* |
-| <code><a href="#@cdklabs/cdk-ssm-documents.RunInstanceStep.property.onFailure">onFailure</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AutomationStep">AutomationStep</a></code> | *No description.* |
 | <code><a href="#@cdklabs/cdk-ssm-documents.RunInstanceStep.property.allStepsInExecution">allStepsInExecution</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AutomationStep">AutomationStep</a>[]</code> | *No description.* |
 | <code><a href="#@cdklabs/cdk-ssm-documents.RunInstanceStep.property.nextStep">nextStep</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AutomationStep">AutomationStep</a></code> | *No description.* |
 | <code><a href="#@cdklabs/cdk-ssm-documents.RunInstanceStep.property.imageId">imageId</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.IStringVariable">IStringVariable</a></code> | *No description.* |
@@ -11726,6 +11726,26 @@ public readonly maxAttempts: number;
 
 ---
 
+##### `onCancel`<sup>Required</sup> <a name="onCancel" id="@cdklabs/cdk-ssm-documents.RunInstanceStep.property.onCancel"></a>
+
+```typescript
+public readonly onCancel: OnCancel;
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.OnCancel">OnCancel</a>
+
+---
+
+##### `onFailure`<sup>Required</sup> <a name="onFailure" id="@cdklabs/cdk-ssm-documents.RunInstanceStep.property.onFailure"></a>
+
+```typescript
+public readonly onFailure: OnFailure;
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.OnFailure">OnFailure</a>
+
+---
+
 ##### `timeoutSeconds`<sup>Required</sup> <a name="timeoutSeconds" id="@cdklabs/cdk-ssm-documents.RunInstanceStep.property.timeoutSeconds"></a>
 
 ```typescript
@@ -11733,26 +11753,6 @@ public readonly timeoutSeconds: number;
 ```
 
 - *Type:* number
-
----
-
-##### `onCancel`<sup>Optional</sup> <a name="onCancel" id="@cdklabs/cdk-ssm-documents.RunInstanceStep.property.onCancel"></a>
-
-```typescript
-public readonly onCancel: AutomationStep;
-```
-
-- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AutomationStep">AutomationStep</a>
-
----
-
-##### `onFailure`<sup>Optional</sup> <a name="onFailure" id="@cdklabs/cdk-ssm-documents.RunInstanceStep.property.onFailure"></a>
-
-```typescript
-public readonly onFailure: AutomationStep;
-```
-
-- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AutomationStep">AutomationStep</a>
 
 ---
 
@@ -12832,9 +12832,9 @@ Any object.
 | <code><a href="#@cdklabs/cdk-ssm-documents.SleepStep.property.description">description</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#@cdklabs/cdk-ssm-documents.SleepStep.property.isEnd">isEnd</a></code> | <code>boolean</code> | *No description.* |
 | <code><a href="#@cdklabs/cdk-ssm-documents.SleepStep.property.maxAttempts">maxAttempts</a></code> | <code>number</code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.SleepStep.property.onCancel">onCancel</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.OnCancel">OnCancel</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.SleepStep.property.onFailure">onFailure</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.OnFailure">OnFailure</a></code> | *No description.* |
 | <code><a href="#@cdklabs/cdk-ssm-documents.SleepStep.property.timeoutSeconds">timeoutSeconds</a></code> | <code>number</code> | *No description.* |
-| <code><a href="#@cdklabs/cdk-ssm-documents.SleepStep.property.onCancel">onCancel</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AutomationStep">AutomationStep</a></code> | *No description.* |
-| <code><a href="#@cdklabs/cdk-ssm-documents.SleepStep.property.onFailure">onFailure</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AutomationStep">AutomationStep</a></code> | *No description.* |
 | <code><a href="#@cdklabs/cdk-ssm-documents.SleepStep.property.allStepsInExecution">allStepsInExecution</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AutomationStep">AutomationStep</a>[]</code> | *No description.* |
 | <code><a href="#@cdklabs/cdk-ssm-documents.SleepStep.property.nextStep">nextStep</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AutomationStep">AutomationStep</a></code> | *No description.* |
 | <code><a href="#@cdklabs/cdk-ssm-documents.SleepStep.property.sleepSeconds">sleepSeconds</a></code> | <code>number</code> | *No description.* |
@@ -12923,6 +12923,26 @@ public readonly maxAttempts: number;
 
 ---
 
+##### `onCancel`<sup>Required</sup> <a name="onCancel" id="@cdklabs/cdk-ssm-documents.SleepStep.property.onCancel"></a>
+
+```typescript
+public readonly onCancel: OnCancel;
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.OnCancel">OnCancel</a>
+
+---
+
+##### `onFailure`<sup>Required</sup> <a name="onFailure" id="@cdklabs/cdk-ssm-documents.SleepStep.property.onFailure"></a>
+
+```typescript
+public readonly onFailure: OnFailure;
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.OnFailure">OnFailure</a>
+
+---
+
 ##### `timeoutSeconds`<sup>Required</sup> <a name="timeoutSeconds" id="@cdklabs/cdk-ssm-documents.SleepStep.property.timeoutSeconds"></a>
 
 ```typescript
@@ -12930,26 +12950,6 @@ public readonly timeoutSeconds: number;
 ```
 
 - *Type:* number
-
----
-
-##### `onCancel`<sup>Optional</sup> <a name="onCancel" id="@cdklabs/cdk-ssm-documents.SleepStep.property.onCancel"></a>
-
-```typescript
-public readonly onCancel: AutomationStep;
-```
-
-- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AutomationStep">AutomationStep</a>
-
----
-
-##### `onFailure`<sup>Optional</sup> <a name="onFailure" id="@cdklabs/cdk-ssm-documents.SleepStep.property.onFailure"></a>
-
-```typescript
-public readonly onFailure: AutomationStep;
-```
-
-- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AutomationStep">AutomationStep</a>
 
 ---
 
@@ -14987,9 +14987,9 @@ Any object.
 | <code><a href="#@cdklabs/cdk-ssm-documents.WaitForResourceStep.property.description">description</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#@cdklabs/cdk-ssm-documents.WaitForResourceStep.property.isEnd">isEnd</a></code> | <code>boolean</code> | *No description.* |
 | <code><a href="#@cdklabs/cdk-ssm-documents.WaitForResourceStep.property.maxAttempts">maxAttempts</a></code> | <code>number</code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.WaitForResourceStep.property.onCancel">onCancel</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.OnCancel">OnCancel</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.WaitForResourceStep.property.onFailure">onFailure</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.OnFailure">OnFailure</a></code> | *No description.* |
 | <code><a href="#@cdklabs/cdk-ssm-documents.WaitForResourceStep.property.timeoutSeconds">timeoutSeconds</a></code> | <code>number</code> | *No description.* |
-| <code><a href="#@cdklabs/cdk-ssm-documents.WaitForResourceStep.property.onCancel">onCancel</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AutomationStep">AutomationStep</a></code> | *No description.* |
-| <code><a href="#@cdklabs/cdk-ssm-documents.WaitForResourceStep.property.onFailure">onFailure</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AutomationStep">AutomationStep</a></code> | *No description.* |
 | <code><a href="#@cdklabs/cdk-ssm-documents.WaitForResourceStep.property.allStepsInExecution">allStepsInExecution</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AutomationStep">AutomationStep</a>[]</code> | *No description.* |
 | <code><a href="#@cdklabs/cdk-ssm-documents.WaitForResourceStep.property.nextStep">nextStep</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AutomationStep">AutomationStep</a></code> | *No description.* |
 | <code><a href="#@cdklabs/cdk-ssm-documents.WaitForResourceStep.property.apiParams">apiParams</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.DictFormat">DictFormat</a></code> | *No description.* |
@@ -15085,6 +15085,26 @@ public readonly maxAttempts: number;
 
 ---
 
+##### `onCancel`<sup>Required</sup> <a name="onCancel" id="@cdklabs/cdk-ssm-documents.WaitForResourceStep.property.onCancel"></a>
+
+```typescript
+public readonly onCancel: OnCancel;
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.OnCancel">OnCancel</a>
+
+---
+
+##### `onFailure`<sup>Required</sup> <a name="onFailure" id="@cdklabs/cdk-ssm-documents.WaitForResourceStep.property.onFailure"></a>
+
+```typescript
+public readonly onFailure: OnFailure;
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.OnFailure">OnFailure</a>
+
+---
+
 ##### `timeoutSeconds`<sup>Required</sup> <a name="timeoutSeconds" id="@cdklabs/cdk-ssm-documents.WaitForResourceStep.property.timeoutSeconds"></a>
 
 ```typescript
@@ -15092,26 +15112,6 @@ public readonly timeoutSeconds: number;
 ```
 
 - *Type:* number
-
----
-
-##### `onCancel`<sup>Optional</sup> <a name="onCancel" id="@cdklabs/cdk-ssm-documents.WaitForResourceStep.property.onCancel"></a>
-
-```typescript
-public readonly onCancel: AutomationStep;
-```
-
-- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AutomationStep">AutomationStep</a>
-
----
-
-##### `onFailure`<sup>Optional</sup> <a name="onFailure" id="@cdklabs/cdk-ssm-documents.WaitForResourceStep.property.onFailure"></a>
-
-```typescript
-public readonly onFailure: AutomationStep;
-```
-
-- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AutomationStep">AutomationStep</a>
 
 ---
 
@@ -15585,8 +15585,8 @@ const approveStepProps: ApproveStepProps = { ... }
 | <code><a href="#@cdklabs/cdk-ssm-documents.ApproveStepProps.property.outputObserver">outputObserver</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.IObserver">IObserver</a></code> | (Optional) Allows for observing the output of steps as they run. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.ApproveStepProps.property.isEnd">isEnd</a></code> | <code>boolean</code> | Whether to stop document execution after this step. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.ApproveStepProps.property.maxAttempts">maxAttempts</a></code> | <code>number</code> | (Optional) max attempts to run this step if there are failures. |
-| <code><a href="#@cdklabs/cdk-ssm-documents.ApproveStepProps.property.onCancel">onCancel</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AutomationStep">AutomationStep</a></code> | (Optional) Step to jump to in the event that this step is cancelled. |
-| <code><a href="#@cdklabs/cdk-ssm-documents.ApproveStepProps.property.onFailure">onFailure</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AutomationStep">AutomationStep</a></code> | (Optional) Step to jump to in the event that this step fails. |
+| <code><a href="#@cdklabs/cdk-ssm-documents.ApproveStepProps.property.onCancel">onCancel</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.OnCancel">OnCancel</a></code> | (Optional) Fallback action to take in the event that this step is cancelled. |
+| <code><a href="#@cdklabs/cdk-ssm-documents.ApproveStepProps.property.onFailure">onFailure</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.OnFailure">OnFailure</a></code> | (Optional) Fallback action to take in the event that this step fails. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.ApproveStepProps.property.timeoutSeconds">timeoutSeconds</a></code> | <code>number</code> | (Optional) timeout seconds to run this step. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.ApproveStepProps.property.approvers">approvers</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.IStringListVariable">IStringListVariable</a></code> | A list of AWS authenticated principals who are able to either approve or reject the action. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.ApproveStepProps.property.message">message</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.IStringVariable">IStringVariable</a></code> | (Optional) The information you want to include in the Amazon SNS topic when the approval request is sent. |
@@ -15679,26 +15679,26 @@ public readonly maxAttempts: number;
 ##### `onCancel`<sup>Optional</sup> <a name="onCancel" id="@cdklabs/cdk-ssm-documents.ApproveStepProps.property.onCancel"></a>
 
 ```typescript
-public readonly onCancel: AutomationStep;
+public readonly onCancel: OnCancel;
 ```
 
-- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AutomationStep">AutomationStep</a>
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.OnCancel">OnCancel</a>
 - *Default:* undefined
 
-(Optional) Step to jump to in the event that this step is cancelled.
+(Optional) Fallback action to take in the event that this step is cancelled.
 
 ---
 
 ##### `onFailure`<sup>Optional</sup> <a name="onFailure" id="@cdklabs/cdk-ssm-documents.ApproveStepProps.property.onFailure"></a>
 
 ```typescript
-public readonly onFailure: AutomationStep;
+public readonly onFailure: OnFailure;
 ```
 
-- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AutomationStep">AutomationStep</a>
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.OnFailure">OnFailure</a>
 - *Default:* undefined
 
-(Optional) Step to jump to in the event that this step fails.
+(Optional) Fallback action to take in the event that this step fails.
 
 ---
 
@@ -15801,8 +15801,8 @@ const assertAwsResourceStepProps: AssertAwsResourceStepProps = { ... }
 | <code><a href="#@cdklabs/cdk-ssm-documents.AssertAwsResourceStepProps.property.outputObserver">outputObserver</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.IObserver">IObserver</a></code> | (Optional) Allows for observing the output of steps as they run. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.AssertAwsResourceStepProps.property.isEnd">isEnd</a></code> | <code>boolean</code> | Whether to stop document execution after this step. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.AssertAwsResourceStepProps.property.maxAttempts">maxAttempts</a></code> | <code>number</code> | (Optional) max attempts to run this step if there are failures. |
-| <code><a href="#@cdklabs/cdk-ssm-documents.AssertAwsResourceStepProps.property.onCancel">onCancel</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AutomationStep">AutomationStep</a></code> | (Optional) Step to jump to in the event that this step is cancelled. |
-| <code><a href="#@cdklabs/cdk-ssm-documents.AssertAwsResourceStepProps.property.onFailure">onFailure</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AutomationStep">AutomationStep</a></code> | (Optional) Step to jump to in the event that this step fails. |
+| <code><a href="#@cdklabs/cdk-ssm-documents.AssertAwsResourceStepProps.property.onCancel">onCancel</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.OnCancel">OnCancel</a></code> | (Optional) Fallback action to take in the event that this step is cancelled. |
+| <code><a href="#@cdklabs/cdk-ssm-documents.AssertAwsResourceStepProps.property.onFailure">onFailure</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.OnFailure">OnFailure</a></code> | (Optional) Fallback action to take in the event that this step fails. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.AssertAwsResourceStepProps.property.timeoutSeconds">timeoutSeconds</a></code> | <code>number</code> | (Optional) timeout seconds to run this step. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.AssertAwsResourceStepProps.property.apiParams">apiParams</a></code> | <code>{[ key: string ]: any}</code> | (Required) API Params to submit with the request to the api. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.AssertAwsResourceStepProps.property.pascalCaseApi">pascalCaseApi</a></code> | <code>string</code> | (Required) The AWS api represented in PascalCase. |
@@ -15897,26 +15897,26 @@ public readonly maxAttempts: number;
 ##### `onCancel`<sup>Optional</sup> <a name="onCancel" id="@cdklabs/cdk-ssm-documents.AssertAwsResourceStepProps.property.onCancel"></a>
 
 ```typescript
-public readonly onCancel: AutomationStep;
+public readonly onCancel: OnCancel;
 ```
 
-- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AutomationStep">AutomationStep</a>
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.OnCancel">OnCancel</a>
 - *Default:* undefined
 
-(Optional) Step to jump to in the event that this step is cancelled.
+(Optional) Fallback action to take in the event that this step is cancelled.
 
 ---
 
 ##### `onFailure`<sup>Optional</sup> <a name="onFailure" id="@cdklabs/cdk-ssm-documents.AssertAwsResourceStepProps.property.onFailure"></a>
 
 ```typescript
-public readonly onFailure: AutomationStep;
+public readonly onFailure: OnFailure;
 ```
 
-- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AutomationStep">AutomationStep</a>
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.OnFailure">OnFailure</a>
 - *Default:* undefined
 
-(Optional) Step to jump to in the event that this step fails.
+(Optional) Fallback action to take in the event that this step fails.
 
 ---
 
@@ -16409,8 +16409,8 @@ const automationStepProps: AutomationStepProps = { ... }
 | <code><a href="#@cdklabs/cdk-ssm-documents.AutomationStepProps.property.outputObserver">outputObserver</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.IObserver">IObserver</a></code> | (Optional) Allows for observing the output of steps as they run. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.AutomationStepProps.property.isEnd">isEnd</a></code> | <code>boolean</code> | Whether to stop document execution after this step. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.AutomationStepProps.property.maxAttempts">maxAttempts</a></code> | <code>number</code> | (Optional) max attempts to run this step if there are failures. |
-| <code><a href="#@cdklabs/cdk-ssm-documents.AutomationStepProps.property.onCancel">onCancel</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AutomationStep">AutomationStep</a></code> | (Optional) Step to jump to in the event that this step is cancelled. |
-| <code><a href="#@cdklabs/cdk-ssm-documents.AutomationStepProps.property.onFailure">onFailure</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AutomationStep">AutomationStep</a></code> | (Optional) Step to jump to in the event that this step fails. |
+| <code><a href="#@cdklabs/cdk-ssm-documents.AutomationStepProps.property.onCancel">onCancel</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.OnCancel">OnCancel</a></code> | (Optional) Fallback action to take in the event that this step is cancelled. |
+| <code><a href="#@cdklabs/cdk-ssm-documents.AutomationStepProps.property.onFailure">onFailure</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.OnFailure">OnFailure</a></code> | (Optional) Fallback action to take in the event that this step fails. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.AutomationStepProps.property.timeoutSeconds">timeoutSeconds</a></code> | <code>number</code> | (Optional) timeout seconds to run this step. |
 
 ---
@@ -16499,26 +16499,26 @@ public readonly maxAttempts: number;
 ##### `onCancel`<sup>Optional</sup> <a name="onCancel" id="@cdklabs/cdk-ssm-documents.AutomationStepProps.property.onCancel"></a>
 
 ```typescript
-public readonly onCancel: AutomationStep;
+public readonly onCancel: OnCancel;
 ```
 
-- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AutomationStep">AutomationStep</a>
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.OnCancel">OnCancel</a>
 - *Default:* undefined
 
-(Optional) Step to jump to in the event that this step is cancelled.
+(Optional) Fallback action to take in the event that this step is cancelled.
 
 ---
 
 ##### `onFailure`<sup>Optional</sup> <a name="onFailure" id="@cdklabs/cdk-ssm-documents.AutomationStepProps.property.onFailure"></a>
 
 ```typescript
-public readonly onFailure: AutomationStep;
+public readonly onFailure: OnFailure;
 ```
 
-- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AutomationStep">AutomationStep</a>
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.OnFailure">OnFailure</a>
 - *Default:* undefined
 
-(Optional) Step to jump to in the event that this step fails.
+(Optional) Fallback action to take in the event that this step fails.
 
 ---
 
@@ -16559,8 +16559,8 @@ const awsApiStepProps: AwsApiStepProps = { ... }
 | <code><a href="#@cdklabs/cdk-ssm-documents.AwsApiStepProps.property.outputObserver">outputObserver</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.IObserver">IObserver</a></code> | (Optional) Allows for observing the output of steps as they run. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.AwsApiStepProps.property.isEnd">isEnd</a></code> | <code>boolean</code> | Whether to stop document execution after this step. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.AwsApiStepProps.property.maxAttempts">maxAttempts</a></code> | <code>number</code> | (Optional) max attempts to run this step if there are failures. |
-| <code><a href="#@cdklabs/cdk-ssm-documents.AwsApiStepProps.property.onCancel">onCancel</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AutomationStep">AutomationStep</a></code> | (Optional) Step to jump to in the event that this step is cancelled. |
-| <code><a href="#@cdklabs/cdk-ssm-documents.AwsApiStepProps.property.onFailure">onFailure</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AutomationStep">AutomationStep</a></code> | (Optional) Step to jump to in the event that this step fails. |
+| <code><a href="#@cdklabs/cdk-ssm-documents.AwsApiStepProps.property.onCancel">onCancel</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.OnCancel">OnCancel</a></code> | (Optional) Fallback action to take in the event that this step is cancelled. |
+| <code><a href="#@cdklabs/cdk-ssm-documents.AwsApiStepProps.property.onFailure">onFailure</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.OnFailure">OnFailure</a></code> | (Optional) Fallback action to take in the event that this step fails. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.AwsApiStepProps.property.timeoutSeconds">timeoutSeconds</a></code> | <code>number</code> | (Optional) timeout seconds to run this step. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.AwsApiStepProps.property.apiParams">apiParams</a></code> | <code>{[ key: string ]: any}</code> | (Required) API Params to submit with the request to the api. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.AwsApiStepProps.property.pascalCaseApi">pascalCaseApi</a></code> | <code>string</code> | (Required) The AWS api represented in PascalCase. |
@@ -16654,26 +16654,26 @@ public readonly maxAttempts: number;
 ##### `onCancel`<sup>Optional</sup> <a name="onCancel" id="@cdklabs/cdk-ssm-documents.AwsApiStepProps.property.onCancel"></a>
 
 ```typescript
-public readonly onCancel: AutomationStep;
+public readonly onCancel: OnCancel;
 ```
 
-- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AutomationStep">AutomationStep</a>
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.OnCancel">OnCancel</a>
 - *Default:* undefined
 
-(Optional) Step to jump to in the event that this step is cancelled.
+(Optional) Fallback action to take in the event that this step is cancelled.
 
 ---
 
 ##### `onFailure`<sup>Optional</sup> <a name="onFailure" id="@cdklabs/cdk-ssm-documents.AwsApiStepProps.property.onFailure"></a>
 
 ```typescript
-public readonly onFailure: AutomationStep;
+public readonly onFailure: OnFailure;
 ```
 
-- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AutomationStep">AutomationStep</a>
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.OnFailure">OnFailure</a>
 - *Default:* undefined
 
-(Optional) Step to jump to in the event that this step fails.
+(Optional) Fallback action to take in the event that this step fails.
 
 ---
 
@@ -16809,8 +16809,8 @@ const awsInvocationProps: AwsInvocationProps = { ... }
 | <code><a href="#@cdklabs/cdk-ssm-documents.AwsInvocationProps.property.outputObserver">outputObserver</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.IObserver">IObserver</a></code> | (Optional) Allows for observing the output of steps as they run. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.AwsInvocationProps.property.isEnd">isEnd</a></code> | <code>boolean</code> | Whether to stop document execution after this step. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.AwsInvocationProps.property.maxAttempts">maxAttempts</a></code> | <code>number</code> | (Optional) max attempts to run this step if there are failures. |
-| <code><a href="#@cdklabs/cdk-ssm-documents.AwsInvocationProps.property.onCancel">onCancel</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AutomationStep">AutomationStep</a></code> | (Optional) Step to jump to in the event that this step is cancelled. |
-| <code><a href="#@cdklabs/cdk-ssm-documents.AwsInvocationProps.property.onFailure">onFailure</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AutomationStep">AutomationStep</a></code> | (Optional) Step to jump to in the event that this step fails. |
+| <code><a href="#@cdklabs/cdk-ssm-documents.AwsInvocationProps.property.onCancel">onCancel</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.OnCancel">OnCancel</a></code> | (Optional) Fallback action to take in the event that this step is cancelled. |
+| <code><a href="#@cdklabs/cdk-ssm-documents.AwsInvocationProps.property.onFailure">onFailure</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.OnFailure">OnFailure</a></code> | (Optional) Fallback action to take in the event that this step fails. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.AwsInvocationProps.property.timeoutSeconds">timeoutSeconds</a></code> | <code>number</code> | (Optional) timeout seconds to run this step. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.AwsInvocationProps.property.apiParams">apiParams</a></code> | <code>{[ key: string ]: any}</code> | (Required) API Params to submit with the request to the api. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.AwsInvocationProps.property.pascalCaseApi">pascalCaseApi</a></code> | <code>string</code> | (Required) The AWS api represented in PascalCase. |
@@ -16903,26 +16903,26 @@ public readonly maxAttempts: number;
 ##### `onCancel`<sup>Optional</sup> <a name="onCancel" id="@cdklabs/cdk-ssm-documents.AwsInvocationProps.property.onCancel"></a>
 
 ```typescript
-public readonly onCancel: AutomationStep;
+public readonly onCancel: OnCancel;
 ```
 
-- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AutomationStep">AutomationStep</a>
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.OnCancel">OnCancel</a>
 - *Default:* undefined
 
-(Optional) Step to jump to in the event that this step is cancelled.
+(Optional) Fallback action to take in the event that this step is cancelled.
 
 ---
 
 ##### `onFailure`<sup>Optional</sup> <a name="onFailure" id="@cdklabs/cdk-ssm-documents.AwsInvocationProps.property.onFailure"></a>
 
 ```typescript
-public readonly onFailure: AutomationStep;
+public readonly onFailure: OnFailure;
 ```
 
-- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AutomationStep">AutomationStep</a>
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.OnFailure">OnFailure</a>
 - *Default:* undefined
 
-(Optional) Step to jump to in the event that this step fails.
+(Optional) Fallback action to take in the event that this step fails.
 
 ---
 
@@ -17167,8 +17167,8 @@ const branchStepProps: BranchStepProps = { ... }
 | <code><a href="#@cdklabs/cdk-ssm-documents.BranchStepProps.property.outputObserver">outputObserver</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.IObserver">IObserver</a></code> | (Optional) Allows for observing the output of steps as they run. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.BranchStepProps.property.isEnd">isEnd</a></code> | <code>boolean</code> | Whether to stop document execution after this step. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.BranchStepProps.property.maxAttempts">maxAttempts</a></code> | <code>number</code> | (Optional) max attempts to run this step if there are failures. |
-| <code><a href="#@cdklabs/cdk-ssm-documents.BranchStepProps.property.onCancel">onCancel</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AutomationStep">AutomationStep</a></code> | (Optional) Step to jump to in the event that this step is cancelled. |
-| <code><a href="#@cdklabs/cdk-ssm-documents.BranchStepProps.property.onFailure">onFailure</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AutomationStep">AutomationStep</a></code> | (Optional) Step to jump to in the event that this step fails. |
+| <code><a href="#@cdklabs/cdk-ssm-documents.BranchStepProps.property.onCancel">onCancel</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.OnCancel">OnCancel</a></code> | (Optional) Fallback action to take in the event that this step is cancelled. |
+| <code><a href="#@cdklabs/cdk-ssm-documents.BranchStepProps.property.onFailure">onFailure</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.OnFailure">OnFailure</a></code> | (Optional) Fallback action to take in the event that this step fails. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.BranchStepProps.property.timeoutSeconds">timeoutSeconds</a></code> | <code>number</code> | (Optional) timeout seconds to run this step. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.BranchStepProps.property.choices">choices</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.Choice">Choice</a>[]</code> | (Required) list of choices. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.BranchStepProps.property.defaultStepName">defaultStepName</a></code> | <code>string</code> | (Optional) default step in all of the choices evaluate to false. |
@@ -17259,26 +17259,26 @@ public readonly maxAttempts: number;
 ##### `onCancel`<sup>Optional</sup> <a name="onCancel" id="@cdklabs/cdk-ssm-documents.BranchStepProps.property.onCancel"></a>
 
 ```typescript
-public readonly onCancel: AutomationStep;
+public readonly onCancel: OnCancel;
 ```
 
-- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AutomationStep">AutomationStep</a>
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.OnCancel">OnCancel</a>
 - *Default:* undefined
 
-(Optional) Step to jump to in the event that this step is cancelled.
+(Optional) Fallback action to take in the event that this step is cancelled.
 
 ---
 
 ##### `onFailure`<sup>Optional</sup> <a name="onFailure" id="@cdklabs/cdk-ssm-documents.BranchStepProps.property.onFailure"></a>
 
 ```typescript
-public readonly onFailure: AutomationStep;
+public readonly onFailure: OnFailure;
 ```
 
-- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AutomationStep">AutomationStep</a>
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.OnFailure">OnFailure</a>
 - *Default:* undefined
 
-(Optional) Step to jump to in the event that this step fails.
+(Optional) Fallback action to take in the event that this step fails.
 
 ---
 
@@ -17346,8 +17346,8 @@ const changeInstanceStateSimulationProps: ChangeInstanceStateSimulationProps = {
 | <code><a href="#@cdklabs/cdk-ssm-documents.ChangeInstanceStateSimulationProps.property.outputObserver">outputObserver</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.IObserver">IObserver</a></code> | (Optional) Allows for observing the output of steps as they run. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.ChangeInstanceStateSimulationProps.property.isEnd">isEnd</a></code> | <code>boolean</code> | Whether to stop document execution after this step. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.ChangeInstanceStateSimulationProps.property.maxAttempts">maxAttempts</a></code> | <code>number</code> | (Optional) max attempts to run this step if there are failures. |
-| <code><a href="#@cdklabs/cdk-ssm-documents.ChangeInstanceStateSimulationProps.property.onCancel">onCancel</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AutomationStep">AutomationStep</a></code> | (Optional) Step to jump to in the event that this step is cancelled. |
-| <code><a href="#@cdklabs/cdk-ssm-documents.ChangeInstanceStateSimulationProps.property.onFailure">onFailure</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AutomationStep">AutomationStep</a></code> | (Optional) Step to jump to in the event that this step fails. |
+| <code><a href="#@cdklabs/cdk-ssm-documents.ChangeInstanceStateSimulationProps.property.onCancel">onCancel</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.OnCancel">OnCancel</a></code> | (Optional) Fallback action to take in the event that this step is cancelled. |
+| <code><a href="#@cdklabs/cdk-ssm-documents.ChangeInstanceStateSimulationProps.property.onFailure">onFailure</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.OnFailure">OnFailure</a></code> | (Optional) Fallback action to take in the event that this step fails. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.ChangeInstanceStateSimulationProps.property.timeoutSeconds">timeoutSeconds</a></code> | <code>number</code> | (Optional) timeout seconds to run this step. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.ChangeInstanceStateSimulationProps.property.awsInvoker">awsInvoker</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.IAwsInvoker">IAwsInvoker</a></code> | (Optional) Use this as a hook to inject an alternate IAwsInvoker (for mocking the AWS API call). |
 
@@ -17437,26 +17437,26 @@ public readonly maxAttempts: number;
 ##### `onCancel`<sup>Optional</sup> <a name="onCancel" id="@cdklabs/cdk-ssm-documents.ChangeInstanceStateSimulationProps.property.onCancel"></a>
 
 ```typescript
-public readonly onCancel: AutomationStep;
+public readonly onCancel: OnCancel;
 ```
 
-- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AutomationStep">AutomationStep</a>
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.OnCancel">OnCancel</a>
 - *Default:* undefined
 
-(Optional) Step to jump to in the event that this step is cancelled.
+(Optional) Fallback action to take in the event that this step is cancelled.
 
 ---
 
 ##### `onFailure`<sup>Optional</sup> <a name="onFailure" id="@cdklabs/cdk-ssm-documents.ChangeInstanceStateSimulationProps.property.onFailure"></a>
 
 ```typescript
-public readonly onFailure: AutomationStep;
+public readonly onFailure: OnFailure;
 ```
 
-- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AutomationStep">AutomationStep</a>
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.OnFailure">OnFailure</a>
 - *Default:* undefined
 
-(Optional) Step to jump to in the event that this step fails.
+(Optional) Fallback action to take in the event that this step fails.
 
 ---
 
@@ -17510,8 +17510,8 @@ const changeInstanceStateStepProps: ChangeInstanceStateStepProps = { ... }
 | <code><a href="#@cdklabs/cdk-ssm-documents.ChangeInstanceStateStepProps.property.outputObserver">outputObserver</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.IObserver">IObserver</a></code> | (Optional) Allows for observing the output of steps as they run. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.ChangeInstanceStateStepProps.property.isEnd">isEnd</a></code> | <code>boolean</code> | Whether to stop document execution after this step. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.ChangeInstanceStateStepProps.property.maxAttempts">maxAttempts</a></code> | <code>number</code> | (Optional) max attempts to run this step if there are failures. |
-| <code><a href="#@cdklabs/cdk-ssm-documents.ChangeInstanceStateStepProps.property.onCancel">onCancel</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AutomationStep">AutomationStep</a></code> | (Optional) Step to jump to in the event that this step is cancelled. |
-| <code><a href="#@cdklabs/cdk-ssm-documents.ChangeInstanceStateStepProps.property.onFailure">onFailure</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AutomationStep">AutomationStep</a></code> | (Optional) Step to jump to in the event that this step fails. |
+| <code><a href="#@cdklabs/cdk-ssm-documents.ChangeInstanceStateStepProps.property.onCancel">onCancel</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.OnCancel">OnCancel</a></code> | (Optional) Fallback action to take in the event that this step is cancelled. |
+| <code><a href="#@cdklabs/cdk-ssm-documents.ChangeInstanceStateStepProps.property.onFailure">onFailure</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.OnFailure">OnFailure</a></code> | (Optional) Fallback action to take in the event that this step fails. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.ChangeInstanceStateStepProps.property.timeoutSeconds">timeoutSeconds</a></code> | <code>number</code> | (Optional) timeout seconds to run this step. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.ChangeInstanceStateStepProps.property.desiredState">desiredState</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.IDesiredStateVariable">IDesiredStateVariable</a></code> | The desired state. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.ChangeInstanceStateStepProps.property.instanceIds">instanceIds</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.IStringListVariable">IStringListVariable</a></code> | The IDs of the instances. |
@@ -17605,26 +17605,26 @@ public readonly maxAttempts: number;
 ##### `onCancel`<sup>Optional</sup> <a name="onCancel" id="@cdklabs/cdk-ssm-documents.ChangeInstanceStateStepProps.property.onCancel"></a>
 
 ```typescript
-public readonly onCancel: AutomationStep;
+public readonly onCancel: OnCancel;
 ```
 
-- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AutomationStep">AutomationStep</a>
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.OnCancel">OnCancel</a>
 - *Default:* undefined
 
-(Optional) Step to jump to in the event that this step is cancelled.
+(Optional) Fallback action to take in the event that this step is cancelled.
 
 ---
 
 ##### `onFailure`<sup>Optional</sup> <a name="onFailure" id="@cdklabs/cdk-ssm-documents.ChangeInstanceStateStepProps.property.onFailure"></a>
 
 ```typescript
-public readonly onFailure: AutomationStep;
+public readonly onFailure: OnFailure;
 ```
 
-- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AutomationStep">AutomationStep</a>
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.OnFailure">OnFailure</a>
 - *Default:* undefined
 
-(Optional) Step to jump to in the event that this step fails.
+(Optional) Fallback action to take in the event that this step fails.
 
 ---
 
@@ -18618,8 +18618,8 @@ const copyImageStepProps: CopyImageStepProps = { ... }
 | <code><a href="#@cdklabs/cdk-ssm-documents.CopyImageStepProps.property.outputObserver">outputObserver</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.IObserver">IObserver</a></code> | (Optional) Allows for observing the output of steps as they run. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.CopyImageStepProps.property.isEnd">isEnd</a></code> | <code>boolean</code> | Whether to stop document execution after this step. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.CopyImageStepProps.property.maxAttempts">maxAttempts</a></code> | <code>number</code> | (Optional) max attempts to run this step if there are failures. |
-| <code><a href="#@cdklabs/cdk-ssm-documents.CopyImageStepProps.property.onCancel">onCancel</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AutomationStep">AutomationStep</a></code> | (Optional) Step to jump to in the event that this step is cancelled. |
-| <code><a href="#@cdklabs/cdk-ssm-documents.CopyImageStepProps.property.onFailure">onFailure</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AutomationStep">AutomationStep</a></code> | (Optional) Step to jump to in the event that this step fails. |
+| <code><a href="#@cdklabs/cdk-ssm-documents.CopyImageStepProps.property.onCancel">onCancel</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.OnCancel">OnCancel</a></code> | (Optional) Fallback action to take in the event that this step is cancelled. |
+| <code><a href="#@cdklabs/cdk-ssm-documents.CopyImageStepProps.property.onFailure">onFailure</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.OnFailure">OnFailure</a></code> | (Optional) Fallback action to take in the event that this step fails. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.CopyImageStepProps.property.timeoutSeconds">timeoutSeconds</a></code> | <code>number</code> | (Optional) timeout seconds to run this step. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.CopyImageStepProps.property.imageName">imageName</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.IStringVariable">IStringVariable</a></code> | The name for the image. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.CopyImageStepProps.property.sourceImageId">sourceImageId</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.IStringVariable">IStringVariable</a></code> | The AMI ID to copy from the source Region. |
@@ -18715,26 +18715,26 @@ public readonly maxAttempts: number;
 ##### `onCancel`<sup>Optional</sup> <a name="onCancel" id="@cdklabs/cdk-ssm-documents.CopyImageStepProps.property.onCancel"></a>
 
 ```typescript
-public readonly onCancel: AutomationStep;
+public readonly onCancel: OnCancel;
 ```
 
-- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AutomationStep">AutomationStep</a>
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.OnCancel">OnCancel</a>
 - *Default:* undefined
 
-(Optional) Step to jump to in the event that this step is cancelled.
+(Optional) Fallback action to take in the event that this step is cancelled.
 
 ---
 
 ##### `onFailure`<sup>Optional</sup> <a name="onFailure" id="@cdklabs/cdk-ssm-documents.CopyImageStepProps.property.onFailure"></a>
 
 ```typescript
-public readonly onFailure: AutomationStep;
+public readonly onFailure: OnFailure;
 ```
 
-- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AutomationStep">AutomationStep</a>
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.OnFailure">OnFailure</a>
 - *Default:* undefined
 
-(Optional) Step to jump to in the event that this step fails.
+(Optional) Fallback action to take in the event that this step fails.
 
 ---
 
@@ -18859,8 +18859,8 @@ const createImageStepProps: CreateImageStepProps = { ... }
 | <code><a href="#@cdklabs/cdk-ssm-documents.CreateImageStepProps.property.outputObserver">outputObserver</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.IObserver">IObserver</a></code> | (Optional) Allows for observing the output of steps as they run. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.CreateImageStepProps.property.isEnd">isEnd</a></code> | <code>boolean</code> | Whether to stop document execution after this step. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.CreateImageStepProps.property.maxAttempts">maxAttempts</a></code> | <code>number</code> | (Optional) max attempts to run this step if there are failures. |
-| <code><a href="#@cdklabs/cdk-ssm-documents.CreateImageStepProps.property.onCancel">onCancel</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AutomationStep">AutomationStep</a></code> | (Optional) Step to jump to in the event that this step is cancelled. |
-| <code><a href="#@cdklabs/cdk-ssm-documents.CreateImageStepProps.property.onFailure">onFailure</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AutomationStep">AutomationStep</a></code> | (Optional) Step to jump to in the event that this step fails. |
+| <code><a href="#@cdklabs/cdk-ssm-documents.CreateImageStepProps.property.onCancel">onCancel</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.OnCancel">OnCancel</a></code> | (Optional) Fallback action to take in the event that this step is cancelled. |
+| <code><a href="#@cdklabs/cdk-ssm-documents.CreateImageStepProps.property.onFailure">onFailure</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.OnFailure">OnFailure</a></code> | (Optional) Fallback action to take in the event that this step fails. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.CreateImageStepProps.property.timeoutSeconds">timeoutSeconds</a></code> | <code>number</code> | (Optional) timeout seconds to run this step. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.CreateImageStepProps.property.imageName">imageName</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.IStringVariable">IStringVariable</a></code> | The name for the image. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.CreateImageStepProps.property.instanceId">instanceId</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.IStringVariable">IStringVariable</a></code> | The ID of the instance. |
@@ -18954,26 +18954,26 @@ public readonly maxAttempts: number;
 ##### `onCancel`<sup>Optional</sup> <a name="onCancel" id="@cdklabs/cdk-ssm-documents.CreateImageStepProps.property.onCancel"></a>
 
 ```typescript
-public readonly onCancel: AutomationStep;
+public readonly onCancel: OnCancel;
 ```
 
-- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AutomationStep">AutomationStep</a>
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.OnCancel">OnCancel</a>
 - *Default:* undefined
 
-(Optional) Step to jump to in the event that this step is cancelled.
+(Optional) Fallback action to take in the event that this step is cancelled.
 
 ---
 
 ##### `onFailure`<sup>Optional</sup> <a name="onFailure" id="@cdklabs/cdk-ssm-documents.CreateImageStepProps.property.onFailure"></a>
 
 ```typescript
-public readonly onFailure: AutomationStep;
+public readonly onFailure: OnFailure;
 ```
 
-- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AutomationStep">AutomationStep</a>
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.OnFailure">OnFailure</a>
 - *Default:* undefined
 
-(Optional) Step to jump to in the event that this step fails.
+(Optional) Fallback action to take in the event that this step fails.
 
 ---
 
@@ -19142,8 +19142,8 @@ const createStackStepProps: CreateStackStepProps = { ... }
 | <code><a href="#@cdklabs/cdk-ssm-documents.CreateStackStepProps.property.outputObserver">outputObserver</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.IObserver">IObserver</a></code> | (Optional) Allows for observing the output of steps as they run. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.CreateStackStepProps.property.isEnd">isEnd</a></code> | <code>boolean</code> | Whether to stop document execution after this step. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.CreateStackStepProps.property.maxAttempts">maxAttempts</a></code> | <code>number</code> | (Optional) max attempts to run this step if there are failures. |
-| <code><a href="#@cdklabs/cdk-ssm-documents.CreateStackStepProps.property.onCancel">onCancel</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AutomationStep">AutomationStep</a></code> | (Optional) Step to jump to in the event that this step is cancelled. |
-| <code><a href="#@cdklabs/cdk-ssm-documents.CreateStackStepProps.property.onFailure">onFailure</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AutomationStep">AutomationStep</a></code> | (Optional) Step to jump to in the event that this step fails. |
+| <code><a href="#@cdklabs/cdk-ssm-documents.CreateStackStepProps.property.onCancel">onCancel</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.OnCancel">OnCancel</a></code> | (Optional) Fallback action to take in the event that this step is cancelled. |
+| <code><a href="#@cdklabs/cdk-ssm-documents.CreateStackStepProps.property.onFailure">onFailure</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.OnFailure">OnFailure</a></code> | (Optional) Fallback action to take in the event that this step fails. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.CreateStackStepProps.property.timeoutSeconds">timeoutSeconds</a></code> | <code>number</code> | (Optional) timeout seconds to run this step. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.CreateStackStepProps.property.stackName">stackName</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.IStringVariable">IStringVariable</a></code> | The name that is associated with the stack. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.CreateStackStepProps.property.template">template</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.BodyOrUrlProp">BodyOrUrlProp</a></code> | Template body or URL. |
@@ -19244,26 +19244,26 @@ public readonly maxAttempts: number;
 ##### `onCancel`<sup>Optional</sup> <a name="onCancel" id="@cdklabs/cdk-ssm-documents.CreateStackStepProps.property.onCancel"></a>
 
 ```typescript
-public readonly onCancel: AutomationStep;
+public readonly onCancel: OnCancel;
 ```
 
-- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AutomationStep">AutomationStep</a>
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.OnCancel">OnCancel</a>
 - *Default:* undefined
 
-(Optional) Step to jump to in the event that this step is cancelled.
+(Optional) Fallback action to take in the event that this step is cancelled.
 
 ---
 
 ##### `onFailure`<sup>Optional</sup> <a name="onFailure" id="@cdklabs/cdk-ssm-documents.CreateStackStepProps.property.onFailure"></a>
 
 ```typescript
-public readonly onFailure: AutomationStep;
+public readonly onFailure: OnFailure;
 ```
 
-- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AutomationStep">AutomationStep</a>
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.OnFailure">OnFailure</a>
 - *Default:* undefined
 
-(Optional) Step to jump to in the event that this step fails.
+(Optional) Fallback action to take in the event that this step fails.
 
 ---
 
@@ -19529,8 +19529,8 @@ const createTagsStepProps: CreateTagsStepProps = { ... }
 | <code><a href="#@cdklabs/cdk-ssm-documents.CreateTagsStepProps.property.outputObserver">outputObserver</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.IObserver">IObserver</a></code> | (Optional) Allows for observing the output of steps as they run. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.CreateTagsStepProps.property.isEnd">isEnd</a></code> | <code>boolean</code> | Whether to stop document execution after this step. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.CreateTagsStepProps.property.maxAttempts">maxAttempts</a></code> | <code>number</code> | (Optional) max attempts to run this step if there are failures. |
-| <code><a href="#@cdklabs/cdk-ssm-documents.CreateTagsStepProps.property.onCancel">onCancel</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AutomationStep">AutomationStep</a></code> | (Optional) Step to jump to in the event that this step is cancelled. |
-| <code><a href="#@cdklabs/cdk-ssm-documents.CreateTagsStepProps.property.onFailure">onFailure</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AutomationStep">AutomationStep</a></code> | (Optional) Step to jump to in the event that this step fails. |
+| <code><a href="#@cdklabs/cdk-ssm-documents.CreateTagsStepProps.property.onCancel">onCancel</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.OnCancel">OnCancel</a></code> | (Optional) Fallback action to take in the event that this step is cancelled. |
+| <code><a href="#@cdklabs/cdk-ssm-documents.CreateTagsStepProps.property.onFailure">onFailure</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.OnFailure">OnFailure</a></code> | (Optional) Fallback action to take in the event that this step fails. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.CreateTagsStepProps.property.timeoutSeconds">timeoutSeconds</a></code> | <code>number</code> | (Optional) timeout seconds to run this step. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.CreateTagsStepProps.property.resourceIds">resourceIds</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.IStringListVariable">IStringListVariable</a></code> | The IDs of the resource(s) to be tagged. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.CreateTagsStepProps.property.tags">tags</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.IMapListVariable">IMapListVariable</a></code> | The tags to associate with the resource(s). |
@@ -19622,26 +19622,26 @@ public readonly maxAttempts: number;
 ##### `onCancel`<sup>Optional</sup> <a name="onCancel" id="@cdklabs/cdk-ssm-documents.CreateTagsStepProps.property.onCancel"></a>
 
 ```typescript
-public readonly onCancel: AutomationStep;
+public readonly onCancel: OnCancel;
 ```
 
-- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AutomationStep">AutomationStep</a>
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.OnCancel">OnCancel</a>
 - *Default:* undefined
 
-(Optional) Step to jump to in the event that this step is cancelled.
+(Optional) Fallback action to take in the event that this step is cancelled.
 
 ---
 
 ##### `onFailure`<sup>Optional</sup> <a name="onFailure" id="@cdklabs/cdk-ssm-documents.CreateTagsStepProps.property.onFailure"></a>
 
 ```typescript
-public readonly onFailure: AutomationStep;
+public readonly onFailure: OnFailure;
 ```
 
-- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AutomationStep">AutomationStep</a>
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.OnFailure">OnFailure</a>
 - *Default:* undefined
 
-(Optional) Step to jump to in the event that this step fails.
+(Optional) Fallback action to take in the event that this step fails.
 
 ---
 
@@ -19772,8 +19772,8 @@ const deleteImageStepProps: DeleteImageStepProps = { ... }
 | <code><a href="#@cdklabs/cdk-ssm-documents.DeleteImageStepProps.property.outputObserver">outputObserver</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.IObserver">IObserver</a></code> | (Optional) Allows for observing the output of steps as they run. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.DeleteImageStepProps.property.isEnd">isEnd</a></code> | <code>boolean</code> | Whether to stop document execution after this step. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.DeleteImageStepProps.property.maxAttempts">maxAttempts</a></code> | <code>number</code> | (Optional) max attempts to run this step if there are failures. |
-| <code><a href="#@cdklabs/cdk-ssm-documents.DeleteImageStepProps.property.onCancel">onCancel</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AutomationStep">AutomationStep</a></code> | (Optional) Step to jump to in the event that this step is cancelled. |
-| <code><a href="#@cdklabs/cdk-ssm-documents.DeleteImageStepProps.property.onFailure">onFailure</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AutomationStep">AutomationStep</a></code> | (Optional) Step to jump to in the event that this step fails. |
+| <code><a href="#@cdklabs/cdk-ssm-documents.DeleteImageStepProps.property.onCancel">onCancel</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.OnCancel">OnCancel</a></code> | (Optional) Fallback action to take in the event that this step is cancelled. |
+| <code><a href="#@cdklabs/cdk-ssm-documents.DeleteImageStepProps.property.onFailure">onFailure</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.OnFailure">OnFailure</a></code> | (Optional) Fallback action to take in the event that this step fails. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.DeleteImageStepProps.property.timeoutSeconds">timeoutSeconds</a></code> | <code>number</code> | (Optional) timeout seconds to run this step. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.DeleteImageStepProps.property.imageId">imageId</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.IStringVariable">IStringVariable</a></code> | The ID of the image to be deleted. |
 
@@ -19863,26 +19863,26 @@ public readonly maxAttempts: number;
 ##### `onCancel`<sup>Optional</sup> <a name="onCancel" id="@cdklabs/cdk-ssm-documents.DeleteImageStepProps.property.onCancel"></a>
 
 ```typescript
-public readonly onCancel: AutomationStep;
+public readonly onCancel: OnCancel;
 ```
 
-- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AutomationStep">AutomationStep</a>
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.OnCancel">OnCancel</a>
 - *Default:* undefined
 
-(Optional) Step to jump to in the event that this step is cancelled.
+(Optional) Fallback action to take in the event that this step is cancelled.
 
 ---
 
 ##### `onFailure`<sup>Optional</sup> <a name="onFailure" id="@cdklabs/cdk-ssm-documents.DeleteImageStepProps.property.onFailure"></a>
 
 ```typescript
-public readonly onFailure: AutomationStep;
+public readonly onFailure: OnFailure;
 ```
 
-- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AutomationStep">AutomationStep</a>
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.OnFailure">OnFailure</a>
 - *Default:* undefined
 
-(Optional) Step to jump to in the event that this step fails.
+(Optional) Fallback action to take in the event that this step fails.
 
 ---
 
@@ -19935,8 +19935,8 @@ const deleteStackStepProps: DeleteStackStepProps = { ... }
 | <code><a href="#@cdklabs/cdk-ssm-documents.DeleteStackStepProps.property.outputObserver">outputObserver</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.IObserver">IObserver</a></code> | (Optional) Allows for observing the output of steps as they run. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.DeleteStackStepProps.property.isEnd">isEnd</a></code> | <code>boolean</code> | Whether to stop document execution after this step. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.DeleteStackStepProps.property.maxAttempts">maxAttempts</a></code> | <code>number</code> | (Optional) max attempts to run this step if there are failures. |
-| <code><a href="#@cdklabs/cdk-ssm-documents.DeleteStackStepProps.property.onCancel">onCancel</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AutomationStep">AutomationStep</a></code> | (Optional) Step to jump to in the event that this step is cancelled. |
-| <code><a href="#@cdklabs/cdk-ssm-documents.DeleteStackStepProps.property.onFailure">onFailure</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AutomationStep">AutomationStep</a></code> | (Optional) Step to jump to in the event that this step fails. |
+| <code><a href="#@cdklabs/cdk-ssm-documents.DeleteStackStepProps.property.onCancel">onCancel</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.OnCancel">OnCancel</a></code> | (Optional) Fallback action to take in the event that this step is cancelled. |
+| <code><a href="#@cdklabs/cdk-ssm-documents.DeleteStackStepProps.property.onFailure">onFailure</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.OnFailure">OnFailure</a></code> | (Optional) Fallback action to take in the event that this step fails. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.DeleteStackStepProps.property.timeoutSeconds">timeoutSeconds</a></code> | <code>number</code> | (Optional) timeout seconds to run this step. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.DeleteStackStepProps.property.stackNameVariable">stackNameVariable</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.IStringVariable">IStringVariable</a></code> | (Optional) Variable that is fed into this step declaring which stack to delete. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.DeleteStackStepProps.property.roleArn">roleArn</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.IStringVariable">IStringVariable</a></code> | (Optional) The Amazon Resource Name (ARN) of an AWS Identity and Access Management (IAM) role that CloudFormation assumes to create the stack. |
@@ -20027,26 +20027,26 @@ public readonly maxAttempts: number;
 ##### `onCancel`<sup>Optional</sup> <a name="onCancel" id="@cdklabs/cdk-ssm-documents.DeleteStackStepProps.property.onCancel"></a>
 
 ```typescript
-public readonly onCancel: AutomationStep;
+public readonly onCancel: OnCancel;
 ```
 
-- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AutomationStep">AutomationStep</a>
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.OnCancel">OnCancel</a>
 - *Default:* undefined
 
-(Optional) Step to jump to in the event that this step is cancelled.
+(Optional) Fallback action to take in the event that this step is cancelled.
 
 ---
 
 ##### `onFailure`<sup>Optional</sup> <a name="onFailure" id="@cdklabs/cdk-ssm-documents.DeleteStackStepProps.property.onFailure"></a>
 
 ```typescript
-public readonly onFailure: AutomationStep;
+public readonly onFailure: OnFailure;
 ```
 
-- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AutomationStep">AutomationStep</a>
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.OnFailure">OnFailure</a>
 - *Default:* undefined
 
-(Optional) Step to jump to in the event that this step fails.
+(Optional) Fallback action to take in the event that this step fails.
 
 ---
 
@@ -20913,8 +20913,8 @@ const executeAutomationStepProps: ExecuteAutomationStepProps = { ... }
 | <code><a href="#@cdklabs/cdk-ssm-documents.ExecuteAutomationStepProps.property.outputObserver">outputObserver</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.IObserver">IObserver</a></code> | (Optional) Allows for observing the output of steps as they run. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.ExecuteAutomationStepProps.property.isEnd">isEnd</a></code> | <code>boolean</code> | Whether to stop document execution after this step. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.ExecuteAutomationStepProps.property.maxAttempts">maxAttempts</a></code> | <code>number</code> | (Optional) max attempts to run this step if there are failures. |
-| <code><a href="#@cdklabs/cdk-ssm-documents.ExecuteAutomationStepProps.property.onCancel">onCancel</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AutomationStep">AutomationStep</a></code> | (Optional) Step to jump to in the event that this step is cancelled. |
-| <code><a href="#@cdklabs/cdk-ssm-documents.ExecuteAutomationStepProps.property.onFailure">onFailure</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AutomationStep">AutomationStep</a></code> | (Optional) Step to jump to in the event that this step fails. |
+| <code><a href="#@cdklabs/cdk-ssm-documents.ExecuteAutomationStepProps.property.onCancel">onCancel</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.OnCancel">OnCancel</a></code> | (Optional) Fallback action to take in the event that this step is cancelled. |
+| <code><a href="#@cdklabs/cdk-ssm-documents.ExecuteAutomationStepProps.property.onFailure">onFailure</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.OnFailure">OnFailure</a></code> | (Optional) Fallback action to take in the event that this step fails. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.ExecuteAutomationStepProps.property.timeoutSeconds">timeoutSeconds</a></code> | <code>number</code> | (Optional) timeout seconds to run this step. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.ExecuteAutomationStepProps.property.documentName">documentName</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.IStringVariable">IStringVariable</a></code> | *No description.* |
 | <code><a href="#@cdklabs/cdk-ssm-documents.ExecuteAutomationStepProps.property.documentVersion">documentVersion</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.IStringVariable">IStringVariable</a></code> | *No description.* |
@@ -21013,26 +21013,26 @@ public readonly maxAttempts: number;
 ##### `onCancel`<sup>Optional</sup> <a name="onCancel" id="@cdklabs/cdk-ssm-documents.ExecuteAutomationStepProps.property.onCancel"></a>
 
 ```typescript
-public readonly onCancel: AutomationStep;
+public readonly onCancel: OnCancel;
 ```
 
-- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AutomationStep">AutomationStep</a>
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.OnCancel">OnCancel</a>
 - *Default:* undefined
 
-(Optional) Step to jump to in the event that this step is cancelled.
+(Optional) Fallback action to take in the event that this step is cancelled.
 
 ---
 
 ##### `onFailure`<sup>Optional</sup> <a name="onFailure" id="@cdklabs/cdk-ssm-documents.ExecuteAutomationStepProps.property.onFailure"></a>
 
 ```typescript
-public readonly onFailure: AutomationStep;
+public readonly onFailure: OnFailure;
 ```
 
-- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AutomationStep">AutomationStep</a>
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.OnFailure">OnFailure</a>
 - *Default:* undefined
 
-(Optional) Step to jump to in the event that this step fails.
+(Optional) Fallback action to take in the event that this step fails.
 
 ---
 
@@ -21173,8 +21173,8 @@ const executeScriptStepProps: ExecuteScriptStepProps = { ... }
 | <code><a href="#@cdklabs/cdk-ssm-documents.ExecuteScriptStepProps.property.outputObserver">outputObserver</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.IObserver">IObserver</a></code> | (Optional) Allows for observing the output of steps as they run. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.ExecuteScriptStepProps.property.isEnd">isEnd</a></code> | <code>boolean</code> | Whether to stop document execution after this step. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.ExecuteScriptStepProps.property.maxAttempts">maxAttempts</a></code> | <code>number</code> | (Optional) max attempts to run this step if there are failures. |
-| <code><a href="#@cdklabs/cdk-ssm-documents.ExecuteScriptStepProps.property.onCancel">onCancel</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AutomationStep">AutomationStep</a></code> | (Optional) Step to jump to in the event that this step is cancelled. |
-| <code><a href="#@cdklabs/cdk-ssm-documents.ExecuteScriptStepProps.property.onFailure">onFailure</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AutomationStep">AutomationStep</a></code> | (Optional) Step to jump to in the event that this step fails. |
+| <code><a href="#@cdklabs/cdk-ssm-documents.ExecuteScriptStepProps.property.onCancel">onCancel</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.OnCancel">OnCancel</a></code> | (Optional) Fallback action to take in the event that this step is cancelled. |
+| <code><a href="#@cdklabs/cdk-ssm-documents.ExecuteScriptStepProps.property.onFailure">onFailure</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.OnFailure">OnFailure</a></code> | (Optional) Fallback action to take in the event that this step fails. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.ExecuteScriptStepProps.property.timeoutSeconds">timeoutSeconds</a></code> | <code>number</code> | (Optional) timeout seconds to run this step. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.ExecuteScriptStepProps.property.inputs">inputs</a></code> | <code>string[]</code> | (Optional) Inputs that the function needs in order to execute. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.ExecuteScriptStepProps.property.language">language</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.ScriptLanguage">ScriptLanguage</a></code> | (Required) Language used to execute the script. |
@@ -21269,26 +21269,26 @@ public readonly maxAttempts: number;
 ##### `onCancel`<sup>Optional</sup> <a name="onCancel" id="@cdklabs/cdk-ssm-documents.ExecuteScriptStepProps.property.onCancel"></a>
 
 ```typescript
-public readonly onCancel: AutomationStep;
+public readonly onCancel: OnCancel;
 ```
 
-- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AutomationStep">AutomationStep</a>
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.OnCancel">OnCancel</a>
 - *Default:* undefined
 
-(Optional) Step to jump to in the event that this step is cancelled.
+(Optional) Fallback action to take in the event that this step is cancelled.
 
 ---
 
 ##### `onFailure`<sup>Optional</sup> <a name="onFailure" id="@cdklabs/cdk-ssm-documents.ExecuteScriptStepProps.property.onFailure"></a>
 
 ```typescript
-public readonly onFailure: AutomationStep;
+public readonly onFailure: OnFailure;
 ```
 
-- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AutomationStep">AutomationStep</a>
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.OnFailure">OnFailure</a>
 - *Default:* undefined
 
-(Optional) Step to jump to in the event that this step fails.
+(Optional) Fallback action to take in the event that this step fails.
 
 ---
 
@@ -21414,8 +21414,8 @@ const executeStateMachineStepProps: ExecuteStateMachineStepProps = { ... }
 | <code><a href="#@cdklabs/cdk-ssm-documents.ExecuteStateMachineStepProps.property.outputObserver">outputObserver</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.IObserver">IObserver</a></code> | (Optional) Allows for observing the output of steps as they run. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.ExecuteStateMachineStepProps.property.isEnd">isEnd</a></code> | <code>boolean</code> | Whether to stop document execution after this step. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.ExecuteStateMachineStepProps.property.maxAttempts">maxAttempts</a></code> | <code>number</code> | (Optional) max attempts to run this step if there are failures. |
-| <code><a href="#@cdklabs/cdk-ssm-documents.ExecuteStateMachineStepProps.property.onCancel">onCancel</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AutomationStep">AutomationStep</a></code> | (Optional) Step to jump to in the event that this step is cancelled. |
-| <code><a href="#@cdklabs/cdk-ssm-documents.ExecuteStateMachineStepProps.property.onFailure">onFailure</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AutomationStep">AutomationStep</a></code> | (Optional) Step to jump to in the event that this step fails. |
+| <code><a href="#@cdklabs/cdk-ssm-documents.ExecuteStateMachineStepProps.property.onCancel">onCancel</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.OnCancel">OnCancel</a></code> | (Optional) Fallback action to take in the event that this step is cancelled. |
+| <code><a href="#@cdklabs/cdk-ssm-documents.ExecuteStateMachineStepProps.property.onFailure">onFailure</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.OnFailure">OnFailure</a></code> | (Optional) Fallback action to take in the event that this step fails. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.ExecuteStateMachineStepProps.property.timeoutSeconds">timeoutSeconds</a></code> | <code>number</code> | (Optional) timeout seconds to run this step. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.ExecuteStateMachineStepProps.property.stateMachineArn">stateMachineArn</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.IStringVariable">IStringVariable</a></code> | The Amazon Resource Name (ARN) of the Step Functions state machine. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.ExecuteStateMachineStepProps.property.executionName">executionName</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.IStringVariable">IStringVariable</a></code> | (Optional) The name of the execution. |
@@ -21507,26 +21507,26 @@ public readonly maxAttempts: number;
 ##### `onCancel`<sup>Optional</sup> <a name="onCancel" id="@cdklabs/cdk-ssm-documents.ExecuteStateMachineStepProps.property.onCancel"></a>
 
 ```typescript
-public readonly onCancel: AutomationStep;
+public readonly onCancel: OnCancel;
 ```
 
-- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AutomationStep">AutomationStep</a>
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.OnCancel">OnCancel</a>
 - *Default:* undefined
 
-(Optional) Step to jump to in the event that this step is cancelled.
+(Optional) Fallback action to take in the event that this step is cancelled.
 
 ---
 
 ##### `onFailure`<sup>Optional</sup> <a name="onFailure" id="@cdklabs/cdk-ssm-documents.ExecuteStateMachineStepProps.property.onFailure"></a>
 
 ```typescript
-public readonly onFailure: AutomationStep;
+public readonly onFailure: OnFailure;
 ```
 
-- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AutomationStep">AutomationStep</a>
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.OnFailure">OnFailure</a>
 - *Default:* undefined
 
-(Optional) Step to jump to in the event that this step fails.
+(Optional) Fallback action to take in the event that this step fails.
 
 ---
 
@@ -22202,8 +22202,8 @@ const invokeLambdaFunctionStepProps: InvokeLambdaFunctionStepProps = { ... }
 | <code><a href="#@cdklabs/cdk-ssm-documents.InvokeLambdaFunctionStepProps.property.outputObserver">outputObserver</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.IObserver">IObserver</a></code> | (Optional) Allows for observing the output of steps as they run. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.InvokeLambdaFunctionStepProps.property.isEnd">isEnd</a></code> | <code>boolean</code> | Whether to stop document execution after this step. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.InvokeLambdaFunctionStepProps.property.maxAttempts">maxAttempts</a></code> | <code>number</code> | (Optional) max attempts to run this step if there are failures. |
-| <code><a href="#@cdklabs/cdk-ssm-documents.InvokeLambdaFunctionStepProps.property.onCancel">onCancel</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AutomationStep">AutomationStep</a></code> | (Optional) Step to jump to in the event that this step is cancelled. |
-| <code><a href="#@cdklabs/cdk-ssm-documents.InvokeLambdaFunctionStepProps.property.onFailure">onFailure</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AutomationStep">AutomationStep</a></code> | (Optional) Step to jump to in the event that this step fails. |
+| <code><a href="#@cdklabs/cdk-ssm-documents.InvokeLambdaFunctionStepProps.property.onCancel">onCancel</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.OnCancel">OnCancel</a></code> | (Optional) Fallback action to take in the event that this step is cancelled. |
+| <code><a href="#@cdklabs/cdk-ssm-documents.InvokeLambdaFunctionStepProps.property.onFailure">onFailure</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.OnFailure">OnFailure</a></code> | (Optional) Fallback action to take in the event that this step fails. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.InvokeLambdaFunctionStepProps.property.timeoutSeconds">timeoutSeconds</a></code> | <code>number</code> | (Optional) timeout seconds to run this step. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.InvokeLambdaFunctionStepProps.property.functionName">functionName</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.IStringVariable">IStringVariable</a></code> | The name of the Lambda function. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.InvokeLambdaFunctionStepProps.property.clientContext">clientContext</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.IStringVariable">IStringVariable</a></code> | (Optional) The client-specific information. |
@@ -22298,26 +22298,26 @@ public readonly maxAttempts: number;
 ##### `onCancel`<sup>Optional</sup> <a name="onCancel" id="@cdklabs/cdk-ssm-documents.InvokeLambdaFunctionStepProps.property.onCancel"></a>
 
 ```typescript
-public readonly onCancel: AutomationStep;
+public readonly onCancel: OnCancel;
 ```
 
-- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AutomationStep">AutomationStep</a>
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.OnCancel">OnCancel</a>
 - *Default:* undefined
 
-(Optional) Step to jump to in the event that this step is cancelled.
+(Optional) Fallback action to take in the event that this step is cancelled.
 
 ---
 
 ##### `onFailure`<sup>Optional</sup> <a name="onFailure" id="@cdklabs/cdk-ssm-documents.InvokeLambdaFunctionStepProps.property.onFailure"></a>
 
 ```typescript
-public readonly onFailure: AutomationStep;
+public readonly onFailure: OnFailure;
 ```
 
-- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AutomationStep">AutomationStep</a>
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.OnFailure">OnFailure</a>
 - *Default:* undefined
 
-(Optional) Step to jump to in the event that this step fails.
+(Optional) Fallback action to take in the event that this step fails.
 
 ---
 
@@ -22561,8 +22561,8 @@ const invokeWebhookStepProps: InvokeWebhookStepProps = { ... }
 | <code><a href="#@cdklabs/cdk-ssm-documents.InvokeWebhookStepProps.property.outputObserver">outputObserver</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.IObserver">IObserver</a></code> | (Optional) Allows for observing the output of steps as they run. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.InvokeWebhookStepProps.property.isEnd">isEnd</a></code> | <code>boolean</code> | Whether to stop document execution after this step. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.InvokeWebhookStepProps.property.maxAttempts">maxAttempts</a></code> | <code>number</code> | (Optional) max attempts to run this step if there are failures. |
-| <code><a href="#@cdklabs/cdk-ssm-documents.InvokeWebhookStepProps.property.onCancel">onCancel</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AutomationStep">AutomationStep</a></code> | (Optional) Step to jump to in the event that this step is cancelled. |
-| <code><a href="#@cdklabs/cdk-ssm-documents.InvokeWebhookStepProps.property.onFailure">onFailure</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AutomationStep">AutomationStep</a></code> | (Optional) Step to jump to in the event that this step fails. |
+| <code><a href="#@cdklabs/cdk-ssm-documents.InvokeWebhookStepProps.property.onCancel">onCancel</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.OnCancel">OnCancel</a></code> | (Optional) Fallback action to take in the event that this step is cancelled. |
+| <code><a href="#@cdklabs/cdk-ssm-documents.InvokeWebhookStepProps.property.onFailure">onFailure</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.OnFailure">OnFailure</a></code> | (Optional) Fallback action to take in the event that this step fails. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.InvokeWebhookStepProps.property.timeoutSeconds">timeoutSeconds</a></code> | <code>number</code> | (Optional) timeout seconds to run this step. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.InvokeWebhookStepProps.property.integrationName">integrationName</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.IStringVariable">IStringVariable</a></code> | The name of the Automation integration. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.InvokeWebhookStepProps.property.body">body</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.IStringVariable">IStringVariable</a></code> | (Optional) The payload you want to send when your webhook integration is invoked. |
@@ -22653,26 +22653,26 @@ public readonly maxAttempts: number;
 ##### `onCancel`<sup>Optional</sup> <a name="onCancel" id="@cdklabs/cdk-ssm-documents.InvokeWebhookStepProps.property.onCancel"></a>
 
 ```typescript
-public readonly onCancel: AutomationStep;
+public readonly onCancel: OnCancel;
 ```
 
-- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AutomationStep">AutomationStep</a>
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.OnCancel">OnCancel</a>
 - *Default:* undefined
 
-(Optional) Step to jump to in the event that this step is cancelled.
+(Optional) Fallback action to take in the event that this step is cancelled.
 
 ---
 
 ##### `onFailure`<sup>Optional</sup> <a name="onFailure" id="@cdklabs/cdk-ssm-documents.InvokeWebhookStepProps.property.onFailure"></a>
 
 ```typescript
-public readonly onFailure: AutomationStep;
+public readonly onFailure: OnFailure;
 ```
 
-- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AutomationStep">AutomationStep</a>
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.OnFailure">OnFailure</a>
 - *Default:* undefined
 
-(Optional) Step to jump to in the event that this step fails.
+(Optional) Fallback action to take in the event that this step fails.
 
 ---
 
@@ -23697,8 +23697,8 @@ const runCommandStepProps: RunCommandStepProps = { ... }
 | <code><a href="#@cdklabs/cdk-ssm-documents.RunCommandStepProps.property.outputObserver">outputObserver</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.IObserver">IObserver</a></code> | (Optional) Allows for observing the output of steps as they run. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.RunCommandStepProps.property.isEnd">isEnd</a></code> | <code>boolean</code> | Whether to stop document execution after this step. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.RunCommandStepProps.property.maxAttempts">maxAttempts</a></code> | <code>number</code> | (Optional) max attempts to run this step if there are failures. |
-| <code><a href="#@cdklabs/cdk-ssm-documents.RunCommandStepProps.property.onCancel">onCancel</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AutomationStep">AutomationStep</a></code> | (Optional) Step to jump to in the event that this step is cancelled. |
-| <code><a href="#@cdklabs/cdk-ssm-documents.RunCommandStepProps.property.onFailure">onFailure</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AutomationStep">AutomationStep</a></code> | (Optional) Step to jump to in the event that this step fails. |
+| <code><a href="#@cdklabs/cdk-ssm-documents.RunCommandStepProps.property.onCancel">onCancel</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.OnCancel">OnCancel</a></code> | (Optional) Fallback action to take in the event that this step is cancelled. |
+| <code><a href="#@cdklabs/cdk-ssm-documents.RunCommandStepProps.property.onFailure">onFailure</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.OnFailure">OnFailure</a></code> | (Optional) Fallback action to take in the event that this step fails. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.RunCommandStepProps.property.timeoutSeconds">timeoutSeconds</a></code> | <code>number</code> | (Optional) timeout seconds to run this step. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.RunCommandStepProps.property.documentName">documentName</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.IStringVariable">IStringVariable</a></code> | If the Command type document is owned by you or AWS, specify the name of the document. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.RunCommandStepProps.property.targets">targets</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.IStringListVariable">IStringListVariable</a> \| <a href="#@cdklabs/cdk-ssm-documents.IMapListVariable">IMapListVariable</a></code> | The instance IDs where you want the command to run. You can specify a maximum of 50 IDs. |
@@ -23801,26 +23801,26 @@ public readonly maxAttempts: number;
 ##### `onCancel`<sup>Optional</sup> <a name="onCancel" id="@cdklabs/cdk-ssm-documents.RunCommandStepProps.property.onCancel"></a>
 
 ```typescript
-public readonly onCancel: AutomationStep;
+public readonly onCancel: OnCancel;
 ```
 
-- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AutomationStep">AutomationStep</a>
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.OnCancel">OnCancel</a>
 - *Default:* undefined
 
-(Optional) Step to jump to in the event that this step is cancelled.
+(Optional) Fallback action to take in the event that this step is cancelled.
 
 ---
 
 ##### `onFailure`<sup>Optional</sup> <a name="onFailure" id="@cdklabs/cdk-ssm-documents.RunCommandStepProps.property.onFailure"></a>
 
 ```typescript
-public readonly onFailure: AutomationStep;
+public readonly onFailure: OnFailure;
 ```
 
-- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AutomationStep">AutomationStep</a>
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.OnFailure">OnFailure</a>
 - *Default:* undefined
 
-(Optional) Step to jump to in the event that this step fails.
+(Optional) Fallback action to take in the event that this step fails.
 
 ---
 
@@ -24499,8 +24499,8 @@ const runInstanceStepProps: RunInstanceStepProps = { ... }
 | <code><a href="#@cdklabs/cdk-ssm-documents.RunInstanceStepProps.property.outputObserver">outputObserver</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.IObserver">IObserver</a></code> | (Optional) Allows for observing the output of steps as they run. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.RunInstanceStepProps.property.isEnd">isEnd</a></code> | <code>boolean</code> | Whether to stop document execution after this step. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.RunInstanceStepProps.property.maxAttempts">maxAttempts</a></code> | <code>number</code> | (Optional) max attempts to run this step if there are failures. |
-| <code><a href="#@cdklabs/cdk-ssm-documents.RunInstanceStepProps.property.onCancel">onCancel</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AutomationStep">AutomationStep</a></code> | (Optional) Step to jump to in the event that this step is cancelled. |
-| <code><a href="#@cdklabs/cdk-ssm-documents.RunInstanceStepProps.property.onFailure">onFailure</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AutomationStep">AutomationStep</a></code> | (Optional) Step to jump to in the event that this step fails. |
+| <code><a href="#@cdklabs/cdk-ssm-documents.RunInstanceStepProps.property.onCancel">onCancel</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.OnCancel">OnCancel</a></code> | (Optional) Fallback action to take in the event that this step is cancelled. |
+| <code><a href="#@cdklabs/cdk-ssm-documents.RunInstanceStepProps.property.onFailure">onFailure</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.OnFailure">OnFailure</a></code> | (Optional) Fallback action to take in the event that this step fails. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.RunInstanceStepProps.property.timeoutSeconds">timeoutSeconds</a></code> | <code>number</code> | (Optional) timeout seconds to run this step. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.RunInstanceStepProps.property.imageId">imageId</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.IStringVariable">IStringVariable</a></code> | The ID of the Amazon Machine Image (AMI). |
 | <code><a href="#@cdklabs/cdk-ssm-documents.RunInstanceStepProps.property.additionalInfo">additionalInfo</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.IStringVariable">IStringVariable</a></code> | (Optional) Reserved. |
@@ -24613,26 +24613,26 @@ public readonly maxAttempts: number;
 ##### `onCancel`<sup>Optional</sup> <a name="onCancel" id="@cdklabs/cdk-ssm-documents.RunInstanceStepProps.property.onCancel"></a>
 
 ```typescript
-public readonly onCancel: AutomationStep;
+public readonly onCancel: OnCancel;
 ```
 
-- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AutomationStep">AutomationStep</a>
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.OnCancel">OnCancel</a>
 - *Default:* undefined
 
-(Optional) Step to jump to in the event that this step is cancelled.
+(Optional) Fallback action to take in the event that this step is cancelled.
 
 ---
 
 ##### `onFailure`<sup>Optional</sup> <a name="onFailure" id="@cdklabs/cdk-ssm-documents.RunInstanceStepProps.property.onFailure"></a>
 
 ```typescript
-public readonly onFailure: AutomationStep;
+public readonly onFailure: OnFailure;
 ```
 
-- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AutomationStep">AutomationStep</a>
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.OnFailure">OnFailure</a>
 - *Default:* undefined
 
-(Optional) Step to jump to in the event that this step fails.
+(Optional) Fallback action to take in the event that this step fails.
 
 ---
 
@@ -25654,8 +25654,8 @@ const sleepStepProps: SleepStepProps = { ... }
 | <code><a href="#@cdklabs/cdk-ssm-documents.SleepStepProps.property.outputObserver">outputObserver</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.IObserver">IObserver</a></code> | (Optional) Allows for observing the output of steps as they run. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.SleepStepProps.property.isEnd">isEnd</a></code> | <code>boolean</code> | Whether to stop document execution after this step. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.SleepStepProps.property.maxAttempts">maxAttempts</a></code> | <code>number</code> | (Optional) max attempts to run this step if there are failures. |
-| <code><a href="#@cdklabs/cdk-ssm-documents.SleepStepProps.property.onCancel">onCancel</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AutomationStep">AutomationStep</a></code> | (Optional) Step to jump to in the event that this step is cancelled. |
-| <code><a href="#@cdklabs/cdk-ssm-documents.SleepStepProps.property.onFailure">onFailure</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AutomationStep">AutomationStep</a></code> | (Optional) Step to jump to in the event that this step fails. |
+| <code><a href="#@cdklabs/cdk-ssm-documents.SleepStepProps.property.onCancel">onCancel</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.OnCancel">OnCancel</a></code> | (Optional) Fallback action to take in the event that this step is cancelled. |
+| <code><a href="#@cdklabs/cdk-ssm-documents.SleepStepProps.property.onFailure">onFailure</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.OnFailure">OnFailure</a></code> | (Optional) Fallback action to take in the event that this step fails. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.SleepStepProps.property.timeoutSeconds">timeoutSeconds</a></code> | <code>number</code> | (Optional) timeout seconds to run this step. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.SleepStepProps.property.sleepSeconds">sleepSeconds</a></code> | <code>number</code> | (Required) The amount of seconds to sleep for. |
 
@@ -25745,26 +25745,26 @@ public readonly maxAttempts: number;
 ##### `onCancel`<sup>Optional</sup> <a name="onCancel" id="@cdklabs/cdk-ssm-documents.SleepStepProps.property.onCancel"></a>
 
 ```typescript
-public readonly onCancel: AutomationStep;
+public readonly onCancel: OnCancel;
 ```
 
-- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AutomationStep">AutomationStep</a>
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.OnCancel">OnCancel</a>
 - *Default:* undefined
 
-(Optional) Step to jump to in the event that this step is cancelled.
+(Optional) Fallback action to take in the event that this step is cancelled.
 
 ---
 
 ##### `onFailure`<sup>Optional</sup> <a name="onFailure" id="@cdklabs/cdk-ssm-documents.SleepStepProps.property.onFailure"></a>
 
 ```typescript
-public readonly onFailure: AutomationStep;
+public readonly onFailure: OnFailure;
 ```
 
-- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AutomationStep">AutomationStep</a>
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.OnFailure">OnFailure</a>
 - *Default:* undefined
 
-(Optional) Step to jump to in the event that this step fails.
+(Optional) Fallback action to take in the event that this step fails.
 
 ---
 
@@ -27202,8 +27202,8 @@ const waitForResourceStepProps: WaitForResourceStepProps = { ... }
 | <code><a href="#@cdklabs/cdk-ssm-documents.WaitForResourceStepProps.property.outputObserver">outputObserver</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.IObserver">IObserver</a></code> | (Optional) Allows for observing the output of steps as they run. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.WaitForResourceStepProps.property.isEnd">isEnd</a></code> | <code>boolean</code> | Whether to stop document execution after this step. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.WaitForResourceStepProps.property.maxAttempts">maxAttempts</a></code> | <code>number</code> | (Optional) max attempts to run this step if there are failures. |
-| <code><a href="#@cdklabs/cdk-ssm-documents.WaitForResourceStepProps.property.onCancel">onCancel</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AutomationStep">AutomationStep</a></code> | (Optional) Step to jump to in the event that this step is cancelled. |
-| <code><a href="#@cdklabs/cdk-ssm-documents.WaitForResourceStepProps.property.onFailure">onFailure</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AutomationStep">AutomationStep</a></code> | (Optional) Step to jump to in the event that this step fails. |
+| <code><a href="#@cdklabs/cdk-ssm-documents.WaitForResourceStepProps.property.onCancel">onCancel</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.OnCancel">OnCancel</a></code> | (Optional) Fallback action to take in the event that this step is cancelled. |
+| <code><a href="#@cdklabs/cdk-ssm-documents.WaitForResourceStepProps.property.onFailure">onFailure</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.OnFailure">OnFailure</a></code> | (Optional) Fallback action to take in the event that this step fails. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.WaitForResourceStepProps.property.timeoutSeconds">timeoutSeconds</a></code> | <code>number</code> | (Optional) timeout seconds to run this step. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.WaitForResourceStepProps.property.apiParams">apiParams</a></code> | <code>{[ key: string ]: any}</code> | (Required) API Params to submit with the request to the api. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.WaitForResourceStepProps.property.pascalCaseApi">pascalCaseApi</a></code> | <code>string</code> | (Required) The AWS api represented in PascalCase. |
@@ -27299,26 +27299,26 @@ public readonly maxAttempts: number;
 ##### `onCancel`<sup>Optional</sup> <a name="onCancel" id="@cdklabs/cdk-ssm-documents.WaitForResourceStepProps.property.onCancel"></a>
 
 ```typescript
-public readonly onCancel: AutomationStep;
+public readonly onCancel: OnCancel;
 ```
 
-- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AutomationStep">AutomationStep</a>
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.OnCancel">OnCancel</a>
 - *Default:* undefined
 
-(Optional) Step to jump to in the event that this step is cancelled.
+(Optional) Fallback action to take in the event that this step is cancelled.
 
 ---
 
 ##### `onFailure`<sup>Optional</sup> <a name="onFailure" id="@cdklabs/cdk-ssm-documents.WaitForResourceStepProps.property.onFailure"></a>
 
 ```typescript
-public readonly onFailure: AutomationStep;
+public readonly onFailure: OnFailure;
 ```
 
-- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AutomationStep">AutomationStep</a>
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.OnFailure">OnFailure</a>
 - *Default:* undefined
 
-(Optional) Step to jump to in the event that this step fails.
+(Optional) Fallback action to take in the event that this step fails.
 
 ---
 
@@ -27463,6 +27463,121 @@ This is not used by SSM and is therefore not declared in the SSM yaml/json.
 ---
 
 ## Classes <a name="Classes" id="Classes"></a>
+
+### Abort <a name="Abort" id="@cdklabs/cdk-ssm-documents.Abort"></a>
+
+#### Initializers <a name="Initializers" id="@cdklabs/cdk-ssm-documents.Abort.Initializer"></a>
+
+```typescript
+import { Abort } from '@cdklabs/cdk-ssm-documents'
+
+new Abort()
+```
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+
+---
+
+#### Methods <a name="Methods" id="Methods"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#@cdklabs/cdk-ssm-documents.Abort.stepToInvoke">stepToInvoke</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.Abort.toSsmValue">toSsmValue</a></code> | *No description.* |
+
+---
+
+##### `stepToInvoke` <a name="stepToInvoke" id="@cdklabs/cdk-ssm-documents.Abort.stepToInvoke"></a>
+
+```typescript
+public stepToInvoke(_currentStep: AutomationStep): string
+```
+
+###### `_currentStep`<sup>Required</sup> <a name="_currentStep" id="@cdklabs/cdk-ssm-documents.Abort.stepToInvoke.parameter._currentStep"></a>
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AutomationStep">AutomationStep</a>
+
+---
+
+##### `toSsmValue` <a name="toSsmValue" id="@cdklabs/cdk-ssm-documents.Abort.toSsmValue"></a>
+
+```typescript
+public toSsmValue(): string
+```
+
+#### Static Functions <a name="Static Functions" id="Static Functions"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#@cdklabs/cdk-ssm-documents.Abort.abort">abort</a></code> | To abort execution if a cancellation occurs during execution of the current step. |
+| <code><a href="#@cdklabs/cdk-ssm-documents.Abort.continue">continue</a></code> | To continue execution of the subsequent step if a failure occurs during execution of the current step. |
+| <code><a href="#@cdklabs/cdk-ssm-documents.Abort.invokeStep">invokeStep</a></code> | Invoke a specific step. |
+| <code><a href="#@cdklabs/cdk-ssm-documents.Abort.invokeStepByName">invokeStepByName</a></code> | Invoke a specific step by the step name for the OnCancel action. |
+
+---
+
+##### `abort` <a name="abort" id="@cdklabs/cdk-ssm-documents.Abort.abort"></a>
+
+```typescript
+import { Abort } from '@cdklabs/cdk-ssm-documents'
+
+Abort.abort()
+```
+
+To abort execution if a cancellation occurs during execution of the current step.
+
+(This is the default behavior.)
+
+##### `continue` <a name="continue" id="@cdklabs/cdk-ssm-documents.Abort.continue"></a>
+
+```typescript
+import { Abort } from '@cdklabs/cdk-ssm-documents'
+
+Abort.continue()
+```
+
+To continue execution of the subsequent step if a failure occurs during execution of the current step.
+
+##### `invokeStep` <a name="invokeStep" id="@cdklabs/cdk-ssm-documents.Abort.invokeStep"></a>
+
+```typescript
+import { Abort } from '@cdklabs/cdk-ssm-documents'
+
+Abort.invokeStep(step: AutomationStep)
+```
+
+Invoke a specific step.
+
+Provide the step object to execute for the onCancel action.
+If you don't have a handle to the step object, use the invokeStepByName function.
+Not all action types may be invoked during cancellation. See documentation referenced on this class.
+
+###### `step`<sup>Required</sup> <a name="step" id="@cdklabs/cdk-ssm-documents.Abort.invokeStep.parameter.step"></a>
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AutomationStep">AutomationStep</a>
+
+---
+
+##### `invokeStepByName` <a name="invokeStepByName" id="@cdklabs/cdk-ssm-documents.Abort.invokeStepByName"></a>
+
+```typescript
+import { Abort } from '@cdklabs/cdk-ssm-documents'
+
+Abort.invokeStepByName(stepName: string)
+```
+
+Invoke a specific step by the step name for the OnCancel action.
+
+Not all action types may be invoked during cancellation. See documentation referenced on this class.
+
+###### `stepName`<sup>Required</sup> <a name="stepName" id="@cdklabs/cdk-ssm-documents.Abort.invokeStepByName.parameter.stepName"></a>
+
+- *Type:* string
+
+---
+
+
 
 ### ActionVariable <a name="ActionVariable" id="@cdklabs/cdk-ssm-documents.ActionVariable"></a>
 
@@ -29240,6 +29355,118 @@ public readonly step: CommandStep;
 - *Type:* <a href="#@cdklabs/cdk-ssm-documents.CommandStep">CommandStep</a>
 
 ---
+
+
+### Continue <a name="Continue" id="@cdklabs/cdk-ssm-documents.Continue"></a>
+
+#### Initializers <a name="Initializers" id="@cdklabs/cdk-ssm-documents.Continue.Initializer"></a>
+
+```typescript
+import { Continue } from '@cdklabs/cdk-ssm-documents'
+
+new Continue()
+```
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+
+---
+
+#### Methods <a name="Methods" id="Methods"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#@cdklabs/cdk-ssm-documents.Continue.stepToInvoke">stepToInvoke</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.Continue.toSsmValue">toSsmValue</a></code> | *No description.* |
+
+---
+
+##### `stepToInvoke` <a name="stepToInvoke" id="@cdklabs/cdk-ssm-documents.Continue.stepToInvoke"></a>
+
+```typescript
+public stepToInvoke(currentStep: AutomationStep): string
+```
+
+###### `currentStep`<sup>Required</sup> <a name="currentStep" id="@cdklabs/cdk-ssm-documents.Continue.stepToInvoke.parameter.currentStep"></a>
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AutomationStep">AutomationStep</a>
+
+---
+
+##### `toSsmValue` <a name="toSsmValue" id="@cdklabs/cdk-ssm-documents.Continue.toSsmValue"></a>
+
+```typescript
+public toSsmValue(): string
+```
+
+#### Static Functions <a name="Static Functions" id="Static Functions"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#@cdklabs/cdk-ssm-documents.Continue.abort">abort</a></code> | To abort execution if a failure occurs during execution of the current step. |
+| <code><a href="#@cdklabs/cdk-ssm-documents.Continue.continue">continue</a></code> | To continue execution of the subsequent step if a failure occurs during execution of the current step. |
+| <code><a href="#@cdklabs/cdk-ssm-documents.Continue.invokeStep">invokeStep</a></code> | Invoke a specific step. |
+| <code><a href="#@cdklabs/cdk-ssm-documents.Continue.invokeStepByName">invokeStepByName</a></code> | Invoke a specific step by the step name for the OnFailure action. |
+
+---
+
+##### `abort` <a name="abort" id="@cdklabs/cdk-ssm-documents.Continue.abort"></a>
+
+```typescript
+import { Continue } from '@cdklabs/cdk-ssm-documents'
+
+Continue.abort()
+```
+
+To abort execution if a failure occurs during execution of the current step.
+
+(This is the default behavior.)
+
+##### `continue` <a name="continue" id="@cdklabs/cdk-ssm-documents.Continue.continue"></a>
+
+```typescript
+import { Continue } from '@cdklabs/cdk-ssm-documents'
+
+Continue.continue()
+```
+
+To continue execution of the subsequent step if a failure occurs during execution of the current step.
+
+##### `invokeStep` <a name="invokeStep" id="@cdklabs/cdk-ssm-documents.Continue.invokeStep"></a>
+
+```typescript
+import { Continue } from '@cdklabs/cdk-ssm-documents'
+
+Continue.invokeStep(step: AutomationStep)
+```
+
+Invoke a specific step.
+
+Provide the step object to execute for the onFailure action.
+If you don't have a handle to the step object, use the invokeStepByName function.
+
+###### `step`<sup>Required</sup> <a name="step" id="@cdklabs/cdk-ssm-documents.Continue.invokeStep.parameter.step"></a>
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AutomationStep">AutomationStep</a>
+
+---
+
+##### `invokeStepByName` <a name="invokeStepByName" id="@cdklabs/cdk-ssm-documents.Continue.invokeStepByName"></a>
+
+```typescript
+import { Continue } from '@cdklabs/cdk-ssm-documents'
+
+Continue.invokeStepByName(stepName: string)
+```
+
+Invoke a specific step by the step name for the OnFailure action.
+
+###### `stepName`<sup>Required</sup> <a name="stepName" id="@cdklabs/cdk-ssm-documents.Continue.invokeStepByName.parameter.stepName"></a>
+
+- *Type:* string
+
+---
+
 
 
 ### CopyImageSimulation <a name="CopyImageSimulation" id="@cdklabs/cdk-ssm-documents.CopyImageSimulation"></a>
@@ -35532,6 +35759,245 @@ public readonly reference: string;
 ---
 
 
+### OnCancel <a name="OnCancel" id="@cdklabs/cdk-ssm-documents.OnCancel"></a>
+
+Steps can specify an action to take onCancel.
+
+See docs here: https://docs.aws.amazon.com/systems-manager/latest/userguide/automation-actions.html#canProp
+The supported actions are abort (default) or invoking a specific step.
+This behavior can be adopted by using the static methods available on OnCancel.
+
+#### Initializers <a name="Initializers" id="@cdklabs/cdk-ssm-documents.OnCancel.Initializer"></a>
+
+```typescript
+import { OnCancel } from '@cdklabs/cdk-ssm-documents'
+
+new OnCancel()
+```
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+
+---
+
+#### Methods <a name="Methods" id="Methods"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#@cdklabs/cdk-ssm-documents.OnCancel.stepToInvoke">stepToInvoke</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.OnCancel.toSsmValue">toSsmValue</a></code> | *No description.* |
+
+---
+
+##### `stepToInvoke` <a name="stepToInvoke" id="@cdklabs/cdk-ssm-documents.OnCancel.stepToInvoke"></a>
+
+```typescript
+public stepToInvoke(currentStep: AutomationStep): string
+```
+
+###### `currentStep`<sup>Required</sup> <a name="currentStep" id="@cdklabs/cdk-ssm-documents.OnCancel.stepToInvoke.parameter.currentStep"></a>
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AutomationStep">AutomationStep</a>
+
+---
+
+##### `toSsmValue` <a name="toSsmValue" id="@cdklabs/cdk-ssm-documents.OnCancel.toSsmValue"></a>
+
+```typescript
+public toSsmValue(): string
+```
+
+#### Static Functions <a name="Static Functions" id="Static Functions"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#@cdklabs/cdk-ssm-documents.OnCancel.abort">abort</a></code> | To abort execution if a cancellation occurs during execution of the current step. |
+| <code><a href="#@cdklabs/cdk-ssm-documents.OnCancel.continue">continue</a></code> | To continue execution of the subsequent step if a failure occurs during execution of the current step. |
+| <code><a href="#@cdklabs/cdk-ssm-documents.OnCancel.invokeStep">invokeStep</a></code> | Invoke a specific step. |
+| <code><a href="#@cdklabs/cdk-ssm-documents.OnCancel.invokeStepByName">invokeStepByName</a></code> | Invoke a specific step by the step name for the OnCancel action. |
+
+---
+
+##### `abort` <a name="abort" id="@cdklabs/cdk-ssm-documents.OnCancel.abort"></a>
+
+```typescript
+import { OnCancel } from '@cdklabs/cdk-ssm-documents'
+
+OnCancel.abort()
+```
+
+To abort execution if a cancellation occurs during execution of the current step.
+
+(This is the default behavior.)
+
+##### `continue` <a name="continue" id="@cdklabs/cdk-ssm-documents.OnCancel.continue"></a>
+
+```typescript
+import { OnCancel } from '@cdklabs/cdk-ssm-documents'
+
+OnCancel.continue()
+```
+
+To continue execution of the subsequent step if a failure occurs during execution of the current step.
+
+##### `invokeStep` <a name="invokeStep" id="@cdklabs/cdk-ssm-documents.OnCancel.invokeStep"></a>
+
+```typescript
+import { OnCancel } from '@cdklabs/cdk-ssm-documents'
+
+OnCancel.invokeStep(step: AutomationStep)
+```
+
+Invoke a specific step.
+
+Provide the step object to execute for the onCancel action.
+If you don't have a handle to the step object, use the invokeStepByName function.
+Not all action types may be invoked during cancellation. See documentation referenced on this class.
+
+###### `step`<sup>Required</sup> <a name="step" id="@cdklabs/cdk-ssm-documents.OnCancel.invokeStep.parameter.step"></a>
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AutomationStep">AutomationStep</a>
+
+---
+
+##### `invokeStepByName` <a name="invokeStepByName" id="@cdklabs/cdk-ssm-documents.OnCancel.invokeStepByName"></a>
+
+```typescript
+import { OnCancel } from '@cdklabs/cdk-ssm-documents'
+
+OnCancel.invokeStepByName(stepName: string)
+```
+
+Invoke a specific step by the step name for the OnCancel action.
+
+Not all action types may be invoked during cancellation. See documentation referenced on this class.
+
+###### `stepName`<sup>Required</sup> <a name="stepName" id="@cdklabs/cdk-ssm-documents.OnCancel.invokeStepByName.parameter.stepName"></a>
+
+- *Type:* string
+
+---
+
+
+
+### OnFailure <a name="OnFailure" id="@cdklabs/cdk-ssm-documents.OnFailure"></a>
+
+Steps can specify an action to take onFailure.
+
+See docs here: https://docs.aws.amazon.com/systems-manager/latest/userguide/automation-actions.html#failProp
+The supported actions are abort (default), continue, or invoking a specific step.
+This behavior can be adopted by using the static methods available on OnFailure.
+
+#### Initializers <a name="Initializers" id="@cdklabs/cdk-ssm-documents.OnFailure.Initializer"></a>
+
+```typescript
+import { OnFailure } from '@cdklabs/cdk-ssm-documents'
+
+new OnFailure()
+```
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+
+---
+
+#### Methods <a name="Methods" id="Methods"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#@cdklabs/cdk-ssm-documents.OnFailure.stepToInvoke">stepToInvoke</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.OnFailure.toSsmValue">toSsmValue</a></code> | *No description.* |
+
+---
+
+##### `stepToInvoke` <a name="stepToInvoke" id="@cdklabs/cdk-ssm-documents.OnFailure.stepToInvoke"></a>
+
+```typescript
+public stepToInvoke(currentStep: AutomationStep): string
+```
+
+###### `currentStep`<sup>Required</sup> <a name="currentStep" id="@cdklabs/cdk-ssm-documents.OnFailure.stepToInvoke.parameter.currentStep"></a>
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AutomationStep">AutomationStep</a>
+
+---
+
+##### `toSsmValue` <a name="toSsmValue" id="@cdklabs/cdk-ssm-documents.OnFailure.toSsmValue"></a>
+
+```typescript
+public toSsmValue(): string
+```
+
+#### Static Functions <a name="Static Functions" id="Static Functions"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#@cdklabs/cdk-ssm-documents.OnFailure.abort">abort</a></code> | To abort execution if a failure occurs during execution of the current step. |
+| <code><a href="#@cdklabs/cdk-ssm-documents.OnFailure.continue">continue</a></code> | To continue execution of the subsequent step if a failure occurs during execution of the current step. |
+| <code><a href="#@cdklabs/cdk-ssm-documents.OnFailure.invokeStep">invokeStep</a></code> | Invoke a specific step. |
+| <code><a href="#@cdklabs/cdk-ssm-documents.OnFailure.invokeStepByName">invokeStepByName</a></code> | Invoke a specific step by the step name for the OnFailure action. |
+
+---
+
+##### `abort` <a name="abort" id="@cdklabs/cdk-ssm-documents.OnFailure.abort"></a>
+
+```typescript
+import { OnFailure } from '@cdklabs/cdk-ssm-documents'
+
+OnFailure.abort()
+```
+
+To abort execution if a failure occurs during execution of the current step.
+
+(This is the default behavior.)
+
+##### `continue` <a name="continue" id="@cdklabs/cdk-ssm-documents.OnFailure.continue"></a>
+
+```typescript
+import { OnFailure } from '@cdklabs/cdk-ssm-documents'
+
+OnFailure.continue()
+```
+
+To continue execution of the subsequent step if a failure occurs during execution of the current step.
+
+##### `invokeStep` <a name="invokeStep" id="@cdklabs/cdk-ssm-documents.OnFailure.invokeStep"></a>
+
+```typescript
+import { OnFailure } from '@cdklabs/cdk-ssm-documents'
+
+OnFailure.invokeStep(step: AutomationStep)
+```
+
+Invoke a specific step.
+
+Provide the step object to execute for the onFailure action.
+If you don't have a handle to the step object, use the invokeStepByName function.
+
+###### `step`<sup>Required</sup> <a name="step" id="@cdklabs/cdk-ssm-documents.OnFailure.invokeStep.parameter.step"></a>
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AutomationStep">AutomationStep</a>
+
+---
+
+##### `invokeStepByName` <a name="invokeStepByName" id="@cdklabs/cdk-ssm-documents.OnFailure.invokeStepByName"></a>
+
+```typescript
+import { OnFailure } from '@cdklabs/cdk-ssm-documents'
+
+OnFailure.invokeStepByName(stepName: string)
+```
+
+Invoke a specific step by the step name for the OnFailure action.
+
+###### `stepName`<sup>Required</sup> <a name="stepName" id="@cdklabs/cdk-ssm-documents.OnFailure.invokeStepByName.parameter.stepName"></a>
+
+- *Type:* string
+
+---
+
+
+
 ### OnFailureVariable <a name="OnFailureVariable" id="@cdklabs/cdk-ssm-documents.OnFailureVariable"></a>
 
 - *Implements:* <a href="#@cdklabs/cdk-ssm-documents.IOnFailureVariable">IOnFailureVariable</a>
@@ -37492,6 +37958,326 @@ public readonly secureToken: string;
 ```
 
 - *Type:* string
+
+---
+
+
+### StepFallback <a name="StepFallback" id="@cdklabs/cdk-ssm-documents.StepFallback"></a>
+
+#### Initializers <a name="Initializers" id="@cdklabs/cdk-ssm-documents.StepFallback.Initializer"></a>
+
+```typescript
+import { StepFallback } from '@cdklabs/cdk-ssm-documents'
+
+new StepFallback(step: AutomationStep, validateStepAction: boolean)
+```
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#@cdklabs/cdk-ssm-documents.StepFallback.Initializer.parameter.step">step</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AutomationStep">AutomationStep</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.StepFallback.Initializer.parameter.validateStepAction">validateStepAction</a></code> | <code>boolean</code> | *No description.* |
+
+---
+
+##### `step`<sup>Required</sup> <a name="step" id="@cdklabs/cdk-ssm-documents.StepFallback.Initializer.parameter.step"></a>
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AutomationStep">AutomationStep</a>
+
+---
+
+##### `validateStepAction`<sup>Required</sup> <a name="validateStepAction" id="@cdklabs/cdk-ssm-documents.StepFallback.Initializer.parameter.validateStepAction"></a>
+
+- *Type:* boolean
+
+---
+
+#### Methods <a name="Methods" id="Methods"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#@cdklabs/cdk-ssm-documents.StepFallback.stepToInvoke">stepToInvoke</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.StepFallback.toSsmValue">toSsmValue</a></code> | *No description.* |
+
+---
+
+##### `stepToInvoke` <a name="stepToInvoke" id="@cdklabs/cdk-ssm-documents.StepFallback.stepToInvoke"></a>
+
+```typescript
+public stepToInvoke(_currentStep: AutomationStep): string
+```
+
+###### `_currentStep`<sup>Required</sup> <a name="_currentStep" id="@cdklabs/cdk-ssm-documents.StepFallback.stepToInvoke.parameter._currentStep"></a>
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AutomationStep">AutomationStep</a>
+
+---
+
+##### `toSsmValue` <a name="toSsmValue" id="@cdklabs/cdk-ssm-documents.StepFallback.toSsmValue"></a>
+
+```typescript
+public toSsmValue(): string
+```
+
+#### Static Functions <a name="Static Functions" id="Static Functions"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#@cdklabs/cdk-ssm-documents.StepFallback.abort">abort</a></code> | To abort execution if a cancellation occurs during execution of the current step. |
+| <code><a href="#@cdklabs/cdk-ssm-documents.StepFallback.continue">continue</a></code> | To continue execution of the subsequent step if a failure occurs during execution of the current step. |
+| <code><a href="#@cdklabs/cdk-ssm-documents.StepFallback.invokeStep">invokeStep</a></code> | Invoke a specific step. |
+| <code><a href="#@cdklabs/cdk-ssm-documents.StepFallback.invokeStepByName">invokeStepByName</a></code> | Invoke a specific step by the step name for the OnCancel action. |
+
+---
+
+##### `abort` <a name="abort" id="@cdklabs/cdk-ssm-documents.StepFallback.abort"></a>
+
+```typescript
+import { StepFallback } from '@cdklabs/cdk-ssm-documents'
+
+StepFallback.abort()
+```
+
+To abort execution if a cancellation occurs during execution of the current step.
+
+(This is the default behavior.)
+
+##### `continue` <a name="continue" id="@cdklabs/cdk-ssm-documents.StepFallback.continue"></a>
+
+```typescript
+import { StepFallback } from '@cdklabs/cdk-ssm-documents'
+
+StepFallback.continue()
+```
+
+To continue execution of the subsequent step if a failure occurs during execution of the current step.
+
+##### `invokeStep` <a name="invokeStep" id="@cdklabs/cdk-ssm-documents.StepFallback.invokeStep"></a>
+
+```typescript
+import { StepFallback } from '@cdklabs/cdk-ssm-documents'
+
+StepFallback.invokeStep(step: AutomationStep)
+```
+
+Invoke a specific step.
+
+Provide the step object to execute for the onCancel action.
+If you don't have a handle to the step object, use the invokeStepByName function.
+Not all action types may be invoked during cancellation. See documentation referenced on this class.
+
+###### `step`<sup>Required</sup> <a name="step" id="@cdklabs/cdk-ssm-documents.StepFallback.invokeStep.parameter.step"></a>
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AutomationStep">AutomationStep</a>
+
+---
+
+##### `invokeStepByName` <a name="invokeStepByName" id="@cdklabs/cdk-ssm-documents.StepFallback.invokeStepByName"></a>
+
+```typescript
+import { StepFallback } from '@cdklabs/cdk-ssm-documents'
+
+StepFallback.invokeStepByName(stepName: string)
+```
+
+Invoke a specific step by the step name for the OnCancel action.
+
+Not all action types may be invoked during cancellation. See documentation referenced on this class.
+
+###### `stepName`<sup>Required</sup> <a name="stepName" id="@cdklabs/cdk-ssm-documents.StepFallback.invokeStepByName.parameter.stepName"></a>
+
+- *Type:* string
+
+---
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#@cdklabs/cdk-ssm-documents.StepFallback.property.step">step</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AutomationStep">AutomationStep</a></code> | *No description.* |
+
+---
+
+##### `step`<sup>Required</sup> <a name="step" id="@cdklabs/cdk-ssm-documents.StepFallback.property.step"></a>
+
+```typescript
+public readonly step: AutomationStep;
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AutomationStep">AutomationStep</a>
+
+---
+
+#### Constants <a name="Constants" id="Constants"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#@cdklabs/cdk-ssm-documents.StepFallback.property.ILLEGAL_FALLBACK_ACTIONS">ILLEGAL_FALLBACK_ACTIONS</a></code> | <code>string[]</code> | *No description.* |
+
+---
+
+##### `ILLEGAL_FALLBACK_ACTIONS`<sup>Required</sup> <a name="ILLEGAL_FALLBACK_ACTIONS" id="@cdklabs/cdk-ssm-documents.StepFallback.property.ILLEGAL_FALLBACK_ACTIONS"></a>
+
+```typescript
+public readonly ILLEGAL_FALLBACK_ACTIONS: string[];
+```
+
+- *Type:* string[]
+
+---
+
+### StepNameFallback <a name="StepNameFallback" id="@cdklabs/cdk-ssm-documents.StepNameFallback"></a>
+
+#### Initializers <a name="Initializers" id="@cdklabs/cdk-ssm-documents.StepNameFallback.Initializer"></a>
+
+```typescript
+import { StepNameFallback } from '@cdklabs/cdk-ssm-documents'
+
+new StepNameFallback(step: string, validateStepAction: boolean)
+```
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#@cdklabs/cdk-ssm-documents.StepNameFallback.Initializer.parameter.step">step</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.StepNameFallback.Initializer.parameter.validateStepAction">validateStepAction</a></code> | <code>boolean</code> | *No description.* |
+
+---
+
+##### `step`<sup>Required</sup> <a name="step" id="@cdklabs/cdk-ssm-documents.StepNameFallback.Initializer.parameter.step"></a>
+
+- *Type:* string
+
+---
+
+##### `validateStepAction`<sup>Required</sup> <a name="validateStepAction" id="@cdklabs/cdk-ssm-documents.StepNameFallback.Initializer.parameter.validateStepAction"></a>
+
+- *Type:* boolean
+
+---
+
+#### Methods <a name="Methods" id="Methods"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#@cdklabs/cdk-ssm-documents.StepNameFallback.stepToInvoke">stepToInvoke</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.StepNameFallback.toSsmValue">toSsmValue</a></code> | *No description.* |
+
+---
+
+##### `stepToInvoke` <a name="stepToInvoke" id="@cdklabs/cdk-ssm-documents.StepNameFallback.stepToInvoke"></a>
+
+```typescript
+public stepToInvoke(currentStep: AutomationStep): string
+```
+
+###### `currentStep`<sup>Required</sup> <a name="currentStep" id="@cdklabs/cdk-ssm-documents.StepNameFallback.stepToInvoke.parameter.currentStep"></a>
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AutomationStep">AutomationStep</a>
+
+---
+
+##### `toSsmValue` <a name="toSsmValue" id="@cdklabs/cdk-ssm-documents.StepNameFallback.toSsmValue"></a>
+
+```typescript
+public toSsmValue(): string
+```
+
+#### Static Functions <a name="Static Functions" id="Static Functions"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#@cdklabs/cdk-ssm-documents.StepNameFallback.abort">abort</a></code> | To abort execution if a cancellation occurs during execution of the current step. |
+| <code><a href="#@cdklabs/cdk-ssm-documents.StepNameFallback.continue">continue</a></code> | To continue execution of the subsequent step if a failure occurs during execution of the current step. |
+| <code><a href="#@cdklabs/cdk-ssm-documents.StepNameFallback.invokeStep">invokeStep</a></code> | Invoke a specific step. |
+| <code><a href="#@cdklabs/cdk-ssm-documents.StepNameFallback.invokeStepByName">invokeStepByName</a></code> | Invoke a specific step by the step name for the OnCancel action. |
+
+---
+
+##### `abort` <a name="abort" id="@cdklabs/cdk-ssm-documents.StepNameFallback.abort"></a>
+
+```typescript
+import { StepNameFallback } from '@cdklabs/cdk-ssm-documents'
+
+StepNameFallback.abort()
+```
+
+To abort execution if a cancellation occurs during execution of the current step.
+
+(This is the default behavior.)
+
+##### `continue` <a name="continue" id="@cdklabs/cdk-ssm-documents.StepNameFallback.continue"></a>
+
+```typescript
+import { StepNameFallback } from '@cdklabs/cdk-ssm-documents'
+
+StepNameFallback.continue()
+```
+
+To continue execution of the subsequent step if a failure occurs during execution of the current step.
+
+##### `invokeStep` <a name="invokeStep" id="@cdklabs/cdk-ssm-documents.StepNameFallback.invokeStep"></a>
+
+```typescript
+import { StepNameFallback } from '@cdklabs/cdk-ssm-documents'
+
+StepNameFallback.invokeStep(step: AutomationStep)
+```
+
+Invoke a specific step.
+
+Provide the step object to execute for the onCancel action.
+If you don't have a handle to the step object, use the invokeStepByName function.
+Not all action types may be invoked during cancellation. See documentation referenced on this class.
+
+###### `step`<sup>Required</sup> <a name="step" id="@cdklabs/cdk-ssm-documents.StepNameFallback.invokeStep.parameter.step"></a>
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AutomationStep">AutomationStep</a>
+
+---
+
+##### `invokeStepByName` <a name="invokeStepByName" id="@cdklabs/cdk-ssm-documents.StepNameFallback.invokeStepByName"></a>
+
+```typescript
+import { StepNameFallback } from '@cdklabs/cdk-ssm-documents'
+
+StepNameFallback.invokeStepByName(stepName: string)
+```
+
+Invoke a specific step by the step name for the OnCancel action.
+
+Not all action types may be invoked during cancellation. See documentation referenced on this class.
+
+###### `stepName`<sup>Required</sup> <a name="stepName" id="@cdklabs/cdk-ssm-documents.StepNameFallback.invokeStepByName.parameter.stepName"></a>
+
+- *Type:* string
+
+---
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#@cdklabs/cdk-ssm-documents.StepNameFallback.property.step">step</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.StepNameFallback.property.validateStepAction">validateStepAction</a></code> | <code>boolean</code> | *No description.* |
+
+---
+
+##### `step`<sup>Required</sup> <a name="step" id="@cdklabs/cdk-ssm-documents.StepNameFallback.property.step"></a>
+
+```typescript
+public readonly step: string;
+```
+
+- *Type:* string
+
+---
+
+##### `validateStepAction`<sup>Required</sup> <a name="validateStepAction" id="@cdklabs/cdk-ssm-documents.StepNameFallback.property.validateStepAction"></a>
+
+```typescript
+public readonly validateStepAction: boolean;
+```
+
+- *Type:* boolean
 
 ---
 

@@ -64,6 +64,7 @@ describe('AwsApiStep', function() {
         pascalCaseApi: 'ListBuckets',
         apiParams: { Filter: [{ SomeFilter: new StringVariable('SomeOutput.OutKey') }] },
       });
+      step.nextStep = step;
       // Type is marked as string, but actually returns number.
       assert.equal(new AutomationStepSimulation(step, { awsInvoker: mockInvoker }).invoke({ 'SomeOutput.OutKey': 3 }).responseCode, ResponseCode.FAILED);
     });

@@ -47,6 +47,7 @@ export class HelloWorld extends Stack {
         name: "MyFuncOut",
         selector: "$.Payload.MyReturn"
       }],
+      onFailure: OnFailure.abort(),
       inputs: ["MyInput"]
     }));
   }
