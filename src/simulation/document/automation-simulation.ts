@@ -39,7 +39,7 @@ export class AutomationSimulation {
     const firstStep = steps[0];
     let previousStep: AutomationStep = firstStep;
     steps.slice(1).forEach(s => {
-      previousStep.nextStep = s;
+      previousStep.nextStep = previousStep.explicitNextStep?.resolve(steps) ?? s;
       previousStep.allStepsInExecution = steps;
       previousStep = s;
     });

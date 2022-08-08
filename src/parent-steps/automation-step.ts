@@ -4,42 +4,50 @@ import { IAutomationComponent } from '../construct/document-component';
 import { AutomationDocumentBuilder } from '../document/document-builder';
 import { DataType } from '../domain/data-type';
 import { Output } from '../domain/output';
-import { Step, StepProps } from './step';
 import { Abort, OnCancel, OnFailure } from '../interface/on-failure';
+import { StepRef } from '../interface/step-ref';
+import { Step, StepProps } from './step';
 
 export interface AutomationStepProps extends StepProps {
 
   /**
-     * Whether to stop document execution after this step.
-     * @default false
-     */
+   * Whether to stop document execution after this step.
+   * @default false
+   */
   readonly isEnd?: boolean;
 
   /**
-     * (Optional) Fallback action to take in the event that this step fails.
-     * @default undefined
-     */
+   * (Optional) Fallback action to take in the event that this step fails.
+   * @default undefined
+   */
   readonly onFailure?: OnFailure;
 
   /**
-     * (Optional) Fallback action to take in the event that this step is cancelled.
-     * @default undefined
-     */
+   * (Optional) Fallback action to take in the event that this step is cancelled.
+   * @default undefined
+   */
   readonly onCancel?: OnCancel;
 
 
   /**
-     * (Optional) max attempts to run this step if there are failures.
-     * @default Step.DEFAULT_MAX_ATTEMPTS
-     */
+   * (Optional) max attempts to run this step if there are failures.
+   * @default Step.DEFAULT_MAX_ATTEMPTS
+   */
   readonly maxAttempts?: number;
 
   /**
-     * (Optional) timeout seconds to run this step.
-     * In a simulation run, this will only be encorced after-the-fact but execution will not be stopped mid-step.
-     * @default Step.DEFAULT_TIMEOUT
-     */
+   * (Optional) timeout seconds to run this step.
+   * In a simulation run, this will only be encorced after-the-fact but execution will not be stopped mid-step.
+   * @default Step.DEFAULT_TIMEOUT
+   */
   readonly timeoutSeconds?: number;
+
+  /**
+   * (Optional) explicit step to go to after this step completes.
+   * https://docs.aws.amazon.com/systems-manager/latest/userguide/automation-actions.html#nextProp
+   * @default will implicitly choose the next step in the sequence that the steps are added to the document.
+   */
+  readonly explicitNextStep?: StepRef;
 
 }
 
@@ -59,6 +67,7 @@ export abstract class AutomationStep extends Step implements IAutomationComponen
   readonly isEnd: boolean;
   readonly onFailure: OnFailure;
   readonly onCancel: OnCancel;
+  readonly explicitNextStep?: StepRef;
 
   nextStep?: AutomationStep;
   allStepsInExecution?: AutomationStep[];
@@ -70,6 +79,7 @@ export abstract class AutomationStep extends Step implements IAutomationComponen
     this.isEnd = props.isEnd ?? false;
     this.onFailure = props.onFailure ?? new Abort();
     this.onCancel = props.onCancel ?? new Abort();
+    this.explicitNextStep = props.explicitNextStep;
   }
 
   public addToDocument(doc: AutomationDocumentBuilder): void {
@@ -105,6 +115,9 @@ export abstract class AutomationStep extends Step implements IAutomationComponen
     if (!(this.onFailure instanceof Abort)) {
       ssmDef.set('onFailure', this.onFailure.toSsmValue());
     }
+    if (this.explicitNextStep != undefined) {
+      ssmDef.set('nextStep', this.explicitNextStep.stepName);
+    }
     const ssmDict: { [name: string]: any } = {};
     ssmDef.forEach((value, key) => {
       ssmDict[key] = value;
@@ -113,8 +126,8 @@ export abstract class AutomationStep extends Step implements IAutomationComponen
   }
 
   /**
-     * Formats the provided output into an object that can be used to generate the SSM yaml/json representation.
-     */
+   * Formats the provided output into an object that can be used to generate the SSM yaml/json representation.
+   */
   private formatOutput(output: Output): {[name: string]: string} {
     return {
       Name: output.name,
