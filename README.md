@@ -34,7 +34,10 @@ export class HelloWorld extends Stack {
     });
 
     // Define your steps...
-    myDoc.addStep(new PauseStep(this, "MyPauseStep", { name: "MyPauseStep" }));
+    myDoc.addStep(new PauseStep(this, "MyPauseStep", {
+      name: "MyPauseStep",
+      explicitNextStep: StepRef.fromName("step1") // Optional (will default to next added step)
+    }));
 
     myDoc.addStep(new ExecuteScriptStep(this, "MyExecuteStep", {
       name: "step1",
