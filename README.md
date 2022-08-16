@@ -41,17 +41,16 @@ export class HelloWorld extends Stack {
 
     myDoc.addStep(new ExecuteScriptStep(this, "MyExecuteStep", {
       name: "step1",
-      handlerName: "my_func",
-      language: ScriptLanguage.PYTHON,
-      fullPathToCode: resolve("test/test_file.py"),
-      // OR .inlineCode("def my_func(args, context):\n  return {'MyReturn': args['MyInput'] + '-suffix'}\n")
+      language: ScriptLanguage.python(PythonVersion.VERSION_3_6, 'my_func'),
+      code: ScriptCode.fromFile(resolve("test/test_file.py")),
+      // OR ScriptCode.inline("def my_func(args, context):\n  return {'MyReturn': args['MyInput'] + '-suffix'}\n"),
       outputs: [{
         outputType: DataTypeEnum.STRING,
         name: "MyFuncOut",
         selector: "$.Payload.MyReturn"
       }],
       onFailure: OnFailure.abort(),
-      inputs: ["MyInput"]
+      inputPayload: { MyInput: StringVariable.of('MyInput') },
     }));
   }
 }

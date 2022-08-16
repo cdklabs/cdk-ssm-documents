@@ -7578,7 +7578,6 @@ public variables(): {[ key: string ]: any}
 | **Name** | **Description** |
 | --- | --- |
 | <code><a href="#@cdklabs/cdk-ssm-documents.ExecuteScriptStep.isConstruct">isConstruct</a></code> | Checks if `x` is a construct. |
-| <code><a href="#@cdklabs/cdk-ssm-documents.ExecuteScriptStep.getLanguage">getLanguage</a></code> | *No description.* |
 
 ---
 
@@ -7600,20 +7599,6 @@ Any object.
 
 ---
 
-##### `getLanguage` <a name="getLanguage" id="@cdklabs/cdk-ssm-documents.ExecuteScriptStep.getLanguage"></a>
-
-```typescript
-import { ExecuteScriptStep } from '@cdklabs/cdk-ssm-documents'
-
-ExecuteScriptStep.getLanguage(runtime: string)
-```
-
-###### `runtime`<sup>Required</sup> <a name="runtime" id="@cdklabs/cdk-ssm-documents.ExecuteScriptStep.getLanguage.parameter.runtime"></a>
-
-- *Type:* string
-
----
-
 #### Properties <a name="Properties" id="Properties"></a>
 
 | **Name** | **Type** | **Description** |
@@ -7632,9 +7617,8 @@ ExecuteScriptStep.getLanguage(runtime: string)
 | <code><a href="#@cdklabs/cdk-ssm-documents.ExecuteScriptStep.property.explicitNextStep">explicitNextStep</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.StepRef">StepRef</a></code> | *No description.* |
 | <code><a href="#@cdklabs/cdk-ssm-documents.ExecuteScriptStep.property.allStepsInExecution">allStepsInExecution</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AutomationStep">AutomationStep</a>[]</code> | *No description.* |
 | <code><a href="#@cdklabs/cdk-ssm-documents.ExecuteScriptStep.property.nextStep">nextStep</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AutomationStep">AutomationStep</a></code> | *No description.* |
-| <code><a href="#@cdklabs/cdk-ssm-documents.ExecuteScriptStep.property.fullPathToCode">fullPathToCode</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#@cdklabs/cdk-ssm-documents.ExecuteScriptStep.property.handlerName">handlerName</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#@cdklabs/cdk-ssm-documents.ExecuteScriptStep.property.inputs">inputs</a></code> | <code>string[]</code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.ExecuteScriptStep.property.code">code</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.ScriptCode">ScriptCode</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.ExecuteScriptStep.property.inputs">inputs</a></code> | <code>{[ key: string ]: <a href="#@cdklabs/cdk-ssm-documents.IGenericVariable">IGenericVariable</a>}</code> | *No description.* |
 | <code><a href="#@cdklabs/cdk-ssm-documents.ExecuteScriptStep.property.language">language</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.ScriptLanguage">ScriptLanguage</a></code> | *No description.* |
 | <code><a href="#@cdklabs/cdk-ssm-documents.ExecuteScriptStep.property.outputs">outputs</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.Output">Output</a>[]</code> | *No description.* |
 
@@ -7782,33 +7766,23 @@ public readonly nextStep: AutomationStep;
 
 ---
 
-##### `fullPathToCode`<sup>Required</sup> <a name="fullPathToCode" id="@cdklabs/cdk-ssm-documents.ExecuteScriptStep.property.fullPathToCode"></a>
+##### `code`<sup>Required</sup> <a name="code" id="@cdklabs/cdk-ssm-documents.ExecuteScriptStep.property.code"></a>
 
 ```typescript
-public readonly fullPathToCode: string;
+public readonly code: ScriptCode;
 ```
 
-- *Type:* string
-
----
-
-##### `handlerName`<sup>Required</sup> <a name="handlerName" id="@cdklabs/cdk-ssm-documents.ExecuteScriptStep.property.handlerName"></a>
-
-```typescript
-public readonly handlerName: string;
-```
-
-- *Type:* string
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.ScriptCode">ScriptCode</a>
 
 ---
 
 ##### `inputs`<sup>Required</sup> <a name="inputs" id="@cdklabs/cdk-ssm-documents.ExecuteScriptStep.property.inputs"></a>
 
 ```typescript
-public readonly inputs: string[];
+public readonly inputs: {[ key: string ]: IGenericVariable};
 ```
 
-- *Type:* string[]
+- *Type:* {[ key: string ]: <a href="#@cdklabs/cdk-ssm-documents.IGenericVariable">IGenericVariable</a>}
 
 ---
 
@@ -21659,11 +21633,9 @@ const executeScriptStepProps: ExecuteScriptStepProps = { ... }
 | <code><a href="#@cdklabs/cdk-ssm-documents.ExecuteScriptStepProps.property.onCancel">onCancel</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.OnCancel">OnCancel</a></code> | (Optional) Fallback action to take in the event that this step is cancelled. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.ExecuteScriptStepProps.property.onFailure">onFailure</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.OnFailure">OnFailure</a></code> | (Optional) Fallback action to take in the event that this step fails. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.ExecuteScriptStepProps.property.timeoutSeconds">timeoutSeconds</a></code> | <code>number</code> | (Optional) timeout seconds to run this step. |
-| <code><a href="#@cdklabs/cdk-ssm-documents.ExecuteScriptStepProps.property.inputs">inputs</a></code> | <code>string[]</code> | (Optional) Inputs that the function needs in order to execute. |
+| <code><a href="#@cdklabs/cdk-ssm-documents.ExecuteScriptStepProps.property.code">code</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.ScriptCode">ScriptCode</a></code> | Inline code to be executed. |
+| <code><a href="#@cdklabs/cdk-ssm-documents.ExecuteScriptStepProps.property.inputPayload">inputPayload</a></code> | <code>{[ key: string ]: <a href="#@cdklabs/cdk-ssm-documents.IGenericVariable">IGenericVariable</a>}</code> | InputPayload that will be passed to the first parameter of the handler. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.ExecuteScriptStepProps.property.language">language</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.ScriptLanguage">ScriptLanguage</a></code> | (Required) Language used to execute the script. |
-| <code><a href="#@cdklabs/cdk-ssm-documents.ExecuteScriptStepProps.property.fullPathToCode">fullPathToCode</a></code> | <code>string</code> | Full path to the code to execute. |
-| <code><a href="#@cdklabs/cdk-ssm-documents.ExecuteScriptStepProps.property.handlerName">handlerName</a></code> | <code>string</code> | (Optional) Function name in fullPathToCode file to use as entry point for script handler. |
-| <code><a href="#@cdklabs/cdk-ssm-documents.ExecuteScriptStepProps.property.inlineCode">inlineCode</a></code> | <code>string</code> | Inline code to be executed. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.ExecuteScriptStepProps.property.outputs">outputs</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.Output">Output</a>[]</code> | (Optional) Outputs that the function is expected to return. |
 
 ---
@@ -21805,16 +21777,34 @@ In a simulation run, this will only be encorced after-the-fact but execution wil
 
 ---
 
-##### `inputs`<sup>Required</sup> <a name="inputs" id="@cdklabs/cdk-ssm-documents.ExecuteScriptStepProps.property.inputs"></a>
+##### `code`<sup>Required</sup> <a name="code" id="@cdklabs/cdk-ssm-documents.ExecuteScriptStepProps.property.code"></a>
 
 ```typescript
-public readonly inputs: string[];
+public readonly code: ScriptCode;
 ```
 
-- *Type:* string[]
-- *Default:* []
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.ScriptCode">ScriptCode</a>
 
-(Optional) Inputs that the function needs in order to execute.
+Inline code to be executed.
+
+String will be used to produce function in yaml/json.
+Simulation will execute the function in this code using the language specified.
+
+---
+
+##### `inputPayload`<sup>Required</sup> <a name="inputPayload" id="@cdklabs/cdk-ssm-documents.ExecuteScriptStepProps.property.inputPayload"></a>
+
+```typescript
+public readonly inputPayload: {[ key: string ]: IGenericVariable};
+```
+
+- *Type:* {[ key: string ]: <a href="#@cdklabs/cdk-ssm-documents.IGenericVariable">IGenericVariable</a>}
+
+InputPayload that will be passed to the first parameter of the handler.
+
+This can be used to pass input data to the script.
+The key of this dict is the variable name that will be available to the code.
+The value is the Variable object.
 
 ---
 
@@ -21827,51 +21817,6 @@ public readonly language: ScriptLanguage;
 - *Type:* <a href="#@cdklabs/cdk-ssm-documents.ScriptLanguage">ScriptLanguage</a>
 
 (Required) Language used to execute the script.
-
----
-
-##### `fullPathToCode`<sup>Optional</sup> <a name="fullPathToCode" id="@cdklabs/cdk-ssm-documents.ExecuteScriptStepProps.property.fullPathToCode"></a>
-
-```typescript
-public readonly fullPathToCode: string;
-```
-
-- *Type:* string
-
-Full path to the code to execute.
-
-File is parsed to produce yaml/json.
-Simulation will execute this file using the language specified.
-Either this OR inclineCode must be provided.
-
----
-
-##### `handlerName`<sup>Optional</sup> <a name="handlerName" id="@cdklabs/cdk-ssm-documents.ExecuteScriptStepProps.property.handlerName"></a>
-
-```typescript
-public readonly handlerName: string;
-```
-
-- *Type:* string
-- *Default:* script_handler
-
-(Optional) Function name in fullPathToCode file to use as entry point for script handler.
-
----
-
-##### `inlineCode`<sup>Optional</sup> <a name="inlineCode" id="@cdklabs/cdk-ssm-documents.ExecuteScriptStepProps.property.inlineCode"></a>
-
-```typescript
-public readonly inlineCode: string;
-```
-
-- *Type:* string
-
-Inline code to be executed.
-
-String will be used to produce function in yaml/json.
-Simulation will execute the function in this string using the language specified.
-Either this OR fullPathToCode must be provided.
 
 ---
 
@@ -31492,6 +31437,126 @@ public readonly props: AwsInvocationSimulationProps;
 ---
 
 
+### FileScriptCode <a name="FileScriptCode" id="@cdklabs/cdk-ssm-documents.FileScriptCode"></a>
+
+#### Initializers <a name="Initializers" id="@cdklabs/cdk-ssm-documents.FileScriptCode.Initializer"></a>
+
+```typescript
+import { FileScriptCode } from '@cdklabs/cdk-ssm-documents'
+
+new FileScriptCode(fullPath: string)
+```
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#@cdklabs/cdk-ssm-documents.FileScriptCode.Initializer.parameter.fullPath">fullPath</a></code> | <code>string</code> | *No description.* |
+
+---
+
+##### `fullPath`<sup>Required</sup> <a name="fullPath" id="@cdklabs/cdk-ssm-documents.FileScriptCode.Initializer.parameter.fullPath"></a>
+
+- *Type:* string
+
+---
+
+#### Methods <a name="Methods" id="Methods"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#@cdklabs/cdk-ssm-documents.FileScriptCode.codeAsString">codeAsString</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.FileScriptCode.createOrGetFile">createOrGetFile</a></code> | If there is a file for this code, return it. |
+
+---
+
+##### `codeAsString` <a name="codeAsString" id="@cdklabs/cdk-ssm-documents.FileScriptCode.codeAsString"></a>
+
+```typescript
+public codeAsString(): string
+```
+
+##### `createOrGetFile` <a name="createOrGetFile" id="@cdklabs/cdk-ssm-documents.FileScriptCode.createOrGetFile"></a>
+
+```typescript
+public createOrGetFile(_suffix: string): string
+```
+
+If there is a file for this code, return it.
+
+Otherwise, create a file with the specified suffix.
+
+###### `_suffix`<sup>Required</sup> <a name="_suffix" id="@cdklabs/cdk-ssm-documents.FileScriptCode.createOrGetFile.parameter._suffix"></a>
+
+- *Type:* string
+
+---
+
+#### Static Functions <a name="Static Functions" id="Static Functions"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#@cdklabs/cdk-ssm-documents.FileScriptCode.fromFile">fromFile</a></code> | Full path to the code to execute. |
+| <code><a href="#@cdklabs/cdk-ssm-documents.FileScriptCode.inline">inline</a></code> | Inline code to be executed. |
+
+---
+
+##### `fromFile` <a name="fromFile" id="@cdklabs/cdk-ssm-documents.FileScriptCode.fromFile"></a>
+
+```typescript
+import { FileScriptCode } from '@cdklabs/cdk-ssm-documents'
+
+FileScriptCode.fromFile(fullPath: string)
+```
+
+Full path to the code to execute.
+
+File is parsed to produce yaml/json.
+Simulation will execute this file using the language specified.
+(Attachments not yet supported)
+
+###### `fullPath`<sup>Required</sup> <a name="fullPath" id="@cdklabs/cdk-ssm-documents.FileScriptCode.fromFile.parameter.fullPath"></a>
+
+- *Type:* string
+
+---
+
+##### `inline` <a name="inline" id="@cdklabs/cdk-ssm-documents.FileScriptCode.inline"></a>
+
+```typescript
+import { FileScriptCode } from '@cdklabs/cdk-ssm-documents'
+
+FileScriptCode.inline(code: string)
+```
+
+Inline code to be executed.
+
+String will be used to produce function in yaml/json.
+Simulation will execute the function in this string using the language specified.
+
+###### `code`<sup>Required</sup> <a name="code" id="@cdklabs/cdk-ssm-documents.FileScriptCode.inline.parameter.code"></a>
+
+- *Type:* string
+
+---
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#@cdklabs/cdk-ssm-documents.FileScriptCode.property.fullPath">fullPath</a></code> | <code>string</code> | *No description.* |
+
+---
+
+##### `fullPath`<sup>Required</sup> <a name="fullPath" id="@cdklabs/cdk-ssm-documents.FileScriptCode.property.fullPath"></a>
+
+```typescript
+public readonly fullPath: string;
+```
+
+- *Type:* string
+
+---
+
+
 ### GenericVariable <a name="GenericVariable" id="@cdklabs/cdk-ssm-documents.GenericVariable"></a>
 
 - *Implements:* <a href="#@cdklabs/cdk-ssm-documents.IGenericVariable">IGenericVariable</a>
@@ -34419,6 +34484,126 @@ public readonly authMethod: AuthMethod;
 ```
 
 - *Type:* <a href="#@cdklabs/cdk-ssm-documents.AuthMethod">AuthMethod</a>
+
+---
+
+
+### InlineScriptCode <a name="InlineScriptCode" id="@cdklabs/cdk-ssm-documents.InlineScriptCode"></a>
+
+#### Initializers <a name="Initializers" id="@cdklabs/cdk-ssm-documents.InlineScriptCode.Initializer"></a>
+
+```typescript
+import { InlineScriptCode } from '@cdklabs/cdk-ssm-documents'
+
+new InlineScriptCode(inlineCode: string)
+```
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#@cdklabs/cdk-ssm-documents.InlineScriptCode.Initializer.parameter.inlineCode">inlineCode</a></code> | <code>string</code> | *No description.* |
+
+---
+
+##### `inlineCode`<sup>Required</sup> <a name="inlineCode" id="@cdklabs/cdk-ssm-documents.InlineScriptCode.Initializer.parameter.inlineCode"></a>
+
+- *Type:* string
+
+---
+
+#### Methods <a name="Methods" id="Methods"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#@cdklabs/cdk-ssm-documents.InlineScriptCode.codeAsString">codeAsString</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.InlineScriptCode.createOrGetFile">createOrGetFile</a></code> | If there is a file for this code, return it. |
+
+---
+
+##### `codeAsString` <a name="codeAsString" id="@cdklabs/cdk-ssm-documents.InlineScriptCode.codeAsString"></a>
+
+```typescript
+public codeAsString(): string
+```
+
+##### `createOrGetFile` <a name="createOrGetFile" id="@cdklabs/cdk-ssm-documents.InlineScriptCode.createOrGetFile"></a>
+
+```typescript
+public createOrGetFile(suffix: string): string
+```
+
+If there is a file for this code, return it.
+
+Otherwise, create a file with the specified suffix.
+
+###### `suffix`<sup>Required</sup> <a name="suffix" id="@cdklabs/cdk-ssm-documents.InlineScriptCode.createOrGetFile.parameter.suffix"></a>
+
+- *Type:* string
+
+---
+
+#### Static Functions <a name="Static Functions" id="Static Functions"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#@cdklabs/cdk-ssm-documents.InlineScriptCode.fromFile">fromFile</a></code> | Full path to the code to execute. |
+| <code><a href="#@cdklabs/cdk-ssm-documents.InlineScriptCode.inline">inline</a></code> | Inline code to be executed. |
+
+---
+
+##### `fromFile` <a name="fromFile" id="@cdklabs/cdk-ssm-documents.InlineScriptCode.fromFile"></a>
+
+```typescript
+import { InlineScriptCode } from '@cdklabs/cdk-ssm-documents'
+
+InlineScriptCode.fromFile(fullPath: string)
+```
+
+Full path to the code to execute.
+
+File is parsed to produce yaml/json.
+Simulation will execute this file using the language specified.
+(Attachments not yet supported)
+
+###### `fullPath`<sup>Required</sup> <a name="fullPath" id="@cdklabs/cdk-ssm-documents.InlineScriptCode.fromFile.parameter.fullPath"></a>
+
+- *Type:* string
+
+---
+
+##### `inline` <a name="inline" id="@cdklabs/cdk-ssm-documents.InlineScriptCode.inline"></a>
+
+```typescript
+import { InlineScriptCode } from '@cdklabs/cdk-ssm-documents'
+
+InlineScriptCode.inline(code: string)
+```
+
+Inline code to be executed.
+
+String will be used to produce function in yaml/json.
+Simulation will execute the function in this string using the language specified.
+
+###### `code`<sup>Required</sup> <a name="code" id="@cdklabs/cdk-ssm-documents.InlineScriptCode.inline.parameter.code"></a>
+
+- *Type:* string
+
+---
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#@cdklabs/cdk-ssm-documents.InlineScriptCode.property.inlineCode">inlineCode</a></code> | <code>string</code> | *No description.* |
+
+---
+
+##### `inlineCode`<sup>Required</sup> <a name="inlineCode" id="@cdklabs/cdk-ssm-documents.InlineScriptCode.property.inlineCode"></a>
+
+```typescript
+public readonly inlineCode: string;
+```
+
+- *Type:* string
 
 ---
 
@@ -37928,6 +38113,249 @@ public readonly sourceType: string;
 ---
 
 
+### ScriptCode <a name="ScriptCode" id="@cdklabs/cdk-ssm-documents.ScriptCode"></a>
+
+The code to run for the execution.
+
+See "script" parameter here:
+https://docs.aws.amazon.com/systems-manager/latest/userguide/automation-action-executeScript.html
+Attachments are not yet supported.
+
+#### Initializers <a name="Initializers" id="@cdklabs/cdk-ssm-documents.ScriptCode.Initializer"></a>
+
+```typescript
+import { ScriptCode } from '@cdklabs/cdk-ssm-documents'
+
+new ScriptCode()
+```
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+
+---
+
+#### Methods <a name="Methods" id="Methods"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#@cdklabs/cdk-ssm-documents.ScriptCode.codeAsString">codeAsString</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.ScriptCode.createOrGetFile">createOrGetFile</a></code> | If there is a file for this code, return it. |
+
+---
+
+##### `codeAsString` <a name="codeAsString" id="@cdklabs/cdk-ssm-documents.ScriptCode.codeAsString"></a>
+
+```typescript
+public codeAsString(): string
+```
+
+##### `createOrGetFile` <a name="createOrGetFile" id="@cdklabs/cdk-ssm-documents.ScriptCode.createOrGetFile"></a>
+
+```typescript
+public createOrGetFile(suffix: string): string
+```
+
+If there is a file for this code, return it.
+
+Otherwise, create a file with the specified suffix.
+
+###### `suffix`<sup>Required</sup> <a name="suffix" id="@cdklabs/cdk-ssm-documents.ScriptCode.createOrGetFile.parameter.suffix"></a>
+
+- *Type:* string
+
+of the file to create (such as ".py").
+
+---
+
+#### Static Functions <a name="Static Functions" id="Static Functions"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#@cdklabs/cdk-ssm-documents.ScriptCode.fromFile">fromFile</a></code> | Full path to the code to execute. |
+| <code><a href="#@cdklabs/cdk-ssm-documents.ScriptCode.inline">inline</a></code> | Inline code to be executed. |
+
+---
+
+##### `fromFile` <a name="fromFile" id="@cdklabs/cdk-ssm-documents.ScriptCode.fromFile"></a>
+
+```typescript
+import { ScriptCode } from '@cdklabs/cdk-ssm-documents'
+
+ScriptCode.fromFile(fullPath: string)
+```
+
+Full path to the code to execute.
+
+File is parsed to produce yaml/json.
+Simulation will execute this file using the language specified.
+(Attachments not yet supported)
+
+###### `fullPath`<sup>Required</sup> <a name="fullPath" id="@cdklabs/cdk-ssm-documents.ScriptCode.fromFile.parameter.fullPath"></a>
+
+- *Type:* string
+
+---
+
+##### `inline` <a name="inline" id="@cdklabs/cdk-ssm-documents.ScriptCode.inline"></a>
+
+```typescript
+import { ScriptCode } from '@cdklabs/cdk-ssm-documents'
+
+ScriptCode.inline(code: string)
+```
+
+Inline code to be executed.
+
+String will be used to produce function in yaml/json.
+Simulation will execute the function in this string using the language specified.
+
+###### `code`<sup>Required</sup> <a name="code" id="@cdklabs/cdk-ssm-documents.ScriptCode.inline.parameter.code"></a>
+
+- *Type:* string
+
+---
+
+
+
+### ScriptLanguage <a name="ScriptLanguage" id="@cdklabs/cdk-ssm-documents.ScriptLanguage"></a>
+
+Specifies the script language as described in the "Runtime" argument here: https://docs.aws.amazon.com/systems-manager/latest/userguide/automation-action-executeScript.html.
+
+#### Initializers <a name="Initializers" id="@cdklabs/cdk-ssm-documents.ScriptLanguage.Initializer"></a>
+
+```typescript
+import { ScriptLanguage } from '@cdklabs/cdk-ssm-documents'
+
+new ScriptLanguage()
+```
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+
+---
+
+#### Methods <a name="Methods" id="Methods"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#@cdklabs/cdk-ssm-documents.ScriptLanguage.fileSuffix">fileSuffix</a></code> | The suffix to apply to file names of this type of execution. |
+| <code><a href="#@cdklabs/cdk-ssm-documents.ScriptLanguage.runtime">runtime</a></code> | The associated runtime of this ScriptLanguage. |
+| <code><a href="#@cdklabs/cdk-ssm-documents.ScriptLanguage.simulate">simulate</a></code> | Simulate an execution of this ScriptLanguage. |
+| <code><a href="#@cdklabs/cdk-ssm-documents.ScriptLanguage.ssmInputs">ssmInputs</a></code> | Builds the ssm inputs. |
+
+---
+
+##### `fileSuffix` <a name="fileSuffix" id="@cdklabs/cdk-ssm-documents.ScriptLanguage.fileSuffix"></a>
+
+```typescript
+public fileSuffix(): string
+```
+
+The suffix to apply to file names of this type of execution.
+
+##### `runtime` <a name="runtime" id="@cdklabs/cdk-ssm-documents.ScriptLanguage.runtime"></a>
+
+```typescript
+public runtime(): string
+```
+
+The associated runtime of this ScriptLanguage.
+
+##### `simulate` <a name="simulate" id="@cdklabs/cdk-ssm-documents.ScriptLanguage.simulate"></a>
+
+```typescript
+public simulate(code: ScriptCode, inputs: {[ key: string ]: string}): {[ key: string ]: string}
+```
+
+Simulate an execution of this ScriptLanguage.
+
+Provide the inputs after replaced with the actual values (not variables).
+
+###### `code`<sup>Required</sup> <a name="code" id="@cdklabs/cdk-ssm-documents.ScriptLanguage.simulate.parameter.code"></a>
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.ScriptCode">ScriptCode</a>
+
+---
+
+###### `inputs`<sup>Required</sup> <a name="inputs" id="@cdklabs/cdk-ssm-documents.ScriptLanguage.simulate.parameter.inputs"></a>
+
+- *Type:* {[ key: string ]: string}
+
+---
+
+##### `ssmInputs` <a name="ssmInputs" id="@cdklabs/cdk-ssm-documents.ScriptLanguage.ssmInputs"></a>
+
+```typescript
+public ssmInputs(): {[ key: string ]: string}
+```
+
+Builds the ssm inputs.
+
+#### Static Functions <a name="Static Functions" id="Static Functions"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#@cdklabs/cdk-ssm-documents.ScriptLanguage.fromRuntime">fromRuntime</a></code> | Creates a ScriptLanguage based on the provided runtime. |
+| <code><a href="#@cdklabs/cdk-ssm-documents.ScriptLanguage.python">python</a></code> | Create a new ScriptLanguage for python execution. |
+
+---
+
+##### `fromRuntime` <a name="fromRuntime" id="@cdklabs/cdk-ssm-documents.ScriptLanguage.fromRuntime"></a>
+
+```typescript
+import { ScriptLanguage } from '@cdklabs/cdk-ssm-documents'
+
+ScriptLanguage.fromRuntime(runtime: string, handlerName?: string)
+```
+
+Creates a ScriptLanguage based on the provided runtime.
+
+Prefer one of the other static constructors if possible.
+
+###### `runtime`<sup>Required</sup> <a name="runtime" id="@cdklabs/cdk-ssm-documents.ScriptLanguage.fromRuntime.parameter.runtime"></a>
+
+- *Type:* string
+
+is the runtime name (such as "python3.6").
+
+---
+
+###### `handlerName`<sup>Optional</sup> <a name="handlerName" id="@cdklabs/cdk-ssm-documents.ScriptLanguage.fromRuntime.parameter.handlerName"></a>
+
+- *Type:* string
+
+to be provided for python executions.
+
+---
+
+##### `python` <a name="python" id="@cdklabs/cdk-ssm-documents.ScriptLanguage.python"></a>
+
+```typescript
+import { ScriptLanguage } from '@cdklabs/cdk-ssm-documents'
+
+ScriptLanguage.python(version: PythonVersion, handlerName: string)
+```
+
+Create a new ScriptLanguage for python execution.
+
+###### `version`<sup>Required</sup> <a name="version" id="@cdklabs/cdk-ssm-documents.ScriptLanguage.python.parameter.version"></a>
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.PythonVersion">PythonVersion</a>
+
+is the pythonVersion to use when writing the document (for simulation will not matter).
+
+---
+
+###### `handlerName`<sup>Required</sup> <a name="handlerName" id="@cdklabs/cdk-ssm-documents.ScriptLanguage.python.parameter.handlerName"></a>
+
+- *Type:* string
+
+is the function name in code as entry point for script handler.
+
+---
+
+
+
 ### SecureVariable <a name="SecureVariable" id="@cdklabs/cdk-ssm-documents.SecureVariable"></a>
 
 - *Implements:* <a href="#@cdklabs/cdk-ssm-documents.IGenericVariable">IGenericVariable</a>
@@ -40982,6 +41410,37 @@ That allows customers to validate their CommandDocument against a given platform
 ---
 
 
+### PythonVersion <a name="PythonVersion" id="@cdklabs/cdk-ssm-documents.PythonVersion"></a>
+
+Python runtime to use when writing SSM Document.
+
+Simulation will use local python version.
+
+#### Members <a name="Members" id="Members"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#@cdklabs/cdk-ssm-documents.PythonVersion.VERSION_3_6">VERSION_3_6</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.PythonVersion.VERSION_3_7">VERSION_3_7</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.PythonVersion.VERSION_3_8">VERSION_3_8</a></code> | *No description.* |
+
+---
+
+##### `VERSION_3_6` <a name="VERSION_3_6" id="@cdklabs/cdk-ssm-documents.PythonVersion.VERSION_3_6"></a>
+
+---
+
+
+##### `VERSION_3_7` <a name="VERSION_3_7" id="@cdklabs/cdk-ssm-documents.PythonVersion.VERSION_3_7"></a>
+
+---
+
+
+##### `VERSION_3_8` <a name="VERSION_3_8" id="@cdklabs/cdk-ssm-documents.PythonVersion.VERSION_3_8"></a>
+
+---
+
+
 ### ResponseCode <a name="ResponseCode" id="@cdklabs/cdk-ssm-documents.ResponseCode"></a>
 
 Steps report their ResponseCode using this enum.
@@ -41010,21 +41469,6 @@ A failed/canceled response will contain the stackTrace.
 
 
 ##### `FAILED` <a name="FAILED" id="@cdklabs/cdk-ssm-documents.ResponseCode.FAILED"></a>
-
----
-
-
-### ScriptLanguage <a name="ScriptLanguage" id="@cdklabs/cdk-ssm-documents.ScriptLanguage"></a>
-
-#### Members <a name="Members" id="Members"></a>
-
-| **Name** | **Description** |
-| --- | --- |
-| <code><a href="#@cdklabs/cdk-ssm-documents.ScriptLanguage.PYTHON">PYTHON</a></code> | *No description.* |
-
----
-
-##### `PYTHON` <a name="PYTHON" id="@cdklabs/cdk-ssm-documents.ScriptLanguage.PYTHON"></a>
 
 ---
 

@@ -5,7 +5,12 @@ import { DataTypeEnum } from '../domain/data-type';
 import { Input } from '../domain/input';
 import { StringVariable } from '../interface/variables/string-variable';
 import { AwsApiStep } from '../parent-steps/automation/aws-api-step';
-import { ExecuteScriptStep, ScriptLanguage } from '../parent-steps/automation/execute-script-step';
+import {
+  ExecuteScriptStep,
+  PythonVersion,
+  ScriptCode,
+  ScriptLanguage,
+} from '../parent-steps/automation/execute-script-step';
 
 export class HelloWorld extends Stack {
   constructor(app: Construct, id: string) {
@@ -18,12 +23,11 @@ export class HelloWorld extends Stack {
     });
 
     const greeting = new ExecuteScriptStep(this, 'PrependWithGreeting', {
-      language: ScriptLanguage.PYTHON,
-      inlineCode: 'def my_func(args, context):\n' +
-        '    return {"Greeting": "Hello " + args["Someone"]}\n' +
-        '\n',
-      handlerName: 'my_func',
-      inputs: ['Someone'],
+      language: ScriptLanguage.python(PythonVersion.VERSION_3_6, 'my_func'),
+      code: ScriptCode.inline('def my_func(args, context):\n' +
+        '    return {"Greeting": "Hello " + args["someone"]}\n' +
+        '\n'),
+      inputPayload: { someone: StringVariable.of('Someone') },
       outputs: [{
         outputType: DataTypeEnum.STRING,
         name: 'Greeting',

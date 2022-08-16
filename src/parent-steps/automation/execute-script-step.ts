@@ -1,14 +1,198 @@
 import * as fs from 'fs';
 import { Construct } from 'constructs';
 import { Output } from '../../domain/output';
+import { IGenericVariable } from '../../interface/variables/variable';
+import { PythonScriptHandler } from '../../script/python-script-handler';
 import { AutomationStep, AutomationStepProps } from '../automation-step';
 // eslint-disable-next-line
 const path = require('path');
 // eslint-disable-next-line
 const os = require('os');
 
-export enum ScriptLanguage {
-  PYTHON
+/**
+ * The code to run for the execution.
+ * See "script" parameter here:
+ * https://docs.aws.amazon.com/systems-manager/latest/userguide/automation-action-executeScript.html
+ * Attachments are not yet supported.
+ */
+export abstract class ScriptCode {
+  /**
+   * Inline code to be executed. String will be used to produce function in yaml/json.
+   * Simulation will execute the function in this string using the language specified.
+   */
+  static inline(code: string) {
+    return new InlineScriptCode(code);
+  }
+  /**
+   * Full path to the code to execute. File is parsed to produce yaml/json.
+   * Simulation will execute this file using the language specified.
+   * (Attachments not yet supported)
+   */
+  static fromFile(fullPath: string) {
+    return new FileScriptCode(fullPath);
+  }
+
+  /**
+   * @returns code as a string
+   */
+  abstract codeAsString(): string;
+
+  /**
+   * If there is a file for this code, return it.
+   * Otherwise, create a file with the specified suffix.
+   * @param suffix of the file to create (such as ".py")
+   */
+  abstract createOrGetFile(suffix: string): string;
+}
+
+export class InlineScriptCode extends ScriptCode {
+  private static toFile(data: string, suffix: string) {
+    const tempDir = path.join(os.tmpdir(), 'tmp' + new Date().getSeconds() + Math.floor(Math.random() * 100000));
+    fs.mkdirSync(tempDir);
+    const tempFile = path.join(tempDir, 'execution' + suffix);
+    fs.writeFileSync(tempFile, data);
+    console.log(`Successfully wrote file to ${tempFile}`);
+    return tempFile;
+  }
+
+  readonly inlineCode: string;
+  constructor(inlineCode: string) {
+    super();
+    this.inlineCode = inlineCode;
+  }
+
+  codeAsString(): string {
+    return this.inlineCode;
+  }
+
+  createOrGetFile(suffix: string): string {
+    return InlineScriptCode.toFile(this.inlineCode, suffix);
+  }
+}
+
+export class FileScriptCode extends ScriptCode {
+  readonly fullPath: string;
+  constructor(fullPath: string) {
+    super();
+    this.fullPath = fullPath;
+  }
+  codeAsString(): string {
+    return fs.readFileSync(this.fullPath, 'utf8');
+  }
+
+  createOrGetFile(_suffix: string): string {
+    return this.fullPath;
+  }
+}
+
+/**
+ * Specifies the script language as described in the "Runtime" argument here:
+ * https://docs.aws.amazon.com/systems-manager/latest/userguide/automation-action-executeScript.html
+ */
+export abstract class ScriptLanguage {
+
+  /**
+   * Create a new ScriptLanguage for python execution.
+   * @param version is the pythonVersion to use when writing the document (for simulation will not matter).
+   * @param handlerName is the function name in code as entry point for script handler.
+   */
+  static python(version: PythonVersion, handlerName: string): ScriptLanguage {
+    return new PythonScript(version, handlerName);
+  }
+
+  /**
+   * Creates a ScriptLanguage based on the provided runtime.
+   * Prefer one of the other static constructors if possible.
+   * @param runtime is the runtime name (such as "python3.6").
+   * @param handlerName to be provided for python executions.
+   */
+  static fromRuntime(runtime: string, handlerName?: string): ScriptLanguage {
+    if (runtime.startsWith('python')) {
+      return ScriptLanguage.python(ScriptLanguage.pythonVersion(runtime), handlerName!);
+    }
+    throw new Error('Unrecognized runtime version ' + runtime);
+  }
+
+  private static pythonVersion(runtime: string) {
+    switch (runtime) {
+      case 'python3.6':
+        return PythonVersion.VERSION_3_6;
+      case 'python3.7':
+        return PythonVersion.VERSION_3_7;
+      case 'python3.8':
+        return PythonVersion.VERSION_3_8;
+      default:
+        throw new Error('Unrecognized python version ' + runtime);
+    }
+  }
+
+  /**
+   * Builds the ssm inputs.
+   */
+  abstract ssmInputs(): { [name: string]: string };
+
+  /**
+   * The associated runtime of this ScriptLanguage.
+   */
+  abstract runtime(): string;
+
+  /**
+   * The suffix to apply to file names of this type of execution.
+   */
+  abstract fileSuffix(): string;
+
+  /**
+   * Simulate an execution of this ScriptLanguage.
+   * Provide the inputs after replaced with the actual values (not variables).
+   */
+  abstract simulate(code: ScriptCode, inputs: { [name: string]: string } ): { [name: string]: string };
+}
+
+class PythonScript extends ScriptLanguage {
+  readonly version: PythonVersion;
+  readonly handlerName: string;
+  constructor(version: PythonVersion, handlerName: string) {
+    super();
+    this.version = version;
+    this.handlerName = handlerName;
+  }
+
+  runtime(): string {
+    switch (this.version) {
+      case PythonVersion.VERSION_3_6:
+        return 'python3.6';
+      case PythonVersion.VERSION_3_7:
+        return 'python3.7';
+      case PythonVersion.VERSION_3_8:
+        return 'python3.8';
+    }
+  }
+
+  fileSuffix(): string {
+    return '.py';
+  }
+
+  ssmInputs(): { [name: string]: string } {
+    return {
+      Handler: this.handlerName,
+      Runtime: this.runtime(),
+    };
+  }
+
+  simulate(code: ScriptCode, inputs: { [p: string]: string }): { [p: string]: string } {
+    const pyHandler = new PythonScriptHandler();
+    return pyHandler.run(code.createOrGetFile(this.fileSuffix()), this.handlerName, inputs);
+  }
+}
+
+/**
+ * Python runtime to use when writing SSM Document.
+ * Simulation will use local python version.
+ */
+export enum PythonVersion {
+  VERSION_3_6,
+  VERSION_3_7,
+  VERSION_3_8,
 }
 
 /**
@@ -17,42 +201,30 @@ export enum ScriptLanguage {
 export interface ExecuteScriptStepProps extends AutomationStepProps {
 
   /**
-     * (Required) Language used to execute the script.
-     */
+   * (Required) Language used to execute the script.
+   */
   readonly language: ScriptLanguage;
 
   /**
-      * Full path to the code to execute. File is parsed to produce yaml/json.
-      * Simulation will execute this file using the language specified.
-      * Either this OR inclineCode must be provided.
-      */
-  readonly fullPathToCode?: string;
+   * Inline code to be executed. String will be used to produce function in yaml/json.
+   * Simulation will execute the function in this code using the language specified.
+   */
+  readonly code: ScriptCode;
 
   /**
-      * Inline code to be executed. String will be used to produce function in yaml/json.
-      * Simulation will execute the function in this string using the language specified.
-      * Either this OR fullPathToCode must be provided.
-      */
-  readonly inlineCode?: string;
-
-  /**
-      * (Optional) Function name in fullPathToCode file to use as entry point for script handler.
-      * @default script_handler
-      */
-  readonly handlerName?: string;
-
-  /**
-      * (Optional) Outputs that the function is expected to return.
-      * Be sure to prefix the selector for these outputs with "$.Payload." for executeScript step outputs.
-      * @default []
-      */
+   * (Optional) Outputs that the function is expected to return.
+   * Be sure to prefix the selector for these outputs with "$.Payload." for executeScript step outputs.
+   * @default []
+   */
   readonly outputs?: Output[];
 
   /**
-      * (Optional) Inputs that the function needs in order to execute.
-      * @default []
-      */
-  readonly inputs: string[];
+   * InputPayload that will be passed to the first parameter of the handler.
+   * This can be used to pass input data to the script.
+   * The key of this dict is the variable name that will be available to the code.
+   * The value is the Variable object.
+   */
+  readonly inputPayload: { [name: string]: IGenericVariable };
 }
 
 /**
@@ -61,59 +233,22 @@ export interface ExecuteScriptStepProps extends AutomationStepProps {
  */
 export class ExecuteScriptStep extends AutomationStep {
 
-  public static getLanguage(runtime: string) {
-    const langugage = ExecuteScriptStep.RUNTIME_TO_LANGUAGE[runtime];
-    if (langugage != undefined) {
-      return langugage;
-    } else {
-      throw new Error(`Runtime ${runtime} not supported.`);
-    }
-  }
-
-  private static readonly RUNTIME_TO_LANGUAGE: { [name: string]: ScriptLanguage } = {
-    'python3.6': ScriptLanguage.PYTHON,
-  };
-
   readonly language: ScriptLanguage;
-  readonly fullPathToCode: string;
-  readonly handlerName: string;
+  readonly code: ScriptCode;
   readonly outputs: Output[];
-  readonly inputs: string[];
+  readonly inputs: { [name: string]: IGenericVariable };
   readonly action: string = 'aws:executeScript';
-
 
   constructor(stage: Construct, id: string, props: ExecuteScriptStepProps) {
     super(stage, id, props);
     this.language = props.language;
-    if ((props.fullPathToCode == undefined) == (props.inlineCode == undefined)) {
-      throw new Error('Exactly one of "fullPathToCode" or "inlineCode" should be defined');
-    }
-    this.fullPathToCode = props.fullPathToCode ?? this.toFile(props.inlineCode ?? '');
-    this.handlerName = props.handlerName ?? 'script_handler';
+    this.code = props.code;
     this.outputs = props.outputs ?? [];
-    this.inputs = props.inputs ?? [];
+    this.inputs = props.inputPayload;
     const nonPayloadOutputs = this.outputs.filter(out => !out.selector.startsWith('$.Payload'));
     if (nonPayloadOutputs.length != 0) {
       throw new Error('All script outputs must specify selector starting with "$.Payload", ' +
-                `but these did not: ${JSON.stringify(nonPayloadOutputs)}`);
-    }
-  }
-
-  private toFile(data: string) {
-    const tempDir = path.join(os.tmpdir(), 'tmp' + new Date().getSeconds() + Math.floor(Math.random() * 1000));
-    fs.mkdirSync(tempDir);
-    const tempFile = path.join(tempDir, 'execution' + this.getFileSuffix());
-    fs.writeFileSync(tempFile, data);
-    console.log(`Successfully wrote file to ${tempFile}`);
-    return tempFile;
-  }
-
-  private getFileSuffix() {
-    switch (this.language) {
-      case ScriptLanguage.PYTHON:
-        return '.py';
-      default:
-        throw new Error(`Language ${this.language} not supported.`);
+        `but these did not: ${JSON.stringify(nonPayloadOutputs)}`);
     }
   }
 
@@ -122,30 +257,15 @@ export class ExecuteScriptStep extends AutomationStep {
   }
 
   public listInputs(): string[] {
-    return this.inputs;
+    return Object.values(this.inputs).flatMap(i => i?.requiredInputs() ?? []);
   }
 
   public toSsmEntry(): { [name: string]: any } {
-    const inputPayload = Object.fromEntries(this.listInputs().map(inp => [inp, `{{ ${inp} }}`]));
     return this.prepareSsmEntry({
-      Runtime: this.runtime(),
-      Handler: this.handlerName,
-      Script: fs.readFileSync(this.fullPathToCode, 'utf8'),
-      InputPayload: inputPayload,
+      ...this.language.ssmInputs(),
+      Script: this.code.codeAsString(),
+      InputPayload: this.inputs,
     });
-  }
-
-  /**
-     * @returns the SSM associated runtime argument for the language specified
-     */
-  private runtime(): string {
-    const runtimeEntry = Object.entries(ExecuteScriptStep.RUNTIME_TO_LANGUAGE)
-      .filter(entry => entry[1] == this.language)[0];
-    if (runtimeEntry) {
-      return runtimeEntry[0];
-    } else {
-      throw new Error(`Language ${this.language} not supported.`);
-    }
   }
 
 }

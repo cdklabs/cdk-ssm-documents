@@ -7,8 +7,9 @@ import {
   ExecuteScriptStep,
   Input,
   PauseStep,
+  PythonVersion, ScriptCode,
   ScriptLanguage,
-  StringVariable
+  StringVariable,
 } from '../../lib';
 
 
@@ -32,15 +33,14 @@ describe('AutomationDocument', function () {
       doc.addStep(new PauseStep(stack, 'MyPauseStep', { name: 'MyPauseStep' }));
       doc.addStep(new ExecuteScriptStep(stack, 'MyExecuteStep', {
         name: 'step1',
-        handlerName: 'my_func',
-        language: ScriptLanguage.PYTHON,
-        fullPathToCode: resolve('test/test_file.py'),
+        language: ScriptLanguage.python(PythonVersion.VERSION_3_6, 'my_func'),
+        code: ScriptCode.fromFile(resolve('test/test_file.py')),
         outputs: [{
           outputType: DataTypeEnum.STRING,
           name: 'MyFuncOut',
           selector: '$.Payload.MyReturn',
         }],
-        inputs: ['MyInput'],
+        inputPayload: { MyInput: StringVariable.of('MyInput') },
       }));
       Template.fromStack(stack).templateMatches({
         Resources: {

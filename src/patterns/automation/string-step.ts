@@ -5,16 +5,17 @@ import { DataType } from '../../domain/data-type';
 import { OperationEvaluator } from '../../domain/operation';
 import { Output } from '../../domain/output';
 import { HardCodedString, IStringVariable, StringVariable } from '../../interface/variables/string-variable';
+import { IGenericVariable } from '../../interface/variables/variable';
 import { AutomationStep } from '../../parent-steps/automation-step';
+import { ApproveStep } from '../../parent-steps/automation/approve-step';
 import { AssertAwsResourceStep } from '../../parent-steps/automation/assert-aws-resource-step';
 import { AwsApiStep } from '../../parent-steps/automation/aws-api-step';
 import { BranchStep } from '../../parent-steps/automation/branch-step';
-import { ExecuteScriptStep } from '../../parent-steps/automation/execute-script-step';
+import { ExecuteScriptStep, ScriptCode, ScriptLanguage } from '../../parent-steps/automation/execute-script-step';
 import { PauseStep } from '../../parent-steps/automation/pause-step';
 import { SleepStep } from '../../parent-steps/automation/sleep-step';
 import { WaitForResourceStep } from '../../parent-steps/automation/wait-for-resource-step';
 import { CompositeAutomationStep } from './composite-step';
-import {ApproveStep} from "../../parent-steps/automation/approve-step";
 // eslint-disable-next-line
 const yaml = require('js-yaml');
 
@@ -123,11 +124,12 @@ export class StringStep extends CompositeAutomationStep {
         });
         break;
       case 'aws:executeScript':
+        const inputs: { [name: string]: IGenericVariable } = {};
+        Object.entries(restParams.InputPayload).forEach(([key, value]) => inputs[key] = this.toVariable(value as string));
         this.automationStep = new ExecuteScriptStep(this, props.name, {
-          language: ExecuteScriptStep.getLanguage(restParams.Runtime),
-          inputs: Object.keys(restParams.InputPayload),
-          inlineCode: restParams.Script,
-          handlerName: restParams.Handler,
+          language: ScriptLanguage.fromRuntime(restParams.Runtime, restParams.Handler),
+          inputPayload: inputs,
+          code: ScriptCode.inline(restParams.Script),
           ...sharedProps,
         });
         break;

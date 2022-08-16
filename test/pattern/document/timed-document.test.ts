@@ -52,9 +52,9 @@ describe('TimedDocument', function() {
             inputs: {
               Runtime: 'python3.6',
               Handler: 'script_handler',
-              Script: "from datetime import datetime, timezone\nfrom dateutil import parser\n\ndef script_handler(params: dict, context):\n    return (datetime.now(timezone.utc) - parser.parse(params['RecordStartTime.StartTime'])).seconds\n\n",
+              Script: "from datetime import datetime, timezone\nfrom dateutil import parser\n\ndef script_handler(params: dict, context):\n    return (datetime.now(timezone.utc) - parser.parse(params['startTime'])).seconds\n\n",
               InputPayload: {
-                'RecordStartTime.StartTime': '{{ RecordStartTime.StartTime }}',
+                startTime: '{{ RecordStartTime.StartTime }}',
               },
             },
             outputs: [

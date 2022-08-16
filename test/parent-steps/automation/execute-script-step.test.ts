@@ -1,23 +1,29 @@
 import { strict as assert } from 'assert';
 import { resolve } from 'path';
 import { Stack } from 'aws-cdk-lib';
-import { DataTypeEnum, ExecuteScriptStep, ResponseCode, ScriptLanguage } from '../../../lib';
-import { AutomationStepSimulation } from '../../../lib/simulation/automation-step-simulation';
+import {
+  AutomationStepSimulation,
+  DataTypeEnum,
+  ExecuteScriptStep,
+  PythonVersion,
+  ResponseCode, ScriptCode,
+  ScriptLanguage,
+  StringVariable,
+} from '../../../lib';
 
 describe('ExecuteScriptStep', function() {
   describe('#invoke()', function() {
     it('Invokes and gets python response', function() {
       const scriptStep = new ExecuteScriptStep(new Stack(), 'id', {
         name: 'step1',
-        handlerName: 'my_func',
-        language: ScriptLanguage.PYTHON,
-        fullPathToCode: resolve('test/test_file.py'),
+        language: ScriptLanguage.python(PythonVersion.VERSION_3_6, 'my_func'),
+        code: ScriptCode.fromFile(resolve('test/test_file.py')),
         outputs: [{
           outputType: DataTypeEnum.STRING,
           name: 'MyFuncOut',
           selector: '$.Payload.MyReturn',
         }],
-        inputs: ['MyInput'],
+        inputPayload: { MyInput: StringVariable.of('MyInput') },
       });
       const response = new AutomationStepSimulation(scriptStep, {}).invoke({ MyInput: 'a' });
       if (response.responseCode != ResponseCode.SUCCESS) {
@@ -28,20 +34,19 @@ describe('ExecuteScriptStep', function() {
     it('Invokes and gets python response', function() {
       const scriptStep = new ExecuteScriptStep(new Stack(), 'id', {
         name: 'step1',
-        handlerName: 'my_func',
-        language: ScriptLanguage.PYTHON,
-        inlineCode: 'def my_func(args, context):\n' +
-                    '    return {"MyReturn": args["MyInput"] + "-suffix"}\n' +
+        language: ScriptLanguage.python(PythonVersion.VERSION_3_6, 'my_func'),
+        code: ScriptCode.inline('def my_func(args, context):\n' +
+                    '    return {"MyReturn": args["SomeInput"] + "-suffix"}\n' +
                     '\n' +
                     'def bad_func(args, context):\n' +
                     '    return {"MyReturn": args["INPUT_DOES_NOT_EXIST"] + "-suffix"}\n' +
-                    '\n',
+                    '\n'),
         outputs: [{
           outputType: DataTypeEnum.STRING,
           name: 'MyFuncOut',
           selector: '$.Payload.MyReturn',
         }],
-        inputs: ['MyInput'],
+        inputPayload: { SomeInput: StringVariable.of('MyInput') },
       });
 
       const response = new AutomationStepSimulation(scriptStep, {}).invoke({ MyInput: 'a' });
@@ -50,69 +55,30 @@ describe('ExecuteScriptStep', function() {
       }
       assert.equal(response.outputs && response.outputs['step1.MyFuncOut'], 'a-suffix');
     });
-    it('Must supply either inlineCode or fullPathToCode but not both', function() {
-      assert.throws(() => {
-        new ExecuteScriptStep(new Stack(), 'id', {
-          name: 'step1',
-          handlerName: 'my_func',
-          language: ScriptLanguage.PYTHON,
-          fullPathToCode: resolve('test/test_file.py'),
-          inlineCode: 'def my_func(args, context):\n' +
-                    '    return {"MyReturn": args["MyInput"] + "-suffix"}\n' +
-                    '\n' +
-                    'def bad_func(args, context):\n' +
-                    '    return {"MyReturn": args["INPUT_DOES_NOT_EXIST"] + "-suffix"}\n' +
-                    '\n',
-          outputs: [{
-            outputType: DataTypeEnum.STRING,
-            name: 'MyFuncOut',
-            selector: '$.Payload.MyReturn',
-          }],
-          inputs: ['MyInput'],
-        });
-      });
-    });
-    it('Must supply either inlineCode or fullPathToCode but not both', function() {
-      assert.throws(() => {
-        new ExecuteScriptStep(new Stack(), 'id', {
-          name: 'step1',
-          handlerName: 'my_func',
-          language: ScriptLanguage.PYTHON,
-          outputs: [{
-            outputType: DataTypeEnum.STRING,
-            name: 'MyFuncOut',
-            selector: '$.Payload.MyReturn',
-          }],
-          inputs: ['MyInput'],
-        });
-      });
-    });
     it('Output selectors must start with $.Payload.', function() {
       assert.throws(() => new ExecuteScriptStep(new Stack(), 'id', {
         name: 'step1',
-        handlerName: 'my_func',
-        language: ScriptLanguage.PYTHON,
-        fullPathToCode: resolve('test/test_file.py'),
+        language: ScriptLanguage.python(PythonVersion.VERSION_3_6, 'my_func'),
+        code: ScriptCode.fromFile(resolve('test/test_file.py')),
         outputs: [{
           outputType: DataTypeEnum.STRING,
           name: 'MyFuncOut',
           selector: '$.MyReturn',
         }],
-        inputs: ['MyInput'],
+        inputPayload: { MyInput: StringVariable.of('MyInput') },
       }));
     });
     it('Throws if output selector not found in result', function() {
       const scriptStep = new ExecuteScriptStep(new Stack(), 'id', {
         name: 'step1',
-        handlerName: 'my_func',
-        language: ScriptLanguage.PYTHON,
-        fullPathToCode: resolve('test/test_file.py'),
+        language: ScriptLanguage.python(PythonVersion.VERSION_3_6, 'my_func'),
+        code: ScriptCode.fromFile(resolve('test/test_file.py')),
         outputs: [{
           outputType: DataTypeEnum.STRING,
           name: 'MyFuncOut',
           selector: '$.Payload.DOES_NOT_EXIST',
         }],
-        inputs: ['MyInput'],
+        inputPayload: { MyInput: StringVariable.of('MyInput') },
       });
 
       assert.equal(new AutomationStepSimulation(scriptStep, {}).invoke({ MyInput: 'a' }).responseCode, ResponseCode.FAILED);
@@ -120,15 +86,14 @@ describe('ExecuteScriptStep', function() {
     it('Fails if input required not provided', function() {
       const scriptStep = new ExecuteScriptStep(new Stack(), 'id', {
         name: 'step1',
-        handlerName: 'my_func',
-        language: ScriptLanguage.PYTHON,
-        fullPathToCode: resolve('test/test_file.py'),
+        language: ScriptLanguage.python(PythonVersion.VERSION_3_6, 'my_func'),
+        code: ScriptCode.fromFile(resolve('test/test_file.py')),
         outputs: [{
           outputType: DataTypeEnum.STRING,
           name: 'MyFuncOut',
           selector: '$.Payload.MyReturn',
         }],
-        inputs: ['MyInput'],
+        inputPayload: { MyInput: StringVariable.of('MyInput') },
       });
 
       assert.throws(() => new AutomationStepSimulation(scriptStep, {}).invoke({ NO_INPUT_HERE: 'a' }).responseCode);
@@ -136,15 +101,14 @@ describe('ExecuteScriptStep', function() {
     it('Fails if python has bug', function() {
       const scriptStep = new ExecuteScriptStep(new Stack(), 'id', {
         name: 'step1',
-        handlerName: 'bad_func',
-        language: ScriptLanguage.PYTHON,
-        fullPathToCode: resolve('test/test_file.py'),
+        language: ScriptLanguage.python(PythonVersion.VERSION_3_6, 'bad_func'),
+        code: ScriptCode.fromFile(resolve('test/test_file.py')),
         outputs: [{
           outputType: DataTypeEnum.STRING,
           name: 'MyFuncOut',
           selector: '$.Payload.MyReturn',
         }],
-        inputs: ['MyInput'],
+        inputPayload: { MyInput: StringVariable.of('MyInput') },
       });
 
       const scriptStepResult = new AutomationStepSimulation(scriptStep, {}).invoke({ MyInput: 'a' });
@@ -158,15 +122,14 @@ describe('ExecuteScriptStep', function() {
     it('Builds entry as per SSM Document', function() {
       const step = new ExecuteScriptStep(new Stack(), 'id', {
         name: 'step1',
-        handlerName: 'my_func',
-        language: ScriptLanguage.PYTHON,
-        fullPathToCode: resolve('test/test_file.py'),
+        language: ScriptLanguage.python(PythonVersion.VERSION_3_6, 'my_func'),
+        code: ScriptCode.fromFile(resolve('test/test_file.py')),
         outputs: [{
           outputType: DataTypeEnum.STRING,
           name: 'MyFuncOut',
           selector: '$.Payload.MyReturn',
         }],
-        inputs: ['MyInput'],
+        inputPayload: { MyInput: StringVariable.of('MyInput') },
       });
 
       assertDeepEqual(step.toSsmEntry(), {
