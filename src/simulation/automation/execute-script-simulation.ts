@@ -1,5 +1,4 @@
-import { ExecuteScriptStep, ScriptLanguage } from '../../parent-steps/automation/execute-script-step';
-import { PythonScriptHandler } from '../../script/python-script-handler';
+import { ExecuteScriptStep } from '../../parent-steps/automation/execute-script-step';
 import { AutomationSimulationBase } from './automation-simulation-base';
 
 /**
@@ -20,13 +19,9 @@ export class ExecuteScriptSimulation extends AutomationSimulationBase {
    * Switch by language and execute code based on specified language.
    */
   public executeStep(inputs: { [name: string]: any }): { [name: string]: any } {
-    switch (this.executeScriptStep.language) {
-      case ScriptLanguage.PYTHON:
-        const pyHandler = new PythonScriptHandler();
-        return pyHandler.run(this.executeScriptStep.fullPathToCode, this.executeScriptStep.handlerName, inputs);
-      default:
-        throw new Error(`Language ${this.executeScriptStep.language} not supported.`);
-    }
+    const inputValues = Object.fromEntries(Object.entries(this.executeScriptStep.inputs)
+      .map(([k, v]) => [k, v.resolve(inputs)]));
+    return this.executeScriptStep.language.simulate(this.executeScriptStep.code, inputValues);
   }
 
 }

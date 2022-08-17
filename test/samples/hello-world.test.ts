@@ -34,9 +34,9 @@ describe('HelloWorld', function() {
                     inputs: {
                       Runtime: 'python3.6',
                       Handler: 'my_func',
-                      Script: 'def my_func(args, context):\n    return {"Greeting": "Hello " + args["Someone"]}\n\n',
+                      Script: 'def my_func(args, context):\n    return {"Greeting": "Hello " + args["someone"]}\n\n',
                       InputPayload: {
-                        Someone: '{{ Someone }}',
+                        someone: '{{ Someone }}',
                       },
                     },
                     outputs: [{

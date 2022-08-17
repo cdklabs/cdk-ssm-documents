@@ -1,5 +1,13 @@
 import { Construct } from 'constructs';
-import { AutomationStep, DataTypeEnum, ExecuteScriptStep, ScriptLanguage } from '../..';
+import {
+  AutomationStep,
+  DataTypeEnum,
+  ExecuteScriptStep,
+  PythonVersion,
+  ScriptCode,
+  ScriptLanguage,
+  StringVariable,
+} from '../..';
 import { AutomationDocument, AutomationDocumentProps } from '../../document/automation-document';
 
 export class TimedDocument extends AutomationDocument {
@@ -16,23 +24,21 @@ export class TimedDocument extends AutomationDocument {
       return middleSteps;
     }
     const recordStartTime = new ExecuteScriptStep(this, 'RecordStartTime', {
-      inlineCode:
-                'from datetime import datetime, timezone\n\n' +
+      code: ScriptCode.inline('from datetime import datetime, timezone\n\n' +
                 'def script_handler(params: dict, context):\n' +
-                '    return datetime.now(timezone.utc).isoformat()\n\n',
-      language: ScriptLanguage.PYTHON,
+                '    return datetime.now(timezone.utc).isoformat()\n\n'),
+      language: ScriptLanguage.python(PythonVersion.VERSION_3_6, 'script_handler'),
       outputs: [{ outputType: DataTypeEnum.STRING, name: 'StartTime', selector: '$.Payload' }],
-      inputs: [],
+      inputPayload: {},
     });
     const outputRecoveryTime = new ExecuteScriptStep(this, 'OutputRecoveryTime', {
-      inlineCode:
-                'from datetime import datetime, timezone\n' +
+      code: ScriptCode.inline('from datetime import datetime, timezone\n' +
                 'from dateutil import parser\n\n' +
                 'def script_handler(params: dict, context):\n' +
-                '    return (datetime.now(timezone.utc) - parser.parse(params[\'RecordStartTime.StartTime\'])).seconds\n\n',
-      language: ScriptLanguage.PYTHON,
+                '    return (datetime.now(timezone.utc) - parser.parse(params[\'startTime\'])).seconds\n\n'),
+      language: ScriptLanguage.python(PythonVersion.VERSION_3_6, 'script_handler'),
       outputs: [{ outputType: DataTypeEnum.INTEGER, name: 'RecoveryTime', selector: '$.Payload' }],
-      inputs: ['RecordStartTime.StartTime'],
+      inputPayload: { startTime: StringVariable.of('RecordStartTime.StartTime') },
     });
     this.builder.steps.unshift(recordStartTime);
     this.builder.steps.push(outputRecoveryTime);

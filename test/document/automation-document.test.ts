@@ -11,7 +11,8 @@ import {
   Input,
   MockPause,
   PauseStep,
-  ResponseCode,
+  PythonVersion,
+  ResponseCode, ScriptCode,
   ScriptLanguage,
   Simulation,
   StringVariable,
@@ -35,15 +36,14 @@ describe('AutomationDocument', function() {
       myAutomationDoc.addStep(new PauseStep(stack, 'MyPauseStep', { name: 'MyPauseStep' }));
       // Second step
       myAutomationDoc.addStep(new ExecuteScriptStep(stack, 'MyExecuteStep', {
-        handlerName: 'my_func',
-        language: ScriptLanguage.PYTHON,
-        fullPathToCode: resolve('test/test_file.py'),
+        language: ScriptLanguage.python(PythonVersion.VERSION_3_6, 'my_func'),
+        code: ScriptCode.fromFile(resolve('test/test_file.py')),
         outputs: [{
           outputType: DataTypeEnum.STRING,
           name: 'MyFuncOut',
           selector: '$.Payload.MyReturn',
         }],
-        inputs: ['MyInput'],
+        inputPayload: { MyInput: StringVariable.of('MyInput') },
       }));
 
       // Execute simulation
@@ -71,15 +71,14 @@ describe('AutomationDocument', function() {
       });
       doc.addStep(new PauseStep(stack, 'MyPauseStep', { name: 'MyPauseStep' }));
       doc.addStep(new ExecuteScriptStep(stack, 'MyExecuteStep', {
-        handlerName: 'my_func',
-        language: ScriptLanguage.PYTHON,
-        fullPathToCode: resolve('test/test_file.py'),
+        language: ScriptLanguage.python(PythonVersion.VERSION_3_6, 'my_func'),
+        code: ScriptCode.fromFile(resolve('test/test_file.py')),
         outputs: [{
           outputType: DataTypeEnum.STRING,
           name: 'MyFuncOut',
           selector: '$.Payload.MyReturn',
         }],
-        inputs: ['MyInput'],
+        inputPayload: { MyInput: StringVariable.of('MyInput') },
       }));
       const simOutput = Simulation.ofAutomation(doc, { pauseHook: new MockPause() }).simulate({});
       assert.deepEqual(simOutput, {
@@ -95,15 +94,14 @@ describe('AutomationDocument', function() {
           super(scope, id, props);
           new PauseStep(this, 'MyPauseStep', { name: 'MyPauseStep' });
           new ExecuteScriptStep(this, 'MyExecuteStep', {
-            handlerName: 'my_func',
-            language: ScriptLanguage.PYTHON,
-            fullPathToCode: resolve('test/test_file.py'),
+            language: ScriptLanguage.python(PythonVersion.VERSION_3_6, 'my_func'),
+            code: ScriptCode.fromFile(resolve('test/test_file.py')),
             outputs: [{
               outputType: DataTypeEnum.STRING,
               name: 'MyFuncOut',
               selector: '$.Payload.MyReturn',
             }],
-            inputs: ['MyInput'],
+            inputPayload: { MyInput: StringVariable.of('MyInput') },
           });
         }
       }
@@ -130,15 +128,14 @@ describe('AutomationDocument', function() {
       myAutomationDoc.addStep(new PauseStep(stack, 'MyPauseStep', { name: 'MyPauseStep' }));
       myAutomationDoc.addStep(new ExecuteScriptStep(stack, 'MyExecuteStep', {
         name: 'step1',
-        handlerName: 'my_func',
-        language: ScriptLanguage.PYTHON,
-        fullPathToCode: resolve('test/test_file.py'),
+        language: ScriptLanguage.python(PythonVersion.VERSION_3_6, 'my_func'),
+        code: ScriptCode.fromFile(resolve('test/test_file.py')),
         outputs: [{
           outputType: DataTypeEnum.STRING,
           name: 'MyFuncOut',
           selector: '$.Payload.MyReturn',
         }],
-        inputs: ['MyInput'],
+        inputPayload: { MyInput: StringVariable.of('MyInput') },
       }));
       SynthUtils.synthesize(stack);
       const ssmJson = myAutomationDoc.print();
@@ -201,15 +198,14 @@ describe('AutomationDocument', function() {
       myAutomationDoc.addStep(new PauseStep(stack, 'MyPauseStep', { name: 'MyPauseStep' }));
       myAutomationDoc.addStep(new ExecuteScriptStep(stack, 'MyExecuteStep', {
         name: 'step1',
-        handlerName: 'my_func',
-        language: ScriptLanguage.PYTHON,
-        fullPathToCode: resolve('test/test_file.py'),
+        language: ScriptLanguage.python(PythonVersion.VERSION_3_6, 'my_func'),
+        code: ScriptCode.fromFile(resolve('test/test_file.py')),
         outputs: [{
           outputType: DataTypeEnum.STRING,
           name: 'MyFuncOut',
           selector: '$.Payload.MyReturn',
         }],
-        inputs: ['MyInput'],
+        inputPayload: { MyInput: StringVariable.of('MyInput') },
       }));
       SynthUtils.synthesize(stack);
       const ssmYaml = myAutomationDoc.print();
