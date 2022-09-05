@@ -37,15 +37,6 @@ describe('ApproveStep', function() {
           Message: 'Approve this asap',
           NotificationArn: 'notify arn',
         },
-        outputs: [{
-          Type: 'String',
-          Name: 'ApprovalStatus',
-          Selector: '$.ApprovalStatus',
-        }, {
-          Type: 'MapList',
-          Name: 'ApproverDecisions',
-          Selector: '$.ApproverDecisions',
-        }],
       });
     });
   });

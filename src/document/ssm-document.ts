@@ -87,6 +87,7 @@ export abstract class SsmDocument extends Construct {
   readonly docOutputs: DocumentOutput[];
   readonly docInputs: Input[];
   readonly props: SsmDocumentProps;
+  readonly cfnDocument: CfnDocument;
 
   constructor(scope: Construct, id: string, props: SsmDocumentProps) {
     super(scope, id);
@@ -102,7 +103,7 @@ export abstract class SsmDocument extends Construct {
     }
     this.props = props;
     const isYaml = this.props.documentFormat == DocumentFormat.YAML;
-    new CfnDocument(this, 'Resource', {
+    this.cfnDocument = new CfnDocument(this, 'Resource', {
       ...this.props,
       ...{
         content: Lazy.any({
