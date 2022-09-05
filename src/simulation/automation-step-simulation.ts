@@ -172,7 +172,7 @@ export class AutomationStepSimulation {
         } else {
           return {
             responseCode: ResponseCode.FAILED,
-            outputs: [],
+            outputs: {},
             stackTrace: (error as Error).message + '\n' + (error as Error).stack,
             executedSteps: [this.step.name],
           };
