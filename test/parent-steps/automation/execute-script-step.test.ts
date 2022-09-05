@@ -174,6 +174,13 @@ describe('ExecuteScriptStep', function() {
         isEnd: true,
         onFailure: 'Abort',
         isCritical: true,
+        outputs: [
+          {
+            Name: 'Echo',
+            Selector: '$.Payload.Echo',
+            Type: 'String',
+          },
+        ],
       });
     });
   });
