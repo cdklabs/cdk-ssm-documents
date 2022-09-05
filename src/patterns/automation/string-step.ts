@@ -125,9 +125,10 @@ export class StringStep extends CompositeAutomationStep {
         break;
       case 'aws:executeScript':
         const inputs: { [name: string]: IGenericVariable } = {};
-        Object.entries(restParams.InputPayload).forEach(([key, value]) => inputs[key] = this.toVariable(value as string));
+        Object.entries(restParams.InputPayload ?? {}).forEach(([key, value]) => inputs[key] = this.toVariable(value as string));
+        const handler = restParams.Handler ? (<string>restParams.Handler).replace('function.', '') : undefined;
         this.automationStep = new ExecuteScriptStep(this, props.name, {
-          language: ScriptLanguage.fromRuntime(restParams.Runtime, restParams.Handler),
+          language: ScriptLanguage.fromRuntime(restParams.Runtime, handler),
           inputPayload: inputs,
           code: ScriptCode.inline(restParams.Script),
           ...sharedProps,

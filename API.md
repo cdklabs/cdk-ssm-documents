@@ -1226,6 +1226,7 @@ Any object.
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
 | <code><a href="#@cdklabs/cdk-ssm-documents.AutomationDocument.property.node">node</a></code> | <code>constructs.Node</code> | The tree node. |
+| <code><a href="#@cdklabs/cdk-ssm-documents.AutomationDocument.property.cfnDocument">cfnDocument</a></code> | <code>aws-cdk-lib.aws_ssm.CfnDocument</code> | *No description.* |
 | <code><a href="#@cdklabs/cdk-ssm-documents.AutomationDocument.property.description">description</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#@cdklabs/cdk-ssm-documents.AutomationDocument.property.docInputs">docInputs</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.Input">Input</a>[]</code> | *No description.* |
 | <code><a href="#@cdklabs/cdk-ssm-documents.AutomationDocument.property.docOutputs">docOutputs</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.DocumentOutput">DocumentOutput</a>[]</code> | *No description.* |
@@ -1246,6 +1247,16 @@ public readonly node: Node;
 - *Type:* constructs.Node
 
 The tree node.
+
+---
+
+##### `cfnDocument`<sup>Required</sup> <a name="cfnDocument" id="@cdklabs/cdk-ssm-documents.AutomationDocument.property.cfnDocument"></a>
+
+```typescript
+public readonly cfnDocument: CfnDocument;
+```
+
+- *Type:* aws-cdk-lib.aws_ssm.CfnDocument
 
 ---
 
@@ -2872,6 +2883,7 @@ Any object.
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
 | <code><a href="#@cdklabs/cdk-ssm-documents.CommandDocument.property.node">node</a></code> | <code>constructs.Node</code> | The tree node. |
+| <code><a href="#@cdklabs/cdk-ssm-documents.CommandDocument.property.cfnDocument">cfnDocument</a></code> | <code>aws-cdk-lib.aws_ssm.CfnDocument</code> | *No description.* |
 | <code><a href="#@cdklabs/cdk-ssm-documents.CommandDocument.property.description">description</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#@cdklabs/cdk-ssm-documents.CommandDocument.property.docInputs">docInputs</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.Input">Input</a>[]</code> | *No description.* |
 | <code><a href="#@cdklabs/cdk-ssm-documents.CommandDocument.property.docOutputs">docOutputs</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.DocumentOutput">DocumentOutput</a>[]</code> | *No description.* |
@@ -2892,6 +2904,16 @@ public readonly node: Node;
 - *Type:* constructs.Node
 
 The tree node.
+
+---
+
+##### `cfnDocument`<sup>Required</sup> <a name="cfnDocument" id="@cdklabs/cdk-ssm-documents.CommandDocument.property.cfnDocument"></a>
+
+```typescript
+public readonly cfnDocument: CfnDocument;
+```
+
+- *Type:* aws-cdk-lib.aws_ssm.CfnDocument
 
 ---
 
@@ -13721,6 +13743,7 @@ Any object.
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
 | <code><a href="#@cdklabs/cdk-ssm-documents.SsmDocument.property.node">node</a></code> | <code>constructs.Node</code> | The tree node. |
+| <code><a href="#@cdklabs/cdk-ssm-documents.SsmDocument.property.cfnDocument">cfnDocument</a></code> | <code>aws-cdk-lib.aws_ssm.CfnDocument</code> | *No description.* |
 | <code><a href="#@cdklabs/cdk-ssm-documents.SsmDocument.property.description">description</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#@cdklabs/cdk-ssm-documents.SsmDocument.property.docInputs">docInputs</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.Input">Input</a>[]</code> | *No description.* |
 | <code><a href="#@cdklabs/cdk-ssm-documents.SsmDocument.property.docOutputs">docOutputs</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.DocumentOutput">DocumentOutput</a>[]</code> | *No description.* |
@@ -13740,6 +13763,16 @@ public readonly node: Node;
 - *Type:* constructs.Node
 
 The tree node.
+
+---
+
+##### `cfnDocument`<sup>Required</sup> <a name="cfnDocument" id="@cdklabs/cdk-ssm-documents.SsmDocument.property.cfnDocument"></a>
+
+```typescript
+public readonly cfnDocument: CfnDocument;
+```
+
+- *Type:* aws-cdk-lib.aws_ssm.CfnDocument
 
 ---
 
@@ -14279,6 +14312,7 @@ Any object.
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
 | <code><a href="#@cdklabs/cdk-ssm-documents.TimedDocument.property.node">node</a></code> | <code>constructs.Node</code> | The tree node. |
+| <code><a href="#@cdklabs/cdk-ssm-documents.TimedDocument.property.cfnDocument">cfnDocument</a></code> | <code>aws-cdk-lib.aws_ssm.CfnDocument</code> | *No description.* |
 | <code><a href="#@cdklabs/cdk-ssm-documents.TimedDocument.property.description">description</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#@cdklabs/cdk-ssm-documents.TimedDocument.property.docInputs">docInputs</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.Input">Input</a>[]</code> | *No description.* |
 | <code><a href="#@cdklabs/cdk-ssm-documents.TimedDocument.property.docOutputs">docOutputs</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.DocumentOutput">DocumentOutput</a>[]</code> | *No description.* |
@@ -14299,6 +14333,16 @@ public readonly node: Node;
 - *Type:* constructs.Node
 
 The tree node.
+
+---
+
+##### `cfnDocument`<sup>Required</sup> <a name="cfnDocument" id="@cdklabs/cdk-ssm-documents.TimedDocument.property.cfnDocument"></a>
+
+```typescript
+public readonly cfnDocument: CfnDocument;
+```
+
+- *Type:* aws-cdk-lib.aws_ssm.CfnDocument
 
 ---
 

@@ -6,9 +6,11 @@ import {
   DataTypeEnum,
   ExecuteScriptStep,
   PythonVersion,
-  ResponseCode, ScriptCode,
+  ResponseCode,
+  ScriptCode,
   ScriptLanguage,
   StringVariable,
+  StringStep,
 } from '../../../lib';
 
 describe('ExecuteScriptStep', function() {
@@ -154,6 +156,24 @@ describe('ExecuteScriptStep', function() {
             Type: 'String',
           },
         ],
+      });
+    });
+  });
+  describe('fromString', function() {
+    it('From string should parse back to object', function() {
+      StringStep.fromObject(new Stack(), {
+        name: 'executeHelloWorldScript',
+        action: 'aws:executeScript',
+        timeoutSeconds: 100,
+        maxAttempts: 1,
+        description: '## HelloWorldScriptExecution\nReturns the Echo input value.\n',
+        inputs: {
+          Script: '..script..',
+          Runtime: 'python3.6',
+        },
+        isEnd: true,
+        onFailure: 'Abort',
+        isCritical: true,
       });
     });
   });

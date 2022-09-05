@@ -82,12 +82,14 @@ export class ApproveStep extends AutomationStep {
   }
 
   public toSsmEntry(): Record<string, any> {
-    return super.prepareSsmEntry(pruneAndTransformRecord({
+    const entireEntry = super.prepareSsmEntry(pruneAndTransformRecord({
       Approvers: this.approvers,
       NotificationArn: this.notificationArn,
       Message: this.message,
       MinRequiredApprovals: this.minRequiredApprovals,
     }, x => x.print()));
+    const { outputs, ...newObj } = entireEntry;
+    return newObj;
   }
 
   /**
