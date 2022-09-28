@@ -224,11 +224,33 @@ StringStep.fromYaml(this, `
 
 The above will return the CDK construct SleepStep.
 
+## Incident Manager
+
+This library provides L2 constructs for IncidentResponse as follows:
+
+```typescript
+new IncidentResponse(this, "MyIncidentResponsePlan", {
+      incidentTemplate: IncidentTemplate.critical('EC2 Instance Utilization Impacted', {
+        summary: 'EC2 Instance Impacted'
+      }),
+      actions: [
+        IncidentResponseAction.ssmAutomation(myAutomationDoc, ec2CwAlarmRole, {
+          parameters: {
+            IncidentRecordArn: StringVariable.of('INCIDENT_RECORD_ARN'),
+            InvolvedResources: StringVariable.of('INVOLVED_RESOURCES'),
+            AutomationAssumeRole: HardCodedString.of(ec2CwAlarmRole.roleArn),
+          }
+        })
+      ]
+});
+```
+
+Notice how the `myAutomationDoc` is specified which is a reference to an AutomationDocument created using this library.
+
 ## What is Planned?
 
-This library currently contains AutomationDocument steps.
-
-Also planned is the ability to run Command documents.
+This library currently contains AutomationDocument and CommandDocument steps.
+Simulation for AutomationDocuments is fully supported. Simulation for CommandDocuments is limited.
 
 Stay tuned!
 

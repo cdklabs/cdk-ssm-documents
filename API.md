@@ -8248,6 +8248,7 @@ new HelloWorld(app: Construct, id: string)
 | <code><a href="#@cdklabs/cdk-ssm-documents.HelloWorld.exportValue">exportValue</a></code> | Create a CloudFormation Export for a value. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.HelloWorld.formatArn">formatArn</a></code> | Creates an ARN from components. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.HelloWorld.getLogicalId">getLogicalId</a></code> | Allocates a stack-unique CloudFormation-compatible logical identity for a specific resource. |
+| <code><a href="#@cdklabs/cdk-ssm-documents.HelloWorld.regionalFact">regionalFact</a></code> | Look up a fact value for the given fact for the region of this stack. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.HelloWorld.renameLogicalId">renameLogicalId</a></code> | Rename a generated logical identities. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.HelloWorld.reportMissingContextKey">reportMissingContextKey</a></code> | Indicate that a context key was expected. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.HelloWorld.resolve">resolve</a></code> | Resolve a tokenized value in the context of the current stack. |
@@ -8431,6 +8432,42 @@ The CloudFormation element for which a logical identity is needed.
 
 ---
 
+##### `regionalFact` <a name="regionalFact" id="@cdklabs/cdk-ssm-documents.HelloWorld.regionalFact"></a>
+
+```typescript
+public regionalFact(factName: string, defaultValue?: string): string
+```
+
+Look up a fact value for the given fact for the region of this stack.
+
+Will return a definite value only if the region of the current stack is resolved.
+If not, a lookup map will be added to the stack and the lookup will be done at
+CDK deployment time.
+
+What regions will be included in the lookup map is controlled by the
+`@aws-cdk/core:target-partitions` context value: it must be set to a list
+of partitions, and only regions from the given partitions will be included.
+If no such context key is set, all regions will be included.
+
+This function is intended to be used by construct library authors. Application
+builders can rely on the abstractions offered by construct libraries and do
+not have to worry about regional facts.
+
+If `defaultValue` is not given, it is an error if the fact is unknown for
+the given region.
+
+###### `factName`<sup>Required</sup> <a name="factName" id="@cdklabs/cdk-ssm-documents.HelloWorld.regionalFact.parameter.factName"></a>
+
+- *Type:* string
+
+---
+
+###### `defaultValue`<sup>Optional</sup> <a name="defaultValue" id="@cdklabs/cdk-ssm-documents.HelloWorld.regionalFact.parameter.defaultValue"></a>
+
+- *Type:* string
+
+---
+
 ##### `renameLogicalId` <a name="renameLogicalId" id="@cdklabs/cdk-ssm-documents.HelloWorld.renameLogicalId"></a>
 
 ```typescript
@@ -8610,11 +8647,10 @@ The construct to start the search from.
 | <code><a href="#@cdklabs/cdk-ssm-documents.HelloWorld.property.account">account</a></code> | <code>string</code> | The AWS account into which this stack will be deployed. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.HelloWorld.property.artifactId">artifactId</a></code> | <code>string</code> | The ID of the cloud assembly artifact for this stack. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.HelloWorld.property.availabilityZones">availabilityZones</a></code> | <code>string[]</code> | Returns the list of AZs that are available in the AWS environment (account/region) associated with this stack. |
+| <code><a href="#@cdklabs/cdk-ssm-documents.HelloWorld.property.bundlingRequired">bundlingRequired</a></code> | <code>boolean</code> | Indicates whether the stack requires bundling or not. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.HelloWorld.property.dependencies">dependencies</a></code> | <code>aws-cdk-lib.Stack[]</code> | Return the stacks this stack depends on. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.HelloWorld.property.environment">environment</a></code> | <code>string</code> | The environment coordinates in which this stack is deployed. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.HelloWorld.property.nested">nested</a></code> | <code>boolean</code> | Indicates if this is a nested stack, in which case `parentStack` will include a reference to it's parent. |
-| <code><a href="#@cdklabs/cdk-ssm-documents.HelloWorld.property.nestedStackParent">nestedStackParent</a></code> | <code>aws-cdk-lib.Stack</code> | If this is a nested stack, returns it's parent stack. |
-| <code><a href="#@cdklabs/cdk-ssm-documents.HelloWorld.property.nestedStackResource">nestedStackResource</a></code> | <code>aws-cdk-lib.CfnResource</code> | If this is a nested stack, this represents its `AWS::CloudFormation::Stack` resource. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.HelloWorld.property.notificationArns">notificationArns</a></code> | <code>string[]</code> | Returns the list of notification Amazon Resource Names (ARNs) for the current stack. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.HelloWorld.property.partition">partition</a></code> | <code>string</code> | The partition in which this stack is defined. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.HelloWorld.property.region">region</a></code> | <code>string</code> | The AWS region into which this stack will be deployed (e.g. `us-west-2`). |
@@ -8624,8 +8660,10 @@ The construct to start the search from.
 | <code><a href="#@cdklabs/cdk-ssm-documents.HelloWorld.property.tags">tags</a></code> | <code>aws-cdk-lib.TagManager</code> | Tags to be applied to the stack. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.HelloWorld.property.templateFile">templateFile</a></code> | <code>string</code> | The name of the CloudFormation template file emitted to the output directory during synthesis. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.HelloWorld.property.templateOptions">templateOptions</a></code> | <code>aws-cdk-lib.ITemplateOptions</code> | Options for CloudFormation template (like version, transform, description). |
-| <code><a href="#@cdklabs/cdk-ssm-documents.HelloWorld.property.terminationProtection">terminationProtection</a></code> | <code>boolean</code> | Whether termination protection is enabled for this stack. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.HelloWorld.property.urlSuffix">urlSuffix</a></code> | <code>string</code> | The Amazon domain suffix for the region in which this stack is defined. |
+| <code><a href="#@cdklabs/cdk-ssm-documents.HelloWorld.property.nestedStackParent">nestedStackParent</a></code> | <code>aws-cdk-lib.Stack</code> | If this is a nested stack, returns it's parent stack. |
+| <code><a href="#@cdklabs/cdk-ssm-documents.HelloWorld.property.nestedStackResource">nestedStackResource</a></code> | <code>aws-cdk-lib.CfnResource</code> | If this is a nested stack, this represents its `AWS::CloudFormation::Stack` resource. |
+| <code><a href="#@cdklabs/cdk-ssm-documents.HelloWorld.property.terminationProtection">terminationProtection</a></code> | <code>boolean</code> | Whether termination protection is enabled for this stack. |
 
 ---
 
@@ -8705,6 +8743,18 @@ To specify a different strategy for selecting availability zones override this m
 
 ---
 
+##### `bundlingRequired`<sup>Required</sup> <a name="bundlingRequired" id="@cdklabs/cdk-ssm-documents.HelloWorld.property.bundlingRequired"></a>
+
+```typescript
+public readonly bundlingRequired: boolean;
+```
+
+- *Type:* boolean
+
+Indicates whether the stack requires bundling or not.
+
+---
+
 ##### `dependencies`<sup>Required</sup> <a name="dependencies" id="@cdklabs/cdk-ssm-documents.HelloWorld.property.dependencies"></a>
 
 ```typescript
@@ -8750,32 +8800,6 @@ public readonly nested: boolean;
 - *Type:* boolean
 
 Indicates if this is a nested stack, in which case `parentStack` will include a reference to it's parent.
-
----
-
-##### `nestedStackParent`<sup>Optional</sup> <a name="nestedStackParent" id="@cdklabs/cdk-ssm-documents.HelloWorld.property.nestedStackParent"></a>
-
-```typescript
-public readonly nestedStackParent: Stack;
-```
-
-- *Type:* aws-cdk-lib.Stack
-
-If this is a nested stack, returns it's parent stack.
-
----
-
-##### `nestedStackResource`<sup>Optional</sup> <a name="nestedStackResource" id="@cdklabs/cdk-ssm-documents.HelloWorld.property.nestedStackResource"></a>
-
-```typescript
-public readonly nestedStackResource: CfnResource;
-```
-
-- *Type:* aws-cdk-lib.CfnResource
-
-If this is a nested stack, this represents its `AWS::CloudFormation::Stack` resource.
-
-`undefined` for top-level (non-nested) stacks.
 
 ---
 
@@ -8923,6 +8947,44 @@ Options for CloudFormation template (like version, transform, description).
 
 ---
 
+##### `urlSuffix`<sup>Required</sup> <a name="urlSuffix" id="@cdklabs/cdk-ssm-documents.HelloWorld.property.urlSuffix"></a>
+
+```typescript
+public readonly urlSuffix: string;
+```
+
+- *Type:* string
+
+The Amazon domain suffix for the region in which this stack is defined.
+
+---
+
+##### `nestedStackParent`<sup>Optional</sup> <a name="nestedStackParent" id="@cdklabs/cdk-ssm-documents.HelloWorld.property.nestedStackParent"></a>
+
+```typescript
+public readonly nestedStackParent: Stack;
+```
+
+- *Type:* aws-cdk-lib.Stack
+
+If this is a nested stack, returns it's parent stack.
+
+---
+
+##### `nestedStackResource`<sup>Optional</sup> <a name="nestedStackResource" id="@cdklabs/cdk-ssm-documents.HelloWorld.property.nestedStackResource"></a>
+
+```typescript
+public readonly nestedStackResource: CfnResource;
+```
+
+- *Type:* aws-cdk-lib.CfnResource
+
+If this is a nested stack, this represents its `AWS::CloudFormation::Stack` resource.
+
+`undefined` for top-level (non-nested) stacks.
+
+---
+
 ##### `terminationProtection`<sup>Optional</sup> <a name="terminationProtection" id="@cdklabs/cdk-ssm-documents.HelloWorld.property.terminationProtection"></a>
 
 ```typescript
@@ -8935,15 +8997,115 @@ Whether termination protection is enabled for this stack.
 
 ---
 
-##### `urlSuffix`<sup>Required</sup> <a name="urlSuffix" id="@cdklabs/cdk-ssm-documents.HelloWorld.property.urlSuffix"></a>
+
+### IncidentResponse <a name="IncidentResponse" id="@cdklabs/cdk-ssm-documents.IncidentResponse"></a>
+
+Provides L2 construct for https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssmincidents-responseplan.html#aws-resource-ssmincidents-responseplan-properties.
+
+#### Initializers <a name="Initializers" id="@cdklabs/cdk-ssm-documents.IncidentResponse.Initializer"></a>
 
 ```typescript
-public readonly urlSuffix: string;
+import { IncidentResponse } from '@cdklabs/cdk-ssm-documents'
+
+new IncidentResponse(scope: Construct, id: string, props: IncidentResponseProps)
 ```
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#@cdklabs/cdk-ssm-documents.IncidentResponse.Initializer.parameter.scope">scope</a></code> | <code>constructs.Construct</code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.IncidentResponse.Initializer.parameter.id">id</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.IncidentResponse.Initializer.parameter.props">props</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.IncidentResponseProps">IncidentResponseProps</a></code> | *No description.* |
+
+---
+
+##### `scope`<sup>Required</sup> <a name="scope" id="@cdklabs/cdk-ssm-documents.IncidentResponse.Initializer.parameter.scope"></a>
+
+- *Type:* constructs.Construct
+
+---
+
+##### `id`<sup>Required</sup> <a name="id" id="@cdklabs/cdk-ssm-documents.IncidentResponse.Initializer.parameter.id"></a>
 
 - *Type:* string
 
-The Amazon domain suffix for the region in which this stack is defined.
+---
+
+##### `props`<sup>Required</sup> <a name="props" id="@cdklabs/cdk-ssm-documents.IncidentResponse.Initializer.parameter.props"></a>
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.IncidentResponseProps">IncidentResponseProps</a>
+
+---
+
+#### Methods <a name="Methods" id="Methods"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#@cdklabs/cdk-ssm-documents.IncidentResponse.toString">toString</a></code> | Returns a string representation of this construct. |
+
+---
+
+##### `toString` <a name="toString" id="@cdklabs/cdk-ssm-documents.IncidentResponse.toString"></a>
+
+```typescript
+public toString(): string
+```
+
+Returns a string representation of this construct.
+
+#### Static Functions <a name="Static Functions" id="Static Functions"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#@cdklabs/cdk-ssm-documents.IncidentResponse.isConstruct">isConstruct</a></code> | Checks if `x` is a construct. |
+
+---
+
+##### ~~`isConstruct`~~ <a name="isConstruct" id="@cdklabs/cdk-ssm-documents.IncidentResponse.isConstruct"></a>
+
+```typescript
+import { IncidentResponse } from '@cdklabs/cdk-ssm-documents'
+
+IncidentResponse.isConstruct(x: any)
+```
+
+Checks if `x` is a construct.
+
+###### `x`<sup>Required</sup> <a name="x" id="@cdklabs/cdk-ssm-documents.IncidentResponse.isConstruct.parameter.x"></a>
+
+- *Type:* any
+
+Any object.
+
+---
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#@cdklabs/cdk-ssm-documents.IncidentResponse.property.node">node</a></code> | <code>constructs.Node</code> | The tree node. |
+| <code><a href="#@cdklabs/cdk-ssm-documents.IncidentResponse.property.cfnResponsePlan">cfnResponsePlan</a></code> | <code>aws-cdk-lib.aws_ssmincidents.CfnResponsePlan</code> | *No description.* |
+
+---
+
+##### `node`<sup>Required</sup> <a name="node" id="@cdklabs/cdk-ssm-documents.IncidentResponse.property.node"></a>
+
+```typescript
+public readonly node: Node;
+```
+
+- *Type:* constructs.Node
+
+The tree node.
+
+---
+
+##### `cfnResponsePlan`<sup>Required</sup> <a name="cfnResponsePlan" id="@cdklabs/cdk-ssm-documents.IncidentResponse.property.cfnResponsePlan"></a>
+
+```typescript
+public readonly cfnResponsePlan: CfnResponsePlan;
+```
+
+- *Type:* aws-cdk-lib.aws_ssmincidents.CfnResponsePlan
 
 ---
 
@@ -22385,6 +22547,194 @@ To use the Digest method, SSM Agent version 3.0.1181.0 or later must be installe
 
 ---
 
+### IncidentResponseProps <a name="IncidentResponseProps" id="@cdklabs/cdk-ssm-documents.IncidentResponseProps"></a>
+
+Provides props IncidentResponse.
+
+#### Initializer <a name="Initializer" id="@cdklabs/cdk-ssm-documents.IncidentResponseProps.Initializer"></a>
+
+```typescript
+import { IncidentResponseProps } from '@cdklabs/cdk-ssm-documents'
+
+const incidentResponseProps: IncidentResponseProps = { ... }
+```
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#@cdklabs/cdk-ssm-documents.IncidentResponseProps.property.actions">actions</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.IncidentResponseAction">IncidentResponseAction</a>[]</code> | The actions that the response plan starts at the beginning of an incident. |
+| <code><a href="#@cdklabs/cdk-ssm-documents.IncidentResponseProps.property.incidentTemplate">incidentTemplate</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.IncidentTemplate">IncidentTemplate</a></code> | Details used to create an incident when using this response plan. |
+| <code><a href="#@cdklabs/cdk-ssm-documents.IncidentResponseProps.property.chatChannel">chatChannel</a></code> | <code>aws-cdk-lib.aws_ssmincidents.CfnResponsePlan.ChatChannelProperty \| aws-cdk-lib.IResolvable</code> | The AWS Chatbot chat channel used for collaboration during an incident. |
+| <code><a href="#@cdklabs/cdk-ssm-documents.IncidentResponseProps.property.displayName">displayName</a></code> | <code>string</code> | The human readable name of the response plan. |
+| <code><a href="#@cdklabs/cdk-ssm-documents.IncidentResponseProps.property.engagements">engagements</a></code> | <code>string[]</code> | The contacts and escalation plans that the response plan engages during an incident. |
+| <code><a href="#@cdklabs/cdk-ssm-documents.IncidentResponseProps.property.tags">tags</a></code> | <code>aws-cdk-lib.CfnTag[]</code> | An array of key-value pairs to apply to this resource. |
+
+---
+
+##### `actions`<sup>Required</sup> <a name="actions" id="@cdklabs/cdk-ssm-documents.IncidentResponseProps.property.actions"></a>
+
+```typescript
+public readonly actions: IncidentResponseAction[];
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.IncidentResponseAction">IncidentResponseAction</a>[]
+
+The actions that the response plan starts at the beginning of an incident.
+
+---
+
+##### `incidentTemplate`<sup>Required</sup> <a name="incidentTemplate" id="@cdklabs/cdk-ssm-documents.IncidentResponseProps.property.incidentTemplate"></a>
+
+```typescript
+public readonly incidentTemplate: IncidentTemplate;
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.IncidentTemplate">IncidentTemplate</a>
+
+Details used to create an incident when using this response plan.
+
+---
+
+##### `chatChannel`<sup>Optional</sup> <a name="chatChannel" id="@cdklabs/cdk-ssm-documents.IncidentResponseProps.property.chatChannel"></a>
+
+```typescript
+public readonly chatChannel: ChatChannelProperty | IResolvable;
+```
+
+- *Type:* aws-cdk-lib.aws_ssmincidents.CfnResponsePlan.ChatChannelProperty | aws-cdk-lib.IResolvable
+
+The AWS Chatbot chat channel used for collaboration during an incident.
+
+> [http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssmincidents-responseplan.html#cfn-ssmincidents-responseplan-chatchannel](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssmincidents-responseplan.html#cfn-ssmincidents-responseplan-chatchannel)
+
+---
+
+##### `displayName`<sup>Optional</sup> <a name="displayName" id="@cdklabs/cdk-ssm-documents.IncidentResponseProps.property.displayName"></a>
+
+```typescript
+public readonly displayName: string;
+```
+
+- *Type:* string
+
+The human readable name of the response plan.
+
+> [http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssmincidents-responseplan.html#cfn-ssmincidents-responseplan-displayname](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssmincidents-responseplan.html#cfn-ssmincidents-responseplan-displayname)
+
+---
+
+##### `engagements`<sup>Optional</sup> <a name="engagements" id="@cdklabs/cdk-ssm-documents.IncidentResponseProps.property.engagements"></a>
+
+```typescript
+public readonly engagements: string[];
+```
+
+- *Type:* string[]
+
+The contacts and escalation plans that the response plan engages during an incident.
+
+> [http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssmincidents-responseplan.html#cfn-ssmincidents-responseplan-engagements](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssmincidents-responseplan.html#cfn-ssmincidents-responseplan-engagements)
+
+---
+
+##### `tags`<sup>Optional</sup> <a name="tags" id="@cdklabs/cdk-ssm-documents.IncidentResponseProps.property.tags"></a>
+
+```typescript
+public readonly tags: CfnTag[];
+```
+
+- *Type:* aws-cdk-lib.CfnTag[]
+
+An array of key-value pairs to apply to this resource.
+
+For more information, see [Tag](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-resource-tags.html) .
+
+> [http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssmincidents-responseplan.html#cfn-ssmincidents-responseplan-tags](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssmincidents-responseplan.html#cfn-ssmincidents-responseplan-tags)
+
+---
+
+### IncidentTemplateProps <a name="IncidentTemplateProps" id="@cdklabs/cdk-ssm-documents.IncidentTemplateProps"></a>
+
+Provides L2 construct for https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssmincidents-responseplan-incidenttemplate.html.
+
+#### Initializer <a name="Initializer" id="@cdklabs/cdk-ssm-documents.IncidentTemplateProps.Initializer"></a>
+
+```typescript
+import { IncidentTemplateProps } from '@cdklabs/cdk-ssm-documents'
+
+const incidentTemplateProps: IncidentTemplateProps = { ... }
+```
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#@cdklabs/cdk-ssm-documents.IncidentTemplateProps.property.dedupeString">dedupeString</a></code> | <code>string</code> | Used to create only one incident record for an incident. |
+| <code><a href="#@cdklabs/cdk-ssm-documents.IncidentTemplateProps.property.incidentTags">incidentTags</a></code> | <code>aws-cdk-lib.IResolvable \| aws-cdk-lib.IResolvable \| aws-cdk-lib.CfnTag[]</code> | `CfnResponsePlan.IncidentTemplateProperty.IncidentTags`. |
+| <code><a href="#@cdklabs/cdk-ssm-documents.IncidentTemplateProps.property.notificationTargets">notificationTargets</a></code> | <code>aws-cdk-lib.IResolvable \| aws-cdk-lib.aws_ssmincidents.CfnResponsePlan.NotificationTargetItemProperty \| aws-cdk-lib.IResolvable[]</code> | The SNS targets that AWS Chatbot uses to notify the chat channel of updates to an incident. |
+| <code><a href="#@cdklabs/cdk-ssm-documents.IncidentTemplateProps.property.summary">summary</a></code> | <code>string</code> | The summary describes what has happened during the incident. |
+
+---
+
+##### `dedupeString`<sup>Optional</sup> <a name="dedupeString" id="@cdklabs/cdk-ssm-documents.IncidentTemplateProps.property.dedupeString"></a>
+
+```typescript
+public readonly dedupeString: string;
+```
+
+- *Type:* string
+
+Used to create only one incident record for an incident.
+
+> [http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssmincidents-responseplan-incidenttemplate.html#cfn-ssmincidents-responseplan-incidenttemplate-dedupestring](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssmincidents-responseplan-incidenttemplate.html#cfn-ssmincidents-responseplan-incidenttemplate-dedupestring)
+
+---
+
+##### `incidentTags`<sup>Optional</sup> <a name="incidentTags" id="@cdklabs/cdk-ssm-documents.IncidentTemplateProps.property.incidentTags"></a>
+
+```typescript
+public readonly incidentTags: IResolvable | IResolvable | CfnTag[];
+```
+
+- *Type:* aws-cdk-lib.IResolvable | aws-cdk-lib.IResolvable | aws-cdk-lib.CfnTag[]
+
+`CfnResponsePlan.IncidentTemplateProperty.IncidentTags`.
+
+> [http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssmincidents-responseplan-incidenttemplate.html#cfn-ssmincidents-responseplan-incidenttemplate-incidenttags](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssmincidents-responseplan-incidenttemplate.html#cfn-ssmincidents-responseplan-incidenttemplate-incidenttags)
+
+---
+
+##### `notificationTargets`<sup>Optional</sup> <a name="notificationTargets" id="@cdklabs/cdk-ssm-documents.IncidentTemplateProps.property.notificationTargets"></a>
+
+```typescript
+public readonly notificationTargets: IResolvable | NotificationTargetItemProperty | IResolvable[];
+```
+
+- *Type:* aws-cdk-lib.IResolvable | aws-cdk-lib.aws_ssmincidents.CfnResponsePlan.NotificationTargetItemProperty | aws-cdk-lib.IResolvable[]
+
+The SNS targets that AWS Chatbot uses to notify the chat channel of updates to an incident.
+
+You can also make updates to the incident through the chat channel using the SNS topics.
+
+> [http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssmincidents-responseplan-incidenttemplate.html#cfn-ssmincidents-responseplan-incidenttemplate-notificationtargets](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssmincidents-responseplan-incidenttemplate.html#cfn-ssmincidents-responseplan-incidenttemplate-notificationtargets)
+
+---
+
+##### `summary`<sup>Optional</sup> <a name="summary" id="@cdklabs/cdk-ssm-documents.IncidentTemplateProps.property.summary"></a>
+
+```typescript
+public readonly summary: string;
+```
+
+- *Type:* string
+
+The summary describes what has happened during the incident.
+
+> [http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssmincidents-responseplan-incidenttemplate.html#cfn-ssmincidents-responseplan-incidenttemplate-summary](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssmincidents-responseplan-incidenttemplate.html#cfn-ssmincidents-responseplan-incidenttemplate-summary)
+
+---
+
 ### InputProps <a name="InputProps" id="@cdklabs/cdk-ssm-documents.InputProps"></a>
 
 Properties of inputs supported by SSM documents.
@@ -26672,6 +27022,55 @@ public readonly windowsUpdates: IStringVariable;
 - *Type:* <a href="#@cdklabs/cdk-ssm-documents.IStringVariable">IStringVariable</a>
 
 (Optional) Collect metadata for all Windows updates.
+
+---
+
+### SsmAutomationProps <a name="SsmAutomationProps" id="@cdklabs/cdk-ssm-documents.SsmAutomationProps"></a>
+
+#### Initializer <a name="Initializer" id="@cdklabs/cdk-ssm-documents.SsmAutomationProps.Initializer"></a>
+
+```typescript
+import { SsmAutomationProps } from '@cdklabs/cdk-ssm-documents'
+
+const ssmAutomationProps: SsmAutomationProps = { ... }
+```
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#@cdklabs/cdk-ssm-documents.SsmAutomationProps.property.parameters">parameters</a></code> | <code>{[ key: string ]: <a href="#@cdklabs/cdk-ssm-documents.IGenericVariable">IGenericVariable</a>}</code> | Specify either StringVariables or HardCodedValues. |
+| <code><a href="#@cdklabs/cdk-ssm-documents.SsmAutomationProps.property.targetAccount">targetAccount</a></code> | <code>string</code> | The account that the automation document will be run in. |
+
+---
+
+##### `parameters`<sup>Required</sup> <a name="parameters" id="@cdklabs/cdk-ssm-documents.SsmAutomationProps.property.parameters"></a>
+
+```typescript
+public readonly parameters: {[ key: string ]: IGenericVariable};
+```
+
+- *Type:* {[ key: string ]: <a href="#@cdklabs/cdk-ssm-documents.IGenericVariable">IGenericVariable</a>}
+
+Specify either StringVariables or HardCodedValues.
+
+> [: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssmincidents-responseplan-ssmparameter.html](: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssmincidents-responseplan-ssmparameter.html)
+
+---
+
+##### `targetAccount`<sup>Optional</sup> <a name="targetAccount" id="@cdklabs/cdk-ssm-documents.SsmAutomationProps.property.targetAccount"></a>
+
+```typescript
+public readonly targetAccount: string;
+```
+
+- *Type:* string
+
+The account that the automation document will be run in.
+
+This can be in either the management account or an application account.
+
+> [: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssmincidents-responseplan-ssmautomation.html#cfn-ssmincidents-responseplan-ssmautomation-targetaccount](: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssmincidents-responseplan-ssmautomation.html#cfn-ssmincidents-responseplan-ssmautomation-targetaccount)
 
 ---
 
@@ -34528,6 +34927,283 @@ public readonly authMethod: AuthMethod;
 ```
 
 - *Type:* <a href="#@cdklabs/cdk-ssm-documents.AuthMethod">AuthMethod</a>
+
+---
+
+
+### IncidentResponseAction <a name="IncidentResponseAction" id="@cdklabs/cdk-ssm-documents.IncidentResponseAction"></a>
+
+The Action property type specifies the configuration to launch.
+
+> [: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssmincidents-responseplan-action.html](: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssmincidents-responseplan-action.html)
+
+#### Initializers <a name="Initializers" id="@cdklabs/cdk-ssm-documents.IncidentResponseAction.Initializer"></a>
+
+```typescript
+import { IncidentResponseAction } from '@cdklabs/cdk-ssm-documents'
+
+new IncidentResponseAction(cfnEntry: ActionProperty)
+```
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#@cdklabs/cdk-ssm-documents.IncidentResponseAction.Initializer.parameter.cfnEntry">cfnEntry</a></code> | <code>aws-cdk-lib.aws_ssmincidents.CfnResponsePlan.ActionProperty</code> | *No description.* |
+
+---
+
+##### `cfnEntry`<sup>Required</sup> <a name="cfnEntry" id="@cdklabs/cdk-ssm-documents.IncidentResponseAction.Initializer.parameter.cfnEntry"></a>
+
+- *Type:* aws-cdk-lib.aws_ssmincidents.CfnResponsePlan.ActionProperty
+
+---
+
+
+#### Static Functions <a name="Static Functions" id="Static Functions"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#@cdklabs/cdk-ssm-documents.IncidentResponseAction.ssmAutomation">ssmAutomation</a></code> | Specify the AutomationDocument to use for the action property. |
+| <code><a href="#@cdklabs/cdk-ssm-documents.IncidentResponseAction.ssmAutomationEscapeHatch">ssmAutomationEscapeHatch</a></code> | *No description.* |
+
+---
+
+##### `ssmAutomation` <a name="ssmAutomation" id="@cdklabs/cdk-ssm-documents.IncidentResponseAction.ssmAutomation"></a>
+
+```typescript
+import { IncidentResponseAction } from '@cdklabs/cdk-ssm-documents'
+
+IncidentResponseAction.ssmAutomation(automationDocument: AutomationDocument, role: Role, props?: SsmAutomationProps)
+```
+
+Specify the AutomationDocument to use for the action property.
+
+###### `automationDocument`<sup>Required</sup> <a name="automationDocument" id="@cdklabs/cdk-ssm-documents.IncidentResponseAction.ssmAutomation.parameter.automationDocument"></a>
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AutomationDocument">AutomationDocument</a>
+
+---
+
+###### `role`<sup>Required</sup> <a name="role" id="@cdklabs/cdk-ssm-documents.IncidentResponseAction.ssmAutomation.parameter.role"></a>
+
+- *Type:* aws-cdk-lib.aws_iam.Role
+
+---
+
+###### `props`<sup>Optional</sup> <a name="props" id="@cdklabs/cdk-ssm-documents.IncidentResponseAction.ssmAutomation.parameter.props"></a>
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.SsmAutomationProps">SsmAutomationProps</a>
+
+---
+
+##### `ssmAutomationEscapeHatch` <a name="ssmAutomationEscapeHatch" id="@cdklabs/cdk-ssm-documents.IncidentResponseAction.ssmAutomationEscapeHatch"></a>
+
+```typescript
+import { IncidentResponseAction } from '@cdklabs/cdk-ssm-documents'
+
+IncidentResponseAction.ssmAutomationEscapeHatch(ssmAutomationProperty: SsmAutomationProperty)
+```
+
+###### `ssmAutomationProperty`<sup>Required</sup> <a name="ssmAutomationProperty" id="@cdklabs/cdk-ssm-documents.IncidentResponseAction.ssmAutomationEscapeHatch.parameter.ssmAutomationProperty"></a>
+
+- *Type:* aws-cdk-lib.aws_ssmincidents.CfnResponsePlan.SsmAutomationProperty
+
+---
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#@cdklabs/cdk-ssm-documents.IncidentResponseAction.property.cfnEntry">cfnEntry</a></code> | <code>aws-cdk-lib.aws_ssmincidents.CfnResponsePlan.ActionProperty</code> | *No description.* |
+
+---
+
+##### `cfnEntry`<sup>Required</sup> <a name="cfnEntry" id="@cdklabs/cdk-ssm-documents.IncidentResponseAction.property.cfnEntry"></a>
+
+```typescript
+public readonly cfnEntry: ActionProperty;
+```
+
+- *Type:* aws-cdk-lib.aws_ssmincidents.CfnResponsePlan.ActionProperty
+
+---
+
+
+### IncidentTemplate <a name="IncidentTemplate" id="@cdklabs/cdk-ssm-documents.IncidentTemplate"></a>
+
+Provides L2 construct for https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssmincidents-responseplan-incidenttemplate.html.
+
+#### Initializers <a name="Initializers" id="@cdklabs/cdk-ssm-documents.IncidentTemplate.Initializer"></a>
+
+```typescript
+import { IncidentTemplate } from '@cdklabs/cdk-ssm-documents'
+
+new IncidentTemplate(impact: number, title: string, props: IncidentTemplateProps)
+```
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#@cdklabs/cdk-ssm-documents.IncidentTemplate.Initializer.parameter.impact">impact</a></code> | <code>number</code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.IncidentTemplate.Initializer.parameter.title">title</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.IncidentTemplate.Initializer.parameter.props">props</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.IncidentTemplateProps">IncidentTemplateProps</a></code> | *No description.* |
+
+---
+
+##### `impact`<sup>Required</sup> <a name="impact" id="@cdklabs/cdk-ssm-documents.IncidentTemplate.Initializer.parameter.impact"></a>
+
+- *Type:* number
+
+---
+
+##### `title`<sup>Required</sup> <a name="title" id="@cdklabs/cdk-ssm-documents.IncidentTemplate.Initializer.parameter.title"></a>
+
+- *Type:* string
+
+---
+
+##### `props`<sup>Required</sup> <a name="props" id="@cdklabs/cdk-ssm-documents.IncidentTemplate.Initializer.parameter.props"></a>
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.IncidentTemplateProps">IncidentTemplateProps</a>
+
+---
+
+
+#### Static Functions <a name="Static Functions" id="Static Functions"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#@cdklabs/cdk-ssm-documents.IncidentTemplate.critical">critical</a></code> | Critical impact typically relates to full application failure that impacts many to all customers. |
+| <code><a href="#@cdklabs/cdk-ssm-documents.IncidentTemplate.high">high</a></code> | High impact denotes partial application failure with impact to many customers. |
+| <code><a href="#@cdklabs/cdk-ssm-documents.IncidentTemplate.low">low</a></code> | Low impact denotes that customers may not be impacted by the problem yet. |
+| <code><a href="#@cdklabs/cdk-ssm-documents.IncidentTemplate.medium">medium</a></code> | Medium impact denotes that the application is providing reduced service to customers. |
+| <code><a href="#@cdklabs/cdk-ssm-documents.IncidentTemplate.noImpact">noImpact</a></code> | No impact denotes that customers aren't currently impacted but urgent action is needed to avoid impact. |
+
+---
+
+##### `critical` <a name="critical" id="@cdklabs/cdk-ssm-documents.IncidentTemplate.critical"></a>
+
+```typescript
+import { IncidentTemplate } from '@cdklabs/cdk-ssm-documents'
+
+IncidentTemplate.critical(title: string, props: IncidentTemplateProps)
+```
+
+Critical impact typically relates to full application failure that impacts many to all customers.
+
+###### `title`<sup>Required</sup> <a name="title" id="@cdklabs/cdk-ssm-documents.IncidentTemplate.critical.parameter.title"></a>
+
+- *Type:* string
+
+---
+
+###### `props`<sup>Required</sup> <a name="props" id="@cdklabs/cdk-ssm-documents.IncidentTemplate.critical.parameter.props"></a>
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.IncidentTemplateProps">IncidentTemplateProps</a>
+
+---
+
+##### `high` <a name="high" id="@cdklabs/cdk-ssm-documents.IncidentTemplate.high"></a>
+
+```typescript
+import { IncidentTemplate } from '@cdklabs/cdk-ssm-documents'
+
+IncidentTemplate.high(title: string, props: IncidentTemplateProps)
+```
+
+High impact denotes partial application failure with impact to many customers.
+
+###### `title`<sup>Required</sup> <a name="title" id="@cdklabs/cdk-ssm-documents.IncidentTemplate.high.parameter.title"></a>
+
+- *Type:* string
+
+---
+
+###### `props`<sup>Required</sup> <a name="props" id="@cdklabs/cdk-ssm-documents.IncidentTemplate.high.parameter.props"></a>
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.IncidentTemplateProps">IncidentTemplateProps</a>
+
+---
+
+##### `low` <a name="low" id="@cdklabs/cdk-ssm-documents.IncidentTemplate.low"></a>
+
+```typescript
+import { IncidentTemplate } from '@cdklabs/cdk-ssm-documents'
+
+IncidentTemplate.low(title: string, props: IncidentTemplateProps)
+```
+
+Low impact denotes that customers may not be impacted by the problem yet.
+
+###### `title`<sup>Required</sup> <a name="title" id="@cdklabs/cdk-ssm-documents.IncidentTemplate.low.parameter.title"></a>
+
+- *Type:* string
+
+---
+
+###### `props`<sup>Required</sup> <a name="props" id="@cdklabs/cdk-ssm-documents.IncidentTemplate.low.parameter.props"></a>
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.IncidentTemplateProps">IncidentTemplateProps</a>
+
+---
+
+##### `medium` <a name="medium" id="@cdklabs/cdk-ssm-documents.IncidentTemplate.medium"></a>
+
+```typescript
+import { IncidentTemplate } from '@cdklabs/cdk-ssm-documents'
+
+IncidentTemplate.medium(title: string, props: IncidentTemplateProps)
+```
+
+Medium impact denotes that the application is providing reduced service to customers.
+
+###### `title`<sup>Required</sup> <a name="title" id="@cdklabs/cdk-ssm-documents.IncidentTemplate.medium.parameter.title"></a>
+
+- *Type:* string
+
+---
+
+###### `props`<sup>Required</sup> <a name="props" id="@cdklabs/cdk-ssm-documents.IncidentTemplate.medium.parameter.props"></a>
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.IncidentTemplateProps">IncidentTemplateProps</a>
+
+---
+
+##### `noImpact` <a name="noImpact" id="@cdklabs/cdk-ssm-documents.IncidentTemplate.noImpact"></a>
+
+```typescript
+import { IncidentTemplate } from '@cdklabs/cdk-ssm-documents'
+
+IncidentTemplate.noImpact(title: string, props: IncidentTemplateProps)
+```
+
+No impact denotes that customers aren't currently impacted but urgent action is needed to avoid impact.
+
+###### `title`<sup>Required</sup> <a name="title" id="@cdklabs/cdk-ssm-documents.IncidentTemplate.noImpact.parameter.title"></a>
+
+- *Type:* string
+
+---
+
+###### `props`<sup>Required</sup> <a name="props" id="@cdklabs/cdk-ssm-documents.IncidentTemplate.noImpact.parameter.props"></a>
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.IncidentTemplateProps">IncidentTemplateProps</a>
+
+---
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#@cdklabs/cdk-ssm-documents.IncidentTemplate.property.cfnEntry">cfnEntry</a></code> | <code>aws-cdk-lib.aws_ssmincidents.CfnResponsePlan.IncidentTemplateProperty</code> | *No description.* |
+
+---
+
+##### `cfnEntry`<sup>Required</sup> <a name="cfnEntry" id="@cdklabs/cdk-ssm-documents.IncidentTemplate.property.cfnEntry"></a>
+
+```typescript
+public readonly cfnEntry: IncidentTemplateProperty;
+```
+
+- *Type:* aws-cdk-lib.aws_ssmincidents.CfnResponsePlan.IncidentTemplateProperty
 
 ---
 

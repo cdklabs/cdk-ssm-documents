@@ -23,6 +23,8 @@ export * from './domain/enum/install-uninstall-repair';
 export * from './construct/document-component';
 export * from './construct/synth-utils';
 
+export * from './incident-response/incident-response';
+
 export * from './parent-steps/automation-step';
 export * from './parent-steps/command-step';
 export * from './parent-steps/step';
