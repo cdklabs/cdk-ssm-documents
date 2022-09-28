@@ -2,7 +2,8 @@ const { awscdk } = require('projen');
 
 const project = new awscdk.AwsCdkConstructLibrary({
   author: 'Amazon Web Services',
-  cdkVersion: '2.0.0',
+  cdkVersion: '2.27.0',
+  cdkVersionPinning: false,
   tsconfig: {
     compilerOptions: {
       isolatedModules: true,
