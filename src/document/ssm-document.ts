@@ -112,6 +112,7 @@ export abstract class SsmDocument extends Construct {
             return JSON.parse(JSON.stringify(doc));
           },
         }),
+        name: this.documentName,
         documentFormat: isYaml ? 'YAML' : 'JSON',
         documentType: this.documentType(),
         tags: [{ key: 'CdkGenerated', value: 'true' }, ...(this.props.tags || [])],

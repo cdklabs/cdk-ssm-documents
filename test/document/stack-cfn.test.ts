@@ -47,6 +47,7 @@ describe('AutomationDocument', function () {
           MyAutomationDocC39268E9: {
             Type: 'AWS::SSM::Document',
             Properties: {
+              Name: 'MyDoc',
               Content: {
                 description: 'MyDoc',
                 schemaVersion: '0.3',
