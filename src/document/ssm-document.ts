@@ -70,6 +70,12 @@ export interface SsmDocumentProps {
      */
   readonly targetType?: string;
   /**
+   * If the document resource you specify in your template already exists, this parameter determines whether a new version of the existing document is created, or the existing document is replaced. `Replace` is the default method. If you specify `NewVersion` for the `UpdateMethod` parameter, and the `Name` of the document does not match an existing resource, a new document is created. When you specify `NewVersion` , the default version of the document is changed to the newly created version.
+   *
+   * @link http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-document.html#cfn-ssm-document-updatemethod
+   */
+  readonly updateMethod?: string;
+  /**
      * `AWS::SSM::Document.VersionName`.
      *
      * @external
@@ -112,7 +118,7 @@ export abstract class SsmDocument extends Construct {
             return JSON.parse(JSON.stringify(doc));
           },
         }),
-        name: this.documentName,
+        name: this.props.documentName,
         documentFormat: isYaml ? 'YAML' : 'JSON',
         documentType: this.documentType(),
         tags: [{ key: 'CdkGenerated', value: 'true' }, ...(this.props.tags || [])],
