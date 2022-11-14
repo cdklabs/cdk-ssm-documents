@@ -1,8 +1,6 @@
 import { strict as assert } from 'assert';
 import { Stack } from 'aws-cdk-lib';
-import { AwsApiStep, DataTypeEnum, StringVariable, MockAwsInvoker, ResponseCode } from '../../../lib';
-import { AutomationStepSimulation } from '../../../lib/simulation/automation-step-simulation';
-
+import { AutomationStepSimulation, AwsService, AwsApiStep, DataTypeEnum, StringVariable, MockAwsInvoker, ResponseCode } from '../../../lib';
 
 describe('AwsApiStep', function() {
   describe('#invoke()', function() {
@@ -17,7 +15,7 @@ describe('AwsApiStep', function() {
           name: 'DisplayName',
           selector: '$.Owner.DisplayName',
         }],
-        service: 'S3',
+        service: AwsService.S3,
         pascalCaseApi: 'ListBuckets',
         apiParams: { Filter: [{ SomeFilter: new StringVariable('SomeOutput.OutKey') }] },
       });
@@ -39,7 +37,7 @@ describe('AwsApiStep', function() {
           name: 'DisplayName',
           selector: '$.Owner.DisplayName',
         }],
-        service: 'S3',
+        service: AwsService.S3,
         pascalCaseApi: 'ListBuckets',
         apiParams: { Filter: [{ SomeFilter: new StringVariable('SomeOutput.OutKey') }] },
       });
@@ -60,11 +58,10 @@ describe('AwsApiStep', function() {
           name: 'DisplayName',
           selector: '$.Owner.DisplayName',
         }],
-        service: 'S3',
+        service: AwsService.S3,
         pascalCaseApi: 'ListBuckets',
         apiParams: { Filter: [{ SomeFilter: new StringVariable('SomeOutput.OutKey') }] },
       });
-      step.nextStep = step;
       // Type is marked as string, but actually returns number.
       assert.equal(new AutomationStepSimulation(step, { awsInvoker: mockInvoker }).invoke({ 'SomeOutput.OutKey': 3 }).responseCode, ResponseCode.FAILED);
     });
@@ -80,7 +77,7 @@ describe('AwsApiStep', function() {
           name: 'DisplayName',
           selector: '$.Owner.DisplayName',
         }],
-        service: 'S3',
+        service: AwsService.S3,
         pascalCaseApi: 'ListBuckets',
         apiParams: { Filter: [{ SomeFilter: new StringVariable('SomeOutput.OutKey') }] },
       });
@@ -95,7 +92,7 @@ describe('AwsApiStep', function() {
               SomeFilter: '{{ SomeOutput.OutKey }}',
             },
           ],
-          Service: 'S3',
+          Service: 's3',
         },
         name: 'MyS3List',
         outputs: [

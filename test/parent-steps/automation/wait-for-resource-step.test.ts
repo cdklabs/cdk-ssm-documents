@@ -1,7 +1,6 @@
 import { strict as assert } from 'assert';
 import { Stack } from 'aws-cdk-lib';
-import { MockAwsInvoker, ResponseCode, WaitForResourceStep } from '../../../lib';
-import { AutomationStepSimulation } from '../../../lib/simulation/automation-step-simulation';
+import { AutomationStepSimulation, AwsService, MockAwsInvoker, ResponseCode, WaitForResourceStep } from '../../../lib';
 
 describe('WaitForResourceStep', function() {
   describe('#invoke()', function() {
@@ -11,7 +10,7 @@ describe('WaitForResourceStep', function() {
       const step = new WaitForResourceStep(new Stack(), 'id', {
         selector: '$.Owner.DisplayName',
         desiredValues: ['MyDisplayName', 'blabla'],
-        service: 'S3',
+        service: AwsService.S3,
         name: 'S3List',
         pascalCaseApi: 'listBuckets',
         apiParams: {},
@@ -31,7 +30,7 @@ describe('WaitForResourceStep', function() {
       const step = new WaitForResourceStep(new Stack(), 'id', {
         selector: '$.Owner.DisplayName',
         desiredValues: ['MyDisplayName', 'blabla'],
-        service: 'S3',
+        service: AwsService.S3,
         name: 'S3List',
         pascalCaseApi: 'listBuckets',
         apiParams: {},
@@ -51,7 +50,7 @@ describe('WaitForResourceStep', function() {
       const step = new WaitForResourceStep(new Stack(), 'id', {
         selector: '$.Owner.DisplayName',
         desiredValues: ['foobar', 'blabla'],
-        service: 'S3',
+        service: AwsService.S3,
         name: 'S3List',
         pascalCaseApi: 'listBuckets',
         apiParams: {},
@@ -69,7 +68,7 @@ describe('WaitForResourceStep', function() {
       const step = new WaitForResourceStep(new Stack(), 'id', {
         selector: '$.Owner.DisplayName',
         desiredValues: ['MyDisplayName', 'blabla'],
-        service: 'S3',
+        service: AwsService.S3,
         name: 'S3List',
         pascalCaseApi: 'listBuckets',
         apiParams: {},
@@ -85,7 +84,7 @@ describe('WaitForResourceStep', function() {
             'blabla',
           ],
           PropertySelector: '$.Owner.DisplayName',
-          Service: 'S3',
+          Service: 's3',
         },
         timeoutSeconds: 10,
         name: 'S3List',

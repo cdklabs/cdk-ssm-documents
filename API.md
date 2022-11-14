@@ -851,7 +851,7 @@ Any object.
 | <code><a href="#@cdklabs/cdk-ssm-documents.AssertAwsResourceStep.property.javaScriptApi">javaScriptApi</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#@cdklabs/cdk-ssm-documents.AssertAwsResourceStep.property.outputs">outputs</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.Output">Output</a>[]</code> | *No description.* |
 | <code><a href="#@cdklabs/cdk-ssm-documents.AssertAwsResourceStep.property.pascalCaseApi">pascalCaseApi</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#@cdklabs/cdk-ssm-documents.AssertAwsResourceStep.property.service">service</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.AssertAwsResourceStep.property.service">service</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a></code> | *No description.* |
 | <code><a href="#@cdklabs/cdk-ssm-documents.AssertAwsResourceStep.property.desiredValues">desiredValues</a></code> | <code>string[]</code> | *No description.* |
 | <code><a href="#@cdklabs/cdk-ssm-documents.AssertAwsResourceStep.property.selector">selector</a></code> | <code>string</code> | *No description.* |
 
@@ -1042,10 +1042,10 @@ public readonly pascalCaseApi: string;
 ##### `service`<sup>Required</sup> <a name="service" id="@cdklabs/cdk-ssm-documents.AssertAwsResourceStep.property.service"></a>
 
 ```typescript
-public readonly service: string;
+public readonly service: AwsService;
 ```
 
-- *Type:* string
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a>
 
 ---
 
@@ -1818,7 +1818,7 @@ Any object.
 | <code><a href="#@cdklabs/cdk-ssm-documents.AwsApiStep.property.javaScriptApi">javaScriptApi</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#@cdklabs/cdk-ssm-documents.AwsApiStep.property.outputs">outputs</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.Output">Output</a>[]</code> | *No description.* |
 | <code><a href="#@cdklabs/cdk-ssm-documents.AwsApiStep.property.pascalCaseApi">pascalCaseApi</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#@cdklabs/cdk-ssm-documents.AwsApiStep.property.service">service</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.AwsApiStep.property.service">service</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a></code> | *No description.* |
 
 ---
 
@@ -2007,10 +2007,10 @@ public readonly pascalCaseApi: string;
 ##### `service`<sup>Required</sup> <a name="service" id="@cdklabs/cdk-ssm-documents.AwsApiStep.property.service"></a>
 
 ```typescript
-public readonly service: string;
+public readonly service: AwsService;
 ```
 
-- *Type:* string
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a>
 
 ---
 
@@ -15408,7 +15408,7 @@ Any object.
 | <code><a href="#@cdklabs/cdk-ssm-documents.WaitForResourceStep.property.javaScriptApi">javaScriptApi</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#@cdklabs/cdk-ssm-documents.WaitForResourceStep.property.outputs">outputs</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.Output">Output</a>[]</code> | *No description.* |
 | <code><a href="#@cdklabs/cdk-ssm-documents.WaitForResourceStep.property.pascalCaseApi">pascalCaseApi</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#@cdklabs/cdk-ssm-documents.WaitForResourceStep.property.service">service</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.WaitForResourceStep.property.service">service</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a></code> | *No description.* |
 | <code><a href="#@cdklabs/cdk-ssm-documents.WaitForResourceStep.property.desiredValues">desiredValues</a></code> | <code>string[]</code> | *No description.* |
 | <code><a href="#@cdklabs/cdk-ssm-documents.WaitForResourceStep.property.selector">selector</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#@cdklabs/cdk-ssm-documents.WaitForResourceStep.property.sleepIntervalMillis">sleepIntervalMillis</a></code> | <code>number</code> | *No description.* |
@@ -15600,10 +15600,10 @@ public readonly pascalCaseApi: string;
 ##### `service`<sup>Required</sup> <a name="service" id="@cdklabs/cdk-ssm-documents.WaitForResourceStep.property.service"></a>
 
 ```typescript
-public readonly service: string;
+public readonly service: AwsService;
 ```
 
-- *Type:* string
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a>
 
 ---
 
@@ -16245,7 +16245,7 @@ const assertAwsResourceStepProps: AssertAwsResourceStepProps = { ... }
 | <code><a href="#@cdklabs/cdk-ssm-documents.AssertAwsResourceStepProps.property.timeoutSeconds">timeoutSeconds</a></code> | <code>number</code> | (Optional) timeout seconds to run this step. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.AssertAwsResourceStepProps.property.apiParams">apiParams</a></code> | <code>{[ key: string ]: any}</code> | (Required) API Params to submit with the request to the api. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.AssertAwsResourceStepProps.property.pascalCaseApi">pascalCaseApi</a></code> | <code>string</code> | (Required) The AWS api represented in PascalCase. |
-| <code><a href="#@cdklabs/cdk-ssm-documents.AssertAwsResourceStepProps.property.service">service</a></code> | <code>string</code> | (Required) The AWS service to be invoked. |
+| <code><a href="#@cdklabs/cdk-ssm-documents.AssertAwsResourceStepProps.property.service">service</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a></code> | (Required) The AWS service to be invoked. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.AssertAwsResourceStepProps.property.javaScriptApi">javaScriptApi</a></code> | <code>string</code> | (Optional) The api as represented the AWS JavaScript API. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.AssertAwsResourceStepProps.property.desiredValues">desiredValues</a></code> | <code>string[]</code> | (Required) Value extracted from AWS response desired to be one of these desired values. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.AssertAwsResourceStepProps.property.selector">selector</a></code> | <code>string</code> | (Required) Json path selector to extract value from AWS response. |
@@ -16435,10 +16435,10 @@ DescribeInstances
 ##### `service`<sup>Required</sup> <a name="service" id="@cdklabs/cdk-ssm-documents.AssertAwsResourceStepProps.property.service"></a>
 
 ```typescript
-public readonly service: string;
+public readonly service: AwsService;
 ```
 
-- *Type:* string
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a>
 
 (Required) The AWS service to be invoked.
 
@@ -16447,7 +16447,7 @@ public readonly service: string;
 *Example*
 
 ```typescript
-ec2
+AwsService.S3
 ```
 
 
@@ -17035,7 +17035,7 @@ const awsApiStepProps: AwsApiStepProps = { ... }
 | <code><a href="#@cdklabs/cdk-ssm-documents.AwsApiStepProps.property.timeoutSeconds">timeoutSeconds</a></code> | <code>number</code> | (Optional) timeout seconds to run this step. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.AwsApiStepProps.property.apiParams">apiParams</a></code> | <code>{[ key: string ]: any}</code> | (Required) API Params to submit with the request to the api. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.AwsApiStepProps.property.pascalCaseApi">pascalCaseApi</a></code> | <code>string</code> | (Required) The AWS api represented in PascalCase. |
-| <code><a href="#@cdklabs/cdk-ssm-documents.AwsApiStepProps.property.service">service</a></code> | <code>string</code> | (Required) The AWS service to be invoked. |
+| <code><a href="#@cdklabs/cdk-ssm-documents.AwsApiStepProps.property.service">service</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a></code> | (Required) The AWS service to be invoked. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.AwsApiStepProps.property.javaScriptApi">javaScriptApi</a></code> | <code>string</code> | (Optional) The api as represented the AWS JavaScript API. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.AwsApiStepProps.property.outputs">outputs</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.Output">Output</a>[]</code> | (Required) specify the outputs to extract from the JavaScript JSON response. |
 
@@ -17224,10 +17224,10 @@ DescribeInstances
 ##### `service`<sup>Required</sup> <a name="service" id="@cdklabs/cdk-ssm-documents.AwsApiStepProps.property.service"></a>
 
 ```typescript
-public readonly service: string;
+public readonly service: AwsService;
 ```
 
-- *Type:* string
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a>
 
 (Required) The AWS service to be invoked.
 
@@ -17236,7 +17236,7 @@ public readonly service: string;
 *Example*
 
 ```typescript
-ec2
+AwsService.S3
 ```
 
 
@@ -17301,7 +17301,7 @@ const awsInvocationProps: AwsInvocationProps = { ... }
 | <code><a href="#@cdklabs/cdk-ssm-documents.AwsInvocationProps.property.timeoutSeconds">timeoutSeconds</a></code> | <code>number</code> | (Optional) timeout seconds to run this step. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.AwsInvocationProps.property.apiParams">apiParams</a></code> | <code>{[ key: string ]: any}</code> | (Required) API Params to submit with the request to the api. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.AwsInvocationProps.property.pascalCaseApi">pascalCaseApi</a></code> | <code>string</code> | (Required) The AWS api represented in PascalCase. |
-| <code><a href="#@cdklabs/cdk-ssm-documents.AwsInvocationProps.property.service">service</a></code> | <code>string</code> | (Required) The AWS service to be invoked. |
+| <code><a href="#@cdklabs/cdk-ssm-documents.AwsInvocationProps.property.service">service</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a></code> | (Required) The AWS service to be invoked. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.AwsInvocationProps.property.javaScriptApi">javaScriptApi</a></code> | <code>string</code> | (Optional) The api as represented the AWS JavaScript API. |
 
 ---
@@ -17489,10 +17489,10 @@ DescribeInstances
 ##### `service`<sup>Required</sup> <a name="service" id="@cdklabs/cdk-ssm-documents.AwsInvocationProps.property.service"></a>
 
 ```typescript
-public readonly service: string;
+public readonly service: AwsService;
 ```
 
-- *Type:* string
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a>
 
 (Required) The AWS service to be invoked.
 
@@ -17501,7 +17501,7 @@ public readonly service: string;
 *Example*
 
 ```typescript
-ec2
+AwsService.S3
 ```
 
 
@@ -22970,7 +22970,7 @@ const invocation: Invocation = { ... }
 | --- | --- | --- |
 | <code><a href="#@cdklabs/cdk-ssm-documents.Invocation.property.awsApi">awsApi</a></code> | <code>string</code> | (Required) AWS api to invoke; |
 | <code><a href="#@cdklabs/cdk-ssm-documents.Invocation.property.awsParams">awsParams</a></code> | <code>{[ key: string ]: any}</code> | (Required )AWS params. |
-| <code><a href="#@cdklabs/cdk-ssm-documents.Invocation.property.service">service</a></code> | <code>string</code> | (Required) AWS service to invoke. |
+| <code><a href="#@cdklabs/cdk-ssm-documents.Invocation.property.service">service</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a></code> | (Required) AWS service to invoke. |
 
 ---
 
@@ -23017,10 +23017,10 @@ public readonly awsParams: {[ key: string ]: any};
 ##### `service`<sup>Required</sup> <a name="service" id="@cdklabs/cdk-ssm-documents.Invocation.property.service"></a>
 
 ```typescript
-public readonly service: string;
+public readonly service: AwsService;
 ```
 
-- *Type:* string
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a>
 
 (Required) AWS service to invoke.
 
@@ -23029,7 +23029,7 @@ public readonly service: string;
 *Example*
 
 ```typescript
-ec2
+AwsService.EC2
 ```
 
 
@@ -28190,7 +28190,7 @@ const waitForResourceStepProps: WaitForResourceStepProps = { ... }
 | <code><a href="#@cdklabs/cdk-ssm-documents.WaitForResourceStepProps.property.timeoutSeconds">timeoutSeconds</a></code> | <code>number</code> | (Optional) timeout seconds to run this step. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.WaitForResourceStepProps.property.apiParams">apiParams</a></code> | <code>{[ key: string ]: any}</code> | (Required) API Params to submit with the request to the api. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.WaitForResourceStepProps.property.pascalCaseApi">pascalCaseApi</a></code> | <code>string</code> | (Required) The AWS api represented in PascalCase. |
-| <code><a href="#@cdklabs/cdk-ssm-documents.WaitForResourceStepProps.property.service">service</a></code> | <code>string</code> | (Required) The AWS service to be invoked. |
+| <code><a href="#@cdklabs/cdk-ssm-documents.WaitForResourceStepProps.property.service">service</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a></code> | (Required) The AWS service to be invoked. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.WaitForResourceStepProps.property.javaScriptApi">javaScriptApi</a></code> | <code>string</code> | (Optional) The api as represented the AWS JavaScript API. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.WaitForResourceStepProps.property.desiredValues">desiredValues</a></code> | <code>string[]</code> | (Required) Value extracted from AWS response desired to be one of these desired values. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.WaitForResourceStepProps.property.selector">selector</a></code> | <code>string</code> | (Required) Json path selector to extract value from AWS response. |
@@ -28381,10 +28381,10 @@ DescribeInstances
 ##### `service`<sup>Required</sup> <a name="service" id="@cdklabs/cdk-ssm-documents.WaitForResourceStepProps.property.service"></a>
 
 ```typescript
-public readonly service: string;
+public readonly service: AwsService;
 ```
 
-- *Type:* string
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a>
 
 (Required) The AWS service to be invoked.
 
@@ -28393,7 +28393,7 @@ public readonly service: string;
 *Example*
 
 ```typescript
-ec2
+AwsService.S3
 ```
 
 
@@ -29702,6 +29702,3367 @@ public readonly awsInvoker: IAwsInvoker;
 
 ---
 
+
+### AwsService <a name="AwsService" id="@cdklabs/cdk-ssm-documents.AwsService"></a>
+
+Represents an AWS service.
+
+The namespace which is meant to be used for the service declaration in SSM may be difficult to guess.
+The name provided for simulation may at times be different.
+This class provides many ready-to-use implementations of AWS services.
+If a service is not on the list, you can fall back to constructing this object on your own.
+In other words, you can reference S3 using `AwsService.S3`
+For a NewService, you can reference it using `new AwsService('new-service', 'NewService')`.
+It is risky to auto convert between namespace and javaScriptName because they are not consistent in all cases.
+
+#### Initializers <a name="Initializers" id="@cdklabs/cdk-ssm-documents.AwsService.Initializer"></a>
+
+```typescript
+import { AwsService } from '@cdklabs/cdk-ssm-documents'
+
+new AwsService(namespace: string, javaScriptName: string)
+```
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#@cdklabs/cdk-ssm-documents.AwsService.Initializer.parameter.namespace">namespace</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.AwsService.Initializer.parameter.javaScriptName">javaScriptName</a></code> | <code>string</code> | *No description.* |
+
+---
+
+##### `namespace`<sup>Required</sup> <a name="namespace" id="@cdklabs/cdk-ssm-documents.AwsService.Initializer.parameter.namespace"></a>
+
+- *Type:* string
+
+---
+
+##### `javaScriptName`<sup>Required</sup> <a name="javaScriptName" id="@cdklabs/cdk-ssm-documents.AwsService.Initializer.parameter.javaScriptName"></a>
+
+- *Type:* string
+
+---
+
+#### Methods <a name="Methods" id="Methods"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#@cdklabs/cdk-ssm-documents.AwsService.toJSON">toJSON</a></code> | *No description.* |
+
+---
+
+##### `toJSON` <a name="toJSON" id="@cdklabs/cdk-ssm-documents.AwsService.toJSON"></a>
+
+```typescript
+public toJSON(): string
+```
+
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#@cdklabs/cdk-ssm-documents.AwsService.property.javaScriptName">javaScriptName</a></code> | <code>string</code> | Used for simulation of service requests using the simulated execution. |
+| <code><a href="#@cdklabs/cdk-ssm-documents.AwsService.property.namespace">namespace</a></code> | <code>string</code> | Used for declaration in SSM Automation document. |
+
+---
+
+##### `javaScriptName`<sup>Required</sup> <a name="javaScriptName" id="@cdklabs/cdk-ssm-documents.AwsService.property.javaScriptName"></a>
+
+```typescript
+public readonly javaScriptName: string;
+```
+
+- *Type:* string
+
+Used for simulation of service requests using the simulated execution.
+
+---
+
+##### `namespace`<sup>Required</sup> <a name="namespace" id="@cdklabs/cdk-ssm-documents.AwsService.property.namespace"></a>
+
+```typescript
+public readonly namespace: string;
+```
+
+- *Type:* string
+
+Used for declaration in SSM Automation document.
+
+---
+
+#### Constants <a name="Constants" id="Constants"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#@cdklabs/cdk-ssm-documents.AwsService.property.ACCESS_ANALYZER">ACCESS_ANALYZER</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.AwsService.property.ACCOUNT">ACCOUNT</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.AwsService.property.ACM">ACM</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.AwsService.property.ACMPCA">ACMPCA</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.AwsService.property.ALEXA_FOR_BUSINESS">ALEXA_FOR_BUSINESS</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.AwsService.property.AMP">AMP</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.AwsService.property.AMPLIFY">AMPLIFY</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.AwsService.property.AMPLIFY_BACKEND">AMPLIFY_BACKEND</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.AwsService.property.AMPLIFY_UI_BUILDER">AMPLIFY_UI_BUILDER</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.AwsService.property.API_GATEWAY_MANAGEMENT_API">API_GATEWAY_MANAGEMENT_API</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.AwsService.property.API_GATEWAY_V2">API_GATEWAY_V2</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.AwsService.property.APIGATEWAY">APIGATEWAY</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.AwsService.property.APP_CONFIG">APP_CONFIG</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.AwsService.property.APP_CONFIG_DATA">APP_CONFIG_DATA</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.AwsService.property.APP_INTEGRATIONS">APP_INTEGRATIONS</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.AwsService.property.APP_MESH">APP_MESH</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.AwsService.property.APP_RUNNER">APP_RUNNER</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.AwsService.property.APP_STREAM">APP_STREAM</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.AwsService.property.APP_SYNC">APP_SYNC</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.AwsService.property.APPFLOW">APPFLOW</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.AwsService.property.APPLICATION_AUTO_SCALING">APPLICATION_AUTO_SCALING</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.AwsService.property.APPLICATION_COST_PROFILER">APPLICATION_COST_PROFILER</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.AwsService.property.APPLICATION_INSIGHTS">APPLICATION_INSIGHTS</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.AwsService.property.ATHENA">ATHENA</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.AwsService.property.AUDIT_MANAGER">AUDIT_MANAGER</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.AwsService.property.AUTO_SCALING">AUTO_SCALING</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.AwsService.property.AUTO_SCALING_PLANS">AUTO_SCALING_PLANS</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.AwsService.property.BACKUP">BACKUP</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.AwsService.property.BACKUP_GATEWAY">BACKUP_GATEWAY</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.AwsService.property.BACKUP_STORAGE">BACKUP_STORAGE</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.AwsService.property.BATCH">BATCH</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.AwsService.property.BILLINGCONDUCTOR">BILLINGCONDUCTOR</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.AwsService.property.BRAKET">BRAKET</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.AwsService.property.BUDGETS">BUDGETS</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.AwsService.property.CHIME">CHIME</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.AwsService.property.CHIME_SDK_IDENTITY">CHIME_SDK_IDENTITY</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.AwsService.property.CHIME_SDK_MEDIA_PIPELINES">CHIME_SDK_MEDIA_PIPELINES</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.AwsService.property.CHIME_SDK_MEETINGS">CHIME_SDK_MEETINGS</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.AwsService.property.CHIME_SDK_MESSAGING">CHIME_SDK_MESSAGING</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.AwsService.property.CLOUD_CONTROL">CLOUD_CONTROL</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.AwsService.property.CLOUD_DIRECTORY">CLOUD_DIRECTORY</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.AwsService.property.CLOUD_FORMATION">CLOUD_FORMATION</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.AwsService.property.CLOUD_FRONT">CLOUD_FRONT</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.AwsService.property.CLOUD_HS_M">CLOUD_HS_M</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.AwsService.property.CLOUD_HSM_V2">CLOUD_HSM_V2</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.AwsService.property.CLOUD_SEARCH">CLOUD_SEARCH</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.AwsService.property.CLOUD_SEARCH_DOMAIN">CLOUD_SEARCH_DOMAIN</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.AwsService.property.CLOUD_TRAIL">CLOUD_TRAIL</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.AwsService.property.CLOUD_WATCH">CLOUD_WATCH</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.AwsService.property.CLOUD9">CLOUD9</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.AwsService.property.CODE_ARTIFACT">CODE_ARTIFACT</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.AwsService.property.CODE_BUILD">CODE_BUILD</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.AwsService.property.CODE_COMMIT">CODE_COMMIT</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.AwsService.property.CODE_DEPLOY">CODE_DEPLOY</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.AwsService.property.CODE_GURU_PROFILER">CODE_GURU_PROFILER</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.AwsService.property.CODE_GURU_REVIEWER">CODE_GURU_REVIEWER</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.AwsService.property.CODE_PIPELINE">CODE_PIPELINE</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.AwsService.property.CODE_STAR">CODE_STAR</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.AwsService.property.CODE_STAR_NOTIFICATIONS">CODE_STAR_NOTIFICATIONS</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.AwsService.property.CODE_STARCONNECTIONS">CODE_STARCONNECTIONS</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.AwsService.property.COGNITO_IDENTITY">COGNITO_IDENTITY</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.AwsService.property.COGNITO_SYNC">COGNITO_SYNC</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.AwsService.property.COMPREHEND">COMPREHEND</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.AwsService.property.COMPREHEND_MEDICAL">COMPREHEND_MEDICAL</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.AwsService.property.COMPUTE_OPTIMIZER">COMPUTE_OPTIMIZER</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.AwsService.property.CONNECT">CONNECT</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.AwsService.property.CONNECT_CAMPAIGNS">CONNECT_CAMPAIGNS</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.AwsService.property.CONNECT_CASES">CONNECT_CASES</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.AwsService.property.CONNECT_CONTACT_LENS">CONNECT_CONTACT_LENS</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.AwsService.property.CONNECT_PARTICIPANT">CONNECT_PARTICIPANT</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.AwsService.property.CONTROL_TOWER">CONTROL_TOWER</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.AwsService.property.CUR">CUR</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.AwsService.property.CUSTOMER_PROFILES">CUSTOMER_PROFILES</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.AwsService.property.DATA_BREW">DATA_BREW</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.AwsService.property.DATA_EXCHANGE">DATA_EXCHANGE</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.AwsService.property.DATA_PIPELINE">DATA_PIPELINE</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.AwsService.property.DATA_SYNC">DATA_SYNC</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.AwsService.property.DAX">DAX</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.AwsService.property.DETECTIVE">DETECTIVE</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.AwsService.property.DEV_OPS_GURU">DEV_OPS_GURU</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.AwsService.property.DEVICE_FARM">DEVICE_FARM</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.AwsService.property.DIRECT_CONNECT">DIRECT_CONNECT</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.AwsService.property.DISCOVERY">DISCOVERY</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.AwsService.property.DLM">DLM</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.AwsService.property.DMS">DMS</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.AwsService.property.DOC_DB">DOC_DB</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.AwsService.property.DRS">DRS</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.AwsService.property.DYNAMO_DB">DYNAMO_DB</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.AwsService.property.DYNAMO_DB_STREAMS">DYNAMO_DB_STREAMS</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.AwsService.property.EBS">EBS</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.AwsService.property.EC2">EC2</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.AwsService.property.EC2_INSTANCE_CONNECT">EC2_INSTANCE_CONNECT</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.AwsService.property.ECR">ECR</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.AwsService.property.ECRPUBLIC">ECRPUBLIC</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.AwsService.property.ECS">ECS</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.AwsService.property.EFS">EFS</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.AwsService.property.EKS">EKS</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.AwsService.property.ELASTI_CACHE">ELASTI_CACHE</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.AwsService.property.ELASTIC_BEANSTALK">ELASTIC_BEANSTALK</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.AwsService.property.ELASTIC_INFERENCE">ELASTIC_INFERENCE</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.AwsService.property.ELASTIC_TRANSCODER">ELASTIC_TRANSCODER</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.AwsService.property.ELB">ELB</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.AwsService.property.ELBV2">ELBV2</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.AwsService.property.EMR">EMR</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.AwsService.property.EMRCONTAINERS">EMRCONTAINERS</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.AwsService.property.EMRSERVERLESS">EMRSERVERLESS</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.AwsService.property.ES">ES</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.AwsService.property.EVIDENTLY">EVIDENTLY</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.AwsService.property.FINSPACE">FINSPACE</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.AwsService.property.FINSPACEDATA">FINSPACEDATA</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.AwsService.property.FIREHOSE">FIREHOSE</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.AwsService.property.FIS">FIS</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.AwsService.property.FMS">FMS</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.AwsService.property.FRAUD_DETECTOR">FRAUD_DETECTOR</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.AwsService.property.FSX">FSX</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.AwsService.property.GAME_LIFT">GAME_LIFT</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.AwsService.property.GAME_SPARKS">GAME_SPARKS</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.AwsService.property.GLACIER">GLACIER</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.AwsService.property.GLOBAL_ACCELERATOR">GLOBAL_ACCELERATOR</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.AwsService.property.GLUE">GLUE</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.AwsService.property.GRAFANA">GRAFANA</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.AwsService.property.GREENGRASS">GREENGRASS</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.AwsService.property.GREENGRASS_V2">GREENGRASS_V2</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.AwsService.property.GROUND_STATION">GROUND_STATION</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.AwsService.property.GUARD_DUTY">GUARD_DUTY</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.AwsService.property.HEALTH">HEALTH</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.AwsService.property.HEALTH_LAKE">HEALTH_LAKE</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.AwsService.property.HONEYCODE">HONEYCODE</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.AwsService.property.IAM">IAM</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.AwsService.property.IDENTITY_STORE">IDENTITY_STORE</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.AwsService.property.IMAGEBUILDER">IMAGEBUILDER</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.AwsService.property.IMPORT_EXPORT">IMPORT_EXPORT</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.AwsService.property.INSPECTOR">INSPECTOR</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.AwsService.property.INSPECTOR2">INSPECTOR2</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.AwsService.property.IO_T_ANALYTICS">IO_T_ANALYTICS</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.AwsService.property.IO_T1_CLICK_PROJECTS">IO_T1_CLICK_PROJECTS</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.AwsService.property.IOT">IOT</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.AwsService.property.IOT_DATA">IOT_DATA</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.AwsService.property.IOT_DEVICE_ADVISOR">IOT_DEVICE_ADVISOR</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.AwsService.property.IOT_EVENTS">IOT_EVENTS</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.AwsService.property.IOT_EVENTS_DATA">IOT_EVENTS_DATA</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.AwsService.property.IOT_FLEET_HUB">IOT_FLEET_HUB</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.AwsService.property.IOT_FLEET_WISE">IOT_FLEET_WISE</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.AwsService.property.IOT_SECURE_TUNNELING">IOT_SECURE_TUNNELING</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.AwsService.property.IOT_SITE_WISE">IOT_SITE_WISE</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.AwsService.property.IOT_THINGS_GRAPH">IOT_THINGS_GRAPH</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.AwsService.property.IOT_TWIN_MAKER">IOT_TWIN_MAKER</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.AwsService.property.IOT_WIRELESS">IOT_WIRELESS</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.AwsService.property.IVS">IVS</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.AwsService.property.IVSCHAT">IVSCHAT</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.AwsService.property.KAFKA">KAFKA</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.AwsService.property.KAFKA_CONNECT">KAFKA_CONNECT</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.AwsService.property.KENDRA">KENDRA</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.AwsService.property.KEYSPACES">KEYSPACES</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.AwsService.property.KINESIS">KINESIS</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.AwsService.property.KINESIS_ANALYTICS">KINESIS_ANALYTICS</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.AwsService.property.KINESIS_ANALYTICS_V2">KINESIS_ANALYTICS_V2</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.AwsService.property.KINESIS_VIDEO">KINESIS_VIDEO</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.AwsService.property.KINESIS_VIDEO_ARCHIVED_MEDIA">KINESIS_VIDEO_ARCHIVED_MEDIA</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.AwsService.property.KINESIS_VIDEO_MEDIA">KINESIS_VIDEO_MEDIA</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.AwsService.property.KMS">KMS</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.AwsService.property.LAKE_FORMATION">LAKE_FORMATION</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.AwsService.property.LAMBDA">LAMBDA</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.AwsService.property.LEX_RUNTIME">LEX_RUNTIME</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.AwsService.property.LICENSE_MANAGER">LICENSE_MANAGER</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.AwsService.property.LICENSE_MANAGER_USER_SUBSCRIPTIONS">LICENSE_MANAGER_USER_SUBSCRIPTIONS</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.AwsService.property.LIGHTSAIL">LIGHTSAIL</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.AwsService.property.LOCATION">LOCATION</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.AwsService.property.LOOKOUT_EQUIPMENT">LOOKOUT_EQUIPMENT</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.AwsService.property.LOOKOUT_METRICS">LOOKOUT_METRICS</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.AwsService.property.LOOKOUT_VISION">LOOKOUT_VISION</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.AwsService.property.M2">M2</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.AwsService.property.MACHINE_LEARNING">MACHINE_LEARNING</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.AwsService.property.MACIE">MACIE</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.AwsService.property.MACIE2">MACIE2</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.AwsService.property.MANAGED_BLOCKCHAIN">MANAGED_BLOCKCHAIN</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.AwsService.property.MARKETPLACE_CATALOG">MARKETPLACE_CATALOG</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.AwsService.property.MARKETPLACE_COMMERCE_ANALYTICS">MARKETPLACE_COMMERCE_ANALYTICS</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.AwsService.property.MEDIA_CONNECT">MEDIA_CONNECT</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.AwsService.property.MEDIA_CONVERT">MEDIA_CONVERT</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.AwsService.property.MEDIA_LIVE">MEDIA_LIVE</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.AwsService.property.MEDIA_PACKAGE">MEDIA_PACKAGE</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.AwsService.property.MEDIA_PACKAGE_VOD">MEDIA_PACKAGE_VOD</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.AwsService.property.MEDIA_STORE">MEDIA_STORE</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.AwsService.property.MEDIA_STORE_DATA">MEDIA_STORE_DATA</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.AwsService.property.MEDIA_TAILOR">MEDIA_TAILOR</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.AwsService.property.MEMORY_DB">MEMORY_DB</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.AwsService.property.MGN">MGN</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.AwsService.property.MIGRATION_HUB_CONFIG">MIGRATION_HUB_CONFIG</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.AwsService.property.MIGRATION_HUB_ORCHESTRATOR">MIGRATION_HUB_ORCHESTRATOR</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.AwsService.property.MIGRATION_HUB_REFACTOR_SPACES">MIGRATION_HUB_REFACTOR_SPACES</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.AwsService.property.MIGRATION_HUB_STRATEGY">MIGRATION_HUB_STRATEGY</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.AwsService.property.MOBILE">MOBILE</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.AwsService.property.MQ">MQ</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.AwsService.property.MTURK">MTURK</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.AwsService.property.MWAA">MWAA</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.AwsService.property.NEPTUNE">NEPTUNE</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.AwsService.property.NETWORK_FIREWALL">NETWORK_FIREWALL</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.AwsService.property.NETWORK_MANAGER">NETWORK_MANAGER</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.AwsService.property.NIMBLE">NIMBLE</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.AwsService.property.OPEN_SEARCH">OPEN_SEARCH</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.AwsService.property.OPS_WORKS">OPS_WORKS</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.AwsService.property.OPS_WORKS_C_M">OPS_WORKS_C_M</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.AwsService.property.ORGANIZATIONS">ORGANIZATIONS</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.AwsService.property.OUTPOSTS">OUTPOSTS</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.AwsService.property.PANORAMA">PANORAMA</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.AwsService.property.PERSONALIZE">PERSONALIZE</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.AwsService.property.PERSONALIZE_EVENTS">PERSONALIZE_EVENTS</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.AwsService.property.PERSONALIZE_RUNTIME">PERSONALIZE_RUNTIME</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.AwsService.property.PI">PI</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.AwsService.property.PINPOINT">PINPOINT</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.AwsService.property.PINPOINT_EMAIL">PINPOINT_EMAIL</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.AwsService.property.PINPOINT_SMS_VOICE">PINPOINT_SMS_VOICE</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.AwsService.property.PINPOINT_SMS_VOICE_V2">PINPOINT_SMS_VOICE_V2</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.AwsService.property.POLLY">POLLY</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.AwsService.property.PRICING">PRICING</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.AwsService.property.PRIVATE_NETWORKS">PRIVATE_NETWORKS</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.AwsService.property.PROTON">PROTON</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.AwsService.property.QLDB">QLDB</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.AwsService.property.QLDB_SESSION">QLDB_SESSION</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.AwsService.property.QUICK_SIGHT">QUICK_SIGHT</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.AwsService.property.RAM">RAM</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.AwsService.property.RBIN">RBIN</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.AwsService.property.RDS">RDS</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.AwsService.property.REDSHIFT">REDSHIFT</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.AwsService.property.REDSHIFT_DATA">REDSHIFT_DATA</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.AwsService.property.REDSHIFT_SERVERLESS">REDSHIFT_SERVERLESS</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.AwsService.property.REKOGNITION">REKOGNITION</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.AwsService.property.RESILIENCEHUB">RESILIENCEHUB</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.AwsService.property.RESOURCE_EXPLORER2">RESOURCE_EXPLORER2</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.AwsService.property.RESOURCE_GROUPS">RESOURCE_GROUPS</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.AwsService.property.RESOURCE_GROUPS_TAGGING_AP_I">RESOURCE_GROUPS_TAGGING_AP_I</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.AwsService.property.ROBO_MAKER">ROBO_MAKER</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.AwsService.property.ROLES_ANYWHERE">ROLES_ANYWHERE</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.AwsService.property.ROUTE53">ROUTE53</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.AwsService.property.ROUTE53_DOMAINS">ROUTE53_DOMAINS</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.AwsService.property.ROUTE53_RECOVERY_CLUSTER">ROUTE53_RECOVERY_CLUSTER</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.AwsService.property.ROUTE53_RECOVERY_CONTROL_CONFIG">ROUTE53_RECOVERY_CONTROL_CONFIG</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.AwsService.property.ROUTE53_RECOVERY_READINESS">ROUTE53_RECOVERY_READINESS</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.AwsService.property.ROUTE53_RESOLVER">ROUTE53_RESOLVER</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.AwsService.property.RUM">RUM</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.AwsService.property.S3">S3</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.AwsService.property.S3_CONTROL">S3_CONTROL</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.AwsService.property.S3_OUTPOSTS">S3_OUTPOSTS</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.AwsService.property.SAGE_MAKER">SAGE_MAKER</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.AwsService.property.SAGE_MAKER_FEATURE_STORE_RUNTIME">SAGE_MAKER_FEATURE_STORE_RUNTIME</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.AwsService.property.SAGE_MAKER_RUNTIME">SAGE_MAKER_RUNTIME</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.AwsService.property.SAGEMAKER_EDGE">SAGEMAKER_EDGE</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.AwsService.property.SAVINGS_PLANS">SAVINGS_PLANS</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.AwsService.property.SCHEDULER">SCHEDULER</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.AwsService.property.SCHEMAS">SCHEMAS</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.AwsService.property.SECRETS_MANAGER">SECRETS_MANAGER</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.AwsService.property.SECURITY_HUB">SECURITY_HUB</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.AwsService.property.SERVICE_CATALOG">SERVICE_CATALOG</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.AwsService.property.SERVICE_CATALOG_APP_REGISTRY">SERVICE_CATALOG_APP_REGISTRY</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.AwsService.property.SERVICE_DISCOVERY">SERVICE_DISCOVERY</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.AwsService.property.SERVICE_QUOTAS">SERVICE_QUOTAS</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.AwsService.property.SES">SES</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.AwsService.property.SES_V2">SES_V2</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.AwsService.property.SHIELD">SHIELD</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.AwsService.property.SIGNER">SIGNER</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.AwsService.property.SMS">SMS</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.AwsService.property.SNOW_DEVICE_MANAGEMENT">SNOW_DEVICE_MANAGEMENT</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.AwsService.property.SNOWBALL">SNOWBALL</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.AwsService.property.SNS">SNS</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.AwsService.property.SQS">SQS</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.AwsService.property.SSM">SSM</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.AwsService.property.SSM_CONTACTS">SSM_CONTACTS</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.AwsService.property.SSM_INCIDENTS">SSM_INCIDENTS</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.AwsService.property.SSO">SSO</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.AwsService.property.SSO_ADMIN">SSO_ADMIN</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.AwsService.property.SSO_OIDC">SSO_OIDC</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.AwsService.property.STEP_FUNCTIONS">STEP_FUNCTIONS</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.AwsService.property.STORAGE_GATEWAY">STORAGE_GATEWAY</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.AwsService.property.STS">STS</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.AwsService.property.SUPPORT">SUPPORT</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.AwsService.property.SUPPORT_APP">SUPPORT_APP</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.AwsService.property.SWF">SWF</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.AwsService.property.SYNTHETICS">SYNTHETICS</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.AwsService.property.TEXTRACT">TEXTRACT</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.AwsService.property.TIMESTREAM_QUERY">TIMESTREAM_QUERY</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.AwsService.property.TIMESTREAM_WRITE">TIMESTREAM_WRITE</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.AwsService.property.TRANSFER">TRANSFER</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.AwsService.property.TRANSLATE">TRANSLATE</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.AwsService.property.VOICE_I_D">VOICE_I_D</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.AwsService.property.WAF">WAF</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.AwsService.property.WAF_REGIONAL">WAF_REGIONAL</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.AwsService.property.WAF_V2">WAF_V2</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.AwsService.property.WELL_ARCHITECTED">WELL_ARCHITECTED</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.AwsService.property.WISDOM">WISDOM</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.AwsService.property.WORK_DOCS">WORK_DOCS</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.AwsService.property.WORK_LINK">WORK_LINK</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.AwsService.property.WORK_MAIL">WORK_MAIL</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.AwsService.property.WORK_MAIL_MESSAGE_FLOW">WORK_MAIL_MESSAGE_FLOW</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.AwsService.property.WORK_SPACES">WORK_SPACES</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.AwsService.property.WORK_SPACES_WEB">WORK_SPACES_WEB</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.AwsService.property.XRAY">XRAY</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a></code> | *No description.* |
+
+---
+
+##### `ACCESS_ANALYZER`<sup>Required</sup> <a name="ACCESS_ANALYZER" id="@cdklabs/cdk-ssm-documents.AwsService.property.ACCESS_ANALYZER"></a>
+
+```typescript
+public readonly ACCESS_ANALYZER: AwsService;
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a>
+
+---
+
+##### `ACCOUNT`<sup>Required</sup> <a name="ACCOUNT" id="@cdklabs/cdk-ssm-documents.AwsService.property.ACCOUNT"></a>
+
+```typescript
+public readonly ACCOUNT: AwsService;
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a>
+
+---
+
+##### `ACM`<sup>Required</sup> <a name="ACM" id="@cdklabs/cdk-ssm-documents.AwsService.property.ACM"></a>
+
+```typescript
+public readonly ACM: AwsService;
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a>
+
+---
+
+##### `ACMPCA`<sup>Required</sup> <a name="ACMPCA" id="@cdklabs/cdk-ssm-documents.AwsService.property.ACMPCA"></a>
+
+```typescript
+public readonly ACMPCA: AwsService;
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a>
+
+---
+
+##### `ALEXA_FOR_BUSINESS`<sup>Required</sup> <a name="ALEXA_FOR_BUSINESS" id="@cdklabs/cdk-ssm-documents.AwsService.property.ALEXA_FOR_BUSINESS"></a>
+
+```typescript
+public readonly ALEXA_FOR_BUSINESS: AwsService;
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a>
+
+---
+
+##### `AMP`<sup>Required</sup> <a name="AMP" id="@cdklabs/cdk-ssm-documents.AwsService.property.AMP"></a>
+
+```typescript
+public readonly AMP: AwsService;
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a>
+
+---
+
+##### `AMPLIFY`<sup>Required</sup> <a name="AMPLIFY" id="@cdklabs/cdk-ssm-documents.AwsService.property.AMPLIFY"></a>
+
+```typescript
+public readonly AMPLIFY: AwsService;
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a>
+
+---
+
+##### `AMPLIFY_BACKEND`<sup>Required</sup> <a name="AMPLIFY_BACKEND" id="@cdklabs/cdk-ssm-documents.AwsService.property.AMPLIFY_BACKEND"></a>
+
+```typescript
+public readonly AMPLIFY_BACKEND: AwsService;
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a>
+
+---
+
+##### `AMPLIFY_UI_BUILDER`<sup>Required</sup> <a name="AMPLIFY_UI_BUILDER" id="@cdklabs/cdk-ssm-documents.AwsService.property.AMPLIFY_UI_BUILDER"></a>
+
+```typescript
+public readonly AMPLIFY_UI_BUILDER: AwsService;
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a>
+
+---
+
+##### `API_GATEWAY_MANAGEMENT_API`<sup>Required</sup> <a name="API_GATEWAY_MANAGEMENT_API" id="@cdklabs/cdk-ssm-documents.AwsService.property.API_GATEWAY_MANAGEMENT_API"></a>
+
+```typescript
+public readonly API_GATEWAY_MANAGEMENT_API: AwsService;
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a>
+
+---
+
+##### `API_GATEWAY_V2`<sup>Required</sup> <a name="API_GATEWAY_V2" id="@cdklabs/cdk-ssm-documents.AwsService.property.API_GATEWAY_V2"></a>
+
+```typescript
+public readonly API_GATEWAY_V2: AwsService;
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a>
+
+---
+
+##### `APIGATEWAY`<sup>Required</sup> <a name="APIGATEWAY" id="@cdklabs/cdk-ssm-documents.AwsService.property.APIGATEWAY"></a>
+
+```typescript
+public readonly APIGATEWAY: AwsService;
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a>
+
+---
+
+##### `APP_CONFIG`<sup>Required</sup> <a name="APP_CONFIG" id="@cdklabs/cdk-ssm-documents.AwsService.property.APP_CONFIG"></a>
+
+```typescript
+public readonly APP_CONFIG: AwsService;
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a>
+
+---
+
+##### `APP_CONFIG_DATA`<sup>Required</sup> <a name="APP_CONFIG_DATA" id="@cdklabs/cdk-ssm-documents.AwsService.property.APP_CONFIG_DATA"></a>
+
+```typescript
+public readonly APP_CONFIG_DATA: AwsService;
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a>
+
+---
+
+##### `APP_INTEGRATIONS`<sup>Required</sup> <a name="APP_INTEGRATIONS" id="@cdklabs/cdk-ssm-documents.AwsService.property.APP_INTEGRATIONS"></a>
+
+```typescript
+public readonly APP_INTEGRATIONS: AwsService;
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a>
+
+---
+
+##### `APP_MESH`<sup>Required</sup> <a name="APP_MESH" id="@cdklabs/cdk-ssm-documents.AwsService.property.APP_MESH"></a>
+
+```typescript
+public readonly APP_MESH: AwsService;
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a>
+
+---
+
+##### `APP_RUNNER`<sup>Required</sup> <a name="APP_RUNNER" id="@cdklabs/cdk-ssm-documents.AwsService.property.APP_RUNNER"></a>
+
+```typescript
+public readonly APP_RUNNER: AwsService;
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a>
+
+---
+
+##### `APP_STREAM`<sup>Required</sup> <a name="APP_STREAM" id="@cdklabs/cdk-ssm-documents.AwsService.property.APP_STREAM"></a>
+
+```typescript
+public readonly APP_STREAM: AwsService;
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a>
+
+---
+
+##### `APP_SYNC`<sup>Required</sup> <a name="APP_SYNC" id="@cdklabs/cdk-ssm-documents.AwsService.property.APP_SYNC"></a>
+
+```typescript
+public readonly APP_SYNC: AwsService;
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a>
+
+---
+
+##### `APPFLOW`<sup>Required</sup> <a name="APPFLOW" id="@cdklabs/cdk-ssm-documents.AwsService.property.APPFLOW"></a>
+
+```typescript
+public readonly APPFLOW: AwsService;
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a>
+
+---
+
+##### `APPLICATION_AUTO_SCALING`<sup>Required</sup> <a name="APPLICATION_AUTO_SCALING" id="@cdklabs/cdk-ssm-documents.AwsService.property.APPLICATION_AUTO_SCALING"></a>
+
+```typescript
+public readonly APPLICATION_AUTO_SCALING: AwsService;
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a>
+
+---
+
+##### `APPLICATION_COST_PROFILER`<sup>Required</sup> <a name="APPLICATION_COST_PROFILER" id="@cdklabs/cdk-ssm-documents.AwsService.property.APPLICATION_COST_PROFILER"></a>
+
+```typescript
+public readonly APPLICATION_COST_PROFILER: AwsService;
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a>
+
+---
+
+##### `APPLICATION_INSIGHTS`<sup>Required</sup> <a name="APPLICATION_INSIGHTS" id="@cdklabs/cdk-ssm-documents.AwsService.property.APPLICATION_INSIGHTS"></a>
+
+```typescript
+public readonly APPLICATION_INSIGHTS: AwsService;
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a>
+
+---
+
+##### `ATHENA`<sup>Required</sup> <a name="ATHENA" id="@cdklabs/cdk-ssm-documents.AwsService.property.ATHENA"></a>
+
+```typescript
+public readonly ATHENA: AwsService;
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a>
+
+---
+
+##### `AUDIT_MANAGER`<sup>Required</sup> <a name="AUDIT_MANAGER" id="@cdklabs/cdk-ssm-documents.AwsService.property.AUDIT_MANAGER"></a>
+
+```typescript
+public readonly AUDIT_MANAGER: AwsService;
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a>
+
+---
+
+##### `AUTO_SCALING`<sup>Required</sup> <a name="AUTO_SCALING" id="@cdklabs/cdk-ssm-documents.AwsService.property.AUTO_SCALING"></a>
+
+```typescript
+public readonly AUTO_SCALING: AwsService;
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a>
+
+---
+
+##### `AUTO_SCALING_PLANS`<sup>Required</sup> <a name="AUTO_SCALING_PLANS" id="@cdklabs/cdk-ssm-documents.AwsService.property.AUTO_SCALING_PLANS"></a>
+
+```typescript
+public readonly AUTO_SCALING_PLANS: AwsService;
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a>
+
+---
+
+##### `BACKUP`<sup>Required</sup> <a name="BACKUP" id="@cdklabs/cdk-ssm-documents.AwsService.property.BACKUP"></a>
+
+```typescript
+public readonly BACKUP: AwsService;
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a>
+
+---
+
+##### `BACKUP_GATEWAY`<sup>Required</sup> <a name="BACKUP_GATEWAY" id="@cdklabs/cdk-ssm-documents.AwsService.property.BACKUP_GATEWAY"></a>
+
+```typescript
+public readonly BACKUP_GATEWAY: AwsService;
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a>
+
+---
+
+##### `BACKUP_STORAGE`<sup>Required</sup> <a name="BACKUP_STORAGE" id="@cdklabs/cdk-ssm-documents.AwsService.property.BACKUP_STORAGE"></a>
+
+```typescript
+public readonly BACKUP_STORAGE: AwsService;
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a>
+
+---
+
+##### `BATCH`<sup>Required</sup> <a name="BATCH" id="@cdklabs/cdk-ssm-documents.AwsService.property.BATCH"></a>
+
+```typescript
+public readonly BATCH: AwsService;
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a>
+
+---
+
+##### `BILLINGCONDUCTOR`<sup>Required</sup> <a name="BILLINGCONDUCTOR" id="@cdklabs/cdk-ssm-documents.AwsService.property.BILLINGCONDUCTOR"></a>
+
+```typescript
+public readonly BILLINGCONDUCTOR: AwsService;
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a>
+
+---
+
+##### `BRAKET`<sup>Required</sup> <a name="BRAKET" id="@cdklabs/cdk-ssm-documents.AwsService.property.BRAKET"></a>
+
+```typescript
+public readonly BRAKET: AwsService;
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a>
+
+---
+
+##### `BUDGETS`<sup>Required</sup> <a name="BUDGETS" id="@cdklabs/cdk-ssm-documents.AwsService.property.BUDGETS"></a>
+
+```typescript
+public readonly BUDGETS: AwsService;
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a>
+
+---
+
+##### `CHIME`<sup>Required</sup> <a name="CHIME" id="@cdklabs/cdk-ssm-documents.AwsService.property.CHIME"></a>
+
+```typescript
+public readonly CHIME: AwsService;
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a>
+
+---
+
+##### `CHIME_SDK_IDENTITY`<sup>Required</sup> <a name="CHIME_SDK_IDENTITY" id="@cdklabs/cdk-ssm-documents.AwsService.property.CHIME_SDK_IDENTITY"></a>
+
+```typescript
+public readonly CHIME_SDK_IDENTITY: AwsService;
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a>
+
+---
+
+##### `CHIME_SDK_MEDIA_PIPELINES`<sup>Required</sup> <a name="CHIME_SDK_MEDIA_PIPELINES" id="@cdklabs/cdk-ssm-documents.AwsService.property.CHIME_SDK_MEDIA_PIPELINES"></a>
+
+```typescript
+public readonly CHIME_SDK_MEDIA_PIPELINES: AwsService;
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a>
+
+---
+
+##### `CHIME_SDK_MEETINGS`<sup>Required</sup> <a name="CHIME_SDK_MEETINGS" id="@cdklabs/cdk-ssm-documents.AwsService.property.CHIME_SDK_MEETINGS"></a>
+
+```typescript
+public readonly CHIME_SDK_MEETINGS: AwsService;
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a>
+
+---
+
+##### `CHIME_SDK_MESSAGING`<sup>Required</sup> <a name="CHIME_SDK_MESSAGING" id="@cdklabs/cdk-ssm-documents.AwsService.property.CHIME_SDK_MESSAGING"></a>
+
+```typescript
+public readonly CHIME_SDK_MESSAGING: AwsService;
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a>
+
+---
+
+##### `CLOUD_CONTROL`<sup>Required</sup> <a name="CLOUD_CONTROL" id="@cdklabs/cdk-ssm-documents.AwsService.property.CLOUD_CONTROL"></a>
+
+```typescript
+public readonly CLOUD_CONTROL: AwsService;
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a>
+
+---
+
+##### `CLOUD_DIRECTORY`<sup>Required</sup> <a name="CLOUD_DIRECTORY" id="@cdklabs/cdk-ssm-documents.AwsService.property.CLOUD_DIRECTORY"></a>
+
+```typescript
+public readonly CLOUD_DIRECTORY: AwsService;
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a>
+
+---
+
+##### `CLOUD_FORMATION`<sup>Required</sup> <a name="CLOUD_FORMATION" id="@cdklabs/cdk-ssm-documents.AwsService.property.CLOUD_FORMATION"></a>
+
+```typescript
+public readonly CLOUD_FORMATION: AwsService;
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a>
+
+---
+
+##### `CLOUD_FRONT`<sup>Required</sup> <a name="CLOUD_FRONT" id="@cdklabs/cdk-ssm-documents.AwsService.property.CLOUD_FRONT"></a>
+
+```typescript
+public readonly CLOUD_FRONT: AwsService;
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a>
+
+---
+
+##### `CLOUD_HS_M`<sup>Required</sup> <a name="CLOUD_HS_M" id="@cdklabs/cdk-ssm-documents.AwsService.property.CLOUD_HS_M"></a>
+
+```typescript
+public readonly CLOUD_HS_M: AwsService;
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a>
+
+---
+
+##### `CLOUD_HSM_V2`<sup>Required</sup> <a name="CLOUD_HSM_V2" id="@cdklabs/cdk-ssm-documents.AwsService.property.CLOUD_HSM_V2"></a>
+
+```typescript
+public readonly CLOUD_HSM_V2: AwsService;
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a>
+
+---
+
+##### `CLOUD_SEARCH`<sup>Required</sup> <a name="CLOUD_SEARCH" id="@cdklabs/cdk-ssm-documents.AwsService.property.CLOUD_SEARCH"></a>
+
+```typescript
+public readonly CLOUD_SEARCH: AwsService;
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a>
+
+---
+
+##### `CLOUD_SEARCH_DOMAIN`<sup>Required</sup> <a name="CLOUD_SEARCH_DOMAIN" id="@cdklabs/cdk-ssm-documents.AwsService.property.CLOUD_SEARCH_DOMAIN"></a>
+
+```typescript
+public readonly CLOUD_SEARCH_DOMAIN: AwsService;
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a>
+
+---
+
+##### `CLOUD_TRAIL`<sup>Required</sup> <a name="CLOUD_TRAIL" id="@cdklabs/cdk-ssm-documents.AwsService.property.CLOUD_TRAIL"></a>
+
+```typescript
+public readonly CLOUD_TRAIL: AwsService;
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a>
+
+---
+
+##### `CLOUD_WATCH`<sup>Required</sup> <a name="CLOUD_WATCH" id="@cdklabs/cdk-ssm-documents.AwsService.property.CLOUD_WATCH"></a>
+
+```typescript
+public readonly CLOUD_WATCH: AwsService;
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a>
+
+---
+
+##### `CLOUD9`<sup>Required</sup> <a name="CLOUD9" id="@cdklabs/cdk-ssm-documents.AwsService.property.CLOUD9"></a>
+
+```typescript
+public readonly CLOUD9: AwsService;
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a>
+
+---
+
+##### `CODE_ARTIFACT`<sup>Required</sup> <a name="CODE_ARTIFACT" id="@cdklabs/cdk-ssm-documents.AwsService.property.CODE_ARTIFACT"></a>
+
+```typescript
+public readonly CODE_ARTIFACT: AwsService;
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a>
+
+---
+
+##### `CODE_BUILD`<sup>Required</sup> <a name="CODE_BUILD" id="@cdklabs/cdk-ssm-documents.AwsService.property.CODE_BUILD"></a>
+
+```typescript
+public readonly CODE_BUILD: AwsService;
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a>
+
+---
+
+##### `CODE_COMMIT`<sup>Required</sup> <a name="CODE_COMMIT" id="@cdklabs/cdk-ssm-documents.AwsService.property.CODE_COMMIT"></a>
+
+```typescript
+public readonly CODE_COMMIT: AwsService;
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a>
+
+---
+
+##### `CODE_DEPLOY`<sup>Required</sup> <a name="CODE_DEPLOY" id="@cdklabs/cdk-ssm-documents.AwsService.property.CODE_DEPLOY"></a>
+
+```typescript
+public readonly CODE_DEPLOY: AwsService;
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a>
+
+---
+
+##### `CODE_GURU_PROFILER`<sup>Required</sup> <a name="CODE_GURU_PROFILER" id="@cdklabs/cdk-ssm-documents.AwsService.property.CODE_GURU_PROFILER"></a>
+
+```typescript
+public readonly CODE_GURU_PROFILER: AwsService;
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a>
+
+---
+
+##### `CODE_GURU_REVIEWER`<sup>Required</sup> <a name="CODE_GURU_REVIEWER" id="@cdklabs/cdk-ssm-documents.AwsService.property.CODE_GURU_REVIEWER"></a>
+
+```typescript
+public readonly CODE_GURU_REVIEWER: AwsService;
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a>
+
+---
+
+##### `CODE_PIPELINE`<sup>Required</sup> <a name="CODE_PIPELINE" id="@cdklabs/cdk-ssm-documents.AwsService.property.CODE_PIPELINE"></a>
+
+```typescript
+public readonly CODE_PIPELINE: AwsService;
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a>
+
+---
+
+##### `CODE_STAR`<sup>Required</sup> <a name="CODE_STAR" id="@cdklabs/cdk-ssm-documents.AwsService.property.CODE_STAR"></a>
+
+```typescript
+public readonly CODE_STAR: AwsService;
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a>
+
+---
+
+##### `CODE_STAR_NOTIFICATIONS`<sup>Required</sup> <a name="CODE_STAR_NOTIFICATIONS" id="@cdklabs/cdk-ssm-documents.AwsService.property.CODE_STAR_NOTIFICATIONS"></a>
+
+```typescript
+public readonly CODE_STAR_NOTIFICATIONS: AwsService;
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a>
+
+---
+
+##### `CODE_STARCONNECTIONS`<sup>Required</sup> <a name="CODE_STARCONNECTIONS" id="@cdklabs/cdk-ssm-documents.AwsService.property.CODE_STARCONNECTIONS"></a>
+
+```typescript
+public readonly CODE_STARCONNECTIONS: AwsService;
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a>
+
+---
+
+##### `COGNITO_IDENTITY`<sup>Required</sup> <a name="COGNITO_IDENTITY" id="@cdklabs/cdk-ssm-documents.AwsService.property.COGNITO_IDENTITY"></a>
+
+```typescript
+public readonly COGNITO_IDENTITY: AwsService;
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a>
+
+---
+
+##### `COGNITO_SYNC`<sup>Required</sup> <a name="COGNITO_SYNC" id="@cdklabs/cdk-ssm-documents.AwsService.property.COGNITO_SYNC"></a>
+
+```typescript
+public readonly COGNITO_SYNC: AwsService;
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a>
+
+---
+
+##### `COMPREHEND`<sup>Required</sup> <a name="COMPREHEND" id="@cdklabs/cdk-ssm-documents.AwsService.property.COMPREHEND"></a>
+
+```typescript
+public readonly COMPREHEND: AwsService;
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a>
+
+---
+
+##### `COMPREHEND_MEDICAL`<sup>Required</sup> <a name="COMPREHEND_MEDICAL" id="@cdklabs/cdk-ssm-documents.AwsService.property.COMPREHEND_MEDICAL"></a>
+
+```typescript
+public readonly COMPREHEND_MEDICAL: AwsService;
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a>
+
+---
+
+##### `COMPUTE_OPTIMIZER`<sup>Required</sup> <a name="COMPUTE_OPTIMIZER" id="@cdklabs/cdk-ssm-documents.AwsService.property.COMPUTE_OPTIMIZER"></a>
+
+```typescript
+public readonly COMPUTE_OPTIMIZER: AwsService;
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a>
+
+---
+
+##### `CONNECT`<sup>Required</sup> <a name="CONNECT" id="@cdklabs/cdk-ssm-documents.AwsService.property.CONNECT"></a>
+
+```typescript
+public readonly CONNECT: AwsService;
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a>
+
+---
+
+##### `CONNECT_CAMPAIGNS`<sup>Required</sup> <a name="CONNECT_CAMPAIGNS" id="@cdklabs/cdk-ssm-documents.AwsService.property.CONNECT_CAMPAIGNS"></a>
+
+```typescript
+public readonly CONNECT_CAMPAIGNS: AwsService;
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a>
+
+---
+
+##### `CONNECT_CASES`<sup>Required</sup> <a name="CONNECT_CASES" id="@cdklabs/cdk-ssm-documents.AwsService.property.CONNECT_CASES"></a>
+
+```typescript
+public readonly CONNECT_CASES: AwsService;
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a>
+
+---
+
+##### `CONNECT_CONTACT_LENS`<sup>Required</sup> <a name="CONNECT_CONTACT_LENS" id="@cdklabs/cdk-ssm-documents.AwsService.property.CONNECT_CONTACT_LENS"></a>
+
+```typescript
+public readonly CONNECT_CONTACT_LENS: AwsService;
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a>
+
+---
+
+##### `CONNECT_PARTICIPANT`<sup>Required</sup> <a name="CONNECT_PARTICIPANT" id="@cdklabs/cdk-ssm-documents.AwsService.property.CONNECT_PARTICIPANT"></a>
+
+```typescript
+public readonly CONNECT_PARTICIPANT: AwsService;
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a>
+
+---
+
+##### `CONTROL_TOWER`<sup>Required</sup> <a name="CONTROL_TOWER" id="@cdklabs/cdk-ssm-documents.AwsService.property.CONTROL_TOWER"></a>
+
+```typescript
+public readonly CONTROL_TOWER: AwsService;
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a>
+
+---
+
+##### `CUR`<sup>Required</sup> <a name="CUR" id="@cdklabs/cdk-ssm-documents.AwsService.property.CUR"></a>
+
+```typescript
+public readonly CUR: AwsService;
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a>
+
+---
+
+##### `CUSTOMER_PROFILES`<sup>Required</sup> <a name="CUSTOMER_PROFILES" id="@cdklabs/cdk-ssm-documents.AwsService.property.CUSTOMER_PROFILES"></a>
+
+```typescript
+public readonly CUSTOMER_PROFILES: AwsService;
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a>
+
+---
+
+##### `DATA_BREW`<sup>Required</sup> <a name="DATA_BREW" id="@cdklabs/cdk-ssm-documents.AwsService.property.DATA_BREW"></a>
+
+```typescript
+public readonly DATA_BREW: AwsService;
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a>
+
+---
+
+##### `DATA_EXCHANGE`<sup>Required</sup> <a name="DATA_EXCHANGE" id="@cdklabs/cdk-ssm-documents.AwsService.property.DATA_EXCHANGE"></a>
+
+```typescript
+public readonly DATA_EXCHANGE: AwsService;
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a>
+
+---
+
+##### `DATA_PIPELINE`<sup>Required</sup> <a name="DATA_PIPELINE" id="@cdklabs/cdk-ssm-documents.AwsService.property.DATA_PIPELINE"></a>
+
+```typescript
+public readonly DATA_PIPELINE: AwsService;
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a>
+
+---
+
+##### `DATA_SYNC`<sup>Required</sup> <a name="DATA_SYNC" id="@cdklabs/cdk-ssm-documents.AwsService.property.DATA_SYNC"></a>
+
+```typescript
+public readonly DATA_SYNC: AwsService;
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a>
+
+---
+
+##### `DAX`<sup>Required</sup> <a name="DAX" id="@cdklabs/cdk-ssm-documents.AwsService.property.DAX"></a>
+
+```typescript
+public readonly DAX: AwsService;
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a>
+
+---
+
+##### `DETECTIVE`<sup>Required</sup> <a name="DETECTIVE" id="@cdklabs/cdk-ssm-documents.AwsService.property.DETECTIVE"></a>
+
+```typescript
+public readonly DETECTIVE: AwsService;
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a>
+
+---
+
+##### `DEV_OPS_GURU`<sup>Required</sup> <a name="DEV_OPS_GURU" id="@cdklabs/cdk-ssm-documents.AwsService.property.DEV_OPS_GURU"></a>
+
+```typescript
+public readonly DEV_OPS_GURU: AwsService;
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a>
+
+---
+
+##### `DEVICE_FARM`<sup>Required</sup> <a name="DEVICE_FARM" id="@cdklabs/cdk-ssm-documents.AwsService.property.DEVICE_FARM"></a>
+
+```typescript
+public readonly DEVICE_FARM: AwsService;
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a>
+
+---
+
+##### `DIRECT_CONNECT`<sup>Required</sup> <a name="DIRECT_CONNECT" id="@cdklabs/cdk-ssm-documents.AwsService.property.DIRECT_CONNECT"></a>
+
+```typescript
+public readonly DIRECT_CONNECT: AwsService;
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a>
+
+---
+
+##### `DISCOVERY`<sup>Required</sup> <a name="DISCOVERY" id="@cdklabs/cdk-ssm-documents.AwsService.property.DISCOVERY"></a>
+
+```typescript
+public readonly DISCOVERY: AwsService;
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a>
+
+---
+
+##### `DLM`<sup>Required</sup> <a name="DLM" id="@cdklabs/cdk-ssm-documents.AwsService.property.DLM"></a>
+
+```typescript
+public readonly DLM: AwsService;
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a>
+
+---
+
+##### `DMS`<sup>Required</sup> <a name="DMS" id="@cdklabs/cdk-ssm-documents.AwsService.property.DMS"></a>
+
+```typescript
+public readonly DMS: AwsService;
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a>
+
+---
+
+##### `DOC_DB`<sup>Required</sup> <a name="DOC_DB" id="@cdklabs/cdk-ssm-documents.AwsService.property.DOC_DB"></a>
+
+```typescript
+public readonly DOC_DB: AwsService;
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a>
+
+---
+
+##### `DRS`<sup>Required</sup> <a name="DRS" id="@cdklabs/cdk-ssm-documents.AwsService.property.DRS"></a>
+
+```typescript
+public readonly DRS: AwsService;
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a>
+
+---
+
+##### `DYNAMO_DB`<sup>Required</sup> <a name="DYNAMO_DB" id="@cdklabs/cdk-ssm-documents.AwsService.property.DYNAMO_DB"></a>
+
+```typescript
+public readonly DYNAMO_DB: AwsService;
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a>
+
+---
+
+##### `DYNAMO_DB_STREAMS`<sup>Required</sup> <a name="DYNAMO_DB_STREAMS" id="@cdklabs/cdk-ssm-documents.AwsService.property.DYNAMO_DB_STREAMS"></a>
+
+```typescript
+public readonly DYNAMO_DB_STREAMS: AwsService;
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a>
+
+---
+
+##### `EBS`<sup>Required</sup> <a name="EBS" id="@cdklabs/cdk-ssm-documents.AwsService.property.EBS"></a>
+
+```typescript
+public readonly EBS: AwsService;
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a>
+
+---
+
+##### `EC2`<sup>Required</sup> <a name="EC2" id="@cdklabs/cdk-ssm-documents.AwsService.property.EC2"></a>
+
+```typescript
+public readonly EC2: AwsService;
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a>
+
+---
+
+##### `EC2_INSTANCE_CONNECT`<sup>Required</sup> <a name="EC2_INSTANCE_CONNECT" id="@cdklabs/cdk-ssm-documents.AwsService.property.EC2_INSTANCE_CONNECT"></a>
+
+```typescript
+public readonly EC2_INSTANCE_CONNECT: AwsService;
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a>
+
+---
+
+##### `ECR`<sup>Required</sup> <a name="ECR" id="@cdklabs/cdk-ssm-documents.AwsService.property.ECR"></a>
+
+```typescript
+public readonly ECR: AwsService;
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a>
+
+---
+
+##### `ECRPUBLIC`<sup>Required</sup> <a name="ECRPUBLIC" id="@cdklabs/cdk-ssm-documents.AwsService.property.ECRPUBLIC"></a>
+
+```typescript
+public readonly ECRPUBLIC: AwsService;
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a>
+
+---
+
+##### `ECS`<sup>Required</sup> <a name="ECS" id="@cdklabs/cdk-ssm-documents.AwsService.property.ECS"></a>
+
+```typescript
+public readonly ECS: AwsService;
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a>
+
+---
+
+##### `EFS`<sup>Required</sup> <a name="EFS" id="@cdklabs/cdk-ssm-documents.AwsService.property.EFS"></a>
+
+```typescript
+public readonly EFS: AwsService;
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a>
+
+---
+
+##### `EKS`<sup>Required</sup> <a name="EKS" id="@cdklabs/cdk-ssm-documents.AwsService.property.EKS"></a>
+
+```typescript
+public readonly EKS: AwsService;
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a>
+
+---
+
+##### `ELASTI_CACHE`<sup>Required</sup> <a name="ELASTI_CACHE" id="@cdklabs/cdk-ssm-documents.AwsService.property.ELASTI_CACHE"></a>
+
+```typescript
+public readonly ELASTI_CACHE: AwsService;
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a>
+
+---
+
+##### `ELASTIC_BEANSTALK`<sup>Required</sup> <a name="ELASTIC_BEANSTALK" id="@cdklabs/cdk-ssm-documents.AwsService.property.ELASTIC_BEANSTALK"></a>
+
+```typescript
+public readonly ELASTIC_BEANSTALK: AwsService;
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a>
+
+---
+
+##### `ELASTIC_INFERENCE`<sup>Required</sup> <a name="ELASTIC_INFERENCE" id="@cdklabs/cdk-ssm-documents.AwsService.property.ELASTIC_INFERENCE"></a>
+
+```typescript
+public readonly ELASTIC_INFERENCE: AwsService;
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a>
+
+---
+
+##### `ELASTIC_TRANSCODER`<sup>Required</sup> <a name="ELASTIC_TRANSCODER" id="@cdklabs/cdk-ssm-documents.AwsService.property.ELASTIC_TRANSCODER"></a>
+
+```typescript
+public readonly ELASTIC_TRANSCODER: AwsService;
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a>
+
+---
+
+##### `ELB`<sup>Required</sup> <a name="ELB" id="@cdklabs/cdk-ssm-documents.AwsService.property.ELB"></a>
+
+```typescript
+public readonly ELB: AwsService;
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a>
+
+---
+
+##### `ELBV2`<sup>Required</sup> <a name="ELBV2" id="@cdklabs/cdk-ssm-documents.AwsService.property.ELBV2"></a>
+
+```typescript
+public readonly ELBV2: AwsService;
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a>
+
+---
+
+##### `EMR`<sup>Required</sup> <a name="EMR" id="@cdklabs/cdk-ssm-documents.AwsService.property.EMR"></a>
+
+```typescript
+public readonly EMR: AwsService;
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a>
+
+---
+
+##### `EMRCONTAINERS`<sup>Required</sup> <a name="EMRCONTAINERS" id="@cdklabs/cdk-ssm-documents.AwsService.property.EMRCONTAINERS"></a>
+
+```typescript
+public readonly EMRCONTAINERS: AwsService;
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a>
+
+---
+
+##### `EMRSERVERLESS`<sup>Required</sup> <a name="EMRSERVERLESS" id="@cdklabs/cdk-ssm-documents.AwsService.property.EMRSERVERLESS"></a>
+
+```typescript
+public readonly EMRSERVERLESS: AwsService;
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a>
+
+---
+
+##### `ES`<sup>Required</sup> <a name="ES" id="@cdklabs/cdk-ssm-documents.AwsService.property.ES"></a>
+
+```typescript
+public readonly ES: AwsService;
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a>
+
+---
+
+##### `EVIDENTLY`<sup>Required</sup> <a name="EVIDENTLY" id="@cdklabs/cdk-ssm-documents.AwsService.property.EVIDENTLY"></a>
+
+```typescript
+public readonly EVIDENTLY: AwsService;
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a>
+
+---
+
+##### `FINSPACE`<sup>Required</sup> <a name="FINSPACE" id="@cdklabs/cdk-ssm-documents.AwsService.property.FINSPACE"></a>
+
+```typescript
+public readonly FINSPACE: AwsService;
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a>
+
+---
+
+##### `FINSPACEDATA`<sup>Required</sup> <a name="FINSPACEDATA" id="@cdklabs/cdk-ssm-documents.AwsService.property.FINSPACEDATA"></a>
+
+```typescript
+public readonly FINSPACEDATA: AwsService;
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a>
+
+---
+
+##### `FIREHOSE`<sup>Required</sup> <a name="FIREHOSE" id="@cdklabs/cdk-ssm-documents.AwsService.property.FIREHOSE"></a>
+
+```typescript
+public readonly FIREHOSE: AwsService;
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a>
+
+---
+
+##### `FIS`<sup>Required</sup> <a name="FIS" id="@cdklabs/cdk-ssm-documents.AwsService.property.FIS"></a>
+
+```typescript
+public readonly FIS: AwsService;
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a>
+
+---
+
+##### `FMS`<sup>Required</sup> <a name="FMS" id="@cdklabs/cdk-ssm-documents.AwsService.property.FMS"></a>
+
+```typescript
+public readonly FMS: AwsService;
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a>
+
+---
+
+##### `FRAUD_DETECTOR`<sup>Required</sup> <a name="FRAUD_DETECTOR" id="@cdklabs/cdk-ssm-documents.AwsService.property.FRAUD_DETECTOR"></a>
+
+```typescript
+public readonly FRAUD_DETECTOR: AwsService;
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a>
+
+---
+
+##### `FSX`<sup>Required</sup> <a name="FSX" id="@cdklabs/cdk-ssm-documents.AwsService.property.FSX"></a>
+
+```typescript
+public readonly FSX: AwsService;
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a>
+
+---
+
+##### `GAME_LIFT`<sup>Required</sup> <a name="GAME_LIFT" id="@cdklabs/cdk-ssm-documents.AwsService.property.GAME_LIFT"></a>
+
+```typescript
+public readonly GAME_LIFT: AwsService;
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a>
+
+---
+
+##### `GAME_SPARKS`<sup>Required</sup> <a name="GAME_SPARKS" id="@cdklabs/cdk-ssm-documents.AwsService.property.GAME_SPARKS"></a>
+
+```typescript
+public readonly GAME_SPARKS: AwsService;
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a>
+
+---
+
+##### `GLACIER`<sup>Required</sup> <a name="GLACIER" id="@cdklabs/cdk-ssm-documents.AwsService.property.GLACIER"></a>
+
+```typescript
+public readonly GLACIER: AwsService;
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a>
+
+---
+
+##### `GLOBAL_ACCELERATOR`<sup>Required</sup> <a name="GLOBAL_ACCELERATOR" id="@cdklabs/cdk-ssm-documents.AwsService.property.GLOBAL_ACCELERATOR"></a>
+
+```typescript
+public readonly GLOBAL_ACCELERATOR: AwsService;
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a>
+
+---
+
+##### `GLUE`<sup>Required</sup> <a name="GLUE" id="@cdklabs/cdk-ssm-documents.AwsService.property.GLUE"></a>
+
+```typescript
+public readonly GLUE: AwsService;
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a>
+
+---
+
+##### `GRAFANA`<sup>Required</sup> <a name="GRAFANA" id="@cdklabs/cdk-ssm-documents.AwsService.property.GRAFANA"></a>
+
+```typescript
+public readonly GRAFANA: AwsService;
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a>
+
+---
+
+##### `GREENGRASS`<sup>Required</sup> <a name="GREENGRASS" id="@cdklabs/cdk-ssm-documents.AwsService.property.GREENGRASS"></a>
+
+```typescript
+public readonly GREENGRASS: AwsService;
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a>
+
+---
+
+##### `GREENGRASS_V2`<sup>Required</sup> <a name="GREENGRASS_V2" id="@cdklabs/cdk-ssm-documents.AwsService.property.GREENGRASS_V2"></a>
+
+```typescript
+public readonly GREENGRASS_V2: AwsService;
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a>
+
+---
+
+##### `GROUND_STATION`<sup>Required</sup> <a name="GROUND_STATION" id="@cdklabs/cdk-ssm-documents.AwsService.property.GROUND_STATION"></a>
+
+```typescript
+public readonly GROUND_STATION: AwsService;
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a>
+
+---
+
+##### `GUARD_DUTY`<sup>Required</sup> <a name="GUARD_DUTY" id="@cdklabs/cdk-ssm-documents.AwsService.property.GUARD_DUTY"></a>
+
+```typescript
+public readonly GUARD_DUTY: AwsService;
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a>
+
+---
+
+##### `HEALTH`<sup>Required</sup> <a name="HEALTH" id="@cdklabs/cdk-ssm-documents.AwsService.property.HEALTH"></a>
+
+```typescript
+public readonly HEALTH: AwsService;
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a>
+
+---
+
+##### `HEALTH_LAKE`<sup>Required</sup> <a name="HEALTH_LAKE" id="@cdklabs/cdk-ssm-documents.AwsService.property.HEALTH_LAKE"></a>
+
+```typescript
+public readonly HEALTH_LAKE: AwsService;
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a>
+
+---
+
+##### `HONEYCODE`<sup>Required</sup> <a name="HONEYCODE" id="@cdklabs/cdk-ssm-documents.AwsService.property.HONEYCODE"></a>
+
+```typescript
+public readonly HONEYCODE: AwsService;
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a>
+
+---
+
+##### `IAM`<sup>Required</sup> <a name="IAM" id="@cdklabs/cdk-ssm-documents.AwsService.property.IAM"></a>
+
+```typescript
+public readonly IAM: AwsService;
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a>
+
+---
+
+##### `IDENTITY_STORE`<sup>Required</sup> <a name="IDENTITY_STORE" id="@cdklabs/cdk-ssm-documents.AwsService.property.IDENTITY_STORE"></a>
+
+```typescript
+public readonly IDENTITY_STORE: AwsService;
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a>
+
+---
+
+##### `IMAGEBUILDER`<sup>Required</sup> <a name="IMAGEBUILDER" id="@cdklabs/cdk-ssm-documents.AwsService.property.IMAGEBUILDER"></a>
+
+```typescript
+public readonly IMAGEBUILDER: AwsService;
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a>
+
+---
+
+##### `IMPORT_EXPORT`<sup>Required</sup> <a name="IMPORT_EXPORT" id="@cdklabs/cdk-ssm-documents.AwsService.property.IMPORT_EXPORT"></a>
+
+```typescript
+public readonly IMPORT_EXPORT: AwsService;
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a>
+
+---
+
+##### `INSPECTOR`<sup>Required</sup> <a name="INSPECTOR" id="@cdklabs/cdk-ssm-documents.AwsService.property.INSPECTOR"></a>
+
+```typescript
+public readonly INSPECTOR: AwsService;
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a>
+
+---
+
+##### `INSPECTOR2`<sup>Required</sup> <a name="INSPECTOR2" id="@cdklabs/cdk-ssm-documents.AwsService.property.INSPECTOR2"></a>
+
+```typescript
+public readonly INSPECTOR2: AwsService;
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a>
+
+---
+
+##### `IO_T_ANALYTICS`<sup>Required</sup> <a name="IO_T_ANALYTICS" id="@cdklabs/cdk-ssm-documents.AwsService.property.IO_T_ANALYTICS"></a>
+
+```typescript
+public readonly IO_T_ANALYTICS: AwsService;
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a>
+
+---
+
+##### `IO_T1_CLICK_PROJECTS`<sup>Required</sup> <a name="IO_T1_CLICK_PROJECTS" id="@cdklabs/cdk-ssm-documents.AwsService.property.IO_T1_CLICK_PROJECTS"></a>
+
+```typescript
+public readonly IO_T1_CLICK_PROJECTS: AwsService;
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a>
+
+---
+
+##### `IOT`<sup>Required</sup> <a name="IOT" id="@cdklabs/cdk-ssm-documents.AwsService.property.IOT"></a>
+
+```typescript
+public readonly IOT: AwsService;
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a>
+
+---
+
+##### `IOT_DATA`<sup>Required</sup> <a name="IOT_DATA" id="@cdklabs/cdk-ssm-documents.AwsService.property.IOT_DATA"></a>
+
+```typescript
+public readonly IOT_DATA: AwsService;
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a>
+
+---
+
+##### `IOT_DEVICE_ADVISOR`<sup>Required</sup> <a name="IOT_DEVICE_ADVISOR" id="@cdklabs/cdk-ssm-documents.AwsService.property.IOT_DEVICE_ADVISOR"></a>
+
+```typescript
+public readonly IOT_DEVICE_ADVISOR: AwsService;
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a>
+
+---
+
+##### `IOT_EVENTS`<sup>Required</sup> <a name="IOT_EVENTS" id="@cdklabs/cdk-ssm-documents.AwsService.property.IOT_EVENTS"></a>
+
+```typescript
+public readonly IOT_EVENTS: AwsService;
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a>
+
+---
+
+##### `IOT_EVENTS_DATA`<sup>Required</sup> <a name="IOT_EVENTS_DATA" id="@cdklabs/cdk-ssm-documents.AwsService.property.IOT_EVENTS_DATA"></a>
+
+```typescript
+public readonly IOT_EVENTS_DATA: AwsService;
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a>
+
+---
+
+##### `IOT_FLEET_HUB`<sup>Required</sup> <a name="IOT_FLEET_HUB" id="@cdklabs/cdk-ssm-documents.AwsService.property.IOT_FLEET_HUB"></a>
+
+```typescript
+public readonly IOT_FLEET_HUB: AwsService;
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a>
+
+---
+
+##### `IOT_FLEET_WISE`<sup>Required</sup> <a name="IOT_FLEET_WISE" id="@cdklabs/cdk-ssm-documents.AwsService.property.IOT_FLEET_WISE"></a>
+
+```typescript
+public readonly IOT_FLEET_WISE: AwsService;
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a>
+
+---
+
+##### `IOT_SECURE_TUNNELING`<sup>Required</sup> <a name="IOT_SECURE_TUNNELING" id="@cdklabs/cdk-ssm-documents.AwsService.property.IOT_SECURE_TUNNELING"></a>
+
+```typescript
+public readonly IOT_SECURE_TUNNELING: AwsService;
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a>
+
+---
+
+##### `IOT_SITE_WISE`<sup>Required</sup> <a name="IOT_SITE_WISE" id="@cdklabs/cdk-ssm-documents.AwsService.property.IOT_SITE_WISE"></a>
+
+```typescript
+public readonly IOT_SITE_WISE: AwsService;
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a>
+
+---
+
+##### `IOT_THINGS_GRAPH`<sup>Required</sup> <a name="IOT_THINGS_GRAPH" id="@cdklabs/cdk-ssm-documents.AwsService.property.IOT_THINGS_GRAPH"></a>
+
+```typescript
+public readonly IOT_THINGS_GRAPH: AwsService;
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a>
+
+---
+
+##### `IOT_TWIN_MAKER`<sup>Required</sup> <a name="IOT_TWIN_MAKER" id="@cdklabs/cdk-ssm-documents.AwsService.property.IOT_TWIN_MAKER"></a>
+
+```typescript
+public readonly IOT_TWIN_MAKER: AwsService;
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a>
+
+---
+
+##### `IOT_WIRELESS`<sup>Required</sup> <a name="IOT_WIRELESS" id="@cdklabs/cdk-ssm-documents.AwsService.property.IOT_WIRELESS"></a>
+
+```typescript
+public readonly IOT_WIRELESS: AwsService;
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a>
+
+---
+
+##### `IVS`<sup>Required</sup> <a name="IVS" id="@cdklabs/cdk-ssm-documents.AwsService.property.IVS"></a>
+
+```typescript
+public readonly IVS: AwsService;
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a>
+
+---
+
+##### `IVSCHAT`<sup>Required</sup> <a name="IVSCHAT" id="@cdklabs/cdk-ssm-documents.AwsService.property.IVSCHAT"></a>
+
+```typescript
+public readonly IVSCHAT: AwsService;
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a>
+
+---
+
+##### `KAFKA`<sup>Required</sup> <a name="KAFKA" id="@cdklabs/cdk-ssm-documents.AwsService.property.KAFKA"></a>
+
+```typescript
+public readonly KAFKA: AwsService;
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a>
+
+---
+
+##### `KAFKA_CONNECT`<sup>Required</sup> <a name="KAFKA_CONNECT" id="@cdklabs/cdk-ssm-documents.AwsService.property.KAFKA_CONNECT"></a>
+
+```typescript
+public readonly KAFKA_CONNECT: AwsService;
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a>
+
+---
+
+##### `KENDRA`<sup>Required</sup> <a name="KENDRA" id="@cdklabs/cdk-ssm-documents.AwsService.property.KENDRA"></a>
+
+```typescript
+public readonly KENDRA: AwsService;
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a>
+
+---
+
+##### `KEYSPACES`<sup>Required</sup> <a name="KEYSPACES" id="@cdklabs/cdk-ssm-documents.AwsService.property.KEYSPACES"></a>
+
+```typescript
+public readonly KEYSPACES: AwsService;
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a>
+
+---
+
+##### `KINESIS`<sup>Required</sup> <a name="KINESIS" id="@cdklabs/cdk-ssm-documents.AwsService.property.KINESIS"></a>
+
+```typescript
+public readonly KINESIS: AwsService;
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a>
+
+---
+
+##### `KINESIS_ANALYTICS`<sup>Required</sup> <a name="KINESIS_ANALYTICS" id="@cdklabs/cdk-ssm-documents.AwsService.property.KINESIS_ANALYTICS"></a>
+
+```typescript
+public readonly KINESIS_ANALYTICS: AwsService;
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a>
+
+---
+
+##### `KINESIS_ANALYTICS_V2`<sup>Required</sup> <a name="KINESIS_ANALYTICS_V2" id="@cdklabs/cdk-ssm-documents.AwsService.property.KINESIS_ANALYTICS_V2"></a>
+
+```typescript
+public readonly KINESIS_ANALYTICS_V2: AwsService;
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a>
+
+---
+
+##### `KINESIS_VIDEO`<sup>Required</sup> <a name="KINESIS_VIDEO" id="@cdklabs/cdk-ssm-documents.AwsService.property.KINESIS_VIDEO"></a>
+
+```typescript
+public readonly KINESIS_VIDEO: AwsService;
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a>
+
+---
+
+##### `KINESIS_VIDEO_ARCHIVED_MEDIA`<sup>Required</sup> <a name="KINESIS_VIDEO_ARCHIVED_MEDIA" id="@cdklabs/cdk-ssm-documents.AwsService.property.KINESIS_VIDEO_ARCHIVED_MEDIA"></a>
+
+```typescript
+public readonly KINESIS_VIDEO_ARCHIVED_MEDIA: AwsService;
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a>
+
+---
+
+##### `KINESIS_VIDEO_MEDIA`<sup>Required</sup> <a name="KINESIS_VIDEO_MEDIA" id="@cdklabs/cdk-ssm-documents.AwsService.property.KINESIS_VIDEO_MEDIA"></a>
+
+```typescript
+public readonly KINESIS_VIDEO_MEDIA: AwsService;
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a>
+
+---
+
+##### `KMS`<sup>Required</sup> <a name="KMS" id="@cdklabs/cdk-ssm-documents.AwsService.property.KMS"></a>
+
+```typescript
+public readonly KMS: AwsService;
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a>
+
+---
+
+##### `LAKE_FORMATION`<sup>Required</sup> <a name="LAKE_FORMATION" id="@cdklabs/cdk-ssm-documents.AwsService.property.LAKE_FORMATION"></a>
+
+```typescript
+public readonly LAKE_FORMATION: AwsService;
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a>
+
+---
+
+##### `LAMBDA`<sup>Required</sup> <a name="LAMBDA" id="@cdklabs/cdk-ssm-documents.AwsService.property.LAMBDA"></a>
+
+```typescript
+public readonly LAMBDA: AwsService;
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a>
+
+---
+
+##### `LEX_RUNTIME`<sup>Required</sup> <a name="LEX_RUNTIME" id="@cdklabs/cdk-ssm-documents.AwsService.property.LEX_RUNTIME"></a>
+
+```typescript
+public readonly LEX_RUNTIME: AwsService;
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a>
+
+---
+
+##### `LICENSE_MANAGER`<sup>Required</sup> <a name="LICENSE_MANAGER" id="@cdklabs/cdk-ssm-documents.AwsService.property.LICENSE_MANAGER"></a>
+
+```typescript
+public readonly LICENSE_MANAGER: AwsService;
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a>
+
+---
+
+##### `LICENSE_MANAGER_USER_SUBSCRIPTIONS`<sup>Required</sup> <a name="LICENSE_MANAGER_USER_SUBSCRIPTIONS" id="@cdklabs/cdk-ssm-documents.AwsService.property.LICENSE_MANAGER_USER_SUBSCRIPTIONS"></a>
+
+```typescript
+public readonly LICENSE_MANAGER_USER_SUBSCRIPTIONS: AwsService;
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a>
+
+---
+
+##### `LIGHTSAIL`<sup>Required</sup> <a name="LIGHTSAIL" id="@cdklabs/cdk-ssm-documents.AwsService.property.LIGHTSAIL"></a>
+
+```typescript
+public readonly LIGHTSAIL: AwsService;
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a>
+
+---
+
+##### `LOCATION`<sup>Required</sup> <a name="LOCATION" id="@cdklabs/cdk-ssm-documents.AwsService.property.LOCATION"></a>
+
+```typescript
+public readonly LOCATION: AwsService;
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a>
+
+---
+
+##### `LOOKOUT_EQUIPMENT`<sup>Required</sup> <a name="LOOKOUT_EQUIPMENT" id="@cdklabs/cdk-ssm-documents.AwsService.property.LOOKOUT_EQUIPMENT"></a>
+
+```typescript
+public readonly LOOKOUT_EQUIPMENT: AwsService;
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a>
+
+---
+
+##### `LOOKOUT_METRICS`<sup>Required</sup> <a name="LOOKOUT_METRICS" id="@cdklabs/cdk-ssm-documents.AwsService.property.LOOKOUT_METRICS"></a>
+
+```typescript
+public readonly LOOKOUT_METRICS: AwsService;
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a>
+
+---
+
+##### `LOOKOUT_VISION`<sup>Required</sup> <a name="LOOKOUT_VISION" id="@cdklabs/cdk-ssm-documents.AwsService.property.LOOKOUT_VISION"></a>
+
+```typescript
+public readonly LOOKOUT_VISION: AwsService;
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a>
+
+---
+
+##### `M2`<sup>Required</sup> <a name="M2" id="@cdklabs/cdk-ssm-documents.AwsService.property.M2"></a>
+
+```typescript
+public readonly M2: AwsService;
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a>
+
+---
+
+##### `MACHINE_LEARNING`<sup>Required</sup> <a name="MACHINE_LEARNING" id="@cdklabs/cdk-ssm-documents.AwsService.property.MACHINE_LEARNING"></a>
+
+```typescript
+public readonly MACHINE_LEARNING: AwsService;
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a>
+
+---
+
+##### `MACIE`<sup>Required</sup> <a name="MACIE" id="@cdklabs/cdk-ssm-documents.AwsService.property.MACIE"></a>
+
+```typescript
+public readonly MACIE: AwsService;
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a>
+
+---
+
+##### `MACIE2`<sup>Required</sup> <a name="MACIE2" id="@cdklabs/cdk-ssm-documents.AwsService.property.MACIE2"></a>
+
+```typescript
+public readonly MACIE2: AwsService;
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a>
+
+---
+
+##### `MANAGED_BLOCKCHAIN`<sup>Required</sup> <a name="MANAGED_BLOCKCHAIN" id="@cdklabs/cdk-ssm-documents.AwsService.property.MANAGED_BLOCKCHAIN"></a>
+
+```typescript
+public readonly MANAGED_BLOCKCHAIN: AwsService;
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a>
+
+---
+
+##### `MARKETPLACE_CATALOG`<sup>Required</sup> <a name="MARKETPLACE_CATALOG" id="@cdklabs/cdk-ssm-documents.AwsService.property.MARKETPLACE_CATALOG"></a>
+
+```typescript
+public readonly MARKETPLACE_CATALOG: AwsService;
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a>
+
+---
+
+##### `MARKETPLACE_COMMERCE_ANALYTICS`<sup>Required</sup> <a name="MARKETPLACE_COMMERCE_ANALYTICS" id="@cdklabs/cdk-ssm-documents.AwsService.property.MARKETPLACE_COMMERCE_ANALYTICS"></a>
+
+```typescript
+public readonly MARKETPLACE_COMMERCE_ANALYTICS: AwsService;
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a>
+
+---
+
+##### `MEDIA_CONNECT`<sup>Required</sup> <a name="MEDIA_CONNECT" id="@cdklabs/cdk-ssm-documents.AwsService.property.MEDIA_CONNECT"></a>
+
+```typescript
+public readonly MEDIA_CONNECT: AwsService;
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a>
+
+---
+
+##### `MEDIA_CONVERT`<sup>Required</sup> <a name="MEDIA_CONVERT" id="@cdklabs/cdk-ssm-documents.AwsService.property.MEDIA_CONVERT"></a>
+
+```typescript
+public readonly MEDIA_CONVERT: AwsService;
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a>
+
+---
+
+##### `MEDIA_LIVE`<sup>Required</sup> <a name="MEDIA_LIVE" id="@cdklabs/cdk-ssm-documents.AwsService.property.MEDIA_LIVE"></a>
+
+```typescript
+public readonly MEDIA_LIVE: AwsService;
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a>
+
+---
+
+##### `MEDIA_PACKAGE`<sup>Required</sup> <a name="MEDIA_PACKAGE" id="@cdklabs/cdk-ssm-documents.AwsService.property.MEDIA_PACKAGE"></a>
+
+```typescript
+public readonly MEDIA_PACKAGE: AwsService;
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a>
+
+---
+
+##### `MEDIA_PACKAGE_VOD`<sup>Required</sup> <a name="MEDIA_PACKAGE_VOD" id="@cdklabs/cdk-ssm-documents.AwsService.property.MEDIA_PACKAGE_VOD"></a>
+
+```typescript
+public readonly MEDIA_PACKAGE_VOD: AwsService;
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a>
+
+---
+
+##### `MEDIA_STORE`<sup>Required</sup> <a name="MEDIA_STORE" id="@cdklabs/cdk-ssm-documents.AwsService.property.MEDIA_STORE"></a>
+
+```typescript
+public readonly MEDIA_STORE: AwsService;
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a>
+
+---
+
+##### `MEDIA_STORE_DATA`<sup>Required</sup> <a name="MEDIA_STORE_DATA" id="@cdklabs/cdk-ssm-documents.AwsService.property.MEDIA_STORE_DATA"></a>
+
+```typescript
+public readonly MEDIA_STORE_DATA: AwsService;
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a>
+
+---
+
+##### `MEDIA_TAILOR`<sup>Required</sup> <a name="MEDIA_TAILOR" id="@cdklabs/cdk-ssm-documents.AwsService.property.MEDIA_TAILOR"></a>
+
+```typescript
+public readonly MEDIA_TAILOR: AwsService;
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a>
+
+---
+
+##### `MEMORY_DB`<sup>Required</sup> <a name="MEMORY_DB" id="@cdklabs/cdk-ssm-documents.AwsService.property.MEMORY_DB"></a>
+
+```typescript
+public readonly MEMORY_DB: AwsService;
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a>
+
+---
+
+##### `MGN`<sup>Required</sup> <a name="MGN" id="@cdklabs/cdk-ssm-documents.AwsService.property.MGN"></a>
+
+```typescript
+public readonly MGN: AwsService;
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a>
+
+---
+
+##### `MIGRATION_HUB_CONFIG`<sup>Required</sup> <a name="MIGRATION_HUB_CONFIG" id="@cdklabs/cdk-ssm-documents.AwsService.property.MIGRATION_HUB_CONFIG"></a>
+
+```typescript
+public readonly MIGRATION_HUB_CONFIG: AwsService;
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a>
+
+---
+
+##### `MIGRATION_HUB_ORCHESTRATOR`<sup>Required</sup> <a name="MIGRATION_HUB_ORCHESTRATOR" id="@cdklabs/cdk-ssm-documents.AwsService.property.MIGRATION_HUB_ORCHESTRATOR"></a>
+
+```typescript
+public readonly MIGRATION_HUB_ORCHESTRATOR: AwsService;
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a>
+
+---
+
+##### `MIGRATION_HUB_REFACTOR_SPACES`<sup>Required</sup> <a name="MIGRATION_HUB_REFACTOR_SPACES" id="@cdklabs/cdk-ssm-documents.AwsService.property.MIGRATION_HUB_REFACTOR_SPACES"></a>
+
+```typescript
+public readonly MIGRATION_HUB_REFACTOR_SPACES: AwsService;
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a>
+
+---
+
+##### `MIGRATION_HUB_STRATEGY`<sup>Required</sup> <a name="MIGRATION_HUB_STRATEGY" id="@cdklabs/cdk-ssm-documents.AwsService.property.MIGRATION_HUB_STRATEGY"></a>
+
+```typescript
+public readonly MIGRATION_HUB_STRATEGY: AwsService;
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a>
+
+---
+
+##### `MOBILE`<sup>Required</sup> <a name="MOBILE" id="@cdklabs/cdk-ssm-documents.AwsService.property.MOBILE"></a>
+
+```typescript
+public readonly MOBILE: AwsService;
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a>
+
+---
+
+##### `MQ`<sup>Required</sup> <a name="MQ" id="@cdklabs/cdk-ssm-documents.AwsService.property.MQ"></a>
+
+```typescript
+public readonly MQ: AwsService;
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a>
+
+---
+
+##### `MTURK`<sup>Required</sup> <a name="MTURK" id="@cdklabs/cdk-ssm-documents.AwsService.property.MTURK"></a>
+
+```typescript
+public readonly MTURK: AwsService;
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a>
+
+---
+
+##### `MWAA`<sup>Required</sup> <a name="MWAA" id="@cdklabs/cdk-ssm-documents.AwsService.property.MWAA"></a>
+
+```typescript
+public readonly MWAA: AwsService;
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a>
+
+---
+
+##### `NEPTUNE`<sup>Required</sup> <a name="NEPTUNE" id="@cdklabs/cdk-ssm-documents.AwsService.property.NEPTUNE"></a>
+
+```typescript
+public readonly NEPTUNE: AwsService;
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a>
+
+---
+
+##### `NETWORK_FIREWALL`<sup>Required</sup> <a name="NETWORK_FIREWALL" id="@cdklabs/cdk-ssm-documents.AwsService.property.NETWORK_FIREWALL"></a>
+
+```typescript
+public readonly NETWORK_FIREWALL: AwsService;
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a>
+
+---
+
+##### `NETWORK_MANAGER`<sup>Required</sup> <a name="NETWORK_MANAGER" id="@cdklabs/cdk-ssm-documents.AwsService.property.NETWORK_MANAGER"></a>
+
+```typescript
+public readonly NETWORK_MANAGER: AwsService;
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a>
+
+---
+
+##### `NIMBLE`<sup>Required</sup> <a name="NIMBLE" id="@cdklabs/cdk-ssm-documents.AwsService.property.NIMBLE"></a>
+
+```typescript
+public readonly NIMBLE: AwsService;
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a>
+
+---
+
+##### `OPEN_SEARCH`<sup>Required</sup> <a name="OPEN_SEARCH" id="@cdklabs/cdk-ssm-documents.AwsService.property.OPEN_SEARCH"></a>
+
+```typescript
+public readonly OPEN_SEARCH: AwsService;
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a>
+
+---
+
+##### `OPS_WORKS`<sup>Required</sup> <a name="OPS_WORKS" id="@cdklabs/cdk-ssm-documents.AwsService.property.OPS_WORKS"></a>
+
+```typescript
+public readonly OPS_WORKS: AwsService;
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a>
+
+---
+
+##### `OPS_WORKS_C_M`<sup>Required</sup> <a name="OPS_WORKS_C_M" id="@cdklabs/cdk-ssm-documents.AwsService.property.OPS_WORKS_C_M"></a>
+
+```typescript
+public readonly OPS_WORKS_C_M: AwsService;
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a>
+
+---
+
+##### `ORGANIZATIONS`<sup>Required</sup> <a name="ORGANIZATIONS" id="@cdklabs/cdk-ssm-documents.AwsService.property.ORGANIZATIONS"></a>
+
+```typescript
+public readonly ORGANIZATIONS: AwsService;
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a>
+
+---
+
+##### `OUTPOSTS`<sup>Required</sup> <a name="OUTPOSTS" id="@cdklabs/cdk-ssm-documents.AwsService.property.OUTPOSTS"></a>
+
+```typescript
+public readonly OUTPOSTS: AwsService;
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a>
+
+---
+
+##### `PANORAMA`<sup>Required</sup> <a name="PANORAMA" id="@cdklabs/cdk-ssm-documents.AwsService.property.PANORAMA"></a>
+
+```typescript
+public readonly PANORAMA: AwsService;
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a>
+
+---
+
+##### `PERSONALIZE`<sup>Required</sup> <a name="PERSONALIZE" id="@cdklabs/cdk-ssm-documents.AwsService.property.PERSONALIZE"></a>
+
+```typescript
+public readonly PERSONALIZE: AwsService;
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a>
+
+---
+
+##### `PERSONALIZE_EVENTS`<sup>Required</sup> <a name="PERSONALIZE_EVENTS" id="@cdklabs/cdk-ssm-documents.AwsService.property.PERSONALIZE_EVENTS"></a>
+
+```typescript
+public readonly PERSONALIZE_EVENTS: AwsService;
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a>
+
+---
+
+##### `PERSONALIZE_RUNTIME`<sup>Required</sup> <a name="PERSONALIZE_RUNTIME" id="@cdklabs/cdk-ssm-documents.AwsService.property.PERSONALIZE_RUNTIME"></a>
+
+```typescript
+public readonly PERSONALIZE_RUNTIME: AwsService;
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a>
+
+---
+
+##### `PI`<sup>Required</sup> <a name="PI" id="@cdklabs/cdk-ssm-documents.AwsService.property.PI"></a>
+
+```typescript
+public readonly PI: AwsService;
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a>
+
+---
+
+##### `PINPOINT`<sup>Required</sup> <a name="PINPOINT" id="@cdklabs/cdk-ssm-documents.AwsService.property.PINPOINT"></a>
+
+```typescript
+public readonly PINPOINT: AwsService;
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a>
+
+---
+
+##### `PINPOINT_EMAIL`<sup>Required</sup> <a name="PINPOINT_EMAIL" id="@cdklabs/cdk-ssm-documents.AwsService.property.PINPOINT_EMAIL"></a>
+
+```typescript
+public readonly PINPOINT_EMAIL: AwsService;
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a>
+
+---
+
+##### `PINPOINT_SMS_VOICE`<sup>Required</sup> <a name="PINPOINT_SMS_VOICE" id="@cdklabs/cdk-ssm-documents.AwsService.property.PINPOINT_SMS_VOICE"></a>
+
+```typescript
+public readonly PINPOINT_SMS_VOICE: AwsService;
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a>
+
+---
+
+##### `PINPOINT_SMS_VOICE_V2`<sup>Required</sup> <a name="PINPOINT_SMS_VOICE_V2" id="@cdklabs/cdk-ssm-documents.AwsService.property.PINPOINT_SMS_VOICE_V2"></a>
+
+```typescript
+public readonly PINPOINT_SMS_VOICE_V2: AwsService;
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a>
+
+---
+
+##### `POLLY`<sup>Required</sup> <a name="POLLY" id="@cdklabs/cdk-ssm-documents.AwsService.property.POLLY"></a>
+
+```typescript
+public readonly POLLY: AwsService;
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a>
+
+---
+
+##### `PRICING`<sup>Required</sup> <a name="PRICING" id="@cdklabs/cdk-ssm-documents.AwsService.property.PRICING"></a>
+
+```typescript
+public readonly PRICING: AwsService;
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a>
+
+---
+
+##### `PRIVATE_NETWORKS`<sup>Required</sup> <a name="PRIVATE_NETWORKS" id="@cdklabs/cdk-ssm-documents.AwsService.property.PRIVATE_NETWORKS"></a>
+
+```typescript
+public readonly PRIVATE_NETWORKS: AwsService;
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a>
+
+---
+
+##### `PROTON`<sup>Required</sup> <a name="PROTON" id="@cdklabs/cdk-ssm-documents.AwsService.property.PROTON"></a>
+
+```typescript
+public readonly PROTON: AwsService;
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a>
+
+---
+
+##### `QLDB`<sup>Required</sup> <a name="QLDB" id="@cdklabs/cdk-ssm-documents.AwsService.property.QLDB"></a>
+
+```typescript
+public readonly QLDB: AwsService;
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a>
+
+---
+
+##### `QLDB_SESSION`<sup>Required</sup> <a name="QLDB_SESSION" id="@cdklabs/cdk-ssm-documents.AwsService.property.QLDB_SESSION"></a>
+
+```typescript
+public readonly QLDB_SESSION: AwsService;
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a>
+
+---
+
+##### `QUICK_SIGHT`<sup>Required</sup> <a name="QUICK_SIGHT" id="@cdklabs/cdk-ssm-documents.AwsService.property.QUICK_SIGHT"></a>
+
+```typescript
+public readonly QUICK_SIGHT: AwsService;
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a>
+
+---
+
+##### `RAM`<sup>Required</sup> <a name="RAM" id="@cdklabs/cdk-ssm-documents.AwsService.property.RAM"></a>
+
+```typescript
+public readonly RAM: AwsService;
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a>
+
+---
+
+##### `RBIN`<sup>Required</sup> <a name="RBIN" id="@cdklabs/cdk-ssm-documents.AwsService.property.RBIN"></a>
+
+```typescript
+public readonly RBIN: AwsService;
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a>
+
+---
+
+##### `RDS`<sup>Required</sup> <a name="RDS" id="@cdklabs/cdk-ssm-documents.AwsService.property.RDS"></a>
+
+```typescript
+public readonly RDS: AwsService;
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a>
+
+---
+
+##### `REDSHIFT`<sup>Required</sup> <a name="REDSHIFT" id="@cdklabs/cdk-ssm-documents.AwsService.property.REDSHIFT"></a>
+
+```typescript
+public readonly REDSHIFT: AwsService;
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a>
+
+---
+
+##### `REDSHIFT_DATA`<sup>Required</sup> <a name="REDSHIFT_DATA" id="@cdklabs/cdk-ssm-documents.AwsService.property.REDSHIFT_DATA"></a>
+
+```typescript
+public readonly REDSHIFT_DATA: AwsService;
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a>
+
+---
+
+##### `REDSHIFT_SERVERLESS`<sup>Required</sup> <a name="REDSHIFT_SERVERLESS" id="@cdklabs/cdk-ssm-documents.AwsService.property.REDSHIFT_SERVERLESS"></a>
+
+```typescript
+public readonly REDSHIFT_SERVERLESS: AwsService;
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a>
+
+---
+
+##### `REKOGNITION`<sup>Required</sup> <a name="REKOGNITION" id="@cdklabs/cdk-ssm-documents.AwsService.property.REKOGNITION"></a>
+
+```typescript
+public readonly REKOGNITION: AwsService;
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a>
+
+---
+
+##### `RESILIENCEHUB`<sup>Required</sup> <a name="RESILIENCEHUB" id="@cdklabs/cdk-ssm-documents.AwsService.property.RESILIENCEHUB"></a>
+
+```typescript
+public readonly RESILIENCEHUB: AwsService;
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a>
+
+---
+
+##### `RESOURCE_EXPLORER2`<sup>Required</sup> <a name="RESOURCE_EXPLORER2" id="@cdklabs/cdk-ssm-documents.AwsService.property.RESOURCE_EXPLORER2"></a>
+
+```typescript
+public readonly RESOURCE_EXPLORER2: AwsService;
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a>
+
+---
+
+##### `RESOURCE_GROUPS`<sup>Required</sup> <a name="RESOURCE_GROUPS" id="@cdklabs/cdk-ssm-documents.AwsService.property.RESOURCE_GROUPS"></a>
+
+```typescript
+public readonly RESOURCE_GROUPS: AwsService;
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a>
+
+---
+
+##### `RESOURCE_GROUPS_TAGGING_AP_I`<sup>Required</sup> <a name="RESOURCE_GROUPS_TAGGING_AP_I" id="@cdklabs/cdk-ssm-documents.AwsService.property.RESOURCE_GROUPS_TAGGING_AP_I"></a>
+
+```typescript
+public readonly RESOURCE_GROUPS_TAGGING_AP_I: AwsService;
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a>
+
+---
+
+##### `ROBO_MAKER`<sup>Required</sup> <a name="ROBO_MAKER" id="@cdklabs/cdk-ssm-documents.AwsService.property.ROBO_MAKER"></a>
+
+```typescript
+public readonly ROBO_MAKER: AwsService;
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a>
+
+---
+
+##### `ROLES_ANYWHERE`<sup>Required</sup> <a name="ROLES_ANYWHERE" id="@cdklabs/cdk-ssm-documents.AwsService.property.ROLES_ANYWHERE"></a>
+
+```typescript
+public readonly ROLES_ANYWHERE: AwsService;
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a>
+
+---
+
+##### `ROUTE53`<sup>Required</sup> <a name="ROUTE53" id="@cdklabs/cdk-ssm-documents.AwsService.property.ROUTE53"></a>
+
+```typescript
+public readonly ROUTE53: AwsService;
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a>
+
+---
+
+##### `ROUTE53_DOMAINS`<sup>Required</sup> <a name="ROUTE53_DOMAINS" id="@cdklabs/cdk-ssm-documents.AwsService.property.ROUTE53_DOMAINS"></a>
+
+```typescript
+public readonly ROUTE53_DOMAINS: AwsService;
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a>
+
+---
+
+##### `ROUTE53_RECOVERY_CLUSTER`<sup>Required</sup> <a name="ROUTE53_RECOVERY_CLUSTER" id="@cdklabs/cdk-ssm-documents.AwsService.property.ROUTE53_RECOVERY_CLUSTER"></a>
+
+```typescript
+public readonly ROUTE53_RECOVERY_CLUSTER: AwsService;
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a>
+
+---
+
+##### `ROUTE53_RECOVERY_CONTROL_CONFIG`<sup>Required</sup> <a name="ROUTE53_RECOVERY_CONTROL_CONFIG" id="@cdklabs/cdk-ssm-documents.AwsService.property.ROUTE53_RECOVERY_CONTROL_CONFIG"></a>
+
+```typescript
+public readonly ROUTE53_RECOVERY_CONTROL_CONFIG: AwsService;
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a>
+
+---
+
+##### `ROUTE53_RECOVERY_READINESS`<sup>Required</sup> <a name="ROUTE53_RECOVERY_READINESS" id="@cdklabs/cdk-ssm-documents.AwsService.property.ROUTE53_RECOVERY_READINESS"></a>
+
+```typescript
+public readonly ROUTE53_RECOVERY_READINESS: AwsService;
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a>
+
+---
+
+##### `ROUTE53_RESOLVER`<sup>Required</sup> <a name="ROUTE53_RESOLVER" id="@cdklabs/cdk-ssm-documents.AwsService.property.ROUTE53_RESOLVER"></a>
+
+```typescript
+public readonly ROUTE53_RESOLVER: AwsService;
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a>
+
+---
+
+##### `RUM`<sup>Required</sup> <a name="RUM" id="@cdklabs/cdk-ssm-documents.AwsService.property.RUM"></a>
+
+```typescript
+public readonly RUM: AwsService;
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a>
+
+---
+
+##### `S3`<sup>Required</sup> <a name="S3" id="@cdklabs/cdk-ssm-documents.AwsService.property.S3"></a>
+
+```typescript
+public readonly S3: AwsService;
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a>
+
+---
+
+##### `S3_CONTROL`<sup>Required</sup> <a name="S3_CONTROL" id="@cdklabs/cdk-ssm-documents.AwsService.property.S3_CONTROL"></a>
+
+```typescript
+public readonly S3_CONTROL: AwsService;
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a>
+
+---
+
+##### `S3_OUTPOSTS`<sup>Required</sup> <a name="S3_OUTPOSTS" id="@cdklabs/cdk-ssm-documents.AwsService.property.S3_OUTPOSTS"></a>
+
+```typescript
+public readonly S3_OUTPOSTS: AwsService;
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a>
+
+---
+
+##### `SAGE_MAKER`<sup>Required</sup> <a name="SAGE_MAKER" id="@cdklabs/cdk-ssm-documents.AwsService.property.SAGE_MAKER"></a>
+
+```typescript
+public readonly SAGE_MAKER: AwsService;
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a>
+
+---
+
+##### `SAGE_MAKER_FEATURE_STORE_RUNTIME`<sup>Required</sup> <a name="SAGE_MAKER_FEATURE_STORE_RUNTIME" id="@cdklabs/cdk-ssm-documents.AwsService.property.SAGE_MAKER_FEATURE_STORE_RUNTIME"></a>
+
+```typescript
+public readonly SAGE_MAKER_FEATURE_STORE_RUNTIME: AwsService;
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a>
+
+---
+
+##### `SAGE_MAKER_RUNTIME`<sup>Required</sup> <a name="SAGE_MAKER_RUNTIME" id="@cdklabs/cdk-ssm-documents.AwsService.property.SAGE_MAKER_RUNTIME"></a>
+
+```typescript
+public readonly SAGE_MAKER_RUNTIME: AwsService;
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a>
+
+---
+
+##### `SAGEMAKER_EDGE`<sup>Required</sup> <a name="SAGEMAKER_EDGE" id="@cdklabs/cdk-ssm-documents.AwsService.property.SAGEMAKER_EDGE"></a>
+
+```typescript
+public readonly SAGEMAKER_EDGE: AwsService;
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a>
+
+---
+
+##### `SAVINGS_PLANS`<sup>Required</sup> <a name="SAVINGS_PLANS" id="@cdklabs/cdk-ssm-documents.AwsService.property.SAVINGS_PLANS"></a>
+
+```typescript
+public readonly SAVINGS_PLANS: AwsService;
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a>
+
+---
+
+##### `SCHEDULER`<sup>Required</sup> <a name="SCHEDULER" id="@cdklabs/cdk-ssm-documents.AwsService.property.SCHEDULER"></a>
+
+```typescript
+public readonly SCHEDULER: AwsService;
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a>
+
+---
+
+##### `SCHEMAS`<sup>Required</sup> <a name="SCHEMAS" id="@cdklabs/cdk-ssm-documents.AwsService.property.SCHEMAS"></a>
+
+```typescript
+public readonly SCHEMAS: AwsService;
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a>
+
+---
+
+##### `SECRETS_MANAGER`<sup>Required</sup> <a name="SECRETS_MANAGER" id="@cdklabs/cdk-ssm-documents.AwsService.property.SECRETS_MANAGER"></a>
+
+```typescript
+public readonly SECRETS_MANAGER: AwsService;
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a>
+
+---
+
+##### `SECURITY_HUB`<sup>Required</sup> <a name="SECURITY_HUB" id="@cdklabs/cdk-ssm-documents.AwsService.property.SECURITY_HUB"></a>
+
+```typescript
+public readonly SECURITY_HUB: AwsService;
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a>
+
+---
+
+##### `SERVICE_CATALOG`<sup>Required</sup> <a name="SERVICE_CATALOG" id="@cdklabs/cdk-ssm-documents.AwsService.property.SERVICE_CATALOG"></a>
+
+```typescript
+public readonly SERVICE_CATALOG: AwsService;
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a>
+
+---
+
+##### `SERVICE_CATALOG_APP_REGISTRY`<sup>Required</sup> <a name="SERVICE_CATALOG_APP_REGISTRY" id="@cdklabs/cdk-ssm-documents.AwsService.property.SERVICE_CATALOG_APP_REGISTRY"></a>
+
+```typescript
+public readonly SERVICE_CATALOG_APP_REGISTRY: AwsService;
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a>
+
+---
+
+##### `SERVICE_DISCOVERY`<sup>Required</sup> <a name="SERVICE_DISCOVERY" id="@cdklabs/cdk-ssm-documents.AwsService.property.SERVICE_DISCOVERY"></a>
+
+```typescript
+public readonly SERVICE_DISCOVERY: AwsService;
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a>
+
+---
+
+##### `SERVICE_QUOTAS`<sup>Required</sup> <a name="SERVICE_QUOTAS" id="@cdklabs/cdk-ssm-documents.AwsService.property.SERVICE_QUOTAS"></a>
+
+```typescript
+public readonly SERVICE_QUOTAS: AwsService;
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a>
+
+---
+
+##### `SES`<sup>Required</sup> <a name="SES" id="@cdklabs/cdk-ssm-documents.AwsService.property.SES"></a>
+
+```typescript
+public readonly SES: AwsService;
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a>
+
+---
+
+##### `SES_V2`<sup>Required</sup> <a name="SES_V2" id="@cdklabs/cdk-ssm-documents.AwsService.property.SES_V2"></a>
+
+```typescript
+public readonly SES_V2: AwsService;
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a>
+
+---
+
+##### `SHIELD`<sup>Required</sup> <a name="SHIELD" id="@cdklabs/cdk-ssm-documents.AwsService.property.SHIELD"></a>
+
+```typescript
+public readonly SHIELD: AwsService;
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a>
+
+---
+
+##### `SIGNER`<sup>Required</sup> <a name="SIGNER" id="@cdklabs/cdk-ssm-documents.AwsService.property.SIGNER"></a>
+
+```typescript
+public readonly SIGNER: AwsService;
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a>
+
+---
+
+##### `SMS`<sup>Required</sup> <a name="SMS" id="@cdklabs/cdk-ssm-documents.AwsService.property.SMS"></a>
+
+```typescript
+public readonly SMS: AwsService;
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a>
+
+---
+
+##### `SNOW_DEVICE_MANAGEMENT`<sup>Required</sup> <a name="SNOW_DEVICE_MANAGEMENT" id="@cdklabs/cdk-ssm-documents.AwsService.property.SNOW_DEVICE_MANAGEMENT"></a>
+
+```typescript
+public readonly SNOW_DEVICE_MANAGEMENT: AwsService;
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a>
+
+---
+
+##### `SNOWBALL`<sup>Required</sup> <a name="SNOWBALL" id="@cdklabs/cdk-ssm-documents.AwsService.property.SNOWBALL"></a>
+
+```typescript
+public readonly SNOWBALL: AwsService;
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a>
+
+---
+
+##### `SNS`<sup>Required</sup> <a name="SNS" id="@cdklabs/cdk-ssm-documents.AwsService.property.SNS"></a>
+
+```typescript
+public readonly SNS: AwsService;
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a>
+
+---
+
+##### `SQS`<sup>Required</sup> <a name="SQS" id="@cdklabs/cdk-ssm-documents.AwsService.property.SQS"></a>
+
+```typescript
+public readonly SQS: AwsService;
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a>
+
+---
+
+##### `SSM`<sup>Required</sup> <a name="SSM" id="@cdklabs/cdk-ssm-documents.AwsService.property.SSM"></a>
+
+```typescript
+public readonly SSM: AwsService;
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a>
+
+---
+
+##### `SSM_CONTACTS`<sup>Required</sup> <a name="SSM_CONTACTS" id="@cdklabs/cdk-ssm-documents.AwsService.property.SSM_CONTACTS"></a>
+
+```typescript
+public readonly SSM_CONTACTS: AwsService;
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a>
+
+---
+
+##### `SSM_INCIDENTS`<sup>Required</sup> <a name="SSM_INCIDENTS" id="@cdklabs/cdk-ssm-documents.AwsService.property.SSM_INCIDENTS"></a>
+
+```typescript
+public readonly SSM_INCIDENTS: AwsService;
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a>
+
+---
+
+##### `SSO`<sup>Required</sup> <a name="SSO" id="@cdklabs/cdk-ssm-documents.AwsService.property.SSO"></a>
+
+```typescript
+public readonly SSO: AwsService;
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a>
+
+---
+
+##### `SSO_ADMIN`<sup>Required</sup> <a name="SSO_ADMIN" id="@cdklabs/cdk-ssm-documents.AwsService.property.SSO_ADMIN"></a>
+
+```typescript
+public readonly SSO_ADMIN: AwsService;
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a>
+
+---
+
+##### `SSO_OIDC`<sup>Required</sup> <a name="SSO_OIDC" id="@cdklabs/cdk-ssm-documents.AwsService.property.SSO_OIDC"></a>
+
+```typescript
+public readonly SSO_OIDC: AwsService;
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a>
+
+---
+
+##### `STEP_FUNCTIONS`<sup>Required</sup> <a name="STEP_FUNCTIONS" id="@cdklabs/cdk-ssm-documents.AwsService.property.STEP_FUNCTIONS"></a>
+
+```typescript
+public readonly STEP_FUNCTIONS: AwsService;
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a>
+
+---
+
+##### `STORAGE_GATEWAY`<sup>Required</sup> <a name="STORAGE_GATEWAY" id="@cdklabs/cdk-ssm-documents.AwsService.property.STORAGE_GATEWAY"></a>
+
+```typescript
+public readonly STORAGE_GATEWAY: AwsService;
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a>
+
+---
+
+##### `STS`<sup>Required</sup> <a name="STS" id="@cdklabs/cdk-ssm-documents.AwsService.property.STS"></a>
+
+```typescript
+public readonly STS: AwsService;
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a>
+
+---
+
+##### `SUPPORT`<sup>Required</sup> <a name="SUPPORT" id="@cdklabs/cdk-ssm-documents.AwsService.property.SUPPORT"></a>
+
+```typescript
+public readonly SUPPORT: AwsService;
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a>
+
+---
+
+##### `SUPPORT_APP`<sup>Required</sup> <a name="SUPPORT_APP" id="@cdklabs/cdk-ssm-documents.AwsService.property.SUPPORT_APP"></a>
+
+```typescript
+public readonly SUPPORT_APP: AwsService;
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a>
+
+---
+
+##### `SWF`<sup>Required</sup> <a name="SWF" id="@cdklabs/cdk-ssm-documents.AwsService.property.SWF"></a>
+
+```typescript
+public readonly SWF: AwsService;
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a>
+
+---
+
+##### `SYNTHETICS`<sup>Required</sup> <a name="SYNTHETICS" id="@cdklabs/cdk-ssm-documents.AwsService.property.SYNTHETICS"></a>
+
+```typescript
+public readonly SYNTHETICS: AwsService;
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a>
+
+---
+
+##### `TEXTRACT`<sup>Required</sup> <a name="TEXTRACT" id="@cdklabs/cdk-ssm-documents.AwsService.property.TEXTRACT"></a>
+
+```typescript
+public readonly TEXTRACT: AwsService;
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a>
+
+---
+
+##### `TIMESTREAM_QUERY`<sup>Required</sup> <a name="TIMESTREAM_QUERY" id="@cdklabs/cdk-ssm-documents.AwsService.property.TIMESTREAM_QUERY"></a>
+
+```typescript
+public readonly TIMESTREAM_QUERY: AwsService;
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a>
+
+---
+
+##### `TIMESTREAM_WRITE`<sup>Required</sup> <a name="TIMESTREAM_WRITE" id="@cdklabs/cdk-ssm-documents.AwsService.property.TIMESTREAM_WRITE"></a>
+
+```typescript
+public readonly TIMESTREAM_WRITE: AwsService;
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a>
+
+---
+
+##### `TRANSFER`<sup>Required</sup> <a name="TRANSFER" id="@cdklabs/cdk-ssm-documents.AwsService.property.TRANSFER"></a>
+
+```typescript
+public readonly TRANSFER: AwsService;
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a>
+
+---
+
+##### `TRANSLATE`<sup>Required</sup> <a name="TRANSLATE" id="@cdklabs/cdk-ssm-documents.AwsService.property.TRANSLATE"></a>
+
+```typescript
+public readonly TRANSLATE: AwsService;
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a>
+
+---
+
+##### `VOICE_I_D`<sup>Required</sup> <a name="VOICE_I_D" id="@cdklabs/cdk-ssm-documents.AwsService.property.VOICE_I_D"></a>
+
+```typescript
+public readonly VOICE_I_D: AwsService;
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a>
+
+---
+
+##### `WAF`<sup>Required</sup> <a name="WAF" id="@cdklabs/cdk-ssm-documents.AwsService.property.WAF"></a>
+
+```typescript
+public readonly WAF: AwsService;
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a>
+
+---
+
+##### `WAF_REGIONAL`<sup>Required</sup> <a name="WAF_REGIONAL" id="@cdklabs/cdk-ssm-documents.AwsService.property.WAF_REGIONAL"></a>
+
+```typescript
+public readonly WAF_REGIONAL: AwsService;
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a>
+
+---
+
+##### `WAF_V2`<sup>Required</sup> <a name="WAF_V2" id="@cdklabs/cdk-ssm-documents.AwsService.property.WAF_V2"></a>
+
+```typescript
+public readonly WAF_V2: AwsService;
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a>
+
+---
+
+##### `WELL_ARCHITECTED`<sup>Required</sup> <a name="WELL_ARCHITECTED" id="@cdklabs/cdk-ssm-documents.AwsService.property.WELL_ARCHITECTED"></a>
+
+```typescript
+public readonly WELL_ARCHITECTED: AwsService;
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a>
+
+---
+
+##### `WISDOM`<sup>Required</sup> <a name="WISDOM" id="@cdklabs/cdk-ssm-documents.AwsService.property.WISDOM"></a>
+
+```typescript
+public readonly WISDOM: AwsService;
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a>
+
+---
+
+##### `WORK_DOCS`<sup>Required</sup> <a name="WORK_DOCS" id="@cdklabs/cdk-ssm-documents.AwsService.property.WORK_DOCS"></a>
+
+```typescript
+public readonly WORK_DOCS: AwsService;
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a>
+
+---
+
+##### `WORK_LINK`<sup>Required</sup> <a name="WORK_LINK" id="@cdklabs/cdk-ssm-documents.AwsService.property.WORK_LINK"></a>
+
+```typescript
+public readonly WORK_LINK: AwsService;
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a>
+
+---
+
+##### `WORK_MAIL`<sup>Required</sup> <a name="WORK_MAIL" id="@cdklabs/cdk-ssm-documents.AwsService.property.WORK_MAIL"></a>
+
+```typescript
+public readonly WORK_MAIL: AwsService;
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a>
+
+---
+
+##### `WORK_MAIL_MESSAGE_FLOW`<sup>Required</sup> <a name="WORK_MAIL_MESSAGE_FLOW" id="@cdklabs/cdk-ssm-documents.AwsService.property.WORK_MAIL_MESSAGE_FLOW"></a>
+
+```typescript
+public readonly WORK_MAIL_MESSAGE_FLOW: AwsService;
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a>
+
+---
+
+##### `WORK_SPACES`<sup>Required</sup> <a name="WORK_SPACES" id="@cdklabs/cdk-ssm-documents.AwsService.property.WORK_SPACES"></a>
+
+```typescript
+public readonly WORK_SPACES: AwsService;
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a>
+
+---
+
+##### `WORK_SPACES_WEB`<sup>Required</sup> <a name="WORK_SPACES_WEB" id="@cdklabs/cdk-ssm-documents.AwsService.property.WORK_SPACES_WEB"></a>
+
+```typescript
+public readonly WORK_SPACES_WEB: AwsService;
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a>
+
+---
+
+##### `XRAY`<sup>Required</sup> <a name="XRAY" id="@cdklabs/cdk-ssm-documents.AwsService.property.XRAY"></a>
+
+```typescript
+public readonly XRAY: AwsService;
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a>
+
+---
 
 ### BooleanVariable <a name="BooleanVariable" id="@cdklabs/cdk-ssm-documents.BooleanVariable"></a>
 
@@ -36461,7 +39822,7 @@ new MockAwsInvoker()
 
 | **Name** | **Description** |
 | --- | --- |
-| <code><a href="#@cdklabs/cdk-ssm-documents.MockAwsInvoker.invoke">invoke</a></code> | Saves the invocation to be retieved using getInvocations(). |
+| <code><a href="#@cdklabs/cdk-ssm-documents.MockAwsInvoker.invoke">invoke</a></code> | Saves the invocation to be retrieved using getInvocations(). |
 | <code><a href="#@cdklabs/cdk-ssm-documents.MockAwsInvoker.nextReturn">nextReturn</a></code> | Set the next return value. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.MockAwsInvoker.whenThen">whenThen</a></code> | Allows developers to mock out responses from the AwsInvoker depending on the input that it receives. |
 
@@ -36473,7 +39834,7 @@ new MockAwsInvoker()
 public invoke(invocation: Invocation): any
 ```
 
-Saves the invocation to be retieved using getInvocations().
+Saves the invocation to be retrieved using getInvocations().
 
 ###### `invocation`<sup>Required</sup> <a name="invocation" id="@cdklabs/cdk-ssm-documents.MockAwsInvoker.invoke.parameter.invocation"></a>
 

@@ -1,6 +1,6 @@
 import { strict as assert } from 'assert';
 import { Stack } from 'aws-cdk-lib';
-import { CopyImageStep, HardCodedBoolean, HardCodedString, MockAwsInvoker, ResponseCode } from '../../../lib';
+import { AwsService, CopyImageStep, HardCodedBoolean, HardCodedString, MockAwsInvoker, ResponseCode } from '../../../lib';
 import { AutomationStepSimulation } from '../../../lib/simulation/automation-step-simulation';
 
 describe('CopyImageStep', () => {
@@ -17,7 +17,7 @@ describe('CopyImageStep', () => {
           SourceRegion: sourceRegion,
           Name: imageName,
         },
-        service: 'EC2',
+        service: AwsService.EC2,
       }, {
         ImageId: 'image ID',
       });
@@ -26,7 +26,7 @@ describe('CopyImageStep', () => {
         awsParams: {
           ImageIds: ['image ID'],
         },
-        service: 'EC2',
+        service: AwsService.EC2,
       }, {
         Images: [{
           State: 'available',
@@ -71,7 +71,7 @@ describe('CopyImageStep', () => {
       awsInvoker.whenThen({
         awsApi: 'copyImage',
         awsParams,
-        service: 'EC2',
+        service: AwsService.EC2,
       }, {
         ImageId: 'image ID',
       });
@@ -80,7 +80,7 @@ describe('CopyImageStep', () => {
         awsParams: {
           ImageIds: ['image ID'],
         },
-        service: 'EC2',
+        service: AwsService.EC2,
       }, {
         Images: [{
           State: 'available',
@@ -96,7 +96,7 @@ describe('CopyImageStep', () => {
       assert.deepEqual(awsInvoker.previousInvocations[0], {
         awsApi: 'copyImage',
         awsParams,
-        service: 'EC2',
+        service: AwsService.EC2,
       });
     });
   });

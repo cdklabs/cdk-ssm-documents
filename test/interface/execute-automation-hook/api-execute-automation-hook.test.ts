@@ -1,5 +1,5 @@
 import { strict as assert } from 'assert';
-import { ApiExecuteAutomationHook, ExecuteAutomationProps, MockAwsInvoker, SleepImpl } from '../../../lib';
+import {ApiExecuteAutomationHook, AwsService, ExecuteAutomationProps, MockAwsInvoker, SleepImpl} from '../../../lib';
 
 describe('ApiExecuteAutomationHook', () => {
   describe('execute', () => {
@@ -7,7 +7,7 @@ describe('ApiExecuteAutomationHook', () => {
       const mockInvoker = new MockAwsInvoker();
       const mockSleep = new SleepImpl();
       mockInvoker.whenThen({
-        service: 'SSM',
+        service: AwsService.SSM,
         awsApi: 'startAutomationExecution',
         awsParams: {
           DocumentName: 'documentName',
@@ -36,7 +36,7 @@ describe('ApiExecuteAutomationHook', () => {
         AutomationExecutionId: 'executionId',
       });
       mockInvoker.whenThen({
-        service: 'SSM',
+        service: AwsService.SSM,
         awsApi: 'getAutomationExecution',
         awsParams: {
           AutomationExecutionId: 'executionId',

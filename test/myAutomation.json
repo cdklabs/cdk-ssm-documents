@@ -16,7 +16,7 @@
       "name": "GetBucketId",
       "action": "aws:executeAwsApi",
       "inputs": {
-        "Service": "S3",
+        "Service": "s3",
         "Api": "listBuckets"
       },
       "outputs": [

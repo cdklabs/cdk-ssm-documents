@@ -1,5 +1,6 @@
 import { Construct } from 'constructs';
 import { AutomationDocumentBuilder } from '../../document/document-builder';
+import { AwsService } from '../../domain/aws-service';
 import { Choice } from '../../domain/choice';
 import { DataType } from '../../domain/data-type';
 import { OperationEvaluator } from '../../domain/operation';
@@ -84,8 +85,12 @@ export class StringStep extends CompositeAutomationStep {
 
     switch (props.action) {
       case 'aws:executeAwsApi':
+        const camelCased = Service
+          .replace(/-([a-z])/g, (g: string) => {
+            return g[1].toUpperCase();
+          });
         this.automationStep = new AwsApiStep(this, props.name, {
-          service: Service,
+          service: new AwsService(Service, camelCased.charAt(0).toUpperCase() + camelCased.slice(1)),
           pascalCaseApi: Api,
           apiParams: restParams,
           outputs: sharedProps.outputs,

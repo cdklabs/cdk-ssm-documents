@@ -1,7 +1,14 @@
 import { strict as assert } from 'assert';
 import { Stack } from 'aws-cdk-lib';
-import { HardCodedString, HardCodedStringMap, InvokeLambdaFunctionStep, MockAwsInvoker, ResponseCode } from '../../../lib';
-import { AutomationStepSimulation } from '../../../lib/simulation/automation-step-simulation';
+import {
+  AutomationStepSimulation,
+  AwsService,
+  HardCodedString,
+  HardCodedStringMap,
+  InvokeLambdaFunctionStep,
+  MockAwsInvoker,
+  ResponseCode
+} from '../../../lib';
 
 describe('InvokeLambdaFunctionStep', () => {
   describe('#invoke()', () => {
@@ -15,7 +22,7 @@ describe('InvokeLambdaFunctionStep', () => {
           InvocationType: 'RequestResponse',
           LogType: 'Tail',
         },
-        service: 'Lambda',
+        service: AwsService.LAMBDA,
       }, {
         ExecutedVersion: '$LATEST',
         Payload: 'null',
@@ -35,7 +42,7 @@ describe('InvokeLambdaFunctionStep', () => {
           InvocationType: 'RequestResponse',
           LogType: 'Tail',
         },
-        service: 'Lambda',
+        service: AwsService.LAMBDA,
       });
     });
 
@@ -60,7 +67,7 @@ describe('InvokeLambdaFunctionStep', () => {
       awsInvoker.whenThen({
         awsApi: 'invoke',
         awsParams,
-        service: 'Lambda',
+        service: AwsService.LAMBDA,
       }, {
         ExecutedVersion: '$LATEST',
         Payload: 'null',
@@ -76,7 +83,7 @@ describe('InvokeLambdaFunctionStep', () => {
       assert.deepEqual(awsInvoker.previousInvocations[0], {
         awsApi: 'invoke',
         awsParams,
-        service: 'Lambda',
+        service: AwsService.LAMBDA,
       });
     });
   });

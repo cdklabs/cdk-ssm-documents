@@ -144,13 +144,13 @@ export class RebootInstanceAndWait extends CompositeAutomationStep {
   constructor(scope: Construct, id: string, instanceId: IStringVariable) {
     super(scope, id);
     this.reboot = new AwsApiStep(this, 'RebootInstances', {
-      service: 'ec2',
+      service: AwsService.EC2,
       pascalCaseApi: 'RebootInstances',
       apiParams: { InstanceIds: [instanceId] },
       outputs: [],
     });
     this.describe = new WaitForResourceStep(this, 'DescribeInstances', {
-      service: 'ec2',
+      service: AwsService.EC2,
       pascalCaseApi: 'DescribeInstances',
       apiParams: { InstanceIds: [instanceId] },
       selector: '$.Reservations[0].Instances[0].State.Name',
@@ -182,7 +182,7 @@ const sleeper = new MockSleep();
 const awsInvoker = new MockAwsInvoker();
 awsInvoker.whenThen(
     // when invoked with...
-    {awsApi: 'listBuckets', awsParams: {}, service: 'S3'},
+    {awsApi: 'listBuckets', awsParams: {}, service: AwsService.S3},
     // then response with...
     {Owner: {ID: "BUCKET_ID"}})
 
@@ -200,7 +200,7 @@ const simOutput = Simulation.ofAutomation(myAutomationDoc, {
 
 // Assert simulation result
 assert.deepEqual(awsInvoker.previousInvocations, [
-    { awsApi: 'listBuckets', awsParams: {}, service: 'S3' }]);
+    { awsApi: 'listBuckets', awsParams: {}, service: AwsService.S3 }]);
 assert.deepEqual(sleeper.sleepMilliInvocations, [3000]);
 assert.deepEqual(simOutput.outputs['simulationSteps'], ['MySleep', 'GetBucketId']);
 ```

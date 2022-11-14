@@ -14,6 +14,7 @@ export * from './domain/response-code';
 export * from './domain/simulation-result';
 export * from './domain/operation';
 export * from './domain/precondition';
+export * from './domain/aws-service';
 
 export * from './domain/enum/install-action';
 export * from './domain/enum/installation-type';

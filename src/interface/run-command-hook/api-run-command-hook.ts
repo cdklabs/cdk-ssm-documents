@@ -10,6 +10,7 @@ import { ISleepHook } from '../sleep-hook';
 import { isStringList } from '../variables/string-list-variable';
 import { isStringMap } from '../variables/string-map-variable';
 import { isString } from '../variables/string-variable';
+import {AwsService} from "../../domain/aws-service";
 
 interface DescribeInstanceInformationResult {
   PingStatus: string;
@@ -98,7 +99,7 @@ export class ApiRunCommandHook implements IRunCommandHook {
 
   private getCommandStatus(executionId: string): CommandStatus | null {
     const result = new AutomationStepSimulation(new AwsApiStep(new Stack(), 'listCommands', {
-      service: 'SSM',
+      service: AwsService.SSM,
       pascalCaseApi: 'ListCommands',
       apiParams: {
         CommandId: executionId,
@@ -122,7 +123,7 @@ export class ApiRunCommandHook implements IRunCommandHook {
      */
   private getSinglePluginStatus(executionId: string): CommandPluginResult | null {
     const result = new AutomationStepSimulation(new AwsApiStep(new Stack(), 'listCommandInvocations', {
-      service: 'SSM',
+      service: AwsService.SSM,
       pascalCaseApi: 'ListCommandInvocations',
       apiParams: {
         CommandId: executionId,
@@ -146,7 +147,7 @@ export class ApiRunCommandHook implements IRunCommandHook {
 
   private runCommand(props: RunCommandProps): string {
     const result = new AutomationStepSimulation(new AwsApiStep(new Stack(), 'sendCommand', {
-      service: 'SSM',
+      service: AwsService.SSM,
       pascalCaseApi: 'SendCommand',
       apiParams: this.getSendCommandProps(props),
       outputs: [{
@@ -236,7 +237,7 @@ export class ApiRunCommandHook implements IRunCommandHook {
     };
 
     const result = new AutomationStepSimulation(new AwsApiStep(new Stack(), 'describeInstanceInfo', {
-      service: 'SSM',
+      service: AwsService.SSM,
       pascalCaseApi: 'DescribeInstanceInformation',
       apiParams: apiParams,
       outputs: [{

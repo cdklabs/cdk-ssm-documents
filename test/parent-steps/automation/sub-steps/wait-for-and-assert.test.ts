@@ -1,5 +1,5 @@
 import { strict as assert } from 'assert';
-import { IAwsInvoker, MockAwsInvoker } from '../../../../lib';
+import {AwsService, IAwsInvoker, MockAwsInvoker} from '../../../../lib';
 import { StackStatus } from '../../../../lib/domain/stack-status';
 import { waitForAndAssertImageAvailable, waitForAndAssertInstanceState, waitForAndAssertInstanceStatus, waitForAndAssertStackStatus } from '../../../../lib/parent-steps/automation/sub-steps/wait-for-and-assert';
 
@@ -11,7 +11,7 @@ function createMockInvokerWithInstanceStateAndStatus(instanceIds: string[], stat
       InstanceIds: instanceIds,
       IncludeAllInstances: true,
     },
-    service: 'EC2',
+    service: AwsService.EC2,
   }, {
     InstanceStatuses: [
       {
@@ -35,7 +35,7 @@ function createMockInvokerWithImageState(imageId: string, state: string): IAwsIn
     awsParams: {
       ImageIds: [imageId],
     },
-    service: 'EC2',
+    service: AwsService.EC2,
   }, {
     Images: [{
       State: state,
@@ -48,7 +48,7 @@ function createMockInvokerWithImageState(imageId: string, state: string): IAwsIn
 function createMockInvokerWithStackStatus(stackName: string, status: string): IAwsInvoker {
   const mockInvoker = new MockAwsInvoker();
   mockInvoker.whenThen({
-    service: 'CloudFormation',
+    service: AwsService.CLOUD_FORMATION,
     awsApi: 'describeStacks',
     awsParams: {
       StackName: stackName,

@@ -8,6 +8,7 @@ import { DeleteImageStep } from '../../parent-steps/automation/delete-image-step
 import { SleepStep } from '../../parent-steps/automation/sleep-step';
 import { AutomationStepSimulation } from '../automation-step-simulation';
 import { AutomationSimulationBase } from './automation-simulation-base';
+import {AwsService} from "../../domain/aws-service";
 
 /**
  * Properties for DeleteImageStep
@@ -65,7 +66,7 @@ export class DeleteImageSimulation extends AutomationSimulationBase {
 
   private getSnapshots(imageId: string): string[] {
     const result = new AutomationStepSimulation(new AwsApiStep(new Stack(), 'describeImage', {
-      service: 'EC2',
+      service: AwsService.EC2,
       pascalCaseApi: 'DescribeImages',
       apiParams: {
         ImageIds: [imageId],
@@ -85,7 +86,7 @@ export class DeleteImageSimulation extends AutomationSimulationBase {
 
   private deregisterImage(imageId: string): void {
     const result = new AutomationStepSimulation(new AwsApiStep(new Stack(), 'deregisterImage', {
-      service: 'EC2',
+      service: AwsService.EC2,
       pascalCaseApi: 'DeregisterImage',
       apiParams: {
         ImageId: imageId,
@@ -115,7 +116,7 @@ export class DeleteImageSimulation extends AutomationSimulationBase {
 
   private deleteSnapshot(snapshotId: string): void {
     const result = new AutomationStepSimulation(new AwsApiStep(new Stack(), 'deleteSnapshot', {
-      service: 'EC2',
+      service: AwsService.EC2,
       pascalCaseApi: 'DeleteSnapshot',
       apiParams: {
         SnapshotId: snapshotId,

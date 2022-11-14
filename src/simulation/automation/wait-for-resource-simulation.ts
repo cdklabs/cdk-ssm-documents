@@ -49,7 +49,7 @@ export class WaitForResourceSimulation extends AutomationSimulationBase {
         if (error instanceof NonRetriableException) {
           throw error;
         }
-        console.log(`Received exception when hitting AWS API ${this.waitForResourceStep.service}.${this.waitForResourceStep.pascalCaseApi}. ` +
+        console.log(`Received exception when hitting AWS API ${this.waitForResourceStep.service.namespace}.${this.waitForResourceStep.pascalCaseApi}. ` +
                     `Will try again in ${this.waitForResourceStep.sleepIntervalMillis} millis: ${JSON.stringify((error as Error).message)}`);
         lastError = error;
         if (endTime > Date.now()) {

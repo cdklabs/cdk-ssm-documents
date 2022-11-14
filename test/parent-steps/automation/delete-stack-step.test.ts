@@ -1,14 +1,13 @@
 import { strict as assert } from 'assert';
 import { Stack } from 'aws-cdk-lib';
-import { StringVariable, MockAwsInvoker, ResponseCode, DeleteStackStep } from '../../../lib';
-import { AutomationStepSimulation } from '../../../lib/simulation/automation-step-simulation';
+import { AwsService, AutomationStepSimulation, StringVariable, MockAwsInvoker, ResponseCode, DeleteStackStep } from '../../../lib';
 
 describe('DeleteStackStep', function() {
   describe('#invoke()', function() {
     it('Invoke AWS with replacement params', function() {
       const mockInvoker = new MockAwsInvoker();
       mockInvoker.whenThen({
-        service: 'CloudFormation',
+        service: AwsService.CLOUD_FORMATION,
         awsApi: 'describeStacks',
         awsParams: {
           StackName: 'MyStack',
@@ -17,7 +16,7 @@ describe('DeleteStackStep', function() {
         Stacks: [{ StackId: 'MyStackId', StackStatus: 'CREATE_COMPLETE' }],
       });
       mockInvoker.whenThen({
-        service: 'CloudFormation',
+        service: AwsService.CLOUD_FORMATION,
         awsApi: 'describeStacks',
         awsParams: {
           StackName: 'MyStackId',
@@ -40,7 +39,7 @@ describe('DeleteStackStep', function() {
         awsParams: {
           StackName: 'MyStack',
         },
-        service: 'CloudFormation',
+        service: AwsService.CLOUD_FORMATION,
       });
       assert.deepEqual(mockInvoker.previousInvocations[1], {
         awsApi: 'deleteStack',
@@ -48,14 +47,14 @@ describe('DeleteStackStep', function() {
           ClientRequestToken: 'MyStackexecutionId',
           StackName: 'MyStackId',
         },
-        service: 'CloudFormation',
+        service: AwsService.CLOUD_FORMATION,
       });
       assert.deepEqual(mockInvoker.previousInvocations[2], {
         awsApi: 'describeStacks',
         awsParams: {
           StackName: 'MyStackId',
         },
-        service: 'CloudFormation',
+        service: AwsService.CLOUD_FORMATION,
       });
     });
   });

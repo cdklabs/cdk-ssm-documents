@@ -1,8 +1,6 @@
 import { strict as assert } from 'assert';
 import { Stack } from 'aws-cdk-lib';
-import { MockAwsInvoker, MockSleep, StringDocument, SynthUtils } from '../../../lib';
-import { Simulation } from '../../../lib/simulation/simulation';
-
+import { Simulation, MockAwsInvoker, MockSleep, StringDocument, SynthUtils, AwsService } from '../../../lib';
 
 describe('StringDocument', function() {
   describe('fromFile()', function() {
@@ -12,7 +10,7 @@ describe('StringDocument', function() {
       const awsInvoker = new MockAwsInvoker();
       awsInvoker.whenThen(
         // when invoked with...
-        { awsApi: 'listBuckets', awsParams: {}, service: 'S3' },
+        { awsApi: 'listBuckets', awsParams: {}, service: AwsService.S3 },
         // then response with...
         { Owner: { ID: 'BUCKET_ID' } });
 
@@ -29,7 +27,7 @@ describe('StringDocument', function() {
 
       // Assert simulation result
       assert.deepEqual(awsInvoker.previousInvocations, [
-        { awsApi: 'listBuckets', awsParams: {}, service: 'S3' },
+        { awsApi: 'listBuckets', awsParams: {}, service: AwsService.S3 },
       ]);
       assert.deepEqual(sleeper.sleepMilliInvocations, [3000]);
       assert.deepEqual(simOutput.executedSteps, ['MySleep', 'GetBucketId']);

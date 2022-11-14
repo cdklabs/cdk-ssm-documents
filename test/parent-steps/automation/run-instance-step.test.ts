@@ -1,7 +1,20 @@
 import { strict as assert } from 'assert';
 import { Stack } from 'aws-cdk-lib';
-import { HardCodedBoolean, HardCodedMapList, HardCodedNumber, HardCodedString, HardCodedStringList, HardCodedStringMap, MockAwsInvoker, NumberVariable, ResponseCode, RunInstanceStep, StringVariable } from '../../../lib';
-import { AutomationStepSimulation } from '../../../lib/simulation/automation-step-simulation';
+import {
+  AutomationStepSimulation,
+  AwsService,
+  HardCodedBoolean,
+  HardCodedMapList,
+  HardCodedNumber,
+  HardCodedString,
+  HardCodedStringList,
+  HardCodedStringMap,
+  MockAwsInvoker,
+  NumberVariable,
+  ResponseCode,
+  RunInstanceStep,
+  StringVariable
+} from '../../../lib';
 
 describe('RunInstanceStep', function() {
   describe('#invoke()', function() {
@@ -15,7 +28,7 @@ describe('RunInstanceStep', function() {
           MinCount: 1,
           MaxCount: 1,
         },
-        service: 'EC2',
+        service: AwsService.EC2,
       }, {
         Instances: [{
           InstanceId: 'id123',
@@ -31,7 +44,7 @@ describe('RunInstanceStep', function() {
           InstanceIds: ['id123'],
           IncludeAllInstances: true,
         },
-        service: 'EC2',
+        service: AwsService.EC2,
       }, {
         InstanceStatuses: [
           {
@@ -58,7 +71,7 @@ describe('RunInstanceStep', function() {
           MinCount: 1,
           MaxCount: 1,
         },
-        service: 'EC2',
+        service: AwsService.EC2,
       });
     });
 
@@ -118,7 +131,7 @@ describe('RunInstanceStep', function() {
       awsInvoker.whenThen({
         awsApi: 'runInstances',
         awsParams,
-        service: 'EC2',
+        service: AwsService.EC2,
       }, {
         Instances: [{
           InstanceId: 'id123',
@@ -134,7 +147,7 @@ describe('RunInstanceStep', function() {
           InstanceIds: ['id123'],
           IncludeAllInstances: true,
         },
-        service: 'EC2',
+        service: AwsService.EC2,
       }, {
         InstanceStatuses: [
           {
@@ -157,7 +170,7 @@ describe('RunInstanceStep', function() {
       assert.deepEqual(awsInvoker.previousInvocations[0], {
         awsApi: 'runInstances',
         awsParams,
-        service: 'EC2',
+        service: AwsService.EC2,
       });
     });
   });

@@ -4,6 +4,7 @@ import { StackStatus } from '../../../domain/stack-status';
 import { WaitForAndAssertResource, WaitForAndAssertResourceProps } from '../../../patterns/automation/wait-for-and-assert-resource';
 import { SimulationProps } from '../../../simulation/simulation';
 import { simulatePattern } from '../../../utils/simulate-pattern';
+import {AwsService} from "../../../domain/aws-service";
 
 /**
  * Wait for and assert on an EC2 resource value
@@ -42,7 +43,7 @@ interface WaitForAndAssertInstanceStateProps {
 export function waitForAndAssertInstanceState(props: WaitForAndAssertInstanceStateProps, simulationProps: SimulationProps): void {
   const { waitForState, assertState, instanceIds } = props;
   waitForAndAssertResource({
-    service: 'EC2',
+    service: AwsService.EC2,
     pascalCaseApi: 'DescribeInstanceStatus',
     apiParams: {
       InstanceIds: instanceIds,
@@ -80,7 +81,7 @@ interface WaitForAndAssertInstanceStatusProps {
 export function waitForAndAssertInstanceStatus(props: WaitForAndAssertInstanceStatusProps, simulationProps: SimulationProps): void {
   const { waitForStatus, assertStatus, instanceIds } = props;
   waitForAndAssertResource({
-    service: 'EC2',
+    service: AwsService.EC2,
     pascalCaseApi: 'DescribeInstanceStatus',
     apiParams: {
       InstanceIds: instanceIds,
@@ -108,7 +109,7 @@ interface WaitForAndAssertImageStateProps {
 export function waitForAndAssertImageAvailable(props: WaitForAndAssertImageStateProps, simulationProps: SimulationProps): void {
   const { imageId } = props;
   waitForAndAssertResource({
-    service: 'EC2',
+    service: AwsService.EC2,
     pascalCaseApi: 'DescribeImages',
     selector: '$.Images..State',
     apiParams: {
@@ -145,7 +146,7 @@ interface WaitForAndAssertStackStatusProps {
 export function waitForAndAssertStackStatus(props: WaitForAndAssertStackStatusProps, simulationProps: SimulationProps): void {
   const { waitForStatus, assertStatus, stackName } = props;
   waitForAndAssertResource({
-    service: 'CloudFormation',
+    service: AwsService.CLOUD_FORMATION,
     pascalCaseApi: 'DescribeStacks',
     apiParams: {
       StackName: stackName,

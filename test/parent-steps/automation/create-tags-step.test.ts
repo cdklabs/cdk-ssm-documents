@@ -1,10 +1,9 @@
 import { strict as assert } from 'assert';
 import { Stack } from 'aws-cdk-lib';
 import {
-  HardCodedMapList, HardCodedStringList, MockAwsInvoker, ResponseCode,
-  CreateTagsStep, HardCodedResourceType, ResourceTypeVariable,
+  AutomationStepSimulation, HardCodedMapList, HardCodedStringList, MockAwsInvoker, ResponseCode,
+  CreateTagsStep, HardCodedResourceType, ResourceTypeVariable, AwsService,
 } from '../../../lib';
-import { AutomationStepSimulation } from '../../../lib/simulation/automation-step-simulation';
 
 describe('CreateTagsStep', () => {
   describe('#invoke()', () => {
@@ -13,7 +12,7 @@ describe('CreateTagsStep', () => {
       const tag = { Key: 'key', Value: 'value' };
       const awsInvoker = new MockAwsInvoker();
       awsInvoker.whenThen({
-        service: 'EC2',
+        service: AwsService.EC2,
         awsApi: 'describeTags',
         awsParams: {
           Filters: [{
@@ -45,7 +44,7 @@ describe('CreateTagsStep', () => {
 
       assert.equal(result.responseCode, ResponseCode.SUCCESS);
       assert.deepEqual(awsInvoker.previousInvocations[0], {
-        service: 'EC2',
+        service: AwsService.EC2,
         awsApi: 'createTags',
         awsParams: {
           Resources: [instanceId],
@@ -60,7 +59,7 @@ describe('CreateTagsStep', () => {
       const tag = { Key: 'key', Value: 'value' };
       const awsInvoker = new MockAwsInvoker();
       awsInvoker.whenThen({
-        service: 'SSM',
+        service: AwsService.SSM,
         awsApi: 'listTagsForResource',
         awsParams: {
           ResourceType: resourceType,
@@ -84,7 +83,7 @@ describe('CreateTagsStep', () => {
 
       assert.equal(result.responseCode, ResponseCode.SUCCESS);
       assert.deepEqual(awsInvoker.previousInvocations[0], {
-        service: 'SSM',
+        service: AwsService.SSM,
         awsApi: 'addTagsToResource',
         awsParams: {
           ResourceType: resourceType,

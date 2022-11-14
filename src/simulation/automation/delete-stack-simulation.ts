@@ -8,6 +8,7 @@ import { waitForAndAssertStackStatus } from '../../parent-steps/automation/sub-s
 import { AutomationStepSimulation } from '../automation-step-simulation';
 import { AutomationSimulationBase } from './automation-simulation-base';
 import { AwsInvocationSimulationProps } from './aws-api-simulation';
+import {AwsService} from "../../domain/aws-service";
 
 /**
  * AutomationStep implemenation for aws:deleteStack
@@ -44,7 +45,7 @@ export class DeleteStackSimulation extends AutomationSimulationBase {
       apiParams.RoleARN = this.deleteStackStep.roleArn;
     }
     const describeResponse = new AutomationStepSimulation(new AwsApiStep(new Stack(), 'describeResponse', {
-      service: 'CloudFormation',
+      service: AwsService.CLOUD_FORMATION,
       pascalCaseApi: 'DescribeStacks',
       apiParams,
       outputs: [{
@@ -65,7 +66,7 @@ export class DeleteStackSimulation extends AutomationSimulationBase {
       apiParams.RoleARN = this.deleteStackStep.roleArn;
     }
     const result = new AutomationStepSimulation(new AwsApiStep(new Stack(), 'executeDelete', {
-      service: 'CloudFormation',
+      service: AwsService.CLOUD_FORMATION,
       pascalCaseApi: 'DeleteStack',
       apiParams: {
         RoleARN: this.deleteStackStep.roleArn,
