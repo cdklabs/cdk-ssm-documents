@@ -16524,6 +16524,7 @@ const automationDocumentProps: AutomationDocumentProps = { ... }
 | <code><a href="#@cdklabs/cdk-ssm-documents.AutomationDocumentProps.property.requires">requires</a></code> | <code>aws-cdk-lib.IResolvable \| aws-cdk-lib.aws_ssm.CfnDocument.DocumentRequiresProperty \| aws-cdk-lib.IResolvable[]</code> | `AWS::SSM::Document.Requires`. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.AutomationDocumentProps.property.tags">tags</a></code> | <code>aws-cdk-lib.CfnTag[]</code> | `AWS::SSM::Document.Tags`. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.AutomationDocumentProps.property.targetType">targetType</a></code> | <code>string</code> | `AWS::SSM::Document.TargetType`. |
+| <code><a href="#@cdklabs/cdk-ssm-documents.AutomationDocumentProps.property.updateMethod">updateMethod</a></code> | <code>string</code> | If the document resource you specify in your template already exists, this parameter determines whether a new version of the existing document is created, or the existing document is replaced. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.AutomationDocumentProps.property.versionName">versionName</a></code> | <code>string</code> | `AWS::SSM::Document.VersionName`. |
 
 ---
@@ -16663,6 +16664,22 @@ public readonly targetType: string;
 `AWS::SSM::Document.TargetType`.
 
 > [http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-document.html#cfn-ssm-document-targettype](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-document.html#cfn-ssm-document-targettype)
+
+---
+
+##### `updateMethod`<sup>Optional</sup> <a name="updateMethod" id="@cdklabs/cdk-ssm-documents.AutomationDocumentProps.property.updateMethod"></a>
+
+```typescript
+public readonly updateMethod: string;
+```
+
+- *Type:* string
+
+If the document resource you specify in your template already exists, this parameter determines whether a new version of the existing document is created, or the existing document is replaced.
+
+`Replace` is the default method. If you specify `NewVersion` for the `UpdateMethod` parameter, and the `Name` of the document does not match an existing resource, a new document is created. When you specify `NewVersion` , the default version of the document is changed to the newly created version.
+
+> [http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-document.html#cfn-ssm-document-updatemethod](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-document.html#cfn-ssm-document-updatemethod)
 
 ---
 
@@ -18360,6 +18377,7 @@ const commandDocumentProps: CommandDocumentProps = { ... }
 | <code><a href="#@cdklabs/cdk-ssm-documents.CommandDocumentProps.property.requires">requires</a></code> | <code>aws-cdk-lib.IResolvable \| aws-cdk-lib.aws_ssm.CfnDocument.DocumentRequiresProperty \| aws-cdk-lib.IResolvable[]</code> | `AWS::SSM::Document.Requires`. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.CommandDocumentProps.property.tags">tags</a></code> | <code>aws-cdk-lib.CfnTag[]</code> | `AWS::SSM::Document.Tags`. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.CommandDocumentProps.property.targetType">targetType</a></code> | <code>string</code> | `AWS::SSM::Document.TargetType`. |
+| <code><a href="#@cdklabs/cdk-ssm-documents.CommandDocumentProps.property.updateMethod">updateMethod</a></code> | <code>string</code> | If the document resource you specify in your template already exists, this parameter determines whether a new version of the existing document is created, or the existing document is replaced. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.CommandDocumentProps.property.versionName">versionName</a></code> | <code>string</code> | `AWS::SSM::Document.VersionName`. |
 
 ---
@@ -18499,6 +18517,22 @@ public readonly targetType: string;
 `AWS::SSM::Document.TargetType`.
 
 > [http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-document.html#cfn-ssm-document-targettype](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-document.html#cfn-ssm-document-targettype)
+
+---
+
+##### `updateMethod`<sup>Optional</sup> <a name="updateMethod" id="@cdklabs/cdk-ssm-documents.CommandDocumentProps.property.updateMethod"></a>
+
+```typescript
+public readonly updateMethod: string;
+```
+
+- *Type:* string
+
+If the document resource you specify in your template already exists, this parameter determines whether a new version of the existing document is created, or the existing document is replaced.
+
+`Replace` is the default method. If you specify `NewVersion` for the `UpdateMethod` parameter, and the `Name` of the document does not match an existing resource, a new document is created. When you specify `NewVersion` , the default version of the document is changed to the newly created version.
+
+> [http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-document.html#cfn-ssm-document-updatemethod](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-document.html#cfn-ssm-document-updatemethod)
 
 ---
 
@@ -27133,6 +27167,7 @@ const ssmDocumentProps: SsmDocumentProps = { ... }
 | <code><a href="#@cdklabs/cdk-ssm-documents.SsmDocumentProps.property.requires">requires</a></code> | <code>aws-cdk-lib.IResolvable \| aws-cdk-lib.aws_ssm.CfnDocument.DocumentRequiresProperty \| aws-cdk-lib.IResolvable[]</code> | `AWS::SSM::Document.Requires`. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.SsmDocumentProps.property.tags">tags</a></code> | <code>aws-cdk-lib.CfnTag[]</code> | `AWS::SSM::Document.Tags`. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.SsmDocumentProps.property.targetType">targetType</a></code> | <code>string</code> | `AWS::SSM::Document.TargetType`. |
+| <code><a href="#@cdklabs/cdk-ssm-documents.SsmDocumentProps.property.updateMethod">updateMethod</a></code> | <code>string</code> | If the document resource you specify in your template already exists, this parameter determines whether a new version of the existing document is created, or the existing document is replaced. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.SsmDocumentProps.property.versionName">versionName</a></code> | <code>string</code> | `AWS::SSM::Document.VersionName`. |
 
 ---
@@ -27272,6 +27307,22 @@ public readonly targetType: string;
 `AWS::SSM::Document.TargetType`.
 
 > [http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-document.html#cfn-ssm-document-targettype](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-document.html#cfn-ssm-document-targettype)
+
+---
+
+##### `updateMethod`<sup>Optional</sup> <a name="updateMethod" id="@cdklabs/cdk-ssm-documents.SsmDocumentProps.property.updateMethod"></a>
+
+```typescript
+public readonly updateMethod: string;
+```
+
+- *Type:* string
+
+If the document resource you specify in your template already exists, this parameter determines whether a new version of the existing document is created, or the existing document is replaced.
+
+`Replace` is the default method. If you specify `NewVersion` for the `UpdateMethod` parameter, and the `Name` of the document does not match an existing resource, a new document is created. When you specify `NewVersion` , the default version of the document is changed to the newly created version.
+
+> [http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-document.html#cfn-ssm-document-updatemethod](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-document.html#cfn-ssm-document-updatemethod)
 
 ---
 
