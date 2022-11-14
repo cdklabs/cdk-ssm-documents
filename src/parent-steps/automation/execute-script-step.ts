@@ -252,7 +252,7 @@ export class ExecuteScriptStep extends AutomationStep {
     }
   }
 
-  public listOutputs(): Output[] {
+  public listUserOutputs(): Output[] {
     return this.outputs;
   }
 

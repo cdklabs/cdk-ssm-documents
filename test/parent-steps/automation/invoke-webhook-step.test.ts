@@ -54,15 +54,6 @@ describe('InvokeWebhookStep', () => {
           Body: 'body',
         },
         name: 'id2',
-        outputs: [{
-          Type: 'String',
-          Name: 'Response',
-          Selector: '$.Response',
-        }, {
-          Type: 'Integer',
-          Name: 'ResponseCode',
-          Selector: '$.ResponseCode',
-        }],
       });
     });
   });

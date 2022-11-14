@@ -115,23 +115,6 @@ describe('InvokeLambdaFunctionStep', () => {
           Payload: { a: 1 },
         },
         name: 'id2',
-        outputs: [{
-          Type: 'Integer',
-          Name: 'StatusCode',
-          Selector: '$.StatusCode',
-        }, {
-          Type: 'String',
-          Name: 'FunctionError',
-          Selector: '$.FunctionError',
-        }, {
-          Type: 'String',
-          Name: 'LogResult',
-          Selector: '$.LogResult',
-        }, {
-          Type: 'String',
-          Name: 'Payload',
-          Selector: '$.Payload',
-        }],
       });
     });
   });

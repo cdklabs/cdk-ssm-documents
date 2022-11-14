@@ -119,15 +119,6 @@ describe('CreateImageStep', () => {
           BlockDeviceMappings: { a: 1 },
         },
         name: 'id2',
-        outputs: [{
-          Type: 'String',
-          Name: 'ImageId',
-          Selector: '$.ImageId',
-        }, {
-          Type: 'String',
-          Name: 'ImageState',
-          Selector: '$.ImageState',
-        }],
       });
     });
   });

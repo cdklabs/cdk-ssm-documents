@@ -238,18 +238,6 @@ describe('RunInstanceStep', function() {
           UserData: 'string',
         },
         name: 'id2',
-        outputs: [
-          {
-            Name: 'InstanceIds',
-            Selector: '$.InstanceIds',
-            Type: 'StringList',
-          },
-          {
-            Name: 'InstanceStates',
-            Selector: '$.InstanceStates',
-            Type: 'StringList',
-          },
-        ],
       });
     });
   });
