@@ -1,8 +1,6 @@
 import { strict as assert } from 'assert';
 import { Stack } from 'aws-cdk-lib';
-import { HardCodedString, MockAwsInvoker, MockSleep, ResponseCode } from '../../../lib';
-import { DeleteImageStep } from '../../../lib/parent-steps/automation/delete-image-step';
-import { AutomationStepSimulation } from '../../../lib/simulation/automation-step-simulation';
+import { DeleteImageStep, AutomationStepSimulation, AwsService, HardCodedString, MockAwsInvoker, MockSleep, ResponseCode } from '../../../lib';
 
 describe('DeleteImageStep', () => {
   describe('#invoke()', () => {
@@ -14,7 +12,7 @@ describe('DeleteImageStep', () => {
         awsParams: {
           ImageIds: [imageId],
         },
-        service: 'EC2',
+        service: AwsService.EC2,
       }, {
         Images: [{
           BlockDeviceMappings: [{
@@ -37,14 +35,14 @@ describe('DeleteImageStep', () => {
         awsParams: {
           ImageId: imageId,
         },
-        service: 'EC2',
+        service: AwsService.EC2,
       });
       assert.deepEqual(awsInvoker.previousInvocations[2], {
         awsApi: 'deleteSnapshot',
         awsParams: {
           SnapshotId: 'snapshot id',
         },
-        service: 'EC2',
+        service: AwsService.EC2,
       });
     });
   });

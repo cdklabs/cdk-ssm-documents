@@ -1,6 +1,6 @@
 import { strict as assert } from 'assert';
 import { Stack } from 'aws-cdk-lib';
-import { ChangeInstanceStateStep, ChangeInstanceStateStepProps, DesiredStateVariable, HardCodedBoolean, HardCodedString, HardCodedStringList, MockAwsInvoker, ResponseCode } from '../../../lib';
+import { AwsService, ChangeInstanceStateStep, ChangeInstanceStateStepProps, DesiredStateVariable, HardCodedBoolean, HardCodedString, HardCodedStringList, MockAwsInvoker, ResponseCode } from '../../../lib';
 import { AutomationStepSimulation } from '../../../lib/simulation/automation-step-simulation';
 
 function createMockInvokerWithInstanceStateAndStatus(instanceIds: string[], state: string, status: string): MockAwsInvoker {
@@ -11,7 +11,7 @@ function createMockInvokerWithInstanceStateAndStatus(instanceIds: string[], stat
       InstanceIds: instanceIds,
       IncludeAllInstances: true,
     },
-    service: 'EC2',
+    service: AwsService.EC2,
   }, {
     InstanceStatuses: [
       {
@@ -43,7 +43,7 @@ describe('ChangeInstanceStateStep', () => {
 
       assert.equal(result.responseCode, ResponseCode.SUCCESS);
       assert.deepEqual(mockInvoker.previousInvocations[0], {
-        service: 'EC2',
+        service: AwsService.EC2,
         awsApi: 'startInstances',
         awsParams: {
           InstanceIds: instanceIds,
@@ -65,7 +65,7 @@ describe('ChangeInstanceStateStep', () => {
 
       assert.equal(result.responseCode, ResponseCode.SUCCESS);
       assert.deepEqual(mockInvoker.previousInvocations[0], {
-        service: 'EC2',
+        service: AwsService.EC2,
         awsApi: 'stopInstances',
         awsParams: {
           InstanceIds: instanceIds,
@@ -86,7 +86,7 @@ describe('ChangeInstanceStateStep', () => {
 
       assert.equal(result.responseCode, ResponseCode.SUCCESS);
       assert.deepEqual(mockInvoker.previousInvocations[0], {
-        service: 'EC2',
+        service: AwsService.EC2,
         awsApi: 'terminateInstances',
         awsParams: {
           InstanceIds: instanceIds,

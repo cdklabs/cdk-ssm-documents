@@ -8,6 +8,7 @@ import { pruneAndTransformRecord } from '../../utils/prune-and-transform-record'
 import { AutomationStepSimulation } from '../automation-step-simulation';
 import { AutomationSimulationBase } from './automation-simulation-base';
 import { AwsInvocationSimulationProps } from './aws-api-simulation';
+import {AwsService} from "../../domain/aws-service";
 
 enum ExecuteStateMachineStatus {
   RUNNING,
@@ -49,7 +50,7 @@ export class ExecuteStateMachineSimulation extends AutomationSimulationBase {
     }, x => x.resolve(inputs));
 
     const result = new AutomationStepSimulation(new AwsApiStep(new Stack(), 'startExecution', {
-      service: 'StepFunctions',
+      service: AwsService.STEP_FUNCTIONS,
       pascalCaseApi: 'StartExecution',
       apiParams: apiParams,
       outputs: [{
@@ -66,7 +67,7 @@ export class ExecuteStateMachineSimulation extends AutomationSimulationBase {
 
   private waitForExecution(executionId: string) {
     waitForAndAssertResource({
-      service: 'StepFunctions',
+      service: AwsService.STEP_FUNCTIONS,
       pascalCaseApi: 'DescribeExecution',
       apiParams: {
         executionArn: executionId,

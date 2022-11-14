@@ -1,7 +1,20 @@
 import { strict as assert } from 'assert';
 import { Stack } from 'aws-cdk-lib';
-import { BodyOrUrlType, CreateStackStep, CreateStackStepProps, HardCodedMapList, HardCodedNumber, HardCodedOnFailure, HardCodedString, HardCodedStringList, MockAwsInvoker, MockSleep, ResponseCode } from '../../../lib';
-import { AutomationStepSimulation } from '../../../lib/simulation/automation-step-simulation';
+import {
+  AutomationStepSimulation,
+  AwsService,
+  BodyOrUrlType,
+  CreateStackStep,
+  CreateStackStepProps,
+  HardCodedMapList,
+  HardCodedNumber,
+  HardCodedOnFailure,
+  HardCodedString,
+  HardCodedStringList,
+  MockAwsInvoker,
+  MockSleep,
+  ResponseCode
+} from '../../../lib';
 
 describe('CreateStackStep', () => {
   describe('#invoke()', () => {
@@ -10,7 +23,7 @@ describe('CreateStackStep', () => {
       const mockSleep = new MockSleep();
       const mockInvoker = new MockAwsInvoker();
       mockInvoker.whenThen({
-        service: 'CloudFormation',
+        service: AwsService.CLOUD_FORMATION,
         awsApi: 'describeStacks',
         awsParams: {
           StackName: stackName,
@@ -21,7 +34,7 @@ describe('CreateStackStep', () => {
         }],
       });
       mockInvoker.whenThen({
-        service: 'CloudFormation',
+        service: AwsService.CLOUD_FORMATION,
         awsApi: 'createStack',
         awsParams: {
           StackName: stackName,
@@ -49,7 +62,7 @@ describe('CreateStackStep', () => {
         'createStack.StackStatusReason': '',
       });
       assert.deepEqual(mockInvoker.previousInvocations[1], {
-        service: 'CloudFormation',
+        service: AwsService.CLOUD_FORMATION,
         awsApi: 'createStack',
         awsParams: {
           StackName: stackName,

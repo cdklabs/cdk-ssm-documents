@@ -4,6 +4,7 @@ import { IStringVariable } from '../../interface/variables/string-variable';
 import { AwsApiStep } from '../../parent-steps/automation/aws-api-step';
 import { WaitForResourceStep } from '../../parent-steps/automation/wait-for-resource-step';
 import { CompositeAutomationStep } from './composite-step';
+import {AwsService} from "../../domain/aws-service";
 
 export class RebootInstanceAndWait extends CompositeAutomationStep {
 
@@ -13,13 +14,13 @@ export class RebootInstanceAndWait extends CompositeAutomationStep {
   constructor(scope: Construct, id: string, instanceId: IStringVariable) {
     super(scope, id);
     this.reboot = new AwsApiStep(this, 'RebootInstances', {
-      service: 'ec2',
+      service: AwsService.EC2,
       pascalCaseApi: 'RebootInstances',
       apiParams: { InstanceIds: [instanceId] },
       outputs: [],
     });
     this.describe = new WaitForResourceStep(this, 'DescribeInstances', {
-      service: 'ec2',
+      service: AwsService.EC2,
       pascalCaseApi: 'DescribeInstances',
       apiParams: { InstanceIds: [instanceId] },
       selector: '$.Reservations[0].Instances[0].State.Name',

@@ -48,7 +48,7 @@ export class AssertAwsResourceStep extends AwsApiStep {
   public toSsmEntry(): { [name: string]: any } {
     return super.prepareSsmEntry({
       ...{
-        Service: this.service,
+        Service: this.service.namespace,
         Api: this.pascalCaseApi,
         PropertySelector: this.selector,
         DesiredValues: this.desiredValues,

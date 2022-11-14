@@ -2,6 +2,7 @@ import { strict as assert } from 'assert';
 import { Stack } from 'aws-cdk-lib';
 import { AssertAwsResourceStep, MockAwsInvoker, ResponseCode, StringVariable } from '../../../lib';
 import { AutomationStepSimulation } from '../../../lib/simulation/automation-step-simulation';
+import {AwsService} from "../../../src";
 
 
 describe('AssertAwsResourceStep', function() {
@@ -9,7 +10,7 @@ describe('AssertAwsResourceStep', function() {
     it('Passes when desired value fount', function() {
       const step = new AssertAwsResourceStep(new Stack(), 'id', {
         name: 'MyS3List',
-        service: 'S3',
+        service: AwsService.S3,
         selector: '$.Owner.DisplayName',
         desiredValues: ['a', 'b', 'MyDisplayName', 'c'],
         pascalCaseApi: 'ListBuckets',
@@ -28,7 +29,7 @@ describe('AssertAwsResourceStep', function() {
     it('Fails when desired value not found', function() {
       const step = new AssertAwsResourceStep(new Stack(), 'id', {
         name: 'MyS3List',
-        service: 'S3',
+        service: AwsService.S3,
         selector: '$.Owner.DisplayName',
         desiredValues: ['a', 'b', 'c'],
         pascalCaseApi: 'ListBuckets',
@@ -44,7 +45,7 @@ describe('AssertAwsResourceStep', function() {
     it('Builds entry as per SSM Document', function() {
       const step = new AssertAwsResourceStep(new Stack(), 'id', {
         name: 'MyS3List',
-        service: 'S3',
+        service: AwsService.S3,
         selector: '$.Owner.DisplayName',
         desiredValues: ['a', 'b', 'c'],
         pascalCaseApi: 'ListBuckets',
@@ -65,7 +66,7 @@ describe('AssertAwsResourceStep', function() {
             },
           ],
           PropertySelector: '$.Owner.DisplayName',
-          Service: 'S3',
+          Service: 's3',
         },
         name: 'MyS3List',
       });

@@ -1,5 +1,21 @@
 import { Stack } from 'aws-cdk-lib';
-import { AutomationStepSimulation, AwsApiStep, DataTypeEnum, IAwsInvoker, IExecuteAutomationHook, isBoolean, ISleepHook, isMapList, isNumber, isString, isStringList, isStringMap, ResponseCode, SleepStep } from '../..';
+import {
+  AutomationStepSimulation,
+  AwsApiStep,
+  AwsService,
+  DataTypeEnum,
+  IAwsInvoker,
+  IExecuteAutomationHook,
+  isBoolean,
+  ISleepHook,
+  isMapList,
+  isNumber,
+  isString,
+  isStringList,
+  isStringMap,
+  ResponseCode,
+  SleepStep,
+} from '../..';
 import { ExecuteAutomationProps, ExecuteAutomationOutputs } from '../execute-automation-hook';
 
 export interface ApiExecuteAutomationProps {
@@ -70,7 +86,7 @@ export class ApiExecuteAutomationHook implements IExecuteAutomationHook {
 
   private startExecution(props: ExecuteAutomationProps): string {
     const result = new AutomationStepSimulation(new AwsApiStep(new Stack(), 'execute', {
-      service: 'SSM',
+      service: AwsService.SSM,
       pascalCaseApi: 'StartAutomationExecution',
       apiParams: this.getExecuteProps(props),
       outputs: [{
@@ -168,7 +184,7 @@ export class ApiExecuteAutomationHook implements IExecuteAutomationHook {
 
   private getExecution(executionId: string): AutomationExecution {
     const result = new AutomationStepSimulation(new AwsApiStep(new Stack(), 'getExecution', {
-      service: 'SSM',
+      service: AwsService.SSM,
       pascalCaseApi: 'GetAutomationExecution',
       apiParams: {
         AutomationExecutionId: executionId,

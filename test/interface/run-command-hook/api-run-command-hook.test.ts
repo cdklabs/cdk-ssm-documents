@@ -1,5 +1,6 @@
 import { strict as assert } from 'assert';
 import { ApiRunCommandHook, MockAwsInvoker, MockSleep, RunCommandProps } from '../../../lib';
+import {AwsService} from "../../../src";
 
 describe('ApiRunCommandHook', () => {
   describe('execute', () => {
@@ -23,7 +24,7 @@ describe('ApiRunCommandHook', () => {
         maxErrors: 5,
       };
       mockInvoker.whenThen({
-        service: 'SSM',
+        service: AwsService.SSM,
         awsApi: 'describeInstanceInformation',
         awsParams: {
           MaxResults: 50,
@@ -38,7 +39,7 @@ describe('ApiRunCommandHook', () => {
         }],
       });
       mockInvoker.whenThen({
-        service: 'SSM',
+        service: AwsService.SSM,
         awsApi: 'sendCommand',
         awsParams: {
           DocumentName: 'name',
@@ -62,7 +63,7 @@ describe('ApiRunCommandHook', () => {
         },
       });
       mockInvoker.whenThen({
-        service: 'SSM',
+        service: AwsService.SSM,
         awsApi: 'listCommands',
         awsParams: {
           CommandId: 'commandId',
@@ -73,7 +74,7 @@ describe('ApiRunCommandHook', () => {
         }],
       });
       mockInvoker.whenThen({
-        service: 'SSM',
+        service: AwsService.SSM,
         awsApi: 'listCommandInvocations',
         awsParams: {
           CommandId: 'commandId',

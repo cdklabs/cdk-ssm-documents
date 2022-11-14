@@ -1,14 +1,15 @@
 import { Construct } from 'constructs';
 import { DictFormat } from '../..';
+import { AwsService } from '../../domain/aws-service';
 import { Output } from '../../domain/output';
 import { AutomationStep, AutomationStepProps } from '../automation-step';
 
 export interface AwsInvocationProps extends AutomationStepProps {
   /**
      * (Required) The AWS service to be invoked.
-     * @example ec2
+     * @example AwsService.S3
      */
-  readonly service: string;
+  readonly service: AwsService;
 
   /**
      * (Required) The AWS api represented in PascalCase.
@@ -50,7 +51,7 @@ export interface AwsApiStepProps extends AwsInvocationProps {
  */
 export class AwsApiStep extends AutomationStep {
 
-  readonly service: string;
+  readonly service: AwsService;
   readonly pascalCaseApi: string;
   readonly apiParams: DictFormat;
   readonly outputs: Output[];
@@ -85,7 +86,7 @@ export class AwsApiStep extends AutomationStep {
   public toSsmEntry(): { [name: string]: any } {
     return super.prepareSsmEntry({
       ...{
-        Service: this.service,
+        Service: this.service.namespace,
         Api: this.pascalCaseApi,
       },
       ...this.apiParams.format,

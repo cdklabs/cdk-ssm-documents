@@ -11,6 +11,7 @@ import {
   ScriptCode,
   ScriptLanguage,
 } from '../parent-steps/automation/execute-script-step';
+import {AwsService} from "../domain/aws-service";
 
 export class HelloWorld extends Stack {
   constructor(app: Construct, id: string) {
@@ -38,7 +39,7 @@ export class HelloWorld extends Stack {
 
     doc.addStep(new AwsApiStep(this, 'PublishToSns', {
       outputs: [],
-      service: 'SNS',
+      service: AwsService.SNS,
       pascalCaseApi: 'publish',
       apiParams: {
         TargetArn: new StringVariable('SnsTopic'),

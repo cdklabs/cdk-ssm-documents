@@ -3,6 +3,7 @@ import { AutomationDocumentBuilder } from '../../document/document-builder';
 import { IAwsInvoker } from '../../interface/aws-invoker';
 import { CompositeAutomationStep } from './composite-step';
 import { WaitForAndAssertResource } from './wait-for-and-assert-resource';
+import {AwsService} from "../../domain/aws-service";
 
 /**
  * Properties of WaitForInstanceRunning
@@ -29,7 +30,7 @@ export class WaitForInstanceRunning extends CompositeAutomationStep {
     super(scope, id);
 
     const stepParams = {
-      service: 'EC2',
+      service: AwsService.EC2,
       pascalCaseApi: 'DescribeInstanceStatus',
       apiParams: {
         InstanceIds: props.instanceIds,

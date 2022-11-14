@@ -8,6 +8,7 @@ import { CreateTagsStep } from '../../parent-steps/automation/create-tags-step';
 import { SleepStep } from '../../parent-steps/automation/sleep-step';
 import { AutomationStepSimulation } from '../automation-step-simulation';
 import { AutomationSimulationBase } from './automation-simulation-base';
+import {AwsService} from "../../domain/aws-service";
 
 /**
  * Properties for CreateTagStep
@@ -88,7 +89,7 @@ export class CreateTagsSimulation extends AutomationSimulationBase {
 
   private callEc2CreateTags(resourceIds: string[], tags: Record<string, any>[]): void {
     const result = new AutomationStepSimulation(new AwsApiStep(new Stack(), 'ec2CreateTags', {
-      service: 'EC2',
+      service: AwsService.EC2,
       pascalCaseApi: 'CreateTags',
       apiParams: {
         Resources: resourceIds,
@@ -145,7 +146,7 @@ export class CreateTagsSimulation extends AutomationSimulationBase {
 
   private ec2DescribeTags(filters: Ec2TagFilter[]): Ec2TagDescription[] {
     const result = new AutomationStepSimulation(new AwsApiStep(new Stack(), 'ec2DescribeTags', {
-      service: 'EC2',
+      service: AwsService.EC2,
       pascalCaseApi: 'DescribeTags',
       apiParams: {
         Filters: filters,
@@ -175,7 +176,7 @@ export class CreateTagsSimulation extends AutomationSimulationBase {
 
   private callSsmAddTagsToResource(resourceType: string, resourceId: string, tags: Record<string, any>[]): void {
     const result = new AutomationStepSimulation(new AwsApiStep(new Stack(), 'ssmAddTagsToResource', {
-      service: 'SSM',
+      service: AwsService.SSM,
       pascalCaseApi: 'AddTagsToResource',
       apiParams: {
         ResourceType: resourceType,
@@ -205,7 +206,7 @@ export class CreateTagsSimulation extends AutomationSimulationBase {
 
   private ssmListTagsForResource(resourceType: string, resourceId: string): SsmTag[] {
     const result = new AutomationStepSimulation(new AwsApiStep(new Stack(), 'ssmListTagsForResource', {
-      service: 'SSM',
+      service: AwsService.SSM,
       pascalCaseApi: 'ListTagsForResource',
       apiParams: {
         ResourceType: resourceType,

@@ -1,6 +1,6 @@
 import { strict as assert } from 'assert';
 import { Stack } from 'aws-cdk-lib';
-import { CreateImageStep, HardCodedBoolean, HardCodedString, HardCodedStringMap, MockAwsInvoker, ResponseCode } from '../../../lib';
+import { AwsService, CreateImageStep, HardCodedBoolean, HardCodedString, HardCodedStringMap, MockAwsInvoker, ResponseCode } from '../../../lib';
 import { AutomationStepSimulation } from '../../../lib/simulation/automation-step-simulation';
 
 describe('CreateImageStep', () => {
@@ -15,7 +15,7 @@ describe('CreateImageStep', () => {
           InstanceId: instanceId,
           Name: imageName,
         },
-        service: 'EC2',
+        service: AwsService.EC2,
       }, {
         ImageId: 'image ID',
       });
@@ -24,7 +24,7 @@ describe('CreateImageStep', () => {
         awsParams: {
           ImageIds: ['image ID'],
         },
-        service: 'EC2',
+        service: AwsService.EC2,
       }, {
         Images: [{
           State: 'available',
@@ -64,7 +64,7 @@ describe('CreateImageStep', () => {
       awsInvoker.whenThen({
         awsApi: 'createImage',
         awsParams,
-        service: 'EC2',
+        service: AwsService.EC2,
       }, {
         ImageId: 'image ID',
       });
@@ -73,7 +73,7 @@ describe('CreateImageStep', () => {
         awsParams: {
           ImageIds: ['image ID'],
         },
-        service: 'EC2',
+        service: AwsService.EC2,
       }, {
         Images: [{
           State: 'available',
@@ -89,7 +89,7 @@ describe('CreateImageStep', () => {
       assert.deepEqual(awsInvoker.previousInvocations[0], {
         awsApi: 'createImage',
         awsParams,
-        service: 'EC2',
+        service: AwsService.EC2,
       });
     });
   });

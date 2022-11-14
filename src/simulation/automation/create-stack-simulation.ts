@@ -14,6 +14,7 @@ import { waitForAndAssertStackStatus } from '../../parent-steps/automation/sub-s
 import { pruneAndTransformRecord } from '../../utils/prune-and-transform-record';
 import { AutomationStepSimulation } from '../automation-step-simulation';
 import { AutomationSimulationBase } from './automation-simulation-base';
+import {AwsService} from "../../domain/aws-service";
 
 /**
  * Properties for CreateStackStep
@@ -141,7 +142,7 @@ export class CreateStackSimulation extends AutomationSimulationBase {
     if (parameters) { apiParams.Parameters = parameters; }
 
     const result = new AutomationStepSimulation(new AwsApiStep(new Stack(), 'createStack', {
-      service: 'CloudFormation',
+      service: AwsService.CLOUD_FORMATION,
       pascalCaseApi: 'CreateStack',
       apiParams: apiParams,
       outputs: [{
@@ -168,7 +169,7 @@ export class CreateStackSimulation extends AutomationSimulationBase {
 
   private getStackState(stackName: string): DescribeStackResult | null {
     const describeResponse = new AutomationStepSimulation(new AwsApiStep(new Stack(), 'describeStack', {
-      service: 'CloudFormation',
+      service: AwsService.CLOUD_FORMATION,
       pascalCaseApi: 'DescribeStacks',
       apiParams: {
         StackName: stackName,

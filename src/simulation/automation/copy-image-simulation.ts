@@ -9,6 +9,7 @@ import { pruneAndTransformRecord } from '../../utils/prune-and-transform-record'
 import { AutomationStepSimulation } from '../automation-step-simulation';
 import { AutomationSimulationBase } from './automation-simulation-base';
 import { AwsInvocationSimulationProps } from './aws-api-simulation';
+import {AwsService} from "../../domain/aws-service";
 
 /**
  * AutomationStep implemenation for aws:copyImage
@@ -51,7 +52,7 @@ export class CopyImageSimulation extends AutomationSimulationBase {
     const apiParams = pruneAndTransformRecord(apiParamMap, x => x.resolve(inputs));
 
     const result = new AutomationStepSimulation(new AwsApiStep(new Stack(), 'copyImage', {
-      service: 'EC2',
+      service: AwsService.EC2,
       pascalCaseApi: 'CopyImage',
       apiParams,
       outputs: [{
