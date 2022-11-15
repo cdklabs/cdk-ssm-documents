@@ -71,7 +71,7 @@ export class AwsApiStep extends AutomationStep {
   /**
      * @returns Outputs as specified in params
      */
-  public listOutputs(): Output[] {
+  public listUserOutputs(): Output[] {
     return this.outputs;
   }
 

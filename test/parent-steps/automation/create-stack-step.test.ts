@@ -116,19 +116,6 @@ describe('CreateStackStep', () => {
           TimeoutInMinutes: 5,
         },
         name: 'createStack',
-        outputs: [{
-          Type: 'String',
-          Name: 'StackId',
-          Selector: '$.StackId',
-        }, {
-          Type: 'String',
-          Name: 'StackStatus',
-          Selector: '$.StackStatus',
-        }, {
-          Type: 'String',
-          Name: 'StackStatusReason',
-          Selector: '$.StackStatusReason',
-        }],
       });
     });
   });

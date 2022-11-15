@@ -96,8 +96,8 @@ export abstract class AutomationStep extends Step implements IAutomationComponen
     ssmDef.set('action', this.action);
     ssmDef.set('inputs', inputs);
 
-    const formattedOutputs = this.listOutputs().map(output => this.formatOutput(output));
-    if (this.listOutputs().length > 0) {
+    if (this.listUserOutputs().length > 0) {
+      const formattedOutputs = this.listUserOutputs().map(this.formatOutput);
       ssmDef.set('outputs', formattedOutputs);
     }
     if (this.isEnd) {
@@ -139,5 +139,16 @@ export abstract class AutomationStep extends Step implements IAutomationComponen
   public variables(): { [name: string]: any } {
     return Object.assign({}, ...this.listOutputs()
       .map(out => ({ [out.name]: new StringVariable(`${this.name}.${out.name}`) })));
+  }
+
+  /**
+   * Lists the outputs defined by the user for this step.
+   */
+  public listUserOutputs(): Output[] {
+    return [];
+  }
+
+  public listOutputs(): Output[] {
+    return this.listUserOutputs();
   }
 }

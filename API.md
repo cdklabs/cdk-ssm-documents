@@ -384,6 +384,7 @@ new ApproveStep(scope: Construct, id: string, props: ApproveStepProps)
 | <code><a href="#@cdklabs/cdk-ssm-documents.ApproveStep.listOutputs">listOutputs</a></code> | Lists the outputs that will be returned from this step. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.ApproveStep.toSsmEntry">toSsmEntry</a></code> | Converts this step into an object to prepare for yaml/json representation of this step. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.ApproveStep.addToDocument">addToDocument</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.ApproveStep.listUserOutputs">listUserOutputs</a></code> | Lists the outputs defined by the user for this step. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.ApproveStep.variables">variables</a></code> | *No description.* |
 
 ---
@@ -431,6 +432,14 @@ public addToDocument(doc: AutomationDocumentBuilder): void
 - *Type:* <a href="#@cdklabs/cdk-ssm-documents.AutomationDocumentBuilder">AutomationDocumentBuilder</a>
 
 ---
+
+##### `listUserOutputs` <a name="listUserOutputs" id="@cdklabs/cdk-ssm-documents.ApproveStep.listUserOutputs"></a>
+
+```typescript
+public listUserOutputs(): Output[]
+```
+
+Lists the outputs defined by the user for this step.
 
 ##### `variables` <a name="variables" id="@cdklabs/cdk-ssm-documents.ApproveStep.variables"></a>
 
@@ -749,6 +758,7 @@ new AssertAwsResourceStep(scope: Construct, id: string, props: AssertAwsResource
 | <code><a href="#@cdklabs/cdk-ssm-documents.AssertAwsResourceStep.listOutputs">listOutputs</a></code> | There are no outputs for this step. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.AssertAwsResourceStep.toSsmEntry">toSsmEntry</a></code> | Converts this step into an object to prepare for yaml/json representation of this step. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.AssertAwsResourceStep.addToDocument">addToDocument</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.AssertAwsResourceStep.listUserOutputs">listUserOutputs</a></code> | Lists the outputs defined by the user for this step. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.AssertAwsResourceStep.variables">variables</a></code> | *No description.* |
 
 ---
@@ -796,6 +806,14 @@ public addToDocument(doc: AutomationDocumentBuilder): void
 - *Type:* <a href="#@cdklabs/cdk-ssm-documents.AutomationDocumentBuilder">AutomationDocumentBuilder</a>
 
 ---
+
+##### `listUserOutputs` <a name="listUserOutputs" id="@cdklabs/cdk-ssm-documents.AssertAwsResourceStep.listUserOutputs"></a>
+
+```typescript
+public listUserOutputs(): Output[]
+```
+
+Lists the outputs defined by the user for this step.
 
 ##### `variables` <a name="variables" id="@cdklabs/cdk-ssm-documents.AssertAwsResourceStep.variables"></a>
 
@@ -1397,6 +1415,7 @@ new AutomationStep(scope: Construct, id: string, props: AutomationStepProps)
 | <code><a href="#@cdklabs/cdk-ssm-documents.AutomationStep.listOutputs">listOutputs</a></code> | Lists the outputs that will be returned from this step. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.AutomationStep.toSsmEntry">toSsmEntry</a></code> | Converts this step into an object to prepare for yaml/json representation of this step. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.AutomationStep.addToDocument">addToDocument</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.AutomationStep.listUserOutputs">listUserOutputs</a></code> | Lists the outputs defined by the user for this step. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.AutomationStep.variables">variables</a></code> | *No description.* |
 
 ---
@@ -1444,6 +1463,14 @@ public addToDocument(doc: AutomationDocumentBuilder): void
 - *Type:* <a href="#@cdklabs/cdk-ssm-documents.AutomationDocumentBuilder">AutomationDocumentBuilder</a>
 
 ---
+
+##### `listUserOutputs` <a name="listUserOutputs" id="@cdklabs/cdk-ssm-documents.AutomationStep.listUserOutputs"></a>
+
+```typescript
+public listUserOutputs(): Output[]
+```
+
+Lists the outputs defined by the user for this step.
 
 ##### `variables` <a name="variables" id="@cdklabs/cdk-ssm-documents.AutomationStep.variables"></a>
 
@@ -1716,6 +1743,7 @@ new AwsApiStep(scope: Construct, id: string, props: AwsApiStepProps)
 | <code><a href="#@cdklabs/cdk-ssm-documents.AwsApiStep.listOutputs">listOutputs</a></code> | Lists the outputs that will be returned from this step. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.AwsApiStep.toSsmEntry">toSsmEntry</a></code> | Converts this step into an object to prepare for yaml/json representation of this step. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.AwsApiStep.addToDocument">addToDocument</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.AwsApiStep.listUserOutputs">listUserOutputs</a></code> | Lists the outputs defined by the user for this step. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.AwsApiStep.variables">variables</a></code> | *No description.* |
 
 ---
@@ -1763,6 +1791,14 @@ public addToDocument(doc: AutomationDocumentBuilder): void
 - *Type:* <a href="#@cdklabs/cdk-ssm-documents.AutomationDocumentBuilder">AutomationDocumentBuilder</a>
 
 ---
+
+##### `listUserOutputs` <a name="listUserOutputs" id="@cdklabs/cdk-ssm-documents.AwsApiStep.listUserOutputs"></a>
+
+```typescript
+public listUserOutputs(): Output[]
+```
+
+Lists the outputs defined by the user for this step.
 
 ##### `variables` <a name="variables" id="@cdklabs/cdk-ssm-documents.AwsApiStep.variables"></a>
 
@@ -2090,6 +2126,7 @@ new BranchStep(scope: Construct, id: string, props: BranchStepProps)
 | <code><a href="#@cdklabs/cdk-ssm-documents.BranchStep.listOutputs">listOutputs</a></code> | There is no output from branch steps. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.BranchStep.toSsmEntry">toSsmEntry</a></code> | Converts this step into an object to prepare for yaml/json representation of this step. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.BranchStep.addToDocument">addToDocument</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.BranchStep.listUserOutputs">listUserOutputs</a></code> | Lists the outputs defined by the user for this step. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.BranchStep.variables">variables</a></code> | *No description.* |
 
 ---
@@ -2137,6 +2174,14 @@ public addToDocument(doc: AutomationDocumentBuilder): void
 - *Type:* <a href="#@cdklabs/cdk-ssm-documents.AutomationDocumentBuilder">AutomationDocumentBuilder</a>
 
 ---
+
+##### `listUserOutputs` <a name="listUserOutputs" id="@cdklabs/cdk-ssm-documents.BranchStep.listUserOutputs"></a>
+
+```typescript
+public listUserOutputs(): Output[]
+```
+
+Lists the outputs defined by the user for this step.
 
 ##### `variables` <a name="variables" id="@cdklabs/cdk-ssm-documents.BranchStep.variables"></a>
 
@@ -2431,6 +2476,7 @@ new ChangeInstanceStateStep(scope: Construct, id: string, props: ChangeInstanceS
 | <code><a href="#@cdklabs/cdk-ssm-documents.ChangeInstanceStateStep.listOutputs">listOutputs</a></code> | This step has no outputs. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.ChangeInstanceStateStep.toSsmEntry">toSsmEntry</a></code> | Converts this step into an object to prepare for yaml/json representation of this step. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.ChangeInstanceStateStep.addToDocument">addToDocument</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.ChangeInstanceStateStep.listUserOutputs">listUserOutputs</a></code> | Lists the outputs defined by the user for this step. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.ChangeInstanceStateStep.variables">variables</a></code> | *No description.* |
 
 ---
@@ -2478,6 +2524,14 @@ public addToDocument(doc: AutomationDocumentBuilder): void
 - *Type:* <a href="#@cdklabs/cdk-ssm-documents.AutomationDocumentBuilder">AutomationDocumentBuilder</a>
 
 ---
+
+##### `listUserOutputs` <a name="listUserOutputs" id="@cdklabs/cdk-ssm-documents.ChangeInstanceStateStep.listUserOutputs"></a>
+
+```typescript
+public listUserOutputs(): Output[]
+```
+
+Lists the outputs defined by the user for this step.
 
 ##### `variables` <a name="variables" id="@cdklabs/cdk-ssm-documents.ChangeInstanceStateStep.variables"></a>
 
@@ -4198,6 +4252,7 @@ new CopyImageStep(scope: Construct, id: string, props: CopyImageStepProps)
 | <code><a href="#@cdklabs/cdk-ssm-documents.CopyImageStep.listOutputs">listOutputs</a></code> | Lists the outputs that will be returned from this step. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.CopyImageStep.toSsmEntry">toSsmEntry</a></code> | Converts this step into an object to prepare for yaml/json representation of this step. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.CopyImageStep.addToDocument">addToDocument</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.CopyImageStep.listUserOutputs">listUserOutputs</a></code> | Lists the outputs defined by the user for this step. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.CopyImageStep.variables">variables</a></code> | *No description.* |
 
 ---
@@ -4245,6 +4300,14 @@ public addToDocument(doc: AutomationDocumentBuilder): void
 - *Type:* <a href="#@cdklabs/cdk-ssm-documents.AutomationDocumentBuilder">AutomationDocumentBuilder</a>
 
 ---
+
+##### `listUserOutputs` <a name="listUserOutputs" id="@cdklabs/cdk-ssm-documents.CopyImageStep.listUserOutputs"></a>
+
+```typescript
+public listUserOutputs(): Output[]
+```
+
+Lists the outputs defined by the user for this step.
 
 ##### `variables` <a name="variables" id="@cdklabs/cdk-ssm-documents.CopyImageStep.variables"></a>
 
@@ -4594,6 +4657,7 @@ new CreateImageStep(scope: Construct, id: string, props: CreateImageStepProps)
 | <code><a href="#@cdklabs/cdk-ssm-documents.CreateImageStep.listOutputs">listOutputs</a></code> | Lists the outputs that will be returned from this step. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.CreateImageStep.toSsmEntry">toSsmEntry</a></code> | Converts this step into an object to prepare for yaml/json representation of this step. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.CreateImageStep.addToDocument">addToDocument</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.CreateImageStep.listUserOutputs">listUserOutputs</a></code> | Lists the outputs defined by the user for this step. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.CreateImageStep.variables">variables</a></code> | *No description.* |
 
 ---
@@ -4641,6 +4705,14 @@ public addToDocument(doc: AutomationDocumentBuilder): void
 - *Type:* <a href="#@cdklabs/cdk-ssm-documents.AutomationDocumentBuilder">AutomationDocumentBuilder</a>
 
 ---
+
+##### `listUserOutputs` <a name="listUserOutputs" id="@cdklabs/cdk-ssm-documents.CreateImageStep.listUserOutputs"></a>
+
+```typescript
+public listUserOutputs(): Output[]
+```
+
+Lists the outputs defined by the user for this step.
 
 ##### `variables` <a name="variables" id="@cdklabs/cdk-ssm-documents.CreateImageStep.variables"></a>
 
@@ -4968,6 +5040,7 @@ new CreateStackStep(scope: Construct, id: string, props: CreateStackStepProps)
 | <code><a href="#@cdklabs/cdk-ssm-documents.CreateStackStep.listOutputs">listOutputs</a></code> | Lists the outputs that will be returned from this step. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.CreateStackStep.toSsmEntry">toSsmEntry</a></code> | Converts this step into an object to prepare for yaml/json representation of this step. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.CreateStackStep.addToDocument">addToDocument</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.CreateStackStep.listUserOutputs">listUserOutputs</a></code> | Lists the outputs defined by the user for this step. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.CreateStackStep.variables">variables</a></code> | *No description.* |
 
 ---
@@ -5015,6 +5088,14 @@ public addToDocument(doc: AutomationDocumentBuilder): void
 - *Type:* <a href="#@cdklabs/cdk-ssm-documents.AutomationDocumentBuilder">AutomationDocumentBuilder</a>
 
 ---
+
+##### `listUserOutputs` <a name="listUserOutputs" id="@cdklabs/cdk-ssm-documents.CreateStackStep.listUserOutputs"></a>
+
+```typescript
+public listUserOutputs(): Output[]
+```
+
+Lists the outputs defined by the user for this step.
 
 ##### `variables` <a name="variables" id="@cdklabs/cdk-ssm-documents.CreateStackStep.variables"></a>
 
@@ -5441,6 +5522,7 @@ new CreateTagsStep(scope: Construct, id: string, props: CreateTagsStepProps)
 | <code><a href="#@cdklabs/cdk-ssm-documents.CreateTagsStep.listOutputs">listOutputs</a></code> | This step has no outputs. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.CreateTagsStep.toSsmEntry">toSsmEntry</a></code> | Converts this step into an object to prepare for yaml/json representation of this step. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.CreateTagsStep.addToDocument">addToDocument</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.CreateTagsStep.listUserOutputs">listUserOutputs</a></code> | Lists the outputs defined by the user for this step. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.CreateTagsStep.variables">variables</a></code> | *No description.* |
 
 ---
@@ -5488,6 +5570,14 @@ public addToDocument(doc: AutomationDocumentBuilder): void
 - *Type:* <a href="#@cdklabs/cdk-ssm-documents.AutomationDocumentBuilder">AutomationDocumentBuilder</a>
 
 ---
+
+##### `listUserOutputs` <a name="listUserOutputs" id="@cdklabs/cdk-ssm-documents.CreateTagsStep.listUserOutputs"></a>
+
+```typescript
+public listUserOutputs(): Output[]
+```
+
+Lists the outputs defined by the user for this step.
 
 ##### `variables` <a name="variables" id="@cdklabs/cdk-ssm-documents.CreateTagsStep.variables"></a>
 
@@ -5793,6 +5883,7 @@ new DeleteImageStep(scope: Construct, id: string, props: DeleteImageStepProps)
 | <code><a href="#@cdklabs/cdk-ssm-documents.DeleteImageStep.listOutputs">listOutputs</a></code> | This step has no outputs. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.DeleteImageStep.toSsmEntry">toSsmEntry</a></code> | Converts this step into an object to prepare for yaml/json representation of this step. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.DeleteImageStep.addToDocument">addToDocument</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.DeleteImageStep.listUserOutputs">listUserOutputs</a></code> | Lists the outputs defined by the user for this step. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.DeleteImageStep.variables">variables</a></code> | *No description.* |
 
 ---
@@ -5840,6 +5931,14 @@ public addToDocument(doc: AutomationDocumentBuilder): void
 - *Type:* <a href="#@cdklabs/cdk-ssm-documents.AutomationDocumentBuilder">AutomationDocumentBuilder</a>
 
 ---
+
+##### `listUserOutputs` <a name="listUserOutputs" id="@cdklabs/cdk-ssm-documents.DeleteImageStep.listUserOutputs"></a>
+
+```typescript
+public listUserOutputs(): Output[]
+```
+
+Lists the outputs defined by the user for this step.
 
 ##### `variables` <a name="variables" id="@cdklabs/cdk-ssm-documents.DeleteImageStep.variables"></a>
 
@@ -6123,6 +6222,7 @@ new DeleteStackStep(scope: Construct, id: string, props: DeleteStackStepProps)
 | <code><a href="#@cdklabs/cdk-ssm-documents.DeleteStackStep.listOutputs">listOutputs</a></code> | No outputs emitted from Delete Stack step. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.DeleteStackStep.toSsmEntry">toSsmEntry</a></code> | Converts this step into an object to prepare for yaml/json representation of this step. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.DeleteStackStep.addToDocument">addToDocument</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.DeleteStackStep.listUserOutputs">listUserOutputs</a></code> | Lists the outputs defined by the user for this step. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.DeleteStackStep.variables">variables</a></code> | *No description.* |
 
 ---
@@ -6170,6 +6270,14 @@ public addToDocument(doc: AutomationDocumentBuilder): void
 - *Type:* <a href="#@cdklabs/cdk-ssm-documents.AutomationDocumentBuilder">AutomationDocumentBuilder</a>
 
 ---
+
+##### `listUserOutputs` <a name="listUserOutputs" id="@cdklabs/cdk-ssm-documents.DeleteStackStep.listUserOutputs"></a>
+
+```typescript
+public listUserOutputs(): Output[]
+```
+
+Lists the outputs defined by the user for this step.
 
 ##### `variables` <a name="variables" id="@cdklabs/cdk-ssm-documents.DeleteStackStep.variables"></a>
 
@@ -7112,6 +7220,7 @@ new ExecuteAutomationStep(scope: Construct, id: string, props: ExecuteAutomation
 | <code><a href="#@cdklabs/cdk-ssm-documents.ExecuteAutomationStep.listOutputs">listOutputs</a></code> | Lists the outputs that will be returned from this step. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.ExecuteAutomationStep.toSsmEntry">toSsmEntry</a></code> | Converts this step into an object to prepare for yaml/json representation of this step. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.ExecuteAutomationStep.addToDocument">addToDocument</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.ExecuteAutomationStep.listUserOutputs">listUserOutputs</a></code> | Lists the outputs defined by the user for this step. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.ExecuteAutomationStep.variables">variables</a></code> | *No description.* |
 
 ---
@@ -7159,6 +7268,14 @@ public addToDocument(doc: AutomationDocumentBuilder): void
 - *Type:* <a href="#@cdklabs/cdk-ssm-documents.AutomationDocumentBuilder">AutomationDocumentBuilder</a>
 
 ---
+
+##### `listUserOutputs` <a name="listUserOutputs" id="@cdklabs/cdk-ssm-documents.ExecuteAutomationStep.listUserOutputs"></a>
+
+```typescript
+public listUserOutputs(): Output[]
+```
+
+Lists the outputs defined by the user for this step.
 
 ##### `variables` <a name="variables" id="@cdklabs/cdk-ssm-documents.ExecuteAutomationStep.variables"></a>
 
@@ -7541,6 +7658,7 @@ new ExecuteScriptStep(stage: Construct, id: string, props: ExecuteScriptStepProp
 | <code><a href="#@cdklabs/cdk-ssm-documents.ExecuteScriptStep.listOutputs">listOutputs</a></code> | Lists the outputs that will be returned from this step. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.ExecuteScriptStep.toSsmEntry">toSsmEntry</a></code> | Converts this step into an object to prepare for yaml/json representation of this step. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.ExecuteScriptStep.addToDocument">addToDocument</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.ExecuteScriptStep.listUserOutputs">listUserOutputs</a></code> | Lists the outputs defined by the user for this step. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.ExecuteScriptStep.variables">variables</a></code> | *No description.* |
 
 ---
@@ -7588,6 +7706,14 @@ public addToDocument(doc: AutomationDocumentBuilder): void
 - *Type:* <a href="#@cdklabs/cdk-ssm-documents.AutomationDocumentBuilder">AutomationDocumentBuilder</a>
 
 ---
+
+##### `listUserOutputs` <a name="listUserOutputs" id="@cdklabs/cdk-ssm-documents.ExecuteScriptStep.listUserOutputs"></a>
+
+```typescript
+public listUserOutputs(): Output[]
+```
+
+Lists the outputs defined by the user for this step.
 
 ##### `variables` <a name="variables" id="@cdklabs/cdk-ssm-documents.ExecuteScriptStep.variables"></a>
 
@@ -7904,6 +8030,7 @@ new ExecuteStateMachineStep(scope: Construct, id: string, props: ExecuteStateMac
 | <code><a href="#@cdklabs/cdk-ssm-documents.ExecuteStateMachineStep.listOutputs">listOutputs</a></code> | No outputs emitted from Delete Stack step. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.ExecuteStateMachineStep.toSsmEntry">toSsmEntry</a></code> | Converts this step into an object to prepare for yaml/json representation of this step. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.ExecuteStateMachineStep.addToDocument">addToDocument</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.ExecuteStateMachineStep.listUserOutputs">listUserOutputs</a></code> | Lists the outputs defined by the user for this step. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.ExecuteStateMachineStep.variables">variables</a></code> | *No description.* |
 
 ---
@@ -7951,6 +8078,14 @@ public addToDocument(doc: AutomationDocumentBuilder): void
 - *Type:* <a href="#@cdklabs/cdk-ssm-documents.AutomationDocumentBuilder">AutomationDocumentBuilder</a>
 
 ---
+
+##### `listUserOutputs` <a name="listUserOutputs" id="@cdklabs/cdk-ssm-documents.ExecuteStateMachineStep.listUserOutputs"></a>
+
+```typescript
+public listUserOutputs(): Output[]
+```
+
+Lists the outputs defined by the user for this step.
 
 ##### `variables` <a name="variables" id="@cdklabs/cdk-ssm-documents.ExecuteStateMachineStep.variables"></a>
 
@@ -9157,6 +9292,7 @@ new InvokeLambdaFunctionStep(scope: Construct, id: string, props: InvokeLambdaFu
 | <code><a href="#@cdklabs/cdk-ssm-documents.InvokeLambdaFunctionStep.listOutputs">listOutputs</a></code> | Lists the outputs that will be returned from this step. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.InvokeLambdaFunctionStep.toSsmEntry">toSsmEntry</a></code> | Converts this step into an object to prepare for yaml/json representation of this step. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.InvokeLambdaFunctionStep.addToDocument">addToDocument</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.InvokeLambdaFunctionStep.listUserOutputs">listUserOutputs</a></code> | Lists the outputs defined by the user for this step. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.InvokeLambdaFunctionStep.variables">variables</a></code> | *No description.* |
 | <code><a href="#@cdklabs/cdk-ssm-documents.InvokeLambdaFunctionStep.formatInputMap">formatInputMap</a></code> | *No description.* |
 
@@ -9205,6 +9341,14 @@ public addToDocument(doc: AutomationDocumentBuilder): void
 - *Type:* <a href="#@cdklabs/cdk-ssm-documents.AutomationDocumentBuilder">AutomationDocumentBuilder</a>
 
 ---
+
+##### `listUserOutputs` <a name="listUserOutputs" id="@cdklabs/cdk-ssm-documents.InvokeLambdaFunctionStep.listUserOutputs"></a>
+
+```typescript
+public listUserOutputs(): Output[]
+```
+
+Lists the outputs defined by the user for this step.
 
 ##### `variables` <a name="variables" id="@cdklabs/cdk-ssm-documents.InvokeLambdaFunctionStep.variables"></a>
 
@@ -9560,6 +9704,7 @@ new InvokeWebhookStep(scope: Construct, id: string, props: InvokeWebhookStepProp
 | <code><a href="#@cdklabs/cdk-ssm-documents.InvokeWebhookStep.listOutputs">listOutputs</a></code> | Lists the outputs that will be returned from this step. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.InvokeWebhookStep.toSsmEntry">toSsmEntry</a></code> | Converts this step into an object to prepare for yaml/json representation of this step. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.InvokeWebhookStep.addToDocument">addToDocument</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.InvokeWebhookStep.listUserOutputs">listUserOutputs</a></code> | Lists the outputs defined by the user for this step. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.InvokeWebhookStep.variables">variables</a></code> | *No description.* |
 
 ---
@@ -9607,6 +9752,14 @@ public addToDocument(doc: AutomationDocumentBuilder): void
 - *Type:* <a href="#@cdklabs/cdk-ssm-documents.AutomationDocumentBuilder">AutomationDocumentBuilder</a>
 
 ---
+
+##### `listUserOutputs` <a name="listUserOutputs" id="@cdklabs/cdk-ssm-documents.InvokeWebhookStep.listUserOutputs"></a>
+
+```typescript
+public listUserOutputs(): Output[]
+```
+
+Lists the outputs defined by the user for this step.
 
 ##### `variables` <a name="variables" id="@cdklabs/cdk-ssm-documents.InvokeWebhookStep.variables"></a>
 
@@ -9901,6 +10054,7 @@ new PauseStep(scope: Construct, id: string, props: AutomationStepProps)
 | <code><a href="#@cdklabs/cdk-ssm-documents.PauseStep.listOutputs">listOutputs</a></code> | No outputs emitted from Pause step. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.PauseStep.toSsmEntry">toSsmEntry</a></code> | Converts this step into an object to prepare for yaml/json representation of this step. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.PauseStep.addToDocument">addToDocument</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.PauseStep.listUserOutputs">listUserOutputs</a></code> | Lists the outputs defined by the user for this step. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.PauseStep.variables">variables</a></code> | *No description.* |
 
 ---
@@ -9948,6 +10102,14 @@ public addToDocument(doc: AutomationDocumentBuilder): void
 - *Type:* <a href="#@cdklabs/cdk-ssm-documents.AutomationDocumentBuilder">AutomationDocumentBuilder</a>
 
 ---
+
+##### `listUserOutputs` <a name="listUserOutputs" id="@cdklabs/cdk-ssm-documents.PauseStep.listUserOutputs"></a>
+
+```typescript
+public listUserOutputs(): Output[]
+```
+
+Lists the outputs defined by the user for this step.
 
 ##### `variables` <a name="variables" id="@cdklabs/cdk-ssm-documents.PauseStep.variables"></a>
 
@@ -10700,6 +10862,7 @@ new RunCommandStep(scope: Construct, id: string, props: RunCommandStepProps)
 | <code><a href="#@cdklabs/cdk-ssm-documents.RunCommandStep.listOutputs">listOutputs</a></code> | Lists the outputs that will be returned from this step. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.RunCommandStep.toSsmEntry">toSsmEntry</a></code> | Converts this step into an object to prepare for yaml/json representation of this step. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.RunCommandStep.addToDocument">addToDocument</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.RunCommandStep.listUserOutputs">listUserOutputs</a></code> | Lists the outputs defined by the user for this step. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.RunCommandStep.variables">variables</a></code> | *No description.* |
 
 ---
@@ -10747,6 +10910,14 @@ public addToDocument(doc: AutomationDocumentBuilder): void
 - *Type:* <a href="#@cdklabs/cdk-ssm-documents.AutomationDocumentBuilder">AutomationDocumentBuilder</a>
 
 ---
+
+##### `listUserOutputs` <a name="listUserOutputs" id="@cdklabs/cdk-ssm-documents.RunCommandStep.listUserOutputs"></a>
+
+```typescript
+public listUserOutputs(): Output[]
+```
+
+Lists the outputs defined by the user for this step.
 
 ##### `variables` <a name="variables" id="@cdklabs/cdk-ssm-documents.RunCommandStep.variables"></a>
 
@@ -11887,6 +12058,7 @@ new RunInstanceStep(scope: Construct, id: string, props: RunInstanceStepProps)
 | <code><a href="#@cdklabs/cdk-ssm-documents.RunInstanceStep.listOutputs">listOutputs</a></code> | Lists the outputs that will be returned from this step. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.RunInstanceStep.toSsmEntry">toSsmEntry</a></code> | Converts this step into an object to prepare for yaml/json representation of this step. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.RunInstanceStep.addToDocument">addToDocument</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.RunInstanceStep.listUserOutputs">listUserOutputs</a></code> | Lists the outputs defined by the user for this step. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.RunInstanceStep.variables">variables</a></code> | *No description.* |
 
 ---
@@ -11934,6 +12106,14 @@ public addToDocument(doc: AutomationDocumentBuilder): void
 - *Type:* <a href="#@cdklabs/cdk-ssm-documents.AutomationDocumentBuilder">AutomationDocumentBuilder</a>
 
 ---
+
+##### `listUserOutputs` <a name="listUserOutputs" id="@cdklabs/cdk-ssm-documents.RunInstanceStep.listUserOutputs"></a>
+
+```typescript
+public listUserOutputs(): Output[]
+```
+
+Lists the outputs defined by the user for this step.
 
 ##### `variables` <a name="variables" id="@cdklabs/cdk-ssm-documents.RunInstanceStep.variables"></a>
 
@@ -13118,6 +13298,7 @@ new SleepStep(scope: Construct, id: string, props: SleepStepProps)
 | <code><a href="#@cdklabs/cdk-ssm-documents.SleepStep.listOutputs">listOutputs</a></code> | No outputs emitted from Sleep step. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.SleepStep.toSsmEntry">toSsmEntry</a></code> | Converts this step into an object to prepare for yaml/json representation of this step. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.SleepStep.addToDocument">addToDocument</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.SleepStep.listUserOutputs">listUserOutputs</a></code> | Lists the outputs defined by the user for this step. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.SleepStep.variables">variables</a></code> | *No description.* |
 
 ---
@@ -13165,6 +13346,14 @@ public addToDocument(doc: AutomationDocumentBuilder): void
 - *Type:* <a href="#@cdklabs/cdk-ssm-documents.AutomationDocumentBuilder">AutomationDocumentBuilder</a>
 
 ---
+
+##### `listUserOutputs` <a name="listUserOutputs" id="@cdklabs/cdk-ssm-documents.SleepStep.listUserOutputs"></a>
+
+```typescript
+public listUserOutputs(): Output[]
+```
+
+Lists the outputs defined by the user for this step.
 
 ##### `variables` <a name="variables" id="@cdklabs/cdk-ssm-documents.SleepStep.variables"></a>
 
@@ -15306,6 +15495,7 @@ new WaitForResourceStep(scope: Construct, id: string, props: WaitForResourceStep
 | <code><a href="#@cdklabs/cdk-ssm-documents.WaitForResourceStep.listOutputs">listOutputs</a></code> | There are no outputs for this step. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.WaitForResourceStep.toSsmEntry">toSsmEntry</a></code> | Converts this step into an object to prepare for yaml/json representation of this step. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.WaitForResourceStep.addToDocument">addToDocument</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.WaitForResourceStep.listUserOutputs">listUserOutputs</a></code> | Lists the outputs defined by the user for this step. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.WaitForResourceStep.variables">variables</a></code> | *No description.* |
 
 ---
@@ -15353,6 +15543,14 @@ public addToDocument(doc: AutomationDocumentBuilder): void
 - *Type:* <a href="#@cdklabs/cdk-ssm-documents.AutomationDocumentBuilder">AutomationDocumentBuilder</a>
 
 ---
+
+##### `listUserOutputs` <a name="listUserOutputs" id="@cdklabs/cdk-ssm-documents.WaitForResourceStep.listUserOutputs"></a>
+
+```typescript
+public listUserOutputs(): Output[]
+```
+
+Lists the outputs defined by the user for this step.
 
 ##### `variables` <a name="variables" id="@cdklabs/cdk-ssm-documents.WaitForResourceStep.variables"></a>
 

@@ -130,15 +130,6 @@ describe('CopyImageStep', () => {
           ClientToken: 'token',
         },
         name: 'id2',
-        outputs: [{
-          Type: 'String',
-          Name: 'ImageId',
-          Selector: '$.ImageId',
-        }, {
-          Type: 'String',
-          Name: 'ImageState',
-          Selector: '$.ImageState',
-        }],
       });
     });
   });

@@ -102,28 +102,6 @@ describe('RunCommandStep', () => {
           MaxErrors: 5,
         },
         name: 'runCommand',
-        outputs: [
-          {
-            Name: 'CommandId',
-            Selector: '$.CommandId',
-            Type: 'String',
-          },
-          {
-            Name: 'Status',
-            Selector: '$.Status',
-            Type: 'String',
-          },
-          {
-            Name: 'ResponseCode',
-            Selector: '$.ResponseCode',
-            Type: 'Integer',
-          },
-          {
-            Name: 'Output',
-            Selector: '$.Output',
-            Type: 'String',
-          },
-        ],
       });
     });
   });
