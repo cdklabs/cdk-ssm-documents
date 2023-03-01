@@ -106,14 +106,14 @@ export class InvokeLambdaFunctionStep extends AutomationStep {
     return super.prepareSsmEntry(entries);
   }
 
-  public formatInputMap(): Record<string, any> {
+  private formatInputMap(): Record<string, any> {
     return {
       FunctionName: this.functionName,
       Qualifier: this.qualifier,
       InvocationType: this.invocationType,
       LogType: this.logType,
       ClientContext: this.clientContext,
-      Payload: this.payload,
+      InputPayload: this.payload,
     };
   }
 }
