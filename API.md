@@ -9294,7 +9294,6 @@ new InvokeLambdaFunctionStep(scope: Construct, id: string, props: InvokeLambdaFu
 | <code><a href="#@cdklabs/cdk-ssm-documents.InvokeLambdaFunctionStep.addToDocument">addToDocument</a></code> | *No description.* |
 | <code><a href="#@cdklabs/cdk-ssm-documents.InvokeLambdaFunctionStep.listUserOutputs">listUserOutputs</a></code> | Lists the outputs defined by the user for this step. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.InvokeLambdaFunctionStep.variables">variables</a></code> | *No description.* |
-| <code><a href="#@cdklabs/cdk-ssm-documents.InvokeLambdaFunctionStep.formatInputMap">formatInputMap</a></code> | *No description.* |
 
 ---
 
@@ -9354,12 +9353,6 @@ Lists the outputs defined by the user for this step.
 
 ```typescript
 public variables(): {[ key: string ]: any}
-```
-
-##### `formatInputMap` <a name="formatInputMap" id="@cdklabs/cdk-ssm-documents.InvokeLambdaFunctionStep.formatInputMap"></a>
-
-```typescript
-public formatInputMap(): {[ key: string ]: any}
 ```
 
 #### Static Functions <a name="Static Functions" id="Static Functions"></a>
