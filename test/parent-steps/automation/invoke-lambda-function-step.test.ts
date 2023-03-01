@@ -112,7 +112,7 @@ describe('InvokeLambdaFunctionStep', () => {
           InvocationType: 'type',
           LogType: 'none',
           ClientContext: 'context',
-          Payload: { a: 1 },
+          InputPayload: { a: 1 },
         },
         name: 'id2',
       });

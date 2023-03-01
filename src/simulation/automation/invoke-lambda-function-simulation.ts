@@ -26,7 +26,7 @@ export class InvokeLambdaFunctionSimulation extends AutomationSimulationBase {
   }
 
   public executeStep(inputs: Record<string, any>): Record<string, any> {
-    const inputMap = this.invokeLambdaFunctionStep.formatInputMap();
+    const inputMap = this.formatInputMap();
     const stepInputs = pruneAndTransformRecord(inputMap, x => x.resolve(inputs));
     stepInputs.InvocationType = stepInputs.InvocationType ?? 'RequestResponse';
     stepInputs.LogType = stepInputs.LogType ?? 'Tail';
@@ -55,4 +55,15 @@ export class InvokeLambdaFunctionSimulation extends AutomationSimulationBase {
     };
   }
 
+  private formatInputMap(): Record<string, any> {
+    const step = this.invokeLambdaFunctionStep;
+    return {
+      FunctionName: step.functionName,
+      Qualifier: step.qualifier,
+      InvocationType: step.invocationType,
+      LogType: step.logType,
+      ClientContext: step.clientContext,
+      Payload: step.payload,
+    };
+  }
 }
