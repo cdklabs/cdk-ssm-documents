@@ -2,7 +2,7 @@ import { awscdk } from 'projen';
 
 const project = new awscdk.AwsCdkConstructLibrary({
   author: 'Amazon Web Services',
-  authorAddress: "https://aws.amazon.com",
+  authorAddress: 'https://aws.amazon.com',
   cdkVersion: '2.27.0',
   cdkVersionPinning: false,
   tsconfig: {
