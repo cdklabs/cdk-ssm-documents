@@ -1,8 +1,8 @@
 -----------------------
-Package ID: aws-sdk:2.1162.0
+Package ID: aws-sdk:2.1358.0
 Package Homepage: https://github.com/aws/aws-sdk-js
 Package SPDX-License-Identifier: Apache-2.0
-Package Artifact: https://registry.npmjs.org/aws-sdk/-/aws-sdk-2.1162.0.tgz
+Package Artifact: https://registry.npmjs.org/aws-sdk/-/aws-sdk-2.1358.0.tgz
 Package Artifact: git://github.com/aws/aws-sdk-js.git
 -----------------------
 Package ID: jmespath:0.16.0
@@ -59,6 +59,12 @@ Package SPDX-License-Identifier: BSD-3-Clause
 Package Artifact: https://registry.npmjs.org/source-map/-/source-map-0.6.1.tgz
 Package Artifact: git+ssh://git@github.com/mozilla/source-map.git
 -----------------------
+Package ID: inherits:2.0.4
+Package Homepage: https://github.com/isaacs/inherits#readme
+Package SPDX-License-Identifier: ISC
+Package Artifact: https://registry.npmjs.org/inherits/-/inherits-2.0.4.tgz
+Package Artifact: git://github.com/isaacs/inherits.git
+-----------------------
 Package ID: sax:1.2.1
 Package Homepage: https://github.com/isaacs/sax-js#readme
 Package SPDX-License-Identifier: ISC
@@ -70,6 +76,12 @@ Package Homepage: https://github.com/isaacs/sax-js#readme
 Package SPDX-License-Identifier: ISC
 Package Artifact: https://registry.npmjs.org/sax/-/sax-1.2.4.tgz
 Package Artifact: git://github.com/isaacs/sax-js.git
+-----------------------
+Package ID: available-typed-arrays:1.0.5
+Package Homepage: https://github.com/inspect-js/available-typed-arrays#readme
+Package SPDX-License-Identifier: MIT
+Package Artifact: https://registry.npmjs.org/available-typed-arrays/-/available-typed-arrays-1.0.5.tgz
+Package Artifact: git+https://github.com/inspect-js/available-typed-arrays.git
 -----------------------
 Package ID: base64-js:1.5.1
 Package Homepage: https://github.com/beatgammit/base64-js
@@ -88,6 +100,12 @@ Package Homepage: https://github.com/feross/buffer
 Package SPDX-License-Identifier: MIT
 Package Artifact: https://registry.npmjs.org/buffer/-/buffer-4.9.2.tgz
 Package Artifact: git://github.com/feross/buffer.git
+-----------------------
+Package ID: call-bind:1.0.2
+Package Homepage: https://github.com/ljharb/call-bind#readme
+Package SPDX-License-Identifier: MIT
+Package Artifact: https://registry.npmjs.org/call-bind/-/call-bind-1.0.2.tgz
+Package Artifact: git+https://github.com/ljharb/call-bind.git
 -----------------------
 Package ID: deasync:0.1.26
 Package Homepage: https://github.com/abbr/deasync
@@ -119,11 +137,83 @@ Package SPDX-License-Identifier: MIT
 Package Artifact: https://registry.npmjs.org/file-uri-to-path/-/file-uri-to-path-1.0.0.tgz
 Package Artifact: git://github.com/TooTallNate/file-uri-to-path.git
 -----------------------
+Package ID: for-each:0.3.3
+Package Homepage: https://github.com/Raynos/for-each
+Package SPDX-License-Identifier: MIT
+Package Artifact: https://registry.npmjs.org/for-each/-/for-each-0.3.3.tgz
+Package Artifact: git://github.com/Raynos/for-each.git
+-----------------------
+Package ID: function-bind:1.1.1
+Package Homepage: https://github.com/Raynos/function-bind
+Package SPDX-License-Identifier: MIT
+Package Artifact: https://registry.npmjs.org/function-bind/-/function-bind-1.1.1.tgz
+Package Artifact: git://github.com/Raynos/function-bind.git
+-----------------------
+Package ID: get-intrinsic:1.1.2
+Package Homepage: https://github.com/ljharb/get-intrinsic#readme
+Package SPDX-License-Identifier: MIT
+Package Artifact: https://registry.npmjs.org/get-intrinsic/-/get-intrinsic-1.1.2.tgz
+Package Artifact: git+https://github.com/ljharb/get-intrinsic.git
+-----------------------
+Package ID: get-intrinsic:1.2.0
+Package Homepage: https://github.com/ljharb/get-intrinsic#readme
+Package SPDX-License-Identifier: MIT
+Package Artifact: https://registry.npmjs.org/get-intrinsic/-/get-intrinsic-1.2.0.tgz
+Package Artifact: git+https://github.com/ljharb/get-intrinsic.git
+-----------------------
+Package ID: gopd:1.0.1
+Package Homepage: https://github.com/ljharb/gopd#readme
+Package SPDX-License-Identifier: MIT
+Package Artifact: https://registry.npmjs.org/gopd/-/gopd-1.0.1.tgz
+Package Artifact: git+https://github.com/ljharb/gopd.git
+-----------------------
+Package ID: has-symbols:1.0.3
+Package Homepage: https://github.com/ljharb/has-symbols#readme
+Package SPDX-License-Identifier: MIT
+Package Artifact: https://registry.npmjs.org/has-symbols/-/has-symbols-1.0.3.tgz
+Package Artifact: git://github.com/inspect-js/has-symbols.git
+-----------------------
+Package ID: has-tostringtag:1.0.0
+Package Homepage: https://github.com/inspect-js/has-tostringtag#readme
+Package SPDX-License-Identifier: MIT
+Package Artifact: https://registry.npmjs.org/has-tostringtag/-/has-tostringtag-1.0.0.tgz
+Package Artifact: git+https://github.com/inspect-js/has-tostringtag.git
+-----------------------
+Package ID: has:1.0.3
+Package Homepage: https://github.com/tarruda/has
+Package SPDX-License-Identifier: MIT
+Package Artifact: https://registry.npmjs.org/has/-/has-1.0.3.tgz
+Package Artifact: git://github.com/tarruda/has.git
+-----------------------
 Package ID: immutable:4.1.0
 Package Homepage: https://immutable-js.com
 Package SPDX-License-Identifier: MIT
 Package Artifact: https://registry.npmjs.org/immutable/-/immutable-4.1.0.tgz
 Package Artifact: git://github.com/immutable-js/immutable-js.git
+-----------------------
+Package ID: is-arguments:1.1.1
+Package Homepage: https://github.com/inspect-js/is-arguments
+Package SPDX-License-Identifier: MIT
+Package Artifact: https://registry.npmjs.org/is-arguments/-/is-arguments-1.1.1.tgz
+Package Artifact: git://github.com/inspect-js/is-arguments.git
+-----------------------
+Package ID: is-callable:1.2.7
+Package Homepage: https://github.com/inspect-js/is-callable#readme
+Package SPDX-License-Identifier: MIT
+Package Artifact: https://registry.npmjs.org/is-callable/-/is-callable-1.2.7.tgz
+Package Artifact: git://github.com/inspect-js/is-callable.git
+-----------------------
+Package ID: is-generator-function:1.0.10
+Package Homepage: https://github.com/inspect-js/is-generator-function#readme
+Package SPDX-License-Identifier: MIT
+Package Artifact: https://registry.npmjs.org/is-generator-function/-/is-generator-function-1.0.10.tgz
+Package Artifact: git://github.com/inspect-js/is-generator-function.git
+-----------------------
+Package ID: is-typed-array:1.1.10
+Package Homepage: https://github.com/inspect-js/is-typed-array#readme
+Package SPDX-License-Identifier: MIT
+Package Artifact: https://registry.npmjs.org/is-typed-array/-/is-typed-array-1.1.10.tgz
+Package Artifact: git://github.com/inspect-js/is-typed-array.git
 -----------------------
 Package ID: isarray:1.0.0
 Package Homepage: https://github.com/juliangruber/isarray
@@ -215,11 +305,23 @@ Package SPDX-License-Identifier: MIT
 Package Artifact: https://registry.npmjs.org/url/-/url-0.10.3.tgz
 Package Artifact: https://github.com/defunctzombie/node-url.git
 -----------------------
+Package ID: util:0.12.5
+Package Homepage: https://github.com/browserify/node-util
+Package SPDX-License-Identifier: MIT
+Package Artifact: https://registry.npmjs.org/util/-/util-0.12.5.tgz
+Package Artifact: git://github.com/browserify/node-util.git
+-----------------------
 Package ID: uuid:8.0.0
 Package Homepage: https://github.com/uuidjs/uuid#readme
 Package SPDX-License-Identifier: MIT
 Package Artifact: https://registry.npmjs.org/uuid/-/uuid-8.0.0.tgz
 Package Artifact: git+https://github.com/uuidjs/uuid.git
+-----------------------
+Package ID: which-typed-array:1.1.9
+Package Homepage: https://github.com/inspect-js/which-typed-array#readme
+Package SPDX-License-Identifier: MIT
+Package Artifact: https://registry.npmjs.org/which-typed-array/-/which-typed-array-1.1.9.tgz
+Package Artifact: git://github.com/inspect-js/which-typed-array.git
 -----------------------
 Package ID: word-wrap:1.2.3
 Package Homepage: https://github.com/jonschlinkert/word-wrap
@@ -227,16 +329,16 @@ Package SPDX-License-Identifier: MIT
 Package Artifact: https://registry.npmjs.org/word-wrap/-/word-wrap-1.2.3.tgz
 Package Artifact: git+https://github.com/jonschlinkert/word-wrap.git
 -----------------------
-Package ID: xml2js:0.4.19
+Package ID: xml2js:0.5.0
 Package Homepage: https://github.com/Leonidas-from-XIV/node-xml2js
 Package SPDX-License-Identifier: MIT
-Package Artifact: https://registry.npmjs.org/xml2js/-/xml2js-0.4.19.tgz
+Package Artifact: https://registry.npmjs.org/xml2js/-/xml2js-0.5.0.tgz
 Package Artifact: git+https://github.com/Leonidas-from-XIV/node-xml2js.git
 -----------------------
-Package ID: xmlbuilder:9.0.7
+Package ID: xmlbuilder:11.0.1
 Package Homepage: http://github.com/oozcitak/xmlbuilder-js
 Package SPDX-License-Identifier: MIT
-Package Artifact: https://registry.npmjs.org/xmlbuilder/-/xmlbuilder-9.0.7.tgz
+Package Artifact: https://registry.npmjs.org/xmlbuilder/-/xmlbuilder-11.0.1.tgz
 Package Artifact: git://github.com/oozcitak/xmlbuilder-js.git
 -----------------------
 Package ID: argparse:2.0.1
