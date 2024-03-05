@@ -114,7 +114,7 @@ export abstract class Input {
   readonly name: string;
   readonly inputType: DataTypeEnum;
   readonly description?: string;
-  readonly defaultValue?: string;
+  defaultValue?: string;
   readonly allowedValues?: string[];
   readonly allowedPattern?: string;
   readonly minItems?: number;

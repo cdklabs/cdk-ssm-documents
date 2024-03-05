@@ -51,6 +51,7 @@ export * from './parent-steps/automation/create-image-step';
 export * from './parent-steps/automation/copy-image-step';
 export * from './parent-steps/automation/change-instance-state-step';
 export * from './parent-steps/automation/execute-automation-step';
+export * from './parent-steps/automation/update-variable';
 
 export * from './parent-steps/command/run-powershell-script-step';
 export * from './parent-steps/command/run-shell-script-step';
@@ -123,6 +124,7 @@ export * from './simulation/automation/aws-api-simulation';
 export * from './simulation/automation/automation-simulation-base';
 export * from './simulation/automation/assert-aws-resource-simulation';
 export * from './simulation/automation/approve-simulation';
+export * from './simulation/automation/update-variable-simulation';
 
 export * from './simulation/command/run-shell-script-simulation';
 export * from './simulation/command/run-powershell-script-simulation';

@@ -1118,7 +1118,7 @@ public readonly DEFAULT_TIMEOUT: number;
 
 ### AutomationDocument <a name="AutomationDocument" id="@cdklabs/cdk-ssm-documents.AutomationDocument"></a>
 
-The AutomationDocuemnt used to both build the SSM Automation yaml/json and to use in simulation.
+The AutomationDocument used to both build the SSM Automation yaml/json and to use in simulation.
 
 The AutomationDocument will delegate execution responsibility to the AutomationSteps that it receives.
 The SsmDocument parent class contains methods to runSimulation() as well as print().
@@ -1253,6 +1253,7 @@ Any object.
 | <code><a href="#@cdklabs/cdk-ssm-documents.AutomationDocument.property.assumeRole">assumeRole</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.IStringVariable">IStringVariable</a></code> | *No description.* |
 | <code><a href="#@cdklabs/cdk-ssm-documents.AutomationDocument.property.header">header</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#@cdklabs/cdk-ssm-documents.AutomationDocument.property.builder">builder</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AutomationDocumentBuilder">AutomationDocumentBuilder</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.AutomationDocument.property.docVariables">docVariables</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.Input">Input</a>[]</code> | *No description.* |
 
 ---
 
@@ -1355,6 +1356,16 @@ public readonly builder: AutomationDocumentBuilder;
 ```
 
 - *Type:* <a href="#@cdklabs/cdk-ssm-documents.AutomationDocumentBuilder">AutomationDocumentBuilder</a>
+
+---
+
+##### `docVariables`<sup>Optional</sup> <a name="docVariables" id="@cdklabs/cdk-ssm-documents.AutomationDocument.property.docVariables"></a>
+
+```typescript
+public readonly docVariables: Input[];
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.Input">Input</a>[]
 
 ---
 
@@ -14744,6 +14755,7 @@ Any object.
 | <code><a href="#@cdklabs/cdk-ssm-documents.TimedDocument.property.assumeRole">assumeRole</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.IStringVariable">IStringVariable</a></code> | *No description.* |
 | <code><a href="#@cdklabs/cdk-ssm-documents.TimedDocument.property.header">header</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#@cdklabs/cdk-ssm-documents.TimedDocument.property.builder">builder</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AutomationDocumentBuilder">AutomationDocumentBuilder</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.TimedDocument.property.docVariables">docVariables</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.Input">Input</a>[]</code> | *No description.* |
 
 ---
 
@@ -14846,6 +14858,16 @@ public readonly builder: AutomationDocumentBuilder;
 ```
 
 - *Type:* <a href="#@cdklabs/cdk-ssm-documents.AutomationDocumentBuilder">AutomationDocumentBuilder</a>
+
+---
+
+##### `docVariables`<sup>Optional</sup> <a name="docVariables" id="@cdklabs/cdk-ssm-documents.TimedDocument.property.docVariables"></a>
+
+```typescript
+public readonly docVariables: Input[];
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.Input">Input</a>[]
 
 ---
 
@@ -15519,6 +15541,356 @@ public readonly targetVersion: IStringVariable;
 
 ---
 
+
+### UpdateVariableStep <a name="UpdateVariableStep" id="@cdklabs/cdk-ssm-documents.UpdateVariableStep"></a>
+
+AutomationStep implementation for aws:updateVariable https://docs.aws.amazon.com/systems-manager/latest/userguide/automation-action-update-variable.html.
+
+#### Initializers <a name="Initializers" id="@cdklabs/cdk-ssm-documents.UpdateVariableStep.Initializer"></a>
+
+```typescript
+import { UpdateVariableStep } from '@cdklabs/cdk-ssm-documents'
+
+new UpdateVariableStep(scope: Construct, id: string, props: UpdateVariableProps)
+```
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#@cdklabs/cdk-ssm-documents.UpdateVariableStep.Initializer.parameter.scope">scope</a></code> | <code>constructs.Construct</code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.UpdateVariableStep.Initializer.parameter.id">id</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.UpdateVariableStep.Initializer.parameter.props">props</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.UpdateVariableProps">UpdateVariableProps</a></code> | *No description.* |
+
+---
+
+##### `scope`<sup>Required</sup> <a name="scope" id="@cdklabs/cdk-ssm-documents.UpdateVariableStep.Initializer.parameter.scope"></a>
+
+- *Type:* constructs.Construct
+
+---
+
+##### `id`<sup>Required</sup> <a name="id" id="@cdklabs/cdk-ssm-documents.UpdateVariableStep.Initializer.parameter.id"></a>
+
+- *Type:* string
+
+---
+
+##### `props`<sup>Required</sup> <a name="props" id="@cdklabs/cdk-ssm-documents.UpdateVariableStep.Initializer.parameter.props"></a>
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.UpdateVariableProps">UpdateVariableProps</a>
+
+---
+
+#### Methods <a name="Methods" id="Methods"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#@cdklabs/cdk-ssm-documents.UpdateVariableStep.toString">toString</a></code> | Returns a string representation of this construct. |
+| <code><a href="#@cdklabs/cdk-ssm-documents.UpdateVariableStep.listInputs">listInputs</a></code> | Lists the inputs that are required for this step. |
+| <code><a href="#@cdklabs/cdk-ssm-documents.UpdateVariableStep.listOutputs">listOutputs</a></code> | No outputs emitted from update variable step. |
+| <code><a href="#@cdklabs/cdk-ssm-documents.UpdateVariableStep.toSsmEntry">toSsmEntry</a></code> | Converts this step into an object to prepare for yaml/json representation of this step. |
+| <code><a href="#@cdklabs/cdk-ssm-documents.UpdateVariableStep.addToDocument">addToDocument</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.UpdateVariableStep.listUserOutputs">listUserOutputs</a></code> | Lists the outputs defined by the user for this step. |
+| <code><a href="#@cdklabs/cdk-ssm-documents.UpdateVariableStep.variables">variables</a></code> | *No description.* |
+
+---
+
+##### `toString` <a name="toString" id="@cdklabs/cdk-ssm-documents.UpdateVariableStep.toString"></a>
+
+```typescript
+public toString(): string
+```
+
+Returns a string representation of this construct.
+
+##### `listInputs` <a name="listInputs" id="@cdklabs/cdk-ssm-documents.UpdateVariableStep.listInputs"></a>
+
+```typescript
+public listInputs(): string[]
+```
+
+Lists the inputs that are required for this step.
+
+##### `listOutputs` <a name="listOutputs" id="@cdklabs/cdk-ssm-documents.UpdateVariableStep.listOutputs"></a>
+
+```typescript
+public listOutputs(): Output[]
+```
+
+No outputs emitted from update variable step.
+
+##### `toSsmEntry` <a name="toSsmEntry" id="@cdklabs/cdk-ssm-documents.UpdateVariableStep.toSsmEntry"></a>
+
+```typescript
+public toSsmEntry(): {[ key: string ]: any}
+```
+
+Converts this step into an object to prepare for yaml/json representation of this step.
+
+##### `addToDocument` <a name="addToDocument" id="@cdklabs/cdk-ssm-documents.UpdateVariableStep.addToDocument"></a>
+
+```typescript
+public addToDocument(doc: AutomationDocumentBuilder): void
+```
+
+###### `doc`<sup>Required</sup> <a name="doc" id="@cdklabs/cdk-ssm-documents.UpdateVariableStep.addToDocument.parameter.doc"></a>
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AutomationDocumentBuilder">AutomationDocumentBuilder</a>
+
+---
+
+##### `listUserOutputs` <a name="listUserOutputs" id="@cdklabs/cdk-ssm-documents.UpdateVariableStep.listUserOutputs"></a>
+
+```typescript
+public listUserOutputs(): Output[]
+```
+
+Lists the outputs defined by the user for this step.
+
+##### `variables` <a name="variables" id="@cdklabs/cdk-ssm-documents.UpdateVariableStep.variables"></a>
+
+```typescript
+public variables(): {[ key: string ]: any}
+```
+
+#### Static Functions <a name="Static Functions" id="Static Functions"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#@cdklabs/cdk-ssm-documents.UpdateVariableStep.isConstruct">isConstruct</a></code> | Checks if `x` is a construct. |
+
+---
+
+##### ~~`isConstruct`~~ <a name="isConstruct" id="@cdklabs/cdk-ssm-documents.UpdateVariableStep.isConstruct"></a>
+
+```typescript
+import { UpdateVariableStep } from '@cdklabs/cdk-ssm-documents'
+
+UpdateVariableStep.isConstruct(x: any)
+```
+
+Checks if `x` is a construct.
+
+###### `x`<sup>Required</sup> <a name="x" id="@cdklabs/cdk-ssm-documents.UpdateVariableStep.isConstruct.parameter.x"></a>
+
+- *Type:* any
+
+Any object.
+
+---
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#@cdklabs/cdk-ssm-documents.UpdateVariableStep.property.node">node</a></code> | <code>constructs.Node</code> | The tree node. |
+| <code><a href="#@cdklabs/cdk-ssm-documents.UpdateVariableStep.property.action">action</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.UpdateVariableStep.property.inputObserver">inputObserver</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.IObserver">IObserver</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.UpdateVariableStep.property.name">name</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.UpdateVariableStep.property.outputObserver">outputObserver</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.IObserver">IObserver</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.UpdateVariableStep.property.description">description</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.UpdateVariableStep.property.isEnd">isEnd</a></code> | <code>boolean</code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.UpdateVariableStep.property.maxAttempts">maxAttempts</a></code> | <code>number</code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.UpdateVariableStep.property.onCancel">onCancel</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.OnCancel">OnCancel</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.UpdateVariableStep.property.onFailure">onFailure</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.OnFailure">OnFailure</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.UpdateVariableStep.property.timeoutSeconds">timeoutSeconds</a></code> | <code>number</code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.UpdateVariableStep.property.explicitNextStep">explicitNextStep</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.StepRef">StepRef</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.UpdateVariableStep.property.allStepsInExecution">allStepsInExecution</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AutomationStep">AutomationStep</a>[]</code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.UpdateVariableStep.property.nextStep">nextStep</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AutomationStep">AutomationStep</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.UpdateVariableStep.property.variableName">variableName</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.UpdateVariableStep.property.variableValue">variableValue</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.IGenericVariable">IGenericVariable</a></code> | *No description.* |
+
+---
+
+##### `node`<sup>Required</sup> <a name="node" id="@cdklabs/cdk-ssm-documents.UpdateVariableStep.property.node"></a>
+
+```typescript
+public readonly node: Node;
+```
+
+- *Type:* constructs.Node
+
+The tree node.
+
+---
+
+##### `action`<sup>Required</sup> <a name="action" id="@cdklabs/cdk-ssm-documents.UpdateVariableStep.property.action"></a>
+
+```typescript
+public readonly action: string;
+```
+
+- *Type:* string
+
+---
+
+##### `inputObserver`<sup>Required</sup> <a name="inputObserver" id="@cdklabs/cdk-ssm-documents.UpdateVariableStep.property.inputObserver"></a>
+
+```typescript
+public readonly inputObserver: IObserver;
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.IObserver">IObserver</a>
+
+---
+
+##### `name`<sup>Required</sup> <a name="name" id="@cdklabs/cdk-ssm-documents.UpdateVariableStep.property.name"></a>
+
+```typescript
+public readonly name: string;
+```
+
+- *Type:* string
+
+---
+
+##### `outputObserver`<sup>Required</sup> <a name="outputObserver" id="@cdklabs/cdk-ssm-documents.UpdateVariableStep.property.outputObserver"></a>
+
+```typescript
+public readonly outputObserver: IObserver;
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.IObserver">IObserver</a>
+
+---
+
+##### `description`<sup>Optional</sup> <a name="description" id="@cdklabs/cdk-ssm-documents.UpdateVariableStep.property.description"></a>
+
+```typescript
+public readonly description: string;
+```
+
+- *Type:* string
+
+---
+
+##### `isEnd`<sup>Required</sup> <a name="isEnd" id="@cdklabs/cdk-ssm-documents.UpdateVariableStep.property.isEnd"></a>
+
+```typescript
+public readonly isEnd: boolean;
+```
+
+- *Type:* boolean
+
+---
+
+##### `maxAttempts`<sup>Required</sup> <a name="maxAttempts" id="@cdklabs/cdk-ssm-documents.UpdateVariableStep.property.maxAttempts"></a>
+
+```typescript
+public readonly maxAttempts: number;
+```
+
+- *Type:* number
+
+---
+
+##### `onCancel`<sup>Required</sup> <a name="onCancel" id="@cdklabs/cdk-ssm-documents.UpdateVariableStep.property.onCancel"></a>
+
+```typescript
+public readonly onCancel: OnCancel;
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.OnCancel">OnCancel</a>
+
+---
+
+##### `onFailure`<sup>Required</sup> <a name="onFailure" id="@cdklabs/cdk-ssm-documents.UpdateVariableStep.property.onFailure"></a>
+
+```typescript
+public readonly onFailure: OnFailure;
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.OnFailure">OnFailure</a>
+
+---
+
+##### `timeoutSeconds`<sup>Required</sup> <a name="timeoutSeconds" id="@cdklabs/cdk-ssm-documents.UpdateVariableStep.property.timeoutSeconds"></a>
+
+```typescript
+public readonly timeoutSeconds: number;
+```
+
+- *Type:* number
+
+---
+
+##### `explicitNextStep`<sup>Optional</sup> <a name="explicitNextStep" id="@cdklabs/cdk-ssm-documents.UpdateVariableStep.property.explicitNextStep"></a>
+
+```typescript
+public readonly explicitNextStep: StepRef;
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.StepRef">StepRef</a>
+
+---
+
+##### `allStepsInExecution`<sup>Optional</sup> <a name="allStepsInExecution" id="@cdklabs/cdk-ssm-documents.UpdateVariableStep.property.allStepsInExecution"></a>
+
+```typescript
+public readonly allStepsInExecution: AutomationStep[];
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AutomationStep">AutomationStep</a>[]
+
+---
+
+##### `nextStep`<sup>Optional</sup> <a name="nextStep" id="@cdklabs/cdk-ssm-documents.UpdateVariableStep.property.nextStep"></a>
+
+```typescript
+public readonly nextStep: AutomationStep;
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AutomationStep">AutomationStep</a>
+
+---
+
+##### `variableName`<sup>Required</sup> <a name="variableName" id="@cdklabs/cdk-ssm-documents.UpdateVariableStep.property.variableName"></a>
+
+```typescript
+public readonly variableName: string;
+```
+
+- *Type:* string
+
+---
+
+##### `variableValue`<sup>Required</sup> <a name="variableValue" id="@cdklabs/cdk-ssm-documents.UpdateVariableStep.property.variableValue"></a>
+
+```typescript
+public readonly variableValue: IGenericVariable;
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.IGenericVariable">IGenericVariable</a>
+
+---
+
+#### Constants <a name="Constants" id="Constants"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#@cdklabs/cdk-ssm-documents.UpdateVariableStep.property.DEFAULT_MAX_ATTEMPTS">DEFAULT_MAX_ATTEMPTS</a></code> | <code>number</code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.UpdateVariableStep.property.DEFAULT_TIMEOUT">DEFAULT_TIMEOUT</a></code> | <code>number</code> | *No description.* |
+
+---
+
+##### `DEFAULT_MAX_ATTEMPTS`<sup>Required</sup> <a name="DEFAULT_MAX_ATTEMPTS" id="@cdklabs/cdk-ssm-documents.UpdateVariableStep.property.DEFAULT_MAX_ATTEMPTS"></a>
+
+```typescript
+public readonly DEFAULT_MAX_ATTEMPTS: number;
+```
+
+- *Type:* number
+
+---
+
+##### `DEFAULT_TIMEOUT`<sup>Required</sup> <a name="DEFAULT_TIMEOUT" id="@cdklabs/cdk-ssm-documents.UpdateVariableStep.property.DEFAULT_TIMEOUT"></a>
+
+```typescript
+public readonly DEFAULT_TIMEOUT: number;
+```
+
+- *Type:* number
+
+---
 
 ### WaitForResourceStep <a name="WaitForResourceStep" id="@cdklabs/cdk-ssm-documents.WaitForResourceStep"></a>
 
@@ -16796,6 +17168,7 @@ const automationDocumentProps: AutomationDocumentProps = { ... }
 | <code><a href="#@cdklabs/cdk-ssm-documents.AutomationDocumentProps.property.targetType">targetType</a></code> | <code>string</code> | `AWS::SSM::Document.TargetType`. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.AutomationDocumentProps.property.updateMethod">updateMethod</a></code> | <code>string</code> | If the document resource you specify in your template already exists, this parameter determines whether a new version of the existing document is created, or the existing document is replaced. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.AutomationDocumentProps.property.versionName">versionName</a></code> | <code>string</code> | `AWS::SSM::Document.VersionName`. |
+| <code><a href="#@cdklabs/cdk-ssm-documents.AutomationDocumentProps.property.docVariables">docVariables</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.Input">Input</a>[]</code> | (Optional) Custom document variables. |
 
 ---
 
@@ -16964,6 +17337,18 @@ public readonly versionName: string;
 `AWS::SSM::Document.VersionName`.
 
 > [http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-document.html#cfn-ssm-document-versionname](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-document.html#cfn-ssm-document-versionname)
+
+---
+
+##### `docVariables`<sup>Optional</sup> <a name="docVariables" id="@cdklabs/cdk-ssm-documents.AutomationDocumentProps.property.docVariables"></a>
+
+```typescript
+public readonly docVariables: Input[];
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.Input">Input</a>[]
+
+(Optional) Custom document variables.
 
 ---
 
@@ -28440,6 +28825,200 @@ If not specified, the agent will be updated to the latest version.
 
 ---
 
+### UpdateVariableProps <a name="UpdateVariableProps" id="@cdklabs/cdk-ssm-documents.UpdateVariableProps"></a>
+
+Properties for update variable step.
+
+#### Initializer <a name="Initializer" id="@cdklabs/cdk-ssm-documents.UpdateVariableProps.Initializer"></a>
+
+```typescript
+import { UpdateVariableProps } from '@cdklabs/cdk-ssm-documents'
+
+const updateVariableProps: UpdateVariableProps = { ... }
+```
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#@cdklabs/cdk-ssm-documents.UpdateVariableProps.property.description">description</a></code> | <code>string</code> | (Optional) description of the current step. |
+| <code><a href="#@cdklabs/cdk-ssm-documents.UpdateVariableProps.property.inputObserver">inputObserver</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.IObserver">IObserver</a></code> | (Optional) Allows for observing the input to steps as they run. |
+| <code><a href="#@cdklabs/cdk-ssm-documents.UpdateVariableProps.property.name">name</a></code> | <code>string</code> | (Optional) Name of the current step. |
+| <code><a href="#@cdklabs/cdk-ssm-documents.UpdateVariableProps.property.outputObserver">outputObserver</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.IObserver">IObserver</a></code> | (Optional) Allows for observing the output of steps as they run. |
+| <code><a href="#@cdklabs/cdk-ssm-documents.UpdateVariableProps.property.explicitNextStep">explicitNextStep</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.StepRef">StepRef</a></code> | (Optional) explicit step to go to after this step completes. |
+| <code><a href="#@cdklabs/cdk-ssm-documents.UpdateVariableProps.property.isEnd">isEnd</a></code> | <code>boolean</code> | Whether to stop document execution after this step. |
+| <code><a href="#@cdklabs/cdk-ssm-documents.UpdateVariableProps.property.maxAttempts">maxAttempts</a></code> | <code>number</code> | (Optional) max attempts to run this step if there are failures. |
+| <code><a href="#@cdklabs/cdk-ssm-documents.UpdateVariableProps.property.onCancel">onCancel</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.OnCancel">OnCancel</a></code> | (Optional) Fallback action to take in the event that this step is cancelled. |
+| <code><a href="#@cdklabs/cdk-ssm-documents.UpdateVariableProps.property.onFailure">onFailure</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.OnFailure">OnFailure</a></code> | (Optional) Fallback action to take in the event that this step fails. |
+| <code><a href="#@cdklabs/cdk-ssm-documents.UpdateVariableProps.property.timeoutSeconds">timeoutSeconds</a></code> | <code>number</code> | (Optional) timeout seconds to run this step. |
+| <code><a href="#@cdklabs/cdk-ssm-documents.UpdateVariableProps.property.variableName">variableName</a></code> | <code>string</code> | (Required) The name of the variable to be updated. |
+| <code><a href="#@cdklabs/cdk-ssm-documents.UpdateVariableProps.property.variableValue">variableValue</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.IGenericVariable">IGenericVariable</a></code> | (Required) The value of the variable to be updated. |
+
+---
+
+##### `description`<sup>Optional</sup> <a name="description" id="@cdklabs/cdk-ssm-documents.UpdateVariableProps.property.description"></a>
+
+```typescript
+public readonly description: string;
+```
+
+- *Type:* string
+- *Default:* undefined
+
+(Optional) description of the current step.
+
+---
+
+##### `inputObserver`<sup>Optional</sup> <a name="inputObserver" id="@cdklabs/cdk-ssm-documents.UpdateVariableProps.property.inputObserver"></a>
+
+```typescript
+public readonly inputObserver: IObserver;
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.IObserver">IObserver</a>
+- *Default:* NoopObserver
+
+(Optional) Allows for observing the input to steps as they run.
+
+---
+
+##### `name`<sup>Optional</sup> <a name="name" id="@cdklabs/cdk-ssm-documents.UpdateVariableProps.property.name"></a>
+
+```typescript
+public readonly name: string;
+```
+
+- *Type:* string
+
+(Optional) Name of the current step.
+
+The name will be prepended onto all of the outputs emitted from this step.
+This name will also be used to reference this step in logs.
+Defaults to the id of the CDK node.
+
+---
+
+##### `outputObserver`<sup>Optional</sup> <a name="outputObserver" id="@cdklabs/cdk-ssm-documents.UpdateVariableProps.property.outputObserver"></a>
+
+```typescript
+public readonly outputObserver: IObserver;
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.IObserver">IObserver</a>
+- *Default:* NoopObserver
+
+(Optional) Allows for observing the output of steps as they run.
+
+---
+
+##### `explicitNextStep`<sup>Optional</sup> <a name="explicitNextStep" id="@cdklabs/cdk-ssm-documents.UpdateVariableProps.property.explicitNextStep"></a>
+
+```typescript
+public readonly explicitNextStep: StepRef;
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.StepRef">StepRef</a>
+- *Default:* will implicitly choose the next step in the sequence that the steps are added to the document.
+
+(Optional) explicit step to go to after this step completes.
+
+https://docs.aws.amazon.com/systems-manager/latest/userguide/automation-actions.html#nextProp
+
+---
+
+##### `isEnd`<sup>Optional</sup> <a name="isEnd" id="@cdklabs/cdk-ssm-documents.UpdateVariableProps.property.isEnd"></a>
+
+```typescript
+public readonly isEnd: boolean;
+```
+
+- *Type:* boolean
+- *Default:* false
+
+Whether to stop document execution after this step.
+
+---
+
+##### `maxAttempts`<sup>Optional</sup> <a name="maxAttempts" id="@cdklabs/cdk-ssm-documents.UpdateVariableProps.property.maxAttempts"></a>
+
+```typescript
+public readonly maxAttempts: number;
+```
+
+- *Type:* number
+- *Default:* Step.DEFAULT_MAX_ATTEMPTS
+
+(Optional) max attempts to run this step if there are failures.
+
+---
+
+##### `onCancel`<sup>Optional</sup> <a name="onCancel" id="@cdklabs/cdk-ssm-documents.UpdateVariableProps.property.onCancel"></a>
+
+```typescript
+public readonly onCancel: OnCancel;
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.OnCancel">OnCancel</a>
+- *Default:* undefined
+
+(Optional) Fallback action to take in the event that this step is cancelled.
+
+---
+
+##### `onFailure`<sup>Optional</sup> <a name="onFailure" id="@cdklabs/cdk-ssm-documents.UpdateVariableProps.property.onFailure"></a>
+
+```typescript
+public readonly onFailure: OnFailure;
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.OnFailure">OnFailure</a>
+- *Default:* undefined
+
+(Optional) Fallback action to take in the event that this step fails.
+
+---
+
+##### `timeoutSeconds`<sup>Optional</sup> <a name="timeoutSeconds" id="@cdklabs/cdk-ssm-documents.UpdateVariableProps.property.timeoutSeconds"></a>
+
+```typescript
+public readonly timeoutSeconds: number;
+```
+
+- *Type:* number
+- *Default:* Step.DEFAULT_TIMEOUT
+
+(Optional) timeout seconds to run this step.
+
+In a simulation run, this will only be encorced after-the-fact but execution will not be stopped mid-step.
+
+---
+
+##### `variableName`<sup>Required</sup> <a name="variableName" id="@cdklabs/cdk-ssm-documents.UpdateVariableProps.property.variableName"></a>
+
+```typescript
+public readonly variableName: string;
+```
+
+- *Type:* string
+
+(Required) The name of the variable to be updated.
+
+Must use format `variable:<variable name>`.
+
+---
+
+##### `variableValue`<sup>Required</sup> <a name="variableValue" id="@cdklabs/cdk-ssm-documents.UpdateVariableProps.property.variableValue"></a>
+
+```typescript
+public readonly variableValue: IGenericVariable;
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.IGenericVariable">IGenericVariable</a>
+
+(Required) The value of the variable to be updated.
+
+---
+
 ### WaitForResourceSimulationProps <a name="WaitForResourceSimulationProps" id="@cdklabs/cdk-ssm-documents.WaitForResourceSimulationProps"></a>
 
 #### Initializer <a name="Initializer" id="@cdklabs/cdk-ssm-documents.WaitForResourceSimulationProps.Initializer"></a>
@@ -29341,8 +29920,19 @@ public nextStep(_inputs: {[ key: string ]: any}): AutomationStep
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
+| <code><a href="#@cdklabs/cdk-ssm-documents.ApproveSimulation.property.step">step</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AutomationStep">AutomationStep</a></code> | *No description.* |
 | <code><a href="#@cdklabs/cdk-ssm-documents.ApproveSimulation.property.action">action</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#@cdklabs/cdk-ssm-documents.ApproveSimulation.property.approveHook">approveHook</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.IApproveHook">IApproveHook</a></code> | *No description.* |
+
+---
+
+##### `step`<sup>Required</sup> <a name="step" id="@cdklabs/cdk-ssm-documents.ApproveSimulation.property.step"></a>
+
+```typescript
+public readonly step: AutomationStep;
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AutomationStep">AutomationStep</a>
 
 ---
 
@@ -29547,7 +30137,18 @@ public nextStep(_inputs: {[ key: string ]: any}): AutomationStep
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
+| <code><a href="#@cdklabs/cdk-ssm-documents.AssertAwsResourceSimulation.property.step">step</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AutomationStep">AutomationStep</a></code> | *No description.* |
 | <code><a href="#@cdklabs/cdk-ssm-documents.AssertAwsResourceSimulation.property.action">action</a></code> | <code>string</code> | *No description.* |
+
+---
+
+##### `step`<sup>Required</sup> <a name="step" id="@cdklabs/cdk-ssm-documents.AssertAwsResourceSimulation.property.step"></a>
+
+```typescript
+public readonly step: AutomationStep;
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AutomationStep">AutomationStep</a>
 
 ---
 
@@ -29827,6 +30428,23 @@ public nextStep(_inputs: {[ key: string ]: any}): AutomationStep
 ---
 
 
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#@cdklabs/cdk-ssm-documents.AutomationSimulationBase.property.step">step</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AutomationStep">AutomationStep</a></code> | *No description.* |
+
+---
+
+##### `step`<sup>Required</sup> <a name="step" id="@cdklabs/cdk-ssm-documents.AutomationSimulationBase.property.step"></a>
+
+```typescript
+public readonly step: AutomationStep;
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AutomationStep">AutomationStep</a>
+
+---
 
 
 ### AutomationStepSimulation <a name="AutomationStepSimulation" id="@cdklabs/cdk-ssm-documents.AutomationStepSimulation"></a>
@@ -29987,9 +30605,20 @@ public nextStep(_inputs: {[ key: string ]: any}): AutomationStep
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
+| <code><a href="#@cdklabs/cdk-ssm-documents.AwsApiSimulation.property.step">step</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AutomationStep">AutomationStep</a></code> | *No description.* |
 | <code><a href="#@cdklabs/cdk-ssm-documents.AwsApiSimulation.property.action">action</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#@cdklabs/cdk-ssm-documents.AwsApiSimulation.property.awsApiStep">awsApiStep</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AwsApiStep">AwsApiStep</a></code> | *No description.* |
 | <code><a href="#@cdklabs/cdk-ssm-documents.AwsApiSimulation.property.awsInvoker">awsInvoker</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.IAwsInvoker">IAwsInvoker</a></code> | *No description.* |
+
+---
+
+##### `step`<sup>Required</sup> <a name="step" id="@cdklabs/cdk-ssm-documents.AwsApiSimulation.property.step"></a>
+
+```typescript
+public readonly step: AutomationStep;
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AutomationStep">AutomationStep</a>
 
 ---
 
@@ -33601,7 +34230,18 @@ Will traverse the choices until one evaluated to true; will skip to that choice.
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
+| <code><a href="#@cdklabs/cdk-ssm-documents.BranchSimulation.property.step">step</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AutomationStep">AutomationStep</a></code> | *No description.* |
 | <code><a href="#@cdklabs/cdk-ssm-documents.BranchSimulation.property.action">action</a></code> | <code>string</code> | *No description.* |
+
+---
+
+##### `step`<sup>Required</sup> <a name="step" id="@cdklabs/cdk-ssm-documents.BranchSimulation.property.step"></a>
+
+```typescript
+public readonly step: AutomationStep;
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AutomationStep">AutomationStep</a>
 
 ---
 
@@ -33685,7 +34325,18 @@ public nextStep(_inputs: {[ key: string ]: any}): AutomationStep
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
+| <code><a href="#@cdklabs/cdk-ssm-documents.ChangeInstanceStateSimulation.property.step">step</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AutomationStep">AutomationStep</a></code> | *No description.* |
 | <code><a href="#@cdklabs/cdk-ssm-documents.ChangeInstanceStateSimulation.property.action">action</a></code> | <code>string</code> | *No description.* |
+
+---
+
+##### `step`<sup>Required</sup> <a name="step" id="@cdklabs/cdk-ssm-documents.ChangeInstanceStateSimulation.property.step"></a>
+
+```typescript
+public readonly step: AutomationStep;
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AutomationStep">AutomationStep</a>
 
 ---
 
@@ -34218,7 +34869,18 @@ public nextStep(_inputs: {[ key: string ]: any}): AutomationStep
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
+| <code><a href="#@cdklabs/cdk-ssm-documents.CopyImageSimulation.property.step">step</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AutomationStep">AutomationStep</a></code> | *No description.* |
 | <code><a href="#@cdklabs/cdk-ssm-documents.CopyImageSimulation.property.action">action</a></code> | <code>string</code> | *No description.* |
+
+---
+
+##### `step`<sup>Required</sup> <a name="step" id="@cdklabs/cdk-ssm-documents.CopyImageSimulation.property.step"></a>
+
+```typescript
+public readonly step: AutomationStep;
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AutomationStep">AutomationStep</a>
 
 ---
 
@@ -34302,7 +34964,18 @@ public nextStep(_inputs: {[ key: string ]: any}): AutomationStep
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
+| <code><a href="#@cdklabs/cdk-ssm-documents.CreateImageSimulation.property.step">step</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AutomationStep">AutomationStep</a></code> | *No description.* |
 | <code><a href="#@cdklabs/cdk-ssm-documents.CreateImageSimulation.property.action">action</a></code> | <code>string</code> | *No description.* |
+
+---
+
+##### `step`<sup>Required</sup> <a name="step" id="@cdklabs/cdk-ssm-documents.CreateImageSimulation.property.step"></a>
+
+```typescript
+public readonly step: AutomationStep;
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AutomationStep">AutomationStep</a>
 
 ---
 
@@ -34386,7 +35059,18 @@ public nextStep(_inputs: {[ key: string ]: any}): AutomationStep
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
+| <code><a href="#@cdklabs/cdk-ssm-documents.CreateStackSimulation.property.step">step</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AutomationStep">AutomationStep</a></code> | *No description.* |
 | <code><a href="#@cdklabs/cdk-ssm-documents.CreateStackSimulation.property.action">action</a></code> | <code>string</code> | *No description.* |
+
+---
+
+##### `step`<sup>Required</sup> <a name="step" id="@cdklabs/cdk-ssm-documents.CreateStackSimulation.property.step"></a>
+
+```typescript
+public readonly step: AutomationStep;
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AutomationStep">AutomationStep</a>
 
 ---
 
@@ -34470,7 +35154,18 @@ public nextStep(_inputs: {[ key: string ]: any}): AutomationStep
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
+| <code><a href="#@cdklabs/cdk-ssm-documents.CreateTagsSimulation.property.step">step</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AutomationStep">AutomationStep</a></code> | *No description.* |
 | <code><a href="#@cdklabs/cdk-ssm-documents.CreateTagsSimulation.property.action">action</a></code> | <code>string</code> | *No description.* |
+
+---
+
+##### `step`<sup>Required</sup> <a name="step" id="@cdklabs/cdk-ssm-documents.CreateTagsSimulation.property.step"></a>
+
+```typescript
+public readonly step: AutomationStep;
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AutomationStep">AutomationStep</a>
 
 ---
 
@@ -34648,7 +35343,18 @@ public nextStep(_inputs: {[ key: string ]: any}): AutomationStep
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
+| <code><a href="#@cdklabs/cdk-ssm-documents.DeleteImageSimulation.property.step">step</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AutomationStep">AutomationStep</a></code> | *No description.* |
 | <code><a href="#@cdklabs/cdk-ssm-documents.DeleteImageSimulation.property.action">action</a></code> | <code>string</code> | *No description.* |
+
+---
+
+##### `step`<sup>Required</sup> <a name="step" id="@cdklabs/cdk-ssm-documents.DeleteImageSimulation.property.step"></a>
+
+```typescript
+public readonly step: AutomationStep;
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AutomationStep">AutomationStep</a>
 
 ---
 
@@ -34732,7 +35438,18 @@ public nextStep(_inputs: {[ key: string ]: any}): AutomationStep
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
+| <code><a href="#@cdklabs/cdk-ssm-documents.DeleteStackSimulation.property.step">step</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AutomationStep">AutomationStep</a></code> | *No description.* |
 | <code><a href="#@cdklabs/cdk-ssm-documents.DeleteStackSimulation.property.action">action</a></code> | <code>string</code> | *No description.* |
+
+---
+
+##### `step`<sup>Required</sup> <a name="step" id="@cdklabs/cdk-ssm-documents.DeleteStackSimulation.property.step"></a>
+
+```typescript
+public readonly step: AutomationStep;
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AutomationStep">AutomationStep</a>
 
 ---
 
@@ -35430,8 +36147,19 @@ public nextStep(_inputs: {[ key: string ]: any}): AutomationStep
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
+| <code><a href="#@cdklabs/cdk-ssm-documents.ExecuteScriptSimulation.property.step">step</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AutomationStep">AutomationStep</a></code> | *No description.* |
 | <code><a href="#@cdklabs/cdk-ssm-documents.ExecuteScriptSimulation.property.action">action</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#@cdklabs/cdk-ssm-documents.ExecuteScriptSimulation.property.executeScriptStep">executeScriptStep</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.ExecuteScriptStep">ExecuteScriptStep</a></code> | *No description.* |
+
+---
+
+##### `step`<sup>Required</sup> <a name="step" id="@cdklabs/cdk-ssm-documents.ExecuteScriptSimulation.property.step"></a>
+
+```typescript
+public readonly step: AutomationStep;
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AutomationStep">AutomationStep</a>
 
 ---
 
@@ -35525,9 +36253,20 @@ public nextStep(_inputs: {[ key: string ]: any}): AutomationStep
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
+| <code><a href="#@cdklabs/cdk-ssm-documents.ExecuteStateMachineSimulation.property.step">step</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AutomationStep">AutomationStep</a></code> | *No description.* |
 | <code><a href="#@cdklabs/cdk-ssm-documents.ExecuteStateMachineSimulation.property.action">action</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#@cdklabs/cdk-ssm-documents.ExecuteStateMachineSimulation.property.executeStateMachineStep">executeStateMachineStep</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.ExecuteStateMachineStep">ExecuteStateMachineStep</a></code> | *No description.* |
 | <code><a href="#@cdklabs/cdk-ssm-documents.ExecuteStateMachineSimulation.property.props">props</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AwsInvocationSimulationProps">AwsInvocationSimulationProps</a></code> | *No description.* |
+
+---
+
+##### `step`<sup>Required</sup> <a name="step" id="@cdklabs/cdk-ssm-documents.ExecuteStateMachineSimulation.property.step"></a>
+
+```typescript
+public readonly step: AutomationStep;
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AutomationStep">AutomationStep</a>
 
 ---
 
@@ -39227,12 +39966,12 @@ Input.ofTypeStringMap(name: string, props?: StringMapInputProps)
 | <code><a href="#@cdklabs/cdk-ssm-documents.Input.property.name">name</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#@cdklabs/cdk-ssm-documents.Input.property.allowedPattern">allowedPattern</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#@cdklabs/cdk-ssm-documents.Input.property.allowedValues">allowedValues</a></code> | <code>string[]</code> | *No description.* |
-| <code><a href="#@cdklabs/cdk-ssm-documents.Input.property.defaultValue">defaultValue</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#@cdklabs/cdk-ssm-documents.Input.property.description">description</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#@cdklabs/cdk-ssm-documents.Input.property.maxChars">maxChars</a></code> | <code>number</code> | *No description.* |
 | <code><a href="#@cdklabs/cdk-ssm-documents.Input.property.maxItems">maxItems</a></code> | <code>number</code> | *No description.* |
 | <code><a href="#@cdklabs/cdk-ssm-documents.Input.property.minChars">minChars</a></code> | <code>number</code> | *No description.* |
 | <code><a href="#@cdklabs/cdk-ssm-documents.Input.property.minItems">minItems</a></code> | <code>number</code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.Input.property.defaultValue">defaultValue</a></code> | <code>string</code> | *No description.* |
 
 ---
 
@@ -39273,16 +40012,6 @@ public readonly allowedValues: string[];
 ```
 
 - *Type:* string[]
-
----
-
-##### `defaultValue`<sup>Optional</sup> <a name="defaultValue" id="@cdklabs/cdk-ssm-documents.Input.property.defaultValue"></a>
-
-```typescript
-public readonly defaultValue: string;
-```
-
-- *Type:* string
 
 ---
 
@@ -39333,6 +40062,16 @@ public readonly minItems: number;
 ```
 
 - *Type:* number
+
+---
+
+##### `defaultValue`<sup>Optional</sup> <a name="defaultValue" id="@cdklabs/cdk-ssm-documents.Input.property.defaultValue"></a>
+
+```typescript
+public readonly defaultValue: string;
+```
+
+- *Type:* string
 
 ---
 
@@ -39712,7 +40451,18 @@ public nextStep(_inputs: {[ key: string ]: any}): AutomationStep
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
+| <code><a href="#@cdklabs/cdk-ssm-documents.InvokeLambdaFunctionSimulation.property.step">step</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AutomationStep">AutomationStep</a></code> | *No description.* |
 | <code><a href="#@cdklabs/cdk-ssm-documents.InvokeLambdaFunctionSimulation.property.action">action</a></code> | <code>string</code> | *No description.* |
+
+---
+
+##### `step`<sup>Required</sup> <a name="step" id="@cdklabs/cdk-ssm-documents.InvokeLambdaFunctionSimulation.property.step"></a>
+
+```typescript
+public readonly step: AutomationStep;
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AutomationStep">AutomationStep</a>
 
 ---
 
@@ -39796,7 +40546,18 @@ public nextStep(_inputs: {[ key: string ]: any}): AutomationStep
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
+| <code><a href="#@cdklabs/cdk-ssm-documents.InvokeWebhookSimulation.property.step">step</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AutomationStep">AutomationStep</a></code> | *No description.* |
 | <code><a href="#@cdklabs/cdk-ssm-documents.InvokeWebhookSimulation.property.action">action</a></code> | <code>string</code> | *No description.* |
+
+---
+
+##### `step`<sup>Required</sup> <a name="step" id="@cdklabs/cdk-ssm-documents.InvokeWebhookSimulation.property.step"></a>
+
+```typescript
+public readonly step: AutomationStep;
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AutomationStep">AutomationStep</a>
 
 ---
 
@@ -41730,7 +42491,18 @@ public nextStep(_inputs: {[ key: string ]: any}): AutomationStep
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
+| <code><a href="#@cdklabs/cdk-ssm-documents.PauseSimulation.property.step">step</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AutomationStep">AutomationStep</a></code> | *No description.* |
 | <code><a href="#@cdklabs/cdk-ssm-documents.PauseSimulation.property.action">action</a></code> | <code>string</code> | *No description.* |
+
+---
+
+##### `step`<sup>Required</sup> <a name="step" id="@cdklabs/cdk-ssm-documents.PauseSimulation.property.step"></a>
+
+```typescript
+public readonly step: AutomationStep;
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AutomationStep">AutomationStep</a>
 
 ---
 
@@ -42232,7 +43004,18 @@ public nextStep(_inputs: {[ key: string ]: any}): AutomationStep
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
+| <code><a href="#@cdklabs/cdk-ssm-documents.RunCommandSimulation.property.step">step</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AutomationStep">AutomationStep</a></code> | *No description.* |
 | <code><a href="#@cdklabs/cdk-ssm-documents.RunCommandSimulation.property.action">action</a></code> | <code>string</code> | *No description.* |
+
+---
+
+##### `step`<sup>Required</sup> <a name="step" id="@cdklabs/cdk-ssm-documents.RunCommandSimulation.property.step"></a>
+
+```typescript
+public readonly step: AutomationStep;
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AutomationStep">AutomationStep</a>
 
 ---
 
@@ -42316,7 +43099,18 @@ public nextStep(_inputs: {[ key: string ]: any}): AutomationStep
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
+| <code><a href="#@cdklabs/cdk-ssm-documents.RunInstanceSimulation.property.step">step</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AutomationStep">AutomationStep</a></code> | *No description.* |
 | <code><a href="#@cdklabs/cdk-ssm-documents.RunInstanceSimulation.property.action">action</a></code> | <code>string</code> | *No description.* |
+
+---
+
+##### `step`<sup>Required</sup> <a name="step" id="@cdklabs/cdk-ssm-documents.RunInstanceSimulation.property.step"></a>
+
+```typescript
+public readonly step: AutomationStep;
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AutomationStep">AutomationStep</a>
 
 ---
 
@@ -43109,7 +43903,18 @@ public nextStep(_inputs: {[ key: string ]: any}): AutomationStep
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
+| <code><a href="#@cdklabs/cdk-ssm-documents.SleepSimulation.property.step">step</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AutomationStep">AutomationStep</a></code> | *No description.* |
 | <code><a href="#@cdklabs/cdk-ssm-documents.SleepSimulation.property.action">action</a></code> | <code>string</code> | *No description.* |
+
+---
+
+##### `step`<sup>Required</sup> <a name="step" id="@cdklabs/cdk-ssm-documents.SleepSimulation.property.step"></a>
+
+```typescript
+public readonly step: AutomationStep;
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AutomationStep">AutomationStep</a>
 
 ---
 
@@ -44577,6 +45382,105 @@ Wraps @aws-cdk/assert SynthUtils.synthesize(stack). Synthesizes the stack provid
 
 
 
+### UpdateVariableSimulation <a name="UpdateVariableSimulation" id="@cdklabs/cdk-ssm-documents.UpdateVariableSimulation"></a>
+
+AutomationStep implementation for aws:update-variable https://docs.aws.amazon.com/systems-manager/latest/userguide/automation-action-update-variable.html.
+
+#### Initializers <a name="Initializers" id="@cdklabs/cdk-ssm-documents.UpdateVariableSimulation.Initializer"></a>
+
+```typescript
+import { UpdateVariableSimulation } from '@cdklabs/cdk-ssm-documents'
+
+new UpdateVariableSimulation(step: UpdateVariableStep)
+```
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#@cdklabs/cdk-ssm-documents.UpdateVariableSimulation.Initializer.parameter.step">step</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.UpdateVariableStep">UpdateVariableStep</a></code> | *No description.* |
+
+---
+
+##### `step`<sup>Required</sup> <a name="step" id="@cdklabs/cdk-ssm-documents.UpdateVariableSimulation.Initializer.parameter.step"></a>
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.UpdateVariableStep">UpdateVariableStep</a>
+
+---
+
+#### Methods <a name="Methods" id="Methods"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#@cdklabs/cdk-ssm-documents.UpdateVariableSimulation.executeStep">executeStep</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.UpdateVariableSimulation.nextStep">nextStep</a></code> | *No description.* |
+
+---
+
+##### `executeStep` <a name="executeStep" id="@cdklabs/cdk-ssm-documents.UpdateVariableSimulation.executeStep"></a>
+
+```typescript
+public executeStep(_inputs: {[ key: string ]: any}): {[ key: string ]: any}
+```
+
+###### `_inputs`<sup>Required</sup> <a name="_inputs" id="@cdklabs/cdk-ssm-documents.UpdateVariableSimulation.executeStep.parameter._inputs"></a>
+
+- *Type:* {[ key: string ]: any}
+
+---
+
+##### `nextStep` <a name="nextStep" id="@cdklabs/cdk-ssm-documents.UpdateVariableSimulation.nextStep"></a>
+
+```typescript
+public nextStep(_inputs: {[ key: string ]: any}): AutomationStep
+```
+
+###### `_inputs`<sup>Required</sup> <a name="_inputs" id="@cdklabs/cdk-ssm-documents.UpdateVariableSimulation.nextStep.parameter._inputs"></a>
+
+- *Type:* {[ key: string ]: any}
+
+---
+
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#@cdklabs/cdk-ssm-documents.UpdateVariableSimulation.property.step">step</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AutomationStep">AutomationStep</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.UpdateVariableSimulation.property.action">action</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.UpdateVariableSimulation.property.updateVariableStep">updateVariableStep</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.UpdateVariableStep">UpdateVariableStep</a></code> | *No description.* |
+
+---
+
+##### `step`<sup>Required</sup> <a name="step" id="@cdklabs/cdk-ssm-documents.UpdateVariableSimulation.property.step"></a>
+
+```typescript
+public readonly step: AutomationStep;
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AutomationStep">AutomationStep</a>
+
+---
+
+##### `action`<sup>Required</sup> <a name="action" id="@cdklabs/cdk-ssm-documents.UpdateVariableSimulation.property.action"></a>
+
+```typescript
+public readonly action: string;
+```
+
+- *Type:* string
+
+---
+
+##### `updateVariableStep`<sup>Required</sup> <a name="updateVariableStep" id="@cdklabs/cdk-ssm-documents.UpdateVariableSimulation.property.updateVariableStep"></a>
+
+```typescript
+public readonly updateVariableStep: UpdateVariableStep;
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.UpdateVariableStep">UpdateVariableStep</a>
+
+---
+
+
 ### UsernamePasswordAuthMethod <a name="UsernamePasswordAuthMethod" id="@cdklabs/cdk-ssm-documents.UsernamePasswordAuthMethod"></a>
 
 #### Initializers <a name="Initializers" id="@cdklabs/cdk-ssm-documents.UsernamePasswordAuthMethod.Initializer"></a>
@@ -44806,7 +45710,18 @@ public nextStep(_inputs: {[ key: string ]: any}): AutomationStep
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
+| <code><a href="#@cdklabs/cdk-ssm-documents.WaitForResourceSimulation.property.step">step</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AutomationStep">AutomationStep</a></code> | *No description.* |
 | <code><a href="#@cdklabs/cdk-ssm-documents.WaitForResourceSimulation.property.action">action</a></code> | <code>string</code> | *No description.* |
+
+---
+
+##### `step`<sup>Required</sup> <a name="step" id="@cdklabs/cdk-ssm-documents.WaitForResourceSimulation.property.step"></a>
+
+```typescript
+public readonly step: AutomationStep;
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.AutomationStep">AutomationStep</a>
 
 ---
 
@@ -44904,7 +45819,7 @@ Ask for approval.
 
 ### IAutomationComponent <a name="IAutomationComponent" id="@cdklabs/cdk-ssm-documents.IAutomationComponent"></a>
 
-- *Implemented By:* <a href="#@cdklabs/cdk-ssm-documents.ApproveStep">ApproveStep</a>, <a href="#@cdklabs/cdk-ssm-documents.AssertAwsResourceStep">AssertAwsResourceStep</a>, <a href="#@cdklabs/cdk-ssm-documents.AutomationStep">AutomationStep</a>, <a href="#@cdklabs/cdk-ssm-documents.AwsApiStep">AwsApiStep</a>, <a href="#@cdklabs/cdk-ssm-documents.BranchStep">BranchStep</a>, <a href="#@cdklabs/cdk-ssm-documents.ChangeInstanceStateStep">ChangeInstanceStateStep</a>, <a href="#@cdklabs/cdk-ssm-documents.CompositeAutomationStep">CompositeAutomationStep</a>, <a href="#@cdklabs/cdk-ssm-documents.CopyImageStep">CopyImageStep</a>, <a href="#@cdklabs/cdk-ssm-documents.CreateImageStep">CreateImageStep</a>, <a href="#@cdklabs/cdk-ssm-documents.CreateStackStep">CreateStackStep</a>, <a href="#@cdklabs/cdk-ssm-documents.CreateTagsStep">CreateTagsStep</a>, <a href="#@cdklabs/cdk-ssm-documents.DeleteImageStep">DeleteImageStep</a>, <a href="#@cdklabs/cdk-ssm-documents.DeleteStackStep">DeleteStackStep</a>, <a href="#@cdklabs/cdk-ssm-documents.ExecuteAutomationStep">ExecuteAutomationStep</a>, <a href="#@cdklabs/cdk-ssm-documents.ExecuteScriptStep">ExecuteScriptStep</a>, <a href="#@cdklabs/cdk-ssm-documents.ExecuteStateMachineStep">ExecuteStateMachineStep</a>, <a href="#@cdklabs/cdk-ssm-documents.InvokeLambdaFunctionStep">InvokeLambdaFunctionStep</a>, <a href="#@cdklabs/cdk-ssm-documents.InvokeWebhookStep">InvokeWebhookStep</a>, <a href="#@cdklabs/cdk-ssm-documents.PauseStep">PauseStep</a>, <a href="#@cdklabs/cdk-ssm-documents.RebootInstanceAndWait">RebootInstanceAndWait</a>, <a href="#@cdklabs/cdk-ssm-documents.RunCommandStep">RunCommandStep</a>, <a href="#@cdklabs/cdk-ssm-documents.RunInstanceStep">RunInstanceStep</a>, <a href="#@cdklabs/cdk-ssm-documents.SleepStep">SleepStep</a>, <a href="#@cdklabs/cdk-ssm-documents.StringStep">StringStep</a>, <a href="#@cdklabs/cdk-ssm-documents.WaitForResourceStep">WaitForResourceStep</a>, <a href="#@cdklabs/cdk-ssm-documents.IAutomationComponent">IAutomationComponent</a>
+- *Implemented By:* <a href="#@cdklabs/cdk-ssm-documents.ApproveStep">ApproveStep</a>, <a href="#@cdklabs/cdk-ssm-documents.AssertAwsResourceStep">AssertAwsResourceStep</a>, <a href="#@cdklabs/cdk-ssm-documents.AutomationStep">AutomationStep</a>, <a href="#@cdklabs/cdk-ssm-documents.AwsApiStep">AwsApiStep</a>, <a href="#@cdklabs/cdk-ssm-documents.BranchStep">BranchStep</a>, <a href="#@cdklabs/cdk-ssm-documents.ChangeInstanceStateStep">ChangeInstanceStateStep</a>, <a href="#@cdklabs/cdk-ssm-documents.CompositeAutomationStep">CompositeAutomationStep</a>, <a href="#@cdklabs/cdk-ssm-documents.CopyImageStep">CopyImageStep</a>, <a href="#@cdklabs/cdk-ssm-documents.CreateImageStep">CreateImageStep</a>, <a href="#@cdklabs/cdk-ssm-documents.CreateStackStep">CreateStackStep</a>, <a href="#@cdklabs/cdk-ssm-documents.CreateTagsStep">CreateTagsStep</a>, <a href="#@cdklabs/cdk-ssm-documents.DeleteImageStep">DeleteImageStep</a>, <a href="#@cdklabs/cdk-ssm-documents.DeleteStackStep">DeleteStackStep</a>, <a href="#@cdklabs/cdk-ssm-documents.ExecuteAutomationStep">ExecuteAutomationStep</a>, <a href="#@cdklabs/cdk-ssm-documents.ExecuteScriptStep">ExecuteScriptStep</a>, <a href="#@cdklabs/cdk-ssm-documents.ExecuteStateMachineStep">ExecuteStateMachineStep</a>, <a href="#@cdklabs/cdk-ssm-documents.InvokeLambdaFunctionStep">InvokeLambdaFunctionStep</a>, <a href="#@cdklabs/cdk-ssm-documents.InvokeWebhookStep">InvokeWebhookStep</a>, <a href="#@cdklabs/cdk-ssm-documents.PauseStep">PauseStep</a>, <a href="#@cdklabs/cdk-ssm-documents.RebootInstanceAndWait">RebootInstanceAndWait</a>, <a href="#@cdklabs/cdk-ssm-documents.RunCommandStep">RunCommandStep</a>, <a href="#@cdklabs/cdk-ssm-documents.RunInstanceStep">RunInstanceStep</a>, <a href="#@cdklabs/cdk-ssm-documents.SleepStep">SleepStep</a>, <a href="#@cdklabs/cdk-ssm-documents.StringStep">StringStep</a>, <a href="#@cdklabs/cdk-ssm-documents.UpdateVariableStep">UpdateVariableStep</a>, <a href="#@cdklabs/cdk-ssm-documents.WaitForResourceStep">WaitForResourceStep</a>, <a href="#@cdklabs/cdk-ssm-documents.IAutomationComponent">IAutomationComponent</a>
 
 #### Methods <a name="Methods" id="Methods"></a>
 

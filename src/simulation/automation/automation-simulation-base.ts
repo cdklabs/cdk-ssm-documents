@@ -1,7 +1,7 @@
 import { AutomationStep } from '../../parent-steps/automation-step';
 
 export abstract class AutomationSimulationBase {
-  private step: AutomationStep;
+  readonly step: AutomationStep;
 
   constructor(step: AutomationStep) {
     this.step = step;

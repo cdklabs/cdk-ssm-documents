@@ -27,6 +27,11 @@ export class AutomationSimulation {
       .replace(/:/g, '.');
     const prefix = Math.floor(Math.random() * 999999).toString().padStart(6, '0');
     inputs['automation:EXECUTION_ID'] = prefix + '-1a2b3c-1a2b3c-1a2b3c1a2b3c1a2b3c';
+
+    this.automationDocument.docVariables?.forEach(v => {
+      inputs[`variable:${v.name}`] = v.defaultValue;
+    });
+
     return new AutomationStepSimulation(this.createChain(this.automationDocument.collectedSteps()), this.props).invoke(inputs);
   }
 
