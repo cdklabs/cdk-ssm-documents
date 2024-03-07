@@ -8,6 +8,7 @@ import {
   DataTypeEnum,
   DocumentFormat,
   ExecuteScriptStep,
+  HardCodedString,
   Input,
   MockPause,
   PauseStep,
@@ -16,7 +17,7 @@ import {
   ScriptLanguage,
   Simulation,
   StringVariable,
-  SynthUtils,
+  SynthUtils, UpdateVariableStep,
 } from '../../lib';
 // eslint-disable-next-line @typescript-eslint/no-require-imports
 const yaml = require('js-yaml');
@@ -112,6 +113,64 @@ describe('AutomationDocument', function() {
         docOutputs: [{ name: 'step1.MyFuncOut', outputType: DataTypeEnum.STRING }],
       });
       assert.throws(() => {SynthUtils.synthesize(stack);});
+    });
+    it('Simulate document run with variable', function() {
+      const stack: Stack = new Stack();
+      const myAutomationDoc = new AutomationDocument(stack, 'MyAutomationDoc', {
+        docInputs: [Input.ofTypeString('MyInput', { defaultValue: 'a' })],
+        docVariables: [Input.ofTypeString('MyVariable', { defaultValue: 'hello' })],
+        docOutputs: [{ name: 'MyExecuteStep.MyFuncOut', outputType: DataTypeEnum.STRING }],
+        documentName: 'MyDoc',
+      });
+
+      // First step
+      myAutomationDoc.addStep(new PauseStep(stack, 'MyPauseStep', { name: 'MyPauseStep' }));
+      // Second step
+      myAutomationDoc.addStep(new ExecuteScriptStep(stack, 'MyExecuteStep', {
+        language: ScriptLanguage.python(PythonVersion.VERSION_3_6, 'my_func'),
+        code: ScriptCode.fromFile(resolve('test/test_file.py')),
+        outputs: [{
+          outputType: DataTypeEnum.STRING,
+          name: 'MyFuncOut',
+          selector: '$.Payload.MyReturn',
+        }],
+        inputPayload: { MyInput: StringVariable.of('variable:MyVariable') },
+      }));
+      // Third step
+      myAutomationDoc.addStep(new UpdateVariableStep(stack, 'MyUpdateVariableStep', {
+        variableName: 'variable:MyVariable',
+        variableValue: HardCodedString.of('HelloWorld'),
+      }));
+      // Fourth step
+      myAutomationDoc.addStep(new ExecuteScriptStep(stack, 'MyFourthExecuteStep', {
+        language: ScriptLanguage.python(PythonVersion.VERSION_3_6, 'my_func'),
+        code: ScriptCode.fromFile(resolve('test/test_file.py')),
+        outputs: [{
+          outputType: DataTypeEnum.STRING,
+          name: 'MyFuncOut',
+          selector: '$.Payload.MyReturn',
+        }],
+        inputPayload: { MyInput: StringVariable.of('variable:MyVariable') },
+      }));
+
+      // Execute simulation
+      const simOutput = Simulation.ofAutomation(myAutomationDoc, { pauseHook: new MockPause() }).simulate({});
+
+      // Validate output
+      assert.deepEqual(simOutput, {
+        responseCode: ResponseCode.SUCCESS,
+        executedSteps: [
+          'MyPauseStep',
+          'MyExecuteStep',
+          'MyUpdateVariableStep',
+          'MyFourthExecuteStep',
+        ],
+        outputs: {
+          'MyExecuteStep.MyFuncOut': 'hello-suffix',
+          'MyFourthExecuteStep.MyFuncOut': 'HelloWorld-suffix',
+        },
+        documentOutputs: ['hello-suffix'],
+      });
     });
   });
   describe('#printAsJson()', function() {
@@ -246,6 +305,55 @@ describe('AutomationDocument', function() {
             },
             MyInput: {
               default: 'a',
+              type: 'String',
+            },
+          },
+          schemaVersion: '0.3',
+        });
+    });
+  });
+
+  describe('#documentWithVariable()', function() {
+    it('Prints an SSM Automation doc with variables', function() {
+      const stack: Stack = new Stack();
+      const myAutomationDoc = new AutomationDocument(stack, 'MyAutomationDoc', {
+        documentName: 'MyDoc',
+        documentFormat: DocumentFormat.YAML,
+        assumeRole: StringVariable.of('AutomationRole'),
+        docInputs: [
+          Input.ofTypeString('MyInput', { defaultValue: 'a' }),
+          Input.ofTypeString('AutomationRole'),
+        ],
+        docVariables: [
+          Input.ofTypeString('MyVariable'),
+        ],
+      });
+      myAutomationDoc.addStep(new PauseStep(stack, 'MyPauseStep', { name: 'MyPauseStep' }));
+      SynthUtils.synthesize(stack);
+      const ssmYaml = myAutomationDoc.print();
+
+      assertDeepEqual(yaml.load(ssmYaml),
+        {
+          assumeRole: '{{ AutomationRole }}',
+          description: 'MyDoc',
+          mainSteps: [
+            {
+              action: 'aws:pause',
+              inputs: {},
+              name: 'MyPauseStep',
+            },
+          ],
+          parameters: {
+            AutomationRole: {
+              type: 'String',
+            },
+            MyInput: {
+              default: 'a',
+              type: 'String',
+            },
+          },
+          variables: {
+            MyVariable: {
               type: 'String',
             },
           },

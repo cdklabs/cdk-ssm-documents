@@ -27,7 +27,6 @@
     "isolatedModules": true
   },
   "include": [
-    ".projenrc.js",
     "src/**/*.ts",
     "test/**/*.ts",
     ".projenrc.ts",

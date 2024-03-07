@@ -1,4 +1,9 @@
-import { ApiExecuteAutomationHook, ExecuteAutomationStep, IExecuteAutomationHook } from '..';
+import {
+  ApiExecuteAutomationHook,
+  ExecuteAutomationStep,
+  IExecuteAutomationHook,
+  UpdateVariableStep,
+} from '..';
 import { CancellationException } from '../domain/cancellation-exception';
 import { DataType, DataTypeEnum } from '../domain/data-type';
 import { NonRetriableException } from '../domain/non-retriable-exception';
@@ -54,6 +59,7 @@ import { PauseSimulation } from './automation/pause-simulation';
 import { RunCommandSimulation } from './automation/run-command-simulation';
 import { RunInstanceSimulation } from './automation/run-instance-simulation';
 import { SleepSimulation } from './automation/sleep-simulation';
+import { UpdateVariableSimulation } from './automation/update-variable-simulation';
 import { WaitForResourceSimulation } from './automation/wait-for-resource-simulation';
 import { AutomationSimulationProps } from './simulation';
 // eslint-disable-next-line
@@ -116,6 +122,7 @@ export class AutomationStepSimulation {
       this.step.inputObserver.accept(filteredInputs);
       const response = this.executeWithRetries(filteredInputs);
       this.step.outputObserver.accept(response);
+      Object.assign(allInputs, filteredInputs);
       Object.assign(allInputs, response);
       const nextStep = this.mySimulation().nextStep(allInputs);
       if (nextStep && !this.step.isEnd) {
@@ -194,7 +201,10 @@ export class AutomationStepSimulation {
     }
     const filteredEntries = Object.entries(inputs).filter(entry => {
       const [key] = entry;
-      return key.startsWith('global:') || key.startsWith('automation:') || this.step.listInputs().includes(key);
+      return key.startsWith('global:')
+        || key.startsWith('automation:')
+        || key.startsWith('variable:')
+        || this.step.listInputs().includes(key);
     });
     return Object.fromEntries(filteredEntries);
   }
@@ -278,6 +288,8 @@ export class AutomationStepSimulation {
         return new RunInstanceSimulation(<RunInstanceStep> this.step, this.props);
       case 'aws:sleep':
         return new SleepSimulation(<SleepStep> this.step, this.props);
+      case 'aws:updateVariable':
+        return new UpdateVariableSimulation(<UpdateVariableStep> this.step);
       case 'aws:waitForAwsResourceProperty':
         return new WaitForResourceSimulation(<WaitForResourceStep> this.step, this.props);
       default:

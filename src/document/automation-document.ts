@@ -1,5 +1,6 @@
 import { Construct } from 'constructs';
 import { IAutomationComponent } from '../construct/document-component';
+import { Input } from '../domain/input';
 import { AutomationStep } from '../parent-steps/automation-step';
 import { AutomationDocumentBuilder } from './document-builder';
 import { SsmDocumentProps, SsmDocument } from './ssm-document';
@@ -8,20 +9,25 @@ import { SsmDocumentProps, SsmDocument } from './ssm-document';
  * Options for AutomationDocument
  */
 export interface AutomationDocumentProps extends SsmDocumentProps {
-
+  /**
+   * (Optional) Custom document variables.
+   */
+  readonly docVariables?: Input[];
 }
 
 /**
- * The AutomationDocuemnt used to both build the SSM Automation yaml/json and to use in simulation.
+ * The AutomationDocument used to both build the SSM Automation yaml/json and to use in simulation.
  * The AutomationDocument will delegate execution responsibility to the AutomationSteps that it receives.
  * The SsmDocument parent class contains methods to runSimulation() as well as print().
  */
 export class AutomationDocument extends SsmDocument {
 
+  readonly docVariables?: Input[];
   readonly builder: AutomationDocumentBuilder;
 
   constructor(scope: Construct, id: string, props: AutomationDocumentProps) {
     super(scope, id, props);
+    this.docVariables = props.docVariables;
     this.builder = new AutomationDocumentBuilder();
   }
 
@@ -36,6 +42,14 @@ export class AutomationDocument extends SsmDocument {
                 'Be sure to run cdk.SynthUtils.synthesize(stack) prior to printing or running simulation');
     }
     return this.builder.steps;
+  }
+
+  protected formatVariables(): { [name: string]: any } {
+    const ssmVariables: {[name: string]: any} = {};
+    this.docVariables?.forEach(inp => {
+      ssmVariables[inp.name] = inp.toSsm();
+    });
+    return ssmVariables;
   }
 
   /**
@@ -54,6 +68,9 @@ export class AutomationDocument extends SsmDocument {
     }
     if (this.docOutputs.length > 0) {
       root.outputs = this.docOutputs.map(o => o.name);
+    }
+    if (this.docVariables) {
+      root.variables = this.formatVariables();
     }
     root.mainSteps = automationSteps;
     return root;
