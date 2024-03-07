@@ -9210,7 +9210,7 @@ If this is a nested stack, this represents its `AWS::CloudFormation::Stack` reso
 
 ---
 
-##### `terminationProtection`<sup>Optional</sup> <a name="terminationProtection" id="@cdklabs/cdk-ssm-documents.HelloWorld.property.terminationProtection"></a>
+##### `terminationProtection`<sup>Required</sup> <a name="terminationProtection" id="@cdklabs/cdk-ssm-documents.HelloWorld.property.terminationProtection"></a>
 
 ```typescript
 public readonly terminationProtection: boolean;
