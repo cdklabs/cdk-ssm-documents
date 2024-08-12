@@ -49,6 +49,11 @@ export interface AutomationStepProps extends StepProps {
    */
   readonly explicitNextStep?: StepRef;
 
+  /**
+   * (Optional) Allows to define step outputs.
+   * @default undefined
+   */
+  readonly userOutputs?: Output[];
 }
 
 /**
@@ -68,6 +73,7 @@ export abstract class AutomationStep extends Step implements IAutomationComponen
   readonly onFailure: OnFailure;
   readonly onCancel: OnCancel;
   readonly explicitNextStep?: StepRef;
+  readonly userOutputs?: Output[];
 
   nextStep?: AutomationStep;
   allStepsInExecution?: AutomationStep[];
@@ -80,6 +86,7 @@ export abstract class AutomationStep extends Step implements IAutomationComponen
     this.onFailure = props.onFailure ?? new Abort();
     this.onCancel = props.onCancel ?? new Abort();
     this.explicitNextStep = props.explicitNextStep;
+    this.userOutputs = props.userOutputs;
   }
 
   public addToDocument(doc: AutomationDocumentBuilder): void {
@@ -145,6 +152,7 @@ export abstract class AutomationStep extends Step implements IAutomationComponen
    * Lists the outputs defined by the user for this step.
    */
   public listUserOutputs(): Output[] {
+    if (this.userOutputs) return this.userOutputs;
     return [];
   }
 
