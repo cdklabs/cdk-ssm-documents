@@ -27,7 +27,7 @@ export interface RunShellScriptStepProps extends CommandStepProps {
 }
 
 /**
- * AutomationStep implemenation for aws:sleep
+ * AutomationStep implemenation for aws:runShellScript
  * https://docs.aws.amazon.com/systems-manager/latest/userguide/automation-action-sleep.html
  */
 export class RunShellScriptStep extends CommandStep {
