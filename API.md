@@ -489,6 +489,7 @@ Any object.
 | <code><a href="#@cdklabs/cdk-ssm-documents.ApproveStep.property.onFailure">onFailure</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.OnFailure">OnFailure</a></code> | *No description.* |
 | <code><a href="#@cdklabs/cdk-ssm-documents.ApproveStep.property.timeoutSeconds">timeoutSeconds</a></code> | <code>number</code> | *No description.* |
 | <code><a href="#@cdklabs/cdk-ssm-documents.ApproveStep.property.explicitNextStep">explicitNextStep</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.StepRef">StepRef</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.ApproveStep.property.userOutputs">userOutputs</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.Output">Output</a>[]</code> | *No description.* |
 | <code><a href="#@cdklabs/cdk-ssm-documents.ApproveStep.property.allStepsInExecution">allStepsInExecution</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AutomationStep">AutomationStep</a>[]</code> | *No description.* |
 | <code><a href="#@cdklabs/cdk-ssm-documents.ApproveStep.property.nextStep">nextStep</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AutomationStep">AutomationStep</a></code> | *No description.* |
 | <code><a href="#@cdklabs/cdk-ssm-documents.ApproveStep.property.approvers">approvers</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.IStringListVariable">IStringListVariable</a></code> | *No description.* |
@@ -617,6 +618,16 @@ public readonly explicitNextStep: StepRef;
 ```
 
 - *Type:* <a href="#@cdklabs/cdk-ssm-documents.StepRef">StepRef</a>
+
+---
+
+##### `userOutputs`<sup>Optional</sup> <a name="userOutputs" id="@cdklabs/cdk-ssm-documents.ApproveStep.property.userOutputs"></a>
+
+```typescript
+public readonly userOutputs: Output[];
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.Output">Output</a>[]
 
 ---
 
@@ -863,6 +874,7 @@ Any object.
 | <code><a href="#@cdklabs/cdk-ssm-documents.AssertAwsResourceStep.property.onFailure">onFailure</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.OnFailure">OnFailure</a></code> | *No description.* |
 | <code><a href="#@cdklabs/cdk-ssm-documents.AssertAwsResourceStep.property.timeoutSeconds">timeoutSeconds</a></code> | <code>number</code> | *No description.* |
 | <code><a href="#@cdklabs/cdk-ssm-documents.AssertAwsResourceStep.property.explicitNextStep">explicitNextStep</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.StepRef">StepRef</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.AssertAwsResourceStep.property.userOutputs">userOutputs</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.Output">Output</a>[]</code> | *No description.* |
 | <code><a href="#@cdklabs/cdk-ssm-documents.AssertAwsResourceStep.property.allStepsInExecution">allStepsInExecution</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AutomationStep">AutomationStep</a>[]</code> | *No description.* |
 | <code><a href="#@cdklabs/cdk-ssm-documents.AssertAwsResourceStep.property.nextStep">nextStep</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AutomationStep">AutomationStep</a></code> | *No description.* |
 | <code><a href="#@cdklabs/cdk-ssm-documents.AssertAwsResourceStep.property.apiParams">apiParams</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.DictFormat">DictFormat</a></code> | *No description.* |
@@ -994,6 +1006,16 @@ public readonly explicitNextStep: StepRef;
 ```
 
 - *Type:* <a href="#@cdklabs/cdk-ssm-documents.StepRef">StepRef</a>
+
+---
+
+##### `userOutputs`<sup>Optional</sup> <a name="userOutputs" id="@cdklabs/cdk-ssm-documents.AssertAwsResourceStep.property.userOutputs"></a>
+
+```typescript
+public readonly userOutputs: Output[];
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.Output">Output</a>[]
 
 ---
 
@@ -1531,6 +1553,7 @@ Any object.
 | <code><a href="#@cdklabs/cdk-ssm-documents.AutomationStep.property.onFailure">onFailure</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.OnFailure">OnFailure</a></code> | *No description.* |
 | <code><a href="#@cdklabs/cdk-ssm-documents.AutomationStep.property.timeoutSeconds">timeoutSeconds</a></code> | <code>number</code> | *No description.* |
 | <code><a href="#@cdklabs/cdk-ssm-documents.AutomationStep.property.explicitNextStep">explicitNextStep</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.StepRef">StepRef</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.AutomationStep.property.userOutputs">userOutputs</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.Output">Output</a>[]</code> | *No description.* |
 | <code><a href="#@cdklabs/cdk-ssm-documents.AutomationStep.property.allStepsInExecution">allStepsInExecution</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AutomationStep">AutomationStep</a>[]</code> | *No description.* |
 | <code><a href="#@cdklabs/cdk-ssm-documents.AutomationStep.property.nextStep">nextStep</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AutomationStep">AutomationStep</a></code> | *No description.* |
 
@@ -1655,6 +1678,16 @@ public readonly explicitNextStep: StepRef;
 ```
 
 - *Type:* <a href="#@cdklabs/cdk-ssm-documents.StepRef">StepRef</a>
+
+---
+
+##### `userOutputs`<sup>Optional</sup> <a name="userOutputs" id="@cdklabs/cdk-ssm-documents.AutomationStep.property.userOutputs"></a>
+
+```typescript
+public readonly userOutputs: Output[];
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.Output">Output</a>[]
 
 ---
 
@@ -1859,6 +1892,7 @@ Any object.
 | <code><a href="#@cdklabs/cdk-ssm-documents.AwsApiStep.property.onFailure">onFailure</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.OnFailure">OnFailure</a></code> | *No description.* |
 | <code><a href="#@cdklabs/cdk-ssm-documents.AwsApiStep.property.timeoutSeconds">timeoutSeconds</a></code> | <code>number</code> | *No description.* |
 | <code><a href="#@cdklabs/cdk-ssm-documents.AwsApiStep.property.explicitNextStep">explicitNextStep</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.StepRef">StepRef</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.AwsApiStep.property.userOutputs">userOutputs</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.Output">Output</a>[]</code> | *No description.* |
 | <code><a href="#@cdklabs/cdk-ssm-documents.AwsApiStep.property.allStepsInExecution">allStepsInExecution</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AutomationStep">AutomationStep</a>[]</code> | *No description.* |
 | <code><a href="#@cdklabs/cdk-ssm-documents.AwsApiStep.property.nextStep">nextStep</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AutomationStep">AutomationStep</a></code> | *No description.* |
 | <code><a href="#@cdklabs/cdk-ssm-documents.AwsApiStep.property.apiParams">apiParams</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.DictFormat">DictFormat</a></code> | *No description.* |
@@ -1988,6 +2022,16 @@ public readonly explicitNextStep: StepRef;
 ```
 
 - *Type:* <a href="#@cdklabs/cdk-ssm-documents.StepRef">StepRef</a>
+
+---
+
+##### `userOutputs`<sup>Optional</sup> <a name="userOutputs" id="@cdklabs/cdk-ssm-documents.AwsApiStep.property.userOutputs"></a>
+
+```typescript
+public readonly userOutputs: Output[];
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.Output">Output</a>[]
 
 ---
 
@@ -2242,6 +2286,7 @@ Any object.
 | <code><a href="#@cdklabs/cdk-ssm-documents.BranchStep.property.onFailure">onFailure</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.OnFailure">OnFailure</a></code> | *No description.* |
 | <code><a href="#@cdklabs/cdk-ssm-documents.BranchStep.property.timeoutSeconds">timeoutSeconds</a></code> | <code>number</code> | *No description.* |
 | <code><a href="#@cdklabs/cdk-ssm-documents.BranchStep.property.explicitNextStep">explicitNextStep</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.StepRef">StepRef</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.BranchStep.property.userOutputs">userOutputs</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.Output">Output</a>[]</code> | *No description.* |
 | <code><a href="#@cdklabs/cdk-ssm-documents.BranchStep.property.allStepsInExecution">allStepsInExecution</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AutomationStep">AutomationStep</a>[]</code> | *No description.* |
 | <code><a href="#@cdklabs/cdk-ssm-documents.BranchStep.property.nextStep">nextStep</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AutomationStep">AutomationStep</a></code> | *No description.* |
 | <code><a href="#@cdklabs/cdk-ssm-documents.BranchStep.property.choices">choices</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.Choice">Choice</a>[]</code> | *No description.* |
@@ -2368,6 +2413,16 @@ public readonly explicitNextStep: StepRef;
 ```
 
 - *Type:* <a href="#@cdklabs/cdk-ssm-documents.StepRef">StepRef</a>
+
+---
+
+##### `userOutputs`<sup>Optional</sup> <a name="userOutputs" id="@cdklabs/cdk-ssm-documents.BranchStep.property.userOutputs"></a>
+
+```typescript
+public readonly userOutputs: Output[];
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.Output">Output</a>[]
 
 ---
 
@@ -2592,6 +2647,7 @@ Any object.
 | <code><a href="#@cdklabs/cdk-ssm-documents.ChangeInstanceStateStep.property.onFailure">onFailure</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.OnFailure">OnFailure</a></code> | *No description.* |
 | <code><a href="#@cdklabs/cdk-ssm-documents.ChangeInstanceStateStep.property.timeoutSeconds">timeoutSeconds</a></code> | <code>number</code> | *No description.* |
 | <code><a href="#@cdklabs/cdk-ssm-documents.ChangeInstanceStateStep.property.explicitNextStep">explicitNextStep</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.StepRef">StepRef</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.ChangeInstanceStateStep.property.userOutputs">userOutputs</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.Output">Output</a>[]</code> | *No description.* |
 | <code><a href="#@cdklabs/cdk-ssm-documents.ChangeInstanceStateStep.property.allStepsInExecution">allStepsInExecution</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AutomationStep">AutomationStep</a>[]</code> | *No description.* |
 | <code><a href="#@cdklabs/cdk-ssm-documents.ChangeInstanceStateStep.property.nextStep">nextStep</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AutomationStep">AutomationStep</a></code> | *No description.* |
 | <code><a href="#@cdklabs/cdk-ssm-documents.ChangeInstanceStateStep.property.desiredState">desiredState</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.IDesiredStateVariable">IDesiredStateVariable</a></code> | *No description.* |
@@ -2721,6 +2777,16 @@ public readonly explicitNextStep: StepRef;
 ```
 
 - *Type:* <a href="#@cdklabs/cdk-ssm-documents.StepRef">StepRef</a>
+
+---
+
+##### `userOutputs`<sup>Optional</sup> <a name="userOutputs" id="@cdklabs/cdk-ssm-documents.ChangeInstanceStateStep.property.userOutputs"></a>
+
+```typescript
+public readonly userOutputs: Output[];
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.Output">Output</a>[]
 
 ---
 
@@ -4368,6 +4434,7 @@ Any object.
 | <code><a href="#@cdklabs/cdk-ssm-documents.CopyImageStep.property.onFailure">onFailure</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.OnFailure">OnFailure</a></code> | *No description.* |
 | <code><a href="#@cdklabs/cdk-ssm-documents.CopyImageStep.property.timeoutSeconds">timeoutSeconds</a></code> | <code>number</code> | *No description.* |
 | <code><a href="#@cdklabs/cdk-ssm-documents.CopyImageStep.property.explicitNextStep">explicitNextStep</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.StepRef">StepRef</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.CopyImageStep.property.userOutputs">userOutputs</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.Output">Output</a>[]</code> | *No description.* |
 | <code><a href="#@cdklabs/cdk-ssm-documents.CopyImageStep.property.allStepsInExecution">allStepsInExecution</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AutomationStep">AutomationStep</a>[]</code> | *No description.* |
 | <code><a href="#@cdklabs/cdk-ssm-documents.CopyImageStep.property.nextStep">nextStep</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AutomationStep">AutomationStep</a></code> | *No description.* |
 | <code><a href="#@cdklabs/cdk-ssm-documents.CopyImageStep.property.imageName">imageName</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.IStringVariable">IStringVariable</a></code> | *No description.* |
@@ -4499,6 +4566,16 @@ public readonly explicitNextStep: StepRef;
 ```
 
 - *Type:* <a href="#@cdklabs/cdk-ssm-documents.StepRef">StepRef</a>
+
+---
+
+##### `userOutputs`<sup>Optional</sup> <a name="userOutputs" id="@cdklabs/cdk-ssm-documents.CopyImageStep.property.userOutputs"></a>
+
+```typescript
+public readonly userOutputs: Output[];
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.Output">Output</a>[]
 
 ---
 
@@ -4773,6 +4850,7 @@ Any object.
 | <code><a href="#@cdklabs/cdk-ssm-documents.CreateImageStep.property.onFailure">onFailure</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.OnFailure">OnFailure</a></code> | *No description.* |
 | <code><a href="#@cdklabs/cdk-ssm-documents.CreateImageStep.property.timeoutSeconds">timeoutSeconds</a></code> | <code>number</code> | *No description.* |
 | <code><a href="#@cdklabs/cdk-ssm-documents.CreateImageStep.property.explicitNextStep">explicitNextStep</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.StepRef">StepRef</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.CreateImageStep.property.userOutputs">userOutputs</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.Output">Output</a>[]</code> | *No description.* |
 | <code><a href="#@cdklabs/cdk-ssm-documents.CreateImageStep.property.allStepsInExecution">allStepsInExecution</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AutomationStep">AutomationStep</a>[]</code> | *No description.* |
 | <code><a href="#@cdklabs/cdk-ssm-documents.CreateImageStep.property.nextStep">nextStep</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AutomationStep">AutomationStep</a></code> | *No description.* |
 | <code><a href="#@cdklabs/cdk-ssm-documents.CreateImageStep.property.imageName">imageName</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.IStringVariable">IStringVariable</a></code> | *No description.* |
@@ -4902,6 +4980,16 @@ public readonly explicitNextStep: StepRef;
 ```
 
 - *Type:* <a href="#@cdklabs/cdk-ssm-documents.StepRef">StepRef</a>
+
+---
+
+##### `userOutputs`<sup>Optional</sup> <a name="userOutputs" id="@cdklabs/cdk-ssm-documents.CreateImageStep.property.userOutputs"></a>
+
+```typescript
+public readonly userOutputs: Output[];
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.Output">Output</a>[]
 
 ---
 
@@ -5156,6 +5244,7 @@ Any object.
 | <code><a href="#@cdklabs/cdk-ssm-documents.CreateStackStep.property.onFailure">onFailure</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.OnFailure">OnFailure</a></code> | *No description.* |
 | <code><a href="#@cdklabs/cdk-ssm-documents.CreateStackStep.property.timeoutSeconds">timeoutSeconds</a></code> | <code>number</code> | *No description.* |
 | <code><a href="#@cdklabs/cdk-ssm-documents.CreateStackStep.property.explicitNextStep">explicitNextStep</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.StepRef">StepRef</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.CreateStackStep.property.userOutputs">userOutputs</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.Output">Output</a>[]</code> | *No description.* |
 | <code><a href="#@cdklabs/cdk-ssm-documents.CreateStackStep.property.allStepsInExecution">allStepsInExecution</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AutomationStep">AutomationStep</a>[]</code> | *No description.* |
 | <code><a href="#@cdklabs/cdk-ssm-documents.CreateStackStep.property.nextStep">nextStep</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AutomationStep">AutomationStep</a></code> | *No description.* |
 | <code><a href="#@cdklabs/cdk-ssm-documents.CreateStackStep.property.stackName">stackName</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.IStringVariable">IStringVariable</a></code> | *No description.* |
@@ -5294,6 +5383,16 @@ public readonly explicitNextStep: StepRef;
 ```
 
 - *Type:* <a href="#@cdklabs/cdk-ssm-documents.StepRef">StepRef</a>
+
+---
+
+##### `userOutputs`<sup>Optional</sup> <a name="userOutputs" id="@cdklabs/cdk-ssm-documents.CreateStackStep.property.userOutputs"></a>
+
+```typescript
+public readonly userOutputs: Output[];
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.Output">Output</a>[]
 
 ---
 
@@ -5638,6 +5737,7 @@ Any object.
 | <code><a href="#@cdklabs/cdk-ssm-documents.CreateTagsStep.property.onFailure">onFailure</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.OnFailure">OnFailure</a></code> | *No description.* |
 | <code><a href="#@cdklabs/cdk-ssm-documents.CreateTagsStep.property.timeoutSeconds">timeoutSeconds</a></code> | <code>number</code> | *No description.* |
 | <code><a href="#@cdklabs/cdk-ssm-documents.CreateTagsStep.property.explicitNextStep">explicitNextStep</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.StepRef">StepRef</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.CreateTagsStep.property.userOutputs">userOutputs</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.Output">Output</a>[]</code> | *No description.* |
 | <code><a href="#@cdklabs/cdk-ssm-documents.CreateTagsStep.property.allStepsInExecution">allStepsInExecution</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AutomationStep">AutomationStep</a>[]</code> | *No description.* |
 | <code><a href="#@cdklabs/cdk-ssm-documents.CreateTagsStep.property.nextStep">nextStep</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AutomationStep">AutomationStep</a></code> | *No description.* |
 | <code><a href="#@cdklabs/cdk-ssm-documents.CreateTagsStep.property.resourceIds">resourceIds</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.IStringListVariable">IStringListVariable</a></code> | *No description.* |
@@ -5765,6 +5865,16 @@ public readonly explicitNextStep: StepRef;
 ```
 
 - *Type:* <a href="#@cdklabs/cdk-ssm-documents.StepRef">StepRef</a>
+
+---
+
+##### `userOutputs`<sup>Optional</sup> <a name="userOutputs" id="@cdklabs/cdk-ssm-documents.CreateTagsStep.property.userOutputs"></a>
+
+```typescript
+public readonly userOutputs: Output[];
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.Output">Output</a>[]
 
 ---
 
@@ -5999,6 +6109,7 @@ Any object.
 | <code><a href="#@cdklabs/cdk-ssm-documents.DeleteImageStep.property.onFailure">onFailure</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.OnFailure">OnFailure</a></code> | *No description.* |
 | <code><a href="#@cdklabs/cdk-ssm-documents.DeleteImageStep.property.timeoutSeconds">timeoutSeconds</a></code> | <code>number</code> | *No description.* |
 | <code><a href="#@cdklabs/cdk-ssm-documents.DeleteImageStep.property.explicitNextStep">explicitNextStep</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.StepRef">StepRef</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.DeleteImageStep.property.userOutputs">userOutputs</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.Output">Output</a>[]</code> | *No description.* |
 | <code><a href="#@cdklabs/cdk-ssm-documents.DeleteImageStep.property.allStepsInExecution">allStepsInExecution</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AutomationStep">AutomationStep</a>[]</code> | *No description.* |
 | <code><a href="#@cdklabs/cdk-ssm-documents.DeleteImageStep.property.nextStep">nextStep</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AutomationStep">AutomationStep</a></code> | *No description.* |
 | <code><a href="#@cdklabs/cdk-ssm-documents.DeleteImageStep.property.imageId">imageId</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.IStringVariable">IStringVariable</a></code> | *No description.* |
@@ -6124,6 +6235,16 @@ public readonly explicitNextStep: StepRef;
 ```
 
 - *Type:* <a href="#@cdklabs/cdk-ssm-documents.StepRef">StepRef</a>
+
+---
+
+##### `userOutputs`<sup>Optional</sup> <a name="userOutputs" id="@cdklabs/cdk-ssm-documents.DeleteImageStep.property.userOutputs"></a>
+
+```typescript
+public readonly userOutputs: Output[];
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.Output">Output</a>[]
 
 ---
 
@@ -6338,6 +6459,7 @@ Any object.
 | <code><a href="#@cdklabs/cdk-ssm-documents.DeleteStackStep.property.onFailure">onFailure</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.OnFailure">OnFailure</a></code> | *No description.* |
 | <code><a href="#@cdklabs/cdk-ssm-documents.DeleteStackStep.property.timeoutSeconds">timeoutSeconds</a></code> | <code>number</code> | *No description.* |
 | <code><a href="#@cdklabs/cdk-ssm-documents.DeleteStackStep.property.explicitNextStep">explicitNextStep</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.StepRef">StepRef</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.DeleteStackStep.property.userOutputs">userOutputs</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.Output">Output</a>[]</code> | *No description.* |
 | <code><a href="#@cdklabs/cdk-ssm-documents.DeleteStackStep.property.allStepsInExecution">allStepsInExecution</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AutomationStep">AutomationStep</a>[]</code> | *No description.* |
 | <code><a href="#@cdklabs/cdk-ssm-documents.DeleteStackStep.property.nextStep">nextStep</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AutomationStep">AutomationStep</a></code> | *No description.* |
 | <code><a href="#@cdklabs/cdk-ssm-documents.DeleteStackStep.property.stackNameVariable">stackNameVariable</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.IStringVariable">IStringVariable</a></code> | *No description.* |
@@ -6464,6 +6586,16 @@ public readonly explicitNextStep: StepRef;
 ```
 
 - *Type:* <a href="#@cdklabs/cdk-ssm-documents.StepRef">StepRef</a>
+
+---
+
+##### `userOutputs`<sup>Optional</sup> <a name="userOutputs" id="@cdklabs/cdk-ssm-documents.DeleteStackStep.property.userOutputs"></a>
+
+```typescript
+public readonly userOutputs: Output[];
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.Output">Output</a>[]
 
 ---
 
@@ -7336,6 +7468,7 @@ Any object.
 | <code><a href="#@cdklabs/cdk-ssm-documents.ExecuteAutomationStep.property.onFailure">onFailure</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.OnFailure">OnFailure</a></code> | *No description.* |
 | <code><a href="#@cdklabs/cdk-ssm-documents.ExecuteAutomationStep.property.timeoutSeconds">timeoutSeconds</a></code> | <code>number</code> | *No description.* |
 | <code><a href="#@cdklabs/cdk-ssm-documents.ExecuteAutomationStep.property.explicitNextStep">explicitNextStep</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.StepRef">StepRef</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.ExecuteAutomationStep.property.userOutputs">userOutputs</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.Output">Output</a>[]</code> | *No description.* |
 | <code><a href="#@cdklabs/cdk-ssm-documents.ExecuteAutomationStep.property.allStepsInExecution">allStepsInExecution</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AutomationStep">AutomationStep</a>[]</code> | *No description.* |
 | <code><a href="#@cdklabs/cdk-ssm-documents.ExecuteAutomationStep.property.nextStep">nextStep</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AutomationStep">AutomationStep</a></code> | *No description.* |
 | <code><a href="#@cdklabs/cdk-ssm-documents.ExecuteAutomationStep.property.documentName">documentName</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.IStringVariable">IStringVariable</a></code> | *No description.* |
@@ -7470,6 +7603,16 @@ public readonly explicitNextStep: StepRef;
 ```
 
 - *Type:* <a href="#@cdklabs/cdk-ssm-documents.StepRef">StepRef</a>
+
+---
+
+##### `userOutputs`<sup>Optional</sup> <a name="userOutputs" id="@cdklabs/cdk-ssm-documents.ExecuteAutomationStep.property.userOutputs"></a>
+
+```typescript
+public readonly userOutputs: Output[];
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.Output">Output</a>[]
 
 ---
 
@@ -7774,6 +7917,7 @@ Any object.
 | <code><a href="#@cdklabs/cdk-ssm-documents.ExecuteScriptStep.property.onFailure">onFailure</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.OnFailure">OnFailure</a></code> | *No description.* |
 | <code><a href="#@cdklabs/cdk-ssm-documents.ExecuteScriptStep.property.timeoutSeconds">timeoutSeconds</a></code> | <code>number</code> | *No description.* |
 | <code><a href="#@cdklabs/cdk-ssm-documents.ExecuteScriptStep.property.explicitNextStep">explicitNextStep</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.StepRef">StepRef</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.ExecuteScriptStep.property.userOutputs">userOutputs</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.Output">Output</a>[]</code> | *No description.* |
 | <code><a href="#@cdklabs/cdk-ssm-documents.ExecuteScriptStep.property.allStepsInExecution">allStepsInExecution</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AutomationStep">AutomationStep</a>[]</code> | *No description.* |
 | <code><a href="#@cdklabs/cdk-ssm-documents.ExecuteScriptStep.property.nextStep">nextStep</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AutomationStep">AutomationStep</a></code> | *No description.* |
 | <code><a href="#@cdklabs/cdk-ssm-documents.ExecuteScriptStep.property.code">code</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.ScriptCode">ScriptCode</a></code> | *No description.* |
@@ -7902,6 +8046,16 @@ public readonly explicitNextStep: StepRef;
 ```
 
 - *Type:* <a href="#@cdklabs/cdk-ssm-documents.StepRef">StepRef</a>
+
+---
+
+##### `userOutputs`<sup>Optional</sup> <a name="userOutputs" id="@cdklabs/cdk-ssm-documents.ExecuteScriptStep.property.userOutputs"></a>
+
+```typescript
+public readonly userOutputs: Output[];
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.Output">Output</a>[]
 
 ---
 
@@ -8146,6 +8300,7 @@ Any object.
 | <code><a href="#@cdklabs/cdk-ssm-documents.ExecuteStateMachineStep.property.onFailure">onFailure</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.OnFailure">OnFailure</a></code> | *No description.* |
 | <code><a href="#@cdklabs/cdk-ssm-documents.ExecuteStateMachineStep.property.timeoutSeconds">timeoutSeconds</a></code> | <code>number</code> | *No description.* |
 | <code><a href="#@cdklabs/cdk-ssm-documents.ExecuteStateMachineStep.property.explicitNextStep">explicitNextStep</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.StepRef">StepRef</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.ExecuteStateMachineStep.property.userOutputs">userOutputs</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.Output">Output</a>[]</code> | *No description.* |
 | <code><a href="#@cdklabs/cdk-ssm-documents.ExecuteStateMachineStep.property.allStepsInExecution">allStepsInExecution</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AutomationStep">AutomationStep</a>[]</code> | *No description.* |
 | <code><a href="#@cdklabs/cdk-ssm-documents.ExecuteStateMachineStep.property.nextStep">nextStep</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AutomationStep">AutomationStep</a></code> | *No description.* |
 | <code><a href="#@cdklabs/cdk-ssm-documents.ExecuteStateMachineStep.property.stateMachineArn">stateMachineArn</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.IStringVariable">IStringVariable</a></code> | *No description.* |
@@ -8273,6 +8428,16 @@ public readonly explicitNextStep: StepRef;
 ```
 
 - *Type:* <a href="#@cdklabs/cdk-ssm-documents.StepRef">StepRef</a>
+
+---
+
+##### `userOutputs`<sup>Optional</sup> <a name="userOutputs" id="@cdklabs/cdk-ssm-documents.ExecuteStateMachineStep.property.userOutputs"></a>
+
+```typescript
+public readonly userOutputs: Output[];
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.Output">Output</a>[]
 
 ---
 
@@ -9487,6 +9652,7 @@ Any object.
 | <code><a href="#@cdklabs/cdk-ssm-documents.InvokeLambdaFunctionStep.property.onFailure">onFailure</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.OnFailure">OnFailure</a></code> | *No description.* |
 | <code><a href="#@cdklabs/cdk-ssm-documents.InvokeLambdaFunctionStep.property.timeoutSeconds">timeoutSeconds</a></code> | <code>number</code> | *No description.* |
 | <code><a href="#@cdklabs/cdk-ssm-documents.InvokeLambdaFunctionStep.property.explicitNextStep">explicitNextStep</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.StepRef">StepRef</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.InvokeLambdaFunctionStep.property.userOutputs">userOutputs</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.Output">Output</a>[]</code> | *No description.* |
 | <code><a href="#@cdklabs/cdk-ssm-documents.InvokeLambdaFunctionStep.property.allStepsInExecution">allStepsInExecution</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AutomationStep">AutomationStep</a>[]</code> | *No description.* |
 | <code><a href="#@cdklabs/cdk-ssm-documents.InvokeLambdaFunctionStep.property.nextStep">nextStep</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AutomationStep">AutomationStep</a></code> | *No description.* |
 | <code><a href="#@cdklabs/cdk-ssm-documents.InvokeLambdaFunctionStep.property.functionName">functionName</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.IStringVariable">IStringVariable</a></code> | *No description.* |
@@ -9618,6 +9784,16 @@ public readonly explicitNextStep: StepRef;
 ```
 
 - *Type:* <a href="#@cdklabs/cdk-ssm-documents.StepRef">StepRef</a>
+
+---
+
+##### `userOutputs`<sup>Optional</sup> <a name="userOutputs" id="@cdklabs/cdk-ssm-documents.InvokeLambdaFunctionStep.property.userOutputs"></a>
+
+```typescript
+public readonly userOutputs: Output[];
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.Output">Output</a>[]
 
 ---
 
@@ -9892,6 +10068,7 @@ Any object.
 | <code><a href="#@cdklabs/cdk-ssm-documents.InvokeWebhookStep.property.onFailure">onFailure</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.OnFailure">OnFailure</a></code> | *No description.* |
 | <code><a href="#@cdklabs/cdk-ssm-documents.InvokeWebhookStep.property.timeoutSeconds">timeoutSeconds</a></code> | <code>number</code> | *No description.* |
 | <code><a href="#@cdklabs/cdk-ssm-documents.InvokeWebhookStep.property.explicitNextStep">explicitNextStep</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.StepRef">StepRef</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.InvokeWebhookStep.property.userOutputs">userOutputs</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.Output">Output</a>[]</code> | *No description.* |
 | <code><a href="#@cdklabs/cdk-ssm-documents.InvokeWebhookStep.property.allStepsInExecution">allStepsInExecution</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AutomationStep">AutomationStep</a>[]</code> | *No description.* |
 | <code><a href="#@cdklabs/cdk-ssm-documents.InvokeWebhookStep.property.nextStep">nextStep</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AutomationStep">AutomationStep</a></code> | *No description.* |
 | <code><a href="#@cdklabs/cdk-ssm-documents.InvokeWebhookStep.property.integrationName">integrationName</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.IStringVariable">IStringVariable</a></code> | *No description.* |
@@ -10018,6 +10195,16 @@ public readonly explicitNextStep: StepRef;
 ```
 
 - *Type:* <a href="#@cdklabs/cdk-ssm-documents.StepRef">StepRef</a>
+
+---
+
+##### `userOutputs`<sup>Optional</sup> <a name="userOutputs" id="@cdklabs/cdk-ssm-documents.InvokeWebhookStep.property.userOutputs"></a>
+
+```typescript
+public readonly userOutputs: Output[];
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.Output">Output</a>[]
 
 ---
 
@@ -10242,6 +10429,7 @@ Any object.
 | <code><a href="#@cdklabs/cdk-ssm-documents.PauseStep.property.onFailure">onFailure</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.OnFailure">OnFailure</a></code> | *No description.* |
 | <code><a href="#@cdklabs/cdk-ssm-documents.PauseStep.property.timeoutSeconds">timeoutSeconds</a></code> | <code>number</code> | *No description.* |
 | <code><a href="#@cdklabs/cdk-ssm-documents.PauseStep.property.explicitNextStep">explicitNextStep</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.StepRef">StepRef</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.PauseStep.property.userOutputs">userOutputs</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.Output">Output</a>[]</code> | *No description.* |
 | <code><a href="#@cdklabs/cdk-ssm-documents.PauseStep.property.allStepsInExecution">allStepsInExecution</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AutomationStep">AutomationStep</a>[]</code> | *No description.* |
 | <code><a href="#@cdklabs/cdk-ssm-documents.PauseStep.property.nextStep">nextStep</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AutomationStep">AutomationStep</a></code> | *No description.* |
 
@@ -10366,6 +10554,16 @@ public readonly explicitNextStep: StepRef;
 ```
 
 - *Type:* <a href="#@cdklabs/cdk-ssm-documents.StepRef">StepRef</a>
+
+---
+
+##### `userOutputs`<sup>Optional</sup> <a name="userOutputs" id="@cdklabs/cdk-ssm-documents.PauseStep.property.userOutputs"></a>
+
+```typescript
+public readonly userOutputs: Output[];
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.Output">Output</a>[]
 
 ---
 
@@ -11050,6 +11248,7 @@ Any object.
 | <code><a href="#@cdklabs/cdk-ssm-documents.RunCommandStep.property.onFailure">onFailure</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.OnFailure">OnFailure</a></code> | *No description.* |
 | <code><a href="#@cdklabs/cdk-ssm-documents.RunCommandStep.property.timeoutSeconds">timeoutSeconds</a></code> | <code>number</code> | *No description.* |
 | <code><a href="#@cdklabs/cdk-ssm-documents.RunCommandStep.property.explicitNextStep">explicitNextStep</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.StepRef">StepRef</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.RunCommandStep.property.userOutputs">userOutputs</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.Output">Output</a>[]</code> | *No description.* |
 | <code><a href="#@cdklabs/cdk-ssm-documents.RunCommandStep.property.allStepsInExecution">allStepsInExecution</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AutomationStep">AutomationStep</a>[]</code> | *No description.* |
 | <code><a href="#@cdklabs/cdk-ssm-documents.RunCommandStep.property.nextStep">nextStep</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AutomationStep">AutomationStep</a></code> | *No description.* |
 | <code><a href="#@cdklabs/cdk-ssm-documents.RunCommandStep.property.documentName">documentName</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.IStringVariable">IStringVariable</a></code> | *No description.* |
@@ -11188,6 +11387,16 @@ public readonly explicitNextStep: StepRef;
 ```
 
 - *Type:* <a href="#@cdklabs/cdk-ssm-documents.StepRef">StepRef</a>
+
+---
+
+##### `userOutputs`<sup>Optional</sup> <a name="userOutputs" id="@cdklabs/cdk-ssm-documents.RunCommandStep.property.userOutputs"></a>
+
+```typescript
+public readonly userOutputs: Output[];
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.Output">Output</a>[]
 
 ---
 
@@ -12246,6 +12455,7 @@ Any object.
 | <code><a href="#@cdklabs/cdk-ssm-documents.RunInstanceStep.property.onFailure">onFailure</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.OnFailure">OnFailure</a></code> | *No description.* |
 | <code><a href="#@cdklabs/cdk-ssm-documents.RunInstanceStep.property.timeoutSeconds">timeoutSeconds</a></code> | <code>number</code> | *No description.* |
 | <code><a href="#@cdklabs/cdk-ssm-documents.RunInstanceStep.property.explicitNextStep">explicitNextStep</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.StepRef">StepRef</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.RunInstanceStep.property.userOutputs">userOutputs</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.Output">Output</a>[]</code> | *No description.* |
 | <code><a href="#@cdklabs/cdk-ssm-documents.RunInstanceStep.property.allStepsInExecution">allStepsInExecution</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AutomationStep">AutomationStep</a>[]</code> | *No description.* |
 | <code><a href="#@cdklabs/cdk-ssm-documents.RunInstanceStep.property.nextStep">nextStep</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AutomationStep">AutomationStep</a></code> | *No description.* |
 | <code><a href="#@cdklabs/cdk-ssm-documents.RunInstanceStep.property.imageId">imageId</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.IStringVariable">IStringVariable</a></code> | *No description.* |
@@ -12394,6 +12604,16 @@ public readonly explicitNextStep: StepRef;
 ```
 
 - *Type:* <a href="#@cdklabs/cdk-ssm-documents.StepRef">StepRef</a>
+
+---
+
+##### `userOutputs`<sup>Optional</sup> <a name="userOutputs" id="@cdklabs/cdk-ssm-documents.RunInstanceStep.property.userOutputs"></a>
+
+```typescript
+public readonly userOutputs: Output[];
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.Output">Output</a>[]
 
 ---
 
@@ -13012,7 +13232,7 @@ public readonly workingDirectory: IStringVariable;
 
 ### RunShellScriptStep <a name="RunShellScriptStep" id="@cdklabs/cdk-ssm-documents.RunShellScriptStep"></a>
 
-AutomationStep implemenation for aws:sleep https://docs.aws.amazon.com/systems-manager/latest/userguide/automation-action-sleep.html.
+AutomationStep implemenation for aws:runShellScript https://docs.aws.amazon.com/systems-manager/latest/userguide/automation-action-sleep.html.
 
 #### Initializers <a name="Initializers" id="@cdklabs/cdk-ssm-documents.RunShellScriptStep.Initializer"></a>
 
@@ -13486,6 +13706,7 @@ Any object.
 | <code><a href="#@cdklabs/cdk-ssm-documents.SleepStep.property.onFailure">onFailure</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.OnFailure">OnFailure</a></code> | *No description.* |
 | <code><a href="#@cdklabs/cdk-ssm-documents.SleepStep.property.timeoutSeconds">timeoutSeconds</a></code> | <code>number</code> | *No description.* |
 | <code><a href="#@cdklabs/cdk-ssm-documents.SleepStep.property.explicitNextStep">explicitNextStep</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.StepRef">StepRef</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.SleepStep.property.userOutputs">userOutputs</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.Output">Output</a>[]</code> | *No description.* |
 | <code><a href="#@cdklabs/cdk-ssm-documents.SleepStep.property.allStepsInExecution">allStepsInExecution</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AutomationStep">AutomationStep</a>[]</code> | *No description.* |
 | <code><a href="#@cdklabs/cdk-ssm-documents.SleepStep.property.nextStep">nextStep</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AutomationStep">AutomationStep</a></code> | *No description.* |
 | <code><a href="#@cdklabs/cdk-ssm-documents.SleepStep.property.sleepSeconds">sleepSeconds</a></code> | <code>number</code> | *No description.* |
@@ -13611,6 +13832,16 @@ public readonly explicitNextStep: StepRef;
 ```
 
 - *Type:* <a href="#@cdklabs/cdk-ssm-documents.StepRef">StepRef</a>
+
+---
+
+##### `userOutputs`<sup>Optional</sup> <a name="userOutputs" id="@cdklabs/cdk-ssm-documents.SleepStep.property.userOutputs"></a>
+
+```typescript
+public readonly userOutputs: Output[];
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.Output">Output</a>[]
 
 ---
 
@@ -15694,6 +15925,7 @@ Any object.
 | <code><a href="#@cdklabs/cdk-ssm-documents.UpdateVariableStep.property.onFailure">onFailure</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.OnFailure">OnFailure</a></code> | *No description.* |
 | <code><a href="#@cdklabs/cdk-ssm-documents.UpdateVariableStep.property.timeoutSeconds">timeoutSeconds</a></code> | <code>number</code> | *No description.* |
 | <code><a href="#@cdklabs/cdk-ssm-documents.UpdateVariableStep.property.explicitNextStep">explicitNextStep</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.StepRef">StepRef</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.UpdateVariableStep.property.userOutputs">userOutputs</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.Output">Output</a>[]</code> | *No description.* |
 | <code><a href="#@cdklabs/cdk-ssm-documents.UpdateVariableStep.property.allStepsInExecution">allStepsInExecution</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AutomationStep">AutomationStep</a>[]</code> | *No description.* |
 | <code><a href="#@cdklabs/cdk-ssm-documents.UpdateVariableStep.property.nextStep">nextStep</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AutomationStep">AutomationStep</a></code> | *No description.* |
 | <code><a href="#@cdklabs/cdk-ssm-documents.UpdateVariableStep.property.variableName">variableName</a></code> | <code>string</code> | *No description.* |
@@ -15820,6 +16052,16 @@ public readonly explicitNextStep: StepRef;
 ```
 
 - *Type:* <a href="#@cdklabs/cdk-ssm-documents.StepRef">StepRef</a>
+
+---
+
+##### `userOutputs`<sup>Optional</sup> <a name="userOutputs" id="@cdklabs/cdk-ssm-documents.UpdateVariableStep.property.userOutputs"></a>
+
+```typescript
+public readonly userOutputs: Output[];
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.Output">Output</a>[]
 
 ---
 
@@ -16044,6 +16286,7 @@ Any object.
 | <code><a href="#@cdklabs/cdk-ssm-documents.WaitForResourceStep.property.onFailure">onFailure</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.OnFailure">OnFailure</a></code> | *No description.* |
 | <code><a href="#@cdklabs/cdk-ssm-documents.WaitForResourceStep.property.timeoutSeconds">timeoutSeconds</a></code> | <code>number</code> | *No description.* |
 | <code><a href="#@cdklabs/cdk-ssm-documents.WaitForResourceStep.property.explicitNextStep">explicitNextStep</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.StepRef">StepRef</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.WaitForResourceStep.property.userOutputs">userOutputs</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.Output">Output</a>[]</code> | *No description.* |
 | <code><a href="#@cdklabs/cdk-ssm-documents.WaitForResourceStep.property.allStepsInExecution">allStepsInExecution</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AutomationStep">AutomationStep</a>[]</code> | *No description.* |
 | <code><a href="#@cdklabs/cdk-ssm-documents.WaitForResourceStep.property.nextStep">nextStep</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AutomationStep">AutomationStep</a></code> | *No description.* |
 | <code><a href="#@cdklabs/cdk-ssm-documents.WaitForResourceStep.property.apiParams">apiParams</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.DictFormat">DictFormat</a></code> | *No description.* |
@@ -16176,6 +16419,16 @@ public readonly explicitNextStep: StepRef;
 ```
 
 - *Type:* <a href="#@cdklabs/cdk-ssm-documents.StepRef">StepRef</a>
+
+---
+
+##### `userOutputs`<sup>Optional</sup> <a name="userOutputs" id="@cdklabs/cdk-ssm-documents.WaitForResourceStep.property.userOutputs"></a>
+
+```typescript
+public readonly userOutputs: Output[];
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.Output">Output</a>[]
 
 ---
 
@@ -16653,6 +16906,7 @@ const approveStepProps: ApproveStepProps = { ... }
 | <code><a href="#@cdklabs/cdk-ssm-documents.ApproveStepProps.property.onCancel">onCancel</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.OnCancel">OnCancel</a></code> | (Optional) Fallback action to take in the event that this step is cancelled. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.ApproveStepProps.property.onFailure">onFailure</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.OnFailure">OnFailure</a></code> | (Optional) Fallback action to take in the event that this step fails. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.ApproveStepProps.property.timeoutSeconds">timeoutSeconds</a></code> | <code>number</code> | (Optional) timeout seconds to run this step. |
+| <code><a href="#@cdklabs/cdk-ssm-documents.ApproveStepProps.property.userOutputs">userOutputs</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.Output">Output</a>[]</code> | (Optional) Allows to define step outputs. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.ApproveStepProps.property.approvers">approvers</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.IStringListVariable">IStringListVariable</a></code> | A list of AWS authenticated principals who are able to either approve or reject the action. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.ApproveStepProps.property.message">message</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.IStringVariable">IStringVariable</a></code> | (Optional) The information you want to include in the Amazon SNS topic when the approval request is sent. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.ApproveStepProps.property.minRequiredApprovals">minRequiredApprovals</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.INumberVariable">INumberVariable</a></code> | (Optional) The minimum number of approvals required to resume the automation. |
@@ -16797,6 +17051,19 @@ In a simulation run, this will only be encorced after-the-fact but execution wil
 
 ---
 
+##### `userOutputs`<sup>Optional</sup> <a name="userOutputs" id="@cdklabs/cdk-ssm-documents.ApproveStepProps.property.userOutputs"></a>
+
+```typescript
+public readonly userOutputs: Output[];
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.Output">Output</a>[]
+- *Default:* undefined
+
+(Optional) Allows to define step outputs.
+
+---
+
 ##### `approvers`<sup>Required</sup> <a name="approvers" id="@cdklabs/cdk-ssm-documents.ApproveStepProps.property.approvers"></a>
 
 ```typescript
@@ -16885,6 +17152,7 @@ const assertAwsResourceStepProps: AssertAwsResourceStepProps = { ... }
 | <code><a href="#@cdklabs/cdk-ssm-documents.AssertAwsResourceStepProps.property.onCancel">onCancel</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.OnCancel">OnCancel</a></code> | (Optional) Fallback action to take in the event that this step is cancelled. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.AssertAwsResourceStepProps.property.onFailure">onFailure</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.OnFailure">OnFailure</a></code> | (Optional) Fallback action to take in the event that this step fails. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.AssertAwsResourceStepProps.property.timeoutSeconds">timeoutSeconds</a></code> | <code>number</code> | (Optional) timeout seconds to run this step. |
+| <code><a href="#@cdklabs/cdk-ssm-documents.AssertAwsResourceStepProps.property.userOutputs">userOutputs</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.Output">Output</a>[]</code> | (Optional) Allows to define step outputs. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.AssertAwsResourceStepProps.property.apiParams">apiParams</a></code> | <code>{[ key: string ]: any}</code> | (Required) API Params to submit with the request to the api. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.AssertAwsResourceStepProps.property.pascalCaseApi">pascalCaseApi</a></code> | <code>string</code> | (Required) The AWS api represented in PascalCase. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.AssertAwsResourceStepProps.property.service">service</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a></code> | (Required) The AWS service to be invoked. |
@@ -17028,6 +17296,19 @@ public readonly timeoutSeconds: number;
 (Optional) timeout seconds to run this step.
 
 In a simulation run, this will only be encorced after-the-fact but execution will not be stopped mid-step.
+
+---
+
+##### `userOutputs`<sup>Optional</sup> <a name="userOutputs" id="@cdklabs/cdk-ssm-documents.AssertAwsResourceStepProps.property.userOutputs"></a>
+
+```typescript
+public readonly userOutputs: Output[];
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.Output">Output</a>[]
+- *Default:* undefined
+
+(Optional) Allows to define step outputs.
 
 ---
 
@@ -17539,6 +17820,7 @@ const automationStepProps: AutomationStepProps = { ... }
 | <code><a href="#@cdklabs/cdk-ssm-documents.AutomationStepProps.property.onCancel">onCancel</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.OnCancel">OnCancel</a></code> | (Optional) Fallback action to take in the event that this step is cancelled. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.AutomationStepProps.property.onFailure">onFailure</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.OnFailure">OnFailure</a></code> | (Optional) Fallback action to take in the event that this step fails. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.AutomationStepProps.property.timeoutSeconds">timeoutSeconds</a></code> | <code>number</code> | (Optional) timeout seconds to run this step. |
+| <code><a href="#@cdklabs/cdk-ssm-documents.AutomationStepProps.property.userOutputs">userOutputs</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.Output">Output</a>[]</code> | (Optional) Allows to define step outputs. |
 
 ---
 
@@ -17679,6 +17961,19 @@ In a simulation run, this will only be encorced after-the-fact but execution wil
 
 ---
 
+##### `userOutputs`<sup>Optional</sup> <a name="userOutputs" id="@cdklabs/cdk-ssm-documents.AutomationStepProps.property.userOutputs"></a>
+
+```typescript
+public readonly userOutputs: Output[];
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.Output">Output</a>[]
+- *Default:* undefined
+
+(Optional) Allows to define step outputs.
+
+---
+
 ### AwsApiStepProps <a name="AwsApiStepProps" id="@cdklabs/cdk-ssm-documents.AwsApiStepProps"></a>
 
 Properties for AwsInvocation.
@@ -17705,6 +18000,7 @@ const awsApiStepProps: AwsApiStepProps = { ... }
 | <code><a href="#@cdklabs/cdk-ssm-documents.AwsApiStepProps.property.onCancel">onCancel</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.OnCancel">OnCancel</a></code> | (Optional) Fallback action to take in the event that this step is cancelled. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.AwsApiStepProps.property.onFailure">onFailure</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.OnFailure">OnFailure</a></code> | (Optional) Fallback action to take in the event that this step fails. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.AwsApiStepProps.property.timeoutSeconds">timeoutSeconds</a></code> | <code>number</code> | (Optional) timeout seconds to run this step. |
+| <code><a href="#@cdklabs/cdk-ssm-documents.AwsApiStepProps.property.userOutputs">userOutputs</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.Output">Output</a>[]</code> | (Optional) Allows to define step outputs. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.AwsApiStepProps.property.apiParams">apiParams</a></code> | <code>{[ key: string ]: any}</code> | (Required) API Params to submit with the request to the api. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.AwsApiStepProps.property.pascalCaseApi">pascalCaseApi</a></code> | <code>string</code> | (Required) The AWS api represented in PascalCase. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.AwsApiStepProps.property.service">service</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a></code> | (Required) The AWS service to be invoked. |
@@ -17850,6 +18146,19 @@ In a simulation run, this will only be encorced after-the-fact but execution wil
 
 ---
 
+##### `userOutputs`<sup>Optional</sup> <a name="userOutputs" id="@cdklabs/cdk-ssm-documents.AwsApiStepProps.property.userOutputs"></a>
+
+```typescript
+public readonly userOutputs: Output[];
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.Output">Output</a>[]
+- *Default:* undefined
+
+(Optional) Allows to define step outputs.
+
+---
+
 ##### `apiParams`<sup>Required</sup> <a name="apiParams" id="@cdklabs/cdk-ssm-documents.AwsApiStepProps.property.apiParams"></a>
 
 ```typescript
@@ -17971,6 +18280,7 @@ const awsInvocationProps: AwsInvocationProps = { ... }
 | <code><a href="#@cdklabs/cdk-ssm-documents.AwsInvocationProps.property.onCancel">onCancel</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.OnCancel">OnCancel</a></code> | (Optional) Fallback action to take in the event that this step is cancelled. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.AwsInvocationProps.property.onFailure">onFailure</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.OnFailure">OnFailure</a></code> | (Optional) Fallback action to take in the event that this step fails. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.AwsInvocationProps.property.timeoutSeconds">timeoutSeconds</a></code> | <code>number</code> | (Optional) timeout seconds to run this step. |
+| <code><a href="#@cdklabs/cdk-ssm-documents.AwsInvocationProps.property.userOutputs">userOutputs</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.Output">Output</a>[]</code> | (Optional) Allows to define step outputs. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.AwsInvocationProps.property.apiParams">apiParams</a></code> | <code>{[ key: string ]: any}</code> | (Required) API Params to submit with the request to the api. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.AwsInvocationProps.property.pascalCaseApi">pascalCaseApi</a></code> | <code>string</code> | (Required) The AWS api represented in PascalCase. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.AwsInvocationProps.property.service">service</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a></code> | (Required) The AWS service to be invoked. |
@@ -18112,6 +18422,19 @@ public readonly timeoutSeconds: number;
 (Optional) timeout seconds to run this step.
 
 In a simulation run, this will only be encorced after-the-fact but execution will not be stopped mid-step.
+
+---
+
+##### `userOutputs`<sup>Optional</sup> <a name="userOutputs" id="@cdklabs/cdk-ssm-documents.AwsInvocationProps.property.userOutputs"></a>
+
+```typescript
+public readonly userOutputs: Output[];
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.Output">Output</a>[]
+- *Default:* undefined
+
+(Optional) Allows to define step outputs.
 
 ---
 
@@ -18345,6 +18668,7 @@ const branchStepProps: BranchStepProps = { ... }
 | <code><a href="#@cdklabs/cdk-ssm-documents.BranchStepProps.property.onCancel">onCancel</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.OnCancel">OnCancel</a></code> | (Optional) Fallback action to take in the event that this step is cancelled. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.BranchStepProps.property.onFailure">onFailure</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.OnFailure">OnFailure</a></code> | (Optional) Fallback action to take in the event that this step fails. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.BranchStepProps.property.timeoutSeconds">timeoutSeconds</a></code> | <code>number</code> | (Optional) timeout seconds to run this step. |
+| <code><a href="#@cdklabs/cdk-ssm-documents.BranchStepProps.property.userOutputs">userOutputs</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.Output">Output</a>[]</code> | (Optional) Allows to define step outputs. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.BranchStepProps.property.choices">choices</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.Choice">Choice</a>[]</code> | (Required) list of choices. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.BranchStepProps.property.defaultStepName">defaultStepName</a></code> | <code>string</code> | (Optional) default step in all of the choices evaluate to false. |
 
@@ -18487,6 +18811,19 @@ In a simulation run, this will only be encorced after-the-fact but execution wil
 
 ---
 
+##### `userOutputs`<sup>Optional</sup> <a name="userOutputs" id="@cdklabs/cdk-ssm-documents.BranchStepProps.property.userOutputs"></a>
+
+```typescript
+public readonly userOutputs: Output[];
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.Output">Output</a>[]
+- *Default:* undefined
+
+(Optional) Allows to define step outputs.
+
+---
+
 ##### `choices`<sup>Required</sup> <a name="choices" id="@cdklabs/cdk-ssm-documents.BranchStepProps.property.choices"></a>
 
 ```typescript
@@ -18540,6 +18877,7 @@ const changeInstanceStateSimulationProps: ChangeInstanceStateSimulationProps = {
 | <code><a href="#@cdklabs/cdk-ssm-documents.ChangeInstanceStateSimulationProps.property.onCancel">onCancel</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.OnCancel">OnCancel</a></code> | (Optional) Fallback action to take in the event that this step is cancelled. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.ChangeInstanceStateSimulationProps.property.onFailure">onFailure</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.OnFailure">OnFailure</a></code> | (Optional) Fallback action to take in the event that this step fails. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.ChangeInstanceStateSimulationProps.property.timeoutSeconds">timeoutSeconds</a></code> | <code>number</code> | (Optional) timeout seconds to run this step. |
+| <code><a href="#@cdklabs/cdk-ssm-documents.ChangeInstanceStateSimulationProps.property.userOutputs">userOutputs</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.Output">Output</a>[]</code> | (Optional) Allows to define step outputs. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.ChangeInstanceStateSimulationProps.property.awsInvoker">awsInvoker</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.IAwsInvoker">IAwsInvoker</a></code> | (Optional) Use this as a hook to inject an alternate IAwsInvoker (for mocking the AWS API call). |
 
 ---
@@ -18681,6 +19019,19 @@ In a simulation run, this will only be encorced after-the-fact but execution wil
 
 ---
 
+##### `userOutputs`<sup>Optional</sup> <a name="userOutputs" id="@cdklabs/cdk-ssm-documents.ChangeInstanceStateSimulationProps.property.userOutputs"></a>
+
+```typescript
+public readonly userOutputs: Output[];
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.Output">Output</a>[]
+- *Default:* undefined
+
+(Optional) Allows to define step outputs.
+
+---
+
 ##### `awsInvoker`<sup>Required</sup> <a name="awsInvoker" id="@cdklabs/cdk-ssm-documents.ChangeInstanceStateSimulationProps.property.awsInvoker"></a>
 
 ```typescript
@@ -18720,6 +19071,7 @@ const changeInstanceStateStepProps: ChangeInstanceStateStepProps = { ... }
 | <code><a href="#@cdklabs/cdk-ssm-documents.ChangeInstanceStateStepProps.property.onCancel">onCancel</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.OnCancel">OnCancel</a></code> | (Optional) Fallback action to take in the event that this step is cancelled. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.ChangeInstanceStateStepProps.property.onFailure">onFailure</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.OnFailure">OnFailure</a></code> | (Optional) Fallback action to take in the event that this step fails. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.ChangeInstanceStateStepProps.property.timeoutSeconds">timeoutSeconds</a></code> | <code>number</code> | (Optional) timeout seconds to run this step. |
+| <code><a href="#@cdklabs/cdk-ssm-documents.ChangeInstanceStateStepProps.property.userOutputs">userOutputs</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.Output">Output</a>[]</code> | (Optional) Allows to define step outputs. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.ChangeInstanceStateStepProps.property.desiredState">desiredState</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.IDesiredStateVariable">IDesiredStateVariable</a></code> | The desired state. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.ChangeInstanceStateStepProps.property.instanceIds">instanceIds</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.IStringListVariable">IStringListVariable</a></code> | The IDs of the instances. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.ChangeInstanceStateStepProps.property.additionalInfo">additionalInfo</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.IStringVariable">IStringVariable</a></code> | (Optional) Reserved. |
@@ -18862,6 +19214,19 @@ public readonly timeoutSeconds: number;
 (Optional) timeout seconds to run this step.
 
 In a simulation run, this will only be encorced after-the-fact but execution will not be stopped mid-step.
+
+---
+
+##### `userOutputs`<sup>Optional</sup> <a name="userOutputs" id="@cdklabs/cdk-ssm-documents.ChangeInstanceStateStepProps.property.userOutputs"></a>
+
+```typescript
+public readonly userOutputs: Output[];
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.Output">Output</a>[]
+- *Default:* undefined
+
+(Optional) Allows to define step outputs.
 
 ---
 
@@ -19861,6 +20226,7 @@ const copyImageStepProps: CopyImageStepProps = { ... }
 | <code><a href="#@cdklabs/cdk-ssm-documents.CopyImageStepProps.property.onCancel">onCancel</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.OnCancel">OnCancel</a></code> | (Optional) Fallback action to take in the event that this step is cancelled. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.CopyImageStepProps.property.onFailure">onFailure</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.OnFailure">OnFailure</a></code> | (Optional) Fallback action to take in the event that this step fails. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.CopyImageStepProps.property.timeoutSeconds">timeoutSeconds</a></code> | <code>number</code> | (Optional) timeout seconds to run this step. |
+| <code><a href="#@cdklabs/cdk-ssm-documents.CopyImageStepProps.property.userOutputs">userOutputs</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.Output">Output</a>[]</code> | (Optional) Allows to define step outputs. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.CopyImageStepProps.property.imageName">imageName</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.IStringVariable">IStringVariable</a></code> | The name for the image. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.CopyImageStepProps.property.sourceImageId">sourceImageId</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.IStringVariable">IStringVariable</a></code> | The AMI ID to copy from the source Region. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.CopyImageStepProps.property.sourceRegion">sourceRegion</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.IStringVariable">IStringVariable</a></code> | The region where the source AMI exists. |
@@ -20008,6 +20374,19 @@ In a simulation run, this will only be encorced after-the-fact but execution wil
 
 ---
 
+##### `userOutputs`<sup>Optional</sup> <a name="userOutputs" id="@cdklabs/cdk-ssm-documents.CopyImageStepProps.property.userOutputs"></a>
+
+```typescript
+public readonly userOutputs: Output[];
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.Output">Output</a>[]
+- *Default:* undefined
+
+(Optional) Allows to define step outputs.
+
+---
+
 ##### `imageName`<sup>Required</sup> <a name="imageName" id="@cdklabs/cdk-ssm-documents.CopyImageStepProps.property.imageName"></a>
 
 ```typescript
@@ -20118,6 +20497,7 @@ const createImageStepProps: CreateImageStepProps = { ... }
 | <code><a href="#@cdklabs/cdk-ssm-documents.CreateImageStepProps.property.onCancel">onCancel</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.OnCancel">OnCancel</a></code> | (Optional) Fallback action to take in the event that this step is cancelled. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.CreateImageStepProps.property.onFailure">onFailure</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.OnFailure">OnFailure</a></code> | (Optional) Fallback action to take in the event that this step fails. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.CreateImageStepProps.property.timeoutSeconds">timeoutSeconds</a></code> | <code>number</code> | (Optional) timeout seconds to run this step. |
+| <code><a href="#@cdklabs/cdk-ssm-documents.CreateImageStepProps.property.userOutputs">userOutputs</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.Output">Output</a>[]</code> | (Optional) Allows to define step outputs. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.CreateImageStepProps.property.imageName">imageName</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.IStringVariable">IStringVariable</a></code> | The name for the image. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.CreateImageStepProps.property.instanceId">instanceId</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.IStringVariable">IStringVariable</a></code> | The ID of the instance. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.CreateImageStepProps.property.blockDeviceMappings">blockDeviceMappings</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.IStringMapVariable">IStringMapVariable</a></code> | (Optional) The block devices for the instance. |
@@ -20260,6 +20640,19 @@ public readonly timeoutSeconds: number;
 (Optional) timeout seconds to run this step.
 
 In a simulation run, this will only be encorced after-the-fact but execution will not be stopped mid-step.
+
+---
+
+##### `userOutputs`<sup>Optional</sup> <a name="userOutputs" id="@cdklabs/cdk-ssm-documents.CreateImageStepProps.property.userOutputs"></a>
+
+```typescript
+public readonly userOutputs: Output[];
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.Output">Output</a>[]
+- *Default:* undefined
+
+(Optional) Allows to define step outputs.
 
 ---
 
@@ -20417,6 +20810,7 @@ const createStackStepProps: CreateStackStepProps = { ... }
 | <code><a href="#@cdklabs/cdk-ssm-documents.CreateStackStepProps.property.onCancel">onCancel</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.OnCancel">OnCancel</a></code> | (Optional) Fallback action to take in the event that this step is cancelled. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.CreateStackStepProps.property.onFailure">onFailure</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.OnFailure">OnFailure</a></code> | (Optional) Fallback action to take in the event that this step fails. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.CreateStackStepProps.property.timeoutSeconds">timeoutSeconds</a></code> | <code>number</code> | (Optional) timeout seconds to run this step. |
+| <code><a href="#@cdklabs/cdk-ssm-documents.CreateStackStepProps.property.userOutputs">userOutputs</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.Output">Output</a>[]</code> | (Optional) Allows to define step outputs. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.CreateStackStepProps.property.stackName">stackName</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.IStringVariable">IStringVariable</a></code> | The name that is associated with the stack. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.CreateStackStepProps.property.template">template</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.BodyOrUrlProp">BodyOrUrlProp</a></code> | Template body or URL. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.CreateStackStepProps.property.capabilities">capabilities</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.IStringListVariable">IStringListVariable</a></code> | (Optional) A list of values that you specify before CloudFormation can create certain stacks. |
@@ -20566,6 +20960,19 @@ public readonly timeoutSeconds: number;
 (Optional) timeout seconds to run this step.
 
 In a simulation run, this will only be encorced after-the-fact but execution will not be stopped mid-step.
+
+---
+
+##### `userOutputs`<sup>Optional</sup> <a name="userOutputs" id="@cdklabs/cdk-ssm-documents.CreateStackStepProps.property.userOutputs"></a>
+
+```typescript
+public readonly userOutputs: Output[];
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.Output">Output</a>[]
+- *Default:* undefined
+
+(Optional) Allows to define step outputs.
 
 ---
 
@@ -20820,6 +21227,7 @@ const createTagsStepProps: CreateTagsStepProps = { ... }
 | <code><a href="#@cdklabs/cdk-ssm-documents.CreateTagsStepProps.property.onCancel">onCancel</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.OnCancel">OnCancel</a></code> | (Optional) Fallback action to take in the event that this step is cancelled. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.CreateTagsStepProps.property.onFailure">onFailure</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.OnFailure">OnFailure</a></code> | (Optional) Fallback action to take in the event that this step fails. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.CreateTagsStepProps.property.timeoutSeconds">timeoutSeconds</a></code> | <code>number</code> | (Optional) timeout seconds to run this step. |
+| <code><a href="#@cdklabs/cdk-ssm-documents.CreateTagsStepProps.property.userOutputs">userOutputs</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.Output">Output</a>[]</code> | (Optional) Allows to define step outputs. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.CreateTagsStepProps.property.resourceIds">resourceIds</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.IStringListVariable">IStringListVariable</a></code> | The IDs of the resource(s) to be tagged. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.CreateTagsStepProps.property.tags">tags</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.IMapListVariable">IMapListVariable</a></code> | The tags to associate with the resource(s). |
 | <code><a href="#@cdklabs/cdk-ssm-documents.CreateTagsStepProps.property.resourceType">resourceType</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.IResourceTypeVariable">IResourceTypeVariable</a></code> | (Optional) The type of resource(s) to be tagged. |
@@ -20963,6 +21371,19 @@ In a simulation run, this will only be encorced after-the-fact but execution wil
 
 ---
 
+##### `userOutputs`<sup>Optional</sup> <a name="userOutputs" id="@cdklabs/cdk-ssm-documents.CreateTagsStepProps.property.userOutputs"></a>
+
+```typescript
+public readonly userOutputs: Output[];
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.Output">Output</a>[]
+- *Default:* undefined
+
+(Optional) Allows to define step outputs.
+
+---
+
 ##### `resourceIds`<sup>Required</sup> <a name="resourceIds" id="@cdklabs/cdk-ssm-documents.CreateTagsStepProps.property.resourceIds"></a>
 
 ```typescript
@@ -21079,6 +21500,7 @@ const deleteImageStepProps: DeleteImageStepProps = { ... }
 | <code><a href="#@cdklabs/cdk-ssm-documents.DeleteImageStepProps.property.onCancel">onCancel</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.OnCancel">OnCancel</a></code> | (Optional) Fallback action to take in the event that this step is cancelled. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.DeleteImageStepProps.property.onFailure">onFailure</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.OnFailure">OnFailure</a></code> | (Optional) Fallback action to take in the event that this step fails. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.DeleteImageStepProps.property.timeoutSeconds">timeoutSeconds</a></code> | <code>number</code> | (Optional) timeout seconds to run this step. |
+| <code><a href="#@cdklabs/cdk-ssm-documents.DeleteImageStepProps.property.userOutputs">userOutputs</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.Output">Output</a>[]</code> | (Optional) Allows to define step outputs. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.DeleteImageStepProps.property.imageId">imageId</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.IStringVariable">IStringVariable</a></code> | The ID of the image to be deleted. |
 
 ---
@@ -21220,6 +21642,19 @@ In a simulation run, this will only be encorced after-the-fact but execution wil
 
 ---
 
+##### `userOutputs`<sup>Optional</sup> <a name="userOutputs" id="@cdklabs/cdk-ssm-documents.DeleteImageStepProps.property.userOutputs"></a>
+
+```typescript
+public readonly userOutputs: Output[];
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.Output">Output</a>[]
+- *Default:* undefined
+
+(Optional) Allows to define step outputs.
+
+---
+
 ##### `imageId`<sup>Required</sup> <a name="imageId" id="@cdklabs/cdk-ssm-documents.DeleteImageStepProps.property.imageId"></a>
 
 ```typescript
@@ -21258,6 +21693,7 @@ const deleteStackStepProps: DeleteStackStepProps = { ... }
 | <code><a href="#@cdklabs/cdk-ssm-documents.DeleteStackStepProps.property.onCancel">onCancel</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.OnCancel">OnCancel</a></code> | (Optional) Fallback action to take in the event that this step is cancelled. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.DeleteStackStepProps.property.onFailure">onFailure</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.OnFailure">OnFailure</a></code> | (Optional) Fallback action to take in the event that this step fails. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.DeleteStackStepProps.property.timeoutSeconds">timeoutSeconds</a></code> | <code>number</code> | (Optional) timeout seconds to run this step. |
+| <code><a href="#@cdklabs/cdk-ssm-documents.DeleteStackStepProps.property.userOutputs">userOutputs</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.Output">Output</a>[]</code> | (Optional) Allows to define step outputs. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.DeleteStackStepProps.property.stackNameVariable">stackNameVariable</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.IStringVariable">IStringVariable</a></code> | (Optional) Variable that is fed into this step declaring which stack to delete. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.DeleteStackStepProps.property.roleArn">roleArn</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.IStringVariable">IStringVariable</a></code> | (Optional) The Amazon Resource Name (ARN) of an AWS Identity and Access Management (IAM) role that CloudFormation assumes to create the stack. |
 
@@ -21397,6 +21833,19 @@ public readonly timeoutSeconds: number;
 (Optional) timeout seconds to run this step.
 
 In a simulation run, this will only be encorced after-the-fact but execution will not be stopped mid-step.
+
+---
+
+##### `userOutputs`<sup>Optional</sup> <a name="userOutputs" id="@cdklabs/cdk-ssm-documents.DeleteStackStepProps.property.userOutputs"></a>
+
+```typescript
+public readonly userOutputs: Output[];
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.Output">Output</a>[]
+- *Default:* undefined
+
+(Optional) Allows to define step outputs.
 
 ---
 
@@ -22252,6 +22701,7 @@ const executeAutomationStepProps: ExecuteAutomationStepProps = { ... }
 | <code><a href="#@cdklabs/cdk-ssm-documents.ExecuteAutomationStepProps.property.onCancel">onCancel</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.OnCancel">OnCancel</a></code> | (Optional) Fallback action to take in the event that this step is cancelled. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.ExecuteAutomationStepProps.property.onFailure">onFailure</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.OnFailure">OnFailure</a></code> | (Optional) Fallback action to take in the event that this step fails. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.ExecuteAutomationStepProps.property.timeoutSeconds">timeoutSeconds</a></code> | <code>number</code> | (Optional) timeout seconds to run this step. |
+| <code><a href="#@cdklabs/cdk-ssm-documents.ExecuteAutomationStepProps.property.userOutputs">userOutputs</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.Output">Output</a>[]</code> | (Optional) Allows to define step outputs. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.ExecuteAutomationStepProps.property.documentName">documentName</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.IStringVariable">IStringVariable</a></code> | *No description.* |
 | <code><a href="#@cdklabs/cdk-ssm-documents.ExecuteAutomationStepProps.property.documentVersion">documentVersion</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.IStringVariable">IStringVariable</a></code> | *No description.* |
 | <code><a href="#@cdklabs/cdk-ssm-documents.ExecuteAutomationStepProps.property.maxConcurrency">maxConcurrency</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.IStringVariable">IStringVariable</a></code> | *No description.* |
@@ -22402,6 +22852,19 @@ In a simulation run, this will only be encorced after-the-fact but execution wil
 
 ---
 
+##### `userOutputs`<sup>Optional</sup> <a name="userOutputs" id="@cdklabs/cdk-ssm-documents.ExecuteAutomationStepProps.property.userOutputs"></a>
+
+```typescript
+public readonly userOutputs: Output[];
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.Output">Output</a>[]
+- *Default:* undefined
+
+(Optional) Allows to define step outputs.
+
+---
+
 ##### `documentName`<sup>Required</sup> <a name="documentName" id="@cdklabs/cdk-ssm-documents.ExecuteAutomationStepProps.property.documentName"></a>
 
 ```typescript
@@ -22528,6 +22991,7 @@ const executeScriptStepProps: ExecuteScriptStepProps = { ... }
 | <code><a href="#@cdklabs/cdk-ssm-documents.ExecuteScriptStepProps.property.onCancel">onCancel</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.OnCancel">OnCancel</a></code> | (Optional) Fallback action to take in the event that this step is cancelled. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.ExecuteScriptStepProps.property.onFailure">onFailure</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.OnFailure">OnFailure</a></code> | (Optional) Fallback action to take in the event that this step fails. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.ExecuteScriptStepProps.property.timeoutSeconds">timeoutSeconds</a></code> | <code>number</code> | (Optional) timeout seconds to run this step. |
+| <code><a href="#@cdklabs/cdk-ssm-documents.ExecuteScriptStepProps.property.userOutputs">userOutputs</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.Output">Output</a>[]</code> | (Optional) Allows to define step outputs. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.ExecuteScriptStepProps.property.code">code</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.ScriptCode">ScriptCode</a></code> | Inline code to be executed. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.ExecuteScriptStepProps.property.inputPayload">inputPayload</a></code> | <code>{[ key: string ]: <a href="#@cdklabs/cdk-ssm-documents.IGenericVariable">IGenericVariable</a>}</code> | InputPayload that will be passed to the first parameter of the handler. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.ExecuteScriptStepProps.property.language">language</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.ScriptLanguage">ScriptLanguage</a></code> | (Required) Language used to execute the script. |
@@ -22672,6 +23136,19 @@ In a simulation run, this will only be encorced after-the-fact but execution wil
 
 ---
 
+##### `userOutputs`<sup>Optional</sup> <a name="userOutputs" id="@cdklabs/cdk-ssm-documents.ExecuteScriptStepProps.property.userOutputs"></a>
+
+```typescript
+public readonly userOutputs: Output[];
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.Output">Output</a>[]
+- *Default:* undefined
+
+(Optional) Allows to define step outputs.
+
+---
+
 ##### `code`<sup>Required</sup> <a name="code" id="@cdklabs/cdk-ssm-documents.ExecuteScriptStepProps.property.code"></a>
 
 ```typescript
@@ -22756,6 +23233,7 @@ const executeStateMachineStepProps: ExecuteStateMachineStepProps = { ... }
 | <code><a href="#@cdklabs/cdk-ssm-documents.ExecuteStateMachineStepProps.property.onCancel">onCancel</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.OnCancel">OnCancel</a></code> | (Optional) Fallback action to take in the event that this step is cancelled. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.ExecuteStateMachineStepProps.property.onFailure">onFailure</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.OnFailure">OnFailure</a></code> | (Optional) Fallback action to take in the event that this step fails. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.ExecuteStateMachineStepProps.property.timeoutSeconds">timeoutSeconds</a></code> | <code>number</code> | (Optional) timeout seconds to run this step. |
+| <code><a href="#@cdklabs/cdk-ssm-documents.ExecuteStateMachineStepProps.property.userOutputs">userOutputs</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.Output">Output</a>[]</code> | (Optional) Allows to define step outputs. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.ExecuteStateMachineStepProps.property.stateMachineArn">stateMachineArn</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.IStringVariable">IStringVariable</a></code> | The Amazon Resource Name (ARN) of the Step Functions state machine. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.ExecuteStateMachineStepProps.property.executionName">executionName</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.IStringVariable">IStringVariable</a></code> | (Optional) The name of the execution. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.ExecuteStateMachineStepProps.property.input">input</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.IStringVariable">IStringVariable</a></code> | (Optional) A string that contains the JSON input data for the execution. |
@@ -22896,6 +23374,19 @@ public readonly timeoutSeconds: number;
 (Optional) timeout seconds to run this step.
 
 In a simulation run, this will only be encorced after-the-fact but execution will not be stopped mid-step.
+
+---
+
+##### `userOutputs`<sup>Optional</sup> <a name="userOutputs" id="@cdklabs/cdk-ssm-documents.ExecuteStateMachineStepProps.property.userOutputs"></a>
+
+```typescript
+public readonly userOutputs: Output[];
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.Output">Output</a>[]
+- *Default:* undefined
+
+(Optional) Allows to define step outputs.
 
 ---
 
@@ -23748,6 +24239,7 @@ const invokeLambdaFunctionStepProps: InvokeLambdaFunctionStepProps = { ... }
 | <code><a href="#@cdklabs/cdk-ssm-documents.InvokeLambdaFunctionStepProps.property.onCancel">onCancel</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.OnCancel">OnCancel</a></code> | (Optional) Fallback action to take in the event that this step is cancelled. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.InvokeLambdaFunctionStepProps.property.onFailure">onFailure</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.OnFailure">OnFailure</a></code> | (Optional) Fallback action to take in the event that this step fails. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.InvokeLambdaFunctionStepProps.property.timeoutSeconds">timeoutSeconds</a></code> | <code>number</code> | (Optional) timeout seconds to run this step. |
+| <code><a href="#@cdklabs/cdk-ssm-documents.InvokeLambdaFunctionStepProps.property.userOutputs">userOutputs</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.Output">Output</a>[]</code> | (Optional) Allows to define step outputs. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.InvokeLambdaFunctionStepProps.property.functionName">functionName</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.IStringVariable">IStringVariable</a></code> | The name of the Lambda function. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.InvokeLambdaFunctionStepProps.property.clientContext">clientContext</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.IStringVariable">IStringVariable</a></code> | (Optional) The client-specific information. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.InvokeLambdaFunctionStepProps.property.invocationType">invocationType</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.IStringVariable">IStringVariable</a></code> | (Optional) The invocation type. |
@@ -23891,6 +24383,19 @@ public readonly timeoutSeconds: number;
 (Optional) timeout seconds to run this step.
 
 In a simulation run, this will only be encorced after-the-fact but execution will not be stopped mid-step.
+
+---
+
+##### `userOutputs`<sup>Optional</sup> <a name="userOutputs" id="@cdklabs/cdk-ssm-documents.InvokeLambdaFunctionStepProps.property.userOutputs"></a>
+
+```typescript
+public readonly userOutputs: Output[];
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.Output">Output</a>[]
+- *Default:* undefined
+
+(Optional) Allows to define step outputs.
 
 ---
 
@@ -24123,6 +24628,7 @@ const invokeWebhookStepProps: InvokeWebhookStepProps = { ... }
 | <code><a href="#@cdklabs/cdk-ssm-documents.InvokeWebhookStepProps.property.onCancel">onCancel</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.OnCancel">OnCancel</a></code> | (Optional) Fallback action to take in the event that this step is cancelled. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.InvokeWebhookStepProps.property.onFailure">onFailure</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.OnFailure">OnFailure</a></code> | (Optional) Fallback action to take in the event that this step fails. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.InvokeWebhookStepProps.property.timeoutSeconds">timeoutSeconds</a></code> | <code>number</code> | (Optional) timeout seconds to run this step. |
+| <code><a href="#@cdklabs/cdk-ssm-documents.InvokeWebhookStepProps.property.userOutputs">userOutputs</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.Output">Output</a>[]</code> | (Optional) Allows to define step outputs. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.InvokeWebhookStepProps.property.integrationName">integrationName</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.IStringVariable">IStringVariable</a></code> | The name of the Automation integration. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.InvokeWebhookStepProps.property.body">body</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.IStringVariable">IStringVariable</a></code> | (Optional) The payload you want to send when your webhook integration is invoked. |
 
@@ -24262,6 +24768,19 @@ public readonly timeoutSeconds: number;
 (Optional) timeout seconds to run this step.
 
 In a simulation run, this will only be encorced after-the-fact but execution will not be stopped mid-step.
+
+---
+
+##### `userOutputs`<sup>Optional</sup> <a name="userOutputs" id="@cdklabs/cdk-ssm-documents.InvokeWebhookStepProps.property.userOutputs"></a>
+
+```typescript
+public readonly userOutputs: Output[];
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.Output">Output</a>[]
+- *Default:* undefined
+
+(Optional) Allows to define step outputs.
 
 ---
 
@@ -25275,6 +25794,7 @@ const runCommandStepProps: RunCommandStepProps = { ... }
 | <code><a href="#@cdklabs/cdk-ssm-documents.RunCommandStepProps.property.onCancel">onCancel</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.OnCancel">OnCancel</a></code> | (Optional) Fallback action to take in the event that this step is cancelled. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.RunCommandStepProps.property.onFailure">onFailure</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.OnFailure">OnFailure</a></code> | (Optional) Fallback action to take in the event that this step fails. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.RunCommandStepProps.property.timeoutSeconds">timeoutSeconds</a></code> | <code>number</code> | (Optional) timeout seconds to run this step. |
+| <code><a href="#@cdklabs/cdk-ssm-documents.RunCommandStepProps.property.userOutputs">userOutputs</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.Output">Output</a>[]</code> | (Optional) Allows to define step outputs. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.RunCommandStepProps.property.documentName">documentName</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.IStringVariable">IStringVariable</a></code> | If the Command type document is owned by you or AWS, specify the name of the document. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.RunCommandStepProps.property.targets">targets</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.IStringListVariable">IStringListVariable</a> \| <a href="#@cdklabs/cdk-ssm-documents.IMapListVariable">IMapListVariable</a></code> | The instance IDs where you want the command to run. You can specify a maximum of 50 IDs. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.RunCommandStepProps.property.cloudWatchOutputConfig">cloudWatchOutputConfig</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.IStringMapVariable">IStringMapVariable</a></code> | (Optional) Configuration options for sending command output to Amazon CloudWatch Logs. |
@@ -25426,6 +25946,19 @@ public readonly timeoutSeconds: number;
 (Optional) timeout seconds to run this step.
 
 In a simulation run, this will only be encorced after-the-fact but execution will not be stopped mid-step.
+
+---
+
+##### `userOutputs`<sup>Optional</sup> <a name="userOutputs" id="@cdklabs/cdk-ssm-documents.RunCommandStepProps.property.userOutputs"></a>
+
+```typescript
+public readonly userOutputs: Output[];
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.Output">Output</a>[]
+- *Default:* undefined
+
+(Optional) Allows to define step outputs.
 
 ---
 
@@ -26093,6 +26626,7 @@ const runInstanceStepProps: RunInstanceStepProps = { ... }
 | <code><a href="#@cdklabs/cdk-ssm-documents.RunInstanceStepProps.property.onCancel">onCancel</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.OnCancel">OnCancel</a></code> | (Optional) Fallback action to take in the event that this step is cancelled. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.RunInstanceStepProps.property.onFailure">onFailure</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.OnFailure">OnFailure</a></code> | (Optional) Fallback action to take in the event that this step fails. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.RunInstanceStepProps.property.timeoutSeconds">timeoutSeconds</a></code> | <code>number</code> | (Optional) timeout seconds to run this step. |
+| <code><a href="#@cdklabs/cdk-ssm-documents.RunInstanceStepProps.property.userOutputs">userOutputs</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.Output">Output</a>[]</code> | (Optional) Allows to define step outputs. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.RunInstanceStepProps.property.imageId">imageId</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.IStringVariable">IStringVariable</a></code> | The ID of the Amazon Machine Image (AMI). |
 | <code><a href="#@cdklabs/cdk-ssm-documents.RunInstanceStepProps.property.additionalInfo">additionalInfo</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.IStringVariable">IStringVariable</a></code> | (Optional) Reserved. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.RunInstanceStepProps.property.blockDeviceMappings">blockDeviceMappings</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.IMapListVariable">IMapListVariable</a></code> | (Optional) The block devices for the instance. |
@@ -26254,6 +26788,19 @@ public readonly timeoutSeconds: number;
 (Optional) timeout seconds to run this step.
 
 In a simulation run, this will only be encorced after-the-fact but execution will not be stopped mid-step.
+
+---
+
+##### `userOutputs`<sup>Optional</sup> <a name="userOutputs" id="@cdklabs/cdk-ssm-documents.RunInstanceStepProps.property.userOutputs"></a>
+
+```typescript
+public readonly userOutputs: Output[];
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.Output">Output</a>[]
+- *Default:* undefined
+
+(Optional) Allows to define step outputs.
 
 ---
 
@@ -27264,6 +27811,7 @@ const sleepStepProps: SleepStepProps = { ... }
 | <code><a href="#@cdklabs/cdk-ssm-documents.SleepStepProps.property.onCancel">onCancel</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.OnCancel">OnCancel</a></code> | (Optional) Fallback action to take in the event that this step is cancelled. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.SleepStepProps.property.onFailure">onFailure</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.OnFailure">OnFailure</a></code> | (Optional) Fallback action to take in the event that this step fails. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.SleepStepProps.property.timeoutSeconds">timeoutSeconds</a></code> | <code>number</code> | (Optional) timeout seconds to run this step. |
+| <code><a href="#@cdklabs/cdk-ssm-documents.SleepStepProps.property.userOutputs">userOutputs</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.Output">Output</a>[]</code> | (Optional) Allows to define step outputs. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.SleepStepProps.property.sleepSeconds">sleepSeconds</a></code> | <code>number</code> | (Required) The amount of seconds to sleep for. |
 
 ---
@@ -27402,6 +27950,19 @@ public readonly timeoutSeconds: number;
 (Optional) timeout seconds to run this step.
 
 In a simulation run, this will only be encorced after-the-fact but execution will not be stopped mid-step.
+
+---
+
+##### `userOutputs`<sup>Optional</sup> <a name="userOutputs" id="@cdklabs/cdk-ssm-documents.SleepStepProps.property.userOutputs"></a>
+
+```typescript
+public readonly userOutputs: Output[];
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.Output">Output</a>[]
+- *Default:* undefined
+
+(Optional) Allows to define step outputs.
 
 ---
 
@@ -28851,6 +29412,7 @@ const updateVariableProps: UpdateVariableProps = { ... }
 | <code><a href="#@cdklabs/cdk-ssm-documents.UpdateVariableProps.property.onCancel">onCancel</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.OnCancel">OnCancel</a></code> | (Optional) Fallback action to take in the event that this step is cancelled. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.UpdateVariableProps.property.onFailure">onFailure</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.OnFailure">OnFailure</a></code> | (Optional) Fallback action to take in the event that this step fails. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.UpdateVariableProps.property.timeoutSeconds">timeoutSeconds</a></code> | <code>number</code> | (Optional) timeout seconds to run this step. |
+| <code><a href="#@cdklabs/cdk-ssm-documents.UpdateVariableProps.property.userOutputs">userOutputs</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.Output">Output</a>[]</code> | (Optional) Allows to define step outputs. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.UpdateVariableProps.property.variableName">variableName</a></code> | <code>string</code> | (Required) The name of the variable to be updated. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.UpdateVariableProps.property.variableValue">variableValue</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.IGenericVariable">IGenericVariable</a></code> | (Required) The value of the variable to be updated. |
 
@@ -28993,6 +29555,19 @@ In a simulation run, this will only be encorced after-the-fact but execution wil
 
 ---
 
+##### `userOutputs`<sup>Optional</sup> <a name="userOutputs" id="@cdklabs/cdk-ssm-documents.UpdateVariableProps.property.userOutputs"></a>
+
+```typescript
+public readonly userOutputs: Output[];
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.Output">Output</a>[]
+- *Default:* undefined
+
+(Optional) Allows to define step outputs.
+
+---
+
 ##### `variableName`<sup>Required</sup> <a name="variableName" id="@cdklabs/cdk-ssm-documents.UpdateVariableProps.property.variableName"></a>
 
 ```typescript
@@ -29088,6 +29663,7 @@ const waitForResourceStepProps: WaitForResourceStepProps = { ... }
 | <code><a href="#@cdklabs/cdk-ssm-documents.WaitForResourceStepProps.property.onCancel">onCancel</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.OnCancel">OnCancel</a></code> | (Optional) Fallback action to take in the event that this step is cancelled. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.WaitForResourceStepProps.property.onFailure">onFailure</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.OnFailure">OnFailure</a></code> | (Optional) Fallback action to take in the event that this step fails. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.WaitForResourceStepProps.property.timeoutSeconds">timeoutSeconds</a></code> | <code>number</code> | (Optional) timeout seconds to run this step. |
+| <code><a href="#@cdklabs/cdk-ssm-documents.WaitForResourceStepProps.property.userOutputs">userOutputs</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.Output">Output</a>[]</code> | (Optional) Allows to define step outputs. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.WaitForResourceStepProps.property.apiParams">apiParams</a></code> | <code>{[ key: string ]: any}</code> | (Required) API Params to submit with the request to the api. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.WaitForResourceStepProps.property.pascalCaseApi">pascalCaseApi</a></code> | <code>string</code> | (Required) The AWS api represented in PascalCase. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.WaitForResourceStepProps.property.service">service</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AwsService">AwsService</a></code> | (Required) The AWS service to be invoked. |
@@ -29232,6 +29808,19 @@ public readonly timeoutSeconds: number;
 (Optional) timeout seconds to run this step.
 
 In a simulation run, this will only be encorced after-the-fact but execution will not be stopped mid-step.
+
+---
+
+##### `userOutputs`<sup>Optional</sup> <a name="userOutputs" id="@cdklabs/cdk-ssm-documents.WaitForResourceStepProps.property.userOutputs"></a>
+
+```typescript
+public readonly userOutputs: Output[];
+```
+
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.Output">Output</a>[]
+- *Default:* undefined
+
+(Optional) Allows to define step outputs.
 
 ---
 
