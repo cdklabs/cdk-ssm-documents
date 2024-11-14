@@ -1217,6 +1217,8 @@ Synthesize before calling this function!
 
 You can use this to Synthesize: cdk.SynthUtils.synthesize(stack);
 
+You can use this to Synthesize: cdk.SynthUtils.synthesize(stack);
+
 Converts the objects define in the SSM Document (including all of the steps) to an SSM document string.
 The format is dependency on the documentFormat property provided to the class.
 The yaml can be used as is and will behave (or at least should behave) as was simulated in the runSimulation().
@@ -2968,6 +2970,8 @@ public print(): string
 ```
 
 Synthesize before calling this function!
+
+You can use this to Synthesize: cdk.SynthUtils.synthesize(stack);
 
 You can use this to Synthesize: cdk.SynthUtils.synthesize(stack);
 
@@ -14406,6 +14410,8 @@ Synthesize before calling this function!
 
 You can use this to Synthesize: cdk.SynthUtils.synthesize(stack);
 
+You can use this to Synthesize: cdk.SynthUtils.synthesize(stack);
+
 Converts the objects define in the SSM Document (including all of the steps) to an SSM document string.
 The format is dependency on the documentFormat property provided to the class.
 The yaml can be used as is and will behave (or at least should behave) as was simulated in the runSimulation().
@@ -14956,6 +14962,8 @@ public print(): string
 ```
 
 Synthesize before calling this function!
+
+You can use this to Synthesize: cdk.SynthUtils.synthesize(stack);
 
 You can use this to Synthesize: cdk.SynthUtils.synthesize(stack);
 
@@ -25632,6 +25640,10 @@ You can specify a maximum of 50 IDs.
 
 You can also use the pseudo parameter {{ RESOURCE_ID }} in place of instance IDs to run the command on all instances in the target group. For more information about pseudo parameters, see [About pseudo parameters](https://docs.aws.amazon.com/systems-manager/latest/userguide/mw-cli-register-tasks-parameters.html).
 
+You can specify a maximum of 50 IDs.
+
+You can also use the pseudo parameter {{ RESOURCE_ID }} in place of instance IDs to run the command on all instances in the target group. For more information about pseudo parameters, see [About pseudo parameters](https://docs.aws.amazon.com/systems-manager/latest/userguide/mw-cli-register-tasks-parameters.html).
+
 Another alternative is to send commands to a fleet of instances by using the Targets parameter. The Targets parameter accepts Amazon Elastic Compute Cloud (Amazon EC2) tags. For more information about how to use the Targets parameter, see [Using targets and rate controls to send commands to a fleet](https://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html).
 
 ---
@@ -26034,6 +26046,10 @@ public readonly targets: IStringListVariable | IMapListVariable;
 - *Type:* <a href="#@cdklabs/cdk-ssm-documents.IStringListVariable">IStringListVariable</a> | <a href="#@cdklabs/cdk-ssm-documents.IMapListVariable">IMapListVariable</a>
 
 The instance IDs where you want the command to run.
+
+You can specify a maximum of 50 IDs.
+
+You can also use the pseudo parameter {{ RESOURCE_ID }} in place of instance IDs to run the command on all instances in the target group. For more information about pseudo parameters, see [About pseudo parameters](https://docs.aws.amazon.com/systems-manager/latest/userguide/mw-cli-register-tasks-parameters.html).
 
 You can specify a maximum of 50 IDs.
 
@@ -44367,6 +44383,8 @@ public simulate(inputs: {[ key: string ]: any}): DocumentResult
 ```
 
 Synthesize before calling this function!
+
+You can use this to Synthesize: SynthUtils.synthesize(stack);
 
 You can use this to Synthesize: SynthUtils.synthesize(stack);
 
