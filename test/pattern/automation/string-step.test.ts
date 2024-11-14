@@ -39,7 +39,7 @@ describe('StringStep', function() {
                             Type: "String"
                             Selector: "$.Payload.MyReturn"
                         inputs: 
-                          Runtime: "python3.6"
+                          Runtime: "python3.11"
                           Handler: "my_func"
                           InputPayload: 
                             "MyInput": "{{ MyInput }}"

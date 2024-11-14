@@ -32,7 +32,7 @@ describe('HelloWorld', function() {
                     name: 'PrependWithGreeting',
                     action: 'aws:executeScript',
                     inputs: {
-                      Runtime: 'python3.6',
+                      Runtime: 'python3.11',
                       Handler: 'my_func',
                       Script: 'def my_func(args, context):\n    return {"Greeting": "Hello " + args["someone"]}\n\n',
                       InputPayload: {

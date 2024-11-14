@@ -41,7 +41,7 @@ export class HelloWorld extends Stack {
 
     myDoc.addStep(new ExecuteScriptStep(this, "MyExecuteStep", {
       name: "step1",
-      language: ScriptLanguage.python(PythonVersion.VERSION_3_6, 'my_func'),
+      language: ScriptLanguage.python(PythonVersion.VERSION_3_11, 'my_func'),
       code: ScriptCode.fromFile(resolve("test/test_file.py")),
       // OR ScriptCode.inline("def my_func(args, context):\n  return {'MyReturn': args['MyInput'] + '-suffix'}\n"),
       outputs: [{

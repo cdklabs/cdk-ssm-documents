@@ -86,6 +86,18 @@ export class FileScriptCode extends ScriptCode {
 }
 
 /**
+ * Python runtime to use when writing SSM Document.
+ * Simulation will use local python version.
+ */
+export enum PythonVersion {
+  VERSION_3_7,
+  VERSION_3_8,
+  VERSION_3_9,
+  VERSION_3_10,
+  VERSION_3_11,
+}
+
+/**
  * Specifies the script language as described in the "Runtime" argument here:
  * https://docs.aws.amazon.com/systems-manager/latest/userguide/automation-action-executeScript.html
  */
@@ -103,7 +115,7 @@ export abstract class ScriptLanguage {
   /**
    * Creates a ScriptLanguage based on the provided runtime.
    * Prefer one of the other static constructors if possible.
-   * @param runtime is the runtime name (such as "python3.6").
+   * @param runtime is the runtime name (such as "python3.11").
    * @param handlerName to be provided for python executions.
    */
   static fromRuntime(runtime: string, handlerName?: string): ScriptLanguage {
@@ -112,18 +124,15 @@ export abstract class ScriptLanguage {
     }
     throw new Error('Unrecognized runtime version ' + runtime);
   }
-
+  
   private static pythonVersion(runtime: string) {
-    switch (runtime) {
-      case 'python3.6':
-        return PythonVersion.VERSION_3_6;
-      case 'python3.7':
-        return PythonVersion.VERSION_3_7;
-      case 'python3.8':
-        return PythonVersion.VERSION_3_8;
-      default:
-        throw new Error('Unrecognized python version ' + runtime);
+    const version = PythonScript.STRING_TO_VERSION[runtime];
+
+    if (version === undefined) {
+      throw new Error('Unrecognized python version ' + runtime);
     }
+
+    return version;
   }
 
   /**
@@ -157,15 +166,24 @@ class PythonScript extends ScriptLanguage {
     this.handlerName = handlerName;
   }
 
+  public static STRING_TO_VERSION: Record<string, PythonVersion> = {
+    'python3.7': PythonVersion.VERSION_3_7,
+    'python3.8': PythonVersion.VERSION_3_8,
+    'python3.9': PythonVersion.VERSION_3_9,
+    'python3.10': PythonVersion.VERSION_3_10,
+    'python3.11': PythonVersion.VERSION_3_11,
+  }
+
+  public static VERSION_TO_STRING: Record<PythonVersion, string> = {
+    [PythonVersion.VERSION_3_7]: 'python3.7',
+    [PythonVersion.VERSION_3_8]: 'python3.8',
+    [PythonVersion.VERSION_3_9]: 'python3.9',
+    [PythonVersion.VERSION_3_10]: 'python3.10',
+    [PythonVersion.VERSION_3_11]: 'python3.11',
+  }
+
   runtime(): string {
-    switch (this.version) {
-      case PythonVersion.VERSION_3_6:
-        return 'python3.6';
-      case PythonVersion.VERSION_3_7:
-        return 'python3.7';
-      case PythonVersion.VERSION_3_8:
-        return 'python3.8';
-    }
+    return PythonScript.VERSION_TO_STRING[this.version];
   }
 
   fileSuffix(): string {
@@ -183,16 +201,6 @@ class PythonScript extends ScriptLanguage {
     const pyHandler = new PythonScriptHandler();
     return pyHandler.run(code.createOrGetFile(this.fileSuffix()), this.handlerName, inputs);
   }
-}
-
-/**
- * Python runtime to use when writing SSM Document.
- * Simulation will use local python version.
- */
-export enum PythonVersion {
-  VERSION_3_6,
-  VERSION_3_7,
-  VERSION_3_8,
 }
 
 /**
