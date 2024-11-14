@@ -27,7 +27,7 @@ export class TimedDocument extends AutomationDocument {
       code: ScriptCode.inline('from datetime import datetime, timezone\n\n' +
                 'def script_handler(params: dict, context):\n' +
                 '    return datetime.now(timezone.utc).isoformat()\n\n'),
-      language: ScriptLanguage.python(PythonVersion.VERSION_3_6, 'script_handler'),
+      language: ScriptLanguage.python(PythonVersion.VERSION_3_11, 'script_handler'),
       outputs: [{ outputType: DataTypeEnum.STRING, name: 'StartTime', selector: '$.Payload' }],
       inputPayload: {},
     });
@@ -36,7 +36,7 @@ export class TimedDocument extends AutomationDocument {
                 'from dateutil import parser\n\n' +
                 'def script_handler(params: dict, context):\n' +
                 '    return (datetime.now(timezone.utc) - parser.parse(params[\'startTime\'])).seconds\n\n'),
-      language: ScriptLanguage.python(PythonVersion.VERSION_3_6, 'script_handler'),
+      language: ScriptLanguage.python(PythonVersion.VERSION_3_11, 'script_handler'),
       outputs: [{ outputType: DataTypeEnum.INTEGER, name: 'RecoveryTime', selector: '$.Payload' }],
       inputPayload: { startTime: StringVariable.of('RecordStartTime.StartTime') },
     });

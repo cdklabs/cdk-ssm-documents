@@ -18,7 +18,7 @@ describe('ExecuteScriptStep', function() {
     it('Invokes and gets python response', function() {
       const scriptStep = new ExecuteScriptStep(new Stack(), 'id', {
         name: 'step1',
-        language: ScriptLanguage.python(PythonVersion.VERSION_3_6, 'my_func'),
+        language: ScriptLanguage.python(PythonVersion.VERSION_3_11, 'my_func'),
         code: ScriptCode.fromFile(resolve('test/test_file.py')),
         outputs: [{
           outputType: DataTypeEnum.STRING,
@@ -36,7 +36,7 @@ describe('ExecuteScriptStep', function() {
     it('Invokes and gets python response', function() {
       const scriptStep = new ExecuteScriptStep(new Stack(), 'id', {
         name: 'step1',
-        language: ScriptLanguage.python(PythonVersion.VERSION_3_6, 'my_func'),
+        language: ScriptLanguage.python(PythonVersion.VERSION_3_11, 'my_func'),
         code: ScriptCode.inline('def my_func(args, context):\n' +
                     '    return {"MyReturn": args["SomeInput"] + "-suffix"}\n' +
                     '\n' +
@@ -60,7 +60,7 @@ describe('ExecuteScriptStep', function() {
     it('Output selectors must start with $.Payload.', function() {
       assert.throws(() => new ExecuteScriptStep(new Stack(), 'id', {
         name: 'step1',
-        language: ScriptLanguage.python(PythonVersion.VERSION_3_6, 'my_func'),
+        language: ScriptLanguage.python(PythonVersion.VERSION_3_11, 'my_func'),
         code: ScriptCode.fromFile(resolve('test/test_file.py')),
         outputs: [{
           outputType: DataTypeEnum.STRING,
@@ -73,7 +73,7 @@ describe('ExecuteScriptStep', function() {
     it('Throws if output selector not found in result', function() {
       const scriptStep = new ExecuteScriptStep(new Stack(), 'id', {
         name: 'step1',
-        language: ScriptLanguage.python(PythonVersion.VERSION_3_6, 'my_func'),
+        language: ScriptLanguage.python(PythonVersion.VERSION_3_11, 'my_func'),
         code: ScriptCode.fromFile(resolve('test/test_file.py')),
         outputs: [{
           outputType: DataTypeEnum.STRING,
@@ -88,7 +88,7 @@ describe('ExecuteScriptStep', function() {
     it('Fails if input required not provided', function() {
       const scriptStep = new ExecuteScriptStep(new Stack(), 'id', {
         name: 'step1',
-        language: ScriptLanguage.python(PythonVersion.VERSION_3_6, 'my_func'),
+        language: ScriptLanguage.python(PythonVersion.VERSION_3_11, 'my_func'),
         code: ScriptCode.fromFile(resolve('test/test_file.py')),
         outputs: [{
           outputType: DataTypeEnum.STRING,
@@ -103,7 +103,7 @@ describe('ExecuteScriptStep', function() {
     it('Fails if python has bug', function() {
       const scriptStep = new ExecuteScriptStep(new Stack(), 'id', {
         name: 'step1',
-        language: ScriptLanguage.python(PythonVersion.VERSION_3_6, 'bad_func'),
+        language: ScriptLanguage.python(PythonVersion.VERSION_3_11, 'bad_func'),
         code: ScriptCode.fromFile(resolve('test/test_file.py')),
         outputs: [{
           outputType: DataTypeEnum.STRING,
@@ -124,7 +124,7 @@ describe('ExecuteScriptStep', function() {
     it('Builds entry as per SSM Document', function() {
       const step = new ExecuteScriptStep(new Stack(), 'id', {
         name: 'step1',
-        language: ScriptLanguage.python(PythonVersion.VERSION_3_6, 'my_func'),
+        language: ScriptLanguage.python(PythonVersion.VERSION_3_11, 'my_func'),
         code: ScriptCode.fromFile(resolve('test/test_file.py')),
         outputs: [{
           outputType: DataTypeEnum.STRING,
@@ -141,7 +141,7 @@ describe('ExecuteScriptStep', function() {
           InputPayload: {
             MyInput: '{{ MyInput }}',
           },
-          Runtime: 'python3.6',
+          Runtime: 'python3.11',
           Script: 'def my_func(args, context):\n' +
                     '    return {"MyReturn": args["MyInput"] + "-suffix"}\n' +
                     '\n' +
@@ -169,7 +169,7 @@ describe('ExecuteScriptStep', function() {
         description: '## HelloWorldScriptExecution\nReturns the Echo input value.\n',
         inputs: {
           Script: '..script..',
-          Runtime: 'python3.6',
+          Runtime: 'python3.11',
         },
         isEnd: true,
         onFailure: 'Abort',
