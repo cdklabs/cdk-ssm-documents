@@ -24,7 +24,7 @@ export class HelloWorld extends Stack {
     });
 
     const greeting = new ExecuteScriptStep(this, 'PrependWithGreeting', {
-      language: ScriptLanguage.python(PythonVersion.VERSION_3_6, 'my_func'),
+      language: ScriptLanguage.python(PythonVersion.VERSION_3_11, 'my_func'),
       code: ScriptCode.inline('def my_func(args, context):\n' +
         '    return {"Greeting": "Hello " + args["someone"]}\n' +
         '\n'),

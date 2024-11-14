@@ -4,7 +4,8 @@
 
 ### ApplicationsStep <a name="ApplicationsStep" id="@cdklabs/cdk-ssm-documents.ApplicationsStep"></a>
 
-CommandStep implemenation for aws:applications https://docs.aws.amazon.com/systems-manager/latest/userguide/ssm-plugins.html#aws-applications.
+CommandStep implemenation for aws:applications
+ https://docs.aws.amazon.com/systems-manager/latest/userguide/ssm-plugins.html#aws-applications.
 
 #### Initializers <a name="Initializers" id="@cdklabs/cdk-ssm-documents.ApplicationsStep.Initializer"></a>
 
@@ -339,7 +340,8 @@ public readonly sourceHash: IStringVariable;
 
 ### ApproveStep <a name="ApproveStep" id="@cdklabs/cdk-ssm-documents.ApproveStep"></a>
 
-AutomationStep implementation for aws:approve https://docs.aws.amazon.com/systems-manager/latest/userguide/automation-action-approve.html.
+AutomationStep implementation for aws:approve
+ https://docs.aws.amazon.com/systems-manager/latest/userguide/automation-action-approve.html.
 
 #### Initializers <a name="Initializers" id="@cdklabs/cdk-ssm-documents.ApproveStep.Initializer"></a>
 
@@ -1185,7 +1187,7 @@ new AutomationDocument(scope: Construct, id: string, props: AutomationDocumentPr
 | --- | --- |
 | <code><a href="#@cdklabs/cdk-ssm-documents.AutomationDocument.toString">toString</a></code> | Returns a string representation of this construct. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.AutomationDocument.documentType">documentType</a></code> | *No description.* |
-| <code><a href="#@cdklabs/cdk-ssm-documents.AutomationDocument.print">print</a></code> | Synthesize before calling this function! You can use this to Synthesize: cdk.SynthUtils.synthesize(stack); |
+| <code><a href="#@cdklabs/cdk-ssm-documents.AutomationDocument.print">print</a></code> | Synthesize before calling this function! |
 | <code><a href="#@cdklabs/cdk-ssm-documents.AutomationDocument.addStep">addStep</a></code> | *No description.* |
 | <code><a href="#@cdklabs/cdk-ssm-documents.AutomationDocument.collectedSteps">collectedSteps</a></code> | *No description.* |
 
@@ -1211,7 +1213,9 @@ public documentType(): string
 public print(): string
 ```
 
-Synthesize before calling this function! You can use this to Synthesize: cdk.SynthUtils.synthesize(stack);
+Synthesize before calling this function!
+
+You can use this to Synthesize: cdk.SynthUtils.synthesize(stack);
 
 Converts the objects define in the SSM Document (including all of the steps) to an SSM document string.
 The format is dependency on the documentFormat property provided to the class.
@@ -2136,7 +2140,8 @@ public readonly DEFAULT_TIMEOUT: number;
 
 ### BranchStep <a name="BranchStep" id="@cdklabs/cdk-ssm-documents.BranchStep"></a>
 
-AutomationStep implementation of aws:branch https://docs.aws.amazon.com/systems-manager/latest/userguide/automation-action-branch.html.
+AutomationStep implementation of aws:branch
+ https://docs.aws.amazon.com/systems-manager/latest/userguide/automation-action-branch.html.
 
 #### Initializers <a name="Initializers" id="@cdklabs/cdk-ssm-documents.BranchStep.Initializer"></a>
 
@@ -2497,7 +2502,8 @@ public readonly DEFAULT_TIMEOUT: number;
 
 ### ChangeInstanceStateStep <a name="ChangeInstanceStateStep" id="@cdklabs/cdk-ssm-documents.ChangeInstanceStateStep"></a>
 
-AutomationStep implemenation for aws:changeInstanceState https://docs.aws.amazon.com/systems-manager/latest/userguide/automation-action-changestate.html.
+AutomationStep implemenation for aws:changeInstanceState
+ https://docs.aws.amazon.com/systems-manager/latest/userguide/automation-action-changestate.html.
 
 #### Initializers <a name="Initializers" id="@cdklabs/cdk-ssm-documents.ChangeInstanceStateStep.Initializer"></a>
 
@@ -2891,7 +2897,9 @@ public readonly DEFAULT_TIMEOUT: number;
 
 ### CommandDocument <a name="CommandDocument" id="@cdklabs/cdk-ssm-documents.CommandDocument"></a>
 
-https://docs.aws.amazon.com/systems-manager/latest/userguide/ssm-plugins.html The CommandDocument will delegate execution responsibility to the CammandSteps that it receives. The SsmDocument parent class contains methods to runSimulation() as well as print().
+https://docs.aws.amazon.com/systems-manager/latest/userguide/ssm-plugins.html
+ The CommandDocument will delegate execution responsibility to the CammandSteps that it receives.
+ The SsmDocument parent class contains methods to runSimulation() as well as print().
 
 #### Initializers <a name="Initializers" id="@cdklabs/cdk-ssm-documents.CommandDocument.Initializer"></a>
 
@@ -2933,7 +2941,7 @@ new CommandDocument(scope: Construct, id: string, props: CommandDocumentProps)
 | --- | --- |
 | <code><a href="#@cdklabs/cdk-ssm-documents.CommandDocument.toString">toString</a></code> | Returns a string representation of this construct. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.CommandDocument.documentType">documentType</a></code> | *No description.* |
-| <code><a href="#@cdklabs/cdk-ssm-documents.CommandDocument.print">print</a></code> | Synthesize before calling this function! You can use this to Synthesize: cdk.SynthUtils.synthesize(stack); |
+| <code><a href="#@cdklabs/cdk-ssm-documents.CommandDocument.print">print</a></code> | Synthesize before calling this function! |
 | <code><a href="#@cdklabs/cdk-ssm-documents.CommandDocument.addStep">addStep</a></code> | *No description.* |
 | <code><a href="#@cdklabs/cdk-ssm-documents.CommandDocument.collectedSteps">collectedSteps</a></code> | *No description.* |
 
@@ -2959,7 +2967,9 @@ public documentType(): string
 public print(): string
 ```
 
-Synthesize before calling this function! You can use this to Synthesize: cdk.SynthUtils.synthesize(stack);
+Synthesize before calling this function!
+
+You can use this to Synthesize: cdk.SynthUtils.synthesize(stack);
 
 Converts the objects define in the SSM Document (including all of the steps) to an SSM document string.
 The format is dependency on the documentFormat property provided to the class.
@@ -3636,7 +3646,8 @@ The tree node.
 
 ### ConfigureDockerStep <a name="ConfigureDockerStep" id="@cdklabs/cdk-ssm-documents.ConfigureDockerStep"></a>
 
-AutomationStep implemenation for aws:UpdateAgent https://docs.aws.amazon.com/systems-manager/latest/userguide/ssm-plugins.html#aws-configuredocker.
+AutomationStep implemenation for aws:UpdateAgent
+ https://docs.aws.amazon.com/systems-manager/latest/userguide/ssm-plugins.html#aws-configuredocker.
 
 #### Initializers <a name="Initializers" id="@cdklabs/cdk-ssm-documents.ConfigureDockerStep.Initializer"></a>
 
@@ -3938,7 +3949,8 @@ public readonly installAction: IActionVariable;
 
 ### ConfigurePackageStep <a name="ConfigurePackageStep" id="@cdklabs/cdk-ssm-documents.ConfigurePackageStep"></a>
 
-CommandStep implemenation for aws:configurePackage https://docs.aws.amazon.com/systems-manager/latest/userguide/ssm-plugins.html#aws-configurepackage.
+CommandStep implemenation for aws:configurePackage
+ https://docs.aws.amazon.com/systems-manager/latest/userguide/ssm-plugins.html#aws-configurepackage.
 
 #### Initializers <a name="Initializers" id="@cdklabs/cdk-ssm-documents.ConfigurePackageStep.Initializer"></a>
 
@@ -4284,7 +4296,8 @@ public readonly version: IStringVariable;
 
 ### CopyImageStep <a name="CopyImageStep" id="@cdklabs/cdk-ssm-documents.CopyImageStep"></a>
 
-AutomationStep implemenation for aws:copyImage https://docs.aws.amazon.com/systems-manager/latest/userguide/automation-action-copyimage.html.
+AutomationStep implemenation for aws:copyImage
+ https://docs.aws.amazon.com/systems-manager/latest/userguide/automation-action-copyimage.html.
 
 #### Initializers <a name="Initializers" id="@cdklabs/cdk-ssm-documents.CopyImageStep.Initializer"></a>
 
@@ -4700,7 +4713,8 @@ public readonly DEFAULT_TIMEOUT: number;
 
 ### CreateImageStep <a name="CreateImageStep" id="@cdklabs/cdk-ssm-documents.CreateImageStep"></a>
 
-AutomationStep implemenation for aws:createImage https://docs.aws.amazon.com/systems-manager/latest/userguide/automation-action-create.html.
+AutomationStep implemenation for aws:createImage
+ https://docs.aws.amazon.com/systems-manager/latest/userguide/automation-action-create.html.
 
 #### Initializers <a name="Initializers" id="@cdklabs/cdk-ssm-documents.CreateImageStep.Initializer"></a>
 
@@ -5094,7 +5108,8 @@ public readonly DEFAULT_TIMEOUT: number;
 
 ### CreateStackStep <a name="CreateStackStep" id="@cdklabs/cdk-ssm-documents.CreateStackStep"></a>
 
-AutomationStep implementation for aws:createStack https://docs.aws.amazon.com/systems-manager/latest/userguide/automation-action-createstack.html.
+AutomationStep implementation for aws:createStack
+ https://docs.aws.amazon.com/systems-manager/latest/userguide/automation-action-createstack.html.
 
 #### Initializers <a name="Initializers" id="@cdklabs/cdk-ssm-documents.CreateStackStep.Initializer"></a>
 
@@ -5587,7 +5602,8 @@ public readonly DEFAULT_TIMEOUT: number;
 
 ### CreateTagsStep <a name="CreateTagsStep" id="@cdklabs/cdk-ssm-documents.CreateTagsStep"></a>
 
-AutomationStep implemenation for aws:createTags https://docs.aws.amazon.com/systems-manager/latest/userguide/automation-action-createtag.html.
+AutomationStep implemenation for aws:createTags
+ https://docs.aws.amazon.com/systems-manager/latest/userguide/automation-action-createtag.html.
 
 #### Initializers <a name="Initializers" id="@cdklabs/cdk-ssm-documents.CreateTagsStep.Initializer"></a>
 
@@ -5959,7 +5975,8 @@ public readonly DEFAULT_TIMEOUT: number;
 
 ### DeleteImageStep <a name="DeleteImageStep" id="@cdklabs/cdk-ssm-documents.DeleteImageStep"></a>
 
-AutomationStep implementation for aws:deleteImage https://docs.aws.amazon.com/systems-manager/latest/userguide/automation-action-delete.html.
+AutomationStep implementation for aws:deleteImage
+ https://docs.aws.amazon.com/systems-manager/latest/userguide/automation-action-delete.html.
 
 #### Initializers <a name="Initializers" id="@cdklabs/cdk-ssm-documents.DeleteImageStep.Initializer"></a>
 
@@ -6309,7 +6326,8 @@ public readonly DEFAULT_TIMEOUT: number;
 
 ### DeleteStackStep <a name="DeleteStackStep" id="@cdklabs/cdk-ssm-documents.DeleteStackStep"></a>
 
-AutomationStep implemenation for aws:deleteStack https://docs.aws.amazon.com/systems-manager/latest/userguide/automation-action-deletestack.html.
+AutomationStep implemenation for aws:deleteStack
+ https://docs.aws.amazon.com/systems-manager/latest/userguide/automation-action-deletestack.html.
 
 #### Initializers <a name="Initializers" id="@cdklabs/cdk-ssm-documents.DeleteStackStep.Initializer"></a>
 
@@ -6670,7 +6688,8 @@ public readonly DEFAULT_TIMEOUT: number;
 
 ### DomainJoinStep <a name="DomainJoinStep" id="@cdklabs/cdk-ssm-documents.DomainJoinStep"></a>
 
-CommandStep implemenation for aws:softwareInventory https://docs.aws.amazon.com/systems-manager/latest/userguide/ssm-plugins.html#aws-domainJoin.
+CommandStep implemenation for aws:softwareInventory
+ https://docs.aws.amazon.com/systems-manager/latest/userguide/ssm-plugins.html#aws-domainJoin.
 
 #### Initializers <a name="Initializers" id="@cdklabs/cdk-ssm-documents.DomainJoinStep.Initializer"></a>
 
@@ -7005,7 +7024,8 @@ public readonly dnsIpAddresses: IStringListVariable;
 
 ### DownloadContentStep <a name="DownloadContentStep" id="@cdklabs/cdk-ssm-documents.DownloadContentStep"></a>
 
-AutomationStep implemenation for aws:downloadContent https://docs.aws.amazon.com/systems-manager/latest/userguide/ssm-plugins.html#aws-downloadContent.
+AutomationStep implemenation for aws:downloadContent
+ https://docs.aws.amazon.com/systems-manager/latest/userguide/ssm-plugins.html#aws-downloadContent.
 
 #### Initializers <a name="Initializers" id="@cdklabs/cdk-ssm-documents.DownloadContentStep.Initializer"></a>
 
@@ -7318,7 +7338,8 @@ public readonly destinationPath: IStringVariable;
 
 ### ExecuteAutomationStep <a name="ExecuteAutomationStep" id="@cdklabs/cdk-ssm-documents.ExecuteAutomationStep"></a>
 
-AutomationStep implementation for aws:executeAutomation https://docs.aws.amazon.com/systems-manager/latest/userguide/automation-action-executeAutomation.html.
+AutomationStep implementation for aws:executeAutomation
+ https://docs.aws.amazon.com/systems-manager/latest/userguide/automation-action-executeAutomation.html.
 
 #### Initializers <a name="Initializers" id="@cdklabs/cdk-ssm-documents.ExecuteAutomationStep.Initializer"></a>
 
@@ -7767,7 +7788,8 @@ public readonly DEFAULT_TIMEOUT: number;
 
 ### ExecuteScriptStep <a name="ExecuteScriptStep" id="@cdklabs/cdk-ssm-documents.ExecuteScriptStep"></a>
 
-AutomationStep implementation for aws:executeScript https://docs.aws.amazon.com/systems-manager/latest/userguide/automation-action-executeScript.html.
+AutomationStep implementation for aws:executeScript
+ https://docs.aws.amazon.com/systems-manager/latest/userguide/automation-action-executeScript.html.
 
 #### Initializers <a name="Initializers" id="@cdklabs/cdk-ssm-documents.ExecuteScriptStep.Initializer"></a>
 
@@ -9502,7 +9524,8 @@ public readonly cfnResponsePlan: CfnResponsePlan;
 
 ### InvokeLambdaFunctionStep <a name="InvokeLambdaFunctionStep" id="@cdklabs/cdk-ssm-documents.InvokeLambdaFunctionStep"></a>
 
-AutomationStep implemenation for aws:invokeLambdaFunction https://docs.aws.amazon.com/systems-manager/latest/userguide/automation-action-lamb.html.
+AutomationStep implemenation for aws:invokeLambdaFunction
+ https://docs.aws.amazon.com/systems-manager/latest/userguide/automation-action-lamb.html.
 
 #### Initializers <a name="Initializers" id="@cdklabs/cdk-ssm-documents.InvokeLambdaFunctionStep.Initializer"></a>
 
@@ -10279,7 +10302,8 @@ public readonly DEFAULT_TIMEOUT: number;
 
 ### PauseStep <a name="PauseStep" id="@cdklabs/cdk-ssm-documents.PauseStep"></a>
 
-AutomationStep implementation for aws:pause https://docs.aws.amazon.com/systems-manager/latest/userguide/automation-action-pause.html.
+AutomationStep implementation for aws:pause
+ https://docs.aws.amazon.com/systems-manager/latest/userguide/automation-action-pause.html.
 
 #### Initializers <a name="Initializers" id="@cdklabs/cdk-ssm-documents.PauseStep.Initializer"></a>
 
@@ -10618,7 +10642,8 @@ public readonly DEFAULT_TIMEOUT: number;
 
 ### PsModuleStep <a name="PsModuleStep" id="@cdklabs/cdk-ssm-documents.PsModuleStep"></a>
 
-AutomationStep implemenation for aws:psmodule https://docs.aws.amazon.com/systems-manager/latest/userguide/ssm-plugins.html#aws-psModule.
+AutomationStep implemenation for aws:psmodule
+ https://docs.aws.amazon.com/systems-manager/latest/userguide/ssm-plugins.html#aws-psModule.
 
 #### Initializers <a name="Initializers" id="@cdklabs/cdk-ssm-documents.PsModuleStep.Initializer"></a>
 
@@ -11591,7 +11616,8 @@ public readonly DEFAULT_TIMEOUT: number;
 
 ### RunDockerActionStep <a name="RunDockerActionStep" id="@cdklabs/cdk-ssm-documents.RunDockerActionStep"></a>
 
-CommandStep implementation for aws:runDockerAction https://docs.aws.amazon.com/systems-manager/latest/userguide/ssm-plugins.html#aws-rundockeraction.
+CommandStep implementation for aws:runDockerAction
+ https://docs.aws.amazon.com/systems-manager/latest/userguide/ssm-plugins.html#aws-rundockeraction.
 
 #### Initializers <a name="Initializers" id="@cdklabs/cdk-ssm-documents.RunDockerActionStep.Initializer"></a>
 
@@ -11992,7 +12018,8 @@ public readonly volume: IStringListVariable;
 
 ### RunDocumentStep <a name="RunDocumentStep" id="@cdklabs/cdk-ssm-documents.RunDocumentStep"></a>
 
-CommandStep implementation for aws:runDocument https://docs.aws.amazon.com/systems-manager/latest/userguide/ssm-plugins.html#aws-rundocument.
+CommandStep implementation for aws:runDocument
+ https://docs.aws.amazon.com/systems-manager/latest/userguide/ssm-plugins.html#aws-rundocument.
 
 #### Initializers <a name="Initializers" id="@cdklabs/cdk-ssm-documents.RunDocumentStep.Initializer"></a>
 
@@ -12305,7 +12332,8 @@ public readonly documentParameters: IStringMapVariable;
 
 ### RunInstanceStep <a name="RunInstanceStep" id="@cdklabs/cdk-ssm-documents.RunInstanceStep"></a>
 
-AutomationStep implemenation for aws:runInstance https://docs.aws.amazon.com/systems-manager/latest/userguide/automation-action-runinstance.html.
+AutomationStep implemenation for aws:runInstance
+ https://docs.aws.amazon.com/systems-manager/latest/userguide/automation-action-runinstance.html.
 
 #### Initializers <a name="Initializers" id="@cdklabs/cdk-ssm-documents.RunInstanceStep.Initializer"></a>
 
@@ -12908,7 +12936,8 @@ public readonly DEFAULT_TIMEOUT: number;
 
 ### RunPowerShellScriptStep <a name="RunPowerShellScriptStep" id="@cdklabs/cdk-ssm-documents.RunPowerShellScriptStep"></a>
 
-AutomationStep implementation for aws:runPowerShellScript https://docs.aws.amazon.com/systems-manager/latest/userguide/ssm-plugins.html#aws-runPowerShellScript.
+AutomationStep implementation for aws:runPowerShellScript
+ https://docs.aws.amazon.com/systems-manager/latest/userguide/ssm-plugins.html#aws-runPowerShellScript.
 
 #### Initializers <a name="Initializers" id="@cdklabs/cdk-ssm-documents.RunPowerShellScriptStep.Initializer"></a>
 
@@ -13556,7 +13585,8 @@ public readonly workingDirectory: IStringVariable;
 
 ### SleepStep <a name="SleepStep" id="@cdklabs/cdk-ssm-documents.SleepStep"></a>
 
-AutomationStep implemenation for aws:sleep https://docs.aws.amazon.com/systems-manager/latest/userguide/automation-action-sleep.html.
+AutomationStep implemenation for aws:sleep
+ https://docs.aws.amazon.com/systems-manager/latest/userguide/automation-action-sleep.html.
 
 #### Initializers <a name="Initializers" id="@cdklabs/cdk-ssm-documents.SleepStep.Initializer"></a>
 
@@ -13906,7 +13936,8 @@ public readonly DEFAULT_TIMEOUT: number;
 
 ### SoftwareInventoryStep <a name="SoftwareInventoryStep" id="@cdklabs/cdk-ssm-documents.SoftwareInventoryStep"></a>
 
-AutomationStep implemenation for aws:softwareInventory https://docs.aws.amazon.com/systems-manager/latest/userguide/ssm-plugins.html#aws-softwareinventory.
+AutomationStep implemenation for aws:softwareInventory
+ https://docs.aws.amazon.com/systems-manager/latest/userguide/ssm-plugins.html#aws-softwareinventory.
 
 #### Initializers <a name="Initializers" id="@cdklabs/cdk-ssm-documents.SoftwareInventoryStep.Initializer"></a>
 
@@ -14347,7 +14378,7 @@ new SsmDocument(scope: Construct, id: string, props: SsmDocumentProps)
 | --- | --- |
 | <code><a href="#@cdklabs/cdk-ssm-documents.SsmDocument.toString">toString</a></code> | Returns a string representation of this construct. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.SsmDocument.documentType">documentType</a></code> | *No description.* |
-| <code><a href="#@cdklabs/cdk-ssm-documents.SsmDocument.print">print</a></code> | Synthesize before calling this function! You can use this to Synthesize: cdk.SynthUtils.synthesize(stack); |
+| <code><a href="#@cdklabs/cdk-ssm-documents.SsmDocument.print">print</a></code> | Synthesize before calling this function! |
 
 ---
 
@@ -14371,7 +14402,9 @@ public documentType(): string
 public print(): string
 ```
 
-Synthesize before calling this function! You can use this to Synthesize: cdk.SynthUtils.synthesize(stack);
+Synthesize before calling this function!
+
+You can use this to Synthesize: cdk.SynthUtils.synthesize(stack);
 
 Converts the objects define in the SSM Document (including all of the steps) to an SSM document string.
 The format is dependency on the documentFormat property provided to the class.
@@ -14896,7 +14929,7 @@ new TimedDocument(stage: Construct, id: string, props: AutomationDocumentProps)
 | --- | --- |
 | <code><a href="#@cdklabs/cdk-ssm-documents.TimedDocument.toString">toString</a></code> | Returns a string representation of this construct. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.TimedDocument.documentType">documentType</a></code> | *No description.* |
-| <code><a href="#@cdklabs/cdk-ssm-documents.TimedDocument.print">print</a></code> | Synthesize before calling this function! You can use this to Synthesize: cdk.SynthUtils.synthesize(stack); |
+| <code><a href="#@cdklabs/cdk-ssm-documents.TimedDocument.print">print</a></code> | Synthesize before calling this function! |
 | <code><a href="#@cdklabs/cdk-ssm-documents.TimedDocument.addStep">addStep</a></code> | *No description.* |
 | <code><a href="#@cdklabs/cdk-ssm-documents.TimedDocument.collectedSteps">collectedSteps</a></code> | *No description.* |
 
@@ -14922,7 +14955,9 @@ public documentType(): string
 public print(): string
 ```
 
-Synthesize before calling this function! You can use this to Synthesize: cdk.SynthUtils.synthesize(stack);
+Synthesize before calling this function!
+
+You can use this to Synthesize: cdk.SynthUtils.synthesize(stack);
 
 Converts the objects define in the SSM Document (including all of the steps) to an SSM document string.
 The format is dependency on the documentFormat property provided to the class.
@@ -15105,7 +15140,8 @@ public readonly docVariables: Input[];
 
 ### UpdateAgentStep <a name="UpdateAgentStep" id="@cdklabs/cdk-ssm-documents.UpdateAgentStep"></a>
 
-CommandStep implementation for aws:UpdateAgent https://docs.aws.amazon.com/systems-manager/latest/userguide/ssm-plugins.html#aws-updateagent.
+CommandStep implementation for aws:UpdateAgent
+ https://docs.aws.amazon.com/systems-manager/latest/userguide/ssm-plugins.html#aws-updateagent.
 
 #### Initializers <a name="Initializers" id="@cdklabs/cdk-ssm-documents.UpdateAgentStep.Initializer"></a>
 
@@ -15440,7 +15476,8 @@ public readonly targetVersion: IStringVariable;
 
 ### UpdateSSMAgentStep <a name="UpdateSSMAgentStep" id="@cdklabs/cdk-ssm-documents.UpdateSSMAgentStep"></a>
 
-AutomationStep implemenation for aws:UpdateSsmAgent https://docs.aws.amazon.com/systems-manager/latest/userguide/ssm-plugins.html#aws-updatessmagent.
+AutomationStep implemenation for aws:UpdateSsmAgent
+ https://docs.aws.amazon.com/systems-manager/latest/userguide/ssm-plugins.html#aws-updatessmagent.
 
 #### Initializers <a name="Initializers" id="@cdklabs/cdk-ssm-documents.UpdateSSMAgentStep.Initializer"></a>
 
@@ -16136,7 +16173,8 @@ public readonly DEFAULT_TIMEOUT: number;
 
 ### WaitForResourceStep <a name="WaitForResourceStep" id="@cdklabs/cdk-ssm-documents.WaitForResourceStep"></a>
 
-AutomationStep impl for aws:waitForAwsResourceProperty https://docs.aws.amazon.com/systems-manager/latest/userguide/automation-action-waitForAwsResourceProperty.html.
+AutomationStep impl for aws:waitForAwsResourceProperty
+ https://docs.aws.amazon.com/systems-manager/latest/userguide/automation-action-waitForAwsResourceProperty.html.
 
 #### Initializers <a name="Initializers" id="@cdklabs/cdk-ssm-documents.WaitForResourceStep.Initializer"></a>
 
@@ -20819,7 +20857,8 @@ const createStackStepProps: CreateStackStepProps = { ... }
 | <code><a href="#@cdklabs/cdk-ssm-documents.CreateStackStepProps.property.onStackFailure">onStackFailure</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.IOnFailureVariable">IOnFailureVariable</a></code> | (Optional) Determines the action to take if stack creation failed. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.CreateStackStepProps.property.parameters">parameters</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.IMapListVariable">IMapListVariable</a></code> | (Optional) A list of Parameter structures that specify input parameters for the stack. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.CreateStackStepProps.property.resourceTypes">resourceTypes</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.IStringListVariable">IStringListVariable</a></code> | (Optional) The template resource types that you have permissions to work with for this create stack action. |
-| <code><a href="#@cdklabs/cdk-ssm-documents.CreateStackStepProps.property.roleArn">roleArn</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.IStringVariable">IStringVariable</a></code> | (Optional) The Amazon Resource Name (ARN) of an AWS Identity and Access Management (IAM) role that CloudFormation assumes to create the stack. |
+| <code><a href="#@cdklabs/cdk-ssm-documents.CreateStackStepProps.property.roleArn">roleArn</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.IStringVariable">IStringVariable</a></code> | (Optional) The Amazon Resource Name (ARN) of an AWS Identity and Access Management (IAM) role that CloudFormation
+ assumes to create the stack. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.CreateStackStepProps.property.stackPolicy">stackPolicy</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.BodyOrUrlProp">BodyOrUrlProp</a></code> | (Optional) Stack policy body or URL. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.CreateStackStepProps.property.tags">tags</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.IMapListVariable">IMapListVariable</a></code> | (Optional) Key-value pairs to associate with this stack. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.CreateStackStepProps.property.timeoutInMinutes">timeoutInMinutes</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.INumberVariable">INumberVariable</a></code> | (Optional) The amount of time that can pass before the stack status becomes CREATE_FAILED. |
@@ -21098,7 +21137,8 @@ public readonly roleArn: IStringVariable;
 
 - *Type:* <a href="#@cdklabs/cdk-ssm-documents.IStringVariable">IStringVariable</a>
 
-(Optional) The Amazon Resource Name (ARN) of an AWS Identity and Access Management (IAM) role that CloudFormation assumes to create the stack.
+(Optional) The Amazon Resource Name (ARN) of an AWS Identity and Access Management (IAM) role that CloudFormation
+ assumes to create the stack.
 
 CloudFormation uses the role's credentials to make calls on your behalf.
 CloudFormation always uses this role for all future operations on the stack.
@@ -21695,7 +21735,8 @@ const deleteStackStepProps: DeleteStackStepProps = { ... }
 | <code><a href="#@cdklabs/cdk-ssm-documents.DeleteStackStepProps.property.timeoutSeconds">timeoutSeconds</a></code> | <code>number</code> | (Optional) timeout seconds to run this step. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.DeleteStackStepProps.property.userOutputs">userOutputs</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.Output">Output</a>[]</code> | (Optional) Allows to define step outputs. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.DeleteStackStepProps.property.stackNameVariable">stackNameVariable</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.IStringVariable">IStringVariable</a></code> | (Optional) Variable that is fed into this step declaring which stack to delete. |
-| <code><a href="#@cdklabs/cdk-ssm-documents.DeleteStackStepProps.property.roleArn">roleArn</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.IStringVariable">IStringVariable</a></code> | (Optional) The Amazon Resource Name (ARN) of an AWS Identity and Access Management (IAM) role that CloudFormation assumes to create the stack. |
+| <code><a href="#@cdklabs/cdk-ssm-documents.DeleteStackStepProps.property.roleArn">roleArn</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.IStringVariable">IStringVariable</a></code> | (Optional) The Amazon Resource Name (ARN) of an AWS Identity and Access Management (IAM) role that CloudFormation
+ assumes to create the stack. |
 
 ---
 
@@ -21870,7 +21911,8 @@ public readonly roleArn: IStringVariable;
 
 - *Type:* <a href="#@cdklabs/cdk-ssm-documents.IStringVariable">IStringVariable</a>
 
-(Optional) The Amazon Resource Name (ARN) of an AWS Identity and Access Management (IAM) role that CloudFormation assumes to create the stack.
+(Optional) The Amazon Resource Name (ARN) of an AWS Identity and Access Management (IAM) role that CloudFormation
+ assumes to create the stack.
 
 CloudFormation uses the role's credentials to make calls on your behalf.
 CloudFormation always uses this role for all future operations on the stack.
@@ -21901,7 +21943,8 @@ const documentOutput: DocumentOutput = { ... }
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#@cdklabs/cdk-ssm-documents.DocumentOutput.property.name">name</a></code> | <code>string</code> | The step and name (in STEP.NAME format) to identify an output expected from one of the document steps. The name must therefore identify a step and an output or will fail validation. |
+| <code><a href="#@cdklabs/cdk-ssm-documents.DocumentOutput.property.name">name</a></code> | <code>string</code> | The step and name (in STEP.NAME format) to identify an output expected from one of the document steps.
+ The name must therefore identify a step and an output or will fail validation. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.DocumentOutput.property.outputType">outputType</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.DataTypeEnum">DataTypeEnum</a></code> | The DataType expected by this output. |
 
 ---
@@ -21914,7 +21957,8 @@ public readonly name: string;
 
 - *Type:* string
 
-The step and name (in STEP.NAME format) to identify an output expected from one of the document steps. The name must therefore identify a step and an output or will fail validation.
+The step and name (in STEP.NAME format) to identify an output expected from one of the document steps.
+ The name must therefore identify a step and an output or will fail validation.
 
 ---
 
@@ -24996,7 +25040,8 @@ To mock this implementation either inject an instance of IPauseHook or use the p
 
 ### PreconditionProps <a name="PreconditionProps" id="@cdklabs/cdk-ssm-documents.PreconditionProps"></a>
 
-The precondition parameter is used as a comparator of SSM documents inputs to determine whether a command step would be executed or not.
+The precondition parameter is used as a comparator of SSM documents inputs
+ to determine whether a command step would be executed or not.
 
 See https://docs.aws.amazon.com/systems-manager/latest/userguide/document-schemas-features.html
 
@@ -25080,7 +25125,8 @@ const psModuleStepProps: PsModuleStepProps = { ... }
 | <code><a href="#@cdklabs/cdk-ssm-documents.PsModuleStepProps.property.markSuccessAndExitOnFailure">markSuccessAndExitOnFailure</a></code> | <code>boolean</code> | *No description.* |
 | <code><a href="#@cdklabs/cdk-ssm-documents.PsModuleStepProps.property.onCancel">onCancel</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.Step">Step</a></code> | (Optional) Step to jump to in the event that this step is cancelled. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.PsModuleStepProps.property.precondition">precondition</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.Precondition">Precondition</a></code> | (Optional) A precondition to test before execution occurrs. |
-| <code><a href="#@cdklabs/cdk-ssm-documents.PsModuleStepProps.property.source">source</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.IStringVariable">IStringVariable</a></code> | The URL or local path on the instance to the application .zip file. The name of the zip file must be the name of the module to be installed. |
+| <code><a href="#@cdklabs/cdk-ssm-documents.PsModuleStepProps.property.source">source</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.IStringVariable">IStringVariable</a></code> | The URL or local path on the instance to the application .zip file.
+ The name of the zip file must be the name of the module to be installed. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.PsModuleStepProps.property.runCommand">runCommand</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.IStringVariable">IStringVariable</a>[]</code> | Specify the commands to run or the path to an existing script on the instance. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.PsModuleStepProps.property.sourceHash">sourceHash</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.IStringVariable">IStringVariable</a></code> | (Optional) The SHA256 hash of the .zip file. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.PsModuleStepProps.property.timeoutSeconds">timeoutSeconds</a></code> | <code>number</code> | (Optional) The time in seconds for a command to be completed before it's considered to have failed. |
@@ -25229,7 +25275,8 @@ public readonly source: IStringVariable;
 
 - *Type:* <a href="#@cdklabs/cdk-ssm-documents.IStringVariable">IStringVariable</a>
 
-The URL or local path on the instance to the application .zip file. The name of the zip file must be the name of the module to be installed.
+The URL or local path on the instance to the application .zip file.
+ The name of the zip file must be the name of the module to be installed.
 
 ---
 
@@ -25541,7 +25588,7 @@ const runCommandProps: RunCommandProps = { ... }
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
 | <code><a href="#@cdklabs/cdk-ssm-documents.RunCommandProps.property.documentName">documentName</a></code> | <code>string</code> | If the Command type document is owned by you or AWS, specify the name of the document. |
-| <code><a href="#@cdklabs/cdk-ssm-documents.RunCommandProps.property.targets">targets</a></code> | <code>string[]</code> | The instance IDs where you want the command to run. You can specify a maximum of 50 IDs. |
+| <code><a href="#@cdklabs/cdk-ssm-documents.RunCommandProps.property.targets">targets</a></code> | <code>string[]</code> | The instance IDs where you want the command to run. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.RunCommandProps.property.cloudWatchOutputConfig">cloudWatchOutputConfig</a></code> | <code>{[ key: string ]: any}</code> | (Optional) Configuration options for sending command output to Amazon CloudWatch Logs. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.RunCommandProps.property.comment">comment</a></code> | <code>string</code> | (Optional) User-defined information about the command. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.RunCommandProps.property.documentHash">documentHash</a></code> | <code>string</code> | (Optional) The hash for the document. |
@@ -25579,7 +25626,9 @@ public readonly targets: string[];
 
 - *Type:* string[]
 
-The instance IDs where you want the command to run. You can specify a maximum of 50 IDs.
+The instance IDs where you want the command to run.
+
+You can specify a maximum of 50 IDs.
 
 You can also use the pseudo parameter {{ RESOURCE_ID }} in place of instance IDs to run the command on all instances in the target group. For more information about pseudo parameters, see [About pseudo parameters](https://docs.aws.amazon.com/systems-manager/latest/userguide/mw-cli-register-tasks-parameters.html).
 
@@ -25796,7 +25845,7 @@ const runCommandStepProps: RunCommandStepProps = { ... }
 | <code><a href="#@cdklabs/cdk-ssm-documents.RunCommandStepProps.property.timeoutSeconds">timeoutSeconds</a></code> | <code>number</code> | (Optional) timeout seconds to run this step. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.RunCommandStepProps.property.userOutputs">userOutputs</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.Output">Output</a>[]</code> | (Optional) Allows to define step outputs. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.RunCommandStepProps.property.documentName">documentName</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.IStringVariable">IStringVariable</a></code> | If the Command type document is owned by you or AWS, specify the name of the document. |
-| <code><a href="#@cdklabs/cdk-ssm-documents.RunCommandStepProps.property.targets">targets</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.IStringListVariable">IStringListVariable</a> \| <a href="#@cdklabs/cdk-ssm-documents.IMapListVariable">IMapListVariable</a></code> | The instance IDs where you want the command to run. You can specify a maximum of 50 IDs. |
+| <code><a href="#@cdklabs/cdk-ssm-documents.RunCommandStepProps.property.targets">targets</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.IStringListVariable">IStringListVariable</a> \| <a href="#@cdklabs/cdk-ssm-documents.IMapListVariable">IMapListVariable</a></code> | The instance IDs where you want the command to run. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.RunCommandStepProps.property.cloudWatchOutputConfig">cloudWatchOutputConfig</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.IStringMapVariable">IStringMapVariable</a></code> | (Optional) Configuration options for sending command output to Amazon CloudWatch Logs. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.RunCommandStepProps.property.commandTimeoutSeconds">commandTimeoutSeconds</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.INumberVariable">INumberVariable</a></code> | (Optional) The amount of time in seconds to wait for a command to deliver to the AWS Systems Manager SSM Agent on an instance. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.RunCommandStepProps.property.comment">comment</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.IStringVariable">IStringVariable</a></code> | (Optional) User-defined information about the command. |
@@ -25984,7 +26033,9 @@ public readonly targets: IStringListVariable | IMapListVariable;
 
 - *Type:* <a href="#@cdklabs/cdk-ssm-documents.IStringListVariable">IStringListVariable</a> | <a href="#@cdklabs/cdk-ssm-documents.IMapListVariable">IMapListVariable</a>
 
-The instance IDs where you want the command to run. You can specify a maximum of 50 IDs.
+The instance IDs where you want the command to run.
+
+You can specify a maximum of 50 IDs.
 
 You can also use the pseudo parameter {{ RESOURCE_ID }} in place of instance IDs to run the command on all instances in the target group. For more information about pseudo parameters, see [About pseudo parameters](https://docs.aws.amazon.com/systems-manager/latest/userguide/mw-cli-register-tasks-parameters.html).
 
@@ -28010,11 +28061,18 @@ const softwareInventoryStepProps: SoftwareInventoryStepProps = { ... }
 | <code><a href="#@cdklabs/cdk-ssm-documents.SoftwareInventoryStepProps.property.applications">applications</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.IStringVariable">IStringVariable</a></code> | (Optional) Collect metadata for installed applications. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.SoftwareInventoryStepProps.property.awsComponents">awsComponents</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.IStringVariable">IStringVariable</a></code> | (Optional) Collect metadata for AWS components like amazon-ssm-agent. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.SoftwareInventoryStepProps.property.customInventory">customInventory</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.IStringVariable">IStringVariable</a></code> | (Optional) Collect custom inventory data. |
-| <code><a href="#@cdklabs/cdk-ssm-documents.SoftwareInventoryStepProps.property.files">files</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.IStringVariable">IStringVariable</a></code> | (Optional, requires SSM Agent version 2.2.64.0 or later) Collect metadata for files, including file names, the time files were created, the time files were last modified and accessed, and file sizes, to name a few. For more information about collecting file inventory, see Working with file and Windows registry. |
-| <code><a href="#@cdklabs/cdk-ssm-documents.SoftwareInventoryStepProps.property.instanceDetailedInformation">instanceDetailedInformation</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.IStringVariable">IStringVariable</a></code> | (Optional) Collect more instance information than is provided by the default inventory plugin (aws:instanceInformation), including CPU model, speed, and the number of cores, to name a few. |
+| <code><a href="#@cdklabs/cdk-ssm-documents.SoftwareInventoryStepProps.property.files">files</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.IStringVariable">IStringVariable</a></code> | (Optional, requires SSM Agent version 2.2.64.0 or later) Collect metadata for files, including file names,
+ the time files were created, the time files were last modified and accessed, and file sizes, to name a few.
+ For more information about collecting file inventory, see Working with file and Windows registry. |
+| <code><a href="#@cdklabs/cdk-ssm-documents.SoftwareInventoryStepProps.property.instanceDetailedInformation">instanceDetailedInformation</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.IStringVariable">IStringVariable</a></code> | (Optional) Collect more instance information than is provided by the default inventory plugin (aws:instanceInformation),
+ including CPU model, speed, and the number of cores, to name a few. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.SoftwareInventoryStepProps.property.networkConfig">networkConfig</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.IStringVariable">IStringVariable</a></code> | (Optional) Collect metadata for network configurations. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.SoftwareInventoryStepProps.property.services">services</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.IStringVariable">IStringVariable</a></code> | (Optional, Windows OS only, requires SSM Agent version 2.2.64.0 or later) Collect metadata for service configurations. |
-| <code><a href="#@cdklabs/cdk-ssm-documents.SoftwareInventoryStepProps.property.windowsRegistry">windowsRegistry</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.IStringVariable">IStringVariable</a></code> | (Optional, Windows OS only, requires SSM Agent version 2.2.64.0 or later) Collect Windows Registry keys and values. You can choose a key path and collect all keys and values recursively. You can also collect a specific registry key and its value for a specific path. Inventory collects the key path, name, type, and the value. For more information about collecting Windows Registry inventory, see Working with file and Windows registry inventory. |
+| <code><a href="#@cdklabs/cdk-ssm-documents.SoftwareInventoryStepProps.property.windowsRegistry">windowsRegistry</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.IStringVariable">IStringVariable</a></code> | (Optional, Windows OS only, requires SSM Agent version 2.2.64.0 or later) Collect Windows Registry keys and values.
+ You can choose a key path and collect all keys and values recursively.
+ You can also collect a specific registry key and its value for a specific path.
+ Inventory collects the key path, name, type, and the value. For more information about collecting Windows Registry inventory,
+ see Working with file and Windows registry inventory. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.SoftwareInventoryStepProps.property.windowsRoles">windowsRoles</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.IStringVariable">IStringVariable</a></code> | (Optional, Windows OS only, requires SSM Agent version 2.2.64.0 or later) Collect metadata for Microsoft Windows role configurations. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.SoftwareInventoryStepProps.property.windowsUpdates">windowsUpdates</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.IStringVariable">IStringVariable</a></code> | (Optional) Collect metadata for all Windows updates. |
 
@@ -28199,7 +28257,9 @@ public readonly files: IStringVariable;
 
 - *Type:* <a href="#@cdklabs/cdk-ssm-documents.IStringVariable">IStringVariable</a>
 
-(Optional, requires SSM Agent version 2.2.64.0 or later) Collect metadata for files, including file names, the time files were created, the time files were last modified and accessed, and file sizes, to name a few. For more information about collecting file inventory, see Working with file and Windows registry.
+(Optional, requires SSM Agent version 2.2.64.0 or later) Collect metadata for files, including file names,
+ the time files were created, the time files were last modified and accessed, and file sizes, to name a few.
+ For more information about collecting file inventory, see Working with file and Windows registry.
 
 ---
 
@@ -28211,7 +28271,8 @@ public readonly instanceDetailedInformation: IStringVariable;
 
 - *Type:* <a href="#@cdklabs/cdk-ssm-documents.IStringVariable">IStringVariable</a>
 
-(Optional) Collect more instance information than is provided by the default inventory plugin (aws:instanceInformation), including CPU model, speed, and the number of cores, to name a few.
+(Optional) Collect more instance information than is provided by the default inventory plugin (aws:instanceInformation),
+ including CPU model, speed, and the number of cores, to name a few.
 
 ---
 
@@ -28247,7 +28308,11 @@ public readonly windowsRegistry: IStringVariable;
 
 - *Type:* <a href="#@cdklabs/cdk-ssm-documents.IStringVariable">IStringVariable</a>
 
-(Optional, Windows OS only, requires SSM Agent version 2.2.64.0 or later) Collect Windows Registry keys and values. You can choose a key path and collect all keys and values recursively. You can also collect a specific registry key and its value for a specific path. Inventory collects the key path, name, type, and the value. For more information about collecting Windows Registry inventory, see Working with file and Windows registry inventory.
+(Optional, Windows OS only, requires SSM Agent version 2.2.64.0 or later) Collect Windows Registry keys and values.
+ You can choose a key path and collect all keys and values recursively.
+ You can also collect a specific registry key and its value for a specific path.
+ Inventory collects the key path, name, type, and the value. For more information about collecting Windows Registry inventory,
+ see Working with file and Windows registry inventory.
 
 ---
 
@@ -28340,7 +28405,8 @@ const ssmDocumentContentProps: SsmDocumentContentProps = { ... }
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#@cdklabs/cdk-ssm-documents.SsmDocumentContentProps.property.documentSource">documentSource</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.DocumentSource">DocumentSource</a></code> | specify one of the following The name and version of the document in the following format: name:version. |
+| <code><a href="#@cdklabs/cdk-ssm-documents.SsmDocumentContentProps.property.documentSource">documentSource</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.DocumentSource">DocumentSource</a></code> | specify one of the following
+ The name and version of the document in the following format: name:version. |
 
 ---
 
@@ -28352,7 +28418,8 @@ public readonly documentSource: DocumentSource;
 
 - *Type:* <a href="#@cdklabs/cdk-ssm-documents.DocumentSource">DocumentSource</a>
 
-specify one of the following The name and version of the document in the following format: name:version.
+specify one of the following
+ The name and version of the document in the following format: name:version.
 
 Version is optional.
 or The ARN for the document in the following format: arn:aws:ssm:region:account_id:document/document_name
@@ -30440,7 +30507,8 @@ Ask for approval.
 
 ### ApproveSimulation <a name="ApproveSimulation" id="@cdklabs/cdk-ssm-documents.ApproveSimulation"></a>
 
-AutomationStep implementation for aws:approve https://docs.aws.amazon.com/systems-manager/latest/userguide/automation-action-approve.html.
+AutomationStep implementation for aws:approve
+ https://docs.aws.amazon.com/systems-manager/latest/userguide/automation-action-approve.html.
 
 #### Initializers <a name="Initializers" id="@cdklabs/cdk-ssm-documents.ApproveSimulation.Initializer"></a>
 
@@ -34751,7 +34819,8 @@ public readonly reference: string;
 
 ### BranchSimulation <a name="BranchSimulation" id="@cdklabs/cdk-ssm-documents.BranchSimulation"></a>
 
-AutomationStep implementation of aws:branch https://docs.aws.amazon.com/systems-manager/latest/userguide/automation-action-branch.html.
+AutomationStep implementation of aws:branch
+ https://docs.aws.amazon.com/systems-manager/latest/userguide/automation-action-branch.html.
 
 #### Initializers <a name="Initializers" id="@cdklabs/cdk-ssm-documents.BranchSimulation.Initializer"></a>
 
@@ -34847,7 +34916,8 @@ public readonly action: string;
 
 ### ChangeInstanceStateSimulation <a name="ChangeInstanceStateSimulation" id="@cdklabs/cdk-ssm-documents.ChangeInstanceStateSimulation"></a>
 
-AutomationStep implemenation for aws:changeInstanceState https://docs.aws.amazon.com/systems-manager/latest/userguide/automation-action-changestate.html.
+AutomationStep implemenation for aws:changeInstanceState
+ https://docs.aws.amazon.com/systems-manager/latest/userguide/automation-action-changestate.html.
 
 #### Initializers <a name="Initializers" id="@cdklabs/cdk-ssm-documents.ChangeInstanceStateSimulation.Initializer"></a>
 
@@ -35391,7 +35461,8 @@ Invoke a specific step by the step name for the OnFailure action.
 
 ### CopyImageSimulation <a name="CopyImageSimulation" id="@cdklabs/cdk-ssm-documents.CopyImageSimulation"></a>
 
-AutomationStep implemenation for aws:copyImage https://docs.aws.amazon.com/systems-manager/latest/userguide/automation-action-copyimage.html.
+AutomationStep implemenation for aws:copyImage
+ https://docs.aws.amazon.com/systems-manager/latest/userguide/automation-action-copyimage.html.
 
 #### Initializers <a name="Initializers" id="@cdklabs/cdk-ssm-documents.CopyImageSimulation.Initializer"></a>
 
@@ -35486,7 +35557,8 @@ public readonly action: string;
 
 ### CreateImageSimulation <a name="CreateImageSimulation" id="@cdklabs/cdk-ssm-documents.CreateImageSimulation"></a>
 
-AutomationStep implemenation for aws:createImage https://docs.aws.amazon.com/systems-manager/latest/userguide/automation-action-create.html.
+AutomationStep implemenation for aws:createImage
+ https://docs.aws.amazon.com/systems-manager/latest/userguide/automation-action-create.html.
 
 #### Initializers <a name="Initializers" id="@cdklabs/cdk-ssm-documents.CreateImageSimulation.Initializer"></a>
 
@@ -35581,7 +35653,8 @@ public readonly action: string;
 
 ### CreateStackSimulation <a name="CreateStackSimulation" id="@cdklabs/cdk-ssm-documents.CreateStackSimulation"></a>
 
-AutomationStep implementation for aws:createStack https://docs.aws.amazon.com/systems-manager/latest/userguide/automation-action-createstack.html.
+AutomationStep implementation for aws:createStack
+ https://docs.aws.amazon.com/systems-manager/latest/userguide/automation-action-createstack.html.
 
 #### Initializers <a name="Initializers" id="@cdklabs/cdk-ssm-documents.CreateStackSimulation.Initializer"></a>
 
@@ -35676,7 +35749,8 @@ public readonly action: string;
 
 ### CreateTagsSimulation <a name="CreateTagsSimulation" id="@cdklabs/cdk-ssm-documents.CreateTagsSimulation"></a>
 
-AutomationStep implemenation for aws:createTags https://docs.aws.amazon.com/systems-manager/latest/userguide/automation-action-createtag.html.
+AutomationStep implemenation for aws:createTags
+ https://docs.aws.amazon.com/systems-manager/latest/userguide/automation-action-createtag.html.
 
 #### Initializers <a name="Initializers" id="@cdklabs/cdk-ssm-documents.CreateTagsSimulation.Initializer"></a>
 
@@ -35865,7 +35939,8 @@ public readonly dataTypeEnum: DataTypeEnum;
 
 ### DeleteImageSimulation <a name="DeleteImageSimulation" id="@cdklabs/cdk-ssm-documents.DeleteImageSimulation"></a>
 
-AutomationStep implementation for aws:deleteImage https://docs.aws.amazon.com/systems-manager/latest/userguide/automation-action-delete.html.
+AutomationStep implementation for aws:deleteImage
+ https://docs.aws.amazon.com/systems-manager/latest/userguide/automation-action-delete.html.
 
 #### Initializers <a name="Initializers" id="@cdklabs/cdk-ssm-documents.DeleteImageSimulation.Initializer"></a>
 
@@ -35960,7 +36035,8 @@ public readonly action: string;
 
 ### DeleteStackSimulation <a name="DeleteStackSimulation" id="@cdklabs/cdk-ssm-documents.DeleteStackSimulation"></a>
 
-AutomationStep implemenation for aws:deleteStack https://docs.aws.amazon.com/systems-manager/latest/userguide/automation-action-deletestack.html.
+AutomationStep implemenation for aws:deleteStack
+ https://docs.aws.amazon.com/systems-manager/latest/userguide/automation-action-deletestack.html.
 
 #### Initializers <a name="Initializers" id="@cdklabs/cdk-ssm-documents.DeleteStackSimulation.Initializer"></a>
 
@@ -36671,7 +36747,8 @@ DocumentSource.fromName(name: IStringVariable, version?: IStringVariable)
 
 ### ExecuteScriptSimulation <a name="ExecuteScriptSimulation" id="@cdklabs/cdk-ssm-documents.ExecuteScriptSimulation"></a>
 
-AutomationStep implementation for aws:executeScript https://docs.aws.amazon.com/systems-manager/latest/userguide/automation-action-executeScript.html.
+AutomationStep implementation for aws:executeScript
+ https://docs.aws.amazon.com/systems-manager/latest/userguide/automation-action-executeScript.html.
 
 #### Initializers <a name="Initializers" id="@cdklabs/cdk-ssm-documents.ExecuteScriptSimulation.Initializer"></a>
 
@@ -40973,7 +41050,8 @@ public readonly validValues: string[];
 
 ### InvokeLambdaFunctionSimulation <a name="InvokeLambdaFunctionSimulation" id="@cdklabs/cdk-ssm-documents.InvokeLambdaFunctionSimulation"></a>
 
-AutomationStep implemenation for aws:invokeLambdaFunction https://docs.aws.amazon.com/systems-manager/latest/userguide/automation-action-lamb.html.
+AutomationStep implemenation for aws:invokeLambdaFunction
+ https://docs.aws.amazon.com/systems-manager/latest/userguide/automation-action-lamb.html.
 
 #### Initializers <a name="Initializers" id="@cdklabs/cdk-ssm-documents.InvokeLambdaFunctionSimulation.Initializer"></a>
 
@@ -43011,7 +43089,8 @@ public pause(): void
 
 ### PauseSimulation <a name="PauseSimulation" id="@cdklabs/cdk-ssm-documents.PauseSimulation"></a>
 
-AutomationStep implementation for aws:pause https://docs.aws.amazon.com/systems-manager/latest/userguide/automation-action-pause.html.
+AutomationStep implementation for aws:pause
+ https://docs.aws.amazon.com/systems-manager/latest/userguide/automation-action-pause.html.
 
 #### Initializers <a name="Initializers" id="@cdklabs/cdk-ssm-documents.PauseSimulation.Initializer"></a>
 
@@ -43621,7 +43700,8 @@ public readonly action: string;
 
 ### RunInstanceSimulation <a name="RunInstanceSimulation" id="@cdklabs/cdk-ssm-documents.RunInstanceSimulation"></a>
 
-AutomationStep implemenation for aws:runInstance https://docs.aws.amazon.com/systems-manager/latest/userguide/automation-action-runinstance.html.
+AutomationStep implemenation for aws:runInstance
+ https://docs.aws.amazon.com/systems-manager/latest/userguide/automation-action-runinstance.html.
 
 #### Initializers <a name="Initializers" id="@cdklabs/cdk-ssm-documents.RunInstanceSimulation.Initializer"></a>
 
@@ -44004,7 +44084,8 @@ Simulation will execute the function in this string using the language specified
 
 ### ScriptLanguage <a name="ScriptLanguage" id="@cdklabs/cdk-ssm-documents.ScriptLanguage"></a>
 
-Specifies the script language as described in the "Runtime" argument here: https://docs.aws.amazon.com/systems-manager/latest/userguide/automation-action-executeScript.html.
+Specifies the script language as described in the "Runtime" argument here:
+ https://docs.aws.amazon.com/systems-manager/latest/userguide/automation-action-executeScript.html.
 
 #### Initializers <a name="Initializers" id="@cdklabs/cdk-ssm-documents.ScriptLanguage.Initializer"></a>
 
@@ -44101,7 +44182,7 @@ Prefer one of the other static constructors if possible.
 
 - *Type:* string
 
-is the runtime name (such as "python3.6").
+is the runtime name (such as "python3.11").
 
 ---
 
@@ -44275,7 +44356,7 @@ SecureVariable.ofValue(value: string)
 
 | **Name** | **Description** |
 | --- | --- |
-| <code><a href="#@cdklabs/cdk-ssm-documents.Simulation.simulate">simulate</a></code> | Synthesize before calling this function! You can use this to Synthesize: SynthUtils.synthesize(stack); |
+| <code><a href="#@cdklabs/cdk-ssm-documents.Simulation.simulate">simulate</a></code> | Synthesize before calling this function! |
 
 ---
 
@@ -44285,7 +44366,9 @@ SecureVariable.ofValue(value: string)
 public simulate(inputs: {[ key: string ]: any}): DocumentResult
 ```
 
-Synthesize before calling this function! You can use this to Synthesize: SynthUtils.synthesize(stack);
+Synthesize before calling this function!
+
+You can use this to Synthesize: SynthUtils.synthesize(stack);
 
 Executes the SSM Document in simulation mode.
 This method DOES NOT result in invocation of SSM APIs.
@@ -44425,7 +44508,8 @@ Synchronously sleeps for duration specified in millis.
 
 ### SleepSimulation <a name="SleepSimulation" id="@cdklabs/cdk-ssm-documents.SleepSimulation"></a>
 
-AutomationStep implemenation for aws:sleep https://docs.aws.amazon.com/systems-manager/latest/userguide/automation-action-sleep.html.
+AutomationStep implemenation for aws:sleep
+ https://docs.aws.amazon.com/systems-manager/latest/userguide/automation-action-sleep.html.
 
 #### Initializers <a name="Initializers" id="@cdklabs/cdk-ssm-documents.SleepSimulation.Initializer"></a>
 
@@ -45949,7 +46033,8 @@ new SynthUtils()
 
 | **Name** | **Description** |
 | --- | --- |
-| <code><a href="#@cdklabs/cdk-ssm-documents.SynthUtils.synthesize">synthesize</a></code> | Wraps @aws-cdk/assert SynthUtils.synthesize(stack). Synthesizes the stack provided. |
+| <code><a href="#@cdklabs/cdk-ssm-documents.SynthUtils.synthesize">synthesize</a></code> | Wraps @aws-cdk/assert SynthUtils.synthesize(stack).
+ Synthesizes the stack provided. |
 
 ---
 
@@ -45961,7 +46046,8 @@ import { SynthUtils } from '@cdklabs/cdk-ssm-documents'
 SynthUtils.synthesize(stack: Stack)
 ```
 
-Wraps @aws-cdk/assert SynthUtils.synthesize(stack). Synthesizes the stack provided.
+Wraps @aws-cdk/assert SynthUtils.synthesize(stack).
+ Synthesizes the stack provided.
 
 ###### `stack`<sup>Required</sup> <a name="stack" id="@cdklabs/cdk-ssm-documents.SynthUtils.synthesize.parameter.stack"></a>
 
@@ -46228,7 +46314,8 @@ public readonly userName: SecureVariable;
 
 ### WaitForResourceSimulation <a name="WaitForResourceSimulation" id="@cdklabs/cdk-ssm-documents.WaitForResourceSimulation"></a>
 
-AutomationStep impl for aws:waitForAwsResourceProperty https://docs.aws.amazon.com/systems-manager/latest/userguide/automation-action-waitForAwsResourceProperty.html.
+AutomationStep impl for aws:waitForAwsResourceProperty
+ https://docs.aws.amazon.com/systems-manager/latest/userguide/automation-action-waitForAwsResourceProperty.html.
 
 #### Initializers <a name="Initializers" id="@cdklabs/cdk-ssm-documents.WaitForResourceSimulation.Initializer"></a>
 
@@ -47326,16 +47413,13 @@ Simulation will use local python version.
 
 | **Name** | **Description** |
 | --- | --- |
-| <code><a href="#@cdklabs/cdk-ssm-documents.PythonVersion.VERSION_3_6">VERSION_3_6</a></code> | *No description.* |
 | <code><a href="#@cdklabs/cdk-ssm-documents.PythonVersion.VERSION_3_7">VERSION_3_7</a></code> | *No description.* |
 | <code><a href="#@cdklabs/cdk-ssm-documents.PythonVersion.VERSION_3_8">VERSION_3_8</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.PythonVersion.VERSION_3_9">VERSION_3_9</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.PythonVersion.VERSION_3_10">VERSION_3_10</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.PythonVersion.VERSION_3_11">VERSION_3_11</a></code> | *No description.* |
 
 ---
-
-##### `VERSION_3_6` <a name="VERSION_3_6" id="@cdklabs/cdk-ssm-documents.PythonVersion.VERSION_3_6"></a>
-
----
-
 
 ##### `VERSION_3_7` <a name="VERSION_3_7" id="@cdklabs/cdk-ssm-documents.PythonVersion.VERSION_3_7"></a>
 
@@ -47343,6 +47427,21 @@ Simulation will use local python version.
 
 
 ##### `VERSION_3_8` <a name="VERSION_3_8" id="@cdklabs/cdk-ssm-documents.PythonVersion.VERSION_3_8"></a>
+
+---
+
+
+##### `VERSION_3_9` <a name="VERSION_3_9" id="@cdklabs/cdk-ssm-documents.PythonVersion.VERSION_3_9"></a>
+
+---
+
+
+##### `VERSION_3_10` <a name="VERSION_3_10" id="@cdklabs/cdk-ssm-documents.PythonVersion.VERSION_3_10"></a>
+
+---
+
+
+##### `VERSION_3_11` <a name="VERSION_3_11" id="@cdklabs/cdk-ssm-documents.PythonVersion.VERSION_3_11"></a>
 
 ---
 
