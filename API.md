@@ -44101,7 +44101,7 @@ Prefer one of the other static constructors if possible.
 
 - *Type:* string
 
-is the runtime name (such as "python3.6").
+is the runtime name (such as "python3.11").
 
 ---
 
@@ -47326,16 +47326,13 @@ Simulation will use local python version.
 
 | **Name** | **Description** |
 | --- | --- |
-| <code><a href="#@cdklabs/cdk-ssm-documents.PythonVersion.VERSION_3_6">VERSION_3_6</a></code> | *No description.* |
 | <code><a href="#@cdklabs/cdk-ssm-documents.PythonVersion.VERSION_3_7">VERSION_3_7</a></code> | *No description.* |
 | <code><a href="#@cdklabs/cdk-ssm-documents.PythonVersion.VERSION_3_8">VERSION_3_8</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.PythonVersion.VERSION_3_9">VERSION_3_9</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.PythonVersion.VERSION_3_10">VERSION_3_10</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.PythonVersion.VERSION_3_11">VERSION_3_11</a></code> | *No description.* |
 
 ---
-
-##### `VERSION_3_6` <a name="VERSION_3_6" id="@cdklabs/cdk-ssm-documents.PythonVersion.VERSION_3_6"></a>
-
----
-
 
 ##### `VERSION_3_7` <a name="VERSION_3_7" id="@cdklabs/cdk-ssm-documents.PythonVersion.VERSION_3_7"></a>
 
@@ -47343,6 +47340,21 @@ Simulation will use local python version.
 
 
 ##### `VERSION_3_8` <a name="VERSION_3_8" id="@cdklabs/cdk-ssm-documents.PythonVersion.VERSION_3_8"></a>
+
+---
+
+
+##### `VERSION_3_9` <a name="VERSION_3_9" id="@cdklabs/cdk-ssm-documents.PythonVersion.VERSION_3_9"></a>
+
+---
+
+
+##### `VERSION_3_10` <a name="VERSION_3_10" id="@cdklabs/cdk-ssm-documents.PythonVersion.VERSION_3_10"></a>
+
+---
+
+
+##### `VERSION_3_11` <a name="VERSION_3_11" id="@cdklabs/cdk-ssm-documents.PythonVersion.VERSION_3_11"></a>
 
 ---
 

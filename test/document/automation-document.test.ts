@@ -37,7 +37,7 @@ describe('AutomationDocument', function() {
       myAutomationDoc.addStep(new PauseStep(stack, 'MyPauseStep', { name: 'MyPauseStep' }));
       // Second step
       myAutomationDoc.addStep(new ExecuteScriptStep(stack, 'MyExecuteStep', {
-        language: ScriptLanguage.python(PythonVersion.VERSION_3_6, 'my_func'),
+        language: ScriptLanguage.python(PythonVersion.VERSION_3_11, 'my_func'),
         code: ScriptCode.fromFile(resolve('test/test_file.py')),
         outputs: [{
           outputType: DataTypeEnum.STRING,
@@ -72,7 +72,7 @@ describe('AutomationDocument', function() {
       });
       doc.addStep(new PauseStep(stack, 'MyPauseStep', { name: 'MyPauseStep' }));
       doc.addStep(new ExecuteScriptStep(stack, 'MyExecuteStep', {
-        language: ScriptLanguage.python(PythonVersion.VERSION_3_6, 'my_func'),
+        language: ScriptLanguage.python(PythonVersion.VERSION_3_11, 'my_func'),
         code: ScriptCode.fromFile(resolve('test/test_file.py')),
         outputs: [{
           outputType: DataTypeEnum.STRING,
@@ -95,7 +95,7 @@ describe('AutomationDocument', function() {
           super(scope, id, props);
           new PauseStep(this, 'MyPauseStep', { name: 'MyPauseStep' });
           new ExecuteScriptStep(this, 'MyExecuteStep', {
-            language: ScriptLanguage.python(PythonVersion.VERSION_3_6, 'my_func'),
+            language: ScriptLanguage.python(PythonVersion.VERSION_3_11, 'my_func'),
             code: ScriptCode.fromFile(resolve('test/test_file.py')),
             outputs: [{
               outputType: DataTypeEnum.STRING,
@@ -127,7 +127,7 @@ describe('AutomationDocument', function() {
       myAutomationDoc.addStep(new PauseStep(stack, 'MyPauseStep', { name: 'MyPauseStep' }));
       // Second step
       myAutomationDoc.addStep(new ExecuteScriptStep(stack, 'MyExecuteStep', {
-        language: ScriptLanguage.python(PythonVersion.VERSION_3_6, 'my_func'),
+        language: ScriptLanguage.python(PythonVersion.VERSION_3_11, 'my_func'),
         code: ScriptCode.fromFile(resolve('test/test_file.py')),
         outputs: [{
           outputType: DataTypeEnum.STRING,
@@ -143,7 +143,7 @@ describe('AutomationDocument', function() {
       }));
       // Fourth step
       myAutomationDoc.addStep(new ExecuteScriptStep(stack, 'MyFourthExecuteStep', {
-        language: ScriptLanguage.python(PythonVersion.VERSION_3_6, 'my_func'),
+        language: ScriptLanguage.python(PythonVersion.VERSION_3_11, 'my_func'),
         code: ScriptCode.fromFile(resolve('test/test_file.py')),
         outputs: [{
           outputType: DataTypeEnum.STRING,
@@ -187,7 +187,7 @@ describe('AutomationDocument', function() {
       myAutomationDoc.addStep(new PauseStep(stack, 'MyPauseStep', { name: 'MyPauseStep' }));
       myAutomationDoc.addStep(new ExecuteScriptStep(stack, 'MyExecuteStep', {
         name: 'step1',
-        language: ScriptLanguage.python(PythonVersion.VERSION_3_6, 'my_func'),
+        language: ScriptLanguage.python(PythonVersion.VERSION_3_11, 'my_func'),
         code: ScriptCode.fromFile(resolve('test/test_file.py')),
         outputs: [{
           outputType: DataTypeEnum.STRING,
@@ -216,7 +216,7 @@ describe('AutomationDocument', function() {
                 InputPayload: {
                   MyInput: '{{ MyInput }}',
                 },
-                Runtime: 'python3.6',
+                Runtime: 'python3.11',
                 Script: 'def my_func(args, context):\n    return {"MyReturn": args["MyInput"] + "-suffix"}\n\ndef bad_func(args, context):\n    return {"MyReturn": args["INPUT_DOES_NOT_EXIST"] + "-suffix"}\n',
               },
               name: 'step1',
@@ -257,7 +257,7 @@ describe('AutomationDocument', function() {
       myAutomationDoc.addStep(new PauseStep(stack, 'MyPauseStep', { name: 'MyPauseStep' }));
       myAutomationDoc.addStep(new ExecuteScriptStep(stack, 'MyExecuteStep', {
         name: 'step1',
-        language: ScriptLanguage.python(PythonVersion.VERSION_3_6, 'my_func'),
+        language: ScriptLanguage.python(PythonVersion.VERSION_3_11, 'my_func'),
         code: ScriptCode.fromFile(resolve('test/test_file.py')),
         outputs: [{
           outputType: DataTypeEnum.STRING,
@@ -286,7 +286,7 @@ describe('AutomationDocument', function() {
                 InputPayload: {
                   MyInput: '{{ MyInput }}',
                 },
-                Runtime: 'python3.6',
+                Runtime: 'python3.11',
                 Script: 'def my_func(args, context):\n    return {"MyReturn": args["MyInput"] + "-suffix"}\n\ndef bad_func(args, context):\n    return {"MyReturn": args["INPUT_DOES_NOT_EXIST"] + "-suffix"}\n',
               },
               name: 'step1',

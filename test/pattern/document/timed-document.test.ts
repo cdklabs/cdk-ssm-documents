@@ -32,7 +32,7 @@ describe('TimedDocument', function() {
             name: 'RecordStartTime',
             action: 'aws:executeScript',
             inputs: {
-              Runtime: 'python3.6',
+              Runtime: 'python3.11',
               Handler: 'script_handler',
               Script: 'from datetime import datetime, timezone\n\ndef script_handler(params: dict, context):\n    return datetime.now(timezone.utc).isoformat()\n\n',
               InputPayload: {},
@@ -50,7 +50,7 @@ describe('TimedDocument', function() {
             name: 'OutputRecoveryTime',
             action: 'aws:executeScript',
             inputs: {
-              Runtime: 'python3.6',
+              Runtime: 'python3.11',
               Handler: 'script_handler',
               Script: "from datetime import datetime, timezone\nfrom dateutil import parser\n\ndef script_handler(params: dict, context):\n    return (datetime.now(timezone.utc) - parser.parse(params['startTime'])).seconds\n\n",
               InputPayload: {
