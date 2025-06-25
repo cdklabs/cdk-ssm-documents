@@ -39,7 +39,7 @@ const project = new awscdk.AwsCdkConstructLibrary({
   },
   publishToMaven: {
     javaPackage: 'io.github.cdklabs.cdkssmdocuments',
-    mavenEndpoint: 'https://s01.oss.sonatype.org',
+    mavenServerId: 'central-ossrh',
     mavenArtifactId: 'cdk-ssm-documents',
     mavenGroupId: 'io.github.cdklabs',
   },
