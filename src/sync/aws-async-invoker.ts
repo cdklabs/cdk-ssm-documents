@@ -1,6 +1,5 @@
 import { AsyncRunner } from './async-runner';
 // eslint-disable-next-line @typescript-eslint/no-require-imports
-// const AWS = require('aws-sdk');
 
 /**
  * Invokes AWS asynchronously.
@@ -11,7 +10,7 @@ export class AwsAsyncInvoker implements AsyncRunner {
   /**
      * Expects a list containing 3 values:
      * 1. AWS Service (such as ec2)
-     * 2. AWS API in lxowerCamelCase
+     * 2. AWS API in lowerCamelCase
      * 3. The parameters to send to the specified API.
      */
   async runAsync(args: any[]): Promise<any> {
