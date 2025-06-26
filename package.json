@@ -27,8 +27,7 @@
     "test:watch": "npx projen test:watch",
     "unbump": "npx projen unbump",
     "watch": "npx projen watch",
-    "projen": "npx projen",
-    "test:aws": "ts-node src/sync/mytest.ts"
+    "projen": "npx projen"
   },
   "author": {
     "name": "Amazon Web Services",
@@ -70,7 +69,7 @@
     "@aws-sdk/client-ec2": "^3.400.0",
     "@aws-sdk/client-iam": "^3.400.0",
     "@aws-sdk/client-lambda": "^3.400.0",
-    "@aws-sdk/client-s3": "^3.837.0",
+    "@aws-sdk/client-s3": "^3.400.0",
     "@aws-sdk/client-sns": "^3.400.0",
     "@aws-sdk/client-sqs": "^3.400.0",
     "@aws-sdk/client-ssm": "^3.400.0",
