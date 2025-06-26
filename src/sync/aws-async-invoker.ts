@@ -20,26 +20,31 @@ export class AwsAsyncInvoker implements AsyncRunner {
     const params = args[2];
 
     try {
-      // Dynamically import the appropriate AWS SDK v3 client
-      const { default: clientModule } = await this.importClientModule(serviceName);
-      
-      // Create the client
-      const ClientClass = this.getClientClass(clientModule, serviceName);
-      const client = new ClientClass();
-      
-      // Get the command class for the API
-      const CommandClass = this.getCommandClass(clientModule, apiName);
-      
-      // Create the command with the parameters
-      const command = new CommandClass(params);
-      
-      try {
-          // Send the command to the client
-          const data = await client.send(command);
-          return { "status": "SUCCESS", "Payload": data };
-      } catch (err) {
-          return { "status": "FAILURE", "Payload": err };
-      }
+        // Dynamically import the appropriate AWS SDK v3 client
+        const clientModule = await this.importClientModule(serviceName);
+        
+        // Create the client - note the change in how we access the client class
+        const ClientClass = clientModule[`${this.toPascalCase(serviceName)}Client`];
+        if (!ClientClass) {
+            throw new Error(`Client class not found for service: ${serviceName}`);
+        }
+        const client = new ClientClass();
+        
+        // Get the command class - note the change in how we access the command class
+        const CommandClass = clientModule[`${this.toPascalCase(apiName)}Command`];
+        if (!CommandClass) {
+            throw new Error(`Command class not found for API: ${apiName}`);
+        }
+        
+        // Create the command with the parameters
+        const command = new CommandClass(params);
+        
+        try {
+            const data = await client.send(command);
+            return { "status": "SUCCESS", "Payload": data };
+        } catch (err) {
+            return { "status": "FAILURE", "Payload": err };
+        }
     } catch (err) {
         return { "status": "FAILURE", "Payload": err };
     }
@@ -55,38 +60,15 @@ export class AwsAsyncInvoker implements AsyncRunner {
       
       try {
           // Import the client module
-          return await import(`@aws-sdk/client-${formattedServiceName}`);
+          const modulePath = `@aws-sdk/client-${formattedServiceName}`;
+          console.log(`Attempting to import module: ${modulePath}`);
+          const module = await import(modulePath);
+          console.log(`Module imported successfully. Keys:`, Object.keys(module));
+          return module;
       } catch (err) {
+          console.error(`Error during import:`, err);
           throw new Error(`Failed to import AWS SDK v3 client for service: ${serviceName}. Error: ${err}`);
       }
-  }
-
-  /**
-   * Gets the client class from the imported module.
-   */
-  private getClientClass(clientModule: any, serviceName: string): any {
-      // Convert service name to PascalCase for the client class name
-      const clientClassName = this.toPascalCase(serviceName) + 'Client';
-      
-      if (!clientModule[clientClassName]) {
-          throw new Error(`Client class not found for service: ${serviceName}`);
-      }
-      
-      return clientModule[clientClassName];
-  }
-
-  /**
-   * Gets the command class for the specified API.
-   */
-  private getCommandClass(clientModule: any, apiName: string): any {
-      // Convert API name to PascalCase and append "Command" for the command class name
-      const commandClassName = this.toPascalCase(apiName) + 'Command';
-      
-      if (!clientModule[commandClassName]) {
-          throw new Error(`Command class not found for API: ${apiName}`);
-      }
-      
-      return clientModule[commandClassName];
   }
 
   /**
