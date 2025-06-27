@@ -64,7 +64,15 @@
     "constructs": "^10.0.5"
   },
   "dependencies": {
-    "aws-sdk": "^2.1135.0",
+    "@aws-sdk/client-cloudformation": "^3.400.0",
+    "@aws-sdk/client-cloudwatch": "^3.400.0",
+    "@aws-sdk/client-ec2": "^3.400.0",
+    "@aws-sdk/client-iam": "^3.400.0",
+    "@aws-sdk/client-lambda": "^3.400.0",
+    "@aws-sdk/client-s3": "^3.400.0",
+    "@aws-sdk/client-sns": "^3.400.0",
+    "@aws-sdk/client-sqs": "^3.400.0",
+    "@aws-sdk/client-ssm": "^3.400.0",
     "immutable": "^4.0.0",
     "js-yaml": "^4.1.0",
     "jsonpath": "^1.1.1",
@@ -72,7 +80,15 @@
     "synchronized-promise": "^0.3.1"
   },
   "bundledDependencies": [
-    "aws-sdk",
+    "@aws-sdk/client-cloudformation",
+    "@aws-sdk/client-cloudwatch",
+    "@aws-sdk/client-ec2",
+    "@aws-sdk/client-iam",
+    "@aws-sdk/client-lambda",
+    "@aws-sdk/client-s3",
+    "@aws-sdk/client-sns",
+    "@aws-sdk/client-sqs",
+    "@aws-sdk/client-ssm",
     "immutable",
     "js-yaml",
     "jsonpath",

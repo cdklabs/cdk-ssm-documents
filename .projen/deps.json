@@ -98,7 +98,39 @@
       "type": "build"
     },
     {
-      "name": "aws-sdk",
+      "name": "@aws-sdk/client-cloudformation",
+      "type": "bundled"
+    },
+    {
+      "name": "@aws-sdk/client-cloudwatch",
+      "type": "bundled"
+    },
+    {
+      "name": "@aws-sdk/client-ec2",
+      "type": "bundled"
+    },
+    {
+      "name": "@aws-sdk/client-iam",
+      "type": "bundled"
+    },
+    {
+      "name": "@aws-sdk/client-lambda",
+      "type": "bundled"
+    },
+    {
+      "name": "@aws-sdk/client-s3",
+      "type": "bundled"
+    },
+    {
+      "name": "@aws-sdk/client-sns",
+      "type": "bundled"
+    },
+    {
+      "name": "@aws-sdk/client-sqs",
+      "type": "bundled"
+    },
+    {
+      "name": "@aws-sdk/client-ssm",
       "type": "bundled"
     },
     {
