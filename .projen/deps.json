@@ -12,7 +12,7 @@
     },
     {
       "name": "@types/node",
-      "version": "^16 <= 16.18.78",
+      "version": "^18 <= 18.11.19",
       "type": "build"
     },
     {
@@ -23,6 +23,10 @@
     {
       "name": "@typescript-eslint/parser",
       "version": "^8",
+      "type": "build"
+    },
+    {
+      "name": "cdklabs-projen-project-types",
       "type": "build"
     },
     {
@@ -68,7 +72,6 @@
     },
     {
       "name": "jsii-rosetta",
-      "version": "1.x",
       "type": "build"
     },
     {
@@ -152,6 +155,16 @@
     {
       "name": "synchronized-promise",
       "type": "bundled"
+    },
+    {
+      "name": "@aws-cdk/integ-runner",
+      "version": "latest",
+      "type": "devenv"
+    },
+    {
+      "name": "@aws-cdk/integ-tests-alpha",
+      "version": "latest",
+      "type": "devenv"
     },
     {
       "name": "@types/babel__traverse",
