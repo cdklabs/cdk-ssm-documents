@@ -33,7 +33,8 @@
         "BUMPFILE": "dist/version.txt",
         "RELEASETAG": "dist/releasetag.txt",
         "RELEASE_TAG_PREFIX": "",
-        "BUMP_PACKAGE": "commit-and-tag-version@^12"
+        "BUMP_PACKAGE": "commit-and-tag-version@^12",
+        "RELEASABLE_COMMITS": "git log --no-merges --oneline $LATEST_TAG..HEAD -E --grep \"^(feat|fix){1}(\\([^()[:space:]]+\\))?(!)?:[[:blank:]]+.+\""
       },
       "steps": [
         {
@@ -153,6 +154,26 @@
         }
       ]
     },
+    "integ": {
+      "name": "integ",
+      "description": "Run integration snapshot tests",
+      "steps": [
+        {
+          "exec": "integ-runner --language typescript",
+          "receiveArgs": true
+        }
+      ]
+    },
+    "integ:update": {
+      "name": "integ:update",
+      "description": "Run and update integration snapshot tests",
+      "steps": [
+        {
+          "exec": "integ-runner --language typescript --update-on-failed",
+          "receiveArgs": true
+        }
+      ]
+    },
     "package": {
       "name": "package",
       "description": "Creates the distribution package",
@@ -182,6 +203,9 @@
         },
         {
           "spawn": "package:dotnet"
+        },
+        {
+          "spawn": "package:go"
         }
       ]
     },
@@ -191,6 +215,15 @@
       "steps": [
         {
           "exec": "jsii-pacmak -v --target dotnet"
+        }
+      ]
+    },
+    "package:go": {
+      "name": "package:go",
+      "description": "Create go language bindings",
+      "steps": [
+        {
+          "exec": "jsii-pacmak -v --target go"
         }
       ]
     },
@@ -227,8 +260,15 @@
       "steps": [
         {
           "spawn": "docgen"
+        },
+        {
+          "spawn": "rosetta:extract"
         }
       ]
+    },
+    "post-upgrade": {
+      "name": "post-upgrade",
+      "description": "Runs after upgrading dependencies"
     },
     "pre-compile": {
       "name": "pre-compile",
@@ -255,6 +295,15 @@
         },
         {
           "exec": "git diff --ignore-space-at-eol --exit-code"
+        }
+      ]
+    },
+    "rosetta:extract": {
+      "name": "rosetta:extract",
+      "description": "Test rosetta extract",
+      "steps": [
+        {
+          "exec": "jsii-rosetta extract"
         }
       ]
     },
@@ -286,11 +335,84 @@
         "BUMPFILE": "dist/version.txt",
         "RELEASETAG": "dist/releasetag.txt",
         "RELEASE_TAG_PREFIX": "",
-        "BUMP_PACKAGE": "commit-and-tag-version@^12"
+        "BUMP_PACKAGE": "commit-and-tag-version@^12",
+        "RELEASABLE_COMMITS": "git log --no-merges --oneline $LATEST_TAG..HEAD -E --grep \"^(feat|fix){1}(\\([^()[:space:]]+\\))?(!)?:[[:blank:]]+.+\""
       },
       "steps": [
         {
           "builtin": "release/reset-version"
+        }
+      ]
+    },
+    "upgrade": {
+      "name": "upgrade",
+      "description": "upgrade dependencies",
+      "env": {
+        "CI": "0"
+      },
+      "steps": [
+        {
+          "exec": "npx npm-check-updates@16 --upgrade --target=minor --peer --no-deprecated --dep=prod --filter=@aws-sdk/client-cloudformation,@aws-sdk/client-cloudwatch,@aws-sdk/client-ec2,@aws-sdk/client-iam,@aws-sdk/client-lambda,@aws-sdk/client-s3,@aws-sdk/client-sns,@aws-sdk/client-sqs,@aws-sdk/client-ssm,immutable,js-yaml,jsonpath,python-shell,synchronized-promise"
+        },
+        {
+          "exec": "yarn install --check-files"
+        },
+        {
+          "exec": "yarn upgrade @aws-sdk/client-cloudformation @aws-sdk/client-cloudwatch @aws-sdk/client-ec2 @aws-sdk/client-iam @aws-sdk/client-lambda @aws-sdk/client-s3 @aws-sdk/client-sns @aws-sdk/client-sqs @aws-sdk/client-ssm immutable js-yaml jsonpath python-shell synchronized-promise"
+        },
+        {
+          "exec": "npx projen"
+        },
+        {
+          "spawn": "post-upgrade"
+        }
+      ]
+    },
+    "upgrade-cdklabs-projen-project-types": {
+      "name": "upgrade-cdklabs-projen-project-types",
+      "description": "upgrade cdklabs-projen-project-types",
+      "env": {
+        "CI": "0"
+      },
+      "steps": [
+        {
+          "exec": "npx npm-check-updates@16 --upgrade --target=latest --peer --no-deprecated --dep=dev,peer,prod,optional --filter=cdklabs-projen-project-types,projen"
+        },
+        {
+          "exec": "yarn install --check-files"
+        },
+        {
+          "exec": "yarn upgrade cdklabs-projen-project-types projen"
+        },
+        {
+          "exec": "npx projen"
+        },
+        {
+          "spawn": "post-upgrade"
+        }
+      ]
+    },
+    "upgrade-dev-deps": {
+      "name": "upgrade-dev-deps",
+      "description": "upgrade dev dependencies",
+      "env": {
+        "CI": "0"
+      },
+      "steps": [
+        {
+          "exec": "npx npm-check-updates@16 --upgrade --target=minor --peer --no-deprecated --dep=dev --filter=eslint-import-resolver-typescript,eslint-plugin-import,jsii-diff,jsii-pacmak,jsii-rosetta,mocha,ts-node,typescript"
+        },
+        {
+          "exec": "yarn install --check-files"
+        },
+        {
+          "exec": "yarn upgrade @stylistic/eslint-plugin @types/jest @types/node @typescript-eslint/eslint-plugin @typescript-eslint/parser commit-and-tag-version eslint-import-resolver-typescript eslint-plugin-import eslint jest-junit jest jsii-diff jsii-docgen jsii-pacmak jsii-rosetta jsii mocha ts-jest ts-node typescript @aws-cdk/integ-runner @aws-cdk/integ-tests-alpha"
+        },
+        {
+          "exec": "npx projen"
+        },
+        {
+          "spawn": "post-upgrade"
         }
       ]
     },
