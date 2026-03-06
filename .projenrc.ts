@@ -1,9 +1,10 @@
-import { awscdk } from 'projen';
+import { CdklabsConstructLibrary } from "cdklabs-projen-project-types";
 
-const project = new awscdk.AwsCdkConstructLibrary({
+const project = new CdklabsConstructLibrary({
   author: 'Amazon Web Services',
   authorAddress: 'https://aws.amazon.com',
   cdkVersion: '2.131.0',
+  jsiiVersion: '1.x',
   cdkVersionPinning: false,
   tsconfig: {
     compilerOptions: {
@@ -11,6 +12,7 @@ const project = new awscdk.AwsCdkConstructLibrary({
     },
   },
   defaultReleaseBranch: 'main',
+  private: false,
   name: '@cdklabs/cdk-ssm-documents',
   projenrcTs: true,
   repositoryUrl: 'https://github.com/cdklabs/cdk-ssm-documents.git',
@@ -38,6 +40,9 @@ const project = new awscdk.AwsCdkConstructLibrary({
     jestConfig: {
       maxWorkers: 4,
     },
+  },
+  rosettaOptions:{
+    strict: false,
   },
   release: true,
 
