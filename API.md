@@ -8555,7 +8555,7 @@ new HelloWorld(app: Construct, id: string)
 | --- | --- |
 | <code><a href="#@cdklabs/cdk-ssm-documents.HelloWorld.toString">toString</a></code> | Returns a string representation of this construct. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.HelloWorld.addDependency">addDependency</a></code> | Add a dependency between this stack and another stack. |
-| <code><a href="#@cdklabs/cdk-ssm-documents.HelloWorld.addMetadata">addMetadata</a></code> | Adds an arbitary key-value pair, with information you want to record about the stack. |
+| <code><a href="#@cdklabs/cdk-ssm-documents.HelloWorld.addMetadata">addMetadata</a></code> | Adds an arbitrary key-value pair, with information you want to record about the stack. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.HelloWorld.addTransform">addTransform</a></code> | Add a Transform to this stack. A Transform is a macro that AWS CloudFormation uses to process your template. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.HelloWorld.exportStringListValue">exportStringListValue</a></code> | Create a CloudFormation Export for a string list value. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.HelloWorld.exportValue">exportValue</a></code> | Create a CloudFormation Export for a string value. |
@@ -8608,7 +8608,7 @@ app, and also supports nested stacks.
 public addMetadata(key: string, value: any): void
 ```
 
-Adds an arbitary key-value pair, with information you want to record about the stack.
+Adds an arbitrary key-value pair, with information you want to record about the stack.
 
 These get translated to the Metadata section of the generated template.
 
@@ -8716,8 +8716,6 @@ temporarily ensure that the CloudFormation Export still exists while you
 remove the reference from the consuming stack. After that, you can remove
 the resource and the manual export.
 
-## Example
-
 Here is how the process works. Let's say there are two stacks,
 `producerStack` and `consumerStack`, and `producerStack` has a bucket
 called `bucket`, which is referenced by `consumerStack` (perhaps because
@@ -8728,7 +8726,7 @@ deleted, `consumerStack` might still be using it.
 
 Instead, the process takes two deployments:
 
-### Deployment 1: break the relationship
+**Deployment 1: break the relationship**:
 
 - Make sure `consumerStack` no longer references `bucket.bucketName` (maybe the consumer
   stack now uses its own bucket, or it writes to an AWS DynamoDB table, or maybe you just
@@ -8738,7 +8736,7 @@ Instead, the process takes two deployments:
   between the two stacks is being broken.
 - Deploy (this will effectively only change the `consumerStack`, but it's safe to deploy both).
 
-### Deployment 2: remove the bucket resource
+**Deployment 2: remove the bucket resource**:
 
 - You are now free to remove the `bucket` resource from `producerStack`.
 - Don't forget to remove the `exportValue()` call as well.
@@ -9092,9 +9090,9 @@ attempt to parse it to implement your logic. If you do, you must first
 check that it is a concrete value an not an unresolved token. If this
 value is an unresolved token (`Token.isUnresolved(stack.account)` returns
 `true`), this implies that the user wishes that this stack will synthesize
-into a **account-agnostic template**. In this case, your code should either
+into an **account-agnostic template**. In this case, your code should either
 fail (throw an error, emit a synth error using `Annotations.of(construct).addError()`) or
-implement some other region-agnostic behavior.
+implement some other account-agnostic behavior.
 
 ---
 

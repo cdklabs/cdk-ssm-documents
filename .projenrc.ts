@@ -3,7 +3,7 @@ import { CdklabsConstructLibrary } from "cdklabs-projen-project-types";
 const project = new CdklabsConstructLibrary({
   author: 'Amazon Web Services',
   authorAddress: 'https://aws.amazon.com',
-  cdkVersion: '2.131.0',
+  cdkVersion: '2.189.1',
   jsiiVersion: '1.x',
   cdkVersionPinning: false,
   tsconfig: {
