@@ -47,32 +47,32 @@
     "@aws-cdk/integ-tests-alpha": "latest",
     "@stylistic/eslint-plugin": "^2",
     "@types/jest": "^27",
-    "@types/node": "^18 <= 18.11.19",
+    "@types/node": "^18",
     "@typescript-eslint/eslint-plugin": "^8",
     "@typescript-eslint/parser": "^8",
     "aws-cdk-lib": "2.189.1",
     "cdklabs-projen-project-types": "^0.3.16",
     "commit-and-tag-version": "^12",
-    "constructs": "10.0.5",
+    "constructs": "10.5.1",
     "eslint": "^9",
     "eslint-import-resolver-typescript": "^2.7.1",
     "eslint-plugin-import": "^2.26.0",
     "jest": "^27",
-    "jest-junit": "^15",
+    "jest-junit": "^16",
     "jsii": "1.x",
     "jsii-diff": "^1.95.0",
     "jsii-docgen": "^10.5.0",
     "jsii-pacmak": "^1.95.0",
     "jsii-rosetta": "1.x",
     "mocha": "^10.3.0",
-    "projen": "^0.90.2",
+    "projen": "^0.99.19",
     "ts-jest": "^27",
     "ts-node": "^10.8.1",
     "typescript": "^4.6.4"
   },
   "peerDependencies": {
     "aws-cdk-lib": "^2.189.1",
-    "constructs": "^10.0.5"
+    "constructs": "^10.5.1"
   },
   "dependencies": {
     "@aws-sdk/client-cloudformation": "^3.1003.0",
@@ -106,10 +106,6 @@
     "python-shell",
     "synchronized-promise"
   ],
-  "resolutions": {
-    "@types/babel__traverse": "7.18.2",
-    "@types/prettier": "2.6.0"
-  },
   "keywords": [
     "cdk"
   ],
