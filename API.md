@@ -17550,7 +17550,7 @@ JSON documents do not support headers.
 ##### `requires`<sup>Optional</sup> <a name="requires" id="@cdklabs/cdk-ssm-documents.AutomationDocumentProps.property.requires"></a>
 
 ```typescript
-public readonly requires: IResolvable | DocumentRequiresProperty | IResolvable[];
+public readonly requires: IResolvable | (DocumentRequiresProperty | IResolvable)[];
 ```
 
 - *Type:* aws-cdk-lib.IResolvable | aws-cdk-lib.aws_ssm.CfnDocument.DocumentRequiresProperty | aws-cdk-lib.IResolvable[]
@@ -19499,7 +19499,7 @@ JSON documents do not support headers.
 ##### `requires`<sup>Optional</sup> <a name="requires" id="@cdklabs/cdk-ssm-documents.CommandDocumentProps.property.requires"></a>
 
 ```typescript
-public readonly requires: IResolvable | DocumentRequiresProperty | IResolvable[];
+public readonly requires: IResolvable | (DocumentRequiresProperty | IResolvable)[];
 ```
 
 - *Type:* aws-cdk-lib.IResolvable | aws-cdk-lib.aws_ssm.CfnDocument.DocumentRequiresProperty | aws-cdk-lib.IResolvable[]
@@ -23872,7 +23872,7 @@ Used to create only one incident record for an incident.
 ##### `incidentTags`<sup>Optional</sup> <a name="incidentTags" id="@cdklabs/cdk-ssm-documents.IncidentTemplateProps.property.incidentTags"></a>
 
 ```typescript
-public readonly incidentTags: IResolvable | IResolvable | CfnTag[];
+public readonly incidentTags: IResolvable | (IResolvable | CfnTag)[];
 ```
 
 - *Type:* aws-cdk-lib.IResolvable | aws-cdk-lib.IResolvable | aws-cdk-lib.CfnTag[]
@@ -23886,7 +23886,7 @@ public readonly incidentTags: IResolvable | IResolvable | CfnTag[];
 ##### `notificationTargets`<sup>Optional</sup> <a name="notificationTargets" id="@cdklabs/cdk-ssm-documents.IncidentTemplateProps.property.notificationTargets"></a>
 
 ```typescript
-public readonly notificationTargets: IResolvable | NotificationTargetItemProperty | IResolvable[];
+public readonly notificationTargets: IResolvable | (NotificationTargetItemProperty | IResolvable)[];
 ```
 
 - *Type:* aws-cdk-lib.IResolvable | aws-cdk-lib.aws_ssmincidents.CfnResponsePlan.NotificationTargetItemProperty | aws-cdk-lib.IResolvable[]
@@ -28485,7 +28485,7 @@ JSON documents do not support headers.
 ##### `requires`<sup>Optional</sup> <a name="requires" id="@cdklabs/cdk-ssm-documents.SsmDocumentProps.property.requires"></a>
 
 ```typescript
-public readonly requires: IResolvable | DocumentRequiresProperty | IResolvable[];
+public readonly requires: IResolvable | (DocumentRequiresProperty | IResolvable)[];
 ```
 
 - *Type:* aws-cdk-lib.IResolvable | aws-cdk-lib.aws_ssm.CfnDocument.DocumentRequiresProperty | aws-cdk-lib.IResolvable[]
