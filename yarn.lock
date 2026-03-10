@@ -1609,12 +1609,25 @@
     chalk "^4.1.2"
     semver "^7.6.3"
 
+"@jsii/check-node@1.127.0":
+  version "1.127.0"
+  resolved "https://registry.yarnpkg.com/@jsii/check-node/-/check-node-1.127.0.tgz#6dca828289717e509f57f0e027c1b704a0207b34"
+  integrity sha512-IYkLRond94RmaeP40LiFLM4JTxnVING3qWVndOpjhK5nPydDPBp865GW6gUQT724a6zhZww/2E1uw3c3b/i12A==
+  dependencies:
+    chalk "^4.1.2"
+    semver "^7.7.4"
+
 "@jsii/spec@1.102.0", "@jsii/spec@^1.102.0":
   version "1.102.0"
   resolved "https://registry.npmjs.org/@jsii/spec/-/spec-1.102.0.tgz"
   integrity sha512-/VcmoEyp7HR0xoFz47/fiyZjAv+0gHG4ZwTbgB+umbB88bTbLZadnqBL7T9OIKQbK4w8HNOaRnHwjNBIYIPxWQ==
   dependencies:
     ajv "^8.17.1"
+
+"@jsii/spec@1.127.0":
+  version "1.127.0"
+  resolved "https://registry.yarnpkg.com/@jsii/spec/-/spec-1.127.0.tgz#5e5c1d38b0d5444b55158d03186c4a35b875af4c"
+  integrity sha512-LJiQLjlyQuMx1KyoKDdU9SlxNe/3xnllPSTlb6alPL84aYAcrGQX82XX7v554AudesIZHp5p5u0bupTK+v3QWA==
 
 "@jsii/spec@^1.105.0":
   version "1.105.0"
@@ -5334,7 +5347,7 @@ jsii-rosetta@1.x:
     workerpool "^6.5.1"
     yargs "^16.2.0"
 
-jsii@1.102.0, jsii@1.x:
+jsii@1.102.0:
   version "1.102.0"
   resolved "https://registry.npmjs.org/jsii/-/jsii-1.102.0.tgz"
   integrity sha512-XwNFkuC1dU6CiA7toiffUPuRj86hThk9T617ZGyKrrdwQ3Q0VbS+nHv4oq1WcmG0O+2EaZMgyfbNTFurHDkquA==
@@ -5352,6 +5365,24 @@ jsii@1.102.0, jsii@1.x:
     spdx-license-list "^6.9.0"
     typescript "~3.9.10"
     yargs "^16.2.0"
+
+jsii@~5.9:
+  version "5.9.32"
+  resolved "https://registry.yarnpkg.com/jsii/-/jsii-5.9.32.tgz#a2370000a2e4ced6f7b21de9fc9bb949fd7070be"
+  integrity sha512-piCJjmYwP1MX4EonRfnw/IcMBSzfB2BNKaNgAPUW9TAXAsc5tBXpd6WyK6qDe3LVWth0H3M06Js2rhgG+kxshg==
+  dependencies:
+    "@jsii/check-node" "1.127.0"
+    "@jsii/spec" "1.127.0"
+    case "^1.6.3"
+    chalk "^4"
+    fast-deep-equal "^3.1.3"
+    log4js "^6.9.1"
+    semver "^7.7.4"
+    semver-intersect "^1.5.0"
+    sort-json "^2.0.1"
+    spdx-license-list "^6.11.0"
+    typescript "~5.9"
+    yargs "^17.7.2"
 
 json-buffer@3.0.1:
   version "3.0.1"
@@ -6612,6 +6643,11 @@ spdx-license-ids@^3.0.0:
   resolved "https://registry.npmjs.org/spdx-license-ids/-/spdx-license-ids-3.0.18.tgz"
   integrity sha512-xxRs31BqRYHwiMzudOrpSiHtZ8i/GeionCBDSilhYRj+9gIcI8wCZTlXZKu9vZIVqViP3dcp9qE5G6AlIaD+TQ==
 
+spdx-license-list@^6.11.0:
+  version "6.11.0"
+  resolved "https://registry.yarnpkg.com/spdx-license-list/-/spdx-license-list-6.11.0.tgz#d040b19967de5ddbdef1b14ec96a218e6c7b80d1"
+  integrity sha512-p5ICd51dSnh7zIMtPgbB9ShBg3HMT77OeI6WVhrFFvxa5KIFYNcqxD4joAE+n1zZ7wlJdEkrOMwC75JUMMmsJA==
+
 spdx-license-list@^6.9.0:
   version "6.9.0"
   resolved "https://registry.npmjs.org/spdx-license-list/-/spdx-license-list-6.9.0.tgz"
@@ -7081,6 +7117,11 @@ typescript@~3.9.10:
   version "3.9.10"
   resolved "https://registry.npmjs.org/typescript/-/typescript-3.9.10.tgz"
   integrity sha512-w6fIxVE/H1PkLKcCPsFqKE7Kv7QUwhU8qQY2MueZXWx5cPZdwFupLgKK3vntcK98BtNHZtAF4LA/yl2a7k8R6Q==
+
+typescript@~5.9:
+  version "5.9.3"
+  resolved "https://registry.yarnpkg.com/typescript/-/typescript-5.9.3.tgz#5b4f59e15310ab17a216f5d6cf53ee476ede670f"
+  integrity sha512-jl1vZzPDinLr9eUt3J/t7V6FgNEw9QjvBPdysz9KfQDD41fQrC2Y4vKQdiaUpFT4bXlb1RHhLpp8wtm6M5TgSw==
 
 uglify-js@^3.1.4:
   version "3.19.2"

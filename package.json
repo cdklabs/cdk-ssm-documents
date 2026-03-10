@@ -59,7 +59,7 @@
     "eslint-plugin-import": "^2.26.0",
     "jest": "^27",
     "jest-junit": "^16",
-    "jsii": "1.x",
+    "jsii": "~5.9",
     "jsii-diff": "^1.95.0",
     "jsii-docgen": "^10.5.0",
     "jsii-pacmak": "^1.95.0",

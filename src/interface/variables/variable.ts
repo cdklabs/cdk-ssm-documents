@@ -30,10 +30,10 @@ export interface IGenericVariable {
   toJSON(): any;
 }
 
-export abstract class HardCodedValueBase<TValue> implements IGenericVariable {
-  readonly val: TValue;
+export abstract class HardCodedValueBase implements IGenericVariable {
+  readonly val: any;
 
-  constructor(val: TValue) {
+  constructor(val: any) {
     this.assertType(val);
     this.val = val;
   }

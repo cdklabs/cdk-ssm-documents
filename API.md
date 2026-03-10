@@ -45,6 +45,7 @@ new ApplicationsStep(scope: Construct, id: string, props: ApplicationsStepProps)
 | **Name** | **Description** |
 | --- | --- |
 | <code><a href="#@cdklabs/cdk-ssm-documents.ApplicationsStep.toString">toString</a></code> | Returns a string representation of this construct. |
+| <code><a href="#@cdklabs/cdk-ssm-documents.ApplicationsStep.with">with</a></code> | Applies one or more mixins to this construct. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.ApplicationsStep.listInputs">listInputs</a></code> | Lists the inputs that are required for this step. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.ApplicationsStep.listOutputs">listOutputs</a></code> | RunCommand Steps do not have outputs. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.ApplicationsStep.toSsmEntry">toSsmEntry</a></code> | Converts this step into an object to prepare for yaml/json representation of this step. |
@@ -60,6 +61,27 @@ public toString(): string
 ```
 
 Returns a string representation of this construct.
+
+##### `with` <a name="with" id="@cdklabs/cdk-ssm-documents.ApplicationsStep.with"></a>
+
+```typescript
+public with(mixins: ...IMixin[]): IConstruct
+```
+
+Applies one or more mixins to this construct.
+
+Mixins are applied in order. The list of constructs is captured at the
+start of the call, so constructs added by a mixin will not be visited.
+Use multiple `with()` calls if subsequent mixins should apply to added
+constructs.
+
+###### `mixins`<sup>Required</sup> <a name="mixins" id="@cdklabs/cdk-ssm-documents.ApplicationsStep.with.parameter.mixins"></a>
+
+- *Type:* ...constructs.IMixin[]
+
+The mixins to apply.
+
+---
 
 ##### `listInputs` <a name="listInputs" id="@cdklabs/cdk-ssm-documents.ApplicationsStep.listInputs"></a>
 
@@ -111,7 +133,7 @@ public variables(): {[ key: string ]: any}
 
 ---
 
-##### ~~`isConstruct`~~ <a name="isConstruct" id="@cdklabs/cdk-ssm-documents.ApplicationsStep.isConstruct"></a>
+##### `isConstruct` <a name="isConstruct" id="@cdklabs/cdk-ssm-documents.ApplicationsStep.isConstruct"></a>
 
 ```typescript
 import { ApplicationsStep } from '@cdklabs/cdk-ssm-documents'
@@ -120,6 +142,20 @@ ApplicationsStep.isConstruct(x: any)
 ```
 
 Checks if `x` is a construct.
+
+Use this method instead of `instanceof` to properly detect `Construct`
+instances, even when the construct library is symlinked.
+
+Explanation: in JavaScript, multiple copies of the `constructs` library on
+disk are seen as independent, completely different libraries. As a
+consequence, the class `Construct` in each copy of the `constructs` library
+is seen as a different class, and an instance of one class will not test as
+`instanceof` the other class. `npm install` will not create installations
+like this, but users may manually symlink construct libraries together or
+use a monorepo tool: in those cases, multiple copies of the `constructs`
+library can be accidentally installed, and `instanceof` will behave
+unpredictably. It is safest to avoid using `instanceof`, and using
+this type-testing method instead.
 
 ###### `x`<sup>Required</sup> <a name="x" id="@cdklabs/cdk-ssm-documents.ApplicationsStep.isConstruct.parameter.x"></a>
 
@@ -380,6 +416,7 @@ new ApproveStep(scope: Construct, id: string, props: ApproveStepProps)
 | **Name** | **Description** |
 | --- | --- |
 | <code><a href="#@cdklabs/cdk-ssm-documents.ApproveStep.toString">toString</a></code> | Returns a string representation of this construct. |
+| <code><a href="#@cdklabs/cdk-ssm-documents.ApproveStep.with">with</a></code> | Applies one or more mixins to this construct. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.ApproveStep.listInputs">listInputs</a></code> | Lists the inputs that are required for this step. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.ApproveStep.listOutputs">listOutputs</a></code> | Lists the outputs that will be returned from this step. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.ApproveStep.toSsmEntry">toSsmEntry</a></code> | Converts this step into an object to prepare for yaml/json representation of this step. |
@@ -396,6 +433,27 @@ public toString(): string
 ```
 
 Returns a string representation of this construct.
+
+##### `with` <a name="with" id="@cdklabs/cdk-ssm-documents.ApproveStep.with"></a>
+
+```typescript
+public with(mixins: ...IMixin[]): IConstruct
+```
+
+Applies one or more mixins to this construct.
+
+Mixins are applied in order. The list of constructs is captured at the
+start of the call, so constructs added by a mixin will not be visited.
+Use multiple `with()` calls if subsequent mixins should apply to added
+constructs.
+
+###### `mixins`<sup>Required</sup> <a name="mixins" id="@cdklabs/cdk-ssm-documents.ApproveStep.with.parameter.mixins"></a>
+
+- *Type:* ...constructs.IMixin[]
+
+The mixins to apply.
+
+---
 
 ##### `listInputs` <a name="listInputs" id="@cdklabs/cdk-ssm-documents.ApproveStep.listInputs"></a>
 
@@ -455,7 +513,7 @@ public variables(): {[ key: string ]: any}
 
 ---
 
-##### ~~`isConstruct`~~ <a name="isConstruct" id="@cdklabs/cdk-ssm-documents.ApproveStep.isConstruct"></a>
+##### `isConstruct` <a name="isConstruct" id="@cdklabs/cdk-ssm-documents.ApproveStep.isConstruct"></a>
 
 ```typescript
 import { ApproveStep } from '@cdklabs/cdk-ssm-documents'
@@ -464,6 +522,20 @@ ApproveStep.isConstruct(x: any)
 ```
 
 Checks if `x` is a construct.
+
+Use this method instead of `instanceof` to properly detect `Construct`
+instances, even when the construct library is symlinked.
+
+Explanation: in JavaScript, multiple copies of the `constructs` library on
+disk are seen as independent, completely different libraries. As a
+consequence, the class `Construct` in each copy of the `constructs` library
+is seen as a different class, and an instance of one class will not test as
+`instanceof` the other class. `npm install` will not create installations
+like this, but users may manually symlink construct libraries together or
+use a monorepo tool: in those cases, multiple copies of the `constructs`
+library can be accidentally installed, and `instanceof` will behave
+unpredictably. It is safest to avoid using `instanceof`, and using
+this type-testing method instead.
 
 ###### `x`<sup>Required</sup> <a name="x" id="@cdklabs/cdk-ssm-documents.ApproveStep.isConstruct.parameter.x"></a>
 
@@ -765,6 +837,7 @@ new AssertAwsResourceStep(scope: Construct, id: string, props: AssertAwsResource
 | **Name** | **Description** |
 | --- | --- |
 | <code><a href="#@cdklabs/cdk-ssm-documents.AssertAwsResourceStep.toString">toString</a></code> | Returns a string representation of this construct. |
+| <code><a href="#@cdklabs/cdk-ssm-documents.AssertAwsResourceStep.with">with</a></code> | Applies one or more mixins to this construct. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.AssertAwsResourceStep.listInputs">listInputs</a></code> | Derives the inputs by parsing the apiParams to find matches for inputs in double circle braces ("{{ INPUT }}"). |
 | <code><a href="#@cdklabs/cdk-ssm-documents.AssertAwsResourceStep.listOutputs">listOutputs</a></code> | There are no outputs for this step. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.AssertAwsResourceStep.toSsmEntry">toSsmEntry</a></code> | Converts this step into an object to prepare for yaml/json representation of this step. |
@@ -781,6 +854,27 @@ public toString(): string
 ```
 
 Returns a string representation of this construct.
+
+##### `with` <a name="with" id="@cdklabs/cdk-ssm-documents.AssertAwsResourceStep.with"></a>
+
+```typescript
+public with(mixins: ...IMixin[]): IConstruct
+```
+
+Applies one or more mixins to this construct.
+
+Mixins are applied in order. The list of constructs is captured at the
+start of the call, so constructs added by a mixin will not be visited.
+Use multiple `with()` calls if subsequent mixins should apply to added
+constructs.
+
+###### `mixins`<sup>Required</sup> <a name="mixins" id="@cdklabs/cdk-ssm-documents.AssertAwsResourceStep.with.parameter.mixins"></a>
+
+- *Type:* ...constructs.IMixin[]
+
+The mixins to apply.
+
+---
 
 ##### `listInputs` <a name="listInputs" id="@cdklabs/cdk-ssm-documents.AssertAwsResourceStep.listInputs"></a>
 
@@ -840,7 +934,7 @@ public variables(): {[ key: string ]: any}
 
 ---
 
-##### ~~`isConstruct`~~ <a name="isConstruct" id="@cdklabs/cdk-ssm-documents.AssertAwsResourceStep.isConstruct"></a>
+##### `isConstruct` <a name="isConstruct" id="@cdklabs/cdk-ssm-documents.AssertAwsResourceStep.isConstruct"></a>
 
 ```typescript
 import { AssertAwsResourceStep } from '@cdklabs/cdk-ssm-documents'
@@ -849,6 +943,20 @@ AssertAwsResourceStep.isConstruct(x: any)
 ```
 
 Checks if `x` is a construct.
+
+Use this method instead of `instanceof` to properly detect `Construct`
+instances, even when the construct library is symlinked.
+
+Explanation: in JavaScript, multiple copies of the `constructs` library on
+disk are seen as independent, completely different libraries. As a
+consequence, the class `Construct` in each copy of the `constructs` library
+is seen as a different class, and an instance of one class will not test as
+`instanceof` the other class. `npm install` will not create installations
+like this, but users may manually symlink construct libraries together or
+use a monorepo tool: in those cases, multiple copies of the `constructs`
+library can be accidentally installed, and `instanceof` will behave
+unpredictably. It is safest to avoid using `instanceof`, and using
+this type-testing method instead.
 
 ###### `x`<sup>Required</sup> <a name="x" id="@cdklabs/cdk-ssm-documents.AssertAwsResourceStep.isConstruct.parameter.x"></a>
 
@@ -1184,6 +1292,7 @@ new AutomationDocument(scope: Construct, id: string, props: AutomationDocumentPr
 | **Name** | **Description** |
 | --- | --- |
 | <code><a href="#@cdklabs/cdk-ssm-documents.AutomationDocument.toString">toString</a></code> | Returns a string representation of this construct. |
+| <code><a href="#@cdklabs/cdk-ssm-documents.AutomationDocument.with">with</a></code> | Applies one or more mixins to this construct. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.AutomationDocument.documentType">documentType</a></code> | *No description.* |
 | <code><a href="#@cdklabs/cdk-ssm-documents.AutomationDocument.print">print</a></code> | Synthesize before calling this function! You can use this to Synthesize: cdk.SynthUtils.synthesize(stack); |
 | <code><a href="#@cdklabs/cdk-ssm-documents.AutomationDocument.addStep">addStep</a></code> | *No description.* |
@@ -1198,6 +1307,27 @@ public toString(): string
 ```
 
 Returns a string representation of this construct.
+
+##### `with` <a name="with" id="@cdklabs/cdk-ssm-documents.AutomationDocument.with"></a>
+
+```typescript
+public with(mixins: ...IMixin[]): IConstruct
+```
+
+Applies one or more mixins to this construct.
+
+Mixins are applied in order. The list of constructs is captured at the
+start of the call, so constructs added by a mixin will not be visited.
+Use multiple `with()` calls if subsequent mixins should apply to added
+constructs.
+
+###### `mixins`<sup>Required</sup> <a name="mixins" id="@cdklabs/cdk-ssm-documents.AutomationDocument.with.parameter.mixins"></a>
+
+- *Type:* ...constructs.IMixin[]
+
+The mixins to apply.
+
+---
 
 ##### `documentType` <a name="documentType" id="@cdklabs/cdk-ssm-documents.AutomationDocument.documentType"></a>
 
@@ -1243,7 +1373,7 @@ public collectedSteps(): AutomationStep[]
 
 ---
 
-##### ~~`isConstruct`~~ <a name="isConstruct" id="@cdklabs/cdk-ssm-documents.AutomationDocument.isConstruct"></a>
+##### `isConstruct` <a name="isConstruct" id="@cdklabs/cdk-ssm-documents.AutomationDocument.isConstruct"></a>
 
 ```typescript
 import { AutomationDocument } from '@cdklabs/cdk-ssm-documents'
@@ -1252,6 +1382,20 @@ AutomationDocument.isConstruct(x: any)
 ```
 
 Checks if `x` is a construct.
+
+Use this method instead of `instanceof` to properly detect `Construct`
+instances, even when the construct library is symlinked.
+
+Explanation: in JavaScript, multiple copies of the `constructs` library on
+disk are seen as independent, completely different libraries. As a
+consequence, the class `Construct` in each copy of the `constructs` library
+is seen as a different class, and an instance of one class will not test as
+`instanceof` the other class. `npm install` will not create installations
+like this, but users may manually symlink construct libraries together or
+use a monorepo tool: in those cases, multiple copies of the `constructs`
+library can be accidentally installed, and `instanceof` will behave
+unpredictably. It is safest to avoid using `instanceof`, and using
+this type-testing method instead.
 
 ###### `x`<sup>Required</sup> <a name="x" id="@cdklabs/cdk-ssm-documents.AutomationDocument.isConstruct.parameter.x"></a>
 
@@ -1444,6 +1588,7 @@ new AutomationStep(scope: Construct, id: string, props: AutomationStepProps)
 | **Name** | **Description** |
 | --- | --- |
 | <code><a href="#@cdklabs/cdk-ssm-documents.AutomationStep.toString">toString</a></code> | Returns a string representation of this construct. |
+| <code><a href="#@cdklabs/cdk-ssm-documents.AutomationStep.with">with</a></code> | Applies one or more mixins to this construct. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.AutomationStep.listInputs">listInputs</a></code> | Lists the inputs that are required for this step. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.AutomationStep.listOutputs">listOutputs</a></code> | Lists the outputs that will be returned from this step. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.AutomationStep.toSsmEntry">toSsmEntry</a></code> | Converts this step into an object to prepare for yaml/json representation of this step. |
@@ -1460,6 +1605,27 @@ public toString(): string
 ```
 
 Returns a string representation of this construct.
+
+##### `with` <a name="with" id="@cdklabs/cdk-ssm-documents.AutomationStep.with"></a>
+
+```typescript
+public with(mixins: ...IMixin[]): IConstruct
+```
+
+Applies one or more mixins to this construct.
+
+Mixins are applied in order. The list of constructs is captured at the
+start of the call, so constructs added by a mixin will not be visited.
+Use multiple `with()` calls if subsequent mixins should apply to added
+constructs.
+
+###### `mixins`<sup>Required</sup> <a name="mixins" id="@cdklabs/cdk-ssm-documents.AutomationStep.with.parameter.mixins"></a>
+
+- *Type:* ...constructs.IMixin[]
+
+The mixins to apply.
+
+---
 
 ##### `listInputs` <a name="listInputs" id="@cdklabs/cdk-ssm-documents.AutomationStep.listInputs"></a>
 
@@ -1519,7 +1685,7 @@ public variables(): {[ key: string ]: any}
 
 ---
 
-##### ~~`isConstruct`~~ <a name="isConstruct" id="@cdklabs/cdk-ssm-documents.AutomationStep.isConstruct"></a>
+##### `isConstruct` <a name="isConstruct" id="@cdklabs/cdk-ssm-documents.AutomationStep.isConstruct"></a>
 
 ```typescript
 import { AutomationStep } from '@cdklabs/cdk-ssm-documents'
@@ -1528,6 +1694,20 @@ AutomationStep.isConstruct(x: any)
 ```
 
 Checks if `x` is a construct.
+
+Use this method instead of `instanceof` to properly detect `Construct`
+instances, even when the construct library is symlinked.
+
+Explanation: in JavaScript, multiple copies of the `constructs` library on
+disk are seen as independent, completely different libraries. As a
+consequence, the class `Construct` in each copy of the `constructs` library
+is seen as a different class, and an instance of one class will not test as
+`instanceof` the other class. `npm install` will not create installations
+like this, but users may manually symlink construct libraries together or
+use a monorepo tool: in those cases, multiple copies of the `constructs`
+library can be accidentally installed, and `instanceof` will behave
+unpredictably. It is safest to avoid using `instanceof`, and using
+this type-testing method instead.
 
 ###### `x`<sup>Required</sup> <a name="x" id="@cdklabs/cdk-ssm-documents.AutomationStep.isConstruct.parameter.x"></a>
 
@@ -1783,6 +1963,7 @@ new AwsApiStep(scope: Construct, id: string, props: AwsApiStepProps)
 | **Name** | **Description** |
 | --- | --- |
 | <code><a href="#@cdklabs/cdk-ssm-documents.AwsApiStep.toString">toString</a></code> | Returns a string representation of this construct. |
+| <code><a href="#@cdklabs/cdk-ssm-documents.AwsApiStep.with">with</a></code> | Applies one or more mixins to this construct. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.AwsApiStep.listInputs">listInputs</a></code> | Derives the inputs by parsing the apiParams to find matches for inputs in double circle braces ("{{ INPUT }}"). |
 | <code><a href="#@cdklabs/cdk-ssm-documents.AwsApiStep.listOutputs">listOutputs</a></code> | Lists the outputs that will be returned from this step. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.AwsApiStep.toSsmEntry">toSsmEntry</a></code> | Converts this step into an object to prepare for yaml/json representation of this step. |
@@ -1799,6 +1980,27 @@ public toString(): string
 ```
 
 Returns a string representation of this construct.
+
+##### `with` <a name="with" id="@cdklabs/cdk-ssm-documents.AwsApiStep.with"></a>
+
+```typescript
+public with(mixins: ...IMixin[]): IConstruct
+```
+
+Applies one or more mixins to this construct.
+
+Mixins are applied in order. The list of constructs is captured at the
+start of the call, so constructs added by a mixin will not be visited.
+Use multiple `with()` calls if subsequent mixins should apply to added
+constructs.
+
+###### `mixins`<sup>Required</sup> <a name="mixins" id="@cdklabs/cdk-ssm-documents.AwsApiStep.with.parameter.mixins"></a>
+
+- *Type:* ...constructs.IMixin[]
+
+The mixins to apply.
+
+---
 
 ##### `listInputs` <a name="listInputs" id="@cdklabs/cdk-ssm-documents.AwsApiStep.listInputs"></a>
 
@@ -1858,7 +2060,7 @@ public variables(): {[ key: string ]: any}
 
 ---
 
-##### ~~`isConstruct`~~ <a name="isConstruct" id="@cdklabs/cdk-ssm-documents.AwsApiStep.isConstruct"></a>
+##### `isConstruct` <a name="isConstruct" id="@cdklabs/cdk-ssm-documents.AwsApiStep.isConstruct"></a>
 
 ```typescript
 import { AwsApiStep } from '@cdklabs/cdk-ssm-documents'
@@ -1867,6 +2069,20 @@ AwsApiStep.isConstruct(x: any)
 ```
 
 Checks if `x` is a construct.
+
+Use this method instead of `instanceof` to properly detect `Construct`
+instances, even when the construct library is symlinked.
+
+Explanation: in JavaScript, multiple copies of the `constructs` library on
+disk are seen as independent, completely different libraries. As a
+consequence, the class `Construct` in each copy of the `constructs` library
+is seen as a different class, and an instance of one class will not test as
+`instanceof` the other class. `npm install` will not create installations
+like this, but users may manually symlink construct libraries together or
+use a monorepo tool: in those cases, multiple copies of the `constructs`
+library can be accidentally installed, and `instanceof` will behave
+unpredictably. It is safest to avoid using `instanceof`, and using
+this type-testing method instead.
 
 ###### `x`<sup>Required</sup> <a name="x" id="@cdklabs/cdk-ssm-documents.AwsApiStep.isConstruct.parameter.x"></a>
 
@@ -2177,6 +2393,7 @@ new BranchStep(scope: Construct, id: string, props: BranchStepProps)
 | **Name** | **Description** |
 | --- | --- |
 | <code><a href="#@cdklabs/cdk-ssm-documents.BranchStep.toString">toString</a></code> | Returns a string representation of this construct. |
+| <code><a href="#@cdklabs/cdk-ssm-documents.BranchStep.with">with</a></code> | Applies one or more mixins to this construct. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.BranchStep.listInputs">listInputs</a></code> | Lists the inputs that are required for this step. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.BranchStep.listOutputs">listOutputs</a></code> | There is no output from branch steps. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.BranchStep.toSsmEntry">toSsmEntry</a></code> | Converts this step into an object to prepare for yaml/json representation of this step. |
@@ -2193,6 +2410,27 @@ public toString(): string
 ```
 
 Returns a string representation of this construct.
+
+##### `with` <a name="with" id="@cdklabs/cdk-ssm-documents.BranchStep.with"></a>
+
+```typescript
+public with(mixins: ...IMixin[]): IConstruct
+```
+
+Applies one or more mixins to this construct.
+
+Mixins are applied in order. The list of constructs is captured at the
+start of the call, so constructs added by a mixin will not be visited.
+Use multiple `with()` calls if subsequent mixins should apply to added
+constructs.
+
+###### `mixins`<sup>Required</sup> <a name="mixins" id="@cdklabs/cdk-ssm-documents.BranchStep.with.parameter.mixins"></a>
+
+- *Type:* ...constructs.IMixin[]
+
+The mixins to apply.
+
+---
 
 ##### `listInputs` <a name="listInputs" id="@cdklabs/cdk-ssm-documents.BranchStep.listInputs"></a>
 
@@ -2252,7 +2490,7 @@ public variables(): {[ key: string ]: any}
 
 ---
 
-##### ~~`isConstruct`~~ <a name="isConstruct" id="@cdklabs/cdk-ssm-documents.BranchStep.isConstruct"></a>
+##### `isConstruct` <a name="isConstruct" id="@cdklabs/cdk-ssm-documents.BranchStep.isConstruct"></a>
 
 ```typescript
 import { BranchStep } from '@cdklabs/cdk-ssm-documents'
@@ -2261,6 +2499,20 @@ BranchStep.isConstruct(x: any)
 ```
 
 Checks if `x` is a construct.
+
+Use this method instead of `instanceof` to properly detect `Construct`
+instances, even when the construct library is symlinked.
+
+Explanation: in JavaScript, multiple copies of the `constructs` library on
+disk are seen as independent, completely different libraries. As a
+consequence, the class `Construct` in each copy of the `constructs` library
+is seen as a different class, and an instance of one class will not test as
+`instanceof` the other class. `npm install` will not create installations
+like this, but users may manually symlink construct libraries together or
+use a monorepo tool: in those cases, multiple copies of the `constructs`
+library can be accidentally installed, and `instanceof` will behave
+unpredictably. It is safest to avoid using `instanceof`, and using
+this type-testing method instead.
 
 ###### `x`<sup>Required</sup> <a name="x" id="@cdklabs/cdk-ssm-documents.BranchStep.isConstruct.parameter.x"></a>
 
@@ -2538,6 +2790,7 @@ new ChangeInstanceStateStep(scope: Construct, id: string, props: ChangeInstanceS
 | **Name** | **Description** |
 | --- | --- |
 | <code><a href="#@cdklabs/cdk-ssm-documents.ChangeInstanceStateStep.toString">toString</a></code> | Returns a string representation of this construct. |
+| <code><a href="#@cdklabs/cdk-ssm-documents.ChangeInstanceStateStep.with">with</a></code> | Applies one or more mixins to this construct. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.ChangeInstanceStateStep.listInputs">listInputs</a></code> | Lists the inputs that are required for this step. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.ChangeInstanceStateStep.listOutputs">listOutputs</a></code> | This step has no outputs. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.ChangeInstanceStateStep.toSsmEntry">toSsmEntry</a></code> | Converts this step into an object to prepare for yaml/json representation of this step. |
@@ -2554,6 +2807,27 @@ public toString(): string
 ```
 
 Returns a string representation of this construct.
+
+##### `with` <a name="with" id="@cdklabs/cdk-ssm-documents.ChangeInstanceStateStep.with"></a>
+
+```typescript
+public with(mixins: ...IMixin[]): IConstruct
+```
+
+Applies one or more mixins to this construct.
+
+Mixins are applied in order. The list of constructs is captured at the
+start of the call, so constructs added by a mixin will not be visited.
+Use multiple `with()` calls if subsequent mixins should apply to added
+constructs.
+
+###### `mixins`<sup>Required</sup> <a name="mixins" id="@cdklabs/cdk-ssm-documents.ChangeInstanceStateStep.with.parameter.mixins"></a>
+
+- *Type:* ...constructs.IMixin[]
+
+The mixins to apply.
+
+---
 
 ##### `listInputs` <a name="listInputs" id="@cdklabs/cdk-ssm-documents.ChangeInstanceStateStep.listInputs"></a>
 
@@ -2613,7 +2887,7 @@ public variables(): {[ key: string ]: any}
 
 ---
 
-##### ~~`isConstruct`~~ <a name="isConstruct" id="@cdklabs/cdk-ssm-documents.ChangeInstanceStateStep.isConstruct"></a>
+##### `isConstruct` <a name="isConstruct" id="@cdklabs/cdk-ssm-documents.ChangeInstanceStateStep.isConstruct"></a>
 
 ```typescript
 import { ChangeInstanceStateStep } from '@cdklabs/cdk-ssm-documents'
@@ -2622,6 +2896,20 @@ ChangeInstanceStateStep.isConstruct(x: any)
 ```
 
 Checks if `x` is a construct.
+
+Use this method instead of `instanceof` to properly detect `Construct`
+instances, even when the construct library is symlinked.
+
+Explanation: in JavaScript, multiple copies of the `constructs` library on
+disk are seen as independent, completely different libraries. As a
+consequence, the class `Construct` in each copy of the `constructs` library
+is seen as a different class, and an instance of one class will not test as
+`instanceof` the other class. `npm install` will not create installations
+like this, but users may manually symlink construct libraries together or
+use a monorepo tool: in those cases, multiple copies of the `constructs`
+library can be accidentally installed, and `instanceof` will behave
+unpredictably. It is safest to avoid using `instanceof`, and using
+this type-testing method instead.
 
 ###### `x`<sup>Required</sup> <a name="x" id="@cdklabs/cdk-ssm-documents.ChangeInstanceStateStep.isConstruct.parameter.x"></a>
 
@@ -2932,6 +3220,7 @@ new CommandDocument(scope: Construct, id: string, props: CommandDocumentProps)
 | **Name** | **Description** |
 | --- | --- |
 | <code><a href="#@cdklabs/cdk-ssm-documents.CommandDocument.toString">toString</a></code> | Returns a string representation of this construct. |
+| <code><a href="#@cdklabs/cdk-ssm-documents.CommandDocument.with">with</a></code> | Applies one or more mixins to this construct. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.CommandDocument.documentType">documentType</a></code> | *No description.* |
 | <code><a href="#@cdklabs/cdk-ssm-documents.CommandDocument.print">print</a></code> | Synthesize before calling this function! You can use this to Synthesize: cdk.SynthUtils.synthesize(stack); |
 | <code><a href="#@cdklabs/cdk-ssm-documents.CommandDocument.addStep">addStep</a></code> | *No description.* |
@@ -2946,6 +3235,27 @@ public toString(): string
 ```
 
 Returns a string representation of this construct.
+
+##### `with` <a name="with" id="@cdklabs/cdk-ssm-documents.CommandDocument.with"></a>
+
+```typescript
+public with(mixins: ...IMixin[]): IConstruct
+```
+
+Applies one or more mixins to this construct.
+
+Mixins are applied in order. The list of constructs is captured at the
+start of the call, so constructs added by a mixin will not be visited.
+Use multiple `with()` calls if subsequent mixins should apply to added
+constructs.
+
+###### `mixins`<sup>Required</sup> <a name="mixins" id="@cdklabs/cdk-ssm-documents.CommandDocument.with.parameter.mixins"></a>
+
+- *Type:* ...constructs.IMixin[]
+
+The mixins to apply.
+
+---
 
 ##### `documentType` <a name="documentType" id="@cdklabs/cdk-ssm-documents.CommandDocument.documentType"></a>
 
@@ -2991,7 +3301,7 @@ public collectedSteps(): CommandStep[]
 
 ---
 
-##### ~~`isConstruct`~~ <a name="isConstruct" id="@cdklabs/cdk-ssm-documents.CommandDocument.isConstruct"></a>
+##### `isConstruct` <a name="isConstruct" id="@cdklabs/cdk-ssm-documents.CommandDocument.isConstruct"></a>
 
 ```typescript
 import { CommandDocument } from '@cdklabs/cdk-ssm-documents'
@@ -3000,6 +3310,20 @@ CommandDocument.isConstruct(x: any)
 ```
 
 Checks if `x` is a construct.
+
+Use this method instead of `instanceof` to properly detect `Construct`
+instances, even when the construct library is symlinked.
+
+Explanation: in JavaScript, multiple copies of the `constructs` library on
+disk are seen as independent, completely different libraries. As a
+consequence, the class `Construct` in each copy of the `constructs` library
+is seen as a different class, and an instance of one class will not test as
+`instanceof` the other class. `npm install` will not create installations
+like this, but users may manually symlink construct libraries together or
+use a monorepo tool: in those cases, multiple copies of the `constructs`
+library can be accidentally installed, and `instanceof` will behave
+unpredictably. It is safest to avoid using `instanceof`, and using
+this type-testing method instead.
 
 ###### `x`<sup>Required</sup> <a name="x" id="@cdklabs/cdk-ssm-documents.CommandDocument.isConstruct.parameter.x"></a>
 
@@ -3172,6 +3496,7 @@ new CommandStep(scope: Construct, id: string, props: CommandStepProps)
 | **Name** | **Description** |
 | --- | --- |
 | <code><a href="#@cdklabs/cdk-ssm-documents.CommandStep.toString">toString</a></code> | Returns a string representation of this construct. |
+| <code><a href="#@cdklabs/cdk-ssm-documents.CommandStep.with">with</a></code> | Applies one or more mixins to this construct. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.CommandStep.listInputs">listInputs</a></code> | Lists the inputs that are required for this step. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.CommandStep.listOutputs">listOutputs</a></code> | RunCommand Steps do not have outputs. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.CommandStep.toSsmEntry">toSsmEntry</a></code> | Converts this step into an object to prepare for yaml/json representation of this step. |
@@ -3187,6 +3512,27 @@ public toString(): string
 ```
 
 Returns a string representation of this construct.
+
+##### `with` <a name="with" id="@cdklabs/cdk-ssm-documents.CommandStep.with"></a>
+
+```typescript
+public with(mixins: ...IMixin[]): IConstruct
+```
+
+Applies one or more mixins to this construct.
+
+Mixins are applied in order. The list of constructs is captured at the
+start of the call, so constructs added by a mixin will not be visited.
+Use multiple `with()` calls if subsequent mixins should apply to added
+constructs.
+
+###### `mixins`<sup>Required</sup> <a name="mixins" id="@cdklabs/cdk-ssm-documents.CommandStep.with.parameter.mixins"></a>
+
+- *Type:* ...constructs.IMixin[]
+
+The mixins to apply.
+
+---
 
 ##### `listInputs` <a name="listInputs" id="@cdklabs/cdk-ssm-documents.CommandStep.listInputs"></a>
 
@@ -3238,7 +3584,7 @@ public variables(): {[ key: string ]: any}
 
 ---
 
-##### ~~`isConstruct`~~ <a name="isConstruct" id="@cdklabs/cdk-ssm-documents.CommandStep.isConstruct"></a>
+##### `isConstruct` <a name="isConstruct" id="@cdklabs/cdk-ssm-documents.CommandStep.isConstruct"></a>
 
 ```typescript
 import { CommandStep } from '@cdklabs/cdk-ssm-documents'
@@ -3247,6 +3593,20 @@ CommandStep.isConstruct(x: any)
 ```
 
 Checks if `x` is a construct.
+
+Use this method instead of `instanceof` to properly detect `Construct`
+instances, even when the construct library is symlinked.
+
+Explanation: in JavaScript, multiple copies of the `constructs` library on
+disk are seen as independent, completely different libraries. As a
+consequence, the class `Construct` in each copy of the `constructs` library
+is seen as a different class, and an instance of one class will not test as
+`instanceof` the other class. `npm install` will not create installations
+like this, but users may manually symlink construct libraries together or
+use a monorepo tool: in those cases, multiple copies of the `constructs`
+library can be accidentally installed, and `instanceof` will behave
+unpredictably. It is safest to avoid using `instanceof`, and using
+this type-testing method instead.
 
 ###### `x`<sup>Required</sup> <a name="x" id="@cdklabs/cdk-ssm-documents.CommandStep.isConstruct.parameter.x"></a>
 
@@ -3456,6 +3816,7 @@ new CompositeAutomationStep(scope: Construct, id: string)
 | **Name** | **Description** |
 | --- | --- |
 | <code><a href="#@cdklabs/cdk-ssm-documents.CompositeAutomationStep.toString">toString</a></code> | Returns a string representation of this construct. |
+| <code><a href="#@cdklabs/cdk-ssm-documents.CompositeAutomationStep.with">with</a></code> | Applies one or more mixins to this construct. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.CompositeAutomationStep.addToDocument">addToDocument</a></code> | *No description.* |
 
 ---
@@ -3467,6 +3828,27 @@ public toString(): string
 ```
 
 Returns a string representation of this construct.
+
+##### `with` <a name="with" id="@cdklabs/cdk-ssm-documents.CompositeAutomationStep.with"></a>
+
+```typescript
+public with(mixins: ...IMixin[]): IConstruct
+```
+
+Applies one or more mixins to this construct.
+
+Mixins are applied in order. The list of constructs is captured at the
+start of the call, so constructs added by a mixin will not be visited.
+Use multiple `with()` calls if subsequent mixins should apply to added
+constructs.
+
+###### `mixins`<sup>Required</sup> <a name="mixins" id="@cdklabs/cdk-ssm-documents.CompositeAutomationStep.with.parameter.mixins"></a>
+
+- *Type:* ...constructs.IMixin[]
+
+The mixins to apply.
+
+---
 
 ##### `addToDocument` <a name="addToDocument" id="@cdklabs/cdk-ssm-documents.CompositeAutomationStep.addToDocument"></a>
 
@@ -3488,7 +3870,7 @@ public addToDocument(doc: AutomationDocumentBuilder): void
 
 ---
 
-##### ~~`isConstruct`~~ <a name="isConstruct" id="@cdklabs/cdk-ssm-documents.CompositeAutomationStep.isConstruct"></a>
+##### `isConstruct` <a name="isConstruct" id="@cdklabs/cdk-ssm-documents.CompositeAutomationStep.isConstruct"></a>
 
 ```typescript
 import { CompositeAutomationStep } from '@cdklabs/cdk-ssm-documents'
@@ -3497,6 +3879,20 @@ CompositeAutomationStep.isConstruct(x: any)
 ```
 
 Checks if `x` is a construct.
+
+Use this method instead of `instanceof` to properly detect `Construct`
+instances, even when the construct library is symlinked.
+
+Explanation: in JavaScript, multiple copies of the `constructs` library on
+disk are seen as independent, completely different libraries. As a
+consequence, the class `Construct` in each copy of the `constructs` library
+is seen as a different class, and an instance of one class will not test as
+`instanceof` the other class. `npm install` will not create installations
+like this, but users may manually symlink construct libraries together or
+use a monorepo tool: in those cases, multiple copies of the `constructs`
+library can be accidentally installed, and `instanceof` will behave
+unpredictably. It is safest to avoid using `instanceof`, and using
+this type-testing method instead.
 
 ###### `x`<sup>Required</sup> <a name="x" id="@cdklabs/cdk-ssm-documents.CompositeAutomationStep.isConstruct.parameter.x"></a>
 
@@ -3563,6 +3959,7 @@ new CompositeCommandStep(scope: Construct, id: string)
 | **Name** | **Description** |
 | --- | --- |
 | <code><a href="#@cdklabs/cdk-ssm-documents.CompositeCommandStep.toString">toString</a></code> | Returns a string representation of this construct. |
+| <code><a href="#@cdklabs/cdk-ssm-documents.CompositeCommandStep.with">with</a></code> | Applies one or more mixins to this construct. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.CompositeCommandStep.addToDocument">addToDocument</a></code> | *No description.* |
 
 ---
@@ -3574,6 +3971,27 @@ public toString(): string
 ```
 
 Returns a string representation of this construct.
+
+##### `with` <a name="with" id="@cdklabs/cdk-ssm-documents.CompositeCommandStep.with"></a>
+
+```typescript
+public with(mixins: ...IMixin[]): IConstruct
+```
+
+Applies one or more mixins to this construct.
+
+Mixins are applied in order. The list of constructs is captured at the
+start of the call, so constructs added by a mixin will not be visited.
+Use multiple `with()` calls if subsequent mixins should apply to added
+constructs.
+
+###### `mixins`<sup>Required</sup> <a name="mixins" id="@cdklabs/cdk-ssm-documents.CompositeCommandStep.with.parameter.mixins"></a>
+
+- *Type:* ...constructs.IMixin[]
+
+The mixins to apply.
+
+---
 
 ##### `addToDocument` <a name="addToDocument" id="@cdklabs/cdk-ssm-documents.CompositeCommandStep.addToDocument"></a>
 
@@ -3595,7 +4013,7 @@ public addToDocument(doc: CommandDocumentBuilder): void
 
 ---
 
-##### ~~`isConstruct`~~ <a name="isConstruct" id="@cdklabs/cdk-ssm-documents.CompositeCommandStep.isConstruct"></a>
+##### `isConstruct` <a name="isConstruct" id="@cdklabs/cdk-ssm-documents.CompositeCommandStep.isConstruct"></a>
 
 ```typescript
 import { CompositeCommandStep } from '@cdklabs/cdk-ssm-documents'
@@ -3604,6 +4022,20 @@ CompositeCommandStep.isConstruct(x: any)
 ```
 
 Checks if `x` is a construct.
+
+Use this method instead of `instanceof` to properly detect `Construct`
+instances, even when the construct library is symlinked.
+
+Explanation: in JavaScript, multiple copies of the `constructs` library on
+disk are seen as independent, completely different libraries. As a
+consequence, the class `Construct` in each copy of the `constructs` library
+is seen as a different class, and an instance of one class will not test as
+`instanceof` the other class. `npm install` will not create installations
+like this, but users may manually symlink construct libraries together or
+use a monorepo tool: in those cases, multiple copies of the `constructs`
+library can be accidentally installed, and `instanceof` will behave
+unpredictably. It is safest to avoid using `instanceof`, and using
+this type-testing method instead.
 
 ###### `x`<sup>Required</sup> <a name="x" id="@cdklabs/cdk-ssm-documents.CompositeCommandStep.isConstruct.parameter.x"></a>
 
@@ -3677,6 +4109,7 @@ new ConfigureDockerStep(scope: Construct, id: string, props: ConfigureDockerStep
 | **Name** | **Description** |
 | --- | --- |
 | <code><a href="#@cdklabs/cdk-ssm-documents.ConfigureDockerStep.toString">toString</a></code> | Returns a string representation of this construct. |
+| <code><a href="#@cdklabs/cdk-ssm-documents.ConfigureDockerStep.with">with</a></code> | Applies one or more mixins to this construct. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.ConfigureDockerStep.listInputs">listInputs</a></code> | Inputs required for this command include agentName allowDowngrade source and targetVersion if version other than latest is desired. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.ConfigureDockerStep.listOutputs">listOutputs</a></code> | RunCommand Steps do not have outputs. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.ConfigureDockerStep.toSsmEntry">toSsmEntry</a></code> | Converts this step into an object to prepare for yaml/json representation of this step. |
@@ -3692,6 +4125,27 @@ public toString(): string
 ```
 
 Returns a string representation of this construct.
+
+##### `with` <a name="with" id="@cdklabs/cdk-ssm-documents.ConfigureDockerStep.with"></a>
+
+```typescript
+public with(mixins: ...IMixin[]): IConstruct
+```
+
+Applies one or more mixins to this construct.
+
+Mixins are applied in order. The list of constructs is captured at the
+start of the call, so constructs added by a mixin will not be visited.
+Use multiple `with()` calls if subsequent mixins should apply to added
+constructs.
+
+###### `mixins`<sup>Required</sup> <a name="mixins" id="@cdklabs/cdk-ssm-documents.ConfigureDockerStep.with.parameter.mixins"></a>
+
+- *Type:* ...constructs.IMixin[]
+
+The mixins to apply.
+
+---
 
 ##### `listInputs` <a name="listInputs" id="@cdklabs/cdk-ssm-documents.ConfigureDockerStep.listInputs"></a>
 
@@ -3743,7 +4197,7 @@ public variables(): {[ key: string ]: any}
 
 ---
 
-##### ~~`isConstruct`~~ <a name="isConstruct" id="@cdklabs/cdk-ssm-documents.ConfigureDockerStep.isConstruct"></a>
+##### `isConstruct` <a name="isConstruct" id="@cdklabs/cdk-ssm-documents.ConfigureDockerStep.isConstruct"></a>
 
 ```typescript
 import { ConfigureDockerStep } from '@cdklabs/cdk-ssm-documents'
@@ -3752,6 +4206,20 @@ ConfigureDockerStep.isConstruct(x: any)
 ```
 
 Checks if `x` is a construct.
+
+Use this method instead of `instanceof` to properly detect `Construct`
+instances, even when the construct library is symlinked.
+
+Explanation: in JavaScript, multiple copies of the `constructs` library on
+disk are seen as independent, completely different libraries. As a
+consequence, the class `Construct` in each copy of the `constructs` library
+is seen as a different class, and an instance of one class will not test as
+`instanceof` the other class. `npm install` will not create installations
+like this, but users may manually symlink construct libraries together or
+use a monorepo tool: in those cases, multiple copies of the `constructs`
+library can be accidentally installed, and `instanceof` will behave
+unpredictably. It is safest to avoid using `instanceof`, and using
+this type-testing method instead.
 
 ###### `x`<sup>Required</sup> <a name="x" id="@cdklabs/cdk-ssm-documents.ConfigureDockerStep.isConstruct.parameter.x"></a>
 
@@ -3979,6 +4447,7 @@ new ConfigurePackageStep(scope: Construct, id: string, props: ConfigurePackageSt
 | **Name** | **Description** |
 | --- | --- |
 | <code><a href="#@cdklabs/cdk-ssm-documents.ConfigurePackageStep.toString">toString</a></code> | Returns a string representation of this construct. |
+| <code><a href="#@cdklabs/cdk-ssm-documents.ConfigurePackageStep.with">with</a></code> | Applies one or more mixins to this construct. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.ConfigurePackageStep.listInputs">listInputs</a></code> | Inputs required for this command include ... |
 | <code><a href="#@cdklabs/cdk-ssm-documents.ConfigurePackageStep.listOutputs">listOutputs</a></code> | RunCommand Steps do not have outputs. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.ConfigurePackageStep.toSsmEntry">toSsmEntry</a></code> | Converts this step into an object to prepare for yaml/json representation of this step. |
@@ -3994,6 +4463,27 @@ public toString(): string
 ```
 
 Returns a string representation of this construct.
+
+##### `with` <a name="with" id="@cdklabs/cdk-ssm-documents.ConfigurePackageStep.with"></a>
+
+```typescript
+public with(mixins: ...IMixin[]): IConstruct
+```
+
+Applies one or more mixins to this construct.
+
+Mixins are applied in order. The list of constructs is captured at the
+start of the call, so constructs added by a mixin will not be visited.
+Use multiple `with()` calls if subsequent mixins should apply to added
+constructs.
+
+###### `mixins`<sup>Required</sup> <a name="mixins" id="@cdklabs/cdk-ssm-documents.ConfigurePackageStep.with.parameter.mixins"></a>
+
+- *Type:* ...constructs.IMixin[]
+
+The mixins to apply.
+
+---
 
 ##### `listInputs` <a name="listInputs" id="@cdklabs/cdk-ssm-documents.ConfigurePackageStep.listInputs"></a>
 
@@ -4045,7 +4535,7 @@ public variables(): {[ key: string ]: any}
 
 ---
 
-##### ~~`isConstruct`~~ <a name="isConstruct" id="@cdklabs/cdk-ssm-documents.ConfigurePackageStep.isConstruct"></a>
+##### `isConstruct` <a name="isConstruct" id="@cdklabs/cdk-ssm-documents.ConfigurePackageStep.isConstruct"></a>
 
 ```typescript
 import { ConfigurePackageStep } from '@cdklabs/cdk-ssm-documents'
@@ -4054,6 +4544,20 @@ ConfigurePackageStep.isConstruct(x: any)
 ```
 
 Checks if `x` is a construct.
+
+Use this method instead of `instanceof` to properly detect `Construct`
+instances, even when the construct library is symlinked.
+
+Explanation: in JavaScript, multiple copies of the `constructs` library on
+disk are seen as independent, completely different libraries. As a
+consequence, the class `Construct` in each copy of the `constructs` library
+is seen as a different class, and an instance of one class will not test as
+`instanceof` the other class. `npm install` will not create installations
+like this, but users may manually symlink construct libraries together or
+use a monorepo tool: in those cases, multiple copies of the `constructs`
+library can be accidentally installed, and `instanceof` will behave
+unpredictably. It is safest to avoid using `instanceof`, and using
+this type-testing method instead.
 
 ###### `x`<sup>Required</sup> <a name="x" id="@cdklabs/cdk-ssm-documents.ConfigurePackageStep.isConstruct.parameter.x"></a>
 
@@ -4325,6 +4829,7 @@ new CopyImageStep(scope: Construct, id: string, props: CopyImageStepProps)
 | **Name** | **Description** |
 | --- | --- |
 | <code><a href="#@cdklabs/cdk-ssm-documents.CopyImageStep.toString">toString</a></code> | Returns a string representation of this construct. |
+| <code><a href="#@cdklabs/cdk-ssm-documents.CopyImageStep.with">with</a></code> | Applies one or more mixins to this construct. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.CopyImageStep.listInputs">listInputs</a></code> | Lists the inputs that are required for this step. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.CopyImageStep.listOutputs">listOutputs</a></code> | Lists the outputs that will be returned from this step. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.CopyImageStep.toSsmEntry">toSsmEntry</a></code> | Converts this step into an object to prepare for yaml/json representation of this step. |
@@ -4341,6 +4846,27 @@ public toString(): string
 ```
 
 Returns a string representation of this construct.
+
+##### `with` <a name="with" id="@cdklabs/cdk-ssm-documents.CopyImageStep.with"></a>
+
+```typescript
+public with(mixins: ...IMixin[]): IConstruct
+```
+
+Applies one or more mixins to this construct.
+
+Mixins are applied in order. The list of constructs is captured at the
+start of the call, so constructs added by a mixin will not be visited.
+Use multiple `with()` calls if subsequent mixins should apply to added
+constructs.
+
+###### `mixins`<sup>Required</sup> <a name="mixins" id="@cdklabs/cdk-ssm-documents.CopyImageStep.with.parameter.mixins"></a>
+
+- *Type:* ...constructs.IMixin[]
+
+The mixins to apply.
+
+---
 
 ##### `listInputs` <a name="listInputs" id="@cdklabs/cdk-ssm-documents.CopyImageStep.listInputs"></a>
 
@@ -4400,7 +4926,7 @@ public variables(): {[ key: string ]: any}
 
 ---
 
-##### ~~`isConstruct`~~ <a name="isConstruct" id="@cdklabs/cdk-ssm-documents.CopyImageStep.isConstruct"></a>
+##### `isConstruct` <a name="isConstruct" id="@cdklabs/cdk-ssm-documents.CopyImageStep.isConstruct"></a>
 
 ```typescript
 import { CopyImageStep } from '@cdklabs/cdk-ssm-documents'
@@ -4409,6 +4935,20 @@ CopyImageStep.isConstruct(x: any)
 ```
 
 Checks if `x` is a construct.
+
+Use this method instead of `instanceof` to properly detect `Construct`
+instances, even when the construct library is symlinked.
+
+Explanation: in JavaScript, multiple copies of the `constructs` library on
+disk are seen as independent, completely different libraries. As a
+consequence, the class `Construct` in each copy of the `constructs` library
+is seen as a different class, and an instance of one class will not test as
+`instanceof` the other class. `npm install` will not create installations
+like this, but users may manually symlink construct libraries together or
+use a monorepo tool: in those cases, multiple copies of the `constructs`
+library can be accidentally installed, and `instanceof` will behave
+unpredictably. It is safest to avoid using `instanceof`, and using
+this type-testing method instead.
 
 ###### `x`<sup>Required</sup> <a name="x" id="@cdklabs/cdk-ssm-documents.CopyImageStep.isConstruct.parameter.x"></a>
 
@@ -4741,6 +5281,7 @@ new CreateImageStep(scope: Construct, id: string, props: CreateImageStepProps)
 | **Name** | **Description** |
 | --- | --- |
 | <code><a href="#@cdklabs/cdk-ssm-documents.CreateImageStep.toString">toString</a></code> | Returns a string representation of this construct. |
+| <code><a href="#@cdklabs/cdk-ssm-documents.CreateImageStep.with">with</a></code> | Applies one or more mixins to this construct. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.CreateImageStep.listInputs">listInputs</a></code> | Lists the inputs that are required for this step. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.CreateImageStep.listOutputs">listOutputs</a></code> | Lists the outputs that will be returned from this step. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.CreateImageStep.toSsmEntry">toSsmEntry</a></code> | Converts this step into an object to prepare for yaml/json representation of this step. |
@@ -4757,6 +5298,27 @@ public toString(): string
 ```
 
 Returns a string representation of this construct.
+
+##### `with` <a name="with" id="@cdklabs/cdk-ssm-documents.CreateImageStep.with"></a>
+
+```typescript
+public with(mixins: ...IMixin[]): IConstruct
+```
+
+Applies one or more mixins to this construct.
+
+Mixins are applied in order. The list of constructs is captured at the
+start of the call, so constructs added by a mixin will not be visited.
+Use multiple `with()` calls if subsequent mixins should apply to added
+constructs.
+
+###### `mixins`<sup>Required</sup> <a name="mixins" id="@cdklabs/cdk-ssm-documents.CreateImageStep.with.parameter.mixins"></a>
+
+- *Type:* ...constructs.IMixin[]
+
+The mixins to apply.
+
+---
 
 ##### `listInputs` <a name="listInputs" id="@cdklabs/cdk-ssm-documents.CreateImageStep.listInputs"></a>
 
@@ -4816,7 +5378,7 @@ public variables(): {[ key: string ]: any}
 
 ---
 
-##### ~~`isConstruct`~~ <a name="isConstruct" id="@cdklabs/cdk-ssm-documents.CreateImageStep.isConstruct"></a>
+##### `isConstruct` <a name="isConstruct" id="@cdklabs/cdk-ssm-documents.CreateImageStep.isConstruct"></a>
 
 ```typescript
 import { CreateImageStep } from '@cdklabs/cdk-ssm-documents'
@@ -4825,6 +5387,20 @@ CreateImageStep.isConstruct(x: any)
 ```
 
 Checks if `x` is a construct.
+
+Use this method instead of `instanceof` to properly detect `Construct`
+instances, even when the construct library is symlinked.
+
+Explanation: in JavaScript, multiple copies of the `constructs` library on
+disk are seen as independent, completely different libraries. As a
+consequence, the class `Construct` in each copy of the `constructs` library
+is seen as a different class, and an instance of one class will not test as
+`instanceof` the other class. `npm install` will not create installations
+like this, but users may manually symlink construct libraries together or
+use a monorepo tool: in those cases, multiple copies of the `constructs`
+library can be accidentally installed, and `instanceof` will behave
+unpredictably. It is safest to avoid using `instanceof`, and using
+this type-testing method instead.
 
 ###### `x`<sup>Required</sup> <a name="x" id="@cdklabs/cdk-ssm-documents.CreateImageStep.isConstruct.parameter.x"></a>
 
@@ -5135,6 +5711,7 @@ new CreateStackStep(scope: Construct, id: string, props: CreateStackStepProps)
 | **Name** | **Description** |
 | --- | --- |
 | <code><a href="#@cdklabs/cdk-ssm-documents.CreateStackStep.toString">toString</a></code> | Returns a string representation of this construct. |
+| <code><a href="#@cdklabs/cdk-ssm-documents.CreateStackStep.with">with</a></code> | Applies one or more mixins to this construct. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.CreateStackStep.listInputs">listInputs</a></code> | Lists the inputs that are required for this step. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.CreateStackStep.listOutputs">listOutputs</a></code> | Lists the outputs that will be returned from this step. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.CreateStackStep.toSsmEntry">toSsmEntry</a></code> | Converts this step into an object to prepare for yaml/json representation of this step. |
@@ -5151,6 +5728,27 @@ public toString(): string
 ```
 
 Returns a string representation of this construct.
+
+##### `with` <a name="with" id="@cdklabs/cdk-ssm-documents.CreateStackStep.with"></a>
+
+```typescript
+public with(mixins: ...IMixin[]): IConstruct
+```
+
+Applies one or more mixins to this construct.
+
+Mixins are applied in order. The list of constructs is captured at the
+start of the call, so constructs added by a mixin will not be visited.
+Use multiple `with()` calls if subsequent mixins should apply to added
+constructs.
+
+###### `mixins`<sup>Required</sup> <a name="mixins" id="@cdklabs/cdk-ssm-documents.CreateStackStep.with.parameter.mixins"></a>
+
+- *Type:* ...constructs.IMixin[]
+
+The mixins to apply.
+
+---
 
 ##### `listInputs` <a name="listInputs" id="@cdklabs/cdk-ssm-documents.CreateStackStep.listInputs"></a>
 
@@ -5210,7 +5808,7 @@ public variables(): {[ key: string ]: any}
 
 ---
 
-##### ~~`isConstruct`~~ <a name="isConstruct" id="@cdklabs/cdk-ssm-documents.CreateStackStep.isConstruct"></a>
+##### `isConstruct` <a name="isConstruct" id="@cdklabs/cdk-ssm-documents.CreateStackStep.isConstruct"></a>
 
 ```typescript
 import { CreateStackStep } from '@cdklabs/cdk-ssm-documents'
@@ -5219,6 +5817,20 @@ CreateStackStep.isConstruct(x: any)
 ```
 
 Checks if `x` is a construct.
+
+Use this method instead of `instanceof` to properly detect `Construct`
+instances, even when the construct library is symlinked.
+
+Explanation: in JavaScript, multiple copies of the `constructs` library on
+disk are seen as independent, completely different libraries. As a
+consequence, the class `Construct` in each copy of the `constructs` library
+is seen as a different class, and an instance of one class will not test as
+`instanceof` the other class. `npm install` will not create installations
+like this, but users may manually symlink construct libraries together or
+use a monorepo tool: in those cases, multiple copies of the `constructs`
+library can be accidentally installed, and `instanceof` will behave
+unpredictably. It is safest to avoid using `instanceof`, and using
+this type-testing method instead.
 
 ###### `x`<sup>Required</sup> <a name="x" id="@cdklabs/cdk-ssm-documents.CreateStackStep.isConstruct.parameter.x"></a>
 
@@ -5628,6 +6240,7 @@ new CreateTagsStep(scope: Construct, id: string, props: CreateTagsStepProps)
 | **Name** | **Description** |
 | --- | --- |
 | <code><a href="#@cdklabs/cdk-ssm-documents.CreateTagsStep.toString">toString</a></code> | Returns a string representation of this construct. |
+| <code><a href="#@cdklabs/cdk-ssm-documents.CreateTagsStep.with">with</a></code> | Applies one or more mixins to this construct. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.CreateTagsStep.listInputs">listInputs</a></code> | Lists the inputs that are required for this step. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.CreateTagsStep.listOutputs">listOutputs</a></code> | This step has no outputs. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.CreateTagsStep.toSsmEntry">toSsmEntry</a></code> | Converts this step into an object to prepare for yaml/json representation of this step. |
@@ -5644,6 +6257,27 @@ public toString(): string
 ```
 
 Returns a string representation of this construct.
+
+##### `with` <a name="with" id="@cdklabs/cdk-ssm-documents.CreateTagsStep.with"></a>
+
+```typescript
+public with(mixins: ...IMixin[]): IConstruct
+```
+
+Applies one or more mixins to this construct.
+
+Mixins are applied in order. The list of constructs is captured at the
+start of the call, so constructs added by a mixin will not be visited.
+Use multiple `with()` calls if subsequent mixins should apply to added
+constructs.
+
+###### `mixins`<sup>Required</sup> <a name="mixins" id="@cdklabs/cdk-ssm-documents.CreateTagsStep.with.parameter.mixins"></a>
+
+- *Type:* ...constructs.IMixin[]
+
+The mixins to apply.
+
+---
 
 ##### `listInputs` <a name="listInputs" id="@cdklabs/cdk-ssm-documents.CreateTagsStep.listInputs"></a>
 
@@ -5703,7 +6337,7 @@ public variables(): {[ key: string ]: any}
 
 ---
 
-##### ~~`isConstruct`~~ <a name="isConstruct" id="@cdklabs/cdk-ssm-documents.CreateTagsStep.isConstruct"></a>
+##### `isConstruct` <a name="isConstruct" id="@cdklabs/cdk-ssm-documents.CreateTagsStep.isConstruct"></a>
 
 ```typescript
 import { CreateTagsStep } from '@cdklabs/cdk-ssm-documents'
@@ -5712,6 +6346,20 @@ CreateTagsStep.isConstruct(x: any)
 ```
 
 Checks if `x` is a construct.
+
+Use this method instead of `instanceof` to properly detect `Construct`
+instances, even when the construct library is symlinked.
+
+Explanation: in JavaScript, multiple copies of the `constructs` library on
+disk are seen as independent, completely different libraries. As a
+consequence, the class `Construct` in each copy of the `constructs` library
+is seen as a different class, and an instance of one class will not test as
+`instanceof` the other class. `npm install` will not create installations
+like this, but users may manually symlink construct libraries together or
+use a monorepo tool: in those cases, multiple copies of the `constructs`
+library can be accidentally installed, and `instanceof` will behave
+unpredictably. It is safest to avoid using `instanceof`, and using
+this type-testing method instead.
 
 ###### `x`<sup>Required</sup> <a name="x" id="@cdklabs/cdk-ssm-documents.CreateTagsStep.isConstruct.parameter.x"></a>
 
@@ -6000,6 +6648,7 @@ new DeleteImageStep(scope: Construct, id: string, props: DeleteImageStepProps)
 | **Name** | **Description** |
 | --- | --- |
 | <code><a href="#@cdklabs/cdk-ssm-documents.DeleteImageStep.toString">toString</a></code> | Returns a string representation of this construct. |
+| <code><a href="#@cdklabs/cdk-ssm-documents.DeleteImageStep.with">with</a></code> | Applies one or more mixins to this construct. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.DeleteImageStep.listInputs">listInputs</a></code> | Lists the inputs that are required for this step. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.DeleteImageStep.listOutputs">listOutputs</a></code> | This step has no outputs. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.DeleteImageStep.toSsmEntry">toSsmEntry</a></code> | Converts this step into an object to prepare for yaml/json representation of this step. |
@@ -6016,6 +6665,27 @@ public toString(): string
 ```
 
 Returns a string representation of this construct.
+
+##### `with` <a name="with" id="@cdklabs/cdk-ssm-documents.DeleteImageStep.with"></a>
+
+```typescript
+public with(mixins: ...IMixin[]): IConstruct
+```
+
+Applies one or more mixins to this construct.
+
+Mixins are applied in order. The list of constructs is captured at the
+start of the call, so constructs added by a mixin will not be visited.
+Use multiple `with()` calls if subsequent mixins should apply to added
+constructs.
+
+###### `mixins`<sup>Required</sup> <a name="mixins" id="@cdklabs/cdk-ssm-documents.DeleteImageStep.with.parameter.mixins"></a>
+
+- *Type:* ...constructs.IMixin[]
+
+The mixins to apply.
+
+---
 
 ##### `listInputs` <a name="listInputs" id="@cdklabs/cdk-ssm-documents.DeleteImageStep.listInputs"></a>
 
@@ -6075,7 +6745,7 @@ public variables(): {[ key: string ]: any}
 
 ---
 
-##### ~~`isConstruct`~~ <a name="isConstruct" id="@cdklabs/cdk-ssm-documents.DeleteImageStep.isConstruct"></a>
+##### `isConstruct` <a name="isConstruct" id="@cdklabs/cdk-ssm-documents.DeleteImageStep.isConstruct"></a>
 
 ```typescript
 import { DeleteImageStep } from '@cdklabs/cdk-ssm-documents'
@@ -6084,6 +6754,20 @@ DeleteImageStep.isConstruct(x: any)
 ```
 
 Checks if `x` is a construct.
+
+Use this method instead of `instanceof` to properly detect `Construct`
+instances, even when the construct library is symlinked.
+
+Explanation: in JavaScript, multiple copies of the `constructs` library on
+disk are seen as independent, completely different libraries. As a
+consequence, the class `Construct` in each copy of the `constructs` library
+is seen as a different class, and an instance of one class will not test as
+`instanceof` the other class. `npm install` will not create installations
+like this, but users may manually symlink construct libraries together or
+use a monorepo tool: in those cases, multiple copies of the `constructs`
+library can be accidentally installed, and `instanceof` will behave
+unpredictably. It is safest to avoid using `instanceof`, and using
+this type-testing method instead.
 
 ###### `x`<sup>Required</sup> <a name="x" id="@cdklabs/cdk-ssm-documents.DeleteImageStep.isConstruct.parameter.x"></a>
 
@@ -6350,6 +7034,7 @@ new DeleteStackStep(scope: Construct, id: string, props: DeleteStackStepProps)
 | **Name** | **Description** |
 | --- | --- |
 | <code><a href="#@cdklabs/cdk-ssm-documents.DeleteStackStep.toString">toString</a></code> | Returns a string representation of this construct. |
+| <code><a href="#@cdklabs/cdk-ssm-documents.DeleteStackStep.with">with</a></code> | Applies one or more mixins to this construct. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.DeleteStackStep.listInputs">listInputs</a></code> | The input required for this step is the stackNameVariable. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.DeleteStackStep.listOutputs">listOutputs</a></code> | No outputs emitted from Delete Stack step. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.DeleteStackStep.toSsmEntry">toSsmEntry</a></code> | Converts this step into an object to prepare for yaml/json representation of this step. |
@@ -6366,6 +7051,27 @@ public toString(): string
 ```
 
 Returns a string representation of this construct.
+
+##### `with` <a name="with" id="@cdklabs/cdk-ssm-documents.DeleteStackStep.with"></a>
+
+```typescript
+public with(mixins: ...IMixin[]): IConstruct
+```
+
+Applies one or more mixins to this construct.
+
+Mixins are applied in order. The list of constructs is captured at the
+start of the call, so constructs added by a mixin will not be visited.
+Use multiple `with()` calls if subsequent mixins should apply to added
+constructs.
+
+###### `mixins`<sup>Required</sup> <a name="mixins" id="@cdklabs/cdk-ssm-documents.DeleteStackStep.with.parameter.mixins"></a>
+
+- *Type:* ...constructs.IMixin[]
+
+The mixins to apply.
+
+---
 
 ##### `listInputs` <a name="listInputs" id="@cdklabs/cdk-ssm-documents.DeleteStackStep.listInputs"></a>
 
@@ -6425,7 +7131,7 @@ public variables(): {[ key: string ]: any}
 
 ---
 
-##### ~~`isConstruct`~~ <a name="isConstruct" id="@cdklabs/cdk-ssm-documents.DeleteStackStep.isConstruct"></a>
+##### `isConstruct` <a name="isConstruct" id="@cdklabs/cdk-ssm-documents.DeleteStackStep.isConstruct"></a>
 
 ```typescript
 import { DeleteStackStep } from '@cdklabs/cdk-ssm-documents'
@@ -6434,6 +7140,20 @@ DeleteStackStep.isConstruct(x: any)
 ```
 
 Checks if `x` is a construct.
+
+Use this method instead of `instanceof` to properly detect `Construct`
+instances, even when the construct library is symlinked.
+
+Explanation: in JavaScript, multiple copies of the `constructs` library on
+disk are seen as independent, completely different libraries. As a
+consequence, the class `Construct` in each copy of the `constructs` library
+is seen as a different class, and an instance of one class will not test as
+`instanceof` the other class. `npm install` will not create installations
+like this, but users may manually symlink construct libraries together or
+use a monorepo tool: in those cases, multiple copies of the `constructs`
+library can be accidentally installed, and `instanceof` will behave
+unpredictably. It is safest to avoid using `instanceof`, and using
+this type-testing method instead.
 
 ###### `x`<sup>Required</sup> <a name="x" id="@cdklabs/cdk-ssm-documents.DeleteStackStep.isConstruct.parameter.x"></a>
 
@@ -6711,6 +7431,7 @@ new DomainJoinStep(scope: Construct, id: string, props: DomainJoinStepProps)
 | **Name** | **Description** |
 | --- | --- |
 | <code><a href="#@cdklabs/cdk-ssm-documents.DomainJoinStep.toString">toString</a></code> | Returns a string representation of this construct. |
+| <code><a href="#@cdklabs/cdk-ssm-documents.DomainJoinStep.with">with</a></code> | Applies one or more mixins to this construct. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.DomainJoinStep.listInputs">listInputs</a></code> | All Inputs for this command are optional. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.DomainJoinStep.listOutputs">listOutputs</a></code> | RunCommand Steps do not have outputs. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.DomainJoinStep.toSsmEntry">toSsmEntry</a></code> | Converts this step into an object to prepare for yaml/json representation of this step. |
@@ -6726,6 +7447,27 @@ public toString(): string
 ```
 
 Returns a string representation of this construct.
+
+##### `with` <a name="with" id="@cdklabs/cdk-ssm-documents.DomainJoinStep.with"></a>
+
+```typescript
+public with(mixins: ...IMixin[]): IConstruct
+```
+
+Applies one or more mixins to this construct.
+
+Mixins are applied in order. The list of constructs is captured at the
+start of the call, so constructs added by a mixin will not be visited.
+Use multiple `with()` calls if subsequent mixins should apply to added
+constructs.
+
+###### `mixins`<sup>Required</sup> <a name="mixins" id="@cdklabs/cdk-ssm-documents.DomainJoinStep.with.parameter.mixins"></a>
+
+- *Type:* ...constructs.IMixin[]
+
+The mixins to apply.
+
+---
 
 ##### `listInputs` <a name="listInputs" id="@cdklabs/cdk-ssm-documents.DomainJoinStep.listInputs"></a>
 
@@ -6777,7 +7519,7 @@ public variables(): {[ key: string ]: any}
 
 ---
 
-##### ~~`isConstruct`~~ <a name="isConstruct" id="@cdklabs/cdk-ssm-documents.DomainJoinStep.isConstruct"></a>
+##### `isConstruct` <a name="isConstruct" id="@cdklabs/cdk-ssm-documents.DomainJoinStep.isConstruct"></a>
 
 ```typescript
 import { DomainJoinStep } from '@cdklabs/cdk-ssm-documents'
@@ -6786,6 +7528,20 @@ DomainJoinStep.isConstruct(x: any)
 ```
 
 Checks if `x` is a construct.
+
+Use this method instead of `instanceof` to properly detect `Construct`
+instances, even when the construct library is symlinked.
+
+Explanation: in JavaScript, multiple copies of the `constructs` library on
+disk are seen as independent, completely different libraries. As a
+consequence, the class `Construct` in each copy of the `constructs` library
+is seen as a different class, and an instance of one class will not test as
+`instanceof` the other class. `npm install` will not create installations
+like this, but users may manually symlink construct libraries together or
+use a monorepo tool: in those cases, multiple copies of the `constructs`
+library can be accidentally installed, and `instanceof` will behave
+unpredictably. It is safest to avoid using `instanceof`, and using
+this type-testing method instead.
 
 ###### `x`<sup>Required</sup> <a name="x" id="@cdklabs/cdk-ssm-documents.DomainJoinStep.isConstruct.parameter.x"></a>
 
@@ -7046,6 +7802,7 @@ new DownloadContentStep(scope: Construct, id: string, props: DownloadContentStep
 | **Name** | **Description** |
 | --- | --- |
 | <code><a href="#@cdklabs/cdk-ssm-documents.DownloadContentStep.toString">toString</a></code> | Returns a string representation of this construct. |
+| <code><a href="#@cdklabs/cdk-ssm-documents.DownloadContentStep.with">with</a></code> | Applies one or more mixins to this construct. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.DownloadContentStep.listInputs">listInputs</a></code> | Inputs required for this command includes both the sourceType and sourceInfo variables and  destinationPath if provided. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.DownloadContentStep.listOutputs">listOutputs</a></code> | RunCommand Steps do not have outputs. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.DownloadContentStep.toSsmEntry">toSsmEntry</a></code> | Converts this step into an object to prepare for yaml/json representation of this step. |
@@ -7061,6 +7818,27 @@ public toString(): string
 ```
 
 Returns a string representation of this construct.
+
+##### `with` <a name="with" id="@cdklabs/cdk-ssm-documents.DownloadContentStep.with"></a>
+
+```typescript
+public with(mixins: ...IMixin[]): IConstruct
+```
+
+Applies one or more mixins to this construct.
+
+Mixins are applied in order. The list of constructs is captured at the
+start of the call, so constructs added by a mixin will not be visited.
+Use multiple `with()` calls if subsequent mixins should apply to added
+constructs.
+
+###### `mixins`<sup>Required</sup> <a name="mixins" id="@cdklabs/cdk-ssm-documents.DownloadContentStep.with.parameter.mixins"></a>
+
+- *Type:* ...constructs.IMixin[]
+
+The mixins to apply.
+
+---
 
 ##### `listInputs` <a name="listInputs" id="@cdklabs/cdk-ssm-documents.DownloadContentStep.listInputs"></a>
 
@@ -7112,7 +7890,7 @@ public variables(): {[ key: string ]: any}
 
 ---
 
-##### ~~`isConstruct`~~ <a name="isConstruct" id="@cdklabs/cdk-ssm-documents.DownloadContentStep.isConstruct"></a>
+##### `isConstruct` <a name="isConstruct" id="@cdklabs/cdk-ssm-documents.DownloadContentStep.isConstruct"></a>
 
 ```typescript
 import { DownloadContentStep } from '@cdklabs/cdk-ssm-documents'
@@ -7121,6 +7899,20 @@ DownloadContentStep.isConstruct(x: any)
 ```
 
 Checks if `x` is a construct.
+
+Use this method instead of `instanceof` to properly detect `Construct`
+instances, even when the construct library is symlinked.
+
+Explanation: in JavaScript, multiple copies of the `constructs` library on
+disk are seen as independent, completely different libraries. As a
+consequence, the class `Construct` in each copy of the `constructs` library
+is seen as a different class, and an instance of one class will not test as
+`instanceof` the other class. `npm install` will not create installations
+like this, but users may manually symlink construct libraries together or
+use a monorepo tool: in those cases, multiple copies of the `constructs`
+library can be accidentally installed, and `instanceof` will behave
+unpredictably. It is safest to avoid using `instanceof`, and using
+this type-testing method instead.
 
 ###### `x`<sup>Required</sup> <a name="x" id="@cdklabs/cdk-ssm-documents.DownloadContentStep.isConstruct.parameter.x"></a>
 
@@ -7359,6 +8151,7 @@ new ExecuteAutomationStep(scope: Construct, id: string, props: ExecuteAutomation
 | **Name** | **Description** |
 | --- | --- |
 | <code><a href="#@cdklabs/cdk-ssm-documents.ExecuteAutomationStep.toString">toString</a></code> | Returns a string representation of this construct. |
+| <code><a href="#@cdklabs/cdk-ssm-documents.ExecuteAutomationStep.with">with</a></code> | Applies one or more mixins to this construct. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.ExecuteAutomationStep.listInputs">listInputs</a></code> | Lists the inputs that are required for this step. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.ExecuteAutomationStep.listOutputs">listOutputs</a></code> | Lists the outputs that will be returned from this step. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.ExecuteAutomationStep.toSsmEntry">toSsmEntry</a></code> | Converts this step into an object to prepare for yaml/json representation of this step. |
@@ -7375,6 +8168,27 @@ public toString(): string
 ```
 
 Returns a string representation of this construct.
+
+##### `with` <a name="with" id="@cdklabs/cdk-ssm-documents.ExecuteAutomationStep.with"></a>
+
+```typescript
+public with(mixins: ...IMixin[]): IConstruct
+```
+
+Applies one or more mixins to this construct.
+
+Mixins are applied in order. The list of constructs is captured at the
+start of the call, so constructs added by a mixin will not be visited.
+Use multiple `with()` calls if subsequent mixins should apply to added
+constructs.
+
+###### `mixins`<sup>Required</sup> <a name="mixins" id="@cdklabs/cdk-ssm-documents.ExecuteAutomationStep.with.parameter.mixins"></a>
+
+- *Type:* ...constructs.IMixin[]
+
+The mixins to apply.
+
+---
 
 ##### `listInputs` <a name="listInputs" id="@cdklabs/cdk-ssm-documents.ExecuteAutomationStep.listInputs"></a>
 
@@ -7434,7 +8248,7 @@ public variables(): {[ key: string ]: any}
 
 ---
 
-##### ~~`isConstruct`~~ <a name="isConstruct" id="@cdklabs/cdk-ssm-documents.ExecuteAutomationStep.isConstruct"></a>
+##### `isConstruct` <a name="isConstruct" id="@cdklabs/cdk-ssm-documents.ExecuteAutomationStep.isConstruct"></a>
 
 ```typescript
 import { ExecuteAutomationStep } from '@cdklabs/cdk-ssm-documents'
@@ -7443,6 +8257,20 @@ ExecuteAutomationStep.isConstruct(x: any)
 ```
 
 Checks if `x` is a construct.
+
+Use this method instead of `instanceof` to properly detect `Construct`
+instances, even when the construct library is symlinked.
+
+Explanation: in JavaScript, multiple copies of the `constructs` library on
+disk are seen as independent, completely different libraries. As a
+consequence, the class `Construct` in each copy of the `constructs` library
+is seen as a different class, and an instance of one class will not test as
+`instanceof` the other class. `npm install` will not create installations
+like this, but users may manually symlink construct libraries together or
+use a monorepo tool: in those cases, multiple copies of the `constructs`
+library can be accidentally installed, and `instanceof` will behave
+unpredictably. It is safest to avoid using `instanceof`, and using
+this type-testing method instead.
 
 ###### `x`<sup>Required</sup> <a name="x" id="@cdklabs/cdk-ssm-documents.ExecuteAutomationStep.isConstruct.parameter.x"></a>
 
@@ -7808,6 +8636,7 @@ new ExecuteScriptStep(stage: Construct, id: string, props: ExecuteScriptStepProp
 | **Name** | **Description** |
 | --- | --- |
 | <code><a href="#@cdklabs/cdk-ssm-documents.ExecuteScriptStep.toString">toString</a></code> | Returns a string representation of this construct. |
+| <code><a href="#@cdklabs/cdk-ssm-documents.ExecuteScriptStep.with">with</a></code> | Applies one or more mixins to this construct. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.ExecuteScriptStep.listInputs">listInputs</a></code> | Lists the inputs that are required for this step. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.ExecuteScriptStep.listOutputs">listOutputs</a></code> | Lists the outputs that will be returned from this step. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.ExecuteScriptStep.toSsmEntry">toSsmEntry</a></code> | Converts this step into an object to prepare for yaml/json representation of this step. |
@@ -7824,6 +8653,27 @@ public toString(): string
 ```
 
 Returns a string representation of this construct.
+
+##### `with` <a name="with" id="@cdklabs/cdk-ssm-documents.ExecuteScriptStep.with"></a>
+
+```typescript
+public with(mixins: ...IMixin[]): IConstruct
+```
+
+Applies one or more mixins to this construct.
+
+Mixins are applied in order. The list of constructs is captured at the
+start of the call, so constructs added by a mixin will not be visited.
+Use multiple `with()` calls if subsequent mixins should apply to added
+constructs.
+
+###### `mixins`<sup>Required</sup> <a name="mixins" id="@cdklabs/cdk-ssm-documents.ExecuteScriptStep.with.parameter.mixins"></a>
+
+- *Type:* ...constructs.IMixin[]
+
+The mixins to apply.
+
+---
 
 ##### `listInputs` <a name="listInputs" id="@cdklabs/cdk-ssm-documents.ExecuteScriptStep.listInputs"></a>
 
@@ -7883,7 +8733,7 @@ public variables(): {[ key: string ]: any}
 
 ---
 
-##### ~~`isConstruct`~~ <a name="isConstruct" id="@cdklabs/cdk-ssm-documents.ExecuteScriptStep.isConstruct"></a>
+##### `isConstruct` <a name="isConstruct" id="@cdklabs/cdk-ssm-documents.ExecuteScriptStep.isConstruct"></a>
 
 ```typescript
 import { ExecuteScriptStep } from '@cdklabs/cdk-ssm-documents'
@@ -7892,6 +8742,20 @@ ExecuteScriptStep.isConstruct(x: any)
 ```
 
 Checks if `x` is a construct.
+
+Use this method instead of `instanceof` to properly detect `Construct`
+instances, even when the construct library is symlinked.
+
+Explanation: in JavaScript, multiple copies of the `constructs` library on
+disk are seen as independent, completely different libraries. As a
+consequence, the class `Construct` in each copy of the `constructs` library
+is seen as a different class, and an instance of one class will not test as
+`instanceof` the other class. `npm install` will not create installations
+like this, but users may manually symlink construct libraries together or
+use a monorepo tool: in those cases, multiple copies of the `constructs`
+library can be accidentally installed, and `instanceof` will behave
+unpredictably. It is safest to avoid using `instanceof`, and using
+this type-testing method instead.
 
 ###### `x`<sup>Required</sup> <a name="x" id="@cdklabs/cdk-ssm-documents.ExecuteScriptStep.isConstruct.parameter.x"></a>
 
@@ -8191,6 +9055,7 @@ new ExecuteStateMachineStep(scope: Construct, id: string, props: ExecuteStateMac
 | **Name** | **Description** |
 | --- | --- |
 | <code><a href="#@cdklabs/cdk-ssm-documents.ExecuteStateMachineStep.toString">toString</a></code> | Returns a string representation of this construct. |
+| <code><a href="#@cdklabs/cdk-ssm-documents.ExecuteStateMachineStep.with">with</a></code> | Applies one or more mixins to this construct. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.ExecuteStateMachineStep.listInputs">listInputs</a></code> | Lists the inputs that are required for this step. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.ExecuteStateMachineStep.listOutputs">listOutputs</a></code> | No outputs emitted from Delete Stack step. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.ExecuteStateMachineStep.toSsmEntry">toSsmEntry</a></code> | Converts this step into an object to prepare for yaml/json representation of this step. |
@@ -8207,6 +9072,27 @@ public toString(): string
 ```
 
 Returns a string representation of this construct.
+
+##### `with` <a name="with" id="@cdklabs/cdk-ssm-documents.ExecuteStateMachineStep.with"></a>
+
+```typescript
+public with(mixins: ...IMixin[]): IConstruct
+```
+
+Applies one or more mixins to this construct.
+
+Mixins are applied in order. The list of constructs is captured at the
+start of the call, so constructs added by a mixin will not be visited.
+Use multiple `with()` calls if subsequent mixins should apply to added
+constructs.
+
+###### `mixins`<sup>Required</sup> <a name="mixins" id="@cdklabs/cdk-ssm-documents.ExecuteStateMachineStep.with.parameter.mixins"></a>
+
+- *Type:* ...constructs.IMixin[]
+
+The mixins to apply.
+
+---
 
 ##### `listInputs` <a name="listInputs" id="@cdklabs/cdk-ssm-documents.ExecuteStateMachineStep.listInputs"></a>
 
@@ -8266,7 +9152,7 @@ public variables(): {[ key: string ]: any}
 
 ---
 
-##### ~~`isConstruct`~~ <a name="isConstruct" id="@cdklabs/cdk-ssm-documents.ExecuteStateMachineStep.isConstruct"></a>
+##### `isConstruct` <a name="isConstruct" id="@cdklabs/cdk-ssm-documents.ExecuteStateMachineStep.isConstruct"></a>
 
 ```typescript
 import { ExecuteStateMachineStep } from '@cdklabs/cdk-ssm-documents'
@@ -8275,6 +9161,20 @@ ExecuteStateMachineStep.isConstruct(x: any)
 ```
 
 Checks if `x` is a construct.
+
+Use this method instead of `instanceof` to properly detect `Construct`
+instances, even when the construct library is symlinked.
+
+Explanation: in JavaScript, multiple copies of the `constructs` library on
+disk are seen as independent, completely different libraries. As a
+consequence, the class `Construct` in each copy of the `constructs` library
+is seen as a different class, and an instance of one class will not test as
+`instanceof` the other class. `npm install` will not create installations
+like this, but users may manually symlink construct libraries together or
+use a monorepo tool: in those cases, multiple copies of the `constructs`
+library can be accidentally installed, and `instanceof` will behave
+unpredictably. It is safest to avoid using `instanceof`, and using
+this type-testing method instead.
 
 ###### `x`<sup>Required</sup> <a name="x" id="@cdklabs/cdk-ssm-documents.ExecuteStateMachineStep.isConstruct.parameter.x"></a>
 
@@ -8554,6 +9454,7 @@ new HelloWorld(app: Construct, id: string)
 | **Name** | **Description** |
 | --- | --- |
 | <code><a href="#@cdklabs/cdk-ssm-documents.HelloWorld.toString">toString</a></code> | Returns a string representation of this construct. |
+| <code><a href="#@cdklabs/cdk-ssm-documents.HelloWorld.with">with</a></code> | Applies one or more mixins to this construct. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.HelloWorld.addDependency">addDependency</a></code> | Add a dependency between this stack and another stack. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.HelloWorld.addMetadata">addMetadata</a></code> | Adds an arbitrary key-value pair, with information you want to record about the stack. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.HelloWorld.addTransform">addTransform</a></code> | Add a Transform to this stack. A Transform is a macro that AWS CloudFormation uses to process your template. |
@@ -8578,6 +9479,27 @@ public toString(): string
 ```
 
 Returns a string representation of this construct.
+
+##### `with` <a name="with" id="@cdklabs/cdk-ssm-documents.HelloWorld.with"></a>
+
+```typescript
+public with(mixins: ...IMixin[]): IConstruct
+```
+
+Applies one or more mixins to this construct.
+
+Mixins are applied in order. The list of constructs is captured at the
+start of the call, so constructs added by a mixin will not be visited.
+Use multiple `with()` calls if subsequent mixins should apply to added
+constructs.
+
+###### `mixins`<sup>Required</sup> <a name="mixins" id="@cdklabs/cdk-ssm-documents.HelloWorld.with.parameter.mixins"></a>
+
+- *Type:* ...constructs.IMixin[]
+
+The mixins to apply.
+
+---
 
 ##### `addDependency` <a name="addDependency" id="@cdklabs/cdk-ssm-documents.HelloWorld.addDependency"></a>
 
@@ -8971,7 +9893,7 @@ Convert an object, potentially containing tokens, to a YAML string.
 
 ---
 
-##### ~~`isConstruct`~~ <a name="isConstruct" id="@cdklabs/cdk-ssm-documents.HelloWorld.isConstruct"></a>
+##### `isConstruct` <a name="isConstruct" id="@cdklabs/cdk-ssm-documents.HelloWorld.isConstruct"></a>
 
 ```typescript
 import { HelloWorld } from '@cdklabs/cdk-ssm-documents'
@@ -8980,6 +9902,20 @@ HelloWorld.isConstruct(x: any)
 ```
 
 Checks if `x` is a construct.
+
+Use this method instead of `instanceof` to properly detect `Construct`
+instances, even when the construct library is symlinked.
+
+Explanation: in JavaScript, multiple copies of the `constructs` library on
+disk are seen as independent, completely different libraries. As a
+consequence, the class `Construct` in each copy of the `constructs` library
+is seen as a different class, and an instance of one class will not test as
+`instanceof` the other class. `npm install` will not create installations
+like this, but users may manually symlink construct libraries together or
+use a monorepo tool: in those cases, multiple copies of the `constructs`
+library can be accidentally installed, and `instanceof` will behave
+unpredictably. It is safest to avoid using `instanceof`, and using
+this type-testing method instead.
 
 ###### `x`<sup>Required</sup> <a name="x" id="@cdklabs/cdk-ssm-documents.HelloWorld.isConstruct.parameter.x"></a>
 
@@ -9429,6 +10365,7 @@ new IncidentResponse(scope: Construct, id: string, props: IncidentResponseProps)
 | **Name** | **Description** |
 | --- | --- |
 | <code><a href="#@cdklabs/cdk-ssm-documents.IncidentResponse.toString">toString</a></code> | Returns a string representation of this construct. |
+| <code><a href="#@cdklabs/cdk-ssm-documents.IncidentResponse.with">with</a></code> | Applies one or more mixins to this construct. |
 
 ---
 
@@ -9440,6 +10377,27 @@ public toString(): string
 
 Returns a string representation of this construct.
 
+##### `with` <a name="with" id="@cdklabs/cdk-ssm-documents.IncidentResponse.with"></a>
+
+```typescript
+public with(mixins: ...IMixin[]): IConstruct
+```
+
+Applies one or more mixins to this construct.
+
+Mixins are applied in order. The list of constructs is captured at the
+start of the call, so constructs added by a mixin will not be visited.
+Use multiple `with()` calls if subsequent mixins should apply to added
+constructs.
+
+###### `mixins`<sup>Required</sup> <a name="mixins" id="@cdklabs/cdk-ssm-documents.IncidentResponse.with.parameter.mixins"></a>
+
+- *Type:* ...constructs.IMixin[]
+
+The mixins to apply.
+
+---
+
 #### Static Functions <a name="Static Functions" id="Static Functions"></a>
 
 | **Name** | **Description** |
@@ -9448,7 +10406,7 @@ Returns a string representation of this construct.
 
 ---
 
-##### ~~`isConstruct`~~ <a name="isConstruct" id="@cdklabs/cdk-ssm-documents.IncidentResponse.isConstruct"></a>
+##### `isConstruct` <a name="isConstruct" id="@cdklabs/cdk-ssm-documents.IncidentResponse.isConstruct"></a>
 
 ```typescript
 import { IncidentResponse } from '@cdklabs/cdk-ssm-documents'
@@ -9457,6 +10415,20 @@ IncidentResponse.isConstruct(x: any)
 ```
 
 Checks if `x` is a construct.
+
+Use this method instead of `instanceof` to properly detect `Construct`
+instances, even when the construct library is symlinked.
+
+Explanation: in JavaScript, multiple copies of the `constructs` library on
+disk are seen as independent, completely different libraries. As a
+consequence, the class `Construct` in each copy of the `constructs` library
+is seen as a different class, and an instance of one class will not test as
+`instanceof` the other class. `npm install` will not create installations
+like this, but users may manually symlink construct libraries together or
+use a monorepo tool: in those cases, multiple copies of the `constructs`
+library can be accidentally installed, and `instanceof` will behave
+unpredictably. It is safest to avoid using `instanceof`, and using
+this type-testing method instead.
 
 ###### `x`<sup>Required</sup> <a name="x" id="@cdklabs/cdk-ssm-documents.IncidentResponse.isConstruct.parameter.x"></a>
 
@@ -9541,6 +10513,7 @@ new InvokeLambdaFunctionStep(scope: Construct, id: string, props: InvokeLambdaFu
 | **Name** | **Description** |
 | --- | --- |
 | <code><a href="#@cdklabs/cdk-ssm-documents.InvokeLambdaFunctionStep.toString">toString</a></code> | Returns a string representation of this construct. |
+| <code><a href="#@cdklabs/cdk-ssm-documents.InvokeLambdaFunctionStep.with">with</a></code> | Applies one or more mixins to this construct. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.InvokeLambdaFunctionStep.listInputs">listInputs</a></code> | Lists the inputs that are required for this step. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.InvokeLambdaFunctionStep.listOutputs">listOutputs</a></code> | Lists the outputs that will be returned from this step. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.InvokeLambdaFunctionStep.toSsmEntry">toSsmEntry</a></code> | Converts this step into an object to prepare for yaml/json representation of this step. |
@@ -9557,6 +10530,27 @@ public toString(): string
 ```
 
 Returns a string representation of this construct.
+
+##### `with` <a name="with" id="@cdklabs/cdk-ssm-documents.InvokeLambdaFunctionStep.with"></a>
+
+```typescript
+public with(mixins: ...IMixin[]): IConstruct
+```
+
+Applies one or more mixins to this construct.
+
+Mixins are applied in order. The list of constructs is captured at the
+start of the call, so constructs added by a mixin will not be visited.
+Use multiple `with()` calls if subsequent mixins should apply to added
+constructs.
+
+###### `mixins`<sup>Required</sup> <a name="mixins" id="@cdklabs/cdk-ssm-documents.InvokeLambdaFunctionStep.with.parameter.mixins"></a>
+
+- *Type:* ...constructs.IMixin[]
+
+The mixins to apply.
+
+---
 
 ##### `listInputs` <a name="listInputs" id="@cdklabs/cdk-ssm-documents.InvokeLambdaFunctionStep.listInputs"></a>
 
@@ -9616,7 +10610,7 @@ public variables(): {[ key: string ]: any}
 
 ---
 
-##### ~~`isConstruct`~~ <a name="isConstruct" id="@cdklabs/cdk-ssm-documents.InvokeLambdaFunctionStep.isConstruct"></a>
+##### `isConstruct` <a name="isConstruct" id="@cdklabs/cdk-ssm-documents.InvokeLambdaFunctionStep.isConstruct"></a>
 
 ```typescript
 import { InvokeLambdaFunctionStep } from '@cdklabs/cdk-ssm-documents'
@@ -9625,6 +10619,20 @@ InvokeLambdaFunctionStep.isConstruct(x: any)
 ```
 
 Checks if `x` is a construct.
+
+Use this method instead of `instanceof` to properly detect `Construct`
+instances, even when the construct library is symlinked.
+
+Explanation: in JavaScript, multiple copies of the `constructs` library on
+disk are seen as independent, completely different libraries. As a
+consequence, the class `Construct` in each copy of the `constructs` library
+is seen as a different class, and an instance of one class will not test as
+`instanceof` the other class. `npm install` will not create installations
+like this, but users may manually symlink construct libraries together or
+use a monorepo tool: in those cases, multiple copies of the `constructs`
+library can be accidentally installed, and `instanceof` will behave
+unpredictably. It is safest to avoid using `instanceof`, and using
+this type-testing method instead.
 
 ###### `x`<sup>Required</sup> <a name="x" id="@cdklabs/cdk-ssm-documents.InvokeLambdaFunctionStep.isConstruct.parameter.x"></a>
 
@@ -9957,6 +10965,7 @@ new InvokeWebhookStep(scope: Construct, id: string, props: InvokeWebhookStepProp
 | **Name** | **Description** |
 | --- | --- |
 | <code><a href="#@cdklabs/cdk-ssm-documents.InvokeWebhookStep.toString">toString</a></code> | Returns a string representation of this construct. |
+| <code><a href="#@cdklabs/cdk-ssm-documents.InvokeWebhookStep.with">with</a></code> | Applies one or more mixins to this construct. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.InvokeWebhookStep.listInputs">listInputs</a></code> | Lists the inputs that are required for this step. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.InvokeWebhookStep.listOutputs">listOutputs</a></code> | Lists the outputs that will be returned from this step. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.InvokeWebhookStep.toSsmEntry">toSsmEntry</a></code> | Converts this step into an object to prepare for yaml/json representation of this step. |
@@ -9973,6 +10982,27 @@ public toString(): string
 ```
 
 Returns a string representation of this construct.
+
+##### `with` <a name="with" id="@cdklabs/cdk-ssm-documents.InvokeWebhookStep.with"></a>
+
+```typescript
+public with(mixins: ...IMixin[]): IConstruct
+```
+
+Applies one or more mixins to this construct.
+
+Mixins are applied in order. The list of constructs is captured at the
+start of the call, so constructs added by a mixin will not be visited.
+Use multiple `with()` calls if subsequent mixins should apply to added
+constructs.
+
+###### `mixins`<sup>Required</sup> <a name="mixins" id="@cdklabs/cdk-ssm-documents.InvokeWebhookStep.with.parameter.mixins"></a>
+
+- *Type:* ...constructs.IMixin[]
+
+The mixins to apply.
+
+---
 
 ##### `listInputs` <a name="listInputs" id="@cdklabs/cdk-ssm-documents.InvokeWebhookStep.listInputs"></a>
 
@@ -10032,7 +11062,7 @@ public variables(): {[ key: string ]: any}
 
 ---
 
-##### ~~`isConstruct`~~ <a name="isConstruct" id="@cdklabs/cdk-ssm-documents.InvokeWebhookStep.isConstruct"></a>
+##### `isConstruct` <a name="isConstruct" id="@cdklabs/cdk-ssm-documents.InvokeWebhookStep.isConstruct"></a>
 
 ```typescript
 import { InvokeWebhookStep } from '@cdklabs/cdk-ssm-documents'
@@ -10041,6 +11071,20 @@ InvokeWebhookStep.isConstruct(x: any)
 ```
 
 Checks if `x` is a construct.
+
+Use this method instead of `instanceof` to properly detect `Construct`
+instances, even when the construct library is symlinked.
+
+Explanation: in JavaScript, multiple copies of the `constructs` library on
+disk are seen as independent, completely different libraries. As a
+consequence, the class `Construct` in each copy of the `constructs` library
+is seen as a different class, and an instance of one class will not test as
+`instanceof` the other class. `npm install` will not create installations
+like this, but users may manually symlink construct libraries together or
+use a monorepo tool: in those cases, multiple copies of the `constructs`
+library can be accidentally installed, and `instanceof` will behave
+unpredictably. It is safest to avoid using `instanceof`, and using
+this type-testing method instead.
 
 ###### `x`<sup>Required</sup> <a name="x" id="@cdklabs/cdk-ssm-documents.InvokeWebhookStep.isConstruct.parameter.x"></a>
 
@@ -10318,6 +11362,7 @@ new PauseStep(scope: Construct, id: string, props: AutomationStepProps)
 | **Name** | **Description** |
 | --- | --- |
 | <code><a href="#@cdklabs/cdk-ssm-documents.PauseStep.toString">toString</a></code> | Returns a string representation of this construct. |
+| <code><a href="#@cdklabs/cdk-ssm-documents.PauseStep.with">with</a></code> | Applies one or more mixins to this construct. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.PauseStep.listInputs">listInputs</a></code> | No inputs required for Pause step. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.PauseStep.listOutputs">listOutputs</a></code> | No outputs emitted from Pause step. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.PauseStep.toSsmEntry">toSsmEntry</a></code> | Converts this step into an object to prepare for yaml/json representation of this step. |
@@ -10334,6 +11379,27 @@ public toString(): string
 ```
 
 Returns a string representation of this construct.
+
+##### `with` <a name="with" id="@cdklabs/cdk-ssm-documents.PauseStep.with"></a>
+
+```typescript
+public with(mixins: ...IMixin[]): IConstruct
+```
+
+Applies one or more mixins to this construct.
+
+Mixins are applied in order. The list of constructs is captured at the
+start of the call, so constructs added by a mixin will not be visited.
+Use multiple `with()` calls if subsequent mixins should apply to added
+constructs.
+
+###### `mixins`<sup>Required</sup> <a name="mixins" id="@cdklabs/cdk-ssm-documents.PauseStep.with.parameter.mixins"></a>
+
+- *Type:* ...constructs.IMixin[]
+
+The mixins to apply.
+
+---
 
 ##### `listInputs` <a name="listInputs" id="@cdklabs/cdk-ssm-documents.PauseStep.listInputs"></a>
 
@@ -10393,7 +11459,7 @@ public variables(): {[ key: string ]: any}
 
 ---
 
-##### ~~`isConstruct`~~ <a name="isConstruct" id="@cdklabs/cdk-ssm-documents.PauseStep.isConstruct"></a>
+##### `isConstruct` <a name="isConstruct" id="@cdklabs/cdk-ssm-documents.PauseStep.isConstruct"></a>
 
 ```typescript
 import { PauseStep } from '@cdklabs/cdk-ssm-documents'
@@ -10402,6 +11468,20 @@ PauseStep.isConstruct(x: any)
 ```
 
 Checks if `x` is a construct.
+
+Use this method instead of `instanceof` to properly detect `Construct`
+instances, even when the construct library is symlinked.
+
+Explanation: in JavaScript, multiple copies of the `constructs` library on
+disk are seen as independent, completely different libraries. As a
+consequence, the class `Construct` in each copy of the `constructs` library
+is seen as a different class, and an instance of one class will not test as
+`instanceof` the other class. `npm install` will not create installations
+like this, but users may manually symlink construct libraries together or
+use a monorepo tool: in those cases, multiple copies of the `constructs`
+library can be accidentally installed, and `instanceof` will behave
+unpredictably. It is safest to avoid using `instanceof`, and using
+this type-testing method instead.
 
 ###### `x`<sup>Required</sup> <a name="x" id="@cdklabs/cdk-ssm-documents.PauseStep.isConstruct.parameter.x"></a>
 
@@ -10657,6 +11737,7 @@ new PsModuleStep(scope: Construct, id: string, props: PsModuleStepProps)
 | **Name** | **Description** |
 | --- | --- |
 | <code><a href="#@cdklabs/cdk-ssm-documents.PsModuleStep.toString">toString</a></code> | Returns a string representation of this construct. |
+| <code><a href="#@cdklabs/cdk-ssm-documents.PsModuleStep.with">with</a></code> | Applies one or more mixins to this construct. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.PsModuleStep.listInputs">listInputs</a></code> | Inputs required for this command includes both the runCommand variables and workingDirectory if provided. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.PsModuleStep.listOutputs">listOutputs</a></code> | RunCommand Steps do not have outputs. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.PsModuleStep.toSsmEntry">toSsmEntry</a></code> | Converts this step into an object to prepare for yaml/json representation of this step. |
@@ -10672,6 +11753,27 @@ public toString(): string
 ```
 
 Returns a string representation of this construct.
+
+##### `with` <a name="with" id="@cdklabs/cdk-ssm-documents.PsModuleStep.with"></a>
+
+```typescript
+public with(mixins: ...IMixin[]): IConstruct
+```
+
+Applies one or more mixins to this construct.
+
+Mixins are applied in order. The list of constructs is captured at the
+start of the call, so constructs added by a mixin will not be visited.
+Use multiple `with()` calls if subsequent mixins should apply to added
+constructs.
+
+###### `mixins`<sup>Required</sup> <a name="mixins" id="@cdklabs/cdk-ssm-documents.PsModuleStep.with.parameter.mixins"></a>
+
+- *Type:* ...constructs.IMixin[]
+
+The mixins to apply.
+
+---
 
 ##### `listInputs` <a name="listInputs" id="@cdklabs/cdk-ssm-documents.PsModuleStep.listInputs"></a>
 
@@ -10723,7 +11825,7 @@ public variables(): {[ key: string ]: any}
 
 ---
 
-##### ~~`isConstruct`~~ <a name="isConstruct" id="@cdklabs/cdk-ssm-documents.PsModuleStep.isConstruct"></a>
+##### `isConstruct` <a name="isConstruct" id="@cdklabs/cdk-ssm-documents.PsModuleStep.isConstruct"></a>
 
 ```typescript
 import { PsModuleStep } from '@cdklabs/cdk-ssm-documents'
@@ -10732,6 +11834,20 @@ PsModuleStep.isConstruct(x: any)
 ```
 
 Checks if `x` is a construct.
+
+Use this method instead of `instanceof` to properly detect `Construct`
+instances, even when the construct library is symlinked.
+
+Explanation: in JavaScript, multiple copies of the `constructs` library on
+disk are seen as independent, completely different libraries. As a
+consequence, the class `Construct` in each copy of the `constructs` library
+is seen as a different class, and an instance of one class will not test as
+`instanceof` the other class. `npm install` will not create installations
+like this, but users may manually symlink construct libraries together or
+use a monorepo tool: in those cases, multiple copies of the `constructs`
+library can be accidentally installed, and `instanceof` will behave
+unpredictably. It is safest to avoid using `instanceof`, and using
+this type-testing method instead.
 
 ###### `x`<sup>Required</sup> <a name="x" id="@cdklabs/cdk-ssm-documents.PsModuleStep.isConstruct.parameter.x"></a>
 
@@ -11001,6 +12117,7 @@ new RebootInstanceAndWait(scope: Construct, id: string, instanceId: IStringVaria
 | **Name** | **Description** |
 | --- | --- |
 | <code><a href="#@cdklabs/cdk-ssm-documents.RebootInstanceAndWait.toString">toString</a></code> | Returns a string representation of this construct. |
+| <code><a href="#@cdklabs/cdk-ssm-documents.RebootInstanceAndWait.with">with</a></code> | Applies one or more mixins to this construct. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.RebootInstanceAndWait.addToDocument">addToDocument</a></code> | *No description.* |
 
 ---
@@ -11012,6 +12129,27 @@ public toString(): string
 ```
 
 Returns a string representation of this construct.
+
+##### `with` <a name="with" id="@cdklabs/cdk-ssm-documents.RebootInstanceAndWait.with"></a>
+
+```typescript
+public with(mixins: ...IMixin[]): IConstruct
+```
+
+Applies one or more mixins to this construct.
+
+Mixins are applied in order. The list of constructs is captured at the
+start of the call, so constructs added by a mixin will not be visited.
+Use multiple `with()` calls if subsequent mixins should apply to added
+constructs.
+
+###### `mixins`<sup>Required</sup> <a name="mixins" id="@cdklabs/cdk-ssm-documents.RebootInstanceAndWait.with.parameter.mixins"></a>
+
+- *Type:* ...constructs.IMixin[]
+
+The mixins to apply.
+
+---
 
 ##### `addToDocument` <a name="addToDocument" id="@cdklabs/cdk-ssm-documents.RebootInstanceAndWait.addToDocument"></a>
 
@@ -11033,7 +12171,7 @@ public addToDocument(doc: AutomationDocumentBuilder): void
 
 ---
 
-##### ~~`isConstruct`~~ <a name="isConstruct" id="@cdklabs/cdk-ssm-documents.RebootInstanceAndWait.isConstruct"></a>
+##### `isConstruct` <a name="isConstruct" id="@cdklabs/cdk-ssm-documents.RebootInstanceAndWait.isConstruct"></a>
 
 ```typescript
 import { RebootInstanceAndWait } from '@cdklabs/cdk-ssm-documents'
@@ -11042,6 +12180,20 @@ RebootInstanceAndWait.isConstruct(x: any)
 ```
 
 Checks if `x` is a construct.
+
+Use this method instead of `instanceof` to properly detect `Construct`
+instances, even when the construct library is symlinked.
+
+Explanation: in JavaScript, multiple copies of the `constructs` library on
+disk are seen as independent, completely different libraries. As a
+consequence, the class `Construct` in each copy of the `constructs` library
+is seen as a different class, and an instance of one class will not test as
+`instanceof` the other class. `npm install` will not create installations
+like this, but users may manually symlink construct libraries together or
+use a monorepo tool: in those cases, multiple copies of the `constructs`
+library can be accidentally installed, and `instanceof` will behave
+unpredictably. It is safest to avoid using `instanceof`, and using
+this type-testing method instead.
 
 ###### `x`<sup>Required</sup> <a name="x" id="@cdklabs/cdk-ssm-documents.RebootInstanceAndWait.isConstruct.parameter.x"></a>
 
@@ -11137,6 +12289,7 @@ new RunCommandStep(scope: Construct, id: string, props: RunCommandStepProps)
 | **Name** | **Description** |
 | --- | --- |
 | <code><a href="#@cdklabs/cdk-ssm-documents.RunCommandStep.toString">toString</a></code> | Returns a string representation of this construct. |
+| <code><a href="#@cdklabs/cdk-ssm-documents.RunCommandStep.with">with</a></code> | Applies one or more mixins to this construct. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.RunCommandStep.listInputs">listInputs</a></code> | Lists the inputs that are required for this step. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.RunCommandStep.listOutputs">listOutputs</a></code> | Lists the outputs that will be returned from this step. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.RunCommandStep.toSsmEntry">toSsmEntry</a></code> | Converts this step into an object to prepare for yaml/json representation of this step. |
@@ -11153,6 +12306,27 @@ public toString(): string
 ```
 
 Returns a string representation of this construct.
+
+##### `with` <a name="with" id="@cdklabs/cdk-ssm-documents.RunCommandStep.with"></a>
+
+```typescript
+public with(mixins: ...IMixin[]): IConstruct
+```
+
+Applies one or more mixins to this construct.
+
+Mixins are applied in order. The list of constructs is captured at the
+start of the call, so constructs added by a mixin will not be visited.
+Use multiple `with()` calls if subsequent mixins should apply to added
+constructs.
+
+###### `mixins`<sup>Required</sup> <a name="mixins" id="@cdklabs/cdk-ssm-documents.RunCommandStep.with.parameter.mixins"></a>
+
+- *Type:* ...constructs.IMixin[]
+
+The mixins to apply.
+
+---
 
 ##### `listInputs` <a name="listInputs" id="@cdklabs/cdk-ssm-documents.RunCommandStep.listInputs"></a>
 
@@ -11212,7 +12386,7 @@ public variables(): {[ key: string ]: any}
 
 ---
 
-##### ~~`isConstruct`~~ <a name="isConstruct" id="@cdklabs/cdk-ssm-documents.RunCommandStep.isConstruct"></a>
+##### `isConstruct` <a name="isConstruct" id="@cdklabs/cdk-ssm-documents.RunCommandStep.isConstruct"></a>
 
 ```typescript
 import { RunCommandStep } from '@cdklabs/cdk-ssm-documents'
@@ -11221,6 +12395,20 @@ RunCommandStep.isConstruct(x: any)
 ```
 
 Checks if `x` is a construct.
+
+Use this method instead of `instanceof` to properly detect `Construct`
+instances, even when the construct library is symlinked.
+
+Explanation: in JavaScript, multiple copies of the `constructs` library on
+disk are seen as independent, completely different libraries. As a
+consequence, the class `Construct` in each copy of the `constructs` library
+is seen as a different class, and an instance of one class will not test as
+`instanceof` the other class. `npm install` will not create installations
+like this, but users may manually symlink construct libraries together or
+use a monorepo tool: in those cases, multiple copies of the `constructs`
+library can be accidentally installed, and `instanceof` will behave
+unpredictably. It is safest to avoid using `instanceof`, and using
+this type-testing method instead.
 
 ###### `x`<sup>Required</sup> <a name="x" id="@cdklabs/cdk-ssm-documents.RunCommandStep.isConstruct.parameter.x"></a>
 
@@ -11250,7 +12438,7 @@ Any object.
 | <code><a href="#@cdklabs/cdk-ssm-documents.RunCommandStep.property.allStepsInExecution">allStepsInExecution</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AutomationStep">AutomationStep</a>[]</code> | *No description.* |
 | <code><a href="#@cdklabs/cdk-ssm-documents.RunCommandStep.property.nextStep">nextStep</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AutomationStep">AutomationStep</a></code> | *No description.* |
 | <code><a href="#@cdklabs/cdk-ssm-documents.RunCommandStep.property.documentName">documentName</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.IStringVariable">IStringVariable</a></code> | *No description.* |
-| <code><a href="#@cdklabs/cdk-ssm-documents.RunCommandStep.property.targets">targets</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.IStringListVariable">IStringListVariable</a> \| <a href="#@cdklabs/cdk-ssm-documents.IMapListVariable">IMapListVariable</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.RunCommandStep.property.targets">targets</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.IMapListVariable">IMapListVariable</a> \| <a href="#@cdklabs/cdk-ssm-documents.IStringListVariable">IStringListVariable</a></code> | *No description.* |
 | <code><a href="#@cdklabs/cdk-ssm-documents.RunCommandStep.property.cloudWatchOutputConfig">cloudWatchOutputConfig</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.IStringMapVariable">IStringMapVariable</a></code> | *No description.* |
 | <code><a href="#@cdklabs/cdk-ssm-documents.RunCommandStep.property.commandTimeoutSeconds">commandTimeoutSeconds</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.INumberVariable">INumberVariable</a></code> | *No description.* |
 | <code><a href="#@cdklabs/cdk-ssm-documents.RunCommandStep.property.comment">comment</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.IStringVariable">IStringVariable</a></code> | *No description.* |
@@ -11431,10 +12619,10 @@ public readonly documentName: IStringVariable;
 ##### `targets`<sup>Required</sup> <a name="targets" id="@cdklabs/cdk-ssm-documents.RunCommandStep.property.targets"></a>
 
 ```typescript
-public readonly targets: IStringListVariable | IMapListVariable;
+public readonly targets: IMapListVariable | IStringListVariable;
 ```
 
-- *Type:* <a href="#@cdklabs/cdk-ssm-documents.IStringListVariable">IStringListVariable</a> | <a href="#@cdklabs/cdk-ssm-documents.IMapListVariable">IMapListVariable</a>
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.IMapListVariable">IMapListVariable</a> | <a href="#@cdklabs/cdk-ssm-documents.IStringListVariable">IStringListVariable</a>
 
 ---
 
@@ -11630,6 +12818,7 @@ new RunDockerActionStep(scope: Construct, id: string, props: RunDockerActionStep
 | **Name** | **Description** |
 | --- | --- |
 | <code><a href="#@cdklabs/cdk-ssm-documents.RunDockerActionStep.toString">toString</a></code> | Returns a string representation of this construct. |
+| <code><a href="#@cdklabs/cdk-ssm-documents.RunDockerActionStep.with">with</a></code> | Applies one or more mixins to this construct. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.RunDockerActionStep.listInputs">listInputs</a></code> | Lists the inputs that are required for this step. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.RunDockerActionStep.listOutputs">listOutputs</a></code> | RunCommand Steps do not have outputs. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.RunDockerActionStep.toSsmEntry">toSsmEntry</a></code> | Converts this step into an object to prepare for yaml/json representation of this step. |
@@ -11645,6 +12834,27 @@ public toString(): string
 ```
 
 Returns a string representation of this construct.
+
+##### `with` <a name="with" id="@cdklabs/cdk-ssm-documents.RunDockerActionStep.with"></a>
+
+```typescript
+public with(mixins: ...IMixin[]): IConstruct
+```
+
+Applies one or more mixins to this construct.
+
+Mixins are applied in order. The list of constructs is captured at the
+start of the call, so constructs added by a mixin will not be visited.
+Use multiple `with()` calls if subsequent mixins should apply to added
+constructs.
+
+###### `mixins`<sup>Required</sup> <a name="mixins" id="@cdklabs/cdk-ssm-documents.RunDockerActionStep.with.parameter.mixins"></a>
+
+- *Type:* ...constructs.IMixin[]
+
+The mixins to apply.
+
+---
 
 ##### `listInputs` <a name="listInputs" id="@cdklabs/cdk-ssm-documents.RunDockerActionStep.listInputs"></a>
 
@@ -11696,7 +12906,7 @@ public variables(): {[ key: string ]: any}
 
 ---
 
-##### ~~`isConstruct`~~ <a name="isConstruct" id="@cdklabs/cdk-ssm-documents.RunDockerActionStep.isConstruct"></a>
+##### `isConstruct` <a name="isConstruct" id="@cdklabs/cdk-ssm-documents.RunDockerActionStep.isConstruct"></a>
 
 ```typescript
 import { RunDockerActionStep } from '@cdklabs/cdk-ssm-documents'
@@ -11705,6 +12915,20 @@ RunDockerActionStep.isConstruct(x: any)
 ```
 
 Checks if `x` is a construct.
+
+Use this method instead of `instanceof` to properly detect `Construct`
+instances, even when the construct library is symlinked.
+
+Explanation: in JavaScript, multiple copies of the `constructs` library on
+disk are seen as independent, completely different libraries. As a
+consequence, the class `Construct` in each copy of the `constructs` library
+is seen as a different class, and an instance of one class will not test as
+`instanceof` the other class. `npm install` will not create installations
+like this, but users may manually symlink construct libraries together or
+use a monorepo tool: in those cases, multiple copies of the `constructs`
+library can be accidentally installed, and `instanceof` will behave
+unpredictably. It is safest to avoid using `instanceof`, and using
+this type-testing method instead.
 
 ###### `x`<sup>Required</sup> <a name="x" id="@cdklabs/cdk-ssm-documents.RunDockerActionStep.isConstruct.parameter.x"></a>
 
@@ -12031,6 +13255,7 @@ new RunDocumentStep(scope: Construct, id: string, props: RunDocumentStepProps)
 | **Name** | **Description** |
 | --- | --- |
 | <code><a href="#@cdklabs/cdk-ssm-documents.RunDocumentStep.toString">toString</a></code> | Returns a string representation of this construct. |
+| <code><a href="#@cdklabs/cdk-ssm-documents.RunDocumentStep.with">with</a></code> | Applies one or more mixins to this construct. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.RunDocumentStep.listInputs">listInputs</a></code> | Lists the inputs that are required for this step. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.RunDocumentStep.listOutputs">listOutputs</a></code> | RunCommand Steps do not have outputs. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.RunDocumentStep.toSsmEntry">toSsmEntry</a></code> | Converts this step into an object to prepare for yaml/json representation of this step. |
@@ -12046,6 +13271,27 @@ public toString(): string
 ```
 
 Returns a string representation of this construct.
+
+##### `with` <a name="with" id="@cdklabs/cdk-ssm-documents.RunDocumentStep.with"></a>
+
+```typescript
+public with(mixins: ...IMixin[]): IConstruct
+```
+
+Applies one or more mixins to this construct.
+
+Mixins are applied in order. The list of constructs is captured at the
+start of the call, so constructs added by a mixin will not be visited.
+Use multiple `with()` calls if subsequent mixins should apply to added
+constructs.
+
+###### `mixins`<sup>Required</sup> <a name="mixins" id="@cdklabs/cdk-ssm-documents.RunDocumentStep.with.parameter.mixins"></a>
+
+- *Type:* ...constructs.IMixin[]
+
+The mixins to apply.
+
+---
 
 ##### `listInputs` <a name="listInputs" id="@cdklabs/cdk-ssm-documents.RunDocumentStep.listInputs"></a>
 
@@ -12097,7 +13343,7 @@ public variables(): {[ key: string ]: any}
 
 ---
 
-##### ~~`isConstruct`~~ <a name="isConstruct" id="@cdklabs/cdk-ssm-documents.RunDocumentStep.isConstruct"></a>
+##### `isConstruct` <a name="isConstruct" id="@cdklabs/cdk-ssm-documents.RunDocumentStep.isConstruct"></a>
 
 ```typescript
 import { RunDocumentStep } from '@cdklabs/cdk-ssm-documents'
@@ -12106,6 +13352,20 @@ RunDocumentStep.isConstruct(x: any)
 ```
 
 Checks if `x` is a construct.
+
+Use this method instead of `instanceof` to properly detect `Construct`
+instances, even when the construct library is symlinked.
+
+Explanation: in JavaScript, multiple copies of the `constructs` library on
+disk are seen as independent, completely different libraries. As a
+consequence, the class `Construct` in each copy of the `constructs` library
+is seen as a different class, and an instance of one class will not test as
+`instanceof` the other class. `npm install` will not create installations
+like this, but users may manually symlink construct libraries together or
+use a monorepo tool: in those cases, multiple copies of the `constructs`
+library can be accidentally installed, and `instanceof` will behave
+unpredictably. It is safest to avoid using `instanceof`, and using
+this type-testing method instead.
 
 ###### `x`<sup>Required</sup> <a name="x" id="@cdklabs/cdk-ssm-documents.RunDocumentStep.isConstruct.parameter.x"></a>
 
@@ -12344,6 +13604,7 @@ new RunInstanceStep(scope: Construct, id: string, props: RunInstanceStepProps)
 | **Name** | **Description** |
 | --- | --- |
 | <code><a href="#@cdklabs/cdk-ssm-documents.RunInstanceStep.toString">toString</a></code> | Returns a string representation of this construct. |
+| <code><a href="#@cdklabs/cdk-ssm-documents.RunInstanceStep.with">with</a></code> | Applies one or more mixins to this construct. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.RunInstanceStep.listInputs">listInputs</a></code> | Derives the inputs based on given variables. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.RunInstanceStep.listOutputs">listOutputs</a></code> | Lists the outputs that will be returned from this step. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.RunInstanceStep.toSsmEntry">toSsmEntry</a></code> | Converts this step into an object to prepare for yaml/json representation of this step. |
@@ -12360,6 +13621,27 @@ public toString(): string
 ```
 
 Returns a string representation of this construct.
+
+##### `with` <a name="with" id="@cdklabs/cdk-ssm-documents.RunInstanceStep.with"></a>
+
+```typescript
+public with(mixins: ...IMixin[]): IConstruct
+```
+
+Applies one or more mixins to this construct.
+
+Mixins are applied in order. The list of constructs is captured at the
+start of the call, so constructs added by a mixin will not be visited.
+Use multiple `with()` calls if subsequent mixins should apply to added
+constructs.
+
+###### `mixins`<sup>Required</sup> <a name="mixins" id="@cdklabs/cdk-ssm-documents.RunInstanceStep.with.parameter.mixins"></a>
+
+- *Type:* ...constructs.IMixin[]
+
+The mixins to apply.
+
+---
 
 ##### `listInputs` <a name="listInputs" id="@cdklabs/cdk-ssm-documents.RunInstanceStep.listInputs"></a>
 
@@ -12419,7 +13701,7 @@ public variables(): {[ key: string ]: any}
 
 ---
 
-##### ~~`isConstruct`~~ <a name="isConstruct" id="@cdklabs/cdk-ssm-documents.RunInstanceStep.isConstruct"></a>
+##### `isConstruct` <a name="isConstruct" id="@cdklabs/cdk-ssm-documents.RunInstanceStep.isConstruct"></a>
 
 ```typescript
 import { RunInstanceStep } from '@cdklabs/cdk-ssm-documents'
@@ -12428,6 +13710,20 @@ RunInstanceStep.isConstruct(x: any)
 ```
 
 Checks if `x` is a construct.
+
+Use this method instead of `instanceof` to properly detect `Construct`
+instances, even when the construct library is symlinked.
+
+Explanation: in JavaScript, multiple copies of the `constructs` library on
+disk are seen as independent, completely different libraries. As a
+consequence, the class `Construct` in each copy of the `constructs` library
+is seen as a different class, and an instance of one class will not test as
+`instanceof` the other class. `npm install` will not create installations
+like this, but users may manually symlink construct libraries together or
+use a monorepo tool: in those cases, multiple copies of the `constructs`
+library can be accidentally installed, and `instanceof` will behave
+unpredictably. It is safest to avoid using `instanceof`, and using
+this type-testing method instead.
 
 ###### `x`<sup>Required</sup> <a name="x" id="@cdklabs/cdk-ssm-documents.RunInstanceStep.isConstruct.parameter.x"></a>
 
@@ -12947,6 +14243,7 @@ new RunPowerShellScriptStep(scope: Construct, id: string, props: RunPowerShellSc
 | **Name** | **Description** |
 | --- | --- |
 | <code><a href="#@cdklabs/cdk-ssm-documents.RunPowerShellScriptStep.toString">toString</a></code> | Returns a string representation of this construct. |
+| <code><a href="#@cdklabs/cdk-ssm-documents.RunPowerShellScriptStep.with">with</a></code> | Applies one or more mixins to this construct. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.RunPowerShellScriptStep.listInputs">listInputs</a></code> | Inputs required for this command includes both the runCommand variables and workingDirectory if provided. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.RunPowerShellScriptStep.listOutputs">listOutputs</a></code> | RunCommand Steps do not have outputs. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.RunPowerShellScriptStep.toSsmEntry">toSsmEntry</a></code> | Converts this step into an object to prepare for yaml/json representation of this step. |
@@ -12962,6 +14259,27 @@ public toString(): string
 ```
 
 Returns a string representation of this construct.
+
+##### `with` <a name="with" id="@cdklabs/cdk-ssm-documents.RunPowerShellScriptStep.with"></a>
+
+```typescript
+public with(mixins: ...IMixin[]): IConstruct
+```
+
+Applies one or more mixins to this construct.
+
+Mixins are applied in order. The list of constructs is captured at the
+start of the call, so constructs added by a mixin will not be visited.
+Use multiple `with()` calls if subsequent mixins should apply to added
+constructs.
+
+###### `mixins`<sup>Required</sup> <a name="mixins" id="@cdklabs/cdk-ssm-documents.RunPowerShellScriptStep.with.parameter.mixins"></a>
+
+- *Type:* ...constructs.IMixin[]
+
+The mixins to apply.
+
+---
 
 ##### `listInputs` <a name="listInputs" id="@cdklabs/cdk-ssm-documents.RunPowerShellScriptStep.listInputs"></a>
 
@@ -13013,7 +14331,7 @@ public variables(): {[ key: string ]: any}
 
 ---
 
-##### ~~`isConstruct`~~ <a name="isConstruct" id="@cdklabs/cdk-ssm-documents.RunPowerShellScriptStep.isConstruct"></a>
+##### `isConstruct` <a name="isConstruct" id="@cdklabs/cdk-ssm-documents.RunPowerShellScriptStep.isConstruct"></a>
 
 ```typescript
 import { RunPowerShellScriptStep } from '@cdklabs/cdk-ssm-documents'
@@ -13022,6 +14340,20 @@ RunPowerShellScriptStep.isConstruct(x: any)
 ```
 
 Checks if `x` is a construct.
+
+Use this method instead of `instanceof` to properly detect `Construct`
+instances, even when the construct library is symlinked.
+
+Explanation: in JavaScript, multiple copies of the `constructs` library on
+disk are seen as independent, completely different libraries. As a
+consequence, the class `Construct` in each copy of the `constructs` library
+is seen as a different class, and an instance of one class will not test as
+`instanceof` the other class. `npm install` will not create installations
+like this, but users may manually symlink construct libraries together or
+use a monorepo tool: in those cases, multiple copies of the `constructs`
+library can be accidentally installed, and `instanceof` will behave
+unpredictably. It is safest to avoid using `instanceof`, and using
+this type-testing method instead.
 
 ###### `x`<sup>Required</sup> <a name="x" id="@cdklabs/cdk-ssm-documents.RunPowerShellScriptStep.isConstruct.parameter.x"></a>
 
@@ -13271,6 +14603,7 @@ new RunShellScriptStep(scope: Construct, id: string, props: RunShellScriptStepPr
 | **Name** | **Description** |
 | --- | --- |
 | <code><a href="#@cdklabs/cdk-ssm-documents.RunShellScriptStep.toString">toString</a></code> | Returns a string representation of this construct. |
+| <code><a href="#@cdklabs/cdk-ssm-documents.RunShellScriptStep.with">with</a></code> | Applies one or more mixins to this construct. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.RunShellScriptStep.listInputs">listInputs</a></code> | Inputs required for this command includes both the runCommand variables and workingDirectory if provided. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.RunShellScriptStep.listOutputs">listOutputs</a></code> | RunCommand Steps do not have outputs. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.RunShellScriptStep.toSsmEntry">toSsmEntry</a></code> | Converts this step into an object to prepare for yaml/json representation of this step. |
@@ -13286,6 +14619,27 @@ public toString(): string
 ```
 
 Returns a string representation of this construct.
+
+##### `with` <a name="with" id="@cdklabs/cdk-ssm-documents.RunShellScriptStep.with"></a>
+
+```typescript
+public with(mixins: ...IMixin[]): IConstruct
+```
+
+Applies one or more mixins to this construct.
+
+Mixins are applied in order. The list of constructs is captured at the
+start of the call, so constructs added by a mixin will not be visited.
+Use multiple `with()` calls if subsequent mixins should apply to added
+constructs.
+
+###### `mixins`<sup>Required</sup> <a name="mixins" id="@cdklabs/cdk-ssm-documents.RunShellScriptStep.with.parameter.mixins"></a>
+
+- *Type:* ...constructs.IMixin[]
+
+The mixins to apply.
+
+---
 
 ##### `listInputs` <a name="listInputs" id="@cdklabs/cdk-ssm-documents.RunShellScriptStep.listInputs"></a>
 
@@ -13337,7 +14691,7 @@ public variables(): {[ key: string ]: any}
 
 ---
 
-##### ~~`isConstruct`~~ <a name="isConstruct" id="@cdklabs/cdk-ssm-documents.RunShellScriptStep.isConstruct"></a>
+##### `isConstruct` <a name="isConstruct" id="@cdklabs/cdk-ssm-documents.RunShellScriptStep.isConstruct"></a>
 
 ```typescript
 import { RunShellScriptStep } from '@cdklabs/cdk-ssm-documents'
@@ -13346,6 +14700,20 @@ RunShellScriptStep.isConstruct(x: any)
 ```
 
 Checks if `x` is a construct.
+
+Use this method instead of `instanceof` to properly detect `Construct`
+instances, even when the construct library is symlinked.
+
+Explanation: in JavaScript, multiple copies of the `constructs` library on
+disk are seen as independent, completely different libraries. As a
+consequence, the class `Construct` in each copy of the `constructs` library
+is seen as a different class, and an instance of one class will not test as
+`instanceof` the other class. `npm install` will not create installations
+like this, but users may manually symlink construct libraries together or
+use a monorepo tool: in those cases, multiple copies of the `constructs`
+library can be accidentally installed, and `instanceof` will behave
+unpredictably. It is safest to avoid using `instanceof`, and using
+this type-testing method instead.
 
 ###### `x`<sup>Required</sup> <a name="x" id="@cdklabs/cdk-ssm-documents.RunShellScriptStep.isConstruct.parameter.x"></a>
 
@@ -13595,6 +14963,7 @@ new SleepStep(scope: Construct, id: string, props: SleepStepProps)
 | **Name** | **Description** |
 | --- | --- |
 | <code><a href="#@cdklabs/cdk-ssm-documents.SleepStep.toString">toString</a></code> | Returns a string representation of this construct. |
+| <code><a href="#@cdklabs/cdk-ssm-documents.SleepStep.with">with</a></code> | Applies one or more mixins to this construct. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.SleepStep.listInputs">listInputs</a></code> | No inputs required for Sleep step. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.SleepStep.listOutputs">listOutputs</a></code> | No outputs emitted from Sleep step. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.SleepStep.toSsmEntry">toSsmEntry</a></code> | Converts this step into an object to prepare for yaml/json representation of this step. |
@@ -13611,6 +14980,27 @@ public toString(): string
 ```
 
 Returns a string representation of this construct.
+
+##### `with` <a name="with" id="@cdklabs/cdk-ssm-documents.SleepStep.with"></a>
+
+```typescript
+public with(mixins: ...IMixin[]): IConstruct
+```
+
+Applies one or more mixins to this construct.
+
+Mixins are applied in order. The list of constructs is captured at the
+start of the call, so constructs added by a mixin will not be visited.
+Use multiple `with()` calls if subsequent mixins should apply to added
+constructs.
+
+###### `mixins`<sup>Required</sup> <a name="mixins" id="@cdklabs/cdk-ssm-documents.SleepStep.with.parameter.mixins"></a>
+
+- *Type:* ...constructs.IMixin[]
+
+The mixins to apply.
+
+---
 
 ##### `listInputs` <a name="listInputs" id="@cdklabs/cdk-ssm-documents.SleepStep.listInputs"></a>
 
@@ -13670,7 +15060,7 @@ public variables(): {[ key: string ]: any}
 
 ---
 
-##### ~~`isConstruct`~~ <a name="isConstruct" id="@cdklabs/cdk-ssm-documents.SleepStep.isConstruct"></a>
+##### `isConstruct` <a name="isConstruct" id="@cdklabs/cdk-ssm-documents.SleepStep.isConstruct"></a>
 
 ```typescript
 import { SleepStep } from '@cdklabs/cdk-ssm-documents'
@@ -13679,6 +15069,20 @@ SleepStep.isConstruct(x: any)
 ```
 
 Checks if `x` is a construct.
+
+Use this method instead of `instanceof` to properly detect `Construct`
+instances, even when the construct library is symlinked.
+
+Explanation: in JavaScript, multiple copies of the `constructs` library on
+disk are seen as independent, completely different libraries. As a
+consequence, the class `Construct` in each copy of the `constructs` library
+is seen as a different class, and an instance of one class will not test as
+`instanceof` the other class. `npm install` will not create installations
+like this, but users may manually symlink construct libraries together or
+use a monorepo tool: in those cases, multiple copies of the `constructs`
+library can be accidentally installed, and `instanceof` will behave
+unpredictably. It is safest to avoid using `instanceof`, and using
+this type-testing method instead.
 
 ###### `x`<sup>Required</sup> <a name="x" id="@cdklabs/cdk-ssm-documents.SleepStep.isConstruct.parameter.x"></a>
 
@@ -13945,6 +15349,7 @@ new SoftwareInventoryStep(scope: Construct, id: string, props: SoftwareInventory
 | **Name** | **Description** |
 | --- | --- |
 | <code><a href="#@cdklabs/cdk-ssm-documents.SoftwareInventoryStep.toString">toString</a></code> | Returns a string representation of this construct. |
+| <code><a href="#@cdklabs/cdk-ssm-documents.SoftwareInventoryStep.with">with</a></code> | Applies one or more mixins to this construct. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.SoftwareInventoryStep.listInputs">listInputs</a></code> | All Inputs for this command are optional. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.SoftwareInventoryStep.listOutputs">listOutputs</a></code> | RunCommand Steps do not have outputs. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.SoftwareInventoryStep.toSsmEntry">toSsmEntry</a></code> | Converts this step into an object to prepare for yaml/json representation of this step. |
@@ -13960,6 +15365,27 @@ public toString(): string
 ```
 
 Returns a string representation of this construct.
+
+##### `with` <a name="with" id="@cdklabs/cdk-ssm-documents.SoftwareInventoryStep.with"></a>
+
+```typescript
+public with(mixins: ...IMixin[]): IConstruct
+```
+
+Applies one or more mixins to this construct.
+
+Mixins are applied in order. The list of constructs is captured at the
+start of the call, so constructs added by a mixin will not be visited.
+Use multiple `with()` calls if subsequent mixins should apply to added
+constructs.
+
+###### `mixins`<sup>Required</sup> <a name="mixins" id="@cdklabs/cdk-ssm-documents.SoftwareInventoryStep.with.parameter.mixins"></a>
+
+- *Type:* ...constructs.IMixin[]
+
+The mixins to apply.
+
+---
 
 ##### `listInputs` <a name="listInputs" id="@cdklabs/cdk-ssm-documents.SoftwareInventoryStep.listInputs"></a>
 
@@ -14011,7 +15437,7 @@ public variables(): {[ key: string ]: any}
 
 ---
 
-##### ~~`isConstruct`~~ <a name="isConstruct" id="@cdklabs/cdk-ssm-documents.SoftwareInventoryStep.isConstruct"></a>
+##### `isConstruct` <a name="isConstruct" id="@cdklabs/cdk-ssm-documents.SoftwareInventoryStep.isConstruct"></a>
 
 ```typescript
 import { SoftwareInventoryStep } from '@cdklabs/cdk-ssm-documents'
@@ -14020,6 +15446,20 @@ SoftwareInventoryStep.isConstruct(x: any)
 ```
 
 Checks if `x` is a construct.
+
+Use this method instead of `instanceof` to properly detect `Construct`
+instances, even when the construct library is symlinked.
+
+Explanation: in JavaScript, multiple copies of the `constructs` library on
+disk are seen as independent, completely different libraries. As a
+consequence, the class `Construct` in each copy of the `constructs` library
+is seen as a different class, and an instance of one class will not test as
+`instanceof` the other class. `npm install` will not create installations
+like this, but users may manually symlink construct libraries together or
+use a monorepo tool: in those cases, multiple copies of the `constructs`
+library can be accidentally installed, and `instanceof` will behave
+unpredictably. It is safest to avoid using `instanceof`, and using
+this type-testing method instead.
 
 ###### `x`<sup>Required</sup> <a name="x" id="@cdklabs/cdk-ssm-documents.SoftwareInventoryStep.isConstruct.parameter.x"></a>
 
@@ -14344,6 +15784,7 @@ new SsmDocument(scope: Construct, id: string, props: SsmDocumentProps)
 | **Name** | **Description** |
 | --- | --- |
 | <code><a href="#@cdklabs/cdk-ssm-documents.SsmDocument.toString">toString</a></code> | Returns a string representation of this construct. |
+| <code><a href="#@cdklabs/cdk-ssm-documents.SsmDocument.with">with</a></code> | Applies one or more mixins to this construct. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.SsmDocument.documentType">documentType</a></code> | *No description.* |
 | <code><a href="#@cdklabs/cdk-ssm-documents.SsmDocument.print">print</a></code> | Synthesize before calling this function! You can use this to Synthesize: cdk.SynthUtils.synthesize(stack); |
 
@@ -14356,6 +15797,27 @@ public toString(): string
 ```
 
 Returns a string representation of this construct.
+
+##### `with` <a name="with" id="@cdklabs/cdk-ssm-documents.SsmDocument.with"></a>
+
+```typescript
+public with(mixins: ...IMixin[]): IConstruct
+```
+
+Applies one or more mixins to this construct.
+
+Mixins are applied in order. The list of constructs is captured at the
+start of the call, so constructs added by a mixin will not be visited.
+Use multiple `with()` calls if subsequent mixins should apply to added
+constructs.
+
+###### `mixins`<sup>Required</sup> <a name="mixins" id="@cdklabs/cdk-ssm-documents.SsmDocument.with.parameter.mixins"></a>
+
+- *Type:* ...constructs.IMixin[]
+
+The mixins to apply.
+
+---
 
 ##### `documentType` <a name="documentType" id="@cdklabs/cdk-ssm-documents.SsmDocument.documentType"></a>
 
@@ -14383,7 +15845,7 @@ The yaml can be used as is and will behave (or at least should behave) as was si
 
 ---
 
-##### ~~`isConstruct`~~ <a name="isConstruct" id="@cdklabs/cdk-ssm-documents.SsmDocument.isConstruct"></a>
+##### `isConstruct` <a name="isConstruct" id="@cdklabs/cdk-ssm-documents.SsmDocument.isConstruct"></a>
 
 ```typescript
 import { SsmDocument } from '@cdklabs/cdk-ssm-documents'
@@ -14392,6 +15854,20 @@ SsmDocument.isConstruct(x: any)
 ```
 
 Checks if `x` is a construct.
+
+Use this method instead of `instanceof` to properly detect `Construct`
+instances, even when the construct library is symlinked.
+
+Explanation: in JavaScript, multiple copies of the `constructs` library on
+disk are seen as independent, completely different libraries. As a
+consequence, the class `Construct` in each copy of the `constructs` library
+is seen as a different class, and an instance of one class will not test as
+`instanceof` the other class. `npm install` will not create installations
+like this, but users may manually symlink construct libraries together or
+use a monorepo tool: in those cases, multiple copies of the `constructs`
+library can be accidentally installed, and `instanceof` will behave
+unpredictably. It is safest to avoid using `instanceof`, and using
+this type-testing method instead.
 
 ###### `x`<sup>Required</sup> <a name="x" id="@cdklabs/cdk-ssm-documents.SsmDocument.isConstruct.parameter.x"></a>
 
@@ -14551,6 +16027,7 @@ new Step(scope: Construct, id: string, props: StepProps)
 | **Name** | **Description** |
 | --- | --- |
 | <code><a href="#@cdklabs/cdk-ssm-documents.Step.toString">toString</a></code> | Returns a string representation of this construct. |
+| <code><a href="#@cdklabs/cdk-ssm-documents.Step.with">with</a></code> | Applies one or more mixins to this construct. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.Step.listInputs">listInputs</a></code> | Lists the inputs that are required for this step. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.Step.listOutputs">listOutputs</a></code> | Lists the outputs that will be returned from this step. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.Step.toSsmEntry">toSsmEntry</a></code> | Converts this step into an object to prepare for yaml/json representation of this step. |
@@ -14564,6 +16041,27 @@ public toString(): string
 ```
 
 Returns a string representation of this construct.
+
+##### `with` <a name="with" id="@cdklabs/cdk-ssm-documents.Step.with"></a>
+
+```typescript
+public with(mixins: ...IMixin[]): IConstruct
+```
+
+Applies one or more mixins to this construct.
+
+Mixins are applied in order. The list of constructs is captured at the
+start of the call, so constructs added by a mixin will not be visited.
+Use multiple `with()` calls if subsequent mixins should apply to added
+constructs.
+
+###### `mixins`<sup>Required</sup> <a name="mixins" id="@cdklabs/cdk-ssm-documents.Step.with.parameter.mixins"></a>
+
+- *Type:* ...constructs.IMixin[]
+
+The mixins to apply.
+
+---
 
 ##### `listInputs` <a name="listInputs" id="@cdklabs/cdk-ssm-documents.Step.listInputs"></a>
 
@@ -14597,7 +16095,7 @@ Converts this step into an object to prepare for yaml/json representation of thi
 
 ---
 
-##### ~~`isConstruct`~~ <a name="isConstruct" id="@cdklabs/cdk-ssm-documents.Step.isConstruct"></a>
+##### `isConstruct` <a name="isConstruct" id="@cdklabs/cdk-ssm-documents.Step.isConstruct"></a>
 
 ```typescript
 import { Step } from '@cdklabs/cdk-ssm-documents'
@@ -14606,6 +16104,20 @@ Step.isConstruct(x: any)
 ```
 
 Checks if `x` is a construct.
+
+Use this method instead of `instanceof` to properly detect `Construct`
+instances, even when the construct library is symlinked.
+
+Explanation: in JavaScript, multiple copies of the `constructs` library on
+disk are seen as independent, completely different libraries. As a
+consequence, the class `Construct` in each copy of the `constructs` library
+is seen as a different class, and an instance of one class will not test as
+`instanceof` the other class. `npm install` will not create installations
+like this, but users may manually symlink construct libraries together or
+use a monorepo tool: in those cases, multiple copies of the `constructs`
+library can be accidentally installed, and `instanceof` will behave
+unpredictably. It is safest to avoid using `instanceof`, and using
+this type-testing method instead.
 
 ###### `x`<sup>Required</sup> <a name="x" id="@cdklabs/cdk-ssm-documents.Step.isConstruct.parameter.x"></a>
 
@@ -14703,6 +16215,7 @@ This step can be used just as you would use any other Step including simulation 
 | **Name** | **Description** |
 | --- | --- |
 | <code><a href="#@cdklabs/cdk-ssm-documents.StringStep.toString">toString</a></code> | Returns a string representation of this construct. |
+| <code><a href="#@cdklabs/cdk-ssm-documents.StringStep.with">with</a></code> | Applies one or more mixins to this construct. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.StringStep.addToDocument">addToDocument</a></code> | *No description.* |
 
 ---
@@ -14714,6 +16227,27 @@ public toString(): string
 ```
 
 Returns a string representation of this construct.
+
+##### `with` <a name="with" id="@cdklabs/cdk-ssm-documents.StringStep.with"></a>
+
+```typescript
+public with(mixins: ...IMixin[]): IConstruct
+```
+
+Applies one or more mixins to this construct.
+
+Mixins are applied in order. The list of constructs is captured at the
+start of the call, so constructs added by a mixin will not be visited.
+Use multiple `with()` calls if subsequent mixins should apply to added
+constructs.
+
+###### `mixins`<sup>Required</sup> <a name="mixins" id="@cdklabs/cdk-ssm-documents.StringStep.with.parameter.mixins"></a>
+
+- *Type:* ...constructs.IMixin[]
+
+The mixins to apply.
+
+---
 
 ##### `addToDocument` <a name="addToDocument" id="@cdklabs/cdk-ssm-documents.StringStep.addToDocument"></a>
 
@@ -14738,7 +16272,7 @@ public addToDocument(doc: AutomationDocumentBuilder): void
 
 ---
 
-##### ~~`isConstruct`~~ <a name="isConstruct" id="@cdklabs/cdk-ssm-documents.StringStep.isConstruct"></a>
+##### `isConstruct` <a name="isConstruct" id="@cdklabs/cdk-ssm-documents.StringStep.isConstruct"></a>
 
 ```typescript
 import { StringStep } from '@cdklabs/cdk-ssm-documents'
@@ -14747,6 +16281,20 @@ StringStep.isConstruct(x: any)
 ```
 
 Checks if `x` is a construct.
+
+Use this method instead of `instanceof` to properly detect `Construct`
+instances, even when the construct library is symlinked.
+
+Explanation: in JavaScript, multiple copies of the `constructs` library on
+disk are seen as independent, completely different libraries. As a
+consequence, the class `Construct` in each copy of the `constructs` library
+is seen as a different class, and an instance of one class will not test as
+`instanceof` the other class. `npm install` will not create installations
+like this, but users may manually symlink construct libraries together or
+use a monorepo tool: in those cases, multiple copies of the `constructs`
+library can be accidentally installed, and `instanceof` will behave
+unpredictably. It is safest to avoid using `instanceof`, and using
+this type-testing method instead.
 
 ###### `x`<sup>Required</sup> <a name="x" id="@cdklabs/cdk-ssm-documents.StringStep.isConstruct.parameter.x"></a>
 
@@ -14893,6 +16441,7 @@ new TimedDocument(stage: Construct, id: string, props: AutomationDocumentProps)
 | **Name** | **Description** |
 | --- | --- |
 | <code><a href="#@cdklabs/cdk-ssm-documents.TimedDocument.toString">toString</a></code> | Returns a string representation of this construct. |
+| <code><a href="#@cdklabs/cdk-ssm-documents.TimedDocument.with">with</a></code> | Applies one or more mixins to this construct. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.TimedDocument.documentType">documentType</a></code> | *No description.* |
 | <code><a href="#@cdklabs/cdk-ssm-documents.TimedDocument.print">print</a></code> | Synthesize before calling this function! You can use this to Synthesize: cdk.SynthUtils.synthesize(stack); |
 | <code><a href="#@cdklabs/cdk-ssm-documents.TimedDocument.addStep">addStep</a></code> | *No description.* |
@@ -14907,6 +16456,27 @@ public toString(): string
 ```
 
 Returns a string representation of this construct.
+
+##### `with` <a name="with" id="@cdklabs/cdk-ssm-documents.TimedDocument.with"></a>
+
+```typescript
+public with(mixins: ...IMixin[]): IConstruct
+```
+
+Applies one or more mixins to this construct.
+
+Mixins are applied in order. The list of constructs is captured at the
+start of the call, so constructs added by a mixin will not be visited.
+Use multiple `with()` calls if subsequent mixins should apply to added
+constructs.
+
+###### `mixins`<sup>Required</sup> <a name="mixins" id="@cdklabs/cdk-ssm-documents.TimedDocument.with.parameter.mixins"></a>
+
+- *Type:* ...constructs.IMixin[]
+
+The mixins to apply.
+
+---
 
 ##### `documentType` <a name="documentType" id="@cdklabs/cdk-ssm-documents.TimedDocument.documentType"></a>
 
@@ -14952,7 +16522,7 @@ public collectedSteps(): AutomationStep[]
 
 ---
 
-##### ~~`isConstruct`~~ <a name="isConstruct" id="@cdklabs/cdk-ssm-documents.TimedDocument.isConstruct"></a>
+##### `isConstruct` <a name="isConstruct" id="@cdklabs/cdk-ssm-documents.TimedDocument.isConstruct"></a>
 
 ```typescript
 import { TimedDocument } from '@cdklabs/cdk-ssm-documents'
@@ -14961,6 +16531,20 @@ TimedDocument.isConstruct(x: any)
 ```
 
 Checks if `x` is a construct.
+
+Use this method instead of `instanceof` to properly detect `Construct`
+instances, even when the construct library is symlinked.
+
+Explanation: in JavaScript, multiple copies of the `constructs` library on
+disk are seen as independent, completely different libraries. As a
+consequence, the class `Construct` in each copy of the `constructs` library
+is seen as a different class, and an instance of one class will not test as
+`instanceof` the other class. `npm install` will not create installations
+like this, but users may manually symlink construct libraries together or
+use a monorepo tool: in those cases, multiple copies of the `constructs`
+library can be accidentally installed, and `instanceof` will behave
+unpredictably. It is safest to avoid using `instanceof`, and using
+this type-testing method instead.
 
 ###### `x`<sup>Required</sup> <a name="x" id="@cdklabs/cdk-ssm-documents.TimedDocument.isConstruct.parameter.x"></a>
 
@@ -15144,6 +16728,7 @@ new UpdateAgentStep(scope: Construct, id: string, props: UpdateAgentStepProps)
 | **Name** | **Description** |
 | --- | --- |
 | <code><a href="#@cdklabs/cdk-ssm-documents.UpdateAgentStep.toString">toString</a></code> | Returns a string representation of this construct. |
+| <code><a href="#@cdklabs/cdk-ssm-documents.UpdateAgentStep.with">with</a></code> | Applies one or more mixins to this construct. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.UpdateAgentStep.listInputs">listInputs</a></code> | Inputs required for this command include agentName allowDowngrade source and targetVersion if version other than latest is desired. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.UpdateAgentStep.listOutputs">listOutputs</a></code> | RunCommand Steps do not have outputs. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.UpdateAgentStep.toSsmEntry">toSsmEntry</a></code> | Converts this step into an object to prepare for yaml/json representation of this step. |
@@ -15159,6 +16744,27 @@ public toString(): string
 ```
 
 Returns a string representation of this construct.
+
+##### `with` <a name="with" id="@cdklabs/cdk-ssm-documents.UpdateAgentStep.with"></a>
+
+```typescript
+public with(mixins: ...IMixin[]): IConstruct
+```
+
+Applies one or more mixins to this construct.
+
+Mixins are applied in order. The list of constructs is captured at the
+start of the call, so constructs added by a mixin will not be visited.
+Use multiple `with()` calls if subsequent mixins should apply to added
+constructs.
+
+###### `mixins`<sup>Required</sup> <a name="mixins" id="@cdklabs/cdk-ssm-documents.UpdateAgentStep.with.parameter.mixins"></a>
+
+- *Type:* ...constructs.IMixin[]
+
+The mixins to apply.
+
+---
 
 ##### `listInputs` <a name="listInputs" id="@cdklabs/cdk-ssm-documents.UpdateAgentStep.listInputs"></a>
 
@@ -15210,7 +16816,7 @@ public variables(): {[ key: string ]: any}
 
 ---
 
-##### ~~`isConstruct`~~ <a name="isConstruct" id="@cdklabs/cdk-ssm-documents.UpdateAgentStep.isConstruct"></a>
+##### `isConstruct` <a name="isConstruct" id="@cdklabs/cdk-ssm-documents.UpdateAgentStep.isConstruct"></a>
 
 ```typescript
 import { UpdateAgentStep } from '@cdklabs/cdk-ssm-documents'
@@ -15219,6 +16825,20 @@ UpdateAgentStep.isConstruct(x: any)
 ```
 
 Checks if `x` is a construct.
+
+Use this method instead of `instanceof` to properly detect `Construct`
+instances, even when the construct library is symlinked.
+
+Explanation: in JavaScript, multiple copies of the `constructs` library on
+disk are seen as independent, completely different libraries. As a
+consequence, the class `Construct` in each copy of the `constructs` library
+is seen as a different class, and an instance of one class will not test as
+`instanceof` the other class. `npm install` will not create installations
+like this, but users may manually symlink construct libraries together or
+use a monorepo tool: in those cases, multiple copies of the `constructs`
+library can be accidentally installed, and `instanceof` will behave
+unpredictably. It is safest to avoid using `instanceof`, and using
+this type-testing method instead.
 
 ###### `x`<sup>Required</sup> <a name="x" id="@cdklabs/cdk-ssm-documents.UpdateAgentStep.isConstruct.parameter.x"></a>
 
@@ -15479,6 +17099,7 @@ new UpdateSSMAgentStep(scope: Construct, id: string, props: UpdateSSMAgentStepPr
 | **Name** | **Description** |
 | --- | --- |
 | <code><a href="#@cdklabs/cdk-ssm-documents.UpdateSSMAgentStep.toString">toString</a></code> | Returns a string representation of this construct. |
+| <code><a href="#@cdklabs/cdk-ssm-documents.UpdateSSMAgentStep.with">with</a></code> | Applies one or more mixins to this construct. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.UpdateSSMAgentStep.listInputs">listInputs</a></code> | Inputs required for this command include agentName allowDowngrade source and targetVersion if version other than latest is desired. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.UpdateSSMAgentStep.listOutputs">listOutputs</a></code> | RunCommand Steps do not have outputs. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.UpdateSSMAgentStep.toSsmEntry">toSsmEntry</a></code> | Converts this step into an object to prepare for yaml/json representation of this step. |
@@ -15494,6 +17115,27 @@ public toString(): string
 ```
 
 Returns a string representation of this construct.
+
+##### `with` <a name="with" id="@cdklabs/cdk-ssm-documents.UpdateSSMAgentStep.with"></a>
+
+```typescript
+public with(mixins: ...IMixin[]): IConstruct
+```
+
+Applies one or more mixins to this construct.
+
+Mixins are applied in order. The list of constructs is captured at the
+start of the call, so constructs added by a mixin will not be visited.
+Use multiple `with()` calls if subsequent mixins should apply to added
+constructs.
+
+###### `mixins`<sup>Required</sup> <a name="mixins" id="@cdklabs/cdk-ssm-documents.UpdateSSMAgentStep.with.parameter.mixins"></a>
+
+- *Type:* ...constructs.IMixin[]
+
+The mixins to apply.
+
+---
 
 ##### `listInputs` <a name="listInputs" id="@cdklabs/cdk-ssm-documents.UpdateSSMAgentStep.listInputs"></a>
 
@@ -15545,7 +17187,7 @@ public variables(): {[ key: string ]: any}
 
 ---
 
-##### ~~`isConstruct`~~ <a name="isConstruct" id="@cdklabs/cdk-ssm-documents.UpdateSSMAgentStep.isConstruct"></a>
+##### `isConstruct` <a name="isConstruct" id="@cdklabs/cdk-ssm-documents.UpdateSSMAgentStep.isConstruct"></a>
 
 ```typescript
 import { UpdateSSMAgentStep } from '@cdklabs/cdk-ssm-documents'
@@ -15554,6 +17196,20 @@ UpdateSSMAgentStep.isConstruct(x: any)
 ```
 
 Checks if `x` is a construct.
+
+Use this method instead of `instanceof` to properly detect `Construct`
+instances, even when the construct library is symlinked.
+
+Explanation: in JavaScript, multiple copies of the `constructs` library on
+disk are seen as independent, completely different libraries. As a
+consequence, the class `Construct` in each copy of the `constructs` library
+is seen as a different class, and an instance of one class will not test as
+`instanceof` the other class. `npm install` will not create installations
+like this, but users may manually symlink construct libraries together or
+use a monorepo tool: in those cases, multiple copies of the `constructs`
+library can be accidentally installed, and `instanceof` will behave
+unpredictably. It is safest to avoid using `instanceof`, and using
+this type-testing method instead.
 
 ###### `x`<sup>Required</sup> <a name="x" id="@cdklabs/cdk-ssm-documents.UpdateSSMAgentStep.isConstruct.parameter.x"></a>
 
@@ -15814,6 +17470,7 @@ new UpdateVariableStep(scope: Construct, id: string, props: UpdateVariableProps)
 | **Name** | **Description** |
 | --- | --- |
 | <code><a href="#@cdklabs/cdk-ssm-documents.UpdateVariableStep.toString">toString</a></code> | Returns a string representation of this construct. |
+| <code><a href="#@cdklabs/cdk-ssm-documents.UpdateVariableStep.with">with</a></code> | Applies one or more mixins to this construct. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.UpdateVariableStep.listInputs">listInputs</a></code> | Lists the inputs that are required for this step. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.UpdateVariableStep.listOutputs">listOutputs</a></code> | No outputs emitted from update variable step. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.UpdateVariableStep.toSsmEntry">toSsmEntry</a></code> | Converts this step into an object to prepare for yaml/json representation of this step. |
@@ -15830,6 +17487,27 @@ public toString(): string
 ```
 
 Returns a string representation of this construct.
+
+##### `with` <a name="with" id="@cdklabs/cdk-ssm-documents.UpdateVariableStep.with"></a>
+
+```typescript
+public with(mixins: ...IMixin[]): IConstruct
+```
+
+Applies one or more mixins to this construct.
+
+Mixins are applied in order. The list of constructs is captured at the
+start of the call, so constructs added by a mixin will not be visited.
+Use multiple `with()` calls if subsequent mixins should apply to added
+constructs.
+
+###### `mixins`<sup>Required</sup> <a name="mixins" id="@cdklabs/cdk-ssm-documents.UpdateVariableStep.with.parameter.mixins"></a>
+
+- *Type:* ...constructs.IMixin[]
+
+The mixins to apply.
+
+---
 
 ##### `listInputs` <a name="listInputs" id="@cdklabs/cdk-ssm-documents.UpdateVariableStep.listInputs"></a>
 
@@ -15889,7 +17567,7 @@ public variables(): {[ key: string ]: any}
 
 ---
 
-##### ~~`isConstruct`~~ <a name="isConstruct" id="@cdklabs/cdk-ssm-documents.UpdateVariableStep.isConstruct"></a>
+##### `isConstruct` <a name="isConstruct" id="@cdklabs/cdk-ssm-documents.UpdateVariableStep.isConstruct"></a>
 
 ```typescript
 import { UpdateVariableStep } from '@cdklabs/cdk-ssm-documents'
@@ -15898,6 +17576,20 @@ UpdateVariableStep.isConstruct(x: any)
 ```
 
 Checks if `x` is a construct.
+
+Use this method instead of `instanceof` to properly detect `Construct`
+instances, even when the construct library is symlinked.
+
+Explanation: in JavaScript, multiple copies of the `constructs` library on
+disk are seen as independent, completely different libraries. As a
+consequence, the class `Construct` in each copy of the `constructs` library
+is seen as a different class, and an instance of one class will not test as
+`instanceof` the other class. `npm install` will not create installations
+like this, but users may manually symlink construct libraries together or
+use a monorepo tool: in those cases, multiple copies of the `constructs`
+library can be accidentally installed, and `instanceof` will behave
+unpredictably. It is safest to avoid using `instanceof`, and using
+this type-testing method instead.
 
 ###### `x`<sup>Required</sup> <a name="x" id="@cdklabs/cdk-ssm-documents.UpdateVariableStep.isConstruct.parameter.x"></a>
 
@@ -16175,6 +17867,7 @@ new WaitForResourceStep(scope: Construct, id: string, props: WaitForResourceStep
 | **Name** | **Description** |
 | --- | --- |
 | <code><a href="#@cdklabs/cdk-ssm-documents.WaitForResourceStep.toString">toString</a></code> | Returns a string representation of this construct. |
+| <code><a href="#@cdklabs/cdk-ssm-documents.WaitForResourceStep.with">with</a></code> | Applies one or more mixins to this construct. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.WaitForResourceStep.listInputs">listInputs</a></code> | Derives the inputs by parsing the apiParams to find matches for inputs in double circle braces ("{{ INPUT }}"). |
 | <code><a href="#@cdklabs/cdk-ssm-documents.WaitForResourceStep.listOutputs">listOutputs</a></code> | There are no outputs for this step. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.WaitForResourceStep.toSsmEntry">toSsmEntry</a></code> | Converts this step into an object to prepare for yaml/json representation of this step. |
@@ -16191,6 +17884,27 @@ public toString(): string
 ```
 
 Returns a string representation of this construct.
+
+##### `with` <a name="with" id="@cdklabs/cdk-ssm-documents.WaitForResourceStep.with"></a>
+
+```typescript
+public with(mixins: ...IMixin[]): IConstruct
+```
+
+Applies one or more mixins to this construct.
+
+Mixins are applied in order. The list of constructs is captured at the
+start of the call, so constructs added by a mixin will not be visited.
+Use multiple `with()` calls if subsequent mixins should apply to added
+constructs.
+
+###### `mixins`<sup>Required</sup> <a name="mixins" id="@cdklabs/cdk-ssm-documents.WaitForResourceStep.with.parameter.mixins"></a>
+
+- *Type:* ...constructs.IMixin[]
+
+The mixins to apply.
+
+---
 
 ##### `listInputs` <a name="listInputs" id="@cdklabs/cdk-ssm-documents.WaitForResourceStep.listInputs"></a>
 
@@ -16250,7 +17964,7 @@ public variables(): {[ key: string ]: any}
 
 ---
 
-##### ~~`isConstruct`~~ <a name="isConstruct" id="@cdklabs/cdk-ssm-documents.WaitForResourceStep.isConstruct"></a>
+##### `isConstruct` <a name="isConstruct" id="@cdklabs/cdk-ssm-documents.WaitForResourceStep.isConstruct"></a>
 
 ```typescript
 import { WaitForResourceStep } from '@cdklabs/cdk-ssm-documents'
@@ -16259,6 +17973,20 @@ WaitForResourceStep.isConstruct(x: any)
 ```
 
 Checks if `x` is a construct.
+
+Use this method instead of `instanceof` to properly detect `Construct`
+instances, even when the construct library is symlinked.
+
+Explanation: in JavaScript, multiple copies of the `constructs` library on
+disk are seen as independent, completely different libraries. As a
+consequence, the class `Construct` in each copy of the `constructs` library
+is seen as a different class, and an instance of one class will not test as
+`instanceof` the other class. `npm install` will not create installations
+like this, but users may manually symlink construct libraries together or
+use a monorepo tool: in those cases, multiple copies of the `constructs`
+library can be accidentally installed, and `instanceof` will behave
+unpredictably. It is safest to avoid using `instanceof`, and using
+this type-testing method instead.
 
 ###### `x`<sup>Required</sup> <a name="x" id="@cdklabs/cdk-ssm-documents.WaitForResourceStep.isConstruct.parameter.x"></a>
 
@@ -19317,7 +21045,7 @@ const choiceProps: ChoiceProps = { ... }
 | <code><a href="#@cdklabs/cdk-ssm-documents.ChoiceProps.property.constant">constant</a></code> | <code>any</code> | (Required) the constant to test against the inputToTest. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.ChoiceProps.property.jumpToStepName">jumpToStepName</a></code> | <code>string</code> | A step to jump to if this choice is evaluated to true. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.ChoiceProps.property.operation">operation</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.Operation">Operation</a></code> | (Required) The operation used to compare the inputToTest with the constant. |
-| <code><a href="#@cdklabs/cdk-ssm-documents.ChoiceProps.property.variable">variable</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.IStringVariable">IStringVariable</a> \| <a href="#@cdklabs/cdk-ssm-documents.INumberVariable">INumberVariable</a> \| <a href="#@cdklabs/cdk-ssm-documents.IBooleanVariable">IBooleanVariable</a></code> | (Required) the input used to test using the operation with the constant. |
+| <code><a href="#@cdklabs/cdk-ssm-documents.ChoiceProps.property.variable">variable</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.IBooleanVariable">IBooleanVariable</a> \| <a href="#@cdklabs/cdk-ssm-documents.INumberVariable">INumberVariable</a> \| <a href="#@cdklabs/cdk-ssm-documents.IStringVariable">IStringVariable</a></code> | (Required) the input used to test using the operation with the constant. |
 
 ---
 
@@ -19362,10 +21090,10 @@ public readonly operation: Operation;
 ##### `variable`<sup>Required</sup> <a name="variable" id="@cdklabs/cdk-ssm-documents.ChoiceProps.property.variable"></a>
 
 ```typescript
-public readonly variable: IStringVariable | INumberVariable | IBooleanVariable;
+public readonly variable: IBooleanVariable | INumberVariable | IStringVariable;
 ```
 
-- *Type:* <a href="#@cdklabs/cdk-ssm-documents.IStringVariable">IStringVariable</a> | <a href="#@cdklabs/cdk-ssm-documents.INumberVariable">INumberVariable</a> | <a href="#@cdklabs/cdk-ssm-documents.IBooleanVariable">IBooleanVariable</a>
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.IBooleanVariable">IBooleanVariable</a> | <a href="#@cdklabs/cdk-ssm-documents.INumberVariable">INumberVariable</a> | <a href="#@cdklabs/cdk-ssm-documents.IStringVariable">IStringVariable</a>
 
 (Required) the input used to test using the operation with the constant.
 
@@ -23743,7 +25471,7 @@ const incidentResponseProps: IncidentResponseProps = { ... }
 | --- | --- | --- |
 | <code><a href="#@cdklabs/cdk-ssm-documents.IncidentResponseProps.property.actions">actions</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.IncidentResponseAction">IncidentResponseAction</a>[]</code> | The actions that the response plan starts at the beginning of an incident. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.IncidentResponseProps.property.incidentTemplate">incidentTemplate</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.IncidentTemplate">IncidentTemplate</a></code> | Details used to create an incident when using this response plan. |
-| <code><a href="#@cdklabs/cdk-ssm-documents.IncidentResponseProps.property.chatChannel">chatChannel</a></code> | <code>aws-cdk-lib.aws_ssmincidents.CfnResponsePlan.ChatChannelProperty \| aws-cdk-lib.IResolvable</code> | The AWS Chatbot chat channel used for collaboration during an incident. |
+| <code><a href="#@cdklabs/cdk-ssm-documents.IncidentResponseProps.property.chatChannel">chatChannel</a></code> | <code>aws-cdk-lib.IResolvable \| aws-cdk-lib.aws_ssmincidents.CfnResponsePlan.ChatChannelProperty</code> | The AWS Chatbot chat channel used for collaboration during an incident. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.IncidentResponseProps.property.displayName">displayName</a></code> | <code>string</code> | The human readable name of the response plan. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.IncidentResponseProps.property.engagements">engagements</a></code> | <code>string[]</code> | The contacts and escalation plans that the response plan engages during an incident. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.IncidentResponseProps.property.tags">tags</a></code> | <code>aws-cdk-lib.CfnTag[]</code> | An array of key-value pairs to apply to this resource. |
@@ -23777,10 +25505,10 @@ Details used to create an incident when using this response plan.
 ##### `chatChannel`<sup>Optional</sup> <a name="chatChannel" id="@cdklabs/cdk-ssm-documents.IncidentResponseProps.property.chatChannel"></a>
 
 ```typescript
-public readonly chatChannel: ChatChannelProperty | IResolvable;
+public readonly chatChannel: IResolvable | ChatChannelProperty;
 ```
 
-- *Type:* aws-cdk-lib.aws_ssmincidents.CfnResponsePlan.ChatChannelProperty | aws-cdk-lib.IResolvable
+- *Type:* aws-cdk-lib.IResolvable | aws-cdk-lib.aws_ssmincidents.CfnResponsePlan.ChatChannelProperty
 
 The AWS Chatbot chat channel used for collaboration during an incident.
 
@@ -23850,7 +25578,7 @@ const incidentTemplateProps: IncidentTemplateProps = { ... }
 | --- | --- | --- |
 | <code><a href="#@cdklabs/cdk-ssm-documents.IncidentTemplateProps.property.dedupeString">dedupeString</a></code> | <code>string</code> | Used to create only one incident record for an incident. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.IncidentTemplateProps.property.incidentTags">incidentTags</a></code> | <code>aws-cdk-lib.IResolvable \| aws-cdk-lib.IResolvable \| aws-cdk-lib.CfnTag[]</code> | `CfnResponsePlan.IncidentTemplateProperty.IncidentTags`. |
-| <code><a href="#@cdklabs/cdk-ssm-documents.IncidentTemplateProps.property.notificationTargets">notificationTargets</a></code> | <code>aws-cdk-lib.IResolvable \| aws-cdk-lib.aws_ssmincidents.CfnResponsePlan.NotificationTargetItemProperty \| aws-cdk-lib.IResolvable[]</code> | The SNS targets that AWS Chatbot uses to notify the chat channel of updates to an incident. |
+| <code><a href="#@cdklabs/cdk-ssm-documents.IncidentTemplateProps.property.notificationTargets">notificationTargets</a></code> | <code>aws-cdk-lib.IResolvable \| aws-cdk-lib.IResolvable \| aws-cdk-lib.aws_ssmincidents.CfnResponsePlan.NotificationTargetItemProperty[]</code> | The SNS targets that AWS Chatbot uses to notify the chat channel of updates to an incident. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.IncidentTemplateProps.property.summary">summary</a></code> | <code>string</code> | The summary describes what has happened during the incident. |
 
 ---
@@ -23886,10 +25614,10 @@ public readonly incidentTags: IResolvable | IResolvable | CfnTag[];
 ##### `notificationTargets`<sup>Optional</sup> <a name="notificationTargets" id="@cdklabs/cdk-ssm-documents.IncidentTemplateProps.property.notificationTargets"></a>
 
 ```typescript
-public readonly notificationTargets: IResolvable | NotificationTargetItemProperty | IResolvable[];
+public readonly notificationTargets: IResolvable | IResolvable | NotificationTargetItemProperty[];
 ```
 
-- *Type:* aws-cdk-lib.IResolvable | aws-cdk-lib.aws_ssmincidents.CfnResponsePlan.NotificationTargetItemProperty | aws-cdk-lib.IResolvable[]
+- *Type:* aws-cdk-lib.IResolvable | aws-cdk-lib.IResolvable | aws-cdk-lib.aws_ssmincidents.CfnResponsePlan.NotificationTargetItemProperty[]
 
 The SNS targets that AWS Chatbot uses to notify the chat channel of updates to an incident.
 
@@ -25794,7 +27522,7 @@ const runCommandStepProps: RunCommandStepProps = { ... }
 | <code><a href="#@cdklabs/cdk-ssm-documents.RunCommandStepProps.property.timeoutSeconds">timeoutSeconds</a></code> | <code>number</code> | (Optional) timeout seconds to run this step. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.RunCommandStepProps.property.userOutputs">userOutputs</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.Output">Output</a>[]</code> | (Optional) Allows to define step outputs. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.RunCommandStepProps.property.documentName">documentName</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.IStringVariable">IStringVariable</a></code> | If the Command type document is owned by you or AWS, specify the name of the document. |
-| <code><a href="#@cdklabs/cdk-ssm-documents.RunCommandStepProps.property.targets">targets</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.IStringListVariable">IStringListVariable</a> \| <a href="#@cdklabs/cdk-ssm-documents.IMapListVariable">IMapListVariable</a></code> | The instance IDs where you want the command to run. You can specify a maximum of 50 IDs. |
+| <code><a href="#@cdklabs/cdk-ssm-documents.RunCommandStepProps.property.targets">targets</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.IMapListVariable">IMapListVariable</a> \| <a href="#@cdklabs/cdk-ssm-documents.IStringListVariable">IStringListVariable</a></code> | The instance IDs where you want the command to run. You can specify a maximum of 50 IDs. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.RunCommandStepProps.property.cloudWatchOutputConfig">cloudWatchOutputConfig</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.IStringMapVariable">IStringMapVariable</a></code> | (Optional) Configuration options for sending command output to Amazon CloudWatch Logs. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.RunCommandStepProps.property.commandTimeoutSeconds">commandTimeoutSeconds</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.INumberVariable">INumberVariable</a></code> | (Optional) The amount of time in seconds to wait for a command to deliver to the AWS Systems Manager SSM Agent on an instance. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.RunCommandStepProps.property.comment">comment</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.IStringVariable">IStringVariable</a></code> | (Optional) User-defined information about the command. |
@@ -25977,10 +27705,10 @@ If you're using a document shared with you by a different AWS account, specify t
 ##### `targets`<sup>Required</sup> <a name="targets" id="@cdklabs/cdk-ssm-documents.RunCommandStepProps.property.targets"></a>
 
 ```typescript
-public readonly targets: IStringListVariable | IMapListVariable;
+public readonly targets: IMapListVariable | IStringListVariable;
 ```
 
-- *Type:* <a href="#@cdklabs/cdk-ssm-documents.IStringListVariable">IStringListVariable</a> | <a href="#@cdklabs/cdk-ssm-documents.IMapListVariable">IMapListVariable</a>
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.IMapListVariable">IMapListVariable</a> | <a href="#@cdklabs/cdk-ssm-documents.IStringListVariable">IStringListVariable</a>
 
 The instance IDs where you want the command to run. You can specify a maximum of 50 IDs.
 
@@ -35001,7 +36729,7 @@ The value keyed on the inputToTest will be tested against the declared constant 
 | <code><a href="#@cdklabs/cdk-ssm-documents.Choice.property.constant">constant</a></code> | <code>any</code> | *No description.* |
 | <code><a href="#@cdklabs/cdk-ssm-documents.Choice.property.jumpToStepName">jumpToStepName</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#@cdklabs/cdk-ssm-documents.Choice.property.operation">operation</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.Operation">Operation</a></code> | *No description.* |
-| <code><a href="#@cdklabs/cdk-ssm-documents.Choice.property.variable">variable</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.IStringVariable">IStringVariable</a> \| <a href="#@cdklabs/cdk-ssm-documents.INumberVariable">INumberVariable</a> \| <a href="#@cdklabs/cdk-ssm-documents.IBooleanVariable">IBooleanVariable</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.Choice.property.variable">variable</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.IBooleanVariable">IBooleanVariable</a> \| <a href="#@cdklabs/cdk-ssm-documents.INumberVariable">INumberVariable</a> \| <a href="#@cdklabs/cdk-ssm-documents.IStringVariable">IStringVariable</a></code> | *No description.* |
 
 ---
 
@@ -35038,10 +36766,10 @@ public readonly operation: Operation;
 ##### `variable`<sup>Required</sup> <a name="variable" id="@cdklabs/cdk-ssm-documents.Choice.property.variable"></a>
 
 ```typescript
-public readonly variable: IStringVariable | INumberVariable | IBooleanVariable;
+public readonly variable: IBooleanVariable | INumberVariable | IStringVariable;
 ```
 
-- *Type:* <a href="#@cdklabs/cdk-ssm-documents.IStringVariable">IStringVariable</a> | <a href="#@cdklabs/cdk-ssm-documents.INumberVariable">INumberVariable</a> | <a href="#@cdklabs/cdk-ssm-documents.IBooleanVariable">IBooleanVariable</a>
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.IBooleanVariable">IBooleanVariable</a> | <a href="#@cdklabs/cdk-ssm-documents.INumberVariable">INumberVariable</a> | <a href="#@cdklabs/cdk-ssm-documents.IStringVariable">IStringVariable</a>
 
 ---
 
@@ -45927,7 +47655,7 @@ public readonly reference: string;
 
 ### SynthUtils <a name="SynthUtils" id="@cdklabs/cdk-ssm-documents.SynthUtils"></a>
 
-Wraps SynthUtils from @aws-cdk/assert because that package is not exported via JSII.
+Wraps SynthUtils from.
 
 #### Initializers <a name="Initializers" id="@cdklabs/cdk-ssm-documents.SynthUtils.Initializer"></a>
 
@@ -45947,7 +47675,7 @@ new SynthUtils()
 
 | **Name** | **Description** |
 | --- | --- |
-| <code><a href="#@cdklabs/cdk-ssm-documents.SynthUtils.synthesize">synthesize</a></code> | Wraps @aws-cdk/assert SynthUtils.synthesize(stack). Synthesizes the stack provided. |
+| <code><a href="#@cdklabs/cdk-ssm-documents.SynthUtils.synthesize">synthesize</a></code> | Wraps. |
 
 ---
 
@@ -45959,7 +47687,7 @@ import { SynthUtils } from '@cdklabs/cdk-ssm-documents'
 SynthUtils.synthesize(stack: Stack)
 ```
 
-Wraps @aws-cdk/assert SynthUtils.synthesize(stack). Synthesizes the stack provided.
+Wraps.
 
 ###### `stack`<sup>Required</sup> <a name="stack" id="@cdklabs/cdk-ssm-documents.SynthUtils.synthesize.parameter.stack"></a>
 
@@ -46453,7 +48181,7 @@ public invoke(invocation: Invocation): any
 
 Invoke AWS with the provided invocation request.
 
-> [Invocation](Invocation)
+> [Invocation *](Invocation *)
 
 ###### `invocation`<sup>Required</sup> <a name="invocation" id="@cdklabs/cdk-ssm-documents.IAwsInvoker.invoke.parameter.invocation"></a>
 
