@@ -21,7 +21,7 @@ export interface IStringListVariable extends IGenericVariable {
  * A hard-coded string list variable.
  * Used when not dependent on step inputs.
  */
-export class HardCodedStringList extends HardCodedValueBase<string[]> implements IStringListVariable {
+export class HardCodedStringList extends HardCodedValueBase implements IStringListVariable {
   public static of(val: string[]): HardCodedStringList {
     return new HardCodedStringList(val);
   }

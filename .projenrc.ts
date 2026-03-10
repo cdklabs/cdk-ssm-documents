@@ -4,7 +4,6 @@ const project = new CdklabsConstructLibrary({
   author: 'Amazon Web Services',
   authorAddress: 'https://aws.amazon.com',
   cdkVersion: '2.189.1',
-  jsiiVersion: '1.x',
   cdkVersionPinning: false,
   tsconfig: {
     compilerOptions: {

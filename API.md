@@ -11250,7 +11250,7 @@ Any object.
 | <code><a href="#@cdklabs/cdk-ssm-documents.RunCommandStep.property.allStepsInExecution">allStepsInExecution</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AutomationStep">AutomationStep</a>[]</code> | *No description.* |
 | <code><a href="#@cdklabs/cdk-ssm-documents.RunCommandStep.property.nextStep">nextStep</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.AutomationStep">AutomationStep</a></code> | *No description.* |
 | <code><a href="#@cdklabs/cdk-ssm-documents.RunCommandStep.property.documentName">documentName</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.IStringVariable">IStringVariable</a></code> | *No description.* |
-| <code><a href="#@cdklabs/cdk-ssm-documents.RunCommandStep.property.targets">targets</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.IStringListVariable">IStringListVariable</a> \| <a href="#@cdklabs/cdk-ssm-documents.IMapListVariable">IMapListVariable</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.RunCommandStep.property.targets">targets</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.IMapListVariable">IMapListVariable</a> \| <a href="#@cdklabs/cdk-ssm-documents.IStringListVariable">IStringListVariable</a></code> | *No description.* |
 | <code><a href="#@cdklabs/cdk-ssm-documents.RunCommandStep.property.cloudWatchOutputConfig">cloudWatchOutputConfig</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.IStringMapVariable">IStringMapVariable</a></code> | *No description.* |
 | <code><a href="#@cdklabs/cdk-ssm-documents.RunCommandStep.property.commandTimeoutSeconds">commandTimeoutSeconds</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.INumberVariable">INumberVariable</a></code> | *No description.* |
 | <code><a href="#@cdklabs/cdk-ssm-documents.RunCommandStep.property.comment">comment</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.IStringVariable">IStringVariable</a></code> | *No description.* |
@@ -11431,10 +11431,10 @@ public readonly documentName: IStringVariable;
 ##### `targets`<sup>Required</sup> <a name="targets" id="@cdklabs/cdk-ssm-documents.RunCommandStep.property.targets"></a>
 
 ```typescript
-public readonly targets: IStringListVariable | IMapListVariable;
+public readonly targets: IMapListVariable | IStringListVariable;
 ```
 
-- *Type:* <a href="#@cdklabs/cdk-ssm-documents.IStringListVariable">IStringListVariable</a> | <a href="#@cdklabs/cdk-ssm-documents.IMapListVariable">IMapListVariable</a>
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.IMapListVariable">IMapListVariable</a> | <a href="#@cdklabs/cdk-ssm-documents.IStringListVariable">IStringListVariable</a>
 
 ---
 
@@ -19317,7 +19317,7 @@ const choiceProps: ChoiceProps = { ... }
 | <code><a href="#@cdklabs/cdk-ssm-documents.ChoiceProps.property.constant">constant</a></code> | <code>any</code> | (Required) the constant to test against the inputToTest. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.ChoiceProps.property.jumpToStepName">jumpToStepName</a></code> | <code>string</code> | A step to jump to if this choice is evaluated to true. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.ChoiceProps.property.operation">operation</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.Operation">Operation</a></code> | (Required) The operation used to compare the inputToTest with the constant. |
-| <code><a href="#@cdklabs/cdk-ssm-documents.ChoiceProps.property.variable">variable</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.IStringVariable">IStringVariable</a> \| <a href="#@cdklabs/cdk-ssm-documents.INumberVariable">INumberVariable</a> \| <a href="#@cdklabs/cdk-ssm-documents.IBooleanVariable">IBooleanVariable</a></code> | (Required) the input used to test using the operation with the constant. |
+| <code><a href="#@cdklabs/cdk-ssm-documents.ChoiceProps.property.variable">variable</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.IBooleanVariable">IBooleanVariable</a> \| <a href="#@cdklabs/cdk-ssm-documents.INumberVariable">INumberVariable</a> \| <a href="#@cdklabs/cdk-ssm-documents.IStringVariable">IStringVariable</a></code> | (Required) the input used to test using the operation with the constant. |
 
 ---
 
@@ -19362,10 +19362,10 @@ public readonly operation: Operation;
 ##### `variable`<sup>Required</sup> <a name="variable" id="@cdklabs/cdk-ssm-documents.ChoiceProps.property.variable"></a>
 
 ```typescript
-public readonly variable: IStringVariable | INumberVariable | IBooleanVariable;
+public readonly variable: IBooleanVariable | INumberVariable | IStringVariable;
 ```
 
-- *Type:* <a href="#@cdklabs/cdk-ssm-documents.IStringVariable">IStringVariable</a> | <a href="#@cdklabs/cdk-ssm-documents.INumberVariable">INumberVariable</a> | <a href="#@cdklabs/cdk-ssm-documents.IBooleanVariable">IBooleanVariable</a>
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.IBooleanVariable">IBooleanVariable</a> | <a href="#@cdklabs/cdk-ssm-documents.INumberVariable">INumberVariable</a> | <a href="#@cdklabs/cdk-ssm-documents.IStringVariable">IStringVariable</a>
 
 (Required) the input used to test using the operation with the constant.
 
@@ -23743,7 +23743,7 @@ const incidentResponseProps: IncidentResponseProps = { ... }
 | --- | --- | --- |
 | <code><a href="#@cdklabs/cdk-ssm-documents.IncidentResponseProps.property.actions">actions</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.IncidentResponseAction">IncidentResponseAction</a>[]</code> | The actions that the response plan starts at the beginning of an incident. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.IncidentResponseProps.property.incidentTemplate">incidentTemplate</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.IncidentTemplate">IncidentTemplate</a></code> | Details used to create an incident when using this response plan. |
-| <code><a href="#@cdklabs/cdk-ssm-documents.IncidentResponseProps.property.chatChannel">chatChannel</a></code> | <code>aws-cdk-lib.aws_ssmincidents.CfnResponsePlan.ChatChannelProperty \| aws-cdk-lib.IResolvable</code> | The AWS Chatbot chat channel used for collaboration during an incident. |
+| <code><a href="#@cdklabs/cdk-ssm-documents.IncidentResponseProps.property.chatChannel">chatChannel</a></code> | <code>aws-cdk-lib.IResolvable \| aws-cdk-lib.aws_ssmincidents.CfnResponsePlan.ChatChannelProperty</code> | The AWS Chatbot chat channel used for collaboration during an incident. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.IncidentResponseProps.property.displayName">displayName</a></code> | <code>string</code> | The human readable name of the response plan. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.IncidentResponseProps.property.engagements">engagements</a></code> | <code>string[]</code> | The contacts and escalation plans that the response plan engages during an incident. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.IncidentResponseProps.property.tags">tags</a></code> | <code>aws-cdk-lib.CfnTag[]</code> | An array of key-value pairs to apply to this resource. |
@@ -23777,10 +23777,10 @@ Details used to create an incident when using this response plan.
 ##### `chatChannel`<sup>Optional</sup> <a name="chatChannel" id="@cdklabs/cdk-ssm-documents.IncidentResponseProps.property.chatChannel"></a>
 
 ```typescript
-public readonly chatChannel: ChatChannelProperty | IResolvable;
+public readonly chatChannel: IResolvable | ChatChannelProperty;
 ```
 
-- *Type:* aws-cdk-lib.aws_ssmincidents.CfnResponsePlan.ChatChannelProperty | aws-cdk-lib.IResolvable
+- *Type:* aws-cdk-lib.IResolvable | aws-cdk-lib.aws_ssmincidents.CfnResponsePlan.ChatChannelProperty
 
 The AWS Chatbot chat channel used for collaboration during an incident.
 
@@ -23850,7 +23850,7 @@ const incidentTemplateProps: IncidentTemplateProps = { ... }
 | --- | --- | --- |
 | <code><a href="#@cdklabs/cdk-ssm-documents.IncidentTemplateProps.property.dedupeString">dedupeString</a></code> | <code>string</code> | Used to create only one incident record for an incident. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.IncidentTemplateProps.property.incidentTags">incidentTags</a></code> | <code>aws-cdk-lib.IResolvable \| aws-cdk-lib.IResolvable \| aws-cdk-lib.CfnTag[]</code> | `CfnResponsePlan.IncidentTemplateProperty.IncidentTags`. |
-| <code><a href="#@cdklabs/cdk-ssm-documents.IncidentTemplateProps.property.notificationTargets">notificationTargets</a></code> | <code>aws-cdk-lib.IResolvable \| aws-cdk-lib.aws_ssmincidents.CfnResponsePlan.NotificationTargetItemProperty \| aws-cdk-lib.IResolvable[]</code> | The SNS targets that AWS Chatbot uses to notify the chat channel of updates to an incident. |
+| <code><a href="#@cdklabs/cdk-ssm-documents.IncidentTemplateProps.property.notificationTargets">notificationTargets</a></code> | <code>aws-cdk-lib.IResolvable \| aws-cdk-lib.IResolvable \| aws-cdk-lib.aws_ssmincidents.CfnResponsePlan.NotificationTargetItemProperty[]</code> | The SNS targets that AWS Chatbot uses to notify the chat channel of updates to an incident. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.IncidentTemplateProps.property.summary">summary</a></code> | <code>string</code> | The summary describes what has happened during the incident. |
 
 ---
@@ -23886,10 +23886,10 @@ public readonly incidentTags: IResolvable | IResolvable | CfnTag[];
 ##### `notificationTargets`<sup>Optional</sup> <a name="notificationTargets" id="@cdklabs/cdk-ssm-documents.IncidentTemplateProps.property.notificationTargets"></a>
 
 ```typescript
-public readonly notificationTargets: IResolvable | NotificationTargetItemProperty | IResolvable[];
+public readonly notificationTargets: IResolvable | IResolvable | NotificationTargetItemProperty[];
 ```
 
-- *Type:* aws-cdk-lib.IResolvable | aws-cdk-lib.aws_ssmincidents.CfnResponsePlan.NotificationTargetItemProperty | aws-cdk-lib.IResolvable[]
+- *Type:* aws-cdk-lib.IResolvable | aws-cdk-lib.IResolvable | aws-cdk-lib.aws_ssmincidents.CfnResponsePlan.NotificationTargetItemProperty[]
 
 The SNS targets that AWS Chatbot uses to notify the chat channel of updates to an incident.
 
@@ -25794,7 +25794,7 @@ const runCommandStepProps: RunCommandStepProps = { ... }
 | <code><a href="#@cdklabs/cdk-ssm-documents.RunCommandStepProps.property.timeoutSeconds">timeoutSeconds</a></code> | <code>number</code> | (Optional) timeout seconds to run this step. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.RunCommandStepProps.property.userOutputs">userOutputs</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.Output">Output</a>[]</code> | (Optional) Allows to define step outputs. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.RunCommandStepProps.property.documentName">documentName</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.IStringVariable">IStringVariable</a></code> | If the Command type document is owned by you or AWS, specify the name of the document. |
-| <code><a href="#@cdklabs/cdk-ssm-documents.RunCommandStepProps.property.targets">targets</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.IStringListVariable">IStringListVariable</a> \| <a href="#@cdklabs/cdk-ssm-documents.IMapListVariable">IMapListVariable</a></code> | The instance IDs where you want the command to run. You can specify a maximum of 50 IDs. |
+| <code><a href="#@cdklabs/cdk-ssm-documents.RunCommandStepProps.property.targets">targets</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.IMapListVariable">IMapListVariable</a> \| <a href="#@cdklabs/cdk-ssm-documents.IStringListVariable">IStringListVariable</a></code> | The instance IDs where you want the command to run. You can specify a maximum of 50 IDs. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.RunCommandStepProps.property.cloudWatchOutputConfig">cloudWatchOutputConfig</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.IStringMapVariable">IStringMapVariable</a></code> | (Optional) Configuration options for sending command output to Amazon CloudWatch Logs. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.RunCommandStepProps.property.commandTimeoutSeconds">commandTimeoutSeconds</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.INumberVariable">INumberVariable</a></code> | (Optional) The amount of time in seconds to wait for a command to deliver to the AWS Systems Manager SSM Agent on an instance. |
 | <code><a href="#@cdklabs/cdk-ssm-documents.RunCommandStepProps.property.comment">comment</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.IStringVariable">IStringVariable</a></code> | (Optional) User-defined information about the command. |
@@ -25977,10 +25977,10 @@ If you're using a document shared with you by a different AWS account, specify t
 ##### `targets`<sup>Required</sup> <a name="targets" id="@cdklabs/cdk-ssm-documents.RunCommandStepProps.property.targets"></a>
 
 ```typescript
-public readonly targets: IStringListVariable | IMapListVariable;
+public readonly targets: IMapListVariable | IStringListVariable;
 ```
 
-- *Type:* <a href="#@cdklabs/cdk-ssm-documents.IStringListVariable">IStringListVariable</a> | <a href="#@cdklabs/cdk-ssm-documents.IMapListVariable">IMapListVariable</a>
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.IMapListVariable">IMapListVariable</a> | <a href="#@cdklabs/cdk-ssm-documents.IStringListVariable">IStringListVariable</a>
 
 The instance IDs where you want the command to run. You can specify a maximum of 50 IDs.
 
@@ -35001,7 +35001,7 @@ The value keyed on the inputToTest will be tested against the declared constant 
 | <code><a href="#@cdklabs/cdk-ssm-documents.Choice.property.constant">constant</a></code> | <code>any</code> | *No description.* |
 | <code><a href="#@cdklabs/cdk-ssm-documents.Choice.property.jumpToStepName">jumpToStepName</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#@cdklabs/cdk-ssm-documents.Choice.property.operation">operation</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.Operation">Operation</a></code> | *No description.* |
-| <code><a href="#@cdklabs/cdk-ssm-documents.Choice.property.variable">variable</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.IStringVariable">IStringVariable</a> \| <a href="#@cdklabs/cdk-ssm-documents.INumberVariable">INumberVariable</a> \| <a href="#@cdklabs/cdk-ssm-documents.IBooleanVariable">IBooleanVariable</a></code> | *No description.* |
+| <code><a href="#@cdklabs/cdk-ssm-documents.Choice.property.variable">variable</a></code> | <code><a href="#@cdklabs/cdk-ssm-documents.IBooleanVariable">IBooleanVariable</a> \| <a href="#@cdklabs/cdk-ssm-documents.INumberVariable">INumberVariable</a> \| <a href="#@cdklabs/cdk-ssm-documents.IStringVariable">IStringVariable</a></code> | *No description.* |
 
 ---
 
@@ -35038,10 +35038,10 @@ public readonly operation: Operation;
 ##### `variable`<sup>Required</sup> <a name="variable" id="@cdklabs/cdk-ssm-documents.Choice.property.variable"></a>
 
 ```typescript
-public readonly variable: IStringVariable | INumberVariable | IBooleanVariable;
+public readonly variable: IBooleanVariable | INumberVariable | IStringVariable;
 ```
 
-- *Type:* <a href="#@cdklabs/cdk-ssm-documents.IStringVariable">IStringVariable</a> | <a href="#@cdklabs/cdk-ssm-documents.INumberVariable">INumberVariable</a> | <a href="#@cdklabs/cdk-ssm-documents.IBooleanVariable">IBooleanVariable</a>
+- *Type:* <a href="#@cdklabs/cdk-ssm-documents.IBooleanVariable">IBooleanVariable</a> | <a href="#@cdklabs/cdk-ssm-documents.INumberVariable">INumberVariable</a> | <a href="#@cdklabs/cdk-ssm-documents.IStringVariable">IStringVariable</a>
 
 ---
 
@@ -45927,7 +45927,7 @@ public readonly reference: string;
 
 ### SynthUtils <a name="SynthUtils" id="@cdklabs/cdk-ssm-documents.SynthUtils"></a>
 
-Wraps SynthUtils from @aws-cdk/assert because that package is not exported via JSII.
+Wraps SynthUtils from.
 
 #### Initializers <a name="Initializers" id="@cdklabs/cdk-ssm-documents.SynthUtils.Initializer"></a>
 
@@ -45947,7 +45947,7 @@ new SynthUtils()
 
 | **Name** | **Description** |
 | --- | --- |
-| <code><a href="#@cdklabs/cdk-ssm-documents.SynthUtils.synthesize">synthesize</a></code> | Wraps @aws-cdk/assert SynthUtils.synthesize(stack). Synthesizes the stack provided. |
+| <code><a href="#@cdklabs/cdk-ssm-documents.SynthUtils.synthesize">synthesize</a></code> | Wraps. |
 
 ---
 
@@ -45959,7 +45959,7 @@ import { SynthUtils } from '@cdklabs/cdk-ssm-documents'
 SynthUtils.synthesize(stack: Stack)
 ```
 
-Wraps @aws-cdk/assert SynthUtils.synthesize(stack). Synthesizes the stack provided.
+Wraps.
 
 ###### `stack`<sup>Required</sup> <a name="stack" id="@cdklabs/cdk-ssm-documents.SynthUtils.synthesize.parameter.stack"></a>
 
@@ -46453,7 +46453,7 @@ public invoke(invocation: Invocation): any
 
 Invoke AWS with the provided invocation request.
 
-> [Invocation](Invocation)
+> [Invocation *](Invocation *)
 
 ###### `invocation`<sup>Required</sup> <a name="invocation" id="@cdklabs/cdk-ssm-documents.IAwsInvoker.invoke.parameter.invocation"></a>
 

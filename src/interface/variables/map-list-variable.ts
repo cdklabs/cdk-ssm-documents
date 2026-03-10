@@ -21,7 +21,7 @@ export interface IMapListVariable extends IGenericVariable {
  * A hard-coded map list variable.
  * Used when not dependent on step inputs.
  */
-export class HardCodedMapList extends HardCodedValueBase<Record<string, any>[]> implements IMapListVariable {
+export class HardCodedMapList extends HardCodedValueBase implements IMapListVariable {
   public static of(val: Record<string, any>[]): HardCodedMapList {
     return new HardCodedMapList(val);
   }

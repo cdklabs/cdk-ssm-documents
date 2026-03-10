@@ -20,7 +20,7 @@ export interface IStringVariable extends IGenericVariable {
  * A hard-coded string variable.
  * Used when not dependent on step inputs.
  */
-export class HardCodedString extends HardCodedValueBase<string> implements IStringVariable {
+export class HardCodedString extends HardCodedValueBase implements IStringVariable {
   public static of(val: string): HardCodedString {
     return new HardCodedString(val);
   }

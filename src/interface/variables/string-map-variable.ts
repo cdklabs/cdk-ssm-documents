@@ -20,7 +20,7 @@ export interface IStringMapVariable extends IGenericVariable {
  * A hard-coded string map variable.
  * Used when not dependent on step inputs.
  */
-export class HardCodedStringMap extends HardCodedValueBase<Record<string, any>> implements IStringMapVariable {
+export class HardCodedStringMap extends HardCodedValueBase implements IStringMapVariable {
   public static of(val: Record<string, any>): HardCodedStringMap {
     return new HardCodedStringMap(val);
   }

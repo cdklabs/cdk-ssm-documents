@@ -20,7 +20,7 @@ export interface INumberVariable extends IGenericVariable {
  * A hard-coded number variable.
  * Used when not dependent on step inputs.
  */
-export class HardCodedNumber extends HardCodedValueBase<number> implements INumberVariable {
+export class HardCodedNumber extends HardCodedValueBase implements INumberVariable {
   public static of(val: number): HardCodedNumber {
     return new HardCodedNumber(val);
   }
