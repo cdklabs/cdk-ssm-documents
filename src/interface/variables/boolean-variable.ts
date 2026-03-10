@@ -20,7 +20,7 @@ export interface IBooleanVariable extends IGenericVariable {
  * A hard-coded boolean variable.
  * Used when not dependent on step inputs.
  */
-export class HardCodedBoolean extends HardCodedValueBase<boolean> implements IBooleanVariable {
+export class HardCodedBoolean extends HardCodedValueBase implements IBooleanVariable {
   public static readonly TRUE: HardCodedBoolean = new HardCodedBoolean(true);
   public static readonly FALSE: HardCodedBoolean = new HardCodedBoolean(false);
 

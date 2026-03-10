@@ -47,7 +47,7 @@
     "@aws-cdk/integ-tests-alpha": "latest",
     "@stylistic/eslint-plugin": "^2",
     "@types/jest": "^27",
-    "@types/node": "^18 <= 18.11.19",
+    "@types/node": "^18",
     "@typescript-eslint/eslint-plugin": "^8",
     "@typescript-eslint/parser": "^8",
     "aws-cdk-lib": "2.189.1",
@@ -59,7 +59,7 @@
     "eslint-plugin-import": "^2.26.0",
     "jest": "^27",
     "jest-junit": "^15",
-    "jsii": "1.x",
+    "jsii": "~5.9",
     "jsii-diff": "^1.95.0",
     "jsii-docgen": "^10.5.0",
     "jsii-pacmak": "^1.95.0",
@@ -106,10 +106,6 @@
     "python-shell",
     "synchronized-promise"
   ],
-  "resolutions": {
-    "@types/babel__traverse": "7.18.2",
-    "@types/prettier": "2.6.0"
-  },
   "keywords": [
     "cdk"
   ],
