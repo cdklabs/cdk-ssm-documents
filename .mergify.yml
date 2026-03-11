@@ -11,7 +11,6 @@ queue_rules:
       - status-success=package-java
       - status-success=package-python
       - status-success=package-dotnet
-      - status-success=package-go
     merge_method: squash
     commit_message_template: |-
       {{ title }} (#{{ number }})
@@ -31,6 +30,5 @@ pull_request_rules:
       - status-success=package-java
       - status-success=package-python
       - status-success=package-dotnet
-      - status-success=package-go
 merge_queue:
   max_parallel_checks: 1

@@ -204,9 +204,6 @@
         },
         {
           "spawn": "package:dotnet"
-        },
-        {
-          "spawn": "package:go"
         }
       ]
     },
@@ -216,15 +213,6 @@
       "steps": [
         {
           "exec": "jsii-pacmak -v --target dotnet"
-        }
-      ]
-    },
-    "package:go": {
-      "name": "package:go",
-      "description": "Create go language bindings",
-      "steps": [
-        {
-          "exec": "jsii-pacmak -v --target go"
         }
       ]
     },
@@ -241,6 +229,9 @@
       "name": "package:js",
       "description": "Create js language bindings",
       "steps": [
+        {
+          "exec": "find node_modules/deasync -type f -links +1 -exec cp --remove-destination {} {} \\; 2>/dev/null || true"
+        },
         {
           "exec": "jsii-pacmak -v --target js"
         }
