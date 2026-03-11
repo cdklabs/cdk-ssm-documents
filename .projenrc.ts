@@ -1,4 +1,4 @@
-import { CdklabsConstructLibrary } from "cdklabs-projen-project-types";
+import { CdklabsConstructLibrary, JsiiLanguage } from "cdklabs-projen-project-types";
 
 const project = new CdklabsConstructLibrary({
   author: 'Amazon Web Services',
@@ -59,7 +59,14 @@ const project = new CdklabsConstructLibrary({
     distName: 'cdklabs.cdk-ssm-documents',
     module: 'cdklabs.cdk_ssm_documents',
   },
+  jsiiTargetLanguages: [JsiiLanguage.PYTHON, JsiiLanguage.JAVA, JsiiLanguage.DOTNET]
 });
 
 project.testTask.reset('mocha -r ts-node/register "test/**/*test.ts"', { name: 'mocha' });
+
+const packageJs = project.tasks.tryFind('package:js');
+if (packageJs) {
+  packageJs.prependExec('find node_modules/deasync -type f -links +1 -exec cp --remove-destination {} {} \\; 2>/dev/null || true');
+}
+
 project.synth();

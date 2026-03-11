@@ -67,7 +67,6 @@ jobs:
       - release_maven
       - release_pypi
       - release_nuget
-      - release_golang
     runs-on: ubuntu-latest
     permissions:
       contents: write
@@ -263,46 +262,3 @@ jobs:
           NUGET_TRUSTED_PUBLISHER: "true"
           NUGET_USERNAME: ${{ secrets.NUGET_USERNAME }}
         run: npx -p publib@latest publib-nuget
-  release_golang:
-    name: Publish to GitHub Go Module Repository
-    needs: release
-    runs-on: ubuntu-latest
-    permissions:
-      contents: read
-    environment: release
-    if: needs.release.outputs.tag_exists != 'true' && needs.release.outputs.latest_commit == github.sha
-    steps:
-      - uses: actions/setup-node@v5
-        with:
-          node-version: lts/*
-      - uses: actions/setup-go@v6
-        with:
-          go-version: ^1.18.0
-      - name: Download build artifacts
-        uses: actions/download-artifact@v5
-        with:
-          name: build-artifact
-          path: dist
-      - name: Restore build artifact permissions
-        run: cd dist && setfacl --restore=permissions-backup.acl
-        continue-on-error: true
-      - name: Checkout
-        uses: actions/checkout@v5
-        with:
-          path: .repo
-      - name: Install Dependencies
-        run: cd .repo && yarn install --check-files --frozen-lockfile
-      - name: Extract build artifact
-        run: tar --strip-components=1 -xzvf dist/js/*.tgz -C .repo
-      - name: Move build artifact out of the way
-        run: mv dist dist.old
-      - name: Create go artifact
-        run: cd .repo && npx projen package:go
-      - name: Collect go artifact
-        run: mv .repo/dist dist
-      - name: Release
-        env:
-          GIT_USER_NAME: github-actions[bot]
-          GIT_USER_EMAIL: 41898282+github-actions[bot]@users.noreply.github.com
-          GITHUB_TOKEN: ${{ secrets.GO_GITHUB_TOKEN }}
-        run: npx -p publib@latest publib-golang
