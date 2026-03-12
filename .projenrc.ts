@@ -66,7 +66,7 @@ project.testTask.reset('mocha -r ts-node/register "test/**/*test.ts"', { name: '
 
 const packageJs = project.tasks.tryFind('package:js');
 if (packageJs) {
-  packageJs.prependExec('find node_modules/deasync -type f -links +1 -exec cp --remove-destination {} {} \\; 2>/dev/null || true');
+  packageJs.prependExec('find node_modules/deasync -type f -links +1 | while read f; do cp "$f" "$f.tmp" && mv "$f.tmp" "$f"; done || true');
 }
 
 project.synth();
