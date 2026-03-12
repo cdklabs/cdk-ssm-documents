@@ -230,7 +230,7 @@
       "description": "Create js language bindings",
       "steps": [
         {
-          "exec": "find node_modules/deasync -type f -links +1 -exec cp --remove-destination {} {} \\; 2>/dev/null || true"
+          "exec": "find node_modules/deasync -type f -links +1 | while read f; do cp \"$f\" \"$f.tmp\" && mv \"$f.tmp\" \"$f\"; done || true"
         },
         {
           "exec": "jsii-pacmak -v --target js"
