@@ -85,7 +85,7 @@
     "@aws-sdk/client-ssm": "^3.1090.0",
     "immutable": "^4.3.9",
     "js-yaml": "^4.3.0",
-    "jsonpath": "^1.3.0",
+    "jsonpath-plus": "^10.4.0",
     "python-shell": "^3.0.1",
     "synchronized-promise": "^0.3.1"
   },
@@ -101,7 +101,7 @@
     "@aws-sdk/client-ssm",
     "immutable",
     "js-yaml",
-    "jsonpath",
+    "jsonpath-plus",
     "python-shell",
     "synchronized-promise"
   ],

@@ -26,7 +26,7 @@ const project = new CdklabsConstructLibrary({
     '@aws-sdk/client-sns',
     '@aws-sdk/client-sqs',
     '@aws-sdk/client-ssm',
-    'jsonpath',
+    'jsonpath-plus',
     'python-shell',
     'js-yaml',
     'immutable',
