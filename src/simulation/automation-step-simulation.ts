@@ -1,3 +1,4 @@
+import { JSONPath } from 'jsonpath-plus';
 import {
   ApiExecuteAutomationHook,
   ExecuteAutomationStep,
@@ -62,8 +63,6 @@ import { SleepSimulation } from './automation/sleep-simulation';
 import { UpdateVariableSimulation } from './automation/update-variable-simulation';
 import { WaitForResourceSimulation } from './automation/wait-for-resource-simulation';
 import { AutomationSimulationProps } from './simulation';
-// eslint-disable-next-line
-const jp = require('jsonpath');
 
 /**
  * The same interface as AutomationSimulationProps but all fields are required.
@@ -323,7 +322,7 @@ export class AutomationStepSimulation {
       }
       // I cannot explain the hack below. But it needs to be reformed into an object.
       const hackedResponse = JSON.parse(JSON.stringify(response));
-      const selectedResponse = jp.query(hackedResponse, declaredOutput.selector)[0];
+      const selectedResponse = JSONPath({ path: declaredOutput.selector, json: hackedResponse })[0];
       if (selectedResponse === undefined) {
         throw new Error(`Output ${declaredOutput.name} specified selector ${declaredOutput.selector} but not found in response ${JSON.stringify(response)}`);
       }

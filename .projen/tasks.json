@@ -344,13 +344,13 @@
       },
       "steps": [
         {
-          "exec": "npx npm-check-updates@18 --upgrade --target=minor --peer --no-deprecated --dep=prod --filter=@aws-sdk/client-cloudformation,@aws-sdk/client-cloudwatch,@aws-sdk/client-ec2,@aws-sdk/client-iam,@aws-sdk/client-lambda,@aws-sdk/client-s3,@aws-sdk/client-sns,@aws-sdk/client-sqs,@aws-sdk/client-ssm,immutable,js-yaml,jsonpath,python-shell,synchronized-promise"
+          "exec": "npx npm-check-updates@18 --upgrade --target=minor --peer --no-deprecated --dep=prod --filter=@aws-sdk/client-cloudformation,@aws-sdk/client-cloudwatch,@aws-sdk/client-ec2,@aws-sdk/client-iam,@aws-sdk/client-lambda,@aws-sdk/client-s3,@aws-sdk/client-sns,@aws-sdk/client-sqs,@aws-sdk/client-ssm,immutable,js-yaml,jsonpath-plus,python-shell,synchronized-promise"
         },
         {
           "exec": "yarn install --check-files"
         },
         {
-          "exec": "yarn upgrade @aws-sdk/client-cloudformation @aws-sdk/client-cloudwatch @aws-sdk/client-ec2 @aws-sdk/client-iam @aws-sdk/client-lambda @aws-sdk/client-s3 @aws-sdk/client-sns @aws-sdk/client-sqs @aws-sdk/client-ssm immutable js-yaml jsonpath python-shell synchronized-promise"
+          "exec": "yarn upgrade @aws-sdk/client-cloudformation @aws-sdk/client-cloudwatch @aws-sdk/client-ec2 @aws-sdk/client-iam @aws-sdk/client-lambda @aws-sdk/client-s3 @aws-sdk/client-sns @aws-sdk/client-sqs @aws-sdk/client-ssm immutable js-yaml jsonpath-plus python-shell synchronized-promise"
         },
         {
           "exec": "npx projen"

@@ -40,6 +40,24 @@ describe('AssertAwsResourceStep', function() {
       const response = new AutomationStepSimulation(step, { awsInvoker: mockInvoker }).invoke({ 'SomeOutput.OutKey': 'FilterVal' });
       assert.equal(response.responseCode, ResponseCode.FAILED);
     });
+    it('Passes when desired value found via recursive descent selector', function() {
+      const step = new AssertAwsResourceStep(new Stack(), 'id', {
+        name: 'MyEc2DescribeImages',
+        service: AwsService.EC2,
+        selector: '$.Images..State',
+        desiredValues: ['available'],
+        pascalCaseApi: 'DescribeImages',
+        apiParams: {},
+      });
+
+      const mockInvoker = new MockAwsInvoker();
+      mockInvoker.nextReturn({ Images: [{ State: 'available' }, { State: 'pending' }] });
+      const response = new AutomationStepSimulation(step, { awsInvoker: mockInvoker }).invoke({});
+      if (response.responseCode != ResponseCode.SUCCESS) {
+        assert.fail(response.stackTrace);
+      }
+      assert.equal(response.responseCode, ResponseCode.SUCCESS);
+    });
   });
   describe('#toSsmEntry()', function() {
     it('Builds entry as per SSM Document', function() {

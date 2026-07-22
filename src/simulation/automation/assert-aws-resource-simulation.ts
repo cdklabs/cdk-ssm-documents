@@ -1,8 +1,7 @@
+import { JSONPath } from 'jsonpath-plus';
 import { AssertAwsResourceStep } from '../../parent-steps/automation/assert-aws-resource-step';
 import { AutomationSimulationBase } from './automation-simulation-base';
 import { AwsApiSimulation, AwsInvocationSimulationProps } from './aws-api-simulation';
-// eslint-disable-next-line
-const jp = require('jsonpath');
 
 /**
  * AutomationStep implementation of aws:assertAwsResourceProperty.
@@ -47,7 +46,7 @@ export class AssertAwsResourceSimulation extends AutomationSimulationBase {
      */
   private parseSelectedOrNull(awsResult: {}) {
     try {
-      return jp.query(awsResult, this.assertStep.selector)[0];
+      return JSONPath({ path: this.assertStep.selector, json: awsResult })[0];
     } catch (error) {
       console.log('Error found when reading jsonpath: ' + error);
       return undefined;
