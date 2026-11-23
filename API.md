@@ -4,6 +4,8 @@
 
 ### ApplicationsStep <a name="ApplicationsStep" id="@cdklabs/cdk-ssm-documents.ApplicationsStep"></a>
 
+- *Implements:* constructs.IConstruct, constructs.IDependable, <a href="#@cdklabs/cdk-ssm-documents.ICommandComponent">ICommandComponent</a>
+
 CommandStep implemenation for aws:applications https://docs.aws.amazon.com/systems-manager/latest/userguide/ssm-plugins.html#aws-applications.
 
 #### Initializers <a name="Initializers" id="@cdklabs/cdk-ssm-documents.ApplicationsStep.Initializer"></a>
@@ -374,6 +376,8 @@ public readonly sourceHash: IStringVariable;
 
 
 ### ApproveStep <a name="ApproveStep" id="@cdklabs/cdk-ssm-documents.ApproveStep"></a>
+
+- *Implements:* constructs.IConstruct, constructs.IDependable, <a href="#@cdklabs/cdk-ssm-documents.IAutomationComponent">IAutomationComponent</a>
 
 AutomationStep implementation for aws:approve https://docs.aws.amazon.com/systems-manager/latest/userguide/automation-action-approve.html.
 
@@ -793,6 +797,8 @@ public readonly DEFAULT_TIMEOUT: number;
 ---
 
 ### AssertAwsResourceStep <a name="AssertAwsResourceStep" id="@cdklabs/cdk-ssm-documents.AssertAwsResourceStep"></a>
+
+- *Implements:* constructs.IConstruct, constructs.IDependable, <a href="#@cdklabs/cdk-ssm-documents.IAutomationComponent">IAutomationComponent</a>
 
 AutomationStep implementation of aws:assertAwsResourceProperty.
 
@@ -1248,6 +1254,8 @@ public readonly DEFAULT_TIMEOUT: number;
 
 ### AutomationDocument <a name="AutomationDocument" id="@cdklabs/cdk-ssm-documents.AutomationDocument"></a>
 
+- *Implements:* constructs.IConstruct, constructs.IDependable
+
 The AutomationDocument used to both build the SSM Automation yaml/json and to use in simulation.
 
 The AutomationDocument will delegate execution responsibility to the AutomationSteps that it receives.
@@ -1538,7 +1546,7 @@ public readonly docVariables: Input[];
 
 ### AutomationStep <a name="AutomationStep" id="@cdklabs/cdk-ssm-documents.AutomationStep"></a>
 
-- *Implements:* <a href="#@cdklabs/cdk-ssm-documents.IAutomationComponent">IAutomationComponent</a>
+- *Implements:* constructs.IConstruct, constructs.IDependable, <a href="#@cdklabs/cdk-ssm-documents.IAutomationComponent">IAutomationComponent</a>
 
 Parent class for AutomationSteps.
 
@@ -1921,6 +1929,8 @@ public readonly DEFAULT_TIMEOUT: number;
 ---
 
 ### AwsApiStep <a name="AwsApiStep" id="@cdklabs/cdk-ssm-documents.AwsApiStep"></a>
+
+- *Implements:* constructs.IConstruct, constructs.IDependable, <a href="#@cdklabs/cdk-ssm-documents.IAutomationComponent">IAutomationComponent</a>
 
 AutomationStep implementation of aws:executeAwsApi.
 
@@ -2352,6 +2362,8 @@ public readonly DEFAULT_TIMEOUT: number;
 
 ### BranchStep <a name="BranchStep" id="@cdklabs/cdk-ssm-documents.BranchStep"></a>
 
+- *Implements:* constructs.IConstruct, constructs.IDependable, <a href="#@cdklabs/cdk-ssm-documents.IAutomationComponent">IAutomationComponent</a>
+
 AutomationStep implementation of aws:branch https://docs.aws.amazon.com/systems-manager/latest/userguide/automation-action-branch.html.
 
 #### Initializers <a name="Initializers" id="@cdklabs/cdk-ssm-documents.BranchStep.Initializer"></a>
@@ -2748,6 +2760,8 @@ public readonly DEFAULT_TIMEOUT: number;
 ---
 
 ### ChangeInstanceStateStep <a name="ChangeInstanceStateStep" id="@cdklabs/cdk-ssm-documents.ChangeInstanceStateStep"></a>
+
+- *Implements:* constructs.IConstruct, constructs.IDependable, <a href="#@cdklabs/cdk-ssm-documents.IAutomationComponent">IAutomationComponent</a>
 
 AutomationStep implemenation for aws:changeInstanceState https://docs.aws.amazon.com/systems-manager/latest/userguide/automation-action-changestate.html.
 
@@ -3179,6 +3193,8 @@ public readonly DEFAULT_TIMEOUT: number;
 
 ### CommandDocument <a name="CommandDocument" id="@cdklabs/cdk-ssm-documents.CommandDocument"></a>
 
+- *Implements:* constructs.IConstruct, constructs.IDependable
+
 https://docs.aws.amazon.com/systems-manager/latest/userguide/ssm-plugins.html The CommandDocument will delegate execution responsibility to the CammandSteps that it receives. The SsmDocument parent class contains methods to runSimulation() as well as print().
 
 #### Initializers <a name="Initializers" id="@cdklabs/cdk-ssm-documents.CommandDocument.Initializer"></a>
@@ -3455,7 +3471,7 @@ public readonly builder: CommandDocumentBuilder;
 
 ### CommandStep <a name="CommandStep" id="@cdklabs/cdk-ssm-documents.CommandStep"></a>
 
-- *Implements:* <a href="#@cdklabs/cdk-ssm-documents.ICommandComponent">ICommandComponent</a>
+- *Implements:* constructs.IConstruct, constructs.IDependable, <a href="#@cdklabs/cdk-ssm-documents.ICommandComponent">ICommandComponent</a>
 
 #### Initializers <a name="Initializers" id="@cdklabs/cdk-ssm-documents.CommandStep.Initializer"></a>
 
@@ -3782,7 +3798,7 @@ public readonly nextStep: CommandStep;
 
 ### CompositeAutomationStep <a name="CompositeAutomationStep" id="@cdklabs/cdk-ssm-documents.CompositeAutomationStep"></a>
 
-- *Implements:* <a href="#@cdklabs/cdk-ssm-documents.IAutomationComponent">IAutomationComponent</a>
+- *Implements:* constructs.IConstruct, constructs.IDependable, <a href="#@cdklabs/cdk-ssm-documents.IAutomationComponent">IAutomationComponent</a>
 
 #### Initializers <a name="Initializers" id="@cdklabs/cdk-ssm-documents.CompositeAutomationStep.Initializer"></a>
 
@@ -3925,7 +3941,7 @@ The tree node.
 
 ### CompositeCommandStep <a name="CompositeCommandStep" id="@cdklabs/cdk-ssm-documents.CompositeCommandStep"></a>
 
-- *Implements:* <a href="#@cdklabs/cdk-ssm-documents.ICommandComponent">ICommandComponent</a>
+- *Implements:* constructs.IConstruct, constructs.IDependable, <a href="#@cdklabs/cdk-ssm-documents.ICommandComponent">ICommandComponent</a>
 
 #### Initializers <a name="Initializers" id="@cdklabs/cdk-ssm-documents.CompositeCommandStep.Initializer"></a>
 
@@ -4067,6 +4083,8 @@ The tree node.
 
 
 ### ConfigureDockerStep <a name="ConfigureDockerStep" id="@cdklabs/cdk-ssm-documents.ConfigureDockerStep"></a>
+
+- *Implements:* constructs.IConstruct, constructs.IDependable, <a href="#@cdklabs/cdk-ssm-documents.ICommandComponent">ICommandComponent</a>
 
 AutomationStep implemenation for aws:UpdateAgent https://docs.aws.amazon.com/systems-manager/latest/userguide/ssm-plugins.html#aws-configuredocker.
 
@@ -4405,6 +4423,8 @@ public readonly installAction: IActionVariable;
 
 
 ### ConfigurePackageStep <a name="ConfigurePackageStep" id="@cdklabs/cdk-ssm-documents.ConfigurePackageStep"></a>
+
+- *Implements:* constructs.IConstruct, constructs.IDependable, <a href="#@cdklabs/cdk-ssm-documents.ICommandComponent">ICommandComponent</a>
 
 CommandStep implemenation for aws:configurePackage https://docs.aws.amazon.com/systems-manager/latest/userguide/ssm-plugins.html#aws-configurepackage.
 
@@ -4787,6 +4807,8 @@ public readonly version: IStringVariable;
 
 
 ### CopyImageStep <a name="CopyImageStep" id="@cdklabs/cdk-ssm-documents.CopyImageStep"></a>
+
+- *Implements:* constructs.IConstruct, constructs.IDependable, <a href="#@cdklabs/cdk-ssm-documents.IAutomationComponent">IAutomationComponent</a>
 
 AutomationStep implemenation for aws:copyImage https://docs.aws.amazon.com/systems-manager/latest/userguide/automation-action-copyimage.html.
 
@@ -5240,6 +5262,8 @@ public readonly DEFAULT_TIMEOUT: number;
 
 ### CreateImageStep <a name="CreateImageStep" id="@cdklabs/cdk-ssm-documents.CreateImageStep"></a>
 
+- *Implements:* constructs.IConstruct, constructs.IDependable, <a href="#@cdklabs/cdk-ssm-documents.IAutomationComponent">IAutomationComponent</a>
+
 AutomationStep implemenation for aws:createImage https://docs.aws.amazon.com/systems-manager/latest/userguide/automation-action-create.html.
 
 #### Initializers <a name="Initializers" id="@cdklabs/cdk-ssm-documents.CreateImageStep.Initializer"></a>
@@ -5669,6 +5693,8 @@ public readonly DEFAULT_TIMEOUT: number;
 ---
 
 ### CreateStackStep <a name="CreateStackStep" id="@cdklabs/cdk-ssm-documents.CreateStackStep"></a>
+
+- *Implements:* constructs.IConstruct, constructs.IDependable, <a href="#@cdklabs/cdk-ssm-documents.IAutomationComponent">IAutomationComponent</a>
 
 AutomationStep implementation for aws:createStack https://docs.aws.amazon.com/systems-manager/latest/userguide/automation-action-createstack.html.
 
@@ -6199,6 +6225,8 @@ public readonly DEFAULT_TIMEOUT: number;
 
 ### CreateTagsStep <a name="CreateTagsStep" id="@cdklabs/cdk-ssm-documents.CreateTagsStep"></a>
 
+- *Implements:* constructs.IConstruct, constructs.IDependable, <a href="#@cdklabs/cdk-ssm-documents.IAutomationComponent">IAutomationComponent</a>
+
 AutomationStep implemenation for aws:createTags https://docs.aws.amazon.com/systems-manager/latest/userguide/automation-action-createtag.html.
 
 #### Initializers <a name="Initializers" id="@cdklabs/cdk-ssm-documents.CreateTagsStep.Initializer"></a>
@@ -6607,6 +6635,8 @@ public readonly DEFAULT_TIMEOUT: number;
 
 ### DeleteImageStep <a name="DeleteImageStep" id="@cdklabs/cdk-ssm-documents.DeleteImageStep"></a>
 
+- *Implements:* constructs.IConstruct, constructs.IDependable, <a href="#@cdklabs/cdk-ssm-documents.IAutomationComponent">IAutomationComponent</a>
+
 AutomationStep implementation for aws:deleteImage https://docs.aws.amazon.com/systems-manager/latest/userguide/automation-action-delete.html.
 
 #### Initializers <a name="Initializers" id="@cdklabs/cdk-ssm-documents.DeleteImageStep.Initializer"></a>
@@ -6992,6 +7022,8 @@ public readonly DEFAULT_TIMEOUT: number;
 ---
 
 ### DeleteStackStep <a name="DeleteStackStep" id="@cdklabs/cdk-ssm-documents.DeleteStackStep"></a>
+
+- *Implements:* constructs.IConstruct, constructs.IDependable, <a href="#@cdklabs/cdk-ssm-documents.IAutomationComponent">IAutomationComponent</a>
 
 AutomationStep implemenation for aws:deleteStack https://docs.aws.amazon.com/systems-manager/latest/userguide/automation-action-deletestack.html.
 
@@ -7390,6 +7422,8 @@ public readonly DEFAULT_TIMEOUT: number;
 
 ### DomainJoinStep <a name="DomainJoinStep" id="@cdklabs/cdk-ssm-documents.DomainJoinStep"></a>
 
+- *Implements:* constructs.IConstruct, constructs.IDependable, <a href="#@cdklabs/cdk-ssm-documents.ICommandComponent">ICommandComponent</a>
+
 CommandStep implemenation for aws:softwareInventory https://docs.aws.amazon.com/systems-manager/latest/userguide/ssm-plugins.html#aws-domainJoin.
 
 #### Initializers <a name="Initializers" id="@cdklabs/cdk-ssm-documents.DomainJoinStep.Initializer"></a>
@@ -7761,6 +7795,8 @@ public readonly dnsIpAddresses: IStringListVariable;
 
 ### DownloadContentStep <a name="DownloadContentStep" id="@cdklabs/cdk-ssm-documents.DownloadContentStep"></a>
 
+- *Implements:* constructs.IConstruct, constructs.IDependable, <a href="#@cdklabs/cdk-ssm-documents.ICommandComponent">ICommandComponent</a>
+
 AutomationStep implemenation for aws:downloadContent https://docs.aws.amazon.com/systems-manager/latest/userguide/ssm-plugins.html#aws-downloadContent.
 
 #### Initializers <a name="Initializers" id="@cdklabs/cdk-ssm-documents.DownloadContentStep.Initializer"></a>
@@ -8109,6 +8145,8 @@ public readonly destinationPath: IStringVariable;
 
 
 ### ExecuteAutomationStep <a name="ExecuteAutomationStep" id="@cdklabs/cdk-ssm-documents.ExecuteAutomationStep"></a>
+
+- *Implements:* constructs.IConstruct, constructs.IDependable, <a href="#@cdklabs/cdk-ssm-documents.IAutomationComponent">IAutomationComponent</a>
 
 AutomationStep implementation for aws:executeAutomation https://docs.aws.amazon.com/systems-manager/latest/userguide/automation-action-executeAutomation.html.
 
@@ -8595,6 +8633,8 @@ public readonly DEFAULT_TIMEOUT: number;
 
 ### ExecuteScriptStep <a name="ExecuteScriptStep" id="@cdklabs/cdk-ssm-documents.ExecuteScriptStep"></a>
 
+- *Implements:* constructs.IConstruct, constructs.IDependable, <a href="#@cdklabs/cdk-ssm-documents.IAutomationComponent">IAutomationComponent</a>
+
 AutomationStep implementation for aws:executeScript https://docs.aws.amazon.com/systems-manager/latest/userguide/automation-action-executeScript.html.
 
 #### Initializers <a name="Initializers" id="@cdklabs/cdk-ssm-documents.ExecuteScriptStep.Initializer"></a>
@@ -9014,6 +9054,8 @@ public readonly DEFAULT_TIMEOUT: number;
 
 ### ExecuteStateMachineStep <a name="ExecuteStateMachineStep" id="@cdklabs/cdk-ssm-documents.ExecuteStateMachineStep"></a>
 
+- *Implements:* constructs.IConstruct, constructs.IDependable, <a href="#@cdklabs/cdk-ssm-documents.IAutomationComponent">IAutomationComponent</a>
+
 AutomationStep implementation of [aws:executeStateMachine](https://docs.aws.amazon.com/systems-manager/latest/userguide/automation-action-executeStateMachine.html).
 
 #### Initializers <a name="Initializers" id="@cdklabs/cdk-ssm-documents.ExecuteStateMachineStep.Initializer"></a>
@@ -9421,6 +9463,8 @@ public readonly DEFAULT_TIMEOUT: number;
 ---
 
 ### HelloWorld <a name="HelloWorld" id="@cdklabs/cdk-ssm-documents.HelloWorld"></a>
+
+- *Implements:* constructs.IConstruct, constructs.IDependable, aws-cdk-lib.ITaggable
 
 #### Initializers <a name="Initializers" id="@cdklabs/cdk-ssm-documents.HelloWorld.Initializer"></a>
 
@@ -10324,6 +10368,8 @@ Whether termination protection is enabled for this stack.
 
 ### IncidentResponse <a name="IncidentResponse" id="@cdklabs/cdk-ssm-documents.IncidentResponse"></a>
 
+- *Implements:* constructs.IConstruct, constructs.IDependable
+
 Provides L2 construct for https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssmincidents-responseplan.html#aws-resource-ssmincidents-responseplan-properties.
 
 #### Initializers <a name="Initializers" id="@cdklabs/cdk-ssm-documents.IncidentResponse.Initializer"></a>
@@ -10471,6 +10517,8 @@ public readonly cfnResponsePlan: CfnResponsePlan;
 
 
 ### InvokeLambdaFunctionStep <a name="InvokeLambdaFunctionStep" id="@cdklabs/cdk-ssm-documents.InvokeLambdaFunctionStep"></a>
+
+- *Implements:* constructs.IConstruct, constructs.IDependable, <a href="#@cdklabs/cdk-ssm-documents.IAutomationComponent">IAutomationComponent</a>
 
 AutomationStep implemenation for aws:invokeLambdaFunction https://docs.aws.amazon.com/systems-manager/latest/userguide/automation-action-lamb.html.
 
@@ -10924,6 +10972,8 @@ public readonly DEFAULT_TIMEOUT: number;
 
 ### InvokeWebhookStep <a name="InvokeWebhookStep" id="@cdklabs/cdk-ssm-documents.InvokeWebhookStep"></a>
 
+- *Implements:* constructs.IConstruct, constructs.IDependable, <a href="#@cdklabs/cdk-ssm-documents.IAutomationComponent">IAutomationComponent</a>
+
 AutomationStep implementation for [aws:invokeWebhook](https://docs.aws.amazon.com/systems-manager/latest/userguide/invoke-webhook.html).
 
 #### Initializers <a name="Initializers" id="@cdklabs/cdk-ssm-documents.InvokeWebhookStep.Initializer"></a>
@@ -11321,6 +11371,8 @@ public readonly DEFAULT_TIMEOUT: number;
 
 ### PauseStep <a name="PauseStep" id="@cdklabs/cdk-ssm-documents.PauseStep"></a>
 
+- *Implements:* constructs.IConstruct, constructs.IDependable, <a href="#@cdklabs/cdk-ssm-documents.IAutomationComponent">IAutomationComponent</a>
+
 AutomationStep implementation for aws:pause https://docs.aws.amazon.com/systems-manager/latest/userguide/automation-action-pause.html.
 
 #### Initializers <a name="Initializers" id="@cdklabs/cdk-ssm-documents.PauseStep.Initializer"></a>
@@ -11695,6 +11747,8 @@ public readonly DEFAULT_TIMEOUT: number;
 ---
 
 ### PsModuleStep <a name="PsModuleStep" id="@cdklabs/cdk-ssm-documents.PsModuleStep"></a>
+
+- *Implements:* constructs.IConstruct, constructs.IDependable, <a href="#@cdklabs/cdk-ssm-documents.ICommandComponent">ICommandComponent</a>
 
 AutomationStep implemenation for aws:psmodule https://docs.aws.amazon.com/systems-manager/latest/userguide/ssm-plugins.html#aws-psModule.
 
@@ -12078,6 +12132,8 @@ public readonly workingDirectory: IStringVariable;
 
 ### RebootInstanceAndWait <a name="RebootInstanceAndWait" id="@cdklabs/cdk-ssm-documents.RebootInstanceAndWait"></a>
 
+- *Implements:* constructs.IConstruct, constructs.IDependable, <a href="#@cdklabs/cdk-ssm-documents.IAutomationComponent">IAutomationComponent</a>
+
 #### Initializers <a name="Initializers" id="@cdklabs/cdk-ssm-documents.RebootInstanceAndWait.Initializer"></a>
 
 ```typescript
@@ -12247,6 +12303,8 @@ public readonly reboot: AwsApiStep;
 
 
 ### RunCommandStep <a name="RunCommandStep" id="@cdklabs/cdk-ssm-documents.RunCommandStep"></a>
+
+- *Implements:* constructs.IConstruct, constructs.IDependable, <a href="#@cdklabs/cdk-ssm-documents.IAutomationComponent">IAutomationComponent</a>
 
 AutomationStep implementation of [aws:runCommand](https://docs.aws.amazon.com/systems-manager/latest/userguide/automation-action-runcommand.html).
 
@@ -12777,6 +12835,8 @@ public readonly DEFAULT_TIMEOUT: number;
 
 ### RunDockerActionStep <a name="RunDockerActionStep" id="@cdklabs/cdk-ssm-documents.RunDockerActionStep"></a>
 
+- *Implements:* constructs.IConstruct, constructs.IDependable, <a href="#@cdklabs/cdk-ssm-documents.ICommandComponent">ICommandComponent</a>
+
 CommandStep implementation for aws:runDockerAction https://docs.aws.amazon.com/systems-manager/latest/userguide/ssm-plugins.html#aws-rundockeraction.
 
 #### Initializers <a name="Initializers" id="@cdklabs/cdk-ssm-documents.RunDockerActionStep.Initializer"></a>
@@ -13214,6 +13274,8 @@ public readonly volume: IStringListVariable;
 
 ### RunDocumentStep <a name="RunDocumentStep" id="@cdklabs/cdk-ssm-documents.RunDocumentStep"></a>
 
+- *Implements:* constructs.IConstruct, constructs.IDependable, <a href="#@cdklabs/cdk-ssm-documents.ICommandComponent">ICommandComponent</a>
+
 CommandStep implementation for aws:runDocument https://docs.aws.amazon.com/systems-manager/latest/userguide/ssm-plugins.html#aws-rundocument.
 
 #### Initializers <a name="Initializers" id="@cdklabs/cdk-ssm-documents.RunDocumentStep.Initializer"></a>
@@ -13562,6 +13624,8 @@ public readonly documentParameters: IStringMapVariable;
 
 
 ### RunInstanceStep <a name="RunInstanceStep" id="@cdklabs/cdk-ssm-documents.RunInstanceStep"></a>
+
+- *Implements:* constructs.IConstruct, constructs.IDependable, <a href="#@cdklabs/cdk-ssm-documents.IAutomationComponent">IAutomationComponent</a>
 
 AutomationStep implemenation for aws:runInstance https://docs.aws.amazon.com/systems-manager/latest/userguide/automation-action-runinstance.html.
 
@@ -14202,6 +14266,8 @@ public readonly DEFAULT_TIMEOUT: number;
 
 ### RunPowerShellScriptStep <a name="RunPowerShellScriptStep" id="@cdklabs/cdk-ssm-documents.RunPowerShellScriptStep"></a>
 
+- *Implements:* constructs.IConstruct, constructs.IDependable, <a href="#@cdklabs/cdk-ssm-documents.ICommandComponent">ICommandComponent</a>
+
 AutomationStep implementation for aws:runPowerShellScript https://docs.aws.amazon.com/systems-manager/latest/userguide/ssm-plugins.html#aws-runPowerShellScript.
 
 #### Initializers <a name="Initializers" id="@cdklabs/cdk-ssm-documents.RunPowerShellScriptStep.Initializer"></a>
@@ -14562,6 +14628,8 @@ public readonly workingDirectory: IStringVariable;
 
 ### RunShellScriptStep <a name="RunShellScriptStep" id="@cdklabs/cdk-ssm-documents.RunShellScriptStep"></a>
 
+- *Implements:* constructs.IConstruct, constructs.IDependable, <a href="#@cdklabs/cdk-ssm-documents.ICommandComponent">ICommandComponent</a>
+
 AutomationStep implemenation for aws:runShellScript https://docs.aws.amazon.com/systems-manager/latest/userguide/automation-action-sleep.html.
 
 #### Initializers <a name="Initializers" id="@cdklabs/cdk-ssm-documents.RunShellScriptStep.Initializer"></a>
@@ -14921,6 +14989,8 @@ public readonly workingDirectory: IStringVariable;
 
 
 ### SleepStep <a name="SleepStep" id="@cdklabs/cdk-ssm-documents.SleepStep"></a>
+
+- *Implements:* constructs.IConstruct, constructs.IDependable, <a href="#@cdklabs/cdk-ssm-documents.IAutomationComponent">IAutomationComponent</a>
 
 AutomationStep implemenation for aws:sleep https://docs.aws.amazon.com/systems-manager/latest/userguide/automation-action-sleep.html.
 
@@ -15307,6 +15377,8 @@ public readonly DEFAULT_TIMEOUT: number;
 ---
 
 ### SoftwareInventoryStep <a name="SoftwareInventoryStep" id="@cdklabs/cdk-ssm-documents.SoftwareInventoryStep"></a>
+
+- *Implements:* constructs.IConstruct, constructs.IDependable, <a href="#@cdklabs/cdk-ssm-documents.ICommandComponent">ICommandComponent</a>
 
 AutomationStep implemenation for aws:softwareInventory https://docs.aws.amazon.com/systems-manager/latest/userguide/ssm-plugins.html#aws-softwareinventory.
 
@@ -15745,6 +15817,8 @@ public readonly windowsUpdates: IStringVariable;
 
 ### SsmDocument <a name="SsmDocument" id="@cdklabs/cdk-ssm-documents.SsmDocument"></a>
 
+- *Implements:* constructs.IConstruct, constructs.IDependable
+
 #### Initializers <a name="Initializers" id="@cdklabs/cdk-ssm-documents.SsmDocument.Initializer"></a>
 
 ```typescript
@@ -15988,6 +16062,8 @@ public readonly header: string;
 
 ### Step <a name="Step" id="@cdklabs/cdk-ssm-documents.Step"></a>
 
+- *Implements:* constructs.IConstruct, constructs.IDependable
+
 #### Initializers <a name="Initializers" id="@cdklabs/cdk-ssm-documents.Step.Initializer"></a>
 
 ```typescript
@@ -16205,6 +16281,8 @@ public readonly description: string;
 
 ### StringStep <a name="StringStep" id="@cdklabs/cdk-ssm-documents.StringStep"></a>
 
+- *Implements:* constructs.IConstruct, constructs.IDependable, <a href="#@cdklabs/cdk-ssm-documents.IAutomationComponent">IAutomationComponent</a>
+
 StringStep allows for including a step from an existing automation document verbatim.
 
 This is useful in that it allows developers to integrate with existing document steps.
@@ -16401,6 +16479,8 @@ The tree node.
 
 
 ### TimedDocument <a name="TimedDocument" id="@cdklabs/cdk-ssm-documents.TimedDocument"></a>
+
+- *Implements:* constructs.IConstruct, constructs.IDependable
 
 #### Initializers <a name="Initializers" id="@cdklabs/cdk-ssm-documents.TimedDocument.Initializer"></a>
 
@@ -16686,6 +16766,8 @@ public readonly docVariables: Input[];
 
 
 ### UpdateAgentStep <a name="UpdateAgentStep" id="@cdklabs/cdk-ssm-documents.UpdateAgentStep"></a>
+
+- *Implements:* constructs.IConstruct, constructs.IDependable, <a href="#@cdklabs/cdk-ssm-documents.ICommandComponent">ICommandComponent</a>
 
 CommandStep implementation for aws:UpdateAgent https://docs.aws.amazon.com/systems-manager/latest/userguide/ssm-plugins.html#aws-updateagent.
 
@@ -17058,6 +17140,8 @@ public readonly targetVersion: IStringVariable;
 
 ### UpdateSSMAgentStep <a name="UpdateSSMAgentStep" id="@cdklabs/cdk-ssm-documents.UpdateSSMAgentStep"></a>
 
+- *Implements:* constructs.IConstruct, constructs.IDependable, <a href="#@cdklabs/cdk-ssm-documents.ICommandComponent">ICommandComponent</a>
+
 AutomationStep implemenation for aws:UpdateSsmAgent https://docs.aws.amazon.com/systems-manager/latest/userguide/ssm-plugins.html#aws-updatessmagent.
 
 #### Initializers <a name="Initializers" id="@cdklabs/cdk-ssm-documents.UpdateSSMAgentStep.Initializer"></a>
@@ -17428,6 +17512,8 @@ public readonly targetVersion: IStringVariable;
 
 
 ### UpdateVariableStep <a name="UpdateVariableStep" id="@cdklabs/cdk-ssm-documents.UpdateVariableStep"></a>
+
+- *Implements:* constructs.IConstruct, constructs.IDependable, <a href="#@cdklabs/cdk-ssm-documents.IAutomationComponent">IAutomationComponent</a>
 
 AutomationStep implementation for aws:updateVariable https://docs.aws.amazon.com/systems-manager/latest/userguide/automation-action-update-variable.html.
 
@@ -17825,6 +17911,8 @@ public readonly DEFAULT_TIMEOUT: number;
 ---
 
 ### WaitForResourceStep <a name="WaitForResourceStep" id="@cdklabs/cdk-ssm-documents.WaitForResourceStep"></a>
+
+- *Implements:* constructs.IConstruct, constructs.IDependable, <a href="#@cdklabs/cdk-ssm-documents.IAutomationComponent">IAutomationComponent</a>
 
 AutomationStep impl for aws:waitForAwsResourceProperty https://docs.aws.amazon.com/systems-manager/latest/userguide/automation-action-waitForAwsResourceProperty.html.
 
@@ -31794,7 +31882,7 @@ Not all action types may be invoked during cancellation. See documentation refer
 
 ### ActionVariable <a name="ActionVariable" id="@cdklabs/cdk-ssm-documents.ActionVariable"></a>
 
-- *Implements:* <a href="#@cdklabs/cdk-ssm-documents.IActionVariable">IActionVariable</a>
+- *Implements:* <a href="#@cdklabs/cdk-ssm-documents.IGenericVariable">IGenericVariable</a>, <a href="#@cdklabs/cdk-ssm-documents.IStringVariable">IStringVariable</a>, <a href="#@cdklabs/cdk-ssm-documents.IActionVariable">IActionVariable</a>
 
 #### Initializers <a name="Initializers" id="@cdklabs/cdk-ssm-documents.ActionVariable.Initializer"></a>
 
@@ -36331,7 +36419,7 @@ public readonly XRAY: AwsService;
 
 ### BooleanVariable <a name="BooleanVariable" id="@cdklabs/cdk-ssm-documents.BooleanVariable"></a>
 
-- *Implements:* <a href="#@cdklabs/cdk-ssm-documents.IBooleanVariable">IBooleanVariable</a>
+- *Implements:* <a href="#@cdklabs/cdk-ssm-documents.IGenericVariable">IGenericVariable</a>, <a href="#@cdklabs/cdk-ssm-documents.IBooleanVariable">IBooleanVariable</a>
 
 A boolean variable reference.
 
@@ -37781,7 +37869,7 @@ public readonly action: string;
 
 ### DesiredStateVariable <a name="DesiredStateVariable" id="@cdklabs/cdk-ssm-documents.DesiredStateVariable"></a>
 
-- *Implements:* <a href="#@cdklabs/cdk-ssm-documents.IDesiredStateVariable">IDesiredStateVariable</a>
+- *Implements:* <a href="#@cdklabs/cdk-ssm-documents.IGenericVariable">IGenericVariable</a>, <a href="#@cdklabs/cdk-ssm-documents.IStringVariable">IStringVariable</a>, <a href="#@cdklabs/cdk-ssm-documents.IDesiredStateVariable">IDesiredStateVariable</a>
 
 #### Initializers <a name="Initializers" id="@cdklabs/cdk-ssm-documents.DesiredStateVariable.Initializer"></a>
 
@@ -37934,7 +38022,7 @@ public readonly validValues: string[];
 
 ### DictFormat <a name="DictFormat" id="@cdklabs/cdk-ssm-documents.DictFormat"></a>
 
-- *Implements:* <a href="#@cdklabs/cdk-ssm-documents.IStringVariable">IStringVariable</a>
+- *Implements:* <a href="#@cdklabs/cdk-ssm-documents.IStringVariable">IStringVariable</a>, <a href="#@cdklabs/cdk-ssm-documents.IGenericVariable">IGenericVariable</a>
 
 #### Initializers <a name="Initializers" id="@cdklabs/cdk-ssm-documents.DictFormat.Initializer"></a>
 
@@ -38163,7 +38251,7 @@ public readonly containerId: string;
 
 ### DocumentHashTypeVariable <a name="DocumentHashTypeVariable" id="@cdklabs/cdk-ssm-documents.DocumentHashTypeVariable"></a>
 
-- *Implements:* <a href="#@cdklabs/cdk-ssm-documents.IDocumentHashTypeVariable">IDocumentHashTypeVariable</a>
+- *Implements:* <a href="#@cdklabs/cdk-ssm-documents.IGenericVariable">IGenericVariable</a>, <a href="#@cdklabs/cdk-ssm-documents.IStringVariable">IStringVariable</a>, <a href="#@cdklabs/cdk-ssm-documents.IDocumentHashTypeVariable">IDocumentHashTypeVariable</a>
 
 #### Initializers <a name="Initializers" id="@cdklabs/cdk-ssm-documents.DocumentHashTypeVariable.Initializer"></a>
 
@@ -39122,7 +39210,7 @@ public readonly commitId: string;
 
 ### HardCodedAction <a name="HardCodedAction" id="@cdklabs/cdk-ssm-documents.HardCodedAction"></a>
 
-- *Implements:* <a href="#@cdklabs/cdk-ssm-documents.IActionVariable">IActionVariable</a>
+- *Implements:* <a href="#@cdklabs/cdk-ssm-documents.IGenericVariable">IGenericVariable</a>, <a href="#@cdklabs/cdk-ssm-documents.IStringVariable">IStringVariable</a>, <a href="#@cdklabs/cdk-ssm-documents.IActionVariable">IActionVariable</a>
 
 #### Methods <a name="Methods" id="Methods"></a>
 
@@ -39272,7 +39360,7 @@ public readonly UNINSTALL: HardCodedAction;
 
 ### HardCodedBoolean <a name="HardCodedBoolean" id="@cdklabs/cdk-ssm-documents.HardCodedBoolean"></a>
 
-- *Implements:* <a href="#@cdklabs/cdk-ssm-documents.IBooleanVariable">IBooleanVariable</a>
+- *Implements:* <a href="#@cdklabs/cdk-ssm-documents.IGenericVariable">IGenericVariable</a>, <a href="#@cdklabs/cdk-ssm-documents.IBooleanVariable">IBooleanVariable</a>
 
 A hard-coded boolean variable.
 
@@ -39425,7 +39513,7 @@ public readonly TRUE: HardCodedBoolean;
 
 ### HardCodedDesiredState <a name="HardCodedDesiredState" id="@cdklabs/cdk-ssm-documents.HardCodedDesiredState"></a>
 
-- *Implements:* <a href="#@cdklabs/cdk-ssm-documents.IDesiredStateVariable">IDesiredStateVariable</a>
+- *Implements:* <a href="#@cdklabs/cdk-ssm-documents.IGenericVariable">IGenericVariable</a>, <a href="#@cdklabs/cdk-ssm-documents.IStringVariable">IStringVariable</a>, <a href="#@cdklabs/cdk-ssm-documents.IDesiredStateVariable">IDesiredStateVariable</a>
 
 #### Methods <a name="Methods" id="Methods"></a>
 
@@ -39586,7 +39674,7 @@ public readonly TERMINATED: HardCodedDesiredState;
 
 ### HardCodedDocumentHashType <a name="HardCodedDocumentHashType" id="@cdklabs/cdk-ssm-documents.HardCodedDocumentHashType"></a>
 
-- *Implements:* <a href="#@cdklabs/cdk-ssm-documents.IDocumentHashTypeVariable">IDocumentHashTypeVariable</a>
+- *Implements:* <a href="#@cdklabs/cdk-ssm-documents.IGenericVariable">IGenericVariable</a>, <a href="#@cdklabs/cdk-ssm-documents.IStringVariable">IStringVariable</a>, <a href="#@cdklabs/cdk-ssm-documents.IDocumentHashTypeVariable">IDocumentHashTypeVariable</a>
 
 #### Methods <a name="Methods" id="Methods"></a>
 
@@ -39736,7 +39824,7 @@ public readonly SHA256: HardCodedDocumentHashType;
 
 ### HardCodedInstallationType <a name="HardCodedInstallationType" id="@cdklabs/cdk-ssm-documents.HardCodedInstallationType"></a>
 
-- *Implements:* <a href="#@cdklabs/cdk-ssm-documents.IInstallationTypeVariable">IInstallationTypeVariable</a>
+- *Implements:* <a href="#@cdklabs/cdk-ssm-documents.IGenericVariable">IGenericVariable</a>, <a href="#@cdklabs/cdk-ssm-documents.IStringVariable">IStringVariable</a>, <a href="#@cdklabs/cdk-ssm-documents.IInstallationTypeVariable">IInstallationTypeVariable</a>
 
 #### Methods <a name="Methods" id="Methods"></a>
 
@@ -39886,7 +39974,7 @@ public readonly UNINSTALL_AND_REINSTALL: HardCodedInstallationType;
 
 ### HardCodedInstallUninstallRepair <a name="HardCodedInstallUninstallRepair" id="@cdklabs/cdk-ssm-documents.HardCodedInstallUninstallRepair"></a>
 
-- *Implements:* <a href="#@cdklabs/cdk-ssm-documents.IInstallUninstallRepairVariable">IInstallUninstallRepairVariable</a>
+- *Implements:* <a href="#@cdklabs/cdk-ssm-documents.IGenericVariable">IGenericVariable</a>, <a href="#@cdklabs/cdk-ssm-documents.IStringVariable">IStringVariable</a>, <a href="#@cdklabs/cdk-ssm-documents.IInstallUninstallRepairVariable">IInstallUninstallRepairVariable</a>
 
 #### Methods <a name="Methods" id="Methods"></a>
 
@@ -40047,7 +40135,7 @@ public readonly UNINSTALL: HardCodedInstallUninstallRepair;
 
 ### HardCodedMapList <a name="HardCodedMapList" id="@cdklabs/cdk-ssm-documents.HardCodedMapList"></a>
 
-- *Implements:* <a href="#@cdklabs/cdk-ssm-documents.IMapListVariable">IMapListVariable</a>
+- *Implements:* <a href="#@cdklabs/cdk-ssm-documents.IGenericVariable">IGenericVariable</a>, <a href="#@cdklabs/cdk-ssm-documents.IMapListVariable">IMapListVariable</a>
 
 A hard-coded map list variable.
 
@@ -40193,7 +40281,7 @@ public readonly val: any;
 
 ### HardCodedNumber <a name="HardCodedNumber" id="@cdklabs/cdk-ssm-documents.HardCodedNumber"></a>
 
-- *Implements:* <a href="#@cdklabs/cdk-ssm-documents.INumberVariable">INumberVariable</a>
+- *Implements:* <a href="#@cdklabs/cdk-ssm-documents.IGenericVariable">IGenericVariable</a>, <a href="#@cdklabs/cdk-ssm-documents.INumberVariable">INumberVariable</a>
 
 A hard-coded number variable.
 
@@ -40339,7 +40427,7 @@ public readonly val: any;
 
 ### HardCodedOnFailure <a name="HardCodedOnFailure" id="@cdklabs/cdk-ssm-documents.HardCodedOnFailure"></a>
 
-- *Implements:* <a href="#@cdklabs/cdk-ssm-documents.IOnFailureVariable">IOnFailureVariable</a>
+- *Implements:* <a href="#@cdklabs/cdk-ssm-documents.IGenericVariable">IGenericVariable</a>, <a href="#@cdklabs/cdk-ssm-documents.IStringVariable">IStringVariable</a>, <a href="#@cdklabs/cdk-ssm-documents.IOnFailureVariable">IOnFailureVariable</a>
 
 #### Methods <a name="Methods" id="Methods"></a>
 
@@ -40500,7 +40588,7 @@ public readonly ROLLBACK: HardCodedOnFailure;
 
 ### HardCodedPackageName <a name="HardCodedPackageName" id="@cdklabs/cdk-ssm-documents.HardCodedPackageName"></a>
 
-- *Implements:* <a href="#@cdklabs/cdk-ssm-documents.IPackageNameVariable">IPackageNameVariable</a>
+- *Implements:* <a href="#@cdklabs/cdk-ssm-documents.IGenericVariable">IGenericVariable</a>, <a href="#@cdklabs/cdk-ssm-documents.IStringVariable">IStringVariable</a>, <a href="#@cdklabs/cdk-ssm-documents.IPackageNameVariable">IPackageNameVariable</a>
 
 #### Methods <a name="Methods" id="Methods"></a>
 
@@ -40705,7 +40793,7 @@ public readonly CODE_DEPLOY_AGENT: HardCodedPackageName;
 
 ### HardCodedResourceType <a name="HardCodedResourceType" id="@cdklabs/cdk-ssm-documents.HardCodedResourceType"></a>
 
-- *Implements:* <a href="#@cdklabs/cdk-ssm-documents.IResourceTypeVariable">IResourceTypeVariable</a>
+- *Implements:* <a href="#@cdklabs/cdk-ssm-documents.IGenericVariable">IGenericVariable</a>, <a href="#@cdklabs/cdk-ssm-documents.IStringVariable">IStringVariable</a>, <a href="#@cdklabs/cdk-ssm-documents.IResourceTypeVariable">IResourceTypeVariable</a>
 
 #### Methods <a name="Methods" id="Methods"></a>
 
@@ -40877,6 +40965,8 @@ public readonly PARAMETER: HardCodedResourceType;
 
 ### HardCodedSecureVariable <a name="HardCodedSecureVariable" id="@cdklabs/cdk-ssm-documents.HardCodedSecureVariable"></a>
 
+- *Implements:* <a href="#@cdklabs/cdk-ssm-documents.IGenericVariable">IGenericVariable</a>
+
 A hard-coded string variable.
 
 Used when not dependent on step inputs.
@@ -41027,7 +41117,7 @@ public readonly val: string;
 
 ### HardCodedString <a name="HardCodedString" id="@cdklabs/cdk-ssm-documents.HardCodedString"></a>
 
-- *Implements:* <a href="#@cdklabs/cdk-ssm-documents.IStringVariable">IStringVariable</a>
+- *Implements:* <a href="#@cdklabs/cdk-ssm-documents.IGenericVariable">IGenericVariable</a>, <a href="#@cdklabs/cdk-ssm-documents.IStringVariable">IStringVariable</a>
 
 A hard-coded string variable.
 
@@ -41173,7 +41263,7 @@ public readonly val: any;
 
 ### HardCodedStringList <a name="HardCodedStringList" id="@cdklabs/cdk-ssm-documents.HardCodedStringList"></a>
 
-- *Implements:* <a href="#@cdklabs/cdk-ssm-documents.IStringListVariable">IStringListVariable</a>
+- *Implements:* <a href="#@cdklabs/cdk-ssm-documents.IGenericVariable">IGenericVariable</a>, <a href="#@cdklabs/cdk-ssm-documents.IStringListVariable">IStringListVariable</a>
 
 A hard-coded string list variable.
 
@@ -41319,7 +41409,7 @@ public readonly val: any;
 
 ### HardCodedStringMap <a name="HardCodedStringMap" id="@cdklabs/cdk-ssm-documents.HardCodedStringMap"></a>
 
-- *Implements:* <a href="#@cdklabs/cdk-ssm-documents.IStringMapVariable">IStringMapVariable</a>
+- *Implements:* <a href="#@cdklabs/cdk-ssm-documents.IGenericVariable">IGenericVariable</a>, <a href="#@cdklabs/cdk-ssm-documents.IStringMapVariable">IStringMapVariable</a>
 
 A hard-coded string map variable.
 
@@ -42393,7 +42483,7 @@ public readonly defaultValue: string;
 
 ### InstallationTypeVariable <a name="InstallationTypeVariable" id="@cdklabs/cdk-ssm-documents.InstallationTypeVariable"></a>
 
-- *Implements:* <a href="#@cdklabs/cdk-ssm-documents.IInstallationTypeVariable">IInstallationTypeVariable</a>
+- *Implements:* <a href="#@cdklabs/cdk-ssm-documents.IGenericVariable">IGenericVariable</a>, <a href="#@cdklabs/cdk-ssm-documents.IStringVariable">IStringVariable</a>, <a href="#@cdklabs/cdk-ssm-documents.IInstallationTypeVariable">IInstallationTypeVariable</a>
 
 #### Initializers <a name="Initializers" id="@cdklabs/cdk-ssm-documents.InstallationTypeVariable.Initializer"></a>
 
@@ -42546,7 +42636,7 @@ public readonly validValues: string[];
 
 ### InstallUninstallRepairVariable <a name="InstallUninstallRepairVariable" id="@cdklabs/cdk-ssm-documents.InstallUninstallRepairVariable"></a>
 
-- *Implements:* <a href="#@cdklabs/cdk-ssm-documents.IInstallUninstallRepairVariable">IInstallUninstallRepairVariable</a>
+- *Implements:* <a href="#@cdklabs/cdk-ssm-documents.IGenericVariable">IGenericVariable</a>, <a href="#@cdklabs/cdk-ssm-documents.IStringVariable">IStringVariable</a>, <a href="#@cdklabs/cdk-ssm-documents.IInstallUninstallRepairVariable">IInstallUninstallRepairVariable</a>
 
 #### Initializers <a name="Initializers" id="@cdklabs/cdk-ssm-documents.InstallUninstallRepairVariable.Initializer"></a>
 
@@ -42987,7 +43077,7 @@ public run(command: string): string
 
 ### MapListVariable <a name="MapListVariable" id="@cdklabs/cdk-ssm-documents.MapListVariable"></a>
 
-- *Implements:* <a href="#@cdklabs/cdk-ssm-documents.IMapListVariable">IMapListVariable</a>
+- *Implements:* <a href="#@cdklabs/cdk-ssm-documents.IGenericVariable">IGenericVariable</a>, <a href="#@cdklabs/cdk-ssm-documents.IMapListVariable">IMapListVariable</a>
 
 A map list variable reference.
 
@@ -43698,6 +43788,8 @@ NoAuthMethod.ofNone()
 
 ### NonSecureVariable <a name="NonSecureVariable" id="@cdklabs/cdk-ssm-documents.NonSecureVariable"></a>
 
+- *Implements:* <a href="#@cdklabs/cdk-ssm-documents.IGenericVariable">IGenericVariable</a>
+
 A string variable reference.
 
 Used to resolve the value from step inputs.
@@ -43888,7 +43980,7 @@ public accept(_value: {[ key: string ]: any}): void
 
 ### NumberVariable <a name="NumberVariable" id="@cdklabs/cdk-ssm-documents.NumberVariable"></a>
 
-- *Implements:* <a href="#@cdklabs/cdk-ssm-documents.INumberVariable">INumberVariable</a>
+- *Implements:* <a href="#@cdklabs/cdk-ssm-documents.IGenericVariable">IGenericVariable</a>, <a href="#@cdklabs/cdk-ssm-documents.INumberVariable">INumberVariable</a>
 
 A number variable reference.
 
@@ -44273,7 +44365,7 @@ Invoke a specific step by the step name for the OnFailure action.
 
 ### OnFailureVariable <a name="OnFailureVariable" id="@cdklabs/cdk-ssm-documents.OnFailureVariable"></a>
 
-- *Implements:* <a href="#@cdklabs/cdk-ssm-documents.IOnFailureVariable">IOnFailureVariable</a>
+- *Implements:* <a href="#@cdklabs/cdk-ssm-documents.IGenericVariable">IGenericVariable</a>, <a href="#@cdklabs/cdk-ssm-documents.IStringVariable">IStringVariable</a>, <a href="#@cdklabs/cdk-ssm-documents.IOnFailureVariable">IOnFailureVariable</a>
 
 #### Initializers <a name="Initializers" id="@cdklabs/cdk-ssm-documents.OnFailureVariable.Initializer"></a>
 
@@ -44545,7 +44637,7 @@ public readonly STRING_TO_OPERATION: {[ key: string ]: Operation};
 
 ### PackageNameVariable <a name="PackageNameVariable" id="@cdklabs/cdk-ssm-documents.PackageNameVariable"></a>
 
-- *Implements:* <a href="#@cdklabs/cdk-ssm-documents.IPackageNameVariable">IPackageNameVariable</a>
+- *Implements:* <a href="#@cdklabs/cdk-ssm-documents.IGenericVariable">IGenericVariable</a>, <a href="#@cdklabs/cdk-ssm-documents.IStringVariable">IStringVariable</a>, <a href="#@cdklabs/cdk-ssm-documents.IPackageNameVariable">IPackageNameVariable</a>
 
 #### Initializers <a name="Initializers" id="@cdklabs/cdk-ssm-documents.PackageNameVariable.Initializer"></a>
 
@@ -45097,7 +45189,7 @@ Invoke AWS with the provided invocation request.
 
 ### ResourceTypeVariable <a name="ResourceTypeVariable" id="@cdklabs/cdk-ssm-documents.ResourceTypeVariable"></a>
 
-- *Implements:* <a href="#@cdklabs/cdk-ssm-documents.IResourceTypeVariable">IResourceTypeVariable</a>
+- *Implements:* <a href="#@cdklabs/cdk-ssm-documents.IGenericVariable">IGenericVariable</a>, <a href="#@cdklabs/cdk-ssm-documents.IStringVariable">IStringVariable</a>, <a href="#@cdklabs/cdk-ssm-documents.IResourceTypeVariable">IResourceTypeVariable</a>
 
 #### Initializers <a name="Initializers" id="@cdklabs/cdk-ssm-documents.ResourceTypeVariable.Initializer"></a>
 
@@ -46378,6 +46470,8 @@ public readonly type: string;
 
 ### SsmSecureVariable <a name="SsmSecureVariable" id="@cdklabs/cdk-ssm-documents.SsmSecureVariable"></a>
 
+- *Implements:* <a href="#@cdklabs/cdk-ssm-documents.IGenericVariable">IGenericVariable</a>
+
 #### Initializers <a name="Initializers" id="@cdklabs/cdk-ssm-documents.SsmSecureVariable.Initializer"></a>
 
 ```typescript
@@ -47079,7 +47173,7 @@ You can use the returned AutomationDocument to run simulations as you would othe
 
 ### StringFormat <a name="StringFormat" id="@cdklabs/cdk-ssm-documents.StringFormat"></a>
 
-- *Implements:* <a href="#@cdklabs/cdk-ssm-documents.IStringVariable">IStringVariable</a>
+- *Implements:* <a href="#@cdklabs/cdk-ssm-documents.IStringVariable">IStringVariable</a>, <a href="#@cdklabs/cdk-ssm-documents.IGenericVariable">IGenericVariable</a>
 
 Replacement for strings using Java String format style "%s" replacements.
 
@@ -47217,7 +47311,7 @@ public readonly variables: IGenericVariable[];
 
 ### StringListVariable <a name="StringListVariable" id="@cdklabs/cdk-ssm-documents.StringListVariable"></a>
 
-- *Implements:* <a href="#@cdklabs/cdk-ssm-documents.IStringListVariable">IStringListVariable</a>
+- *Implements:* <a href="#@cdklabs/cdk-ssm-documents.IGenericVariable">IGenericVariable</a>, <a href="#@cdklabs/cdk-ssm-documents.IStringListVariable">IStringListVariable</a>
 
 A string list variable reference.
 
@@ -47363,7 +47457,7 @@ public readonly reference: string;
 
 ### StringMapVariable <a name="StringMapVariable" id="@cdklabs/cdk-ssm-documents.StringMapVariable"></a>
 
-- *Implements:* <a href="#@cdklabs/cdk-ssm-documents.IStringMapVariable">IStringMapVariable</a>
+- *Implements:* <a href="#@cdklabs/cdk-ssm-documents.IGenericVariable">IGenericVariable</a>, <a href="#@cdklabs/cdk-ssm-documents.IStringMapVariable">IStringMapVariable</a>
 
 A string map variable reference.
 
@@ -47509,7 +47603,7 @@ public readonly reference: string;
 
 ### StringVariable <a name="StringVariable" id="@cdklabs/cdk-ssm-documents.StringVariable"></a>
 
-- *Implements:* <a href="#@cdklabs/cdk-ssm-documents.IStringVariable">IStringVariable</a>
+- *Implements:* <a href="#@cdklabs/cdk-ssm-documents.IGenericVariable">IGenericVariable</a>, <a href="#@cdklabs/cdk-ssm-documents.IStringVariable">IStringVariable</a>
 
 A string variable reference.
 
